@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payout Details - Financial Workspace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#573976",
+                        "on-tertiary-fixed-variant": "#6a3b00",
+                        "on-error-container": "#ffdad6",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-variant": "#353436",
+                        "surface-tint": "#dcb8ff",
+                        "on-tertiary-container": "#ffdaba",
+                        "on-primary": "#480081",
+                        "primary": "#dcb8ff",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#2c0051",
+                        "surface-container-high": "#2a2a2b",
+                        "surface-container": "#201f20",
+                        "on-background": "#e5e2e3",
+                        "tertiary": "#ffb873",
+                        "critical": "#f87171",
+                        "tertiary-fixed-dim": "#ffb873",
+                        "on-secondary-fixed": "#290947",
+                        "surface": "#131314",
+                        "tertiary-fixed": "#ffdcbf",
+                        "inverse-primary": "#8422dc",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "secondary-container": "#573976",
+                        "surface-bright": "#39393a",
+                        "secondary": "#dcb8ff",
+                        "on-secondary-container": "#caa7ec",
+                        "tertiary-container": "#935400",
+                        "surface-container-lowest": "#0e0e0f",
+                        "secondary-fixed": "#efdbff",
+                        "warning": "#fbbf24",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#eed9ff",
+                        "surface-container-low": "#1c1b1c",
+                        "primary-container": "#8a2be2",
+                        "on-surface-variant": "#cfc2d7",
+                        "inverse-on-surface": "#313031",
+                        "primary-fixed": "#efdbff",
+                        "surface-container-highest": "#353436",
+                        "background": "#131314",
+                        "success": "#4ade80",
+                        "on-tertiary": "#4b2800",
+                        "on-error": "#690005",
+                        "on-surface": "#e5e2e3",
+                        "outline": "#988ca0",
+                        "on-tertiary-fixed": "#2d1600",
+                        "surface-dim": "#131314",
+                        "outline-variant": "#4c4354",
+                        "info": "#60a5fa",
+                        "on-secondary": "#3f225e",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "secondary-fixed-dim": "#dcb8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "sidebar-width": "260px",
+                        "gutter": "16px",
+                        "table-cell-padding": "12px",
+                        "margin-desktop": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "code": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "code": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/gh/vercel/geist-font@main/packages/next/local/GeistVF.woff2') format('woff2');
+            font-weight: 100 900;
+            font-display: swap;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            background-color: #131314;
+            color: #e5e2e3;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Layout overrides for suppression logic */
+        /* Payout Details implies a transactional/focused screen (Back action needed). Suppressing global nav. */
+        
+    </style>
+</head>
+<body class="bg-background text-on-background h-screen flex overflow-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Suppressed SideNavBar and TopNavBar based on relevance check (Task-Focused/Transactional screen) -->
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col h-full overflow-y-auto relative w-full">
+<!-- Header / Back Navigation -->
+<header class="sticky top-0 z-30 bg-surface/80 backdrop-blur-md border-b border-surface-variant px-margin-mobile md:px-margin-desktop py-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<button class="p-2 -ml-2 rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant hover:text-on-surface flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-primary">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div>
+<h1 class="font-headline-md text-headline-md text-on-surface">Payout Details</h1>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-code text-code text-on-surface-variant bg-surface-container-low px-2 py-0.5 rounded border border-surface-variant">PAY-20260905-0042</span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-warning/10 border border-warning/20">
+<span class="w-1.5 h-1.5 rounded-full bg-warning"></span>
+<span class="font-label-sm text-label-sm text-warning font-medium">Scheduled</span>
+</span>
+</div>
+</div>
+</div>
+<div class="flex gap-2">
+<button aria-label="Print or Download" class="p-2 rounded hover:bg-surface-container-high text-on-surface-variant transition-colors border border-surface-variant focus:outline-none focus:ring-2 focus:ring-primary flex items-center justify-center">
+<span class="material-symbols-outlined">print</span>
+</button>
+</div>
+</header>
+<!-- Content Grid -->
+<div class="p-margin-mobile md:p-margin-desktop max-w-6xl mx-auto w-full space-y-6">
+<!-- Top Summary Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Amount Card -->
+<div class="bg-surface-container-low border border-surface-variant rounded-lg p-6 relative overflow-hidden group hover:border-primary/50 transition-colors">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Settlement Amount</span>
+<span class="material-symbols-outlined text-primary" data-weight="fill">account_balance_wallet</span>
+</div>
+<div>
+<div class="font-display-lg text-display-lg text-on-surface">₹8,420</div>
+<div class="font-body-md text-body-md text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">info</span>
+                                Includes 12 transactions
+                            </div>
+</div>
+</div>
+</div>
+<!-- Destination Card -->
+<div class="bg-surface-container-low border border-surface-variant rounded-lg p-6 flex flex-col justify-between hover:border-surface-bright transition-colors">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Destination</span>
+<span class="material-symbols-outlined text-on-surface-variant">account_balance</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-on-surface">Bank Account</div>
+<div class="font-code text-code text-on-surface-variant mt-1 bg-surface-container px-2 py-1 rounded inline-block border border-surface-variant">XXXX 4821</div>
+</div>
+</div>
+<!-- Schedule Card -->
+<div class="bg-surface-container-low border border-surface-variant rounded-lg p-6 flex flex-col justify-between hover:border-surface-bright transition-colors">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Schedule</span>
+<span class="material-symbols-outlined text-warning">calendar_month</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-on-surface">Sept 5, 2026</div>
+<div class="font-body-md text-body-md text-warning mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                            Processing expected soon
+                        </div>
+</div>
+</div>
+</div>
+<!-- Bento Grid Structure for Main Details -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Status Timeline (Takes up 2 columns on lg) -->
+<div class="lg:col-span-2 bg-surface-container-low border border-surface-variant rounded-lg p-6">
+<div class="flex items-center justify-between mb-6 pb-4 border-b border-surface-variant">
+<h2 class="font-headline-md text-headline-md text-on-surface">Status Timeline</h2>
+</div>
+<div class="relative pl-6 space-y-8 before:absolute before:inset-0 before:ml-[13px] before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-success before:via-primary before:to-surface-variant">
+<!-- Step 1: Earnings Accrued (Done) -->
+<div class="relative flex items-center gap-6">
+<div class="absolute -left-6 w-6 h-6 rounded-full bg-surface border-2 border-success flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-success text-[14px]" data-weight="fill">check</span>
+</div>
+<div class="flex-1 bg-surface-container p-4 rounded border border-surface-variant">
+<div class="flex items-center justify-between">
+<h3 class="font-label-md text-label-md text-on-surface">Earnings Accrued</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sept 1, 2026</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Funds locked from 12 successful transactions.</p>
+</div>
+</div>
+<!-- Step 2: Settlement Ready (Done) -->
+<div class="relative flex items-center gap-6">
+<div class="absolute -left-6 w-6 h-6 rounded-full bg-surface border-2 border-success flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-success text-[14px]" data-weight="fill">check</span>
+</div>
+<div class="flex-1 bg-surface-container p-4 rounded border border-surface-variant">
+<div class="flex items-center justify-between">
+<h3 class="font-label-md text-label-md text-on-surface">Settlement Ready</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sept 2, 2026</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Platform fees deducted and final amount calculated.</p>
+</div>
+</div>
+<!-- Step 3: Payout Scheduled (Current) -->
+<div class="relative flex items-center gap-6">
+<div class="absolute -left-[28px] w-8 h-8 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center z-10 ring-4 ring-primary/10">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+</div>
+<div class="flex-1 bg-surface-container-high p-4 rounded border border-primary/50 shadow-[0_0_15px_rgba(220,184,255,0.05)]">
+<div class="flex items-center justify-between">
+<h3 class="font-label-md text-label-md text-primary font-bold">Payout Scheduled</h3>
+<span class="font-label-sm text-label-sm text-primary">Sept 5, 2026</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-1">Instructions sent to payment gateway.</p>
+</div>
+</div>
+<!-- Step 4: Bank Transfer (Pending) -->
+<div class="relative flex items-center gap-6">
+<div class="absolute -left-6 w-6 h-6 rounded-full bg-surface border-2 border-surface-variant flex items-center justify-center z-10">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-variant"></span>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-4 rounded border border-surface-variant/50 opacity-70">
+<h3 class="font-label-md text-label-md text-on-surface-variant">Bank Transfer</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Processing via nodal account to destination bank.</p>
+</div>
+</div>
+<!-- Step 5: Completed (Pending) -->
+<div class="relative flex items-center gap-6">
+<div class="absolute -left-6 w-6 h-6 rounded-full bg-surface border-2 border-surface-variant flex items-center justify-center z-10">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-variant"></span>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-4 rounded border border-surface-variant/50 opacity-70">
+<h3 class="font-label-md text-label-md text-on-surface-variant">Completed</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Funds successfully deposited in destination account.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Actions & Details -->
+<div class="space-y-6">
+<!-- Quick Actions -->
+<div class="bg-surface-container-low border border-surface-variant rounded-lg p-6">
+<h2 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-4">Actions</h2>
+<div class="flex flex-col gap-3">
+<button class="w-full flex items-center justify-between px-4 py-3 bg-surface-container hover:bg-surface-container-high border border-surface-variant hover:border-primary/50 rounded transition-colors group focus:outline-none focus:ring-2 focus:ring-primary">
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+                                    View Included Transactions
+                                </span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between px-4 py-3 bg-surface-container hover:bg-surface-container-high border border-surface-variant hover:border-primary/50 rounded transition-colors group focus:outline-none focus:ring-2 focus:ring-primary">
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">account_balance</span>
+                                    View Payout Method
+                                </span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between px-4 py-3 bg-surface-container hover:bg-surface-container-high border border-surface-variant hover:border-primary/50 rounded transition-colors group focus:outline-none focus:ring-2 focus:ring-primary">
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+                                    Contact Support
+                                </span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">open_in_new</span>
+</button>
+</div>
+</div>
+<!-- Breakdown Box -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-lg p-6">
+<h2 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-4">Calculation Breakdown</h2>
+<div class="space-y-3 font-code text-code">
+<div class="flex justify-between items-center text-on-surface">
+<span>Gross Amount</span>
+<span>₹9,500.00</span>
+</div>
+<div class="flex justify-between items-center text-error">
+<span>Platform Fees (10%)</span>
+<span>-₹950.00</span>
+</div>
+<div class="flex justify-between items-center text-error">
+<span>GST on Fees (18%)</span>
+<span>-₹130.00</span>
+</div>
+<div class="h-px w-full bg-surface-variant my-2"></div>
+<div class="flex justify-between items-center text-on-surface font-bold text-[14px]">
+<span>Net Settlement</span>
+<span>₹8,420.00</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

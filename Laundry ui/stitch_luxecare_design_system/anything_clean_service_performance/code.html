@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Service Performance - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#1c1b1c",
+                        "on-secondary-container": "#b9b8ba",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-primary-fixed": "#2c0051",
+                        "secondary": "#c8c6c8",
+                        "success-bg": "#1A3D24",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "outline": "#988ca0",
+                        "on-surface-variant": "#cfc2d7",
+                        "success-green": "#81C784",
+                        "primary": "#dcb8ff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-container-highest": "#353436",
+                        "surface": "#131314",
+                        "surface-bright": "#39393a",
+                        "on-secondary": "#303032",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#313031",
+                        "primary-container": "#8a2be2",
+                        "error-red": "#ffb4ab",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-background": "#e5e2e3",
+                        "surface-variant": "#353436",
+                        "inverse-surface": "#e5e2e3",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "surface-container-high": "#2a2a2b",
+                        "on-error": "#690005",
+                        "on-surface": "#e5e2e3",
+                        "surface-dim": "#131314",
+                        "error-container": "#93000a",
+                        "on-tertiary": "#303032",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "outline-variant": "#4c4354",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-primary": "#480081",
+                        "electric-violet": "#8a2be2",
+                        "on-secondary-fixed-variant": "#474648",
+                        "secondary-fixed": "#e4e2e4",
+                        "background": "#131314",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-tint": "#dcb8ff",
+                        "secondary-container": "#49494b",
+                        "inverse-primary": "#8422dc",
+                        "tertiary": "#c8c6c8",
+                        "primary-fixed": "#efdbff",
+                        "on-primary-container": "#eed9ff",
+                        "tertiary-container": "#646365",
+                        "surface-container": "#201f20",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-tertiary-fixed-variant": "#474648"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "2xl": "48px",
+                        "3xl": "64px"
+                    },
+                    fontFamily: {
+                        "display-lg": ["Geist", "sans-serif"],
+                        "body-md": ["Geist", "sans-serif"],
+                        "mono-display": ["monospace"],
+                        "caption": ["Geist", "sans-serif"],
+                        "h1": ["Geist", "sans-serif"],
+                        "label-md": ["Geist", "sans-serif"],
+                        "headline-lg": ["Geist", "sans-serif"],
+                        "h3": ["Geist", "sans-serif"]
+                    },
+                    fontSize: {
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "mono-display": ["18px", { letterSpacing: "0.05em", fontWeight: "700" }],
+                        "caption": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+                        "h1": ["28px", { lineHeight: "36px", fontWeight: "700" }],
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "h3": ["20px", { lineHeight: "28px", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden min-h-screen">
+<!-- SideNavBar -->
+<nav class="w-64 h-full fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant/30 flex flex-col py-lg px-md z-50">
+<div class="mb-xl flex items-center gap-sm">
+<span class="material-symbols-outlined text-electric-violet" style="font-size: 32px;">water_drop</span>
+<div class="flex flex-col">
+<span class="font-h1 text-h1 font-bold text-electric-violet leading-tight">Anything Clean</span>
+<span class="font-caption text-caption text-on-surface-variant">Provider Portal</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-sm">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-primary/10 text-primary font-bold active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-primary">monitoring</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">star</span>
+<span class="font-label-md text-label-md">Reviews</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">notifications</span>
+<span class="font-label-md text-label-md">Notifications</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+<div class="mt-auto flex flex-col gap-md pt-lg border-t border-outline-variant/30">
+<button class="w-full py-sm bg-electric-violet text-on-primary font-label-md text-label-md font-bold rounded-lg shadow-lg shadow-primary/20 hover:brightness-110 transition-all active:scale-95">Upgrade Plan</button>
+<div class="flex flex-col gap-xs">
+<a class="flex items-center gap-md px-md py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">help</span>
+<span class="font-caption text-caption">Help Center</span>
+</a>
+<a class="flex items-center gap-md px-md py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">logout</span>
+<span class="font-caption text-caption">Sign Out</span>
+</a>
+</div>
+</div>
+</nav>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-256px)] h-16 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-xl z-40">
+<h2 class="font-h3 text-h3 font-bold text-on-surface">Provider Dashboard</h2>
+<div class="flex items-center gap-lg">
+<div class="relative hidden lg:flex items-center">
+<span class="material-symbols-outlined absolute left-sm text-on-surface-variant">search</span>
+<input class="bg-surface-container-low border border-outline-variant/50 rounded-full pl-xl pr-md py-xs text-on-surface font-body-md text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all w-64 placeholder:text-on-surface-variant/50" placeholder="Search..." type="text"/>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-xs text-on-surface-variant hover:text-primary transition-opacity cursor-pointer rounded-full hover:bg-surface-container active:scale-95">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+<button class="p-xs text-on-surface-variant hover:text-primary transition-opacity cursor-pointer rounded-full hover:bg-surface-container active:scale-95 flex items-center justify-center">
+<img class="w-8 h-8 rounded-full object-cover border border-outline-variant/50" data-alt="A small, circular avatar portrait of a professional service provider. Deep midnight corporate styling with cool lighting. Focus is sharp, high definition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkZ5hKUNXPufgYf-64n90kHFIu8KlQbtDe1MZQErdtKwQgLMwa-denMK9uD5xJ0CbXTh_J_9CmMQdK6Md7eOxohfFNUxDLClCQ2vaVaZ0GfvfqB5-8eAyfPNabsZi1TmHW2h42YL9avoytxjx8ZvY6dkORKmQJEhKLu-rWNsC2xPpzWdfN2rrvU7EpgPpY6R-umEmzvyRIc7y-6XpfX2Lwx9US5mwKUCpQFBTpekhJEBW4tcMa1Zb2Yg"/>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 px-xl pb-xl max-w-[1200px] mx-auto min-h-screen flex flex-col gap-xl">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Service Performance</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Compare performance across your services.</p>
+</div>
+<!-- Filters & Sort -->
+<div class="flex flex-wrap items-center gap-md">
+<div class="flex bg-surface-container-low rounded-lg p-xs border border-outline-variant/30">
+<button class="px-md py-xs rounded-md bg-surface-container text-on-surface font-label-md text-label-md border border-outline-variant/50 flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                        Date
+                    </button>
+<button class="px-md py-xs rounded-md text-on-surface-variant hover:bg-surface-container/50 font-label-md text-label-md transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">category</span>
+                        Category
+                    </button>
+<button class="px-md py-xs rounded-md text-on-surface-variant hover:bg-surface-container/50 font-label-md text-label-md transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">build</span>
+                        Service
+                    </button>
+</div>
+<div class="flex items-center gap-sm bg-surface-container-low border border-outline-variant/30 rounded-lg px-sm py-xs">
+<span class="font-caption text-caption text-on-surface-variant pl-xs">Sort by:</span>
+<select class="bg-transparent border-none text-on-surface font-label-md text-label-md focus:ring-0 py-0 pl-xs pr-lg cursor-pointer appearance-none">
+<option class="bg-surface-container">Most Booked</option>
+<option class="bg-surface-container">Highest Revenue</option>
+<option class="bg-surface-container">Top Rated</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Bento Grid Performance Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg mt-md">
+<!-- Card 1: Sneaker Deep Clean -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg flex flex-col gap-md hover:border-primary/50 transition-colors group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-electric-violet to-primary"></div>
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">roller_skating</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface">Sneaker Deep Clean</h3>
+</div>
+<div class="flex items-center gap-xs bg-success-bg/20 border border-success-bg px-sm py-xs rounded-full">
+<span class="material-symbols-outlined text-[16px] text-success-green">trending_up</span>
+<span class="font-caption text-caption text-success-green font-bold tracking-widest uppercase">Active</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-sm mt-sm">
+<div class="bg-surface-container-low rounded-lg p-sm border border-outline-variant/10">
+<p class="font-caption text-caption text-on-surface-variant">Orders</p>
+<p class="font-headline-lg text-headline-lg text-on-surface font-mono-display">42</p>
+</div>
+<div class="bg-surface-container-low rounded-lg p-sm border border-outline-variant/10">
+<p class="font-caption text-caption text-on-surface-variant">Revenue</p>
+<p class="font-headline-lg text-headline-lg text-primary font-mono-display">₹8,420</p>
+</div>
+<div class="bg-surface-container-low rounded-lg p-sm border border-outline-variant/10">
+<p class="font-caption text-caption text-on-surface-variant">Rating</p>
+<div class="flex items-center gap-xs">
+<p class="font-h3 text-h3 text-on-surface font-mono-display">4.9</p>
+<span class="material-symbols-outlined text-[16px] text-[#FFC107]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-sm border border-outline-variant/10">
+<p class="font-caption text-caption text-on-surface-variant">Completion</p>
+<p class="font-h3 text-h3 text-on-surface font-mono-display">98%</p>
+</div>
+</div>
+</div>
+<!-- Card 2: Helmet Deep Clean -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg flex flex-col gap-md hover:border-primary/50 transition-colors group">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined">sports_motorsports</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface">Helmet Deep Clean</h3>
+</div>
+<div class="flex items-center gap-xs bg-surface-container-highest px-sm py-xs rounded-full">
+<span class="font-caption text-caption text-on-surface-variant">Steady</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-sm mt-sm">
+<div class="bg-surface-container-low rounded-lg p-sm border border-outline-variant/10">
+<p class="font-caption text-caption text-on-surface-variant">Orders</p>
+<p class="font-headline-lg text-headline-lg text-on-surface font-mono-display">24</p>
+</div>
+<div class="bg-surface-container-low rounded-lg p-sm border border-outline-variant/10">
+<p class="font-caption text-caption text-on-surface-variant">Revenue</p>
+<p class="font-headline-lg text-headline-lg text-primary font-mono-display">₹4,980</p>
+</div>
+<div class="bg-surface-container-low rounded-lg p-sm border border-outline-variant/10">
+<p class="font-caption text-caption text-on-surface-variant">Rating</p>
+<div class="flex items-center gap-xs">
+<p class="font-h3 text-h3 text-on-surface font-mono-display">4.7</p>
+<span class="material-symbols-outlined text-[16px] text-[#FFC107]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-sm border border-outline-variant/10">
+<p class="font-caption text-caption text-on-surface-variant">Completion</p>
+<p class="font-h3 text-h3 text-on-surface font-mono-display">95%</p>
+</div>
+</div>
+</div>
+<!-- Card 3: Laundry Wash & Fold -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg flex flex-col gap-md hover:border-primary/50 transition-colors group relative overflow-hidden lg:col-span-1 md:col-span-2">
+<div class="absolute right-0 bottom-0 opacity-5 pointer-events-none transform translate-x-1/4 translate-y-1/4">
+<span class="material-symbols-outlined text-[200px]">local_laundry_service</span>
+</div>
+<div class="flex justify-between items-start relative z-10">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined">local_laundry_service</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface">Laundry Wash &amp; Fold</h3>
+</div>
+<div class="flex items-center gap-xs bg-success-bg/20 border border-success-bg px-sm py-xs rounded-full">
+<span class="material-symbols-outlined text-[16px] text-success-green">trending_up</span>
+<span class="font-caption text-caption text-success-green font-bold tracking-widest uppercase">High Vol</span>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 gap-sm mt-sm relative z-10">
+<div class="bg-surface-container-low rounded-lg p-sm border border-outline-variant/10">
+<p class="font-caption text-caption text-on-surface-variant">Orders</p>
+<p class="font-headline-lg text-headline-lg text-on-surface font-mono-display">62</p>
+</div>
+<div class="bg-surface-container-low rounded-lg p-sm border border-outline-variant/10">
+<p class="font-caption text-caption text-on-surface-variant">Revenue</p>
+<p class="font-headline-lg text-headline-lg text-primary font-mono-display">₹9,840</p>
+</div>
+<div class="bg-surface-container-low rounded-lg p-sm border border-outline-variant/10">
+<p class="font-caption text-caption text-on-surface-variant">Rating</p>
+<div class="flex items-center gap-xs">
+<p class="font-h3 text-h3 text-on-surface font-mono-display">4.8</p>
+<span class="material-symbols-outlined text-[16px] text-[#FFC107]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-sm border border-outline-variant/10">
+<p class="font-caption text-caption text-on-surface-variant">Completion</p>
+<p class="font-h3 text-h3 text-on-surface font-mono-display">96%</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

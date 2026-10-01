@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payments Dashboard - Anything Clean Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-container": "#935400",
+                      "surface-container-high": "#2a2a2b",
+                      "on-secondary-fixed": "#290947",
+                      "surface-container-lowest": "#0e0e0f",
+                      "secondary-fixed": "#efdbff",
+                      "on-error": "#690005",
+                      "secondary-container": "#573976",
+                      "surface-tint": "#dcb8ff",
+                      "background": "#131314",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "on-tertiary": "#4b2800",
+                      "on-secondary-container": "#caa7ec",
+                      "inverse-primary": "#8422dc",
+                      "surface-bright": "#39393a",
+                      "tertiary-fixed": "#ffdcbf",
+                      "on-secondary": "#3f225e",
+                      "surface-container": "#201f20",
+                      "critical": "#f87171",
+                      "inverse-surface": "#e5e2e3",
+                      "secondary": "#dcb8ff",
+                      "on-primary": "#480081",
+                      "on-primary-fixed": "#2c0051",
+                      "primary-container": "#8a2be2",
+                      "on-tertiary-container": "#ffdaba",
+                      "on-surface-variant": "#cfc2d7",
+                      "error-container": "#93000a",
+                      "tertiary": "#ffb873",
+                      "on-primary-container": "#eed9ff",
+                      "on-tertiary-fixed-variant": "#6a3b00",
+                      "on-surface": "#e5e2e3",
+                      "error": "#ffb4ab",
+                      "surface-container-highest": "#353436",
+                      "on-error-container": "#ffdad6",
+                      "surface": "#131314",
+                      "outline-variant": "#4c4354",
+                      "tertiary-fixed-dim": "#ffb873",
+                      "surface-dim": "#131314",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "warning": "#fbbf24",
+                      "primary": "#dcb8ff",
+                      "on-secondary-fixed-variant": "#573976",
+                      "secondary-fixed-dim": "#dcb8ff",
+                      "on-tertiary-fixed": "#2d1600",
+                      "success": "#4ade80",
+                      "surface-variant": "#353436",
+                      "surface-container-low": "#1c1b1c",
+                      "info": "#60a5fa",
+                      "outline": "#988ca0",
+                      "inverse-on-surface": "#313031",
+                      "on-background": "#e5e2e3",
+                      "primary-fixed": "#efdbff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "gutter": "16px",
+                      "margin-desktop": "24px",
+                      "sidebar-width": "260px",
+                      "table-cell-padding": "12px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "code": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "label-sm": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "code": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface antialiased">
+<!-- Top Navigation (Shell) -->
+<nav class="bg-surface-container text-primary font-label-md text-label-md font-body-md text-body-md fixed top-0 right-0 w-[calc(100%-260px)] h-16 border-b border-outline-variant flex justify-between items-center px-margin-desktop ml-sidebar-width z-40">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+<input class="bg-transparent border-none text-on-surface focus:ring-0 placeholder:text-on-surface-variant w-64 text-body-md" placeholder="Search Payments, Orders, Users..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<button class="hover:bg-surface-container-highest rounded-lg p-2 transition-opacity opacity-100 hover:opacity-80">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</button>
+<button class="hover:bg-surface-container-highest rounded-lg p-2 transition-opacity opacity-100 hover:opacity-80">
+<span class="material-symbols-outlined text-on-surface-variant">help</span>
+</button>
+<button class="hover:bg-surface-container-highest rounded-lg p-2 transition-opacity opacity-100 hover:opacity-80">
+<span class="material-symbols-outlined text-on-surface-variant">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of an administrative user in a dark modern office setting, soft professional lighting, subtle purple accent lights in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0Vv34xI8SeVDsaOUsWQ-Ax0Km5i5WyZBU0R2qXK698XNKjRpIqA5RV1aj3E0nphPoQ_Z5VI2bZsbkUqIYnJFnkeV-V7nU9_4ok4xjMjzDSnRlGHd_9EOdUn0UPmjSFAj7pghaKdYBIe6CfVns7b49HNFedABpIj6t5C87dNoC1mv6_wJEFZ5vTVlMygoNokoIdCGyuqfPbdunr94dCXhr6unHRNziQJqpAsmtUcaAxuNCvbjQ3OmTJQ"/>
+</div>
+</div>
+</nav>
+<!-- Side Navigation (Shell) -->
+<aside class="bg-surface-container-lowest text-primary font-headline-md text-headline-md font-label-md text-label-md font-body-md text-body-md fixed left-0 top-0 h-full w-[260px] border-r border-outline-variant flex flex-col py-6 z-50">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-sm font-bold">bolt</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface">Lumina Admin</h1>
+<p class="text-label-sm text-on-surface-variant">Super Admin Console</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors hover:scale-[0.98] duration-150" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors hover:scale-[0.98] duration-150" href="#">
+<span class="material-symbols-outlined text-xl">shopping_cart</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors hover:scale-[0.98] duration-150" href="#">
+<span class="material-symbols-outlined text-xl">group</span>
+<span class="font-label-md text-label-md">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors hover:scale-[0.98] duration-150" href="#">
+<span class="material-symbols-outlined text-xl">store</span>
+<span class="font-label-md text-label-md">Providers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors hover:scale-[0.98] duration-150" href="#">
+<span class="material-symbols-outlined text-xl">local_shipping</span>
+<span class="font-label-md text-label-md">Delivery Partners</span>
+</a>
+<!-- Active State using semantic intent matching 'Payments' -> Operations/Financials -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg border-l-4 border-primary text-on-surface font-semibold bg-surface-container-high transition-colors hover:scale-[0.98] duration-150" href="#">
+<span class="material-symbols-outlined text-xl text-primary" style="font-variation-settings: 'FILL' 1;">settings_input_component</span>
+<span class="font-label-md text-label-md">Operations</span>
+</a>
+</nav>
+<div class="px-4 mt-auto space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors hover:scale-[0.98] duration-150" href="#">
+<span class="material-symbols-outlined text-xl">terminal</span>
+<span class="font-label-md text-label-md">System Logs</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors hover:scale-[0.98] duration-150" href="#">
+<span class="material-symbols-outlined text-xl">support_agent</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-[260px] pt-16 min-h-screen p-margin-desktop bg-background">
+<!-- Header Section -->
+<header class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+<div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface mb-1">Payments</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Monitor marketplace payments, refunds and settlements.</p>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low p-1 rounded-lg border border-surface-container-highest">
+<button class="px-3 py-1.5 rounded-md font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors">Today</button>
+<button class="px-3 py-1.5 rounded-md font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors">Yesterday</button>
+<button class="px-3 py-1.5 rounded-md font-label-md text-label-md bg-surface-container-high text-on-surface shadow-sm border border-outline-variant">This Week</button>
+<button class="px-3 py-1.5 rounded-md font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors">This Month</button>
+<div class="w-[1px] h-4 bg-outline-variant mx-1"></div>
+<button class="px-3 py-1.5 flex items-center gap-2 rounded-md font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                    Custom
+                </button>
+</div>
+</header>
+<!-- KPI Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-8">
+<!-- Total Payment Volume -->
+<div class="bg-surface-container-low rounded-xl border border-surface-container-highest p-5 relative overflow-hidden group hover:border-outline-variant transition-colors">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Payment Volume</span>
+<span class="material-symbols-outlined text-primary text-xl opacity-80">account_balance_wallet</span>
+</div>
+<div class="flex items-baseline gap-3">
+<span class="font-display-lg text-display-lg font-bold text-on-surface">₹4,82,600</span>
+</div>
+<div class="mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-success text-sm">trending_up</span>
+<span class="font-label-sm text-label-sm text-success">+12.4% vs last week</span>
+</div>
+</div>
+<!-- Platform Revenue -->
+<div class="bg-surface-container-low rounded-xl border border-surface-container-highest p-5 relative overflow-hidden group hover:border-outline-variant transition-colors">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Platform Revenue</span>
+<span class="material-symbols-outlined text-tertiary text-xl opacity-80">diamond</span>
+</div>
+<div class="flex items-baseline gap-3">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">₹54,180</span>
+</div>
+<div class="mt-2 h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[65%] rounded-full"></div>
+</div>
+</div>
+<!-- Failed Payments -->
+<div class="bg-surface-container-low rounded-xl border border-critical/30 p-5 relative overflow-hidden group hover:border-critical/60 transition-colors">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-sm text-label-sm text-critical uppercase tracking-wider flex items-center gap-1"><span class="material-symbols-outlined text-xs">warning</span> Failed Payments (High Priority)</span>
+<span class="material-symbols-outlined text-critical text-xl opacity-80">error</span>
+</div>
+<div class="flex items-baseline gap-3">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">₹12,400</span>
+</div>
+<div class="mt-2 font-label-sm text-label-sm text-on-surface-variant">
+                    Across 12 transactions
+                </div>
+</div>
+<!-- Pending Actions -->
+<div class="bg-surface-container-low rounded-xl border border-surface-container-highest p-5 relative overflow-hidden group hover:border-outline-variant transition-colors">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Pending Financial Actions</span>
+<span class="material-symbols-outlined text-warning text-xl opacity-80">pending_actions</span>
+</div>
+<div class="flex items-baseline gap-3">
+<span class="font-display-lg text-display-lg font-bold text-on-surface">13</span>
+</div>
+<div class="mt-2 font-label-sm text-label-sm text-on-surface-variant flex items-center gap-2">
+<a class="text-primary hover:underline" href="#">Review Now</a>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Secondary KPIs -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter mb-8">
+<div class="bg-surface-container-lowest border border-surface-container-highest rounded-lg p-4 flex flex-col justify-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-1">Successful Payments</span>
+<span class="font-headline-md text-headline-md font-semibold text-on-surface">₹4,56,200</span>
+</div>
+<div class="bg-surface-container-lowest border border-surface-container-highest rounded-lg p-4 flex flex-col justify-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-1">Refunds Processed</span>
+<span class="font-headline-md text-headline-md font-semibold text-on-surface">₹14,000</span>
+</div>
+<div class="bg-surface-container-lowest border border-surface-container-highest rounded-lg p-4 flex flex-col justify-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-1">Provider Payouts</span>
+<span class="font-headline-md text-headline-md font-semibold text-on-surface">₹1,46,000</span>
+</div>
+<div class="bg-surface-container-lowest border border-surface-container-highest rounded-lg p-4 flex flex-col justify-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-1">Partner Payouts</span>
+<span class="font-headline-md text-headline-md font-semibold text-on-surface">₹18,420</span>
+</div>
+</div>
+<!-- Charts Section (Bento layout) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter mb-8">
+<!-- Main Chart: Payment Volume -->
+<div class="lg:col-span-2 bg-surface-container-low rounded-xl border border-surface-container-highest p-6 flex flex-col min-h-[300px]">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md font-semibold text-on-surface">Payment Volume</h3>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-on-surface">more_vert</button>
+</div>
+<!-- Abstract Representation of Chart -->
+<div class="flex-1 relative flex items-end justify-between px-2 gap-2 border-b border-surface-container-highest pb-4">
+<div class="w-full flex justify-between items-end h-[200px] gap-2 opacity-80">
+<div class="w-full bg-surface-container-highest rounded-t-sm h-[40%] hover:bg-primary transition-colors cursor-pointer"></div>
+<div class="w-full bg-surface-container-highest rounded-t-sm h-[60%] hover:bg-primary transition-colors cursor-pointer"></div>
+<div class="w-full bg-surface-container-highest rounded-t-sm h-[30%] hover:bg-primary transition-colors cursor-pointer"></div>
+<div class="w-full bg-surface-container-highest rounded-t-sm h-[80%] hover:bg-primary transition-colors cursor-pointer"></div>
+<div class="w-full bg-surface-container-highest rounded-t-sm h-[50%] hover:bg-primary transition-colors cursor-pointer"></div>
+<div class="w-full bg-primary rounded-t-sm h-[100%] shadow-[0_0_12px_rgba(220,184,255,0.2)] cursor-pointer"></div>
+<div class="w-full bg-surface-container-highest rounded-t-sm h-[70%] hover:bg-primary transition-colors cursor-pointer"></div>
+</div>
+</div>
+<div class="flex justify-between mt-2 px-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mon</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tue</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Wed</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Thu</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Fri</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Sat</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sun</span>
+</div>
+</div>
+<!-- Revenue Breakdown Stacked -->
+<div class="bg-surface-container-low rounded-xl border border-surface-container-highest p-6 flex flex-col">
+<h3 class="font-headline-md text-headline-md font-semibold text-on-surface mb-6">Revenue Breakdown</h3>
+<div class="flex-1 flex flex-col justify-center gap-6">
+<div class="flex items-center gap-4">
+<div class="w-2 h-12 bg-primary rounded-full"></div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-md text-label-md text-on-surface">Marketplace Commission</span>
+<span class="font-body-md text-body-md font-semibold">₹32,500</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[60%]"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-2 h-12 bg-tertiary rounded-full"></div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-md text-label-md text-on-surface">Service Fees</span>
+<span class="font-body-md text-body-md font-semibold">₹15,200</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-[28%]"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-2 h-12 bg-surface-container-highest rounded-full"></div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-md text-label-md text-on-surface">Late Fees &amp; Penalties</span>
+<span class="font-body-md text-body-md font-semibold">₹6,480</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-surface-variant h-full w-[12%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Operational Overviews & Requires Attention -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter mb-8">
+<div class="bg-surface-container-low rounded-xl border border-surface-container-highest p-6">
+<h3 class="font-headline-md text-headline-md font-semibold text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">currency_exchange</span> Refund Overview
+                </h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center p-3 rounded-lg bg-surface-container-lowest border border-surface-container-highest">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Requested</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Awaiting review</span>
+</div>
+<span class="font-headline-md text-headline-md font-semibold">6</span>
+</div>
+<div class="flex justify-between items-center p-3 rounded-lg bg-surface-container-lowest border border-surface-container-highest">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Processing</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sent to gateway</span>
+</div>
+<span class="font-headline-md text-headline-md font-semibold text-warning">14</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl border border-surface-container-highest p-6">
+<h3 class="font-headline-md text-headline-md font-semibold text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">account_balance</span> Payout Overview
+                </h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center p-3 rounded-lg bg-surface-container-lowest border border-surface-container-highest">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Pending Provider</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ready for clearance</span>
+</div>
+<span class="font-body-md text-body-md font-semibold">₹18,600</span>
+</div>
+<div class="flex justify-between items-center p-3 rounded-lg bg-surface-container-lowest border border-surface-container-highest">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Pending Partner</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Scheduled for today</span>
+</div>
+<span class="font-body-md text-body-md font-semibold">₹4,820</span>
+</div>
+</div>
+</div>
+<div class="bg-error-container/10 rounded-xl border border-error-container/30 p-6 flex flex-col relative overflow-hidden">
+<div class="absolute right-0 top-0 w-32 h-32 bg-error-container/5 rounded-bl-full pointer-events-none"></div>
+<h3 class="font-headline-md text-headline-md font-semibold text-critical mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">notification_important</span> Requires Attention
+                </h3>
+<ul class="space-y-3 flex-1">
+<li class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-critical"></div>12 Failed Payments</span>
+<a class="text-primary hover:underline font-label-sm text-label-sm" href="#">Review</a>
+</li>
+<li class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-warning"></div>6 Pending Refunds</span>
+<a class="text-primary hover:underline font-label-sm text-label-sm" href="#">Review</a>
+</li>
+<li class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-warning"></div>3 Payouts On Hold</span>
+<a class="text-primary hover:underline font-label-sm text-label-sm" href="#">Review</a>
+</li>
+<li class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-critical"></div>2 Settlement Mismatches</span>
+<a class="text-primary hover:underline font-label-sm text-label-sm" href="#">Review</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- Recent Transactions Table -->
+<div class="bg-surface-container-low rounded-xl border border-surface-container-highest overflow-hidden">
+<div class="p-4 border-b border-surface-container-highest flex justify-between items-center bg-surface-container-low">
+<h3 class="font-headline-md text-headline-md font-semibold text-on-surface">Recent Transactions</h3>
+<button class="font-label-md text-label-md text-primary flex items-center gap-1 hover:underline">
+                    View All <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low">
+<tr>
+<th class="p-table-cell-padding font-label-sm text-label-sm text-on-surface-variant font-medium border-b border-surface-container-highest">TRANSACTION ID</th>
+<th class="p-table-cell-padding font-label-sm text-label-sm text-on-surface-variant font-medium border-b border-surface-container-highest">ORDER</th>
+<th class="p-table-cell-padding font-label-sm text-label-sm text-on-surface-variant font-medium border-b border-surface-container-highest">CUSTOMER</th>
+<th class="p-table-cell-padding font-label-sm text-label-sm text-on-surface-variant font-medium border-b border-surface-container-highest">AMOUNT</th>
+<th class="p-table-cell-padding font-label-sm text-label-sm text-on-surface-variant font-medium border-b border-surface-container-highest">METHOD</th>
+<th class="p-table-cell-padding font-label-sm text-label-sm text-on-surface-variant font-medium border-b border-surface-container-highest">STATUS</th>
+<th class="p-table-cell-padding font-label-sm text-label-sm text-on-surface-variant font-medium border-b border-surface-container-highest">CREATED</th>
+<th class="p-table-cell-padding font-label-sm text-label-sm text-on-surface-variant font-medium border-b border-surface-container-highest text-right">ACTION</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md">
+<tr class="hover:bg-surface-container-high transition-colors group border-b border-surface-container-highest last:border-0">
+<td class="p-table-cell-padding font-code text-code text-on-surface">TXN-20482</td>
+<td class="p-table-cell-padding"><a class="text-primary hover:underline" href="#">#QH1024</a></td>
+<td class="p-table-cell-padding text-on-surface">Arun Kumar</td>
+<td class="p-table-cell-padding font-medium text-on-surface">₹420</td>
+<td class="p-table-cell-padding text-on-surface-variant">Online</td>
+<td class="p-table-cell-padding">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium bg-success/10 text-success border border-success/20">PAID</span>
+</td>
+<td class="p-table-cell-padding text-on-surface-variant text-sm">Today, 6:42 PM</td>
+<td class="p-table-cell-padding text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors text-[20px]">more_vert</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors group border-b border-surface-container-highest last:border-0">
+<td class="p-table-cell-padding font-code text-code text-on-surface">TXN-20481</td>
+<td class="p-table-cell-padding"><a class="text-primary hover:underline" href="#">#QH1023</a></td>
+<td class="p-table-cell-padding text-on-surface">Priya Sharma</td>
+<td class="p-table-cell-padding font-medium text-on-surface">₹1,250</td>
+<td class="p-table-cell-padding text-on-surface-variant">Card</td>
+<td class="p-table-cell-padding">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium bg-success/10 text-success border border-success/20">PAID</span>
+</td>
+<td class="p-table-cell-padding text-on-surface-variant text-sm">Today, 5:15 PM</td>
+<td class="p-table-cell-padding text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors text-[20px]">more_vert</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors group border-b border-surface-container-highest last:border-0">
+<td class="p-table-cell-padding font-code text-code text-on-surface">TXN-20480</td>
+<td class="p-table-cell-padding"><a class="text-primary hover:underline" href="#">#QH1022</a></td>
+<td class="p-table-cell-padding text-on-surface">Vikram Singh</td>
+<td class="p-table-cell-padding font-medium text-on-surface">₹850</td>
+<td class="p-table-cell-padding text-on-surface-variant">UPI</td>
+<td class="p-table-cell-padding">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium bg-error-container/20 text-critical border border-error-container/30">FAILED</span>
+</td>
+<td class="p-table-cell-padding text-on-surface-variant text-sm">Today, 4:30 PM</td>
+<td class="p-table-cell-padding text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors text-[20px]">more_vert</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+</body></html>

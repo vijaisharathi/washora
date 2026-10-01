@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumina Control - Logistics &amp; Operations</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline": "#988ca0",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-secondary-container": "#b9b8ba",
+                        "on-primary-container": "#eed9ff",
+                        "on-tertiary-container": "#e3e0e2",
+                        "surface-dim": "#131314",
+                        "background": "#131314",
+                        "inverse-surface": "#e5e2e3",
+                        "on-surface": "#e5e2e3",
+                        "on-primary-fixed": "#2c0051",
+                        "on-secondary-fixed-variant": "#474648",
+                        "surface-container-highest": "#353436",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-tertiary": "#303032",
+                        "surface-container-high": "#2a2a2b",
+                        "primary": "#dcb8ff",
+                        "surface-container": "#201f20",
+                        "on-surface-variant": "#cfc2d7",
+                        "secondary": "#c8c6c8",
+                        "on-error": "#690005",
+                        "inverse-primary": "#8422dc",
+                        "error-red": "#ffb4ab",
+                        "on-background": "#e5e2e3",
+                        "tertiary-container": "#646365",
+                        "primary-fixed": "#efdbff",
+                        "outline-variant": "#4c4354",
+                        "success-green": "#81C784",
+                        "on-secondary": "#303032",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "tertiary-fixed": "#e4e2e4",
+                        "secondary-fixed": "#e4e2e4",
+                        "primary-container": "#8a2be2",
+                        "surface-container-low": "#1c1b1c",
+                        "error": "#ffb4ab",
+                        "tertiary": "#c8c6c8",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#353436",
+                        "secondary-container": "#49494b",
+                        "error-container": "#93000a",
+                        "surface": "#131314",
+                        "surface-bright": "#39393a",
+                        "electric-violet": "#8a2be2",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-tint": "#dcb8ff",
+                        "on-primary": "#480081",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "inverse-on-surface": "#313031",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "success-bg": "#1A3D24"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        md: "16px",
+                        sm: "8px",
+                        "2xl": "48px",
+                        xl: "32px",
+                        lg: "24px",
+                        "3xl": "64px",
+                        xs: "4px"
+                    },
+                    fontFamily: {
+                        "display-lg": ["Geist"],
+                        "h3": ["Geist"],
+                        "body-md": ["Geist"],
+                        "caption": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "label-md": ["Geist"],
+                        "h1": ["Geist"],
+                        "headline-lg": ["Geist"]
+                    },
+                    fontSize: {
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "h3": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "caption": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+                        "mono-display": ["18px", { letterSpacing: "0.05em", fontWeight: "700" }],
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500" }],
+                        "h1": ["28px", { lineHeight: "36px", fontWeight: "700" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; background-color: #131314; color: #e5e2e3; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased overflow-x-hidden min-h-screen">
+<!-- Top Navigation -->
+<nav class="fixed top-0 right-0 left-64 h-16 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-xl w-full z-40">
+<div class="flex items-center gap-sm">
+<span class="font-h3 text-h3 text-on-surface">Lumina Control</span>
+</div>
+<div class="flex items-center gap-lg">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" style="font-size: 18px;">search</span>
+<input class="bg-surface-container-low border border-outline-variant/50 rounded-full py-1.5 pl-10 pr-4 text-body-md font-body-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-all w-64" placeholder="Search operational data..." type="text"/>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+<div class="flex items-center gap-sm cursor-pointer hover:bg-surface-container px-3 py-1.5 rounded-lg transition-colors border border-outline-variant/30">
+<img alt="Admin User Avatar" class="w-8 h-8 rounded-full object-cover border border-outline-variant/50" data-alt="A small, professional portrait photo of a corporate administrator in a modern, dark-themed office setting, highly detailed, realistic, 8k resolution, suitable for a user avatar in a UI. The lighting is soft and moody, emphasizing a serious, focused professional demeanor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD47O-6RcIjPpRoTu-thcD9GNKTHe7_OUz36irlGkok9b_yEOp5cT5C8s0Po37-dZKbKnngBsg1vSk0x6g7rQkfO9ubjVNVC_sNELvu3j7NN7ojlWzWNbfX7TOEUwkZmKIy9mEZP_FDt3e8TKFO-nUXyLl_cduu-Wk1T8sxWGr3eb2EdJX3loQ_ByvtcWb1f-4R2bprK8-rNnVgSKIZL0N0QVxLcuf7By9eZ7rEl7vzs_l-BMbxt2eCg"/>
+<span class="font-label-md text-label-md text-on-surface">Admin Profile</span>
+<span class="material-symbols-outlined text-on-surface-variant" style="font-size: 18px;">arrow_drop_down</span>
+</div>
+</div>
+</nav>
+<!-- Side Navigation -->
+<aside class="w-64 h-screen fixed left-0 top-0 bg-surface-container-low dark:bg-surface-container-low border-r border-outline-variant/30 flex flex-col py-lg px-md z-50">
+<div class="flex items-center gap-sm mb-xl px-sm">
+<div class="w-8 h-8 rounded-md bg-electric-violet flex items-center justify-center shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white" style="font-size: 20px;">layers</span>
+</div>
+<div>
+<h1 class="font-h1 text-h1 text-electric-violet dark:text-primary leading-tight">Lumina Admin</h1>
+<p class="font-caption text-caption text-on-surface-variant">Service Marketplace</p>
+</div>
+</div>
+<button class="w-full bg-electric-violet hover:bg-primary-container text-white hover:text-on-primary-container font-label-md text-label-md font-bold py-2 px-4 rounded-lg flex items-center justify-center gap-2 mb-lg transition-all shadow-lg shadow-primary/20 duration-200 ease-in-out">
+<span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+            New Report
+        </button>
+<nav class="flex-1 overflow-y-auto hide-scrollbar flex flex-col gap-1">
+<a class="flex items-center gap-md px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span>Orders</span>
+</a>
+<a class="flex items-center gap-md px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Providers</span>
+</a>
+<a class="flex items-center gap-md px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">person</span>
+<span>Customers</span>
+</a>
+<div class="h-px bg-outline-variant/30 my-2 mx-2"></div>
+<a class="flex items-center gap-md px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+<span>Verification</span>
+</a>
+<a class="flex items-center gap-md px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">gavel</span>
+<span>Disputes</span>
+</a>
+<a class="flex items-center gap-md px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span>Refunds</span>
+</a>
+<div class="h-px bg-outline-variant/30 my-2 mx-2"></div>
+<a class="flex items-center gap-md px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span>Payments</span>
+</a>
+<a class="flex items-center gap-md px-3 py-2 rounded-lg bg-primary-container/10 text-primary font-bold transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">local_shipping</span>
+<span>Logistics</span>
+</a>
+<div class="h-px bg-outline-variant/30 my-2 mx-2"></div>
+<a class="flex items-center gap-md px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center gap-md px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out font-body-md text-body-md mt-auto" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="mt-lg pt-md border-t border-outline-variant/30 px-sm flex items-center gap-sm">
+<img alt="Lumina Admin Profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant/50" data-alt="A small, professional portrait photo of a corporate administrator in a modern, dark-themed office setting, highly detailed, realistic, 8k resolution, suitable for a user avatar in a UI. The lighting is soft and moody, emphasizing a serious, focused professional demeanor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH2cxyg1OE8THRl4LxGbagp0r2o79aVx8bppKMWppdlTH_cnD3vICufeMSwpt3jVpb5eLumnVZOdMNNXoZjoqQCeSnhihWGB5ERwENzfP-glsZZZg1ObJamOokijfId0y6ZMKUNN2kw_pLuwl_5X3ZF6zvWIvzbe4Eb8khVP8fpzIWx6XHdDVFMguXx2rx1-vpEeH0o9zbzJWy1oTCaq0tSJ9MHELpfv7fnvq9ze0Y_noQmgd9hyAXVg"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Lumina Admin</span>
+<span class="font-caption text-caption text-on-surface-variant">Online</span>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-64 mt-16 p-xl max-w-[1200px] mx-auto min-h-[calc(100vh-64px)] flex flex-col gap-lg">
+<!-- Header & Tabs -->
+<div class="flex flex-col gap-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-1">Operational Monitor</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Real-time oversight of financial and physical marketplace operations.</p>
+</div>
+<div class="flex border-b border-outline-variant/30 gap-lg mt-md">
+<button class="font-label-md text-label-md py-2 px-1 border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-colors" onclick="switchTab('payments')">
+                    Payments
+                </button>
+<button class="font-label-md text-label-md py-2 px-1 border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-colors" onclick="switchTab('settlements')">
+                    Settlements
+                </button>
+<button class="font-label-md text-label-md py-2 px-1 border-b-2 border-primary text-primary font-bold transition-colors flex items-center gap-2" id="tab-logistics" onclick="switchTab('logistics')">
+                    Logistics 
+                    <span class="bg-surface-container-high text-on-surface text-[10px] px-1.5 py-0.5 rounded-full">9</span>
+</button>
+</div>
+</div>
+<!-- Tab Content: Logistics (Default Active) -->
+<div class="tab-content active flex flex-col gap-lg" id="content-logistics">
+<!-- Bento Stats -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md">
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md flex flex-col gap-sm relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-16 h-16 bg-primary/10 rounded-full blur-xl"></div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-size: 18px;">local_shipping</span>
+<span class="font-caption text-caption font-semibold uppercase tracking-wider">Active Deliveries</span>
+</div>
+<div class="font-mono-display text-mono-display text-on-surface text-3xl">8</div>
+<div class="text-xs text-success-green flex items-center gap-1 mt-auto">
+<span class="material-symbols-outlined" style="font-size: 14px;">trending_up</span>
+<span>On track</span>
+</div>
+</div>
+<div class="bg-error-container/10 border border-error/30 rounded-xl p-md flex flex-col gap-sm relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-16 h-16 bg-error/10 rounded-full blur-xl"></div>
+<div class="flex items-center gap-2 text-error">
+<span class="material-symbols-outlined" style="font-size: 18px;">warning</span>
+<span class="font-caption text-caption font-semibold uppercase tracking-wider">Active Issues</span>
+</div>
+<div class="font-mono-display text-mono-display text-error text-3xl">1</div>
+<div class="text-xs text-error/80 mt-auto">
+                        Requires immediate intervention
+                    </div>
+</div>
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md flex flex-col gap-sm">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-size: 18px;">schedule</span>
+<span class="font-caption text-caption font-semibold uppercase tracking-wider">Avg Transit Time</span>
+</div>
+<div class="font-mono-display text-mono-display text-on-surface text-3xl">42m</div>
+<div class="text-xs text-on-surface-variant mt-auto">
+                        Target: &lt; 45m
+                    </div>
+</div>
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md flex flex-col gap-sm">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-size: 18px;">group</span>
+<span class="font-caption text-caption font-semibold uppercase tracking-wider">Active Partners</span>
+</div>
+<div class="font-mono-display text-mono-display text-on-surface text-3xl">3</div>
+<div class="text-xs text-on-surface-variant mt-auto">
+                        Capacity utilization: 84%
+                    </div>
+</div>
+</div>
+<!-- Logistics Table -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl overflow-hidden flex flex-col">
+<div class="p-md border-b border-outline-variant/30 flex justify-between items-center bg-surface-container-low">
+<h3 class="font-h3 text-h3 text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">route</span>
+                        Live Transit Monitor
+                    </h3>
+<div class="flex gap-2">
+<button class="bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md py-1.5 px-3 rounded-lg border border-outline-variant/50 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-size: 16px;">filter_list</span>
+                            Filter
+                        </button>
+<button class="bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md p-1.5 rounded-lg border border-outline-variant/50 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 16px;">refresh</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50 border-b border-outline-variant/30">
+<th class="py-3 px-4 font-caption text-caption text-on-surface-variant uppercase tracking-wider font-semibold">Booking ID</th>
+<th class="py-3 px-4 font-caption text-caption text-on-surface-variant uppercase tracking-wider font-semibold">Pickup</th>
+<th class="py-3 px-4 font-caption text-caption text-on-surface-variant uppercase tracking-wider font-semibold">Provider</th>
+<th class="py-3 px-4 font-caption text-caption text-on-surface-variant uppercase tracking-wider font-semibold">Destination</th>
+<th class="py-3 px-4 font-caption text-caption text-on-surface-variant uppercase tracking-wider font-semibold">Partner (LSP)</th>
+<th class="py-3 px-4 font-caption text-caption text-on-surface-variant uppercase tracking-wider font-semibold text-right">Status</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md divide-y divide-outline-variant/20">
+<!-- Issue Row -->
+<tr class="hover:bg-surface-container-high transition-colors bg-error-container/5 border-l-2 border-l-error">
+<td class="py-3 px-4 font-mono-display text-sm text-error font-medium">QH-1037</td>
+<td class="py-3 px-4 text-on-surface-variant text-sm truncate max-w-[150px]">Wholesale Hub, Sector 4</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-surface-container-highest flex items-center justify-center text-xs font-bold text-on-surface">C</div>
+<span class="text-sm font-medium">CleanX Solutions</span>
+</div>
+</td>
+<td class="py-3 px-4 text-on-surface-variant text-sm truncate max-w-[150px]">Tech Park B, Block C</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-surface-container-highest border border-outline-variant/30 text-xs text-on-surface">
+<span class="material-symbols-outlined text-outline" style="font-size: 14px;">two_wheeler</span>
+                                        SwiftLog
+                                    </span>
+</td>
+<td class="py-3 px-4 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-error-container/20 text-error text-xs font-bold uppercase tracking-widest border border-error/30">
+<span class="material-symbols-outlined" style="font-size: 12px;">error</span>
+                                        FAILED P/U
+                                    </span>
+</td>
+</tr>
+<!-- Active Row -->
+<tr class="hover:bg-surface-container-high transition-colors border-l-2 border-l-transparent">
+<td class="py-3 px-4 font-mono-display text-sm text-on-surface">TK-8821</td>
+<td class="py-3 px-4 text-on-surface-variant text-sm truncate max-w-[150px]">Downtown Central, P1</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-surface-container-highest flex items-center justify-center text-xs font-bold text-on-surface">E</div>
+<span class="text-sm font-medium">Elite Maintenance</span>
+</div>
+</td>
+<td class="py-3 px-4 text-on-surface-variant text-sm truncate max-w-[150px]">Suburban Complex</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-surface-container-highest border border-outline-variant/30 text-xs text-on-surface">
+<span class="material-symbols-outlined text-outline" style="font-size: 14px;">local_shipping</span>
+                                        PrimeHaul
+                                    </span>
+</td>
+<td class="py-3 px-4 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-success-bg text-success-green text-xs font-bold uppercase tracking-widest border border-success-green/30 shadow-[0_0_8px_rgba(129,199,132,0.2)]">
+<span class="w-1.5 h-1.5 bg-success-green rounded-full animate-pulse"></span>
+                                        IN TRANSIT
+                                    </span>
+</td>
+</tr>
+<!-- Active Row -->
+<tr class="hover:bg-surface-container-high transition-colors border-l-2 border-l-transparent">
+<td class="py-3 px-4 font-mono-display text-sm text-on-surface">TK-8819</td>
+<td class="py-3 px-4 text-on-surface-variant text-sm truncate max-w-[150px]">North Depot</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-surface-container-highest flex items-center justify-center text-xs font-bold text-on-surface">Q</div>
+<span class="text-sm font-medium">QuickFix Plumbing</span>
+</div>
+</td>
+<td class="py-3 px-4 text-on-surface-variant text-sm truncate max-w-[150px]">Marina Bay Area</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-surface-container-highest border border-outline-variant/30 text-xs text-on-surface">
+<span class="material-symbols-outlined text-outline" style="font-size: 14px;">two_wheeler</span>
+                                        SwiftLog
+                                    </span>
+</td>
+<td class="py-3 px-4 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface text-xs font-bold uppercase tracking-widest border border-outline-variant/50">
+                                        DISPATCHED
+                                    </span>
+</td>
+</tr>
+<!-- Active Row -->
+<tr class="hover:bg-surface-container-high transition-colors border-l-2 border-l-transparent">
+<td class="py-3 px-4 font-mono-display text-sm text-on-surface">LM-9022</td>
+<td class="py-3 px-4 text-on-surface-variant text-sm truncate max-w-[150px]">East Side Storage</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-surface-container-highest flex items-center justify-center text-xs font-bold text-on-surface">S</div>
+<span class="text-sm font-medium">Spark Electrics</span>
+</div>
+</td>
+<td class="py-3 px-4 text-on-surface-variant text-sm truncate max-w-[150px]">Highlands Estate</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-surface-container-highest border border-outline-variant/30 text-xs text-on-surface">
+<span class="material-symbols-outlined text-outline" style="font-size: 14px;">local_shipping</span>
+                                        MetroCargo
+                                    </span>
+</td>
+<td class="py-3 px-4 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-success-bg text-success-green text-xs font-bold uppercase tracking-widest border border-success-green/30 shadow-[0_0_8px_rgba(129,199,132,0.2)]">
+<span class="w-1.5 h-1.5 bg-success-green rounded-full animate-pulse"></span>
+                                        IN TRANSIT
+                                    </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-3 border-t border-outline-variant/30 bg-surface-container-low flex justify-center">
+<button class="text-primary font-label-md text-label-md hover:text-primary-fixed transition-colors text-sm font-semibold">View All 8 Active Deliveries</button>
+</div>
+</div>
+<!-- Map Visualization Placeholder -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl overflow-hidden h-64 relative flex items-center justify-center">
+<div class="absolute inset-0 bg-surface-container-lowest/50 z-10 flex flex-col items-center justify-center backdrop-blur-[2px]">
+<span class="material-symbols-outlined text-outline-variant mb-2" style="font-size: 48px;">map</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Live Map View Unavailable in Demo</span>
+</div>
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#4c4354 1px, transparent 1px); background-size: 20px 20px;"></div>
+</div>
+</div>
+<!-- Tab Content: Payments (Placeholder) -->
+<div class="tab-content flex flex-col gap-lg" id="content-payments">
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-xl flex flex-col items-center justify-center text-center h-64">
+<span class="material-symbols-outlined text-outline mb-4" style="font-size: 48px;">receipt_long</span>
+<h3 class="font-h3 text-h3 text-on-surface mb-2">Customer Ledger</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Payments view is currently isolated. Select 'Logistics' to view active operations.</p>
+</div>
+</div>
+<!-- Tab Content: Settlements (Placeholder) -->
+<div class="tab-content flex flex-col gap-lg" id="content-settlements">
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-xl flex flex-col items-center justify-center text-center h-64 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant text-xs font-bold border border-outline-variant/50">
+                        Pending: CleanX ₹442
+                    </span>
+</div>
+<span class="material-symbols-outlined text-outline mb-4" style="font-size: 48px;">account_balance</span>
+<h3 class="font-h3 text-h3 text-on-surface mb-2">Provider Payout Status</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Settlements view is currently isolated. Select 'Logistics' to view active operations.</p>
+</div>
+</div>
+</main>
+<script>
+        function switchTab(tabId) {
+            // Hide all content
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            
+            // Show selected content
+            document.getElementById('content-' + tabId).classList.add('active');
+            
+            // Reset all tab styles to inactive
+            const tabs = document.querySelectorAll('button[onclick^="switchTab"]');
+            tabs.forEach(tab => {
+                tab.className = "font-label-md text-label-md py-2 px-1 border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-2";
+            });
+            
+            // Set active tab style (crude implementation for demo, finding specific element is better)
+            const activeTab = Array.from(tabs).find(t => t.getAttribute('onclick').includes(tabId));
+            if(activeTab) {
+                // Keep the inner span if it exists (like the badge on Logistics)
+                const innerHTML = activeTab.innerHTML;
+                activeTab.className = "font-label-md text-label-md py-2 px-1 border-b-2 border-primary text-primary font-bold transition-colors flex items-center gap-2";
+            }
+        }
+    </script>
+</body></html>

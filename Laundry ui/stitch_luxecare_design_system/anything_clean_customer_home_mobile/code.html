@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anything Clean - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-container": "#b7b4b7",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "surface-bright": "#3a393a",
+                        "primary-fixed": "#efdbff",
+                        "error": "#ffb4ab",
+                        "error-container": "#93000a",
+                        "outline-variant": "#4c4354",
+                        "on-secondary": "#303032",
+                        "on-surface-variant": "#cfc2d7",
+                        "secondary": "#c8c6c8",
+                        "on-primary-container": "#eed9ff",
+                        "on-secondary-fixed-variant": "#474649",
+                        "tertiary-fixed": "#e4e2e4",
+                        "tertiary": "#c8c6c8",
+                        "surface-container": "#201f20",
+                        "background": "#131314",
+                        "on-tertiary": "#303032",
+                        "surface-container-highest": "#353436",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-surface": "#e5e2e3",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-dim": "#131314",
+                        "on-primary": "#480081",
+                        "surface-container-high": "#2a2a2b",
+                        "secondary-fixed": "#e5e1e4",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e5e2e3",
+                        "primary-container": "#8a2be2",
+                        "on-primary-fixed": "#2c0051",
+                        "surface": "#131314",
+                        "surface-variant": "#353436",
+                        "inverse-primary": "#8422dc",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "tertiary-container": "#646365",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "secondary-container": "#474649",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "outline": "#988ca0",
+                        "inverse-on-surface": "#313031",
+                        "primary": "#dcb8ff",
+                        "on-tertiary-container": "#e3e0e2",
+                        "surface-container-low": "#1c1b1c",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-tint": "#dcb8ff"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        xs: "4px",
+                        lg: "24px",
+                        "2xl": "48px",
+                        sm: "8px",
+                        xl: "32px",
+                        "3xl": "64px",
+                        md: "16px"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "body-md": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        caption: ["Geist"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500" }],
+                        "display-lg-mobile": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        caption: ["12px", { lineHeight: "16px", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/5">
+<div class="flex justify-between items-center px-md py-sm w-full max-w-[1280px] mx-auto">
+<div class="flex items-center gap-xs text-primary dark:text-primary font-headline-md text-headline-md-mobile hover:opacity-80 transition-opacity cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<h1 class="font-bold">New York, NY</h1>
+</div>
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-[88px] px-md md:px-lg max-w-[1280px] mx-auto space-y-xl md:space-y-2xl">
+<!-- Welcome Section -->
+<section class="mt-md">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Hello, Alex</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-sm">What needs care today?</p>
+</section>
+<!-- Category Grid -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-md">
+<!-- Clothes -->
+<div class="relative rounded-xl overflow-hidden aspect-square group cursor-pointer border border-white/5 bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-80 transition-opacity" data-alt="High-end lifestyle photography showing neatly folded premium clothing stacked elegantly on a sleek dark marble surface. Cinematic lighting with deep shadows and subtle violet highlights, fitting a premium, minimalist app aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCHjJatQ26jqEJ9Tut6B1xOBtPLx4OsXrlaP4PRdcULANC3VCxB7y2v1WrlgGEapEfRxlC829pFH4lHAuIwEm7o1DYtr28QDFtdk1KR2ydiLakcS8G1Frkx6zVhidkITBdKWyN5uUVvkRwwhP2zIXebOO6jmGHAVqHzqKoDBbkZFqqdfO_OEt_Nlf4lCk70VBtZsD9hvjyIU2j2Zp2-D6z8Nxu0ekoKOAZn_y2QKKi3xp7B3u0vlhaMsQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent"></div>
+<div class="absolute bottom-md left-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">Clothes</h3>
+</div>
+</div>
+<!-- Shoes -->
+<div class="relative rounded-xl overflow-hidden aspect-square group cursor-pointer border border-white/5 bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-80 transition-opacity" data-alt="A macro shot of a pristine, high-end leather sneaker being carefully detailed. Dark, moody atmosphere with a single soft spotlight highlighting the texture of the leather. The mood is precise and luxurious, designed for a dark theme." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuANhoRx3O07cQ5echTbqCdJcVyNlsKmv5Bb6MBzNpekcIO-U4nKvVp3FwCzVHBHVVuMZ0ojU15vYm8HbajtDxgVLCsTvnFSO3sWocU3lJfHANuVPzHgw77tluQIMn8GPNdavEQBcsPqpRUZdDmCYnR7EPnUx0qBlSDE2YVGBu2_l9aevdYB6JZ1wEc3FR0h5Cwapsg3dbmrAVvPNp-8YrgJY7HMl7sJl8UtFVk5A32vJroFcuJHwGcZ4A')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent"></div>
+<div class="absolute bottom-md left-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">Shoes</h3>
+</div>
+</div>
+<!-- Cars -->
+<div class="relative rounded-xl overflow-hidden aspect-square group cursor-pointer border border-white/5 bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-80 transition-opacity" data-alt="Sleek, close-up shot of a polished luxury sports car exterior reflecting subtle neon violet lights in a dimly lit, high-end garage setting. Focus on the glossy finish and premium care, maintaining a deep dark aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB-sdbiiR8Zmjj1xWvbmh9913n-NUBvFEFZetE5CmzLJgFHWSEWCeQGPykCVXLiJxm9MzEIfdqK_0nAS4h0fENUHBDyXpQVtdiDv6lZP4fg_dc0GVcIluJQxLYv2dNp1TBKGueQvtmFZcumEc7HbGXagcQu9P4eEGsuCGnRk2sHMfJWdxLhPQ8y1rEXL1K3_6fw5h0RRJh0hY9jihPvhPVynxAx13fe5GGqPmdMo_W69xwJrYsZxaCvZA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent"></div>
+<div class="absolute bottom-md left-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">Cars</h3>
+</div>
+</div>
+<!-- Bikes -->
+<div class="relative rounded-xl overflow-hidden aspect-square group cursor-pointer border border-white/5 bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-80 transition-opacity" data-alt="A modern carbon fiber road bike standing in a minimalist, dimly lit studio setting. Subtle edge lighting emphasizes the clean lines and premium nature of the bicycle. The color palette features deep blacks and charcoal grays." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDoXRKPafp8DlCacvd_HUAFrmvXSFtBNfPV8bhXY1_1xbJ5JhFrarU4DtGJlELWFnr5Gf-SaCu2p7-4GKXhutA1yUOuubIKFbL0c5tRDqWJT5lRJXt3W_F27l5iHZrzKXSJzHfsNvifBIenxjdKttqIaHiDE-vcYret7-iprIwe2lM_pGjWVGG8lWqgCCjlsb7bnccKznXKwNLJGzHoH-_gRGkYVXkI1ZI1lRhuNK5kuHJwhLxeBd5v3A')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent"></div>
+<div class="absolute bottom-md left-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">Bikes</h3>
+</div>
+</div>
+</section>
+<!-- Active Order -->
+<section>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-md">Active Orders</h3>
+<div class="bg-surface-container border border-white/5 rounded-xl p-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-md relative overflow-hidden">
+<!-- Subtle glow effect -->
+<div class="absolute -right-xl -top-xl w-32 h-32 bg-primary-container/20 rounded-full blur-3xl"></div>
+<div class="flex items-center gap-md z-10">
+<div class="w-12 h-12 rounded-lg bg-surface-variant flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">cleaning_services</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-bold">Shoe Restoration</h4>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-xs mt-1">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                            Cleaning in Progress
+                        </p>
+</div>
+</div>
+<button class="z-10 bg-primary/10 text-primary border border-primary/20 rounded-lg px-md py-sm font-label-md text-label-md hover:bg-primary/20 transition-colors w-full md:w-auto">
+                    Track Order
+                </button>
+</div>
+</section>
+<!-- Recommended Providers -->
+<section>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-md">Recommended for You</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Provider Card 1 -->
+<div class="bg-surface-container border border-white/5 rounded-xl p-md flex items-center gap-md hover:bg-surface-container-high transition-colors cursor-pointer">
+<img class="w-16 h-16 rounded-lg object-cover" data-alt="A professional headshot of a confident, well-dressed cleaning specialist looking slightly off-camera. The background is a very dark, slightly blurred sophisticated studio setting. Lighting is soft and dramatic, emphasizing trust and high-end service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZzodRIUy06JRfPZ_7pKZzAJYVfWYieEUI7Ee9fgNxurjwDSuk1K7K-pauTPTZRmGB-GINmcxguxliUIQuOe2njCxVuyMqvO6F3WQgiMaNUL4shPhfHu8hXV3Tnsh0SOBVWLiUZh5h-NZoC_MCeRyaSdttABfyg4GDMyXceRUWsmMt3fWQa3lR6Cvhy8oC3qJ7MJ1G9sHTZHtCqx3VNYmzkXDONAvdc8GluLMroNz9oDSVu3SNIJQeOw"/>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="font-label-md text-label-md text-on-surface font-bold">Luxe Wardrobe Care</h4>
+<div class="flex items-center gap-xs text-yellow-500">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md text-on-surface">4.9</span>
+</div>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Clothing &amp; Garments • 2.1 mi</p>
+<p class="font-label-md text-label-md text-primary mt-2">$45/hr</p>
+</div>
+</div>
+<!-- Provider Card 2 -->
+<div class="bg-surface-container border border-white/5 rounded-xl p-md flex items-center gap-md hover:bg-surface-container-high transition-colors cursor-pointer">
+<img class="w-16 h-16 rounded-lg object-cover" data-alt="A stylish portrait of an expert car detailer in premium dark workwear, arms crossed lightly. The setting is a dark, sleek garage environment with subtle cool-toned accent lights. Conveys expertise and meticulous care in a premium context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2pLyr6a57IUSd2Xt1_SjfibFGQajqXlWniZV4XU6qeba2lmO_hgpHmDzFGYxwA3bTX1xp-A67YTfb12QfkHYKuRroEi6MUudi40LLUwkRiH6SdSRCTl2JRb2LpfFlmuSm77CXyCzPitPxnfu-rEE5QbM2_SYoqX-KO0r3DeDLfCagc85oO-pxMEbfibxSfwe6-sFmS_Fke1rL0KF6cNo3DrRCnfqW-lxs83T18GZxsMvmqpd07XjCZw"/>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="font-label-md text-label-md text-on-surface font-bold">Apex Auto Detail</h4>
+<div class="flex items-center gap-xs text-yellow-500">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md text-on-surface">5.0</span>
+</div>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Automotive • 3.5 mi</p>
+<p class="font-label-md text-label-md text-primary mt-2">$120/service</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface/90 dark:bg-surface/90 backdrop-blur-2xl border-t border-white/5 shadow-[0_-4px_24px_rgba(138,43,226,0.1)] flex justify-around items-center h-20 pb-safe px-lg">
+<button class="flex flex-col items-center justify-center text-primary dark:text-primary scale-110 transition-all active:scale-90 duration-150 group">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-md text-label-md text-primary font-bold mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-secondary-container hover:text-primary-fixed-dim transition-colors active:scale-90 duration-150 group">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-md text-label-md mt-1">Explore</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-secondary-container hover:text-primary-fixed-dim transition-colors active:scale-90 duration-150 group">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-label-md text-label-md mt-1">Bookings</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-secondary-container hover:text-primary-fixed-dim transition-colors active:scale-90 duration-150 group">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-label-md text-label-md mt-1">Inbox</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-secondary-container hover:text-primary-fixed-dim transition-colors active:scale-90 duration-150 group">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md mt-1">Profile</span>
+</button>
+</nav>
+</body></html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Campaign Details - Fresh Start | CareMarket Console</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#2c0051",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "outline": "#988ca0",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "tertiary-container": "#646365",
+                        "surface-container-highest": "#353436",
+                        "on-tertiary-container": "#e3e0e2",
+                        "background": "#131314",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-tint": "#dcb8ff",
+                        "on-surface": "#e5e2e3",
+                        "surface-container": "#201f20",
+                        "on-secondary": "#303032",
+                        "surface-container-lowest": "#0e0e0f",
+                        "tertiary-fixed": "#e4e2e4",
+                        "surface": "#131314",
+                        "surface-variant": "#353436",
+                        "inverse-on-surface": "#313031",
+                        "inverse-surface": "#e5e2e3",
+                        "primary": "#dcb8ff",
+                        "outline-variant": "#4c4354",
+                        "on-tertiary": "#303032",
+                        "tertiary": "#c8c6c8",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-secondary-container": "#b7b4b7",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "primary-container": "#8a2be2",
+                        "primary-fixed": "#efdbff",
+                        "secondary-fixed": "#e5e1e4",
+                        "secondary": "#c8c6c8",
+                        "on-primary-container": "#eed9ff",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e5e2e3",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface-container-high": "#2a2a2b",
+                        "on-secondary-fixed-variant": "#474649",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-primary": "#480081",
+                        "secondary-container": "#474649",
+                        "on-surface-variant": "#cfc2d7",
+                        "inverse-primary": "#8422dc",
+                        "surface-bright": "#3a393a",
+                        "surface-dim": "#131314"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "sm": "8px",
+                        "xl": "32px",
+                        "2xl": "48px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "3xl": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist", "sans-serif"],
+                        "display-lg": ["Geist", "sans-serif"],
+                        "display-lg-mobile": ["Geist", "sans-serif"],
+                        "headline-md": ["Geist", "sans-serif"],
+                        "body-lg": ["Geist", "sans-serif"],
+                        "label-md": ["Geist", "sans-serif"],
+                        "caption": ["Geist", "sans-serif"],
+                        "body-md": ["Geist", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; background-color: #0A0A0B; color: #e5e2e3; }
+        .glass-panel {
+            background: rgba(18, 18, 20, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .glow-border:hover {
+            border-color: rgba(220, 184, 255, 0.3);
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col md:flex-row font-body-md">
+<!-- SideNavBar -->
+<nav class="hidden md:flex h-screen w-64 fixed left-0 top-0 bg-surface dark:bg-surface border-r border-surface-container-low dark:border-surface-container-low flex-col py-lg px-md z-50">
+<div class="flex items-center gap-sm mb-xl px-sm">
+<img alt="Admin Workspace Logo" class="w-8 h-8 rounded-lg object-cover" data-alt="A minimalist and premium geometric logo icon in glowing primary violet against a pure dark background, emphasizing modern technological luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHVL5FFy6Ks3h7IHfUV5tmYWrtUuYmkoNpGaU9C7Ph7WVsanOzDUQngsDQSKsiosUrcF1tEM_wum7iSTGr9mCBiXQbnDdWzozcexiVbwdwK6jcJ9HQ_ISWk3ilS6cjRS6zj54vFinczwaRvYdkFXR1KfZK4DSS1Kc8v2cwAOOLn1lvLDnIH6ybZDqAdL6sHMhMxJd5ZxKuJvtzPlDXMQXZ1euPM8HROUJ_S4y9x5DMKiqQqH21ZVxmcQ"/>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary">CareMarket Admin</h1>
+<p class="font-caption text-caption text-on-surface-variant">Management Suite</p>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto space-y-xs">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+                Orders
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">group</span>
+                Customers
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">engineering</span>
+                Service Providers
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">local_shipping</span>
+                Delivery Partners
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">build</span>
+                Services
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">payments</span>
+                Payments
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">gavel</span>
+                Disputes
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">star</span>
+                Reviews
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-primary-container text-on-primary-container font-bold scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">campaign</span>
+                Promotions
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+                Notifications
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">analytics</span>
+                Analytics
+            </a>
+</div>
+<div class="mt-auto pt-md border-t border-surface-container-low space-y-xs">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">help</span>
+                Support
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+                Settings
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 md:ml-64 flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="hidden md:flex justify-between items-center w-full px-xl py-md docked full-width top-0 sticky z-40 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 text-primary dark:text-primary font-label-md text-label-md">
+<div class="flex items-center gap-xl">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">CareMarket Console</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant" style="font-size: 20px;">search</span>
+<input class="bg-surface-container rounded-full pl-xl pr-md py-sm border-none text-on-surface placeholder:text-on-surface-variant focus:ring-1 focus:ring-primary w-64 text-label-md" placeholder="Search promotions..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-all cursor-pointer active:opacity-70">
+<span class="material-symbols-outlined">notifications_active</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-all cursor-pointer active:opacity-70">
+<span class="material-symbols-outlined">settings_suggest</span>
+</button>
+<img alt="Administrator Profile" class="w-8 h-8 rounded-full border border-surface-container-high object-cover" data-alt="A sharp, professional headshot of an administrator in soft, high-key studio lighting with a subtle dark backdrop, exuding competence and approachability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy1GhSp7SDJ0sUrbOfO45VeCQmnJJ1W3x6CYCbkTUVqyo0-gq8eaC91AqSMHq44pLDwzf7UsDoTN1Q9uDZte5P87BwKS6KruqeJ9mVbxN9AKdPJZQcwXHN03KD_apMvvPlo4nFQV5w_9F3e4s3lbluc_AEHQYBqhk4I2cyqkVuEC_MHMd4atbm79vTzZOM1qTYOcoI1vwJuTd_TxnYLyFFDJxzMlDsnfMFR3-06aVUTwthMz94fEiaFg"/>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 p-lg md:p-2xl max-w-[1280px] w-full mx-auto space-y-xl">
+<!-- Breadcrumbs & Actions -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-md">
+<div class="flex items-center gap-sm text-label-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Promotions</a>
+<span class="material-symbols-outlined text-on-surface-variant" style="font-size: 16px;">chevron_right</span>
+<span class="text-on-surface font-bold">Fresh Start</span>
+<span class="px-2 py-0.5 rounded-full bg-primary/20 text-primary font-label-md text-xs ml-sm border border-primary/30">ACTIVE</span>
+</div>
+<div class="flex gap-sm w-full md:w-auto">
+<button class="flex-1 md:flex-none px-md py-sm rounded-lg border border-outline-variant text-on-surface font-label-md hover:bg-surface-container-high transition-colors">
+                        Pause Campaign
+                    </button>
+<button class="flex-1 md:flex-none px-md py-sm rounded-lg border border-outline-variant text-on-surface font-label-md hover:bg-surface-container-high transition-colors">
+                        Manage Coupon
+                    </button>
+<button class="flex-1 md:flex-none px-md py-sm rounded-lg bg-primary text-on-primary-fixed font-label-md hover:bg-primary-fixed-dim transition-colors flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined" style="font-size: 18px;">edit</span> Edit
+                    </button>
+</div>
+</div>
+<!-- Campaign Hero Bento -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Hero Info -->
+<div class="md:col-span-2 glass-panel rounded-xl p-lg flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-sm mb-sm">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-sm rounded-lg">stars</span>
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">FIRST_ORDER</span>
+</div>
+<h2 class="font-display-lg-mobile md:font-display-lg text-on-surface mb-xs">Fresh Start</h2>
+<p class="font-body-lg text-primary">20% OFF</p>
+</div>
+<div class="relative z-10 mt-xl flex items-center gap-md text-label-md text-on-surface-variant">
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined" style="font-size: 16px;">calendar_today</span> Aug 25 - Sep 15, 2026</span>
+</div>
+</div>
+<!-- Financial Impact -->
+<div class="glass-panel rounded-xl p-lg flex flex-col justify-between glow-border transition-all">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-md">Financial Impact</h3>
+<div class="space-y-sm">
+<div class="flex justify-between items-center border-b border-surface-container-high pb-sm">
+<span class="text-label-md text-on-surface-variant">Gross Order Value</span>
+<span class="font-label-md text-on-surface">₹3,36,800</span>
+</div>
+<div class="flex justify-between items-center border-b border-surface-container-high pb-sm">
+<span class="text-label-md text-error">Discount Given</span>
+<span class="font-label-md text-error">-₹42,600</span>
+</div>
+<div class="flex justify-between items-center pt-xs">
+<span class="text-label-md text-on-surface font-bold">Net Order Value</span>
+<span class="font-headline-md text-primary font-bold">₹2,94,200</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Performance Summary Grid -->
+<div class="grid grid-cols-2 md:grid-cols-5 gap-md">
+<div class="glass-panel rounded-lg p-md">
+<p class="text-caption text-on-surface-variant mb-xs">Uses</p>
+<p class="font-headline-md text-on-surface">842</p>
+</div>
+<div class="glass-panel rounded-lg p-md">
+<p class="text-caption text-on-surface-variant mb-xs">Eligible</p>
+<p class="font-headline-md text-on-surface">4,200</p>
+</div>
+<div class="glass-panel rounded-lg p-md">
+<p class="text-caption text-on-surface-variant mb-xs">Conversion</p>
+<p class="font-headline-md text-primary">20%</p>
+</div>
+<div class="glass-panel rounded-lg p-md">
+<p class="text-caption text-on-surface-variant mb-xs">Discount Value</p>
+<p class="font-headline-md text-on-surface">₹42,600</p>
+</div>
+<div class="glass-panel rounded-lg p-md">
+<p class="text-caption text-on-surface-variant mb-xs">Orders</p>
+<p class="font-headline-md text-on-surface">842</p>
+</div>
+</div>
+<!-- Details Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Targeting & Eligibility -->
+<div class="glass-panel rounded-xl p-lg space-y-md">
+<h3 class="font-headline-md text-headline-md text-on-surface border-b border-surface-container-low pb-sm">Targeting &amp; Eligibility</h3>
+<div class="grid grid-cols-3 gap-sm items-start py-sm border-b border-surface-container-low/50">
+<span class="text-label-md text-on-surface-variant col-span-1">Eligibility</span>
+<div class="col-span-2 space-y-xs">
+<span class="inline-block px-sm py-xs bg-surface-container rounded text-label-md text-on-surface">New Customers</span>
+<span class="inline-block px-sm py-xs bg-surface-container rounded text-label-md text-on-surface">First Order Only</span>
+<span class="block text-caption text-on-surface-variant mt-1">Min Order: ₹399</span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-sm items-start py-sm border-b border-surface-container-low/50">
+<span class="text-label-md text-on-surface-variant col-span-1">Services</span>
+<div class="col-span-2 flex flex-wrap gap-xs">
+<span class="px-sm py-xs bg-tertiary-container/20 text-tertiary rounded text-label-md">Laundry</span>
+<span class="px-sm py-xs bg-tertiary-container/20 text-tertiary rounded text-label-md">Shoes</span>
+<span class="px-sm py-xs bg-tertiary-container/20 text-tertiary rounded text-label-md">Helmets</span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-sm items-start py-sm">
+<span class="text-label-md text-on-surface-variant col-span-1">Area</span>
+<div class="col-span-2">
+<span class="flex items-center gap-xs text-label-md text-on-surface">
+<span class="material-symbols-outlined" style="font-size: 16px;">location_on</span> Chennai
+                            </span>
+</div>
+</div>
+</div>
+<!-- Usage Limits & Coupon -->
+<div class="glass-panel rounded-xl p-lg space-y-md">
+<h3 class="font-headline-md text-headline-md text-on-surface border-b border-surface-container-low pb-sm">Configuration</h3>
+<div class="p-md bg-surface-container-low rounded-lg border border-outline-variant/30 flex justify-between items-center mb-md">
+<div>
+<p class="text-caption text-on-surface-variant mb-xs">Master Coupon Code</p>
+<p class="font-headline-md text-primary font-mono tracking-widest">FRESH20</p>
+</div>
+<span class="px-sm py-1 rounded-full bg-primary/10 text-primary font-label-md text-xs border border-primary/30 flex items-center gap-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> ACTIVE
+                        </span>
+</div>
+<div class="space-y-sm">
+<div class="flex justify-between items-center text-label-md">
+<span class="text-on-surface-variant">Per Customer Limit</span>
+<span class="text-on-surface font-bold">1</span>
+</div>
+<div class="space-y-xs pt-sm">
+<div class="flex justify-between items-center text-label-md">
+<span class="text-on-surface-variant">Total Campaign Limit</span>
+<span class="text-on-surface">842 / 2,000 used</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 42.1%;"></div>
+</div>
+<p class="text-caption text-on-surface-variant text-right">1,158 remaining</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Usage Table -->
+<div class="glass-panel rounded-xl overflow-hidden">
+<div class="p-lg border-b border-surface-container-low flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface">Recent Usage</h3>
+<button class="text-primary font-label-md hover:text-primary-fixed-dim transition-colors text-sm">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-label-md text-on-surface-variant border-b border-surface-container-high">
+<th class="p-md font-medium">Customer</th>
+<th class="p-md font-medium">Order ID</th>
+<th class="p-md font-medium">Discount</th>
+<th class="p-md font-medium">Date</th>
+</tr>
+</thead>
+<tbody class="text-body-md text-on-surface divide-y divide-surface-container-low">
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="p-md flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-md text-xs">RJ</div>
+                                    Rahul J.
+                                </td>
+<td class="p-md font-mono text-sm text-primary">#ORD-842</td>
+<td class="p-md text-error">-₹79.80</td>
+<td class="p-md text-on-surface-variant text-sm">Today, 14:30</td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="p-md flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-label-md text-xs">SK</div>
+                                    Sneha K.
+                                </td>
+<td class="p-md font-mono text-sm text-primary">#ORD-841</td>
+<td class="p-md text-error">-₹120.00</td>
+<td class="p-md text-on-surface-variant text-sm">Today, 11:15</td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="p-md flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-md text-xs">AM</div>
+                                    Arun M.
+                                </td>
+<td class="p-md font-mono text-sm text-primary">#ORD-840</td>
+<td class="p-md text-error">-₹85.50</td>
+<td class="p-md text-on-surface-variant text-sm">Yesterday, 18:45</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+</div>
+</body></html>

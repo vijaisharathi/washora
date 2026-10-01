@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cart Overview - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-container": "#eed9ff",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "surface-container": "#201f20",
+                      "inverse-primary": "#8422dc",
+                      "electric-violet": "#8a2be2",
+                      "on-background": "#e5e2e3",
+                      "error-container": "#93000a",
+                      "inverse-surface": "#e5e2e3",
+                      "surface-tint": "#dcb8ff",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "on-secondary-container": "#b9b8ba",
+                      "on-surface-variant": "#cfc2d7",
+                      "surface-container-high": "#2a2a2b",
+                      "on-tertiary-container": "#e3e0e2",
+                      "on-error-container": "#ffdad6",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "on-surface": "#e5e2e3",
+                      "on-primary-fixed": "#2c0051",
+                      "outline-variant": "#4c4354",
+                      "tertiary-fixed": "#e4e2e4",
+                      "on-tertiary": "#303032",
+                      "on-secondary-fixed-variant": "#474648",
+                      "secondary-fixed": "#e4e2e4",
+                      "primary": "#dcb8ff",
+                      "secondary-container": "#49494b",
+                      "on-secondary": "#303032",
+                      "on-error": "#690005",
+                      "success-green": "#81C784",
+                      "error": "#ffb4ab",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "inverse-on-surface": "#313031",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "tertiary-container": "#646365",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "tertiary": "#c8c6c8",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "on-primary": "#480081",
+                      "surface-container-low": "#1c1b1c",
+                      "primary-fixed": "#efdbff",
+                      "surface-bright": "#39393a",
+                      "error-red": "#ffb4ab",
+                      "outline": "#988ca0",
+                      "secondary": "#c8c6c8",
+                      "surface-dim": "#131314",
+                      "background": "#131314",
+                      "primary-container": "#8a2be2",
+                      "surface": "#131314",
+                      "surface-container-lowest": "#0e0e0f",
+                      "surface-container-highest": "#353436",
+                      "surface-variant": "#353436",
+                      "success-bg": "#1A3D24"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "16px",
+                      "sm": "8px",
+                      "3xl": "64px",
+                      "2xl": "48px",
+                      "xs": "4px",
+                      "xl": "32px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "h3": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "mono-display": [
+                              "monospace"
+                      ],
+                      "h1": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Geist', sans-serif;
+        }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4c4354;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #988ca0;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:flex-row antialiased">
+<!-- TopAppBar (Web) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-xl h-20 bg-surface/80 backdrop-blur-md hidden md:flex border-b border-outline-variant/30">
+<div class="flex items-center gap-4">
+<span class="font-h1 text-h1 font-bold text-electric-violet">Anything Clean</span>
+</div>
+<div class="flex gap-4">
+<button class="text-on-surface-variant font-medium hover:text-primary transition-colors scale-95 duration-200 p-2">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<button class="text-on-surface-variant font-medium hover:text-primary transition-colors scale-95 duration-200 p-2">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- SideNavBar (Web) -->
+<nav class="fixed left-0 top-0 h-full z-40 flex flex-col py-lg bg-surface-container-low border-r border-outline-variant/30 w-64 hidden md:flex pt-28">
+<div class="px-lg mb-8">
+<h2 class="font-h3 text-h3 font-bold text-on-surface">Booking Portal</h2>
+<p class="font-caption text-caption text-on-surface-variant">Marketplace</p>
+</div>
+<div class="flex-1 px-md flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-all rounded-lg font-label-md text-label-md translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="cleaning_services">cleaning_services</span>
+                Service
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-all rounded-lg font-label-md text-label-md translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+                Location
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-all rounded-lg font-label-md text-label-md translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+                Schedule
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary/10 text-primary font-bold rounded-lg font-label-md text-label-md translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_basket" style="font-variation-settings: 'FILL' 1;">shopping_basket</span>
+                Cart
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-all rounded-lg font-label-md text-label-md translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+                Payment
+            </a>
+</div>
+<div class="px-md mt-auto flex flex-col gap-2 mb-4">
+<button class="w-full py-3 bg-electric-violet text-on-primary-container font-label-md text-label-md font-bold rounded-lg shadow-lg shadow-primary/20 hover:bg-inverse-primary transition-colors">
+                Book Now
+            </button>
+</div>
+<div class="px-md border-t border-outline-variant/30 pt-4 flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="help">help</span>
+                Support
+            </a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="settings">settings</span>
+                Settings
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 pt-6 md:pt-28 px-md md:px-xl pb-32 md:pb-xl max-w-[1200px] mx-auto w-full">
+<!-- Progress Indicator -->
+<div class="mb-lg">
+<div class="flex items-center justify-between relative">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-0.5 bg-outline-variant/30 z-0"></div>
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-3/4 h-0.5 bg-primary z-0"></div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary-fixed flex items-center justify-center font-bold font-label-md">
+<span class="material-symbols-outlined text-sm">check</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant hidden md:block">Service</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary-fixed flex items-center justify-center font-bold font-label-md">
+<span class="material-symbols-outlined text-sm">check</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant hidden md:block">Location</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary-fixed flex items-center justify-center font-bold font-label-md">
+<span class="material-symbols-outlined text-sm">check</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant hidden md:block">Schedule</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-electric-violet text-white flex items-center justify-center font-bold font-label-md shadow-lg shadow-primary/20">
+                        4
+                    </div>
+<span class="font-caption text-caption text-primary font-bold hidden md:block">Cart</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/50 text-on-surface-variant flex items-center justify-center font-bold font-label-md">
+                        5
+                    </div>
+<span class="font-caption text-caption text-on-surface-variant hidden md:block">Payment</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-lg items-start">
+<!-- Left Column: Cart Details -->
+<div class="w-full lg:w-2/3 flex flex-col gap-lg">
+<div class="flex items-baseline justify-between mb-2">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Your Cart <span class="text-on-surface-variant text-h3 font-normal">(1 item)</span></h1>
+</div>
+<!-- Service Card -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md md:p-lg flex flex-col md:flex-row gap-md">
+<div class="w-24 h-24 rounded-lg bg-surface-container-high flex-shrink-0 relative overflow-hidden border border-outline-variant/30">
+<div class="bg-cover bg-center w-full h-full" data-alt="A clean, modern product shot of high-end sneakers sitting on a pristine surface. The lighting is soft and directional, creating a sleek, premium aesthetic typical of dark-mode technical interfaces. Soft electric violet ambient glow highlights the edges of the shoes, reflecting the Lumina brand style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAXJTAPCXaNYpKcMJIXXPsh2kAn50AKavodLVhj7JsCDc5wivxGh1Lr_2fdp8DdtwNp169yyYLT5btiCl5Q6ltsYBDw85QftzPSROAS3f6EmcZuTgDpuQpiTzq0PzuXwY_CLDZbk6Qxq5QDN38DytC2kd6G_ZyTAEg7kibtK-m6dCZ1ILtyBhyxgPTCi0a9fX0tHuNga6xxQiGBvbaKbI_JkH3P-ORx6x7WbDo4XI_Dvmd2aZfFdXcTpg')"></div>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-h3 text-h3 text-on-surface mb-1">Sneaker Deep Clean</h3>
+<p class="font-label-md text-label-md text-primary mb-2">Premium Sneaker Clean Tier</p>
+</div>
+<div class="text-right">
+<span class="font-h3 text-h3 text-on-surface">₹449</span>
+</div>
+</div>
+<div class="flex items-center gap-2 font-caption text-caption text-on-surface-variant mb-4">
+<span class="material-symbols-outlined text-sm" data-icon="storefront">storefront</span>
+                                CleanX Service Center
+                                <span class="flex items-center text-success-green ml-2">
+                                    4.9 <span class="material-symbols-outlined text-xs ml-0.5" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/30">
+<div class="flex items-center gap-3">
+<span class="font-label-md text-label-md text-on-surface-variant">Qty: 1 (1 pair)</span>
+</div>
+<div class="flex gap-4">
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span> Edit
+                                </button>
+<button class="font-label-md text-label-md text-error-red hover:text-error transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="delete">delete</span> Remove
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Schedule Summary -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md md:p-lg flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<h3 class="font-h3 text-h3 text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="event">event</span>
+                            Schedule &amp; Location
+                        </h3>
+<button class="font-label-md text-label-md text-primary hover:text-primary-fixed transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span> Edit
+                        </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/30 flex items-start gap-3">
+<span class="material-symbols-outlined text-on-surface-variant mt-0.5" data-icon="schedule">schedule</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">September 1, 2024</p>
+<p class="font-caption text-caption text-on-surface-variant">10:00 AM – 12:00 PM</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/30 flex items-start gap-3">
+<span class="material-symbols-outlined text-on-surface-variant mt-0.5" data-icon="location_on">location_on</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Anna Nagar</p>
+<p class="font-caption text-caption text-on-surface-variant">Chennai, Tamil Nadu</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Add-ons Preview -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md md:p-lg flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<h3 class="font-label-md text-label-md font-bold text-on-surface">Add optional services</h3>
+<button class="font-label-md text-label-md text-primary hover:text-primary-fixed transition-colors flex items-center gap-1 font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span> Add More
+                        </button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div class="border border-outline-variant/50 rounded-lg p-3 flex justify-between items-center hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="font-label-md text-label-md text-on-surface-variant">Shoe Tree Insertion</span>
+<span class="font-label-md text-label-md text-on-surface">+ ₹99</span>
+</div>
+<div class="border border-outline-variant/50 rounded-lg p-3 flex justify-between items-center hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="font-label-md text-label-md text-on-surface-variant">Express Delivery (24h)</span>
+<span class="font-label-md text-label-md text-on-surface">+ ₹149</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Sticky Summary -->
+<div class="w-full lg:w-1/3">
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md md:p-lg sticky top-28 flex flex-col gap-6">
+<h3 class="font-h3 text-h3 text-on-surface border-b border-outline-variant/30 pb-4">Order Summary</h3>
+<div class="flex flex-col gap-3 font-body-md text-body-md">
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Service</span>
+<span class="text-on-surface">₹449</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Add-ons</span>
+<span class="text-on-surface">₹0</span>
+</div>
+<div class="flex justify-between items-center text-success-green">
+<span>Discount</span>
+<span>- ₹0</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Pickup</span>
+<span class="text-on-surface">₹0</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Delivery</span>
+<span class="text-on-surface">₹0</span>
+</div>
+</div>
+<!-- Coupon Section -->
+<div class="pt-4 border-t border-outline-variant/30">
+<label class="font-label-md text-label-md text-on-surface-variant block mb-2" for="coupon">Have a coupon?</label>
+<div class="flex gap-2">
+<input class="flex-1 bg-surface-container-low border border-outline-variant/50 rounded-lg px-3 py-2 text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body-md text-body-md" id="coupon" placeholder="Enter code" type="text"/>
+<button class="px-4 py-2 bg-surface-container-high border border-outline-variant hover:bg-surface-bright text-on-surface rounded-lg font-label-md text-label-md transition-colors">
+                                Apply
+                            </button>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/30 flex justify-between items-center">
+<span class="font-h3 text-h3 text-on-surface">Estimated Total</span>
+<span class="font-headline-lg text-headline-lg text-primary">₹449</span>
+</div>
+<button class="w-full py-4 bg-electric-violet text-white font-label-md text-label-md font-bold rounded-lg shadow-lg shadow-primary/20 hover:bg-inverse-primary transition-colors mt-2">
+                        Continue to Checkout
+                    </button>
+<div class="flex items-center justify-center gap-2 font-caption text-caption text-on-surface-variant mt-2">
+<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
+                        Secure Checkout
+                    </div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-md py-sm bg-surface-container border-t border-outline-variant/30 shadow-lg shadow-primary/5 rounded-t-xl md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-highest rounded-lg transition-colors scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-md-mobile text-label-md-mobile">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl p-2 scale-90 duration-150 shadow-md shadow-primary/10" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="event_note" style="font-variation-settings: 'FILL' 1;">event_note</span>
+<span class="font-label-md-mobile text-label-md-mobile font-bold">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-highest rounded-lg transition-colors scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-md-mobile text-label-md-mobile">Messages</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-highest rounded-lg transition-colors scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-md-mobile text-label-md-mobile">Profile</span>
+</a>
+</nav>
+</body></html>

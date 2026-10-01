@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Incentives Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e5e2e3",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#efdbff",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-variant": "#353436",
+                        "primary": "#dcb8ff",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "secondary": "#c8c6c8",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-dim": "#131314",
+                        "on-tertiary": "#303032",
+                        "surface": "#131314",
+                        "surface-container": "#201f20",
+                        "primary-container": "#8a2be2",
+                        "background": "#131314",
+                        "surface-container-highest": "#353436",
+                        "tertiary": "#c8c6c8",
+                        "surface-container-high": "#2a2a2b",
+                        "surface-tint": "#dcb8ff",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-surface-variant": "#cfc2d7",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#313031",
+                        "tertiary-container": "#646365",
+                        "on-secondary-container": "#b7b4b7",
+                        "secondary-container": "#474649",
+                        "outline-variant": "#4c4354",
+                        "inverse-primary": "#8422dc",
+                        "on-primary-container": "#eed9ff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-primary": "#480081",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#2c0051",
+                        "on-surface": "#e5e2e3",
+                        "tertiary-fixed": "#e4e2e4",
+                        "surface-container-low": "#1c1b1c",
+                        "outline": "#988ca0",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-secondary-fixed-variant": "#474649",
+                        "secondary-fixed": "#e5e1e4",
+                        "surface-bright": "#3a393a",
+                        "on-secondary": "#303032"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "3xl": "64px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "caption": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        .glass-panel { background: rgba(18, 18, 20, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .glow-border { position: relative; }
+        .glow-border::before { content: ''; position: absolute; inset: -1px; border-radius: inherit; padding: 1px; background: linear-gradient(to bottom right, rgba(220, 184, 255, 0.3), transparent); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen pb-24 md:hidden">
+<!-- TopAppBar (From JSON) -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/5 flex items-center justify-between px-md h-16 max-w-7xl mx-auto">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Incentives</h1>
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 transition-transform relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+</header>
+<main class="pt-24 px-5">
+<!-- Tabs -->
+<div class="flex space-x-2 mb-lg bg-surface-container rounded-lg p-1">
+<button class="flex-1 py-2 text-center rounded-md bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold transition-all">Active</button>
+<button class="flex-1 py-2 text-center rounded-md text-on-surface-variant font-label-md text-label-md hover:bg-surface-variant/50 transition-all">Completed</button>
+<button class="flex-1 py-2 text-center rounded-md text-on-surface-variant font-label-md text-label-md hover:bg-surface-variant/50 transition-all">Expired</button>
+</div>
+<!-- Featured Challenge -->
+<section class="mb-lg">
+<div class="glass-panel glow-border rounded-xl p-lg relative overflow-hidden">
+<!-- Abstract Background Detail -->
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
+<div class="flex justify-between items-start mb-md relative z-10">
+<div>
+<span class="inline-block px-2 py-1 bg-primary/20 text-primary font-caption text-caption rounded-sm mb-2">Featured</span>
+<h2 class="font-headline-md text-headline-md leading-tight text-on-surface font-semibold">Weekend Delivery Challenge</h2>
+</div>
+<div class="text-right">
+<span class="block font-headline-md text-headline-md text-primary font-bold">₹500</span>
+<span class="font-caption text-caption text-on-surface-variant">Bonus</span>
+</div>
+</div>
+<div class="mb-sm relative z-10">
+<div class="flex justify-between font-label-md text-label-md mb-2">
+<span class="text-on-surface-variant">Progress</span>
+<span class="text-primary font-semibold">12 / 20</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-2 rounded-full w-[60%] shadow-[0_0_10px_rgba(220,184,255,0.5)]"></div>
+</div>
+</div>
+<div class="flex items-center text-error font-caption text-caption relative z-10 mt-md">
+<span class="material-symbols-outlined text-[16px] mr-1">timer</span>
+<span>Ends today</span>
+</div>
+</div>
+</section>
+<!-- Other Active Incentives -->
+<section>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-md ml-1">Other Active</h3>
+<div class="space-y-md">
+<!-- List Item 1 -->
+<div class="bg-surface rounded-lg p-md flex items-center justify-between border border-white/5 active:scale-[0.98] transition-transform">
+<div class="flex-1">
+<h4 class="font-body-lg text-body-lg text-on-surface font-medium mb-1">Complete 10 Deliveries</h4>
+<div class="flex items-center space-x-3">
+<span class="font-label-md text-label-md text-on-surface-variant">7 / 10</span>
+<div class="w-20 bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-1.5 rounded-full w-[70%]"></div>
+</div>
+</div>
+</div>
+<div class="text-right pl-md border-l border-white/10">
+<span class="block font-body-lg text-body-lg text-primary font-semibold">₹200</span>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="bg-surface rounded-lg p-md flex items-center justify-between border border-white/5 active:scale-[0.98] transition-transform relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary/50"></div>
+<div class="flex-1 pl-2">
+<div class="flex items-center space-x-2 mb-1">
+<h4 class="font-body-lg text-body-lg text-on-surface font-medium">Peak Hour Bonus</h4>
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Active now</span>
+</div>
+<div class="text-right pl-md">
+<span class="block font-body-lg text-body-lg text-primary font-semibold">+₹20</span>
+<span class="font-caption text-caption text-on-surface-variant">/delivery</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (From JSON) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center py-sm px-xs pb-safe bg-surface/90 dark:bg-surface/90 backdrop-blur-xl border-t border-white/5 shadow-[0_-4px_20px_rgba(0,0,0,0.4)] z-50 rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded-lg transition-colors active:scale-90 duration-200 p-2 w-16" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-md text-[10px] leading-tight">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded-lg transition-colors active:scale-90 duration-200 p-2 w-16" href="#">
+<span class="material-symbols-outlined mb-1">local_shipping</span>
+<span class="font-label-md text-[10px] leading-tight">Deliveries</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold hover:bg-surface-variant/20 rounded-lg transition-colors active:scale-90 duration-200 p-2 w-16" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="font-label-md text-[10px] leading-tight">Earnings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded-lg transition-colors active:scale-90 duration-200 p-2 w-16" href="#">
+<span class="material-symbols-outlined mb-1">notifications</span>
+<span class="font-label-md text-[10px] leading-tight">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded-lg transition-colors active:scale-90 duration-200 p-2 w-16" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-md text-[10px] leading-tight">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anything Clean - Provider Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#1c1b1c",
+                        "on-secondary-container": "#b9b8ba",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-primary-fixed": "#2c0051",
+                        "secondary": "#c8c6c8",
+                        "success-bg": "#1A3D24",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "outline": "#988ca0",
+                        "on-surface-variant": "#cfc2d7",
+                        "success-green": "#81C784",
+                        "primary": "#dcb8ff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-container-highest": "#353436",
+                        "surface": "#131314",
+                        "surface-bright": "#39393a",
+                        "on-secondary": "#303032",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#313031",
+                        "primary-container": "#8a2be2",
+                        "error-red": "#ffb4ab",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-background": "#e5e2e3",
+                        "surface-variant": "#353436",
+                        "inverse-surface": "#e5e2e3",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "surface-container-high": "#2a2a2b",
+                        "on-error": "#690005",
+                        "on-surface": "#e5e2e3",
+                        "surface-dim": "#131314",
+                        "error-container": "#93000a",
+                        "on-tertiary": "#303032",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "outline-variant": "#4c4354",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-primary": "#480081",
+                        "electric-violet": "#8a2be2",
+                        "on-secondary-fixed-variant": "#474648",
+                        "secondary-fixed": "#e4e2e4",
+                        "background": "#131314",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-tint": "#dcb8ff",
+                        "secondary-container": "#49494b",
+                        "inverse-primary": "#8422dc",
+                        "tertiary": "#c8c6c8",
+                        "primary-fixed": "#efdbff",
+                        "on-primary-container": "#eed9ff",
+                        "tertiary-container": "#646365",
+                        "surface-container": "#201f20",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-tertiary-fixed-variant": "#474648"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "3xl": "64px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "caption": ["Geist"],
+                        "h1": ["Geist"],
+                        "label-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "h3": ["Geist"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="w-64 h-full fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant/30 flex flex-col h-screen py-lg px-md z-50">
+<div class="mb-xl px-md">
+<h1 class="font-h1 text-h1 font-bold text-electric-violet">Anything Clean</h1>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">Provider Portal</p>
+</div>
+<ul class="flex flex-col gap-sm flex-1">
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="star">star</span>
+<span class="font-label-md text-label-md">Reviews</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-label-md text-label-md">Notifications</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-primary/10 text-primary font-bold hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto">
+<button class="w-full mb-lg py-sm px-md rounded-lg bg-electric-violet text-on-primary font-label-md text-label-md font-bold shadow-lg shadow-primary/20 hover:bg-primary-container transition-colors active:scale-95 duration-150">
+                Upgrade Plan
+            </button>
+<ul class="flex flex-col gap-sm">
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-label-md text-label-md">Help Center</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">Sign Out</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-256px)] h-16 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-xl z-40">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="search">search</span>
+<input class="bg-transparent border-none text-on-surface focus:ring-0 font-body-md text-body-md placeholder:text-on-surface-variant/50 w-64" placeholder="Search settings..." type="text"/>
+</div>
+<div class="flex items-center gap-lg">
+<h2 class="font-h3 text-h3 font-bold text-on-surface hidden md:block">Provider Dashboard</h2>
+<div class="flex items-center gap-md text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-opacity" data-icon="chat_bubble">chat_bubble</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-opacity" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 mt-16 p-xl w-full max-w-[1200px] mx-auto pb-3xl">
+<header class="mb-xl flex justify-between items-end">
+<div>
+<h2 class="font-display-lg text-display-lg text-on-surface mb-sm">Settings</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage your account, business preferences, and provider configurations.</p>
+</div>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Settings Navigation Rail -->
+<div class="md:col-span-3">
+<nav class="sticky top-24 flex flex-col gap-sm">
+<a class="px-md py-sm rounded-lg bg-surface-container text-primary font-label-md text-label-md font-bold border border-outline-variant/20 transition-colors" href="#account">ACCOUNT</a>
+<a class="px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container/50 font-label-md text-label-md transition-colors" href="#business">BUSINESS</a>
+<a class="px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container/50 font-label-md text-label-md transition-colors" href="#finance">FINANCE</a>
+<a class="px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container/50 font-label-md text-label-md transition-colors" href="#communication">COMMUNICATION</a>
+<a class="px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container/50 font-label-md text-label-md transition-colors" href="#support">SUPPORT</a>
+<a class="px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container/50 font-label-md text-label-md transition-colors mt-lg" href="#legal">LEGAL</a>
+</nav>
+</div>
+<!-- Settings Content Area -->
+<div class="md:col-span-9 flex flex-col gap-2xl">
+<!-- ACCOUNT GROUP -->
+<section class="scroll-mt-24" id="account">
+<h3 class="font-h3 text-h3 text-primary mb-md border-b border-outline-variant/30 pb-sm">Account</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="bg-surface-container rounded-xl p-lg border border-outline-variant/20 hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="flex items-center gap-md mb-md">
+<span class="material-symbols-outlined text-electric-violet" data-icon="person">person</span>
+<h4 class="font-label-md text-label-md font-bold text-on-surface group-hover:text-primary transition-colors">Profile</h4>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Update your personal information and contact details.</p>
+</div>
+<div class="bg-surface-container rounded-xl p-lg border border-outline-variant/20 hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="flex items-center gap-md mb-md">
+<span class="material-symbols-outlined text-electric-violet" data-icon="storefront">storefront</span>
+<h4 class="font-label-md text-label-md font-bold text-on-surface group-hover:text-primary transition-colors">Business Profile</h4>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Manage your public-facing business identity and bio.</p>
+</div>
+<div class="bg-surface-container rounded-xl p-lg border border-outline-variant/20 hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="flex items-center gap-md mb-md">
+<span class="material-symbols-outlined text-electric-violet" data-icon="verified">verified</span>
+<h4 class="font-label-md text-label-md font-bold text-on-surface group-hover:text-primary transition-colors">KYC Verification</h4>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Submit documents to maintain verified provider status.</p>
+<span class="inline-block mt-sm px-2 py-1 rounded-full bg-success-bg text-success-green font-caption text-[10px] font-bold tracking-widest uppercase">Verified</span>
+</div>
+<div class="bg-surface-container rounded-xl p-lg border border-outline-variant/20 hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="flex items-center gap-md mb-md">
+<span class="material-symbols-outlined text-electric-violet" data-icon="security">security</span>
+<h4 class="font-label-md text-label-md font-bold text-on-surface group-hover:text-primary transition-colors">Account &amp; Security</h4>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Password, 2FA, and active session management.</p>
+</div>
+</div>
+</section>
+<!-- BUSINESS GROUP -->
+<section class="scroll-mt-24" id="business">
+<h3 class="font-h3 text-h3 text-primary mb-md border-b border-outline-variant/30 pb-sm">Business</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="bg-surface-container rounded-xl p-lg border border-outline-variant/20 hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="flex items-center gap-md mb-md">
+<span class="material-symbols-outlined text-electric-violet" data-icon="cleaning_services">cleaning_services</span>
+<h4 class="font-label-md text-label-md font-bold text-on-surface group-hover:text-primary transition-colors">Services</h4>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Configure offered services, pricing, and add-ons.</p>
+</div>
+<div class="bg-surface-container rounded-xl p-lg border border-outline-variant/20 hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="flex items-center gap-md mb-md">
+<span class="material-symbols-outlined text-electric-violet" data-icon="calendar_month">calendar_month</span>
+<h4 class="font-label-md text-label-md font-bold text-on-surface group-hover:text-primary transition-colors">Availability</h4>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Set working hours, time off, and booking buffers.</p>
+</div>
+<div class="bg-surface-container rounded-xl p-lg border border-outline-variant/20 hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="flex items-center gap-md mb-md">
+<span class="material-symbols-outlined text-electric-violet" data-icon="map">map</span>
+<h4 class="font-label-md text-label-md font-bold text-on-surface group-hover:text-primary transition-colors">Service Areas</h4>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Define coverage radius and travel fee settings.</p>
+</div>
+<div class="bg-surface-container rounded-xl p-lg border border-outline-variant/20 hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="flex items-center gap-md mb-md">
+<span class="material-symbols-outlined text-electric-violet" data-icon="book_online">book_online</span>
+<h4 class="font-label-md text-label-md font-bold text-on-surface group-hover:text-primary transition-colors">Booking Preferences</h4>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Auto-accept settings, cancellation policies, and lead times.</p>
+</div>
+</div>
+</section>
+<!-- Logout Section -->
+<section class="mt-xl pt-xl border-t border-error-red/20">
+<div class="bg-error-container/5 rounded-xl p-lg border border-error-red/20 flex items-center justify-between">
+<div>
+<h4 class="font-label-md text-label-md font-bold text-error-red">Sign Out</h4>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">Securely end your current session on this device.</p>
+</div>
+<button class="px-lg py-sm rounded-lg border border-error-red text-error-red hover:bg-error-red/10 font-label-md text-label-md font-bold transition-colors" id="logoutBtn">
+                            Logout
+                        </button>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Logout Confirmation Modal (Hidden by default) -->
+<div class="fixed inset-0 bg-surface/80 backdrop-blur-sm z-[100] hidden flex items-center justify-center opacity-0 transition-opacity duration-300" id="logoutModal">
+<div class="bg-surface-container rounded-xl border border-outline-variant/30 p-xl w-full max-w-md shadow-2xl scale-95 transition-transform duration-300 transform" id="logoutModalContent">
+<h3 class="font-h3 text-h3 text-on-surface mb-sm">Confirm Sign Out</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">Are you sure you want to sign out of the Provider Portal? You will need to log back in to manage your bookings.</p>
+<div class="flex justify-end gap-md">
+<button class="px-md py-sm rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md transition-colors" id="cancelLogout">
+                    Cancel
+                </button>
+<button class="px-md py-sm rounded-lg bg-error-red text-on-error font-label-md text-label-md font-bold hover:bg-error-red/90 shadow-lg shadow-error-red/20 transition-colors">
+                    Sign Out
+                </button>
+</div>
+</div>
+</div>
+<script>
+        // Simple modal logic
+        const logoutBtn = document.getElementById('logoutBtn');
+        const logoutModal = document.getElementById('logoutModal');
+        const logoutModalContent = document.getElementById('logoutModalContent');
+        const cancelLogout = document.getElementById('cancelLogout');
+
+        const openModal = () => {
+            logoutModal.classList.remove('hidden');
+            // trigger reflow
+            void logoutModal.offsetWidth;
+            logoutModal.classList.remove('opacity-0');
+            logoutModalContent.classList.remove('scale-95');
+        };
+
+        const closeModal = () => {
+            logoutModal.classList.add('opacity-0');
+            logoutModalContent.classList.add('scale-95');
+            setTimeout(() => {
+                logoutModal.classList.add('hidden');
+            }, 300);
+        };
+
+        logoutBtn.addEventListener('click', openModal);
+        cancelLogout.addEventListener('click', closeModal);
+        logoutModal.addEventListener('click', (e) => {
+            if(e.target === logoutModal) closeModal();
+        });
+    </script>
+</body></html>

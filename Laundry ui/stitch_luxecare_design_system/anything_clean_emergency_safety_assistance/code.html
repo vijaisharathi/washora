@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Safety Assistance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#eed9ff",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#e3e0e2",
+                        "surface-container": "#201f20",
+                        "error-red": "#ffb4ab",
+                        "secondary": "#c8c6c8",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-container-high": "#2a2a2b",
+                        "secondary-fixed": "#e4e2e4",
+                        "tertiary-fixed": "#e4e2e4",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#efdbff",
+                        "outline": "#988ca0",
+                        "surface-dim": "#131314",
+                        "success-green": "#81C784",
+                        "inverse-primary": "#8422dc",
+                        "inverse-surface": "#e5e2e3",
+                        "secondary-container": "#49494b",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-primary": "#480081",
+                        "inverse-on-surface": "#313031",
+                        "background": "#131314",
+                        "on-background": "#e5e2e3",
+                        "surface-bright": "#39393a",
+                        "surface-container-highest": "#353436",
+                        "on-secondary-container": "#b9b8ba",
+                        "success-bg": "#1A3D24",
+                        "on-surface": "#e5e2e3",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-primary-fixed": "#2c0051",
+                        "surface-container-low": "#1c1b1c",
+                        "on-secondary-fixed-variant": "#474648",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface": "#131314",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "tertiary-container": "#646365",
+                        "surface-tint": "#dcb8ff",
+                        "on-tertiary": "#303032",
+                        "surface-variant": "#353436",
+                        "tertiary": "#c8c6c8",
+                        "electric-violet": "#8a2be2",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "outline-variant": "#4c4354",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#dcb8ff",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-secondary": "#303032",
+                        "primary-container": "#8a2be2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "2xl": "48px",
+                        "3xl": "64px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Geist"],
+                        "caption": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "h3": ["Geist"],
+                        "display-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex justify-center">
+<div class="w-[390px] h-full min-h-screen relative overflow-hidden flex flex-col bg-surface-dim">
+<header class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-error/20 bg-error-container/10">
+<div class="flex justify-between items-center px-lg h-16 w-full max-w-[390px] mx-auto">
+<button class="text-on-surface hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<h1 class="font-h3 text-h3 font-bold text-error">Safety Assistance</h1>
+<div class="w-6"></div>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto px-md pt-24 pb-32">
+<div class="mb-lg">
+<p class="font-body-md text-body-md text-on-surface-variant text-center">
+                    If you feel unsafe, stop the delivery and get help.
+                </p>
+</div>
+<div class="space-y-sm flex flex-col">
+<button class="flex items-center justify-between p-md bg-surface-container rounded-lg border border-outline-variant/20 hover:border-error/50 hover:bg-error-container/5 transition-all w-full text-left group">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-error" data-icon="location_off">location_off</span>
+<span class="font-label-md text-label-md text-on-surface group-hover:text-error transition-colors">Unsafe Location</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-error transition-colors" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-md bg-surface-container rounded-lg border border-outline-variant/20 hover:border-error/50 hover:bg-error-container/5 transition-all w-full text-left group">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-error" data-icon="car_crash">car_crash</span>
+<span class="font-label-md text-label-md text-on-surface group-hover:text-error transition-colors">Vehicle Breakdown</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-error transition-colors" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-md bg-surface-container rounded-lg border border-outline-variant/20 hover:border-error/50 hover:bg-error-container/5 transition-all w-full text-left group">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-error" data-icon="minor_crash">minor_crash</span>
+<span class="font-label-md text-label-md text-on-surface group-hover:text-error transition-colors">Accident</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-error transition-colors" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-md bg-surface-container rounded-lg border border-outline-variant/20 hover:border-error/50 hover:bg-error-container/5 transition-all w-full text-left group">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-error" data-icon="warning">warning</span>
+<span class="font-label-md text-label-md text-on-surface group-hover:text-error transition-colors">Harassment</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-error transition-colors" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-md bg-surface-container rounded-lg border border-outline-variant/20 hover:border-error/50 hover:bg-error-container/5 transition-all w-full text-left group">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-error" data-icon="emergency">emergency</span>
+<span class="font-label-md text-label-md text-on-surface group-hover:text-error transition-colors">Emergency</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-error transition-colors" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-md bg-surface-container rounded-lg border border-outline-variant/20 hover:border-error/50 hover:bg-error-container/5 transition-all w-full text-left group">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-error" data-icon="report">report</span>
+<span class="font-label-md text-label-md text-on-surface group-hover:text-error transition-colors">Other Safety Issue</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-error transition-colors" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<div class="mt-xl flex flex-col gap-md">
+<button class="w-full py-md bg-error text-on-error font-h3 text-h3 rounded-lg shadow-lg shadow-error/20 active:scale-95 transition-transform flex justify-center items-center gap-sm">
+<span class="material-symbols-outlined" data-icon="phone_in_talk">phone_in_talk</span>
+                    Get Help
+                </button>
+<div class="flex gap-md w-full">
+<button class="flex-1 py-sm border border-outline-variant text-on-surface font-label-md text-label-md rounded-lg hover:bg-surface-container transition-colors active:scale-95 flex justify-center items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="support_agent">support_agent</span>
+                        Contact Support
+                    </button>
+<button class="flex-1 py-sm border border-outline-variant text-on-surface font-label-md text-label-md rounded-lg hover:bg-surface-container transition-colors active:scale-95 flex justify-center items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit_note">edit_note</span>
+                        Report Issue
+                    </button>
+</div>
+</div>
+</main>
+<nav class="fixed bottom-0 w-full z-50 border-t border-outline-variant/30 bg-surface-container-low max-w-[390px] mx-auto h-20 px-md pb-safe hidden">
+</nav>
+</div>
+</body></html>

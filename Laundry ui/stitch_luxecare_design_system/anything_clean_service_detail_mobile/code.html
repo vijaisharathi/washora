@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Sneaker Restoration - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary": "#303032",
+                        "tertiary": "#c8c6c8",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "secondary-fixed": "#e5e1e4",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-secondary-fixed-variant": "#474649",
+                        "error-container": "#93000a",
+                        "on-secondary": "#303032",
+                        "on-background": "#e5e2e3",
+                        "surface": "#131314",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-primary-container": "#eed9ff",
+                        "secondary": "#c8c6c8",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "outline-variant": "#4c4354",
+                        "secondary-container": "#474649",
+                        "tertiary-fixed": "#e4e2e4",
+                        "primary": "#dcb8ff",
+                        "surface-variant": "#353436",
+                        "inverse-surface": "#e5e2e3",
+                        "primary-container": "#8a2be2",
+                        "error": "#ffb4ab",
+                        "surface-container-lowest": "#0e0e0f",
+                        "surface-container-high": "#2a2a2b",
+                        "on-primary-fixed": "#2c0051",
+                        "outline": "#988ca0",
+                        "surface-bright": "#3a393a",
+                        "surface-dim": "#131314",
+                        "on-error": "#690005",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-secondary-container": "#b7b4b7",
+                        "on-surface": "#e5e2e3",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-tint": "#dcb8ff",
+                        "primary-fixed": "#efdbff",
+                        "tertiary-container": "#646365",
+                        "surface-container-highest": "#353436",
+                        "on-primary": "#480081",
+                        "surface-container-low": "#1c1b1c",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "surface-container": "#201f20",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "inverse-primary": "#8422dc",
+                        "on-error-container": "#ffdad6",
+                        "background": "#131314",
+                        "inverse-on-surface": "#313031"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "2xl": "48px",
+                        "3xl": "64px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "md": "16px"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "caption": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "body-lg": ["Geist"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Scrollbar hidden for carousels */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24 selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top App Bar (Task focused, so no shell nav) -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/5 h-16 flex items-center justify-between px-md shadow-sm">
+<button aria-label="Go back" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-high hover:bg-surface-variant transition-colors active:scale-95">
+<span class="material-symbols-outlined text-on-surface">arrow_back</span>
+</button>
+<div class="flex gap-sm">
+<button aria-label="Share" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-high hover:bg-surface-variant transition-colors active:scale-95">
+<span class="material-symbols-outlined text-on-surface">ios_share</span>
+</button>
+<button aria-label="Favorite" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-high hover:bg-surface-variant transition-colors active:scale-95">
+<span class="material-symbols-outlined text-on-surface">favorite_border</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pt-0">
+<!-- Hero Image -->
+<div class="relative w-full aspect-[4/5] md:aspect-video">
+<img alt="Sneaker Restoration Hero" class="absolute inset-0 w-full h-full object-cover" data-alt="A pair of extremely high-end, rare designer sneakers being meticulously restored. The lighting is dramatic, high-contrast studio lighting highlighting the texture of the leather and suede. The scene is set in a premium, minimalist workshop with dark, immersive tones and a subtle hint of violet ambient light. Professionalism and luxury are conveyed through crisp details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVM9rB1JFtYV76adwAPsSxgsldhO2AjiiNutjSMxasAFDLSgzu0X0zczG03yvhokC53SxbGWMGL8aJMgHTIEtZ0WTU3MP7hhxKN2HQaTl16OirosWtk1-MmwfV64wtB80aTfkEW-68mqAGuFUxTw5wscbFQ4TTAr5kSP84mCACecK9WO3lKuP5EYo7U8Pg_QSqPE5iZfRx3fevopiou5RYiSzG35gYshcx22PjtCDM8l2iB2yuwJq-QA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-md pb-lg">
+<div class="flex items-center gap-sm mb-xs">
+<span class="px-2 py-1 rounded-sm bg-primary-container/20 text-primary font-label-md text-caption uppercase tracking-wider backdrop-blur-md">Premium Care</span>
+<span class="flex items-center text-[#FFCC00] font-label-md text-label-md-mobile">
+<span class="material-symbols-outlined fill text-[16px] mr-1">star</span> 4.9 (128)
+                    </span>
+</div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-on-surface mb-sm">Sneaker Restoration</h1>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Complete deep clean, midsole unyellowing, crease reduction, and minor paint touch-ups for your grail pairs.</p>
+</div>
+</div>
+<!-- Pricing & Duration -->
+<div class="px-md py-lg border-b border-white/5 bg-surface-container-lowest">
+<div class="flex justify-between items-center mb-md">
+<div>
+<div class="font-caption text-caption text-on-surface-variant uppercase tracking-wider mb-xs">Starting at</div>
+<div class="font-headline-lg text-headline-lg-mobile text-on-surface">$85 <span class="font-body-md text-body-md text-on-surface-variant">/ pair</span></div>
+</div>
+<div class="text-right">
+<div class="font-caption text-caption text-on-surface-variant uppercase tracking-wider mb-xs">Est. Duration</div>
+<div class="flex items-center justify-end font-label-md text-label-md-mobile text-on-surface">
+<span class="material-symbols-outlined text-[18px] mr-1 text-on-surface-variant">schedule</span> 3-5 Days
+                    </div>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom CTA -->
+<div class="fixed bottom-0 left-0 w-full z-50 bg-surface-container/90 backdrop-blur-lg border-t border-white/10 p-md pb-safe shadow-[0_-4px_20px_rgba(138,43,226,0.1)]">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md-mobile h-14 rounded-full flex items-center justify-center gap-sm transition-transform active:scale-[0.98]">
+                Choose Provider
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</main>
+<script>
+        // Simple script to handle generic interactions if needed, though most is visual here
+    </script>
+</body></html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Support Ticket Details &amp; Resolution</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#ffdaba",
+                      "surface-dim": "#131314",
+                      "surface-bright": "#3a393a",
+                      "surface-container-low": "#1c1b1c",
+                      "secondary-container": "#573976",
+                      "primary": "#dcb8ff",
+                      "secondary": "#dcb8ff",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "on-background": "#e5e2e3",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "on-tertiary-fixed-variant": "#6a3b00",
+                      "on-surface-variant": "#cfc2d7",
+                      "surface": "#131314",
+                      "on-secondary-fixed": "#290947",
+                      "secondary-fixed": "#efdbff",
+                      "primary-container": "#8a2be2",
+                      "tertiary-fixed-dim": "#ffb873",
+                      "inverse-primary": "#8422dc",
+                      "surface-container-highest": "#353436",
+                      "on-secondary-fixed-variant": "#573976",
+                      "surface-container": "#201f20",
+                      "on-secondary-container": "#caa7ec",
+                      "tertiary": "#ffb873",
+                      "primary-fixed": "#efdbff",
+                      "error": "#ffb4ab",
+                      "secondary-fixed-dim": "#dcb8ff",
+                      "info": "#60a5fa",
+                      "on-tertiary-fixed": "#2d1600",
+                      "on-error-container": "#ffdad6",
+                      "on-primary-container": "#eed9ff",
+                      "on-surface": "#e5e2e3",
+                      "on-secondary": "#3f225e",
+                      "tertiary-fixed": "#ffdcbf",
+                      "outline": "#988ca0",
+                      "success": "#4ade80",
+                      "surface-container-lowest": "#0e0e0f",
+                      "surface-tint": "#dcb8ff",
+                      "on-primary": "#480081",
+                      "on-error": "#690005",
+                      "surface-variant": "#353436",
+                      "inverse-on-surface": "#313031",
+                      "on-primary-fixed": "#2c0051",
+                      "outline-variant": "#4c4354",
+                      "warning": "#fbbf24",
+                      "background": "#131314",
+                      "on-tertiary": "#4b2800",
+                      "surface-container-high": "#2a2a2b",
+                      "inverse-surface": "#e5e2e3",
+                      "error-container": "#93000a",
+                      "critical": "#f87171",
+                      "tertiary-container": "#935400"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "sidebar-width": "260px",
+                      "table-cell-padding": "12px",
+                      "gutter": "16px",
+                      "margin-desktop": "24px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Geist"],
+                      "body-lg": ["Geist"],
+                      "body-md": ["Geist"],
+                      "headline-md": ["Geist"],
+                      "label-sm": ["Geist"],
+                      "label-md": ["Geist"],
+                      "headline-lg": ["Geist"],
+                      "code": ["Geist"]
+              },
+              "fontSize": {
+                      "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                      "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                      "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                      "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                      "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                      "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                      "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                      "code": ["13px", { "lineHeight": "18px", "fontWeight": "400" }]
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-surface-container-lowest text-on-surface h-screen flex overflow-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 right-0 w-[calc(100%-260px)] h-16 bg-surface border-b border-outline-variant flex justify-between items-center px-margin-desktop z-20">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Dispute Resolution Hub</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative focus-within:ring-2 focus-within:ring-primary rounded-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="bg-surface-container-low border border-outline-variant rounded-full pl-10 pr-4 py-2 text-body-md text-on-surface focus:outline-none w-64 placeholder:text-on-surface-variant/50" placeholder="Search..." type="text"/>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<button class="p-2 hover:bg-surface-container-highest rounded-full transition-all text-on-surface-variant"><span class="material-symbols-outlined">notifications</span></button>
+<button class="p-2 hover:bg-surface-container-highest rounded-full transition-all text-on-surface-variant"><span class="material-symbols-outlined">dns</span></button>
+<button class="p-2 hover:bg-surface-container-highest rounded-full transition-all text-on-surface-variant"><span class="material-symbols-outlined">help_outline</span></button>
+</div>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Admin User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of an administrative user in a dark mode enterprise application setting. Soft rim lighting, high quality, neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJZdsQ1xG7pUqTRV-NO4ruYwmu63jY1O229qYcipARhfLJVm3TqPeBcZVm9sMexmfcnj2--JB3h9ySjzUZpmiyzaKP_r4cGBPyB6u2t0iBWrto43_gLIvrqYgldBYO7PsI63qOIFqKsc1g691DPgjOT3fFsKytfStA0o48ov46Ub_Hu2TU5vyQdpqMFxTJUZa_c5oLDqEk1Y-2iaEDidSabYBpU_i3NHEHlRcG4QBqo2KCtcM9evviVg"/>
+</div>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-lowest border-r border-outline-variant flex flex-col py-margin-desktop z-20">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container" data-weight="fill" style="font-variation-settings: 'FILL' 1;">admin_panel_settings</span>
+</div>
+<div>
+<h1 class="font-display-lg text-display-lg font-bold text-primary tracking-tight text-xl leading-none">ANYTHING CLEAN</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Super Admin Console</p>
+</div>
+</div>
+<div class="px-4 mb-4">
+<p class="font-label-sm text-label-sm text-on-surface-variant/70 uppercase tracking-wider pl-4 mb-2">Workspace</p>
+</div>
+<nav class="flex-1 px-3 space-y-1 overflow-y-auto">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-xl">gavel</span>
+<span class="font-body-md text-body-md">Disputes</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-xl">reviews</span>
+<span class="font-body-md text-body-md">Reviews</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg border-l-4 border-primary bg-secondary-container/30 text-on-surface font-semibold transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-xl text-primary" data-weight="fill" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-xl">store</span>
+<span class="font-body-md text-body-md">Vendors</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-xl">history</span>
+<span class="font-body-md text-body-md">Audit Logs</span>
+</a>
+</nav>
+<div class="mt-auto px-3 pt-4 border-t border-outline-variant mx-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-xl">logout</span>
+<span class="font-body-md text-body-md">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-[260px] mt-16 flex-1 h-[calc(100vh-64px)] overflow-y-auto bg-surface p-gutter">
+<!-- Header Section -->
+<div class="flex justify-between items-start mb-6">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="font-label-md text-label-md text-on-surface-variant">Support Ticket</span>
+<span class="text-on-surface-variant">•</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">SUP-2048</span>
+<div class="flex items-center gap-2 ml-4">
+<span class="px-2 py-0.5 rounded-full bg-info/10 text-info font-label-sm text-label-sm border border-info/20">IN_PROGRESS</span>
+<span class="px-2 py-0.5 rounded-full bg-critical/10 text-critical font-label-sm text-label-sm border border-critical/20">HIGH PRIORITY</span>
+</div>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Order has not arrived yet.</h2>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 rounded bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant text-on-surface font-label-md text-label-md transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">person_add</span> Assign
+                </button>
+<button class="px-4 py-2 rounded bg-error-container/20 hover:bg-error-container/30 border border-error/30 text-error font-label-md text-label-md transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">trending_up</span> Escalate
+                </button>
+<button class="p-2 rounded bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant text-on-surface transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- 3-Column Grid Layout -->
+<div class="grid grid-cols-12 gap-6 h-[calc(100%-80px)]">
+<!-- Left Column: Context & Metadata (3 columns) -->
+<div class="col-span-3 space-y-6 flex flex-col">
+<!-- Requester Info Card -->
+<div class="bg-surface-container-low rounded-xl border border-outline-variant p-4">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase mb-4">Requester</h3>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-on-surface-variant">person</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-bold text-on-surface">Arun Kumar</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Customer</p>
+</div>
+</div>
+</div>
+<!-- Issue Details Card -->
+<div class="bg-surface-container-low rounded-xl border border-outline-variant p-4">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase mb-4">Issue Details</h3>
+<div class="space-y-4">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Category</p>
+<p class="font-body-md text-body-md text-on-surface">Delivery Issue</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Related Order</p>
+<a class="font-body-md text-body-md text-primary hover:underline" href="#">#QH1024</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Middle Column: Conversation Thread (6 columns) -->
+<div class="col-span-6 bg-surface-container-low rounded-xl border border-outline-variant flex flex-col overflow-hidden">
+<div class="p-4 border-b border-outline-variant bg-surface-container-low flex justify-between items-center">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase">Conversation</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">history</span> Last updated 12 mins ago</span>
+</div>
+<!-- Messages Area -->
+<div class="flex-1 overflow-y-auto p-4 space-y-6">
+<!-- Customer Message -->
+<div class="flex gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container-high shrink-0 border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">person</span>
+</div>
+<div class="flex-1">
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-body-md text-body-md font-bold text-on-surface">Arun Kumar</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Today, 10:42 AM</span>
+</div>
+<div class="bg-surface-container p-3 rounded-lg rounded-tl-none border border-outline-variant">
+<p class="font-body-md text-body-md text-on-surface">Hi, my order #QH1024 was supposed to be delivered an hour ago but the app says it's still on the way. The driver isn't answering calls. Can you please check?</p>
+</div>
+</div>
+</div>
+<!-- System Event -->
+<div class="flex justify-center my-4">
+<div class="bg-surface-container-high px-3 py-1 rounded-full border border-outline-variant text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ticket automatically routed to Delivery Support Queue based on category.</span>
+</div>
+</div>
+</div>
+<!-- Composer Area -->
+<div class="p-4 bg-surface-container-low border-t border-outline-variant">
+<div class="relative">
+<textarea class="w-full bg-surface-container border border-outline-variant rounded-lg p-3 pt-3 pb-12 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary resize-none placeholder:text-on-surface-variant/50" placeholder="Type your response..." rows="3"></textarea>
+<div class="absolute bottom-3 left-3 flex gap-2">
+<button class="text-on-surface-variant hover:text-on-surface transition-colors p-1"><span class="material-symbols-outlined text-[20px]">attach_file</span></button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors p-1"><span class="material-symbols-outlined text-[20px]">format_bold</span></button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors p-1"><span class="material-symbols-outlined text-[20px]">format_list_bulleted</span></button>
+</div>
+<div class="absolute bottom-3 right-3">
+<button class="px-4 py-1.5 bg-primary text-on-primary rounded font-label-md text-label-md font-bold hover:bg-primary/90 transition-colors flex items-center gap-2">
+                                Send <span class="material-symbols-outlined text-[16px]">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Live Context & Actions (3 columns) -->
+<div class="col-span-3 space-y-6 flex flex-col">
+<!-- Context Widget -->
+<div class="bg-surface-container-low rounded-xl border border-outline-variant overflow-hidden flex flex-col h-1/2">
+<div class="p-3 border-b border-outline-variant bg-surface-container-high flex justify-between items-center">
+<h3 class="font-label-md text-label-md text-on-surface uppercase flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">local_shipping</span> Order Context</h3>
+</div>
+<div class="p-4 flex-1 overflow-y-auto space-y-4">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Order Status</span>
+<span class="px-2 py-0.5 rounded-full bg-warning/10 text-warning font-label-sm text-label-sm border border-warning/20">IN_TRANSIT</span>
+</div>
+<div class="h-[120px] bg-surface-container rounded-lg border border-outline-variant relative overflow-hidden">
+<!-- Placeholder for map -->
+<div class="bg-cover bg-center w-full h-full opacity-60" data-alt="A dark-themed stylized map interface showing a delivery route with a glowing indicator moving along a path in a futuristic city setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDOF98_J-V51pSwEnZulMKNuDpg09uhTqbGy1FQZulDk63kVt_jxWm4Ru9eET8piO7b1noKJPG5Rs-_BF5fSUtHcoM5ZkjCP5WPBwWRXElmhYXV_NiKNZdI6aThAoQgvWrpQ971kwV0uAJZJ75mrj2RTH8zAx47dhwPIkUbHAHULeLxpXLJNu5nGSXZZzdZsYHj8sp9NTBStL1F4P3RDwdssbjhc5o3XVI7vK0L9S3wmb8tWABQlVNRCA')"></div>
+<div class="absolute inset-0 flex items-center justify-center flex-col bg-surface/40 backdrop-blur-[2px]">
+<span class="font-label-sm text-label-sm font-bold text-on-surface drop-shadow-md">7 min ETA</span>
+</div>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-2">Delivery Partner</p>
+<div class="flex items-center gap-3 bg-surface-container p-2 rounded-lg border border-outline-variant">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center relative">
+<span class="material-symbols-outlined text-[16px] text-on-surface">directions_bike</span>
+<div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-success rounded-full border border-surface-container"></div>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-label-md text-on-surface truncate">Ravi Kumar</p>
+<p class="font-label-sm text-label-sm text-success truncate">Online</p>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[18px]">call</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Resolution Widget -->
+<div class="bg-surface-container-low rounded-xl border border-outline-variant flex flex-col h-1/2">
+<div class="p-3 border-b border-outline-variant bg-surface-container-high">
+<h3 class="font-label-md text-label-md text-on-surface uppercase">Resolution Actions</h3>
+</div>
+<div class="p-4 flex-1 flex flex-col space-y-3">
+<div class="space-y-2 mb-auto">
+<label class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+                                Assignment <span class="text-critical">*</span>
+</label>
+<div class="relative">
+<select class="w-full bg-surface-container border border-outline-variant rounded p-2 font-body-md text-body-md text-on-surface appearance-none focus:outline-none focus:border-primary">
+<option>Me (Current User)</option>
+<option>Delivery Support Team</option>
+<option>Tier 2 Escaltion</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">arrow_drop_down</span>
+</div>
+</div>
+<button class="w-full py-2 rounded bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant text-on-surface font-label-md text-label-md transition-colors text-left px-3 flex items-center justify-between">
+                            Mark Waiting for Customer <span class="material-symbols-outlined text-[18px] text-warning">pending_actions</span>
+</button>
+<button class="w-full py-2 rounded bg-success/10 hover:bg-success/20 border border-success/30 text-success font-label-md text-label-md transition-colors text-left px-3 flex items-center justify-between">
+                            Resolve Ticket <span class="material-symbols-outlined text-[18px]">check_circle</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

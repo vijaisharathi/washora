@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anything Clean - Shoe Care</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary": "#303032",
+                      "tertiary": "#c8c6c8",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "secondary-fixed": "#e5e1e4",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "on-secondary-fixed-variant": "#474649",
+                      "error-container": "#93000a",
+                      "on-secondary": "#303032",
+                      "on-background": "#e5e2e3",
+                      "surface": "#131314",
+                      "on-tertiary-container": "#e3e0e2",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "on-primary-container": "#eed9ff",
+                      "secondary": "#c8c6c8",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "outline-variant": "#4c4354",
+                      "secondary-container": "#474649",
+                      "tertiary-fixed": "#e4e2e4",
+                      "primary": "#dcb8ff",
+                      "surface-variant": "#353436",
+                      "inverse-surface": "#e5e2e3",
+                      "primary-container": "#8a2be2",
+                      "error": "#ffb4ab",
+                      "surface-container-lowest": "#0e0e0f",
+                      "surface-container-high": "#2a2a2b",
+                      "on-primary-fixed": "#2c0051",
+                      "outline": "#988ca0",
+                      "surface-bright": "#3a393a",
+                      "surface-dim": "#131314",
+                      "on-error": "#690005",
+                      "on-surface-variant": "#cfc2d7",
+                      "on-secondary-container": "#b7b4b7",
+                      "on-surface": "#e5e2e3",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "surface-tint": "#dcb8ff",
+                      "primary-fixed": "#efdbff",
+                      "tertiary-container": "#646365",
+                      "surface-container-highest": "#353436",
+                      "on-primary": "#480081",
+                      "surface-container-low": "#1c1b1c",
+                      "on-tertiary-fixed-variant": "#474649",
+                      "surface-container": "#201f20",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "inverse-primary": "#8422dc",
+                      "on-error-container": "#ffdad6",
+                      "background": "#131314",
+                      "inverse-on-surface": "#313031"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "2xl": "48px",
+                      "3xl": "64px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "lg": "24px",
+                      "xl": "32px",
+                      "md": "16px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "display-lg-mobile": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "44px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom, 20px); }
+        .tap-highlight-transparent { -webkit-tap-highlight-color: transparent; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md antialiased pb-24">
+<!-- Top App Bar (Mobile) -->
+<header class="sticky top-0 z-40 bg-surface/80 backdrop-blur-xl border-b border-white/5 md:hidden">
+<div class="flex items-center justify-between h-16 px-md">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-on-surface">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Shoe Care</h1>
+<div class="w-10"></div> <!-- Spacer -->
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative w-full h-[300px] md:hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent z-10"></div>
+<img class="w-full h-full object-cover" data-alt="A close-up, high-quality photograph of a professional cobbler carefully restoring a premium leather dress shoe. The lighting is moody and dramatic, focusing on the texture of the leather and the artisan's hands. The scene is set in a dimly lit workshop, embodying a sense of high-end craftsmanship and precision care, consistent with a luxury service aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8Wla7KUphi6C0SQLGe2FmSjT3I_e-R-ZQk0qipL_9X4ZhwnTvLDYgC1ZyrC19Cvue3XydUMuNMn7eI_aUiGwJrNs5Ek6eBt0YcrA9XuhpTGkM2sIz0rXePW7cgsHlc0Nw51RMQDVd6Ho5gw9SS0PavbiJJrsUgY9yPPHzJ2CChEJbqij4RipCghHrF8Ei_MF7a8hqoMaQGU6cPp_fbCMTi9Ond9P4aJED3CZpA7ohn9LAak_Wc6gWTg"/>
+<div class="absolute bottom-md left-md right-md z-20">
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-on-surface mb-xs">Premium Shoe Restoration</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Expert care for your favorite pairs.</p>
+</div>
+</section>
+<!-- Filter Chips -->
+<section class="mt-md mb-lg px-md md:hidden">
+<div class="flex overflow-x-auto no-scrollbar gap-sm pb-xs">
+<button class="whitespace-nowrap px-lg py-sm rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md transition-colors shadow-sm">All Services</button>
+<button class="whitespace-nowrap px-lg py-sm rounded-full bg-surface-container text-on-surface-variant border border-white/5 font-label-md text-label-md hover:bg-surface-container-high transition-colors">Sneaker Cleaning</button>
+<button class="whitespace-nowrap px-lg py-sm rounded-full bg-surface-container text-on-surface-variant border border-white/5 font-label-md text-label-md hover:bg-surface-container-high transition-colors">Leather Repair</button>
+<button class="whitespace-nowrap px-lg py-sm rounded-full bg-surface-container text-on-surface-variant border border-white/5 font-label-md text-label-md hover:bg-surface-container-high transition-colors">Sole Replacement</button>
+<button class="whitespace-nowrap px-lg py-sm rounded-full bg-surface-container text-on-surface-variant border border-white/5 font-label-md text-label-md hover:bg-surface-container-high transition-colors">Polishing</button>
+</div>
+</section>
+<!-- Service Cards (Bento Grid) -->
+<main class="px-md md:hidden flex flex-col gap-sm">
+<h3 class="font-headline-md text-headline-md mb-xs mt-sm text-on-surface">Popular Services</h3>
+<div class="grid grid-cols-2 gap-sm">
+<!-- Large Service Card -->
+<div class="col-span-2 relative h-48 rounded-xl overflow-hidden group tap-highlight-transparent active:scale-[0.98] transition-transform">
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent z-10 pointer-events-none"></div>
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A pair of pristine, high-end white luxury sneakers placed meticulously against a dark, minimalist background. The lighting is sharp and clinical, highlighting the flawless condition of the shoes. The image conveys a modern, hyper-clean aesthetic, representing a premium sneaker detailing service with a focus on absolute perfection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFu494WnpEpDQZOVR3U76_VeyvYBFJDT3Krp4DFhS0-BEZp2ZhR0WgybQ5ES7q49UXYY3lTP-_wIKyl0wJPGRatCAkBfhNtHFuqixFOXiXeA8-H8w2Y1dAZO_DncRK6gteWpSMuPr-WMp70U89kyzR4FE2_U22pa0jciNioJQeP-g2coK6q5QaMQTTqCee3MnGZzMzhCXp2V-jsj_yj-sjKTuLCZuWH13KNE7YXZ4XQda_YEhJcI34BQ"/>
+<div class="absolute bottom-0 left-0 p-md z-20 w-full">
+<h4 class="font-headline-md text-headline-md text-on-surface">Deep Clean</h4>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-1">Complete interior and exterior wash.</p>
+<div class="mt-sm flex justify-between items-center">
+<span class="font-label-md text-label-md text-primary bg-primary-container/20 px-sm py-xs rounded-md backdrop-blur-sm">From $45</span>
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-on-primary text-[20px]">add</span>
+</div>
+</div>
+</div>
+<!-- Subtle border glow -->
+<div class="absolute inset-0 border border-white/10 rounded-xl z-30 pointer-events-none mix-blend-overlay"></div>
+</div>
+<!-- Small Service Card 1 -->
+<div class="relative h-40 rounded-xl overflow-hidden bg-surface-container-low p-sm flex flex-col justify-between tap-highlight-transparent active:scale-[0.98] transition-transform shadow-sm border border-white/5">
+<div class="w-10 h-10 rounded-full bg-surface flex items-center justify-center mb-xs">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-xs">Stain Removal</h4>
+<p class="font-caption text-caption text-on-surface-variant">Targeted spot treatment.</p>
+</div>
+<div class="flex justify-between items-center mt-xs pt-xs border-t border-white/5">
+<span class="font-caption text-caption text-primary font-semibold">$25</span>
+</div>
+<div class="absolute inset-0 border border-white/5 rounded-xl pointer-events-none mix-blend-overlay"></div>
+</div>
+<!-- Small Service Card 2 -->
+<div class="relative h-40 rounded-xl overflow-hidden bg-surface-container-low p-sm flex flex-col justify-between tap-highlight-transparent active:scale-[0.98] transition-transform shadow-sm border border-white/5">
+<div class="w-10 h-10 rounded-full bg-surface flex items-center justify-center mb-xs">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">hardware</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-xs">Heel Repair</h4>
+<p class="font-caption text-caption text-on-surface-variant">Replace worn out caps.</p>
+</div>
+<div class="flex justify-between items-center mt-xs pt-xs border-t border-white/5">
+<span class="font-caption text-caption text-primary font-semibold">$35</span>
+</div>
+<div class="absolute inset-0 border border-white/5 rounded-xl pointer-events-none mix-blend-overlay"></div>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-xs mt-xl text-on-surface">Top Providers</h3>
+<!-- Provider List -->
+<div class="flex flex-col gap-sm">
+<!-- Provider Item 1 -->
+<div class="bg-surface-container p-md rounded-xl flex items-center gap-md border border-white/5 tap-highlight-transparent active:bg-surface-variant transition-colors">
+<div class="relative w-14 h-14 shrink-0 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a skilled shoe repair artisan in a modern, well-lit studio. He is looking at the camera with a confident, professional demeanor, wearing a clean, dark apron. The background is slightly blurred, showing neat rows of tools and polished shoes, conveying trust, expertise, and a premium service standard in a dark-themed aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTf_NBqvDl1ihDYgipxQkLiIKIwDpOjYsqdc7OyMv5Z9Jr_2stltXJmzz792sjaNQA15HAdp96BCUeo-qbPFcC1zjUyevgYDLOqNcJHBhMv9g3zpsLDK9TAN_vl7MD94nTGKSqDv9Z9sUL1KezYjqiiEksw3vbAz5HtFgzvsCzHxRB_gmDm1JMyHekvxR0z3zzXdJfpyvKbstjbeWHmGpijRyhohyGyM-Pi3eFs1CuvURQSkNC6xhlrQ"/>
+<div class="absolute bottom-0 right-0 w-4 h-4 bg-green-500 rounded-full border-2 border-surface-container"></div>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-xs mb-[2px]">
+<h4 class="font-label-md text-label-md text-on-surface font-semibold">The Cobbler's Bench</h4>
+<span class="material-symbols-outlined text-primary text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mb-xs">Leather &amp; Suede Specialists</p>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[#FFCC00] text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-caption text-caption text-on-surface">4.9 (128)</span>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-white/5 transition-colors text-on-surface">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<!-- Provider Item 2 -->
+<div class="bg-surface-container p-md rounded-xl flex items-center gap-md border border-white/5 tap-highlight-transparent active:bg-surface-variant transition-colors">
+<div class="relative w-14 h-14 shrink-0 rounded-lg overflow-hidden flex items-center justify-center bg-surface-variant text-on-surface-variant font-headline-md text-headline-md font-bold">
+                    SC
+                </div>
+<div class="flex-grow">
+<div class="flex items-center gap-xs mb-[2px]">
+<h4 class="font-label-md text-label-md text-on-surface font-semibold">Sneaker Clinic</h4>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mb-xs">Deep Cleaning &amp; Whitening</p>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[#FFCC00] text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-caption text-caption text-on-surface">4.8 (85)</span>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-white/5 transition-colors text-on-surface">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Bottom Nav Bar (Mobile) -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container/90 backdrop-blur-lg border-t border-white/10 shadow-[0_-4px_20px_rgba(138,43,226,0.1)] md:hidden">
+<div class="flex justify-around items-center h-20 pb-safe px-md">
+<!-- Explore (Active) -->
+<div class="flex flex-col items-center justify-center text-primary tap-highlight-transparent active:bg-primary-container/20 w-16 h-16 rounded-xl transition-colors">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-label-md text-[10px] leading-none">Explore</span>
+</div>
+<!-- Bookings (Inactive) -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant tap-highlight-transparent active:bg-primary-container/20 w-16 h-16 rounded-xl transition-colors">
+<span class="material-symbols-outlined mb-1">calendar_today</span>
+<span class="font-label-md text-[10px] leading-none">Bookings</span>
+</div>
+<!-- Inbox (Inactive) -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant tap-highlight-transparent active:bg-primary-container/20 w-16 h-16 rounded-xl transition-colors">
+<span class="material-symbols-outlined mb-1">chat</span>
+<span class="font-label-md text-[10px] leading-none">Inbox</span>
+</div>
+<!-- Profile (Inactive) -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant tap-highlight-transparent active:bg-primary-container/20 w-16 h-16 rounded-xl transition-colors">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-md text-[10px] leading-none">Profile</span>
+</div>
+</div>
+</nav>
+</body></html>

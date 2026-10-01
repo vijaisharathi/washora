@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Complete Price Breakdown - Lumina</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#eed9ff",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-container": "#201f20",
+                        "inverse-primary": "#8422dc",
+                        "electric-violet": "#8a2be2",
+                        "on-background": "#e5e2e3",
+                        "error-container": "#93000a",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-tint": "#dcb8ff",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-secondary-container": "#b9b8ba",
+                        "on-surface-variant": "#cfc2d7",
+                        "surface-container-high": "#2a2a2b",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-surface": "#e5e2e3",
+                        "on-primary-fixed": "#2c0051",
+                        "outline-variant": "#4c4354",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-tertiary": "#303032",
+                        "on-secondary-fixed-variant": "#474648",
+                        "secondary-fixed": "#e4e2e4",
+                        "primary": "#dcb8ff",
+                        "secondary-container": "#49494b",
+                        "on-secondary": "#303032",
+                        "on-error": "#690005",
+                        "success-green": "#81C784",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "inverse-on-surface": "#313031",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "tertiary-container": "#646365",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "tertiary": "#c8c6c8",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-primary": "#480081",
+                        "surface-container-low": "#1c1b1c",
+                        "primary-fixed": "#efdbff",
+                        "surface-bright": "#39393a",
+                        "error-red": "#ffb4ab",
+                        "outline": "#988ca0",
+                        "secondary": "#c8c6c8",
+                        "surface-dim": "#131314",
+                        "background": "#131314",
+                        "primary-container": "#8a2be2",
+                        "surface": "#131314",
+                        "surface-container-lowest": "#0e0e0f",
+                        "surface-container-highest": "#353436",
+                        "surface-variant": "#353436",
+                        "success-bg": "#1A3D24"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "sm": "8px",
+                        "3xl": "64px",
+                        "2xl": "48px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist", "sans-serif"],
+                        "h3": ["Geist", "sans-serif"],
+                        "body-md": ["Geist", "sans-serif"],
+                        "display-lg": ["Geist", "sans-serif"],
+                        "label-md": ["Geist", "sans-serif"],
+                        "caption": ["Geist", "sans-serif"],
+                        "mono-display": ["monospace"],
+                        "h1": ["Geist", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex items-center justify-center p-md md:p-xl font-body-md antialiased selection:bg-electric-violet/30">
+<!-- Transactional Screen - Shell Navigation is suppressed per guidelines -->
+<main class="w-full max-w-lg bg-surface-container rounded-xl border border-outline-variant/20 shadow-2xl shadow-black/50 overflow-hidden flex flex-col relative">
+<!-- Ambient Glow -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-primary/10 blur-[60px] rounded-full pointer-events-none"></div>
+<!-- Header -->
+<header class="p-lg md:p-xl border-b border-outline-variant/30 bg-surface-container-low/50 backdrop-blur-sm flex items-center gap-md z-10">
+<button class="p-2 -ml-2 rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant flex-shrink-0 group">
+<span class="material-symbols-outlined group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
+</button>
+<div>
+<h1 class="font-h3 text-h3 text-on-surface">Price Details</h1>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">Here's exactly what you'll pay.</p>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-lg md:p-xl flex flex-col gap-lg z-10">
+<!-- Breakdown List -->
+<div class="flex flex-col gap-md">
+<div class="flex justify-between items-start group hover:bg-surface-container-high/30 -mx-sm p-sm rounded-lg transition-colors">
+<div>
+<span class="font-label-md text-label-md text-on-surface block">Sneaker Deep Clean (Premium)</span>
+<span class="font-caption text-caption text-on-surface-variant block mt-[2px]">Standard service</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface tabular-nums">₹449</span>
+</div>
+<div class="flex justify-between items-start group hover:bg-surface-container-high/30 -mx-sm p-sm rounded-lg transition-colors">
+<div>
+<span class="font-label-md text-label-md text-on-surface block">Water &amp; Stain Protection</span>
+<span class="font-caption text-caption text-on-surface-variant block mt-[2px]">Add-on</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface tabular-nums">₹99</span>
+</div>
+<div class="flex justify-between items-start group hover:bg-surface-container-high/30 -mx-sm p-sm rounded-lg transition-colors">
+<div>
+<span class="font-label-md text-label-md text-on-surface block">Odor Treatment</span>
+<span class="font-caption text-caption text-on-surface-variant block mt-[2px]">Add-on</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface tabular-nums">₹79</span>
+</div>
+</div>
+<!-- Divider -->
+<hr class="border-t border-outline-variant/30"/>
+<!-- Subtotal -->
+<div class="flex justify-between items-center font-label-md text-label-md px-sm">
+<span class="text-on-surface">Subtotal</span>
+<span class="text-on-surface tabular-nums">₹627</span>
+</div>
+<!-- Discount -->
+<div class="flex justify-between items-center font-label-md text-label-md text-success-green bg-success-bg/10 p-sm rounded-lg border border-success-green/20">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-[18px]">sell</span>
+<span>Discount (FRESH20)</span>
+</div>
+<span class="tabular-nums">-₹125</span>
+</div>
+<!-- Logistics & Tax -->
+<div class="flex flex-col gap-sm px-sm">
+<div class="flex justify-between items-center font-caption text-caption text-on-surface-variant">
+<span>Logistics: Pickup</span>
+<span class="tabular-nums">₹0</span>
+</div>
+<div class="flex justify-between items-center font-caption text-caption text-on-surface-variant">
+<span>Logistics: Delivery</span>
+<span class="tabular-nums">₹0</span>
+</div>
+<div class="flex justify-between items-center font-caption text-caption text-on-surface-variant">
+<span>Tax: GST</span>
+<span class="tabular-nums">₹0</span>
+</div>
+</div>
+<!-- Dashed Divider -->
+<div class="w-full h-px border-t border-dashed border-outline-variant/40 my-sm"></div>
+<!-- Final Total -->
+<div class="flex justify-between items-end px-sm">
+<div class="flex flex-col">
+<span class="font-h3 text-h3 text-on-surface">Final Total</span>
+<span class="font-caption text-caption text-on-surface-variant mt-xs">Your total is confirmed.</span>
+</div>
+<span class="font-h1 text-h1 text-primary tabular-nums tracking-tight">₹502</span>
+</div>
+<!-- Savings Highlight -->
+<div class="mt-xs bg-success-bg/20 border border-success-green/30 rounded-lg p-md flex items-start gap-md">
+<div class="w-8 h-8 rounded-full bg-success-green/20 flex items-center justify-center text-success-green flex-shrink-0 mt-xs">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-success-green block">Great choice!</span>
+<span class="font-caption text-caption text-success-green/80 block mt-1">You saved ₹125 on this order by applying a promo code.</span>
+</div>
+</div>
+<!-- Primary Action -->
+<button class="w-full mt-md py-4 bg-electric-violet hover:bg-primary-container text-white font-label-md text-label-md rounded-lg shadow-lg shadow-electric-violet/20 transition-all duration-200 active:scale-[0.98] flex items-center justify-center gap-sm">
+<span>Proceed to Payment</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<p class="text-center font-caption text-caption text-on-surface-variant mt-xs">Secure encrypted transaction</p>
+</div>
+</main>
+</body></html>

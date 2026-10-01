@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Account - Anything Clean</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#39393a",
+                        "error": "#ffb4ab",
+                        "tertiary-container": "#646365",
+                        "success-bg": "#1A3D24",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-secondary-fixed-variant": "#474648",
+                        "outline": "#988ca0",
+                        "on-secondary-container": "#b9b8ba",
+                        "primary": "#dcb8ff",
+                        "secondary": "#c8c6c8",
+                        "on-background": "#e5e2e3",
+                        "surface-container": "#201f20",
+                        "tertiary-fixed": "#e4e2e4",
+                        "surface-dim": "#131314",
+                        "outline-variant": "#4c4354",
+                        "secondary-fixed": "#e4e2e4",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-error": "#690005",
+                        "on-surface": "#e5e2e3",
+                        "surface-container-lowest": "#0e0e0f",
+                        "inverse-on-surface": "#313031",
+                        "secondary-container": "#49494b",
+                        "on-primary": "#480081",
+                        "error-red": "#ffb4ab",
+                        "electric-violet": "#8a2be2",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface-container-low": "#1c1b1c",
+                        "on-primary-container": "#eed9ff",
+                        "on-secondary": "#303032",
+                        "inverse-primary": "#8422dc",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "primary-fixed": "#efdbff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "inverse-surface": "#e5e2e3",
+                        "on-primary-fixed": "#2c0051",
+                        "tertiary": "#c8c6c8",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "surface": "#131314",
+                        "on-tertiary": "#303032",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#2a2a2b",
+                        "surface-tint": "#dcb8ff",
+                        "primary-container": "#8a2be2",
+                        "on-surface-variant": "#cfc2d7",
+                        "background": "#131314",
+                        "success-green": "#81C784",
+                        "surface-variant": "#353436",
+                        "surface-container-highest": "#353436"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "3xl": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "caption": ["Geist"],
+                        "h1": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "h3": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased pb-24 md:pb-0 overflow-x-hidden">
+<!-- Top Navigation (Mobile Header) -->
+<header class="fixed top-0 w-full z-40 bg-surface-container-low/80 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-lg py-sm lg:hidden">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant">arrow_back</span>
+<h1 class="font-h3 text-h3 text-on-surface">Account</h1>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
+</header>
+<!-- Main Desktop Layout wrapper -->
+<div class="flex h-screen pt-16 md:pt-0">
+<!-- SideNav (Desktop) -->
+<aside class="hidden lg:flex flex-col h-full w-[256px] bg-surface-container-low border-r border-outline-variant/30 p-md shrink-0 fixed left-0 top-0">
+<div class="mb-xl">
+<h1 class="font-h1 text-h1 text-primary">Anything Clean</h1>
+</div>
+<nav class="flex-1 space-y-sm">
+<!-- Nav Items (Derived from JSON intent) -->
+<a class="flex items-center gap-md p-md rounded-lg text-on-surface-variant hover:bg-surface-container transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">home</span> Home
+                </a>
+<a class="flex items-center gap-md p-md rounded-lg text-on-surface-variant hover:bg-surface-container transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">sell</span> Offers
+                </a>
+<a class="flex items-center gap-md p-md rounded-lg text-on-surface-variant hover:bg-surface-container transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">search</span> Search
+                </a>
+<a class="flex items-center gap-md p-md rounded-lg text-on-surface-variant hover:bg-surface-container transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">history</span> Activity
+                </a>
+<a class="flex items-center gap-md p-md rounded-lg bg-primary/10 text-primary font-bold transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span> Profile
+                </a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 lg:ml-[256px] w-full max-w-[1200px] mx-auto p-md md:p-xl space-y-xl overflow-y-auto">
+<div class="hidden md:block mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Account</h2>
+</div>
+<!-- Profile Overview Card -->
+<section class="bg-surface-container rounded-xl p-lg border border-outline-variant/20 flex flex-col md:flex-row items-center md:items-start gap-lg relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
+<div class="relative w-24 h-24 rounded-full border-2 border-primary overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A cinematic portrait of a modern professional in a high-tech corporate environment, bathed in cool neon and deep shadow lighting, emphasizing a sophisticated Lumina style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxzKxgLXQ_QcElDxCXVSuTptf6iAY3LyXULbcChVgx_O7CMSy21o6RFXtVhQkB8XMephdigoa-kbm0EtR8PbTwBDR4jLJ6AQes9xPsXOS9Jw_gcy1hq6DWErd-i3BY0whpELtpDkCaDMxyXGHruRDZr9qPeuIXp70CEEJyUK0kJkdCSG3oqQckY0SZF8haIWvqh8vpo998GUoU7xY6MZ6BlWQG0TQTcd-1nvpg53P4WtNw8JqY9Ks5HQ"/>
+</div>
+<div class="flex-1 text-center md:text-left z-10">
+<h2 class="font-h1 text-h1 text-on-surface">Arun</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">arun@example.com</p>
+<button class="border border-outline-variant/50 text-on-surface px-md py-sm rounded-lg hover:bg-surface-container transition-colors font-label-md text-label-md flex items-center justify-center md:inline-flex gap-sm">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+                        Edit Profile
+                    </button>
+</div>
+<div class="hidden md:flex flex-col items-end z-10">
+<div class="bg-success-bg text-success-green px-sm py-xs rounded-full font-label-md text-label-md uppercase tracking-wider text-[10px]">Active Member</div>
+</div>
+</section>
+<!-- Grid Sections -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<a class="bg-surface-container rounded-lg p-md border border-outline-variant/20 hover:border-primary/50 hover:bg-surface-container-high transition-all group flex items-center gap-md" href="#">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">receipt_long</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">My Orders</h3>
+<p class="font-caption text-caption text-on-surface-variant">View history & status</p>
+</div>
+</a>
+<a class="bg-surface-container rounded-lg p-md border border-outline-variant/20 hover:border-primary/50 hover:bg-surface-container-high transition-all group flex items-center gap-md" href="#">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">favorite</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">Saved Services</h3>
+<p class="font-caption text-caption text-on-surface-variant">Your favorites</p>
+</div>
+</a>
+<a class="bg-surface-container rounded-lg p-md border border-outline-variant/20 hover:border-primary/50 hover:bg-surface-container-high transition-all group flex items-center gap-md" href="#">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">local_offer</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">Offers</h3>
+<p class="font-caption text-caption text-on-surface-variant">Promo codes & discounts</p>
+</div>
+</a>
+<a class="bg-surface-container rounded-lg p-md border border-outline-variant/20 hover:border-primary/50 hover:bg-surface-container-high transition-all group flex items-center gap-md" href="#">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">emoji_events</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">Rewards</h3>
+<p class="font-caption text-caption text-on-surface-variant">Points & tiers</p>
+</div>
+</a>
+<a class="bg-surface-container rounded-lg p-md border border-outline-variant/20 hover:border-primary/50 hover:bg-surface-container-high transition-all group flex items-center gap-md" href="#">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">rate_review</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">Reviews</h3>
+<p class="font-caption text-caption text-on-surface-variant">Your feedback</p>
+</div>
+</a>
+<a class="bg-surface-container rounded-lg p-md border border-outline-variant/20 hover:border-primary/50 hover:bg-surface-container-high transition-all group flex items-center gap-md" href="#">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">support_agent</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">Support</h3>
+<p class="font-caption text-caption text-on-surface-variant">Get help & FAQs</p>
+</div>
+</a>
+</section>
+<!-- Preferences Section -->
+<section class="bg-surface-container rounded-xl border border-outline-variant/20 overflow-hidden">
+<div class="p-md border-b border-outline-variant/20 bg-surface-container-low">
+<h3 class="font-label-md text-label-md text-on-surface uppercase tracking-widest">Preferences</h3>
+</div>
+<div class="divide-y divide-outline-variant/20">
+<!-- Notifications -->
+<div class="p-md flex items-center justify-between hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+<div>
+<h4 class="font-body-md text-body-md text-on-surface">Notifications</h4>
+<p class="font-caption text-caption text-on-surface-variant">Manage alerts & emails</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+<!-- Language -->
+<div class="p-md flex items-center justify-between hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant">language</span>
+<div>
+<h4 class="font-body-md text-body-md text-on-surface">Language</h4>
+<p class="font-caption text-caption text-on-surface-variant">English (US)</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+<!-- Privacy -->
+<div class="p-md flex items-center justify-between hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant">privacy_tip</span>
+<div>
+<h4 class="font-body-md text-body-md text-on-surface">Privacy</h4>
+<p class="font-caption text-caption text-on-surface-variant">Data sharing & permissions</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+<!-- Security -->
+<div class="p-md flex items-center justify-between hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant">security</span>
+<div>
+<h4 class="font-body-md text-body-md text-on-surface">Security</h4>
+<p class="font-caption text-caption text-on-surface-variant">Password & 2FA</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Log Out Action -->
+<section class="pt-md pb-xl flex justify-center md:justify-start">
+<button class="border border-error/50 text-error px-xl py-sm rounded-lg hover:bg-error-container/10 transition-colors font-label-md text-label-md flex items-center gap-sm" onclick="document.getElementById('logoutModal').classList.remove('hidden')">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+                    Log Out
+                </button>
+</section>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only from JSON) -->
+<nav class="fixed bottom-0 w-full z-50 lg:hidden bg-surface-container-low/95 backdrop-blur-md shadow-lg shadow-primary/5 flex justify-around items-center h-16 px-md">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200 w-16" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-[10px] mt-xs">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200 w-16" href="#">
+<span class="material-symbols-outlined">sell</span>
+<span class="font-label-md text-[10px] mt-xs">Offers</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200 w-16" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-md text-[10px] mt-xs">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200 w-16" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-label-md text-[10px] mt-xs">Activity</span>
+</a>
+<!-- Active Tab -->
+<a class="flex flex-col items-center justify-center text-primary active:scale-90 duration-200 w-16 relative" href="#">
+<div class="absolute -top-1 w-8 h-1 bg-primary rounded-b-full"></div>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-md text-[10px] mt-xs font-bold">Profile</span>
+</a>
+</nav>
+<!-- Logout Confirmation Modal -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-md" id="logoutModal">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-background/80 backdrop-blur-sm" onclick="document.getElementById('logoutModal').classList.add('hidden')"></div>
+<!-- Modal Content -->
+<div class="bg-surface-container-high rounded-xl p-lg border border-outline-variant/30 w-full max-w-sm relative z-10 shadow-2xl">
+<div class="flex items-center justify-center w-12 h-12 rounded-full bg-error-container/20 text-error mb-md mx-auto">
+<span class="material-symbols-outlined">logout</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface text-center mb-sm">Log Out</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-center mb-lg">Are you sure you want to log out of Anything Clean? You will need to sign back in to book services.</p>
+<div class="flex gap-md w-full">
+<button class="flex-1 border border-outline-variant text-on-surface px-md py-sm rounded-lg hover:bg-surface-container transition-colors font-label-md text-label-md" onclick="document.getElementById('logoutModal').classList.add('hidden')">
+                    Cancel
+                </button>
+<button class="flex-1 bg-error text-on-error px-md py-sm rounded-lg hover:opacity-90 transition-opacity font-label-md text-label-md font-bold shadow-lg shadow-error/20">
+                    Log Out
+                </button>
+</div>
+</div>
+</div>
+</body></html>

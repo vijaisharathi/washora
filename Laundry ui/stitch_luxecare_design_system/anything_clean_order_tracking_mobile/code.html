@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Tracking</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline": "#988ca0",
+                        "secondary-container": "#474649",
+                        "tertiary": "#c8c6c8",
+                        "error": "#ffb4ab",
+                        "on-secondary-container": "#b7b4b7",
+                        "on-surface": "#e5e2e3",
+                        "inverse-surface": "#e5e2e3",
+                        "inverse-primary": "#8422dc",
+                        "surface-tint": "#dcb8ff",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "inverse-on-surface": "#313031",
+                        "primary": "#dcb8ff",
+                        "on-background": "#e5e2e3",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "primary-fixed": "#efdbff",
+                        "tertiary-fixed": "#e4e2e4",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-secondary-fixed-variant": "#474649",
+                        "background": "#131314",
+                        "surface-container-highest": "#353436",
+                        "on-tertiary-container": "#e3e0e2",
+                        "secondary-fixed": "#e5e1e4",
+                        "secondary": "#c8c6c8",
+                        "surface": "#131314",
+                        "outline-variant": "#4c4354",
+                        "surface-bright": "#3a393a",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-error-container": "#ffdad6",
+                        "surface-dim": "#131314",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-primary": "#480081",
+                        "surface-container": "#201f20",
+                        "surface-container-high": "#2a2a2b",
+                        "surface-container-low": "#1c1b1c",
+                        "error-container": "#93000a",
+                        "on-secondary": "#303032",
+                        "primary-container": "#8a2be2",
+                        "on-primary-fixed": "#2c0051",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "tertiary-container": "#646365",
+                        "on-error": "#690005",
+                        "on-primary-container": "#eed9ff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-tertiary": "#303032",
+                        "surface-variant": "#353436"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        lg: "24px",
+                        md: "16px",
+                        "2xl": "48px",
+                        xs: "4px",
+                        "3xl": "64px",
+                        xl: "32px",
+                        sm: "8px"
+                    },
+                    fontFamily: {
+                        "label-md": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "caption": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "display-lg-mobile": ["Geist"]
+                    },
+                    fontSize: {
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "caption": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "display-lg-mobile": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }]
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased pb-[100px] md:pb-0">
+<!-- Top Navigation (Desktop & Mobile) -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/5 flex justify-between items-center px-md py-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary dark:text-primary">arrow_back</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary dark:text-primary font-bold">New York, NY</h1>
+</div>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 duration-200 cursor-pointer">notifications</span>
+</div>
+</header>
+<main class="pt-[80px] max-w-3xl mx-auto px-md md:px-lg">
+<!-- Status Header Card -->
+<section class="mt-lg p-lg rounded-xl bg-surface-container-low border border-white/5 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary-container to-transparent opacity-50"></div>
+<div class="flex items-center justify-between mb-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Order #982-A4F</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Est. Completion: Tomorrow, 2:00 PM</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center border border-primary-container/50">
+<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">cleaning_services</span>
+</div>
+</div>
+<div class="mt-lg">
+<p class="font-caption text-caption text-primary tracking-widest uppercase mb-sm">Current Status</p>
+<div class="flex items-center gap-sm">
+<div class="w-3 h-3 rounded-full bg-primary-fixed-dim animate-pulse"></div>
+<h3 class="font-display-lg-mobile text-display-lg-mobile text-on-surface">Cleaning in Progress</h3>
+</div>
+</div>
+</section>
+<!-- Vertical Timeline -->
+<section class="mt-xl relative pl-lg pb-xl">
+<!-- Continuous Line -->
+<div class="absolute left-[39px] top-4 bottom-0 w-[2px] bg-surface-container-highest"></div>
+<!-- Timeline Steps -->
+<div class="flex flex-col gap-lg relative">
+<!-- Step 1: Done -->
+<div class="flex gap-md relative">
+<div class="flex-shrink-0 w-[32px] h-[32px] rounded-full bg-surface border border-surface-container-highest flex items-center justify-center z-10 mt-1 relative">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">check</span>
+<div class="absolute w-[2px] h-[48px] bg-surface-container-highest top-[32px] left-[15px]"></div>
+</div>
+<div class="flex flex-col pt-1 w-full">
+<div class="flex justify-between items-start">
+<h4 class="font-label-md text-label-md text-on-surface-variant">Booking Confirmed</h4>
+<span class="font-caption text-caption text-on-surface-variant">Oct 12, 09:41 AM</span>
+</div>
+</div>
+</div>
+<!-- Step 2: Done -->
+<div class="flex gap-md relative">
+<div class="flex-shrink-0 w-[32px] h-[32px] rounded-full bg-surface border border-surface-container-highest flex items-center justify-center z-10 mt-1 relative">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">check</span>
+<div class="absolute w-[2px] h-[48px] bg-surface-container-highest top-[32px] left-[15px]"></div>
+</div>
+<div class="flex flex-col pt-1 w-full">
+<div class="flex justify-between items-start">
+<h4 class="font-label-md text-label-md text-on-surface-variant">Pickup Scheduled</h4>
+<span class="font-caption text-caption text-on-surface-variant">Oct 12, 10:00 AM</span>
+</div>
+</div>
+</div>
+<!-- Step 3: Done -->
+<div class="flex gap-md relative">
+<div class="flex-shrink-0 w-[32px] h-[32px] rounded-full bg-surface border border-surface-container-highest flex items-center justify-center z-10 mt-1 relative">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">check</span>
+<div class="absolute w-[2px] h-[48px] bg-surface-container-highest top-[32px] left-[15px]"></div>
+</div>
+<div class="flex flex-col pt-1 w-full">
+<div class="flex justify-between items-start">
+<h4 class="font-label-md text-label-md text-on-surface-variant">Picked Up</h4>
+<span class="font-caption text-caption text-on-surface-variant">Oct 13, 08:30 AM</span>
+</div>
+</div>
+</div>
+<!-- Step 4: Done -->
+<div class="flex gap-md relative">
+<div class="flex-shrink-0 w-[32px] h-[32px] rounded-full bg-surface border border-surface-container-highest flex items-center justify-center z-10 mt-1 relative">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">check</span>
+<div class="absolute w-[2px] h-[48px] bg-surface-container-highest top-[32px] left-[15px]"></div>
+</div>
+<div class="flex flex-col pt-1 w-full">
+<div class="flex justify-between items-start">
+<h4 class="font-label-md text-label-md text-on-surface-variant">Received</h4>
+<span class="font-caption text-caption text-on-surface-variant">Oct 13, 11:15 AM</span>
+</div>
+</div>
+</div>
+<!-- Step 5: Done -->
+<div class="flex gap-md relative">
+<div class="flex-shrink-0 w-[32px] h-[32px] rounded-full bg-surface border border-surface-container-highest flex items-center justify-center z-10 mt-1 relative">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">check</span>
+<div class="absolute w-[2px] h-[48px] bg-primary-container/30 top-[32px] left-[15px]"></div>
+</div>
+<div class="flex flex-col pt-1 w-full">
+<div class="flex justify-between items-start">
+<h4 class="font-label-md text-label-md text-on-surface-variant">Inspection</h4>
+<span class="font-caption text-caption text-on-surface-variant">Oct 13, 01:00 PM</span>
+</div>
+</div>
+</div>
+<!-- Step 6: Active -->
+<div class="flex gap-md relative">
+<div class="flex-shrink-0 w-[32px] h-[32px] rounded-full bg-primary-container border-2 border-primary-fixed-dim flex items-center justify-center z-10 mt-1 shadow-[0_0_15px_rgba(138,43,226,0.3)]">
+<div class="w-2 h-2 rounded-full bg-on-primary-container"></div>
+</div>
+<div class="flex flex-col pt-1 w-full p-md bg-surface-container-low rounded-lg border border-primary/20 -mt-2">
+<div class="flex justify-between items-start">
+<h4 class="font-label-md text-label-md text-primary-fixed-dim font-bold">Cleaning in Progress</h4>
+<span class="font-caption text-caption text-primary">Now</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Premium deep cleaning process initiated. Specialized care applied based on inspection.</p>
+<!-- Inline image for context -->
+<div class="mt-sm h-[120px] w-full rounded-md overflow-hidden relative">
+<img class="object-cover w-full h-full opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500" data-alt="A dark-themed, macro-photography shot of premium fabric being gently cleaned with specialized tools, bathed in soft, moody studio lighting with a subtle violet rim light to evoke precision and luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsibtDl_e8NSQeSqgg5m4-OGFDkd5aDgMLzNYW6ow15b4i35nb2jCV22B3TIcm5cXu1OPp_eIFllupTG-8ouujbzTMbCydgPJhEu5cihiOu_4-aMU0I4RGtYj6d5CV6ne3XZHGZNZ7uaBfZO_wFM8djEtSpAVrBbtCU1jvc7EkS3aIEbtUGNL3AtZUBq84lKHxfaYAWoXEi8tOfHVWCMVn3xbIJB9EjMN9xlaORp4TPsFk1jHczO4DMA"/>
+</div>
+</div>
+</div>
+<!-- Step 7: Pending -->
+<div class="flex gap-md relative opacity-50">
+<div class="flex-shrink-0 w-[32px] h-[32px] rounded-full bg-surface border border-surface-container-highest flex items-center justify-center z-10 mt-1">
+<div class="w-2 h-2 rounded-full bg-surface-container-highest"></div>
+</div>
+<div class="flex flex-col pt-1 w-full">
+<div class="flex justify-between items-start">
+<h4 class="font-label-md text-label-md text-on-surface-variant">QC Inspection</h4>
+<span class="font-caption text-caption text-on-surface-variant">Pending</span>
+</div>
+</div>
+</div>
+<!-- Step 8: Pending -->
+<div class="flex gap-md relative opacity-50">
+<div class="flex-shrink-0 w-[32px] h-[32px] rounded-full bg-surface border border-surface-container-highest flex items-center justify-center z-10 mt-1">
+<div class="w-2 h-2 rounded-full bg-surface-container-highest"></div>
+</div>
+<div class="flex flex-col pt-1 w-full">
+<div class="flex justify-between items-start">
+<h4 class="font-label-md text-label-md text-on-surface-variant">Ready</h4>
+<span class="font-caption text-caption text-on-surface-variant">Pending</span>
+</div>
+</div>
+</div>
+<!-- Step 9: Pending -->
+<div class="flex gap-md relative opacity-50">
+<div class="flex-shrink-0 w-[32px] h-[32px] rounded-full bg-surface border border-surface-container-highest flex items-center justify-center z-10 mt-1">
+<div class="w-2 h-2 rounded-full bg-surface-container-highest"></div>
+</div>
+<div class="flex flex-col pt-1 w-full">
+<div class="flex justify-between items-start">
+<h4 class="font-label-md text-label-md text-on-surface-variant">Delivery</h4>
+<span class="font-caption text-caption text-on-surface-variant">Pending</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Nav Bar (Mobile) - Suppressed as per rule: Linear/Transactional/Task-Focused flow -->
+</body></html>

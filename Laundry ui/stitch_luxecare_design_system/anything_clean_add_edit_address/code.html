@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Add / Edit Address - Lumina Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#1c1b1c",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed": "#efdbff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-bright": "#39393a",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-dim": "#131314",
+                        "tertiary": "#c8c6c8",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-error": "#690005",
+                        "on-secondary-container": "#b9b8ba",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "secondary-container": "#49494b",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "surface-container": "#201f20",
+                        "surface-variant": "#353436",
+                        "secondary": "#c8c6c8",
+                        "error-container": "#93000a",
+                        "success-green": "#81C784",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-primary-container": "#eed9ff",
+                        "primary-container": "#8a2be2",
+                        "success-bg": "#1A3D24",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "outline-variant": "#4c4354",
+                        "tertiary-fixed": "#e4e2e4",
+                        "inverse-primary": "#8422dc",
+                        "on-secondary-fixed-variant": "#474648",
+                        "on-primary-fixed": "#2c0051",
+                        "on-primary": "#480081",
+                        "on-tertiary": "#303032",
+                        "secondary-fixed": "#e4e2e4",
+                        "electric-violet": "#8a2be2",
+                        "surface-container-highest": "#353436",
+                        "background": "#131314",
+                        "on-surface": "#e5e2e3",
+                        "surface": "#131314",
+                        "error-red": "#ffb4ab",
+                        "primary": "#dcb8ff",
+                        "on-secondary": "#303032",
+                        "surface-container-high": "#2a2a2b",
+                        "outline": "#988ca0",
+                        "on-background": "#e5e2e3",
+                        "on-tertiary-container": "#e3e0e2",
+                        "inverse-on-surface": "#313031",
+                        "surface-tint": "#dcb8ff",
+                        "surface-container-lowest": "#0e0e0f",
+                        "tertiary-container": "#646365"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "2xl": "48px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "3xl": "64px",
+                        "md": "16px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "caption": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "h3": ["Geist"],
+                        "label-md": ["Geist"],
+                        "h1": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:flex-row">
+<!-- SideNavBar (Desktop) -->
+<nav class="bg-surface-container-low text-primary font-body-md text-body-md fixed left-0 top-0 h-screen w-64 border-r border-outline-variant/30 hidden md:flex flex-col p-md gap-sm z-50">
+<div class="mb-xl">
+<span class="font-h1 text-h1 text-electric-violet">Lumina Marketplace</span>
+</div>
+<div class="flex items-center gap-md mb-lg p-md rounded-lg bg-surface-container/50 border border-outline-variant/30">
+<img alt="User profile picture" class="w-12 h-12 rounded-full object-cover border border-outline-variant" data-alt="A professional headshot of a user, looking confident and approachable, set against a dark modern background with subtle electric violet lighting accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCXa4lOmEWFdLaMz216IS8IkrmfvGQ_LjPBToVmnZmkDrYcNo3oeMcXEjXtd73Hvs1A20zyxepLdt9ulBgo5_9mzQOdNqRahe0jCBchLrqmb0ayUKemjArpUW9gHDVPlnA_8SxNDJJ0c4_josWGNAve-lIMHmwvJabSBjukYNHOKA3KcZtYcqNrkcdFBADDEuD31sbASUUKprsNCTVylfjGdUOeSAx1NfKwilGxayzPYODdzAh5nbqJQ"/>
+<div>
+<p class="font-h3 text-h3 text-on-surface">Alex Rivers</p>
+<p class="font-caption text-caption text-on-surface-variant">Premium Member</p>
+</div>
+</div>
+<div class="flex-grow flex flex-col gap-xs">
+<a class="text-on-surface-variant hover:bg-surface-container transition-all flex items-center gap-md px-md py-sm rounded-lg cursor-pointer active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="text-on-surface-variant hover:bg-surface-container transition-all flex items-center gap-md px-md py-sm rounded-lg cursor-pointer active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+                Bookings
+            </a>
+<a class="text-on-surface-variant hover:bg-surface-container transition-all flex items-center gap-md px-md py-sm rounded-lg cursor-pointer active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+                Payments
+            </a>
+<a class="bg-primary/10 text-primary font-bold rounded-lg hover:bg-surface-container transition-all flex items-center gap-md px-md py-sm cursor-pointer active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+                Addresses
+            </a>
+<a class="text-on-surface-variant hover:bg-surface-container transition-all flex items-center gap-md px-md py-sm rounded-lg cursor-pointer active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Preferences
+            </a>
+</div>
+<button class="bg-electric-violet text-white font-label-md text-label-md py-sm px-md rounded-lg shadow-lg shadow-primary/20 hover:bg-inverse-primary transition-colors active:scale-95 mb-md">
+            Book a Cleaner
+        </button>
+<div class="mt-auto flex flex-col gap-xs border-t border-outline-variant/30 pt-sm">
+<a class="text-on-surface-variant hover:bg-surface-container transition-all flex items-center gap-md px-md py-sm rounded-lg cursor-pointer active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+                Support
+            </a>
+<a class="text-on-surface-variant hover:bg-surface-container transition-all flex items-center gap-md px-md py-sm rounded-lg cursor-pointer active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Logout
+            </a>
+</div>
+</nav>
+<!-- TopNavBar (Desktop) -->
+<header class="hidden md:flex justify-between items-center px-lg h-16 w-full z-40 bg-surface-dim/80 backdrop-blur-md text-electric-violet font-label-md text-label-md fixed top-0 border-b border-outline-variant/30 ml-64" style="width: calc(100% - 256px);">
+<div class="flex items-center gap-sm">
+<!-- Breadcrumbs -->
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Addresses</a>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">chevron_right</span>
+<span class="text-primary font-bold">Edit Address</span>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors active:scale-95" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors active:scale-95" data-icon="help">help</span>
+<img alt="Customer avatar" class="w-8 h-8 rounded-full border border-outline-variant cursor-pointer active:scale-95 transition-transform" data-alt="A small circular avatar placeholder for the customer profile in the top navigation, featuring a subtle dark theme aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYbY3yfhFHt_yuTNul7XK_F117raoYVk0Dn6mLM25jutVSduggCdCQgQ0KAaR5gGGTYJiQV2o77198-Ymjse191_shtEbkEegQpfFBGmfbkvN8fi6huAp5wRmKntwsq9NE8RqJ7eXS-r4uC_OKofwHC65coQCFYWvU12p-ja_5IvCBUvhO4-UKbrehviXXGCcip4tlSD3OfeMpglE3Cex3paJL2ltMq_MkWA1UOW65R8le9K8KdllZfw"/>
+</div>
+</header>
+<!-- Top Header Mobile -->
+<header class="md:hidden flex justify-between items-center px-md h-16 w-full z-40 bg-surface-dim/80 backdrop-blur-md border-b border-outline-variant/30 fixed top-0">
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-xs" href="#">
+<span class="material-symbols-outlined">arrow_back</span>
+<span class="font-label-md text-label-md">Back</span>
+</a>
+<span class="font-h3 text-h3 font-bold text-on-surface">Edit Address</span>
+<div class="w-16"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 mt-16 md:mt-16 pb-24 md:pb-xl p-md md:p-xl flex justify-center max-w-[1200px] mx-auto w-full">
+<div class="w-full max-w-2xl bg-surface-container border border-outline-variant/20 rounded-xl p-md md:p-lg flex flex-col gap-lg shadow-sm">
+<div>
+<h1 class="font-h1 text-h1 text-on-surface mb-sm">Address Details</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Update your address information to ensure accurate service delivery.</p>
+</div>
+<!-- Serviceability Check -->
+<div class="bg-success-bg border border-success-green/30 rounded-lg p-md flex items-center gap-md">
+<span class="material-symbols-outlined text-success-green" data-weight="fill">check_circle</span>
+<span class="font-label-md text-label-md text-success-green uppercase tracking-[0.1em] font-bold">Services available at this address</span>
+</div>
+<form class="flex flex-col gap-xl">
+<!-- Address Label -->
+<div class="flex flex-col gap-sm">
+<h3 class="font-h3 text-h3 text-on-surface">Address Label</h3>
+<div class="flex gap-md flex-wrap">
+<label class="relative flex items-center cursor-pointer group">
+<input checked="" class="peer sr-only" name="address_label" type="radio" value="home"/>
+<div class="px-md py-sm rounded-lg border border-outline-variant/50 bg-surface-container-low text-on-surface-variant peer-checked:bg-primary/10 peer-checked:text-primary peer-checked:border-primary peer-checked:font-bold transition-all flex items-center gap-sm group-hover:border-primary/50">
+<span class="material-symbols-outlined text-sm">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</div>
+</label>
+<label class="relative flex items-center cursor-pointer group">
+<input class="peer sr-only" name="address_label" type="radio" value="work"/>
+<div class="px-md py-sm rounded-lg border border-outline-variant/50 bg-surface-container-low text-on-surface-variant peer-checked:bg-primary/10 peer-checked:text-primary peer-checked:border-primary peer-checked:font-bold transition-all flex items-center gap-sm group-hover:border-primary/50">
+<span class="material-symbols-outlined text-sm">work</span>
+<span class="font-label-md text-label-md">Work</span>
+</div>
+</label>
+<label class="relative flex items-center cursor-pointer group">
+<input class="peer sr-only" name="address_label" type="radio" value="other"/>
+<div class="px-md py-sm rounded-lg border border-outline-variant/50 bg-surface-container-low text-on-surface-variant peer-checked:bg-primary/10 peer-checked:text-primary peer-checked:border-primary peer-checked:font-bold transition-all flex items-center gap-sm group-hover:border-primary/50">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="font-label-md text-label-md">Other</span>
+</div>
+</label>
+</div>
+</div>
+<hr class="border-outline-variant/30"/>
+<!-- Contact Info -->
+<div class="flex flex-col gap-md">
+<h3 class="font-h3 text-h3 text-on-surface">Contact Information</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Full Name</label>
+<input class="bg-surface-container-low border border-outline-variant/50 rounded-lg p-sm text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" type="text" value="Arun Kumar"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Phone Number</label>
+<input class="bg-surface-container-low border border-outline-variant/50 rounded-lg p-sm text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" type="tel" value="+91 98765 43210"/>
+</div>
+</div>
+</div>
+<hr class="border-outline-variant/30"/>
+<!-- Address Details -->
+<div class="flex flex-col gap-md">
+<h3 class="font-h3 text-h3 text-on-surface">Address Details</h3>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">House/Flat No., Building Name</label>
+<input class="bg-surface-container-low border border-outline-variant/50 rounded-lg p-sm text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" type="text" value="Flat 402, Skyline Apartments"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Street, Area, Sector</label>
+<input class="bg-surface-container-low border border-outline-variant/50 rounded-lg p-sm text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" type="text" value="12th Main Road, Indiranagar"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Landmark (Optional)</label>
+<input class="bg-surface-container-low border border-outline-variant/50 rounded-lg p-sm text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" type="text" value="Opposite Metro Station"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Pincode</label>
+<input class="bg-surface-container-low border border-outline-variant/50 rounded-lg p-sm text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" type="text" value="560038"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">City</label>
+<input class="bg-surface-container-low border border-outline-variant/50 rounded-lg p-sm text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all bg-surface-container-low/50 cursor-not-allowed" readonly="" type="text" value="Bengaluru"/>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">State</label>
+<input class="bg-surface-container-low border border-outline-variant/50 rounded-lg p-sm text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all bg-surface-container-low/50 cursor-not-allowed" readonly="" type="text" value="Karnataka"/>
+</div>
+</div>
+<!-- Settings -->
+<div class="flex items-center gap-sm mt-sm">
+<input class="w-5 h-5 rounded border-outline-variant/50 bg-surface-container-low text-electric-violet focus:ring-electric-violet focus:ring-offset-surface focus:ring-offset-2 cursor-pointer" id="defaultAddress" type="checkbox"/>
+<label class="font-body-md text-body-md text-on-surface cursor-pointer" for="defaultAddress">Set as default address</label>
+</div>
+<!-- Actions -->
+<div class="flex flex-col-reverse md:flex-row justify-between items-center gap-md mt-lg pt-lg border-t border-outline-variant/30">
+<button class="w-full md:w-auto font-label-md text-label-md font-bold text-error-red flex items-center justify-center gap-xs py-sm px-lg rounded-lg border border-error-red/30 hover:bg-error-container/10 transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">delete</span>
+                        Delete Address
+                    </button>
+<div class="flex flex-col md:flex-row gap-md w-full md:w-auto">
+<button class="w-full md:w-auto font-label-md text-label-md text-on-surface-variant py-sm px-lg rounded-lg border border-outline-variant bg-transparent hover:bg-surface-container transition-colors" type="button">
+                            Cancel
+                        </button>
+<button class="w-full md:w-auto font-label-md text-label-md font-bold text-white bg-electric-violet py-sm px-lg rounded-lg shadow-lg shadow-primary/20 hover:bg-inverse-primary transition-colors active:scale-95" type="submit">
+                            Save Address
+                        </button>
+</div>
+</div>
+</form>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe bg-surface-container-low/90 backdrop-blur-lg border-t border-outline-variant/20 rounded-t-xl shadow-lg shadow-primary/5 text-primary font-caption text-caption">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 tap-highlight-transparent active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 tap-highlight-transparent active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="cleaning_services">cleaning_services</span>
+<span class="mt-1">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container/20 text-primary rounded-xl p-2 tap-highlight-transparent active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="mt-1 font-bold">Account</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 tap-highlight-transparent active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="mt-1">Support</span>
+</a>
+</nav>
+</body></html>

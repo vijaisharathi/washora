@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bank &amp; Payout Verification - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#0e0e0f",
+                      "secondary-container": "#49494b",
+                      "background": "#131314",
+                      "outline": "#988ca0",
+                      "secondary-fixed": "#e4e2e4",
+                      "tertiary-fixed": "#e4e2e4",
+                      "on-surface-variant": "#cfc2d7",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "surface-tint": "#dcb8ff",
+                      "on-primary-fixed": "#2c0051",
+                      "primary-fixed": "#efdbff",
+                      "on-secondary-fixed-variant": "#474648",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "surface": "#131314",
+                      "success-bg": "#1A3D24",
+                      "inverse-on-surface": "#313031",
+                      "outline-variant": "#4c4354",
+                      "error-red": "#ffb4ab",
+                      "inverse-primary": "#8422dc",
+                      "inverse-surface": "#e5e2e3",
+                      "on-background": "#e5e2e3",
+                      "surface-container-highest": "#353436",
+                      "tertiary-container": "#646365",
+                      "error-container": "#93000a",
+                      "on-primary": "#480081",
+                      "electric-violet": "#8a2be2",
+                      "surface-container": "#201f20",
+                      "error": "#ffb4ab",
+                      "on-surface": "#e5e2e3",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "secondary": "#c8c6c8",
+                      "on-primary-container": "#eed9ff",
+                      "success-green": "#81C784",
+                      "surface-container-low": "#1c1b1c",
+                      "surface-variant": "#353436",
+                      "primary": "#dcb8ff",
+                      "on-error-container": "#ffdad6",
+                      "on-tertiary": "#303032",
+                      "surface-container-high": "#2a2a2b",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "tertiary": "#c8c6c8",
+                      "surface-dim": "#131314",
+                      "on-tertiary-container": "#e3e0e2",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "on-error": "#690005",
+                      "on-secondary": "#303032",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "surface-bright": "#39393a",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "on-secondary-container": "#b9b8ba",
+                      "primary-container": "#8a2be2"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "3xl": "64px",
+                      "xl": "32px",
+                      "xs": "4px",
+                      "md": "16px",
+                      "lg": "24px",
+                      "2xl": "48px",
+                      "sm": "8px"
+              },
+              "fontFamily": {
+                      "h3": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "mono-display": [
+                              "monospace"
+                      ],
+                      "h1": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex selection:bg-electric-violet/30">
+<!-- TopNavBar (Mobile Only) -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md text-electric-violet font-body-md text-body-md border-b border-outline-variant/30 flex justify-between items-center px-xl h-16 md:hidden">
+<div class="font-h1 text-h1 text-electric-violet">Anything Clean</div>
+<div class="flex gap-md">
+<span class="material-symbols-outlined cursor-pointer active:opacity-80 text-on-surface-variant hover:text-primary transition-colors" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined cursor-pointer active:opacity-80 text-on-surface-variant hover:text-primary transition-colors" data-icon="help_outline">help_outline</span>
+</div>
+</nav>
+<!-- SideNavBar (Desktop Only) -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low text-primary font-label-md text-label-md border-r border-outline-variant/30 hidden md:flex flex-col py-lg px-md gap-sm z-40">
+<div class="flex items-center gap-md mb-xl px-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container border border-outline-variant/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-surface">cleaning_services</span>
+</div>
+<div>
+<h1 class="font-h3 text-h3 text-on-surface truncate">Anything Clean</h1>
+<p class="font-caption text-caption text-on-surface-variant">Verification Progress: 45%</p>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto flex flex-col gap-sm">
+<a class="flex items-center gap-md p-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all rounded-lg transition-transform duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-md p-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all rounded-lg transition-transform duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors" data-icon="fingerprint">fingerprint</span>
+<span>Identity</span>
+</a>
+<a class="flex items-center gap-md p-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all rounded-lg transition-transform duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors" data-icon="location_on">location_on</span>
+<span>Address</span>
+</a>
+<a class="flex items-center gap-md p-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all rounded-lg transition-transform duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors" data-icon="business">business</span>
+<span>Registration</span>
+</a>
+<a class="flex items-center gap-md p-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all rounded-lg transition-transform duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors" data-icon="verified_user">verified_user</span>
+<span>KYC Check</span>
+</a>
+<a class="flex items-center gap-md p-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all rounded-lg transition-transform duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors" data-icon="description">description</span>
+<span>Documents</span>
+</a>
+<a class="flex items-center gap-md p-sm bg-primary/10 text-primary font-bold rounded-lg transition-transform duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined text-primary" data-icon="account_balance">account_balance</span>
+<span>Bank Setup</span>
+</a>
+<a class="flex items-center gap-md p-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all rounded-lg transition-transform duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors" data-icon="check_circle">check_circle</span>
+<span>Final Review</span>
+</a>
+</div>
+<div class="mt-auto pt-lg border-t border-outline-variant/30 flex flex-col gap-sm">
+<a class="flex items-center gap-md p-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all rounded-lg transition-transform duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-md p-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all rounded-lg transition-transform duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors" data-icon="contact_support">contact_support</span>
+<span>Support</span>
+</a>
+<button class="mt-md w-full py-sm px-md bg-electric-violet hover:bg-primary-container text-white font-label-md text-label-md font-bold rounded-lg transition-colors shadow-lg shadow-electric-violet/20 flex justify-center items-center gap-sm">
+                Complete Verification
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 pt-16 md:pt-0 min-h-screen">
+<div class="max-w-[1200px] mx-auto p-xl">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-sm font-label-md text-label-md text-on-surface-variant mb-lg">
+<span class="hover:text-primary cursor-pointer transition-colors">Verification</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary font-bold">Bank Setup</span>
+</div>
+<!-- Page Header -->
+<div class="mb-xl flex flex-col sm:flex-row justify-between items-start sm:items-end gap-md border-b border-outline-variant/30 pb-lg">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Bank &amp; Payout Verification</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Connect your primary business account to receive marketplace payouts securely. This information will be verified against your KYC documents.</p>
+</div>
+<div class="flex items-center gap-sm bg-surface-container-high px-md py-sm rounded-full border border-outline-variant/50 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<span class="font-label-md text-label-md font-bold uppercase tracking-wider text-on-surface-variant">Verification Pending</span>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Main Form Card (Span 8) -->
+<div class="lg:col-span-8 bg-surface-container rounded-xl border border-outline-variant/20 p-lg shadow-sm relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-64 h-64 bg-electric-violet/5 rounded-full blur-3xl -mr-32 -mt-32 transition-opacity opacity-50 group-hover:opacity-100"></div>
+<div class="relative z-10 flex items-center gap-md mb-lg border-b border-outline-variant/30 pb-md">
+<span class="material-symbols-outlined text-primary p-sm bg-primary/10 rounded-lg">account_balance</span>
+<h2 class="font-h3 text-h3 text-on-surface">Account Details</h2>
+</div>
+<form class="space-y-lg relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Account Holder -->
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant block">Account Holder Name</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant">person</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-sm pl-[44px] pr-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body-md text-body-md" type="text" value="CleanX Services"/>
+</div>
+</div>
+<!-- Bank Name -->
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant block">Bank Name</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant">domain</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-sm pl-[44px] pr-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body-md text-body-md" type="text" value="Example Bank"/>
+</div>
+</div>
+<!-- Account Number -->
+<div class="space-y-xs md:col-span-2">
+<label class="font-label-md text-label-md text-on-surface-variant block">Account Number</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant">numbers</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-sm pl-[44px] pr-md text-on-surface font-mono-display text-mono-display focus:border-primary focus:ring-1 focus:ring-primary transition-all" type="text" value="•••• •••• 4821"/>
+</div>
+</div>
+<!-- IFSC -->
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant block">IFSC / Routing Code</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant">tag</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-sm pl-[44px] pr-md text-on-surface font-mono-display text-mono-display focus:border-primary focus:ring-1 focus:ring-primary transition-all" type="text" value="XXXXXXXXXXX"/>
+</div>
+</div>
+<!-- Account Type -->
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant block">Account Type</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant z-10 pointer-events-none">category</span>
+<select class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-sm pl-[44px] pr-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body-md text-body-md appearance-none">
+<option>Business Checking</option>
+<option>Business Savings</option>
+<option>Corporate Trust</option>
+</select>
+<span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">arrow_drop_down</span>
+</div>
+</div>
+</div>
+</form>
+</div>
+<!-- Contextual Side Column (Span 4) -->
+<div class="lg:col-span-4 flex flex-col gap-lg">
+<!-- Security Note Card -->
+<div class="bg-surface-container-low rounded-xl border border-outline-variant/20 p-md flex gap-md">
+<span class="material-symbols-outlined text-primary shrink-0">shield</span>
+<div>
+<h3 class="font-label-md text-label-md font-bold text-on-surface mb-xs">Secure Payouts</h3>
+<p class="font-caption text-caption text-on-surface-variant">Your payout information is used strictly for marketplace payouts. We use enterprise-grade encryption to protect your financial data.</p>
+</div>
+</div>
+<!-- Consent Card -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg shadow-sm">
+<h3 class="font-h3 text-h3 text-on-surface mb-md">Authorization</h3>
+<label class="flex items-start gap-md cursor-pointer group">
+<div class="relative flex items-start mt-1">
+<input class="peer sr-only" type="checkbox"/>
+<div class="w-5 h-5 border-2 border-outline-variant rounded bg-surface-container-low peer-checked:bg-electric-violet peer-checked:border-electric-violet transition-all flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[14px] opacity-0 peer-checked:opacity-100 transition-opacity">check</span>
+</div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant group-hover:text-on-surface transition-colors">
+                                I confirm that 'CleanX Services' is the legal owner of this bank account and authorize Anything Clean to initiate credit and debit entries to this account for marketplace payouts and adjustments.
+                            </span>
+</label>
+</div>
+<!-- Actions -->
+<div class="mt-auto flex flex-col gap-md pt-lg border-t border-outline-variant/30">
+<button class="w-full py-sm px-md bg-electric-violet hover:bg-primary-container text-white font-label-md text-label-md font-bold rounded-lg transition-colors shadow-lg shadow-electric-violet/20">
+                            Save &amp; Continue
+                        </button>
+<button class="w-full py-sm px-md border border-outline-variant text-on-surface hover:bg-surface-container font-label-md text-label-md font-bold rounded-lg transition-colors">
+                            Return to Documents
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

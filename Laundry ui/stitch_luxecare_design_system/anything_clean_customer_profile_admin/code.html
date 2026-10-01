@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Profile - Lumina Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#e5e2e3",
+                        "surface-container-high": "#2a2a2b",
+                        "on-primary-container": "#eed9ff",
+                        "on-primary": "#480081",
+                        "success": "#4ade80",
+                        "on-secondary-container": "#caa7ec",
+                        "tertiary-fixed-dim": "#ffb873",
+                        "inverse-surface": "#e5e2e3",
+                        "on-error": "#690005",
+                        "surface-bright": "#3a393a",
+                        "on-tertiary-container": "#ffdaba",
+                        "tertiary": "#ffb873",
+                        "error-container": "#93000a",
+                        "on-tertiary": "#4b2800",
+                        "surface-container-highest": "#353436",
+                        "on-tertiary-fixed": "#2d1600",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#cfc2d7",
+                        "secondary-fixed-dim": "#dcb8ff",
+                        "secondary-container": "#573976",
+                        "surface-container": "#201f20",
+                        "background": "#131314",
+                        "on-secondary": "#3f225e",
+                        "on-tertiary-fixed-variant": "#6a3b00",
+                        "outline": "#988ca0",
+                        "warning": "#fbbf24",
+                        "critical": "#f87171",
+                        "surface-container-lowest": "#0e0e0f",
+                        "secondary": "#dcb8ff",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "tertiary-fixed": "#ffdcbf",
+                        "tertiary-container": "#935400",
+                        "on-primary-fixed": "#2c0051",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#8422dc",
+                        "on-secondary-fixed-variant": "#573976",
+                        "primary": "#dcb8ff",
+                        "surface-variant": "#353436",
+                        "primary-fixed": "#efdbff",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "surface": "#131314",
+                        "primary-container": "#8a2be2",
+                        "outline-variant": "#4c4354",
+                        "on-background": "#e5e2e3",
+                        "inverse-on-surface": "#313031",
+                        "info": "#60a5fa",
+                        "surface-tint": "#dcb8ff",
+                        "surface-container-low": "#1c1b1c",
+                        "on-secondary-fixed": "#290947",
+                        "surface-dim": "#131314",
+                        "secondary-fixed": "#efdbff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "table-cell-padding": "12px",
+                        "gutter": "16px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "24px",
+                        "sidebar-width": "260px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "code": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "body-md": ["Geist"],
+                        "body-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "code": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .icon-filled { font-variation-settings: 'FILL' 1; }
+        /* Scrollbar styles for dark theme */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #0e0e0f; }
+        ::-webkit-scrollbar-thumb { background: #353436; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #4c4354; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-surface-container dark:bg-surface-container fixed top-0 right-0 w-[calc(100%-260px)] h-16 border-b border-outline-variant dark:border-outline-variant flex justify-between items-center px-margin-desktop ml-sidebar-width z-40 hidden lg:flex">
+<div class="flex items-center space-x-4 w-1/3">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-label-md">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg pl-10 pr-4 py-2 text-on-surface font-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<button class="p-2 text-on-surface-variant hover:text-on-surface transition-colors relative">
+<span class="material-symbols-outlined font-label-md">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined font-label-md">help</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined font-label-md">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant ml-2">
+<img alt="Admin User Avatar" class="w-full h-full object-cover" data-alt="A detailed headshot of a professional admin user in a modern office environment. Soft, even studio lighting. Dark corporate attire against a neutral gray background. Crisp focus, high resolution, suitable for a professional dashboard avatar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdv6zKJrvcPVd35BDfjbbqcTteBG2IDWwrS9iMtovcTgRITerCSpop8temKCF-nYjyJPP5eHqFO3jTFTLMjVhRoWwSeVSCU9veY6bYnNZEIgyHmE_dQb8hOeAVNpXwhvFY56ZGHwXx40TkpHYlZShyBFX5AALNDbYUgPtk3fXFZ1nvrWWoQFgibxe7n0nNetxvkTSVwC3gVR3JS8McYq999L-UxZmSzRQvNUPQ1ngIVFmwoJ6OLfSRWA"/>
+</div>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="bg-surface-container-lowest dark:bg-surface-container-lowest text-primary dark:text-primary fixed left-0 top-0 h-full w-[260px] border-r border-outline-variant dark:border-outline-variant flex flex-col py-6 z-50 hidden lg:flex">
+<div class="px-6 mb-8 flex items-center space-x-3">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center text-on-primary font-bold">L</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-surface">Lumina Admin</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Super Admin Console</p>
+</div>
+</div>
+<div class="px-4 mb-2">
+<span class="font-label-sm text-label-sm text-outline px-4 uppercase tracking-wider">Main Menu</span>
+</div>
+<nav class="flex-1 overflow-y-auto px-4 space-y-1">
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-on-surface transition-colors font-label-md">dashboard</span>
+<span class="font-label-md text-label-md group-hover:text-on-surface transition-colors">Dashboard</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-on-surface transition-colors font-label-md">shopping_cart</span>
+<span class="font-label-md text-label-md group-hover:text-on-surface transition-colors">Orders</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg border-l-4 border-primary text-on-surface dark:text-on-surface font-semibold bg-surface-container-high dark:bg-surface-container-high transition-all duration-150 transform active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined font-label-md icon-filled">group</span>
+<span class="font-label-md text-label-md">Customers</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-on-surface transition-colors font-label-md">store</span>
+<span class="font-label-md text-label-md group-hover:text-on-surface transition-colors">Providers</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-on-surface transition-colors font-label-md">local_shipping</span>
+<span class="font-label-md text-label-md group-hover:text-on-surface transition-colors">Delivery Partners</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-on-surface transition-colors font-label-md">settings_input_component</span>
+<span class="font-label-md text-label-md group-hover:text-on-surface transition-colors">Operations</span>
+</a>
+</nav>
+<div class="px-4 mt-auto space-y-1">
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-on-surface transition-colors font-label-md">terminal</span>
+<span class="font-label-md text-label-md group-hover:text-on-surface transition-colors">System Logs</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-on-surface transition-colors font-label-md">support_agent</span>
+<span class="font-label-md text-label-md group-hover:text-on-surface transition-colors">Support</span>
+</a>
+</div>
+</aside>
+<!-- Mobile Nav Header -->
+<header class="lg:hidden fixed top-0 w-full h-16 bg-surface-container border-b border-outline-variant flex items-center justify-between px-4 z-40">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center text-on-primary font-bold">L</div>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Lumina Admin</span>
+</div>
+<button class="text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="lg:ml-sidebar-width lg:mt-16 pt-20 lg:pt-0 p-gutter lg:p-margin-desktop min-h-screen">
+<!-- Breadcrumbs & Actions -->
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+<div class="flex items-center text-on-surface-variant font-label-sm text-label-sm space-x-2">
+<a class="hover:text-primary transition-colors" href="#">Customers</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface">Arun Kumar</span>
+</div>
+<div class="flex items-center space-x-3">
+<button class="px-4 py-2 bg-surface-container-low border border-outline-variant hover:bg-surface-container-highest rounded-lg font-label-md text-label-md text-on-surface flex items-center space-x-2 transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span>Edit Profile</span>
+</button>
+<button class="px-4 py-2 bg-primary hover:bg-primary-fixed rounded-lg font-label-md text-label-md text-on-primary-fixed-variant flex items-center space-x-2 transition-colors">
+<span class="material-symbols-outlined text-[18px]">message</span>
+<span>Contact</span>
+</button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter lg:gap-margin-desktop">
+<!-- Hero / Profile Card (Spans 4 columns on large, full on small) -->
+<div class="md:col-span-12 lg:col-span-4 bg-surface-container-low border border-outline-variant rounded-xl p-6 flex flex-col items-center text-center relative overflow-hidden group">
+<!-- Decorative background subtle gradient -->
+<div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-surface-container-highest to-transparent opacity-50 pointer-events-none"></div>
+<div class="relative w-32 h-32 rounded-full border-4 border-surface-container-lowest overflow-hidden mb-4 shadow-lg z-10">
+<img alt="Arun Kumar Profile" class="w-full h-full object-cover" data-alt="A highly detailed close-up portrait of a professional Indian male in his late 20s, wearing a modern smart-casual dark grey t-shirt. Soft studio lighting with a subtle cool rim light. Clean, neutral dark background. Shot on 85mm lens, shallow depth of field, corporate modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0jJJ8XBMi8ps87bxkI7JmoRd_ZVYjeZ8vCLlwLL_H2gDHdRkNlGgreH5MFk4ak_ZsNyv1pPExQKIo2Xi_iwR4xw6CHBPx6GFdC7O77LGZeXGbC6rnb8wEMqqfi2gqtlhI5u6SyXdFFm3E-eNzPuCaIEyrRHuaTI89MLC1S658uyK1Q2ONPNFmp0UFGE8r6boRxgHvZSO9mP3lDKeNz0TmMK5NriDXFo2pcLtdJ2u2NAvtHy6rWFGvMg"/>
+<div class="absolute bottom-0 right-0 w-6 h-6 bg-success rounded-full border-2 border-surface-container-lowest z-20"></div>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-1 z-10">Arun Kumar</h2>
+<div class="font-code text-code text-on-surface-variant mb-4 z-10 flex items-center space-x-2">
+<span class="material-symbols-outlined text-[14px]">tag</span>
+<span>CUS-10242</span>
+</div>
+<div class="flex items-center justify-center space-x-4 mb-6 z-10 w-full">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-success/10 text-success border border-success/20">
+                        ACTIVE
+                    </span>
+<span class="text-label-sm font-label-sm text-on-surface-variant flex items-center">
+<span class="material-symbols-outlined text-[14px] mr-1">calendar_today</span>
+                        Joined Jan 12, 2026
+                    </span>
+</div>
+<!-- Contact Info Section inside Hero -->
+<div class="w-full mt-auto pt-6 border-t border-outline-variant z-10 flex flex-col gap-3">
+<div class="flex items-center justify-between text-left p-3 rounded-lg bg-background border border-outline-variant/50 hover:border-outline-variant transition-colors group/item cursor-pointer">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-on-surface-variant font-label-md">phone</span>
+<span class="font-body-md text-body-md text-on-surface">+91 98*** **420</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[16px] opacity-0 group-hover/item:opacity-100 transition-opacity">content_copy</span>
+</div>
+<div class="flex items-center justify-between text-left p-3 rounded-lg bg-background border border-outline-variant/50 hover:border-outline-variant transition-colors group/item cursor-pointer">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-on-surface-variant font-label-md">mail</span>
+<span class="font-body-md text-body-md text-on-surface">arun.k***@gmail.com</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[16px] opacity-0 group-hover/item:opacity-100 transition-opacity">content_copy</span>
+</div>
+</div>
+</div>
+<!-- Stats & Activity Area (Spans 8 columns) -->
+<div class="md:col-span-12 lg:col-span-8 flex flex-col gap-gutter lg:gap-margin-desktop">
+<!-- Summary Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-5 hover:bg-surface-container-highest transition-colors cursor-default relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[48px] text-primary">shopping_bag</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block mb-2 relative z-10">Total Orders</span>
+<div class="flex items-end justify-between relative z-10">
+<span class="font-display-lg text-display-lg text-on-surface">18</span>
+</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-5 hover:bg-surface-container-highest transition-colors cursor-default">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block mb-2">Completed / Ret</span>
+<div class="flex items-end space-x-2">
+<span class="font-display-lg text-display-lg text-success">16</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant pb-1">/</span>
+<span class="font-headline-md text-headline-md text-warning pb-1">1</span>
+</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-5 hover:bg-surface-container-highest transition-colors cursor-default">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block mb-2">Total Spend</span>
+<div class="flex items-end space-x-1">
+<span class="font-headline-md text-headline-md text-on-surface-variant pb-1">₹</span>
+<span class="font-display-lg text-display-lg text-on-surface">8,420</span>
+</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-5 hover:bg-surface-container-highest transition-colors cursor-default">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block mb-2">Avg. Order Value</span>
+<div class="flex items-end space-x-1">
+<span class="font-headline-md text-headline-md text-on-surface-variant pb-1">₹</span>
+<span class="font-display-lg text-display-lg text-on-surface">468</span>
+</div>
+</div>
+</div>
+<!-- Recent Activity & Quick Actions Split -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter lg:gap-margin-desktop flex-1">
+<!-- Most Recent Order Card -->
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-6 flex flex-col relative overflow-hidden group">
+<!-- Subtle focus border effect -->
+<div class="absolute inset-0 border border-primary/0 group-hover:border-primary/30 rounded-xl transition-colors pointer-events-none"></div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+<span>Active Order</span>
+</h3>
+<div class="font-code text-code text-on-surface-variant mt-1">#QH1024</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-info/10 text-info border border-info/20">
+                                IN_TRANSIT
+                            </span>
+</div>
+<div class="flex-1 space-y-4">
+<div class="flex justify-between items-center py-3 border-b border-outline-variant/50">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">dry_cleaning</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Sneaker Cleaning</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Premium Service</div>
+</div>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface">₹420</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-2">
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1">history</span>Last updated 2 hours ago</span>
+<a class="text-primary hover:text-primary-fixed transition-colors flex items-center" href="#">Track <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span></a>
+</div>
+</div>
+</div>
+<!-- Quick Actions & Context -->
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-6 flex flex-col justify-between">
+<div class="mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Quick Actions</h3>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center space-x-3 p-3 rounded-lg bg-background border border-outline-variant hover:border-primary hover:bg-surface-container-highest transition-all group text-left">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">list_alt</span>
+<span class="font-label-md text-label-md text-on-surface">View Orders</span>
+</button>
+<button class="flex items-center space-x-3 p-3 rounded-lg bg-background border border-outline-variant hover:border-primary hover:bg-surface-container-highest transition-all group text-left">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">home_pin</span>
+<span class="font-label-md text-label-md text-on-surface">Addresses</span>
+</button>
+<button class="flex items-center space-x-3 p-3 rounded-lg bg-background border border-outline-variant hover:border-primary hover:bg-surface-container-highest transition-all group text-left">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">headset_mic</span>
+<span class="font-label-md text-label-md text-on-surface">Support</span>
+</button>
+<button class="flex items-center space-x-3 p-3 rounded-lg bg-background border border-outline-variant hover:border-primary hover:bg-surface-container-highest transition-all group text-left">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">timeline</span>
+<span class="font-label-md text-label-md text-on-surface">Activity Log</span>
+</button>
+</div>
+</div>
+<div class="bg-background border border-outline-variant/50 rounded-lg p-4 space-y-2">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-on-surface-variant flex items-center"><span class="material-symbols-outlined text-[14px] mr-2">login</span>Last Login</span>
+<span class="text-on-surface">Today, 09:42 AM</span>
+</div>
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-on-surface-variant flex items-center"><span class="material-symbols-outlined text-[14px] mr-2">shopping_basket</span>Last Order</span>
+<span class="text-on-surface">Yesterday, 14:30 PM</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

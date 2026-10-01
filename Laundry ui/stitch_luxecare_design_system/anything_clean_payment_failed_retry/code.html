@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment Failed - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary": "#303032",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "inverse-surface": "#e5e2e3",
+                      "on-error": "#690005",
+                      "success-bg": "#1A3D24",
+                      "error": "#ffb4ab",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "surface-dim": "#131314",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "success-green": "#81C784",
+                      "on-secondary-fixed-variant": "#474648",
+                      "inverse-on-surface": "#313031",
+                      "inverse-primary": "#8422dc",
+                      "on-primary-container": "#eed9ff",
+                      "on-primary": "#480081",
+                      "surface-variant": "#353436",
+                      "outline": "#988ca0",
+                      "primary": "#dcb8ff",
+                      "on-surface": "#e5e2e3",
+                      "on-secondary-container": "#b9b8ba",
+                      "surface-tint": "#dcb8ff",
+                      "tertiary-container": "#646365",
+                      "primary-container": "#8a2be2",
+                      "on-primary-fixed": "#2c0051",
+                      "primary-fixed": "#efdbff",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "surface-container-low": "#1c1b1c",
+                      "secondary-container": "#49494b",
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-surface-variant": "#cfc2d7",
+                      "surface-bright": "#39393a",
+                      "surface": "#131314",
+                      "outline-variant": "#4c4354",
+                      "secondary-fixed": "#e4e2e4",
+                      "error-container": "#93000a",
+                      "surface-container-highest": "#353436",
+                      "surface-container": "#201f20",
+                      "surface-container-high": "#2a2a2b",
+                      "error-red": "#ffb4ab",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-fixed": "#e4e2e4",
+                      "on-tertiary-container": "#e3e0e2",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "electric-violet": "#8a2be2",
+                      "tertiary": "#c8c6c8",
+                      "on-tertiary": "#303032",
+                      "background": "#131314",
+                      "on-background": "#e5e2e3",
+                      "secondary": "#c8c6c8",
+                      "on-primary-fixed-variant": "#6700b5"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xs": "4px",
+                      "sm": "8px",
+                      "xl": "32px",
+                      "2xl": "48px",
+                      "lg": "24px",
+                      "md": "16px",
+                      "3xl": "64px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "h3": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "mono-display": [
+                              "monospace"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "h1": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex items-center justify-center p-xl">
+<main class="w-full max-w-[600px] mx-auto flex flex-col gap-xl">
+<!-- Error Card -->
+<div class="bg-surface-container rounded-xl border border-error-container/30 overflow-hidden relative">
+<!-- Subtle error glow top -->
+<div class="absolute top-0 left-0 w-full h-1 bg-error-container"></div>
+<div class="p-2xl flex flex-col items-center text-center gap-md relative z-10">
+<div class="w-3xl h-3xl rounded-full bg-error-container/10 flex items-center justify-center border border-error-container/30 mb-sm">
+<span class="material-symbols-outlined text-error-red" style="font-size: 40px; font-variation-settings: 'FILL' 1;">error</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Payment Failed</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[80%]">
+                    Your bank declined the payment. Please check your account details or try a different payment method.
+                </p>
+<div class="bg-surface-container-low rounded-lg p-md w-full mt-lg border border-outline-variant/30 flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface-variant">Attempted Amount</span>
+<span class="font-mono-display text-mono-display text-on-surface">₹502.00</span>
+</div>
+<p class="font-caption text-caption text-primary/80 mt-sm">
+<span class="material-symbols-outlined align-middle mr-xs" style="font-size: 14px;">bookmark</span>
+                    Your booking details are safely saved.
+                </p>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-md">
+<button class="w-full bg-electric-violet hover:bg-primary-container text-white font-label-md text-label-md py-md rounded-lg shadow-lg shadow-electric-violet/20 transition-all active:scale-95 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined">refresh</span>
+                Try Payment Again
+            </button>
+<button class="w-full bg-transparent border border-outline-variant hover:bg-surface-container text-on-surface font-label-md text-label-md py-md rounded-lg transition-colors active:scale-95 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined">credit_card</span>
+                Choose Another Payment Method
+            </button>
+</div>
+<!-- Help Link -->
+<div class="text-center mt-md">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center gap-xs" href="#">
+<span class="material-symbols-outlined" style="font-size: 18px;">help</span>
+                Get Help
+            </a>
+</div>
+</main>
+</body></html>

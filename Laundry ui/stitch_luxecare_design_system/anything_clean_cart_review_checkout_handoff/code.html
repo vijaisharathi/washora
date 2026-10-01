@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cart Review &amp; Checkout</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-container": "#eed9ff",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "surface-container": "#201f20",
+                      "inverse-primary": "#8422dc",
+                      "electric-violet": "#8a2be2",
+                      "on-background": "#e5e2e3",
+                      "error-container": "#93000a",
+                      "inverse-surface": "#e5e2e3",
+                      "surface-tint": "#dcb8ff",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "on-secondary-container": "#b9b8ba",
+                      "on-surface-variant": "#cfc2d7",
+                      "surface-container-high": "#2a2a2b",
+                      "on-tertiary-container": "#e3e0e2",
+                      "on-error-container": "#ffdad6",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "on-surface": "#e5e2e3",
+                      "on-primary-fixed": "#2c0051",
+                      "outline-variant": "#4c4354",
+                      "tertiary-fixed": "#e4e2e4",
+                      "on-tertiary": "#303032",
+                      "on-secondary-fixed-variant": "#474648",
+                      "secondary-fixed": "#e4e2e4",
+                      "primary": "#dcb8ff",
+                      "secondary-container": "#49494b",
+                      "on-secondary": "#303032",
+                      "on-error": "#690005",
+                      "success-green": "#81C784",
+                      "error": "#ffb4ab",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "inverse-on-surface": "#313031",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "tertiary-container": "#646365",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "tertiary": "#c8c6c8",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "on-primary": "#480081",
+                      "surface-container-low": "#1c1b1c",
+                      "primary-fixed": "#efdbff",
+                      "surface-bright": "#39393a",
+                      "error-red": "#ffb4ab",
+                      "outline": "#988ca0",
+                      "secondary": "#c8c6c8",
+                      "surface-dim": "#131314",
+                      "background": "#131314",
+                      "primary-container": "#8a2be2",
+                      "surface": "#131314",
+                      "surface-container-lowest": "#0e0e0f",
+                      "surface-container-highest": "#353436",
+                      "surface-variant": "#353436",
+                      "success-bg": "#1A3D24"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "16px",
+                      "sm": "8px",
+                      "3xl": "64px",
+                      "2xl": "48px",
+                      "xs": "4px",
+                      "xl": "32px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Geist"],
+                      "h3": ["Geist"],
+                      "body-md": ["Geist"],
+                      "display-lg": ["Geist"],
+                      "label-md": ["Geist"],
+                      "caption": ["Geist"],
+                      "mono-display": ["monospace"],
+                      "h1": ["Geist"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                      "mono-display": ["18px", {"letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "h1": ["28px", {"lineHeight": "36px", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131314;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #353436;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4c4354;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col antialiased selection:bg-electric-violet/30 selection:text-white">
+<!-- Header / TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-xl h-20 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30">
+<div class="flex items-center gap-md">
+<button class="p-sm rounded-full hover:bg-surface-container-highest transition-colors text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="font-h1 text-h1 font-bold text-electric-violet">Anything Clean</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-sm rounded-full hover:bg-surface-container-highest transition-colors text-on-surface-variant flex items-center justify-center relative scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-electric-violet rounded-full"></span>
+</button>
+<button class="p-sm rounded-full hover:bg-surface-container-highest transition-colors text-on-surface-variant flex items-center justify-center scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 mt-20 px-md md:px-xl py-xl pb-32 md:pb-xl max-w-7xl mx-auto w-full">
+<!-- Page Title Header -->
+<div class="mb-lg">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Review Your Cart</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Everything looks good? Continue to checkout.</p>
+</div>
+<!-- 2 Column Layout for Desktop, Stacked for Mobile -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+<!-- Left Column: Details (Items, Pickup, Address) -->
+<div class="lg:col-span-8 flex flex-col gap-lg">
+<!-- Items Summary -->
+<section class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col gap-md shadow-lg shadow-black/20">
+<div class="flex justify-between items-center border-b border-outline-variant/30 pb-sm">
+<h2 class="font-h3 text-h3 text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="inventory_2">inventory_2</span>
+                            Items
+                        </h2>
+<a class="font-label-md text-label-md text-primary hover:text-electric-violet transition-colors" href="#">Edit</a>
+</div>
+<div class="flex items-start gap-md py-sm">
+<div class="w-20 h-20 rounded-lg bg-surface-container-high border border-outline-variant/30 flex-shrink-0 flex items-center justify-center overflow-hidden">
+<img class="object-cover w-full h-full opacity-80 mix-blend-luminosity" data-alt="A sleek, modern close-up of a premium sneaker being detailed in a high-tech studio environment. Dark background, glowing electric violet and neon blue accent lighting highlighting the textures of the shoe. Corporate modern aesthetic, precise and technical vibe, high-resolution photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6rK01XPymYLAzxOGIrUhA2jiMRVWYYwLl7XQs3Qr0Rr98uOrySvRTjMLs1ngFGLp4kQSgm5FiL4U6KYBb8CsROHcJipu_m802vc3jOYaY8XGbPJc8IYzFvdCjRZYK2hTutdy_cN3mxT3uUHurdiJ2w9BkNlxOv0fhIPr7RT6geOBjQ3-zr2vcUPvK7jEVoYZ-2YcupLCR4t2FZautZ58kVpEbEQIlSLpj2ioC6lE9o4f0Ep-hYQgIjA"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface font-semibold mb-xs">Sneaker Deep Clean</h3>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-2">Premium cleaning service including deep stain removal, sole whitening, and complete exterior detailing.</p>
+</div>
+<div class="mt-sm flex flex-wrap gap-sm">
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded bg-surface-container-high text-on-secondary-container border border-outline-variant/30 font-caption text-caption">
+<span class="material-symbols-outlined text-[14px]" data-icon="water_drop">water_drop</span>
+                                    Water &amp; Stain Protection
+                                </span>
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded bg-surface-container-high text-on-secondary-container border border-outline-variant/30 font-caption text-caption">
+<span class="material-symbols-outlined text-[14px]" data-icon="air">air</span>
+                                    Odor Treatment
+                                </span>
+</div>
+</div>
+<div class="text-right">
+<div class="font-mono-display text-mono-display text-on-surface">₹627</div>
+<div class="font-caption text-caption text-on-surface-variant mt-xs">Qty: 1</div>
+</div>
+</div>
+</section>
+<!-- Schedule & Location Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Pickup & Delivery -->
+<section class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col shadow-lg shadow-black/20">
+<div class="flex justify-between items-center border-b border-outline-variant/30 pb-sm mb-md">
+<h2 class="font-h3 text-h3 text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="calendar_clock">calendar_clock</span>
+                                Schedule
+                            </h2>
+<a class="font-label-md text-label-md text-primary hover:text-electric-violet transition-colors" href="#">Edit</a>
+</div>
+<div class="flex items-start gap-md">
+<div class="p-sm rounded-lg bg-surface-container-high text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined icon-filled" data-icon="event_available">event_available</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface-variant mb-xs">Pickup &amp; Delivery Window</div>
+<div class="font-body-md text-body-md text-on-surface font-medium">Sep 1, 10:00 AM - 12:00 PM</div>
+</div>
+</div>
+</section>
+<!-- Address -->
+<section class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col shadow-lg shadow-black/20">
+<div class="flex justify-between items-center border-b border-outline-variant/30 pb-sm mb-md">
+<h2 class="font-h3 text-h3 text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="pin_drop">pin_drop</span>
+                                Address
+                            </h2>
+<a class="font-label-md text-label-md text-primary hover:text-electric-violet transition-colors" href="#">Edit</a>
+</div>
+<div class="flex items-start gap-md">
+<div class="p-sm rounded-lg bg-surface-container-high text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined icon-filled" data-icon="home_work">home_work</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface-variant mb-xs">Home</div>
+<div class="font-body-md text-body-md text-on-surface font-medium leading-relaxed">
+                                    12, Example Street,<br/>
+                                    Anna Nagar, Chennai 600040
+                                </div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Right Column: Final Price Summary & Checkout Action -->
+<div class="lg:col-span-4 flex flex-col gap-lg">
+<section class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col shadow-lg shadow-black/20 sticky top-[104px]">
+<h2 class="font-h3 text-h3 text-on-surface border-b border-outline-variant/30 pb-sm mb-md">Order Summary</h2>
+<!-- Subtotal details -->
+<div class="flex flex-col gap-sm mb-md">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Subtotal</span>
+<span class="font-mono-display text-mono-display text-on-surface text-[16px]">₹627</span>
+</div>
+<!-- Coupon Applied State -->
+<div class="flex justify-between items-center bg-success-bg/20 border border-success-green/20 rounded-lg p-sm mt-xs">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-success-green text-[18px]" data-icon="local_offer">local_offer</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-success-green uppercase tracking-wide">FRESH20</span>
+<a class="font-caption text-caption text-on-surface-variant underline hover:text-primary transition-colors" href="#">Change</a>
+</div>
+</div>
+<span class="font-mono-display text-mono-display text-success-green text-[16px]">-₹125</span>
+</div>
+</div>
+<!-- Divider -->
+<div class="h-px w-full bg-outline-variant/30 my-sm"></div>
+<!-- Total -->
+<div class="flex justify-between items-end mb-xl">
+<span class="font-h3 text-h3 text-on-surface">Total</span>
+<div class="flex flex-col items-end">
+<span class="font-display-lg text-display-lg text-primary leading-none">₹502</span>
+<span class="font-caption text-caption text-on-surface-variant mt-xs">Includes all taxes</span>
+</div>
+</div>
+<!-- Agreement -->
+<label class="flex items-start gap-sm cursor-pointer mb-lg group">
+<div class="relative flex items-center justify-center mt-1">
+<input class="peer sr-only" type="checkbox"/>
+<div class="w-5 h-5 rounded border border-outline-variant/50 bg-surface-container-low peer-checked:bg-electric-violet peer-checked:border-electric-violet transition-colors group-hover:border-primary"></div>
+<span class="material-symbols-outlined absolute text-white opacity-0 peer-checked:opacity-100 text-[16px] pointer-events-none transition-opacity" data-icon="check">check</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-on-surface transition-colors">
+                            I agree to the <a class="text-primary hover:underline" href="#">service terms</a> and cancellation policy.
+                        </span>
+</label>
+<!-- CTAs -->
+<div class="flex flex-col gap-md">
+<button class="w-full py-md px-lg bg-electric-violet text-white font-label-md text-label-md font-bold rounded-lg shadow-lg shadow-primary/20 hover:bg-inverse-primary hover:-translate-y-0.5 transition-all flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+                            Continue to Checkout
+                        </button>
+<button class="w-full py-sm px-lg bg-transparent border border-outline-variant text-on-surface font-label-md text-label-md rounded-lg hover:bg-surface-container-high transition-colors">
+                            Edit Cart
+                        </button>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body></html>

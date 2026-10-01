@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Financial Audit - Anything Clean Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.cdnfonts.com/css/geist" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#935400",
+                        "surface-container-high": "#2a2a2b",
+                        "on-secondary-fixed": "#290947",
+                        "surface-container-lowest": "#0e0e0f",
+                        "secondary-fixed": "#efdbff",
+                        "on-error": "#690005",
+                        "secondary-container": "#573976",
+                        "surface-tint": "#dcb8ff",
+                        "background": "#131314",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-tertiary": "#4b2800",
+                        "on-secondary-container": "#caa7ec",
+                        "inverse-primary": "#8422dc",
+                        "surface-bright": "#39393a",
+                        "tertiary-fixed": "#ffdcbf",
+                        "on-secondary": "#3f225e",
+                        "surface-container": "#201f20",
+                        "critical": "#f87171",
+                        "inverse-surface": "#e5e2e3",
+                        "secondary": "#dcb8ff",
+                        "on-primary": "#480081",
+                        "on-primary-fixed": "#2c0051",
+                        "primary-container": "#8a2be2",
+                        "on-tertiary-container": "#ffdaba",
+                        "on-surface-variant": "#cfc2d7",
+                        "error-container": "#93000a",
+                        "tertiary": "#ffb873",
+                        "on-primary-container": "#eed9ff",
+                        "on-tertiary-fixed-variant": "#6a3b00",
+                        "on-surface": "#e5e2e3",
+                        "error": "#ffb4ab",
+                        "surface-container-highest": "#353436",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#131314",
+                        "outline-variant": "#4c4354",
+                        "tertiary-fixed-dim": "#ffb873",
+                        "surface-dim": "#131314",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "warning": "#fbbf24",
+                        "primary": "#dcb8ff",
+                        "on-secondary-fixed-variant": "#573976",
+                        "secondary-fixed-dim": "#dcb8ff",
+                        "on-tertiary-fixed": "#2d1600",
+                        "success": "#4ade80",
+                        "surface-variant": "#353436",
+                        "surface-container-low": "#1c1b1c",
+                        "info": "#60a5fa",
+                        "outline": "#988ca0",
+                        "inverse-on-surface": "#313031",
+                        "on-background": "#e5e2e3",
+                        "primary-fixed": "#efdbff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "16px",
+                        "margin-desktop": "24px",
+                        "sidebar-width": "260px",
+                        "table-cell-padding": "12px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "code": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "label-sm": ["Geist"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "code": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen overflow-x-hidden antialiased">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 right-0 w-[calc(100%-260px)] h-16 bg-surface-container border-b border-outline-variant flex justify-between items-center px-margin-desktop z-40">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Lumina Control Center</span>
+<div class="relative ml-8 w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-full py-2 pl-10 pr-4 text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-body-md transition-colors" placeholder="Search orders, admins, references..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-on-surface-variant hover:text-on-surface transition-colors" title="Notifications">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors" title="Help">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors" title="Settings">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border border-outline-variant overflow-hidden cursor-pointer hover:border-primary transition-colors">
+<img alt="Admin User Avatar" class="w-full h-full object-cover" data-alt="A professional close up headshot portrait of a confident administrator in dark clothing against a neutral studio background, dramatic studio lighting. Minimalist aesthetic, high quality corporate headshot photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4TEZKgPwWYQDTgNvfaY-UN0ewsiko2kW9We2-W0s_W4OnxakvuJSeT0yS8bLeqUcoGliQAQ9bupJKK5vj5aGdYj0ashIWgOV7dIBB5TKdFND-EjzxU8HBusUojNScfdfZ9YgdMduq1xD44OevQH3hXpXX05p7U4OizRwkQSB1ajsUeLDOOjqcDmkN47JQ23FHIBHC7TQEtI69p04-BzcU1eJwBZF3mmQ9iQUMEZB7e_stYllLEzqGNA"/>
+</div>
+</div>
+</nav>
+<!-- Side Navigation Bar -->
+<aside class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-lowest border-r border-outline-variant flex flex-col py-6 z-50 overflow-y-auto">
+<div class="px-6 mb-8 flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-primary" style="font-size: 24px;">ac_unit</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface">Lumina Admin</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Super Admin Console</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-1 px-3">
+<div class="px-3 py-2 mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Main Menu</span>
+</div>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="store">store</span>
+<span class="font-label-md text-label-md">Providers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span class="font-label-md text-label-md">Delivery Partners</span>
+</a>
+<div class="px-3 py-2 mt-4 mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">System</span>
+</div>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg border-l-4 border-primary text-on-surface font-semibold bg-surface-container-high transition-all duration-150 transform scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-primary" data-icon="settings_input_component">settings_input_component</span>
+<span class="font-label-md text-label-md">Operations</span>
+</a>
+</nav>
+<div class="mt-auto px-3 flex flex-col gap-1 pt-4 border-t border-outline-variant">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+<span class="font-label-md text-label-md">System Logs</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-sidebar-width pt-16 min-h-screen p-margin-desktop bg-background flex flex-col gap-gutter">
+<!-- Header -->
+<header class="flex justify-between items-end mb-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-1">Financial Audit</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Review sensitive financial actions and administrative changes.</p>
+</div>
+<div class="flex gap-3">
+<button class="bg-surface-container-low border border-outline-variant hover:bg-surface-container-high text-on-surface px-4 py-2 rounded-lg font-label-md text-label-md transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">download</span>
+                    Export Log
+                </button>
+</div>
+</header>
+<!-- Filters & Search -->
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-4 flex flex-wrap gap-4 items-center justify-between">
+<div class="flex flex-wrap gap-4 items-center">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide">Action Type</label>
+<select class="bg-surface border border-outline-variant rounded-md py-1.5 px-3 text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary appearance-none">
+<option>All Actions</option>
+<option>Refund Approved</option>
+<option>Payout Held</option>
+<option>Fee Adjusted</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide">Admin</label>
+<select class="bg-surface border border-outline-variant rounded-md py-1.5 px-3 text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary appearance-none">
+<option>All Admins</option>
+<option>Sarah J. (Super Admin)</option>
+<option>David R. (Finance)</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide">Date Range</label>
+<input class="bg-surface border border-outline-variant rounded-md py-1.5 px-3 text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary" type="date"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide">Status</label>
+<select class="bg-surface border border-outline-variant rounded-md py-1.5 px-3 text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary appearance-none">
+<option>All Statuses</option>
+<option>COMPLETED</option>
+<option>PENDING</option>
+<option>FAILED</option>
+</select>
+</div>
+</div>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md transition-colors flex items-center gap-1">
+                Clear Filters
+                <span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- Layout Grid: Table and Detail Panel -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-gutter h-[calc(100vh-280px)] min-h-[500px]">
+<!-- Audit Table -->
+<div class="xl:col-span-2 bg-surface-container-low border border-outline-variant rounded-xl flex flex-col overflow-hidden">
+<div class="overflow-x-auto flex-1">
+<table class="w-full text-left border-collapse">
+<thead class="sticky top-0 bg-surface-container-high border-b border-outline-variant z-10">
+<tr>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant uppercase">Timestamp</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant uppercase">Admin</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant uppercase">Action</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant uppercase">Reference</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant uppercase">Amount</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant uppercase">Status</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md">
+<!-- Row 1 (Active) -->
+<tr class="border-b border-outline-variant bg-surface-container-high border-l-4 border-l-primary cursor-pointer transition-colors relative">
+<td class="p-table-cell-padding text-on-surface">Aug 30, 6:48 PM</td>
+<td class="p-table-cell-padding text-on-surface">Sarah J.</td>
+<td class="p-table-cell-padding text-on-surface font-medium">Refund Approved</td>
+<td class="p-table-cell-padding text-primary font-code text-code">REF-2048</td>
+<td class="p-table-cell-padding text-on-surface">₹420</td>
+<td class="p-table-cell-padding">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-success/10 text-success">
+                                        COMPLETED
+                                    </span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="border-b border-outline-variant border-l-4 border-l-transparent hover:bg-surface-container-highest cursor-pointer transition-colors">
+<td class="p-table-cell-padding text-on-surface-variant">Aug 30, 4:15 PM</td>
+<td class="p-table-cell-padding text-on-surface">David R.</td>
+<td class="p-table-cell-padding text-on-surface">Payout Held</td>
+<td class="p-table-cell-padding text-on-surface-variant font-code text-code">PAY-9921</td>
+<td class="p-table-cell-padding text-on-surface">₹1,250</td>
+<td class="p-table-cell-padding">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-warning/10 text-warning">
+                                        PENDING
+                                    </span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="border-b border-outline-variant border-l-4 border-l-transparent hover:bg-surface-container-highest cursor-pointer transition-colors">
+<td class="p-table-cell-padding text-on-surface-variant">Aug 29, 11:20 AM</td>
+<td class="p-table-cell-padding text-on-surface">Sarah J.</td>
+<td class="p-table-cell-padding text-on-surface">Fee Adjusted</td>
+<td class="p-table-cell-padding text-on-surface-variant font-code text-code">ORD-4412</td>
+<td class="p-table-cell-padding text-on-surface">-₹50</td>
+<td class="p-table-cell-padding">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-success/10 text-success">
+                                        COMPLETED
+                                    </span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="border-b border-outline-variant border-l-4 border-l-transparent hover:bg-surface-container-highest cursor-pointer transition-colors">
+<td class="p-table-cell-padding text-on-surface-variant">Aug 28, 09:05 AM</td>
+<td class="p-table-cell-padding text-on-surface">System Auto</td>
+<td class="p-table-cell-padding text-on-surface">Payout Reversed</td>
+<td class="p-table-cell-padding text-on-surface-variant font-code text-code">REV-1002</td>
+<td class="p-table-cell-padding text-on-surface">₹3,400</td>
+<td class="p-table-cell-padding">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-error/10 text-error">
+                                        FAILED
+                                    </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="border-t border-outline-variant bg-surface-container p-3 flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Showing 1 to 4 of 128 entries</span>
+<div class="flex gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface border border-outline-variant text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-primary text-on-primary font-label-sm text-label-sm">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface border border-outline-variant text-on-surface hover:bg-surface-container-high transition-colors font-label-sm text-label-sm">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface border border-outline-variant text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Audit Detail Panel -->
+<div class="bg-surface-container-low border border-outline-variant rounded-xl flex flex-col overflow-hidden h-full">
+<div class="p-4 border-b border-outline-variant bg-surface-container-high flex justify-between items-center sticky top-0">
+<h3 class="font-headline-md text-headline-md text-on-surface">Log Details</h3>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-5 flex-1 overflow-y-auto flex flex-col gap-6">
+<!-- Action Header -->
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" style="font-size: 28px;">currency_rupee</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-1">Action Initiated</div>
+<div class="font-headline-md text-headline-md text-on-surface">Refund Approved</div>
+<div class="font-body-md text-body-md text-on-surface-variant mt-1">Aug 30, 2023 • 6:48:12 PM IST</div>
+</div>
+</div>
+<div class="h-px w-full bg-outline-variant"></div>
+<!-- Details Grid -->
+<div class="grid grid-cols-2 gap-y-5 gap-x-4">
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mb-1">Admin User</div>
+<div class="font-body-md text-body-md text-on-surface flex items-center gap-2">
+                                Sarah Jenkins
+                                <span class="px-1.5 py-0.5 rounded text-[10px] bg-surface-container-highest border border-outline-variant">Super Admin</span>
+</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mb-1">Reference ID</div>
+<div class="font-code text-code text-primary cursor-pointer hover:underline">REF-2048</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mb-1">Amount</div>
+<div class="font-headline-md text-headline-md text-on-surface">₹420.00</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mb-1">Status</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[12px] font-medium bg-success/10 text-success border border-success/20">
+                                COMPLETED
+                            </span>
+</div>
+</div>
+<!-- State Change Block -->
+<div class="bg-surface-container rounded-lg border border-outline-variant p-4">
+<div class="font-label-md text-label-md text-on-surface mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">history</span>
+                            State Transition
+                        </div>
+<div class="flex items-center justify-between text-body-md font-code">
+<div class="flex flex-col gap-1 w-[40%]">
+<span class="text-on-surface-variant text-[11px] uppercase">Previous State</span>
+<span class="bg-surface-container-lowest border border-outline-variant p-2 rounded text-on-surface-variant">Payment Received</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant">arrow_right_alt</span>
+<div class="flex flex-col gap-1 w-[40%]">
+<span class="text-on-surface-variant text-[11px] uppercase">New State</span>
+<span class="bg-surface-container-lowest border border-primary/50 p-2 rounded text-primary">Refund Processed</span>
+</div>
+</div>
+</div>
+<!-- Context/Reason -->
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mb-2">Reason Provided</div>
+<div class="bg-surface p-3 rounded-lg border border-outline-variant text-on-surface font-body-md text-body-md italic border-l-2 border-l-outline-variant">
+                            "Customer cancellation requested within 10 minutes of order placement. Full refund eligible as per policy."
+                        </div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mb-2">Related Entities</div>
+<div class="flex gap-2">
+<a class="px-3 py-1.5 rounded-full bg-surface-container border border-outline-variant text-on-surface font-label-sm text-label-sm hover:bg-surface-container-highest transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[14px]">receipt_long</span>
+                                Order #ORD-882A
+                            </a>
+<a class="px-3 py-1.5 rounded-full bg-surface-container border border-outline-variant text-on-surface font-label-sm text-label-sm hover:bg-surface-container-highest transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[14px]">person</span>
+                                User #USR-91B
+                            </a>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-outline-variant bg-surface-container flex gap-3">
+<button class="flex-1 bg-primary text-on-primary font-label-md text-label-md py-2 rounded-lg hover:bg-primary-fixed transition-colors text-center" onclick="document.getElementById('confirmation-modal').classList.remove('hidden'); document.getElementById('confirmation-modal').classList.add('flex');">
+                        Simulate Reversal
+                    </button>
+<button class="px-4 bg-surface border border-outline-variant text-on-surface hover:bg-surface-container-highest rounded-lg transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Modal Overlay Pattern (Hidden by default, can be toggled via JS if needed, showing structure here) -->
+<div class="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4" id="confirmation-modal">
+<div class="bg-surface-container-low border border-outline-variant rounded-xl max-w-md w-full shadow-2xl overflow-hidden flex flex-col transform transition-all">
+<div class="p-5 border-b border-outline-variant bg-surface-container-high">
+<div class="flex items-center gap-3 mb-1">
+<span class="material-symbols-outlined text-warning" style="font-variation-settings: 'FILL' 1;">warning</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Confirm Sensitive Action</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant ml-9">You are about to execute a high-impact financial reversal.</p>
+</div>
+<div class="p-5 flex flex-col gap-4 bg-surface-container-lowest">
+<div class="grid grid-cols-2 gap-4 border border-outline-variant rounded-lg p-4 bg-surface">
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Action</div>
+<div class="font-label-md text-label-md text-on-surface">Force Refund Reversal</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Amount</div>
+<div class="font-label-md text-label-md text-warning">₹420.00</div>
+</div>
+<div class="col-span-2 border-t border-outline-variant pt-3 mt-1">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Recipient</div>
+<div class="font-label-md text-label-md text-on-surface">System Escrow (ESC-001)</div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Mandatory Reason for Audit</label>
+<textarea class="w-full bg-surface-container border border-outline-variant rounded-lg p-3 text-on-surface font-body-md text-body-md focus:border-warning focus:ring-1 focus:ring-warning resize-none h-20 placeholder:text-on-surface-variant/50" placeholder="Enter administrative justification..."></textarea>
+</div>
+<div class="bg-warning/10 border border-warning/20 p-3 rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-warning text-[18px] mt-0.5">info</span>
+<div class="font-label-sm text-label-sm text-on-surface text-warning">
+<strong>Potential Impact:</strong> This will debit the escrow account and notify the customer of a processing error. This action is permanently logged.
+                    </div>
+</div>
+</div>
+<div class="p-4 border-t border-outline-variant bg-surface-container-high flex justify-end gap-3">
+<button class="px-5 py-2 rounded-lg font-label-md text-label-md text-on-surface bg-surface border border-outline-variant hover:bg-surface-container-highest transition-colors" onclick="document.getElementById('confirmation-modal').classList.add('hidden'); document.getElementById('confirmation-modal').classList.remove('flex');">
+                    Cancel
+                </button>
+<button class="px-5 py-2 rounded-lg font-label-md text-label-md text-on-surface bg-warning hover:bg-warning/90 transition-colors text-black font-semibold">
+                    Execute Reversal
+                </button>
+</div>
+</div>
+</div>
+</body></html>

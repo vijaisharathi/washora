@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Earnings Breakdown - Financial Workspace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#573976",
+                        "on-tertiary-fixed-variant": "#6a3b00",
+                        "on-error-container": "#ffdad6",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-variant": "#353436",
+                        "surface-tint": "#dcb8ff",
+                        "on-tertiary-container": "#ffdaba",
+                        "on-primary": "#480081",
+                        "primary": "#dcb8ff",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#2c0051",
+                        "surface-container-high": "#2a2a2b",
+                        "surface-container": "#201f20",
+                        "on-background": "#e5e2e3",
+                        "tertiary": "#ffb873",
+                        "critical": "#f87171",
+                        "tertiary-fixed-dim": "#ffb873",
+                        "on-secondary-fixed": "#290947",
+                        "surface": "#131314",
+                        "tertiary-fixed": "#ffdcbf",
+                        "inverse-primary": "#8422dc",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "secondary-container": "#573976",
+                        "surface-bright": "#39393a",
+                        "secondary": "#dcb8ff",
+                        "on-secondary-container": "#caa7ec",
+                        "tertiary-container": "#935400",
+                        "surface-container-lowest": "#0e0e0f",
+                        "secondary-fixed": "#efdbff",
+                        "warning": "#fbbf24",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#eed9ff",
+                        "surface-container-low": "#1c1b1c",
+                        "primary-container": "#8a2be2",
+                        "on-surface-variant": "#cfc2d7",
+                        "inverse-on-surface": "#313031",
+                        "primary-fixed": "#efdbff",
+                        "surface-container-highest": "#353436",
+                        "background": "#131314",
+                        "success": "#4ade80",
+                        "on-tertiary": "#4b2800",
+                        "on-error": "#690005",
+                        "on-surface": "#e5e2e3",
+                        "outline": "#988ca0",
+                        "on-tertiary-fixed": "#2d1600",
+                        "surface-dim": "#131314",
+                        "outline-variant": "#4c4354",
+                        "info": "#60a5fa",
+                        "on-secondary": "#3f225e",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "secondary-fixed-dim": "#dcb8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "sidebar-width": "260px",
+                        "gutter": "16px",
+                        "table-cell-padding": "12px",
+                        "margin-desktop": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Geist", "sans-serif"],
+                        "body-lg": ["Geist", "sans-serif"],
+                        "headline-lg": ["Geist", "sans-serif"],
+                        "label-md": ["Geist", "sans-serif"],
+                        "code": ["Geist", "monospace"],
+                        "display-lg": ["Geist", "sans-serif"],
+                        "label-sm": ["Geist", "sans-serif"],
+                        "body-md": ["Geist", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "code": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface min-h-screen overflow-hidden flex">
+<!-- Background Context (Dashboard Mockup) -->
+<div class="absolute inset-0 z-0 opacity-50 blur-sm pointer-events-none flex flex-col pt-16 pl-[260px] p-margin-desktop gap-gutter">
+<div class="grid grid-cols-12 gap-gutter">
+<div class="col-span-8 bg-surface-container-low h-64 border border-surface-variant rounded-lg"></div>
+<div class="col-span-4 bg-surface-container-low h-64 border border-surface-variant rounded-lg"></div>
+<div class="col-span-12 bg-surface-container-low h-96 border border-surface-variant rounded-lg mt-gutter"></div>
+</div>
+</div>
+<!-- Side Nav Bar -->
+<nav class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-lowest border-r border-surface-variant flex flex-col py-6 z-10 hidden md:flex transition-all duration-200 ease-in-out">
+<div class="px-margin-desktop mb-8">
+<div class="font-headline-md text-headline-md font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="hub">hub</span>
+                Lumina Admin
+            </div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1">Operational Hub</div>
+</div>
+<div class="flex-1 overflow-y-auto px-4">
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT border-l-4 border-primary text-on-surface font-bold bg-surface-container-low" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md">Transactions</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-label-md text-label-md">Marketplaces</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Vendors</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-label-md text-label-md">Settlements</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+</div>
+<div class="px-4 mt-auto">
+<button class="w-full flex items-center justify-center gap-2 bg-primary text-on-primary py-2 px-4 rounded-DEFAULT font-label-md text-label-md font-bold hover:bg-primary-fixed transition-colors mb-4">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                Add New Provider
+            </button>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-label-md text-label-md">Help Center</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+<span class="font-label-md text-label-md">System Logs</span>
+</a>
+</div>
+</div>
+</nav>
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 right-0 w-full md:w-[calc(100%-260px)] z-40 bg-surface border-b border-surface-variant flex justify-between items-center px-margin-desktop h-16">
+<div class="flex items-center md:hidden gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="menu">menu</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-black text-on-surface hidden md:block">
+            Financial Workspace
+        </div>
+<div class="flex items-center gap-6">
+<div class="relative hidden sm:flex items-center focus-within:ring-2 focus-within:ring-primary rounded-full bg-surface-container-low border border-surface-variant px-3 py-1.5 w-64 transition-all">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none outline-none text-on-surface font-body-md text-body-md w-full placeholder-on-surface-variant p-0 focus:ring-0" placeholder="Search orders, providers..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="apps">apps</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden border border-outline ml-2 cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="A macro photography shot of an intricate, futuristic metal surface with tiny glowing purple LED lines and deep shadow recesses. High-key contrast, cyberpunk aesthetic, dark mode styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaagJ2iseSPaOuq8WFI60BchcGWjBxSY2dEFiR6jpuYACxCGW6gAjmC95qkNZ3jgrYsp7xy-e6G8kvXUXtUxF2kLGA0Q9UMrtRZifDNj987QDnhuXdqIRfZyrbyABiVsogumPl24gEuqrrWee4mRTnEr5RS2kKUcwto_ReKzAfpRyVYPHvBi6FxRUUHI0vulBYngUEOfgfRuoDf0sD5LvrxwXylaeSPS2EMidanUpxDfXM7U6U8NvFig"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Overlay Panel (Side Modal) -->
+<div class="fixed inset-0 z-50 flex justify-end bg-black/60 backdrop-blur-sm transition-opacity">
+<aside class="w-full sm:w-[480px] h-full bg-surface border-l border-surface-variant shadow-2xl flex flex-col animate-slide-in-right overflow-y-auto">
+<!-- Panel Header -->
+<div class="sticky top-0 bg-surface/95 backdrop-blur z-10 border-b border-surface-variant px-margin-desktop py-6 flex justify-between items-start">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Earnings Breakdown</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">See how your earnings are calculated.</p>
+</div>
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<!-- Panel Content -->
+<div class="flex-1 p-margin-desktop space-y-8">
+<!-- Order Context -->
+<div class="bg-surface-container-low rounded-lg border border-surface-variant p-4 flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Order ID</div>
+<div class="font-code text-code text-on-surface mt-0.5">QH-20260902-1041</div>
+</div>
+</div>
+<div class="bg-success/10 text-success font-label-sm text-label-sm px-2.5 py-1 rounded-full border border-success/20">
+                        Completed
+                    </div>
+</div>
+<!-- Breakdown Container -->
+<div class="space-y-6">
+<!-- Customer Payment Section -->
+<section>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]" data-icon="account_circle">account_circle</span>
+                            Customer Payment
+                        </h3>
+<div class="bg-surface-container rounded-lg border border-surface-variant divide-y divide-surface-variant">
+<div class="flex justify-between items-center p-4">
+<span class="font-body-md text-body-md text-on-surface">Service Fee</span>
+<span class="font-body-md text-body-md text-on-surface">₹449</span>
+</div>
+<div class="flex justify-between items-center p-4">
+<span class="font-body-md text-body-md text-on-surface">Add-ons (Premium tools)</span>
+<span class="font-body-md text-body-md text-on-surface">₹178</span>
+</div>
+<div class="flex justify-between items-center p-4">
+<span class="font-body-md text-body-md text-info">Promotional Discount</span>
+<span class="font-body-md text-body-md text-info">-₹125</span>
+</div>
+<div class="flex justify-between items-center p-4 bg-surface-container-high rounded-b-lg">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Total Customer Paid</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">₹502</span>
+</div>
+</div>
+</section>
+<!-- Deductions Section -->
+<section>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-4 flex items-center gap-2 mt-8">
+<span class="material-symbols-outlined text-[16px]" data-icon="money_off">money_off</span>
+                            Deductions
+                        </h3>
+<div class="bg-surface-container rounded-lg border border-surface-variant divide-y divide-surface-variant">
+<div class="flex justify-between items-center p-4 hover:bg-surface-container-high transition-colors">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Platform Fee</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">10% standard rate</span>
+</div>
+<span class="font-body-md text-body-md text-critical">-₹50</span>
+</div>
+<div class="flex justify-between items-center p-4 hover:bg-surface-container-high transition-colors">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Payment Processing</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Fixed gateway charge</span>
+</div>
+<span class="font-body-md text-body-md text-critical">-₹10</span>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Final Result Footer -->
+<div class="sticky bottom-0 bg-surface/95 backdrop-blur z-10 border-t border-surface-variant p-margin-desktop mt-auto">
+<div class="bg-gradient-to-r from-primary-fixed/10 to-transparent border border-primary/30 rounded-xl p-6 relative overflow-hidden group">
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<div class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-semibold mb-1">Final Payout</div>
+<div class="font-display-lg text-display-lg text-on-surface">₹442</div>
+</div>
+<button class="bg-surface-container-high hover:bg-surface-variant text-on-surface border border-outline-variant rounded-DEFAULT px-4 py-2 font-label-md text-label-md transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+                            Receipt
+                        </button>
+</div>
+</div>
+</div>
+</aside>
+</div>
+<style>
+        @keyframes slideInRight {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+        .animate-slide-in-right {
+            animation: slideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+    </style>
+</body></html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edit Service / Variant</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-container": "#eed9ff",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "surface-container": "#201f20",
+                      "inverse-primary": "#8422dc",
+                      "electric-violet": "#8a2be2",
+                      "on-background": "#e5e2e3",
+                      "error-container": "#93000a",
+                      "inverse-surface": "#e5e2e3",
+                      "surface-tint": "#dcb8ff",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "on-secondary-container": "#b9b8ba",
+                      "on-surface-variant": "#cfc2d7",
+                      "surface-container-high": "#2a2a2b",
+                      "on-tertiary-container": "#e3e0e2",
+                      "on-error-container": "#ffdad6",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "on-surface": "#e5e2e3",
+                      "on-primary-fixed": "#2c0051",
+                      "outline-variant": "#4c4354",
+                      "tertiary-fixed": "#e4e2e4",
+                      "on-tertiary": "#303032",
+                      "on-secondary-fixed-variant": "#474648",
+                      "secondary-fixed": "#e4e2e4",
+                      "primary": "#dcb8ff",
+                      "secondary-container": "#49494b",
+                      "on-secondary": "#303032",
+                      "on-error": "#690005",
+                      "success-green": "#81C784",
+                      "error": "#ffb4ab",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "inverse-on-surface": "#313031",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "tertiary-container": "#646365",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "tertiary": "#c8c6c8",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "on-primary": "#480081",
+                      "surface-container-low": "#1c1b1c",
+                      "primary-fixed": "#efdbff",
+                      "surface-bright": "#39393a",
+                      "error-red": "#ffb4ab",
+                      "outline": "#988ca0",
+                      "secondary": "#c8c6c8",
+                      "surface-dim": "#131314",
+                      "background": "#131314",
+                      "primary-container": "#8a2be2",
+                      "surface": "#131314",
+                      "surface-container-lowest": "#0e0e0f",
+                      "surface-container-highest": "#353436",
+                      "surface-variant": "#353436",
+                      "success-bg": "#1A3D24"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "16px",
+                      "sm": "8px",
+                      "3xl": "64px",
+                      "2xl": "48px",
+                      "xs": "4px",
+                      "xl": "32px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "h3": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "mono-display": [
+                              "monospace"
+                      ],
+                      "h1": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col items-center justify-start pt-2xl font-body-md">
+<div class="w-full max-w-3xl px-md">
+<!-- Header Section -->
+<header class="mb-xl text-center">
+<h1 class="font-h1 text-h1 text-on-surface mb-sm">Edit Service</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Choose a different service option.</p>
+</header>
+<!-- Current Service Context -->
+<div class="bg-surface-container border border-outline-variant/50 rounded-xl p-md mb-xl flex items-center gap-md">
+<div class="w-16 h-16 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-electric-violet" style="font-size: 32px;">dry_cleaning</span>
+</div>
+<div>
+<h2 class="font-h3 text-h3 text-on-surface">Sneaker Deep Clean</h2>
+<p class="font-caption text-caption text-on-surface-variant flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined" style="font-size: 14px;">storefront</span>
+                    CleanX Service Center
+                </p>
+</div>
+</div>
+<!-- Variant Selection List -->
+<div class="space-y-md mb-xl" id="variant-list">
+<!-- Standard Sneaker Clean -->
+<label class="block cursor-pointer relative group">
+<input class="peer sr-only" name="service_tier" type="radio" value="standard"/>
+<div class="bg-surface-container border border-outline-variant/30 rounded-xl p-md transition-all duration-200 peer-checked:border-electric-violet peer-checked:bg-surface-container-high peer-focus-visible:ring-2 peer-focus-visible:ring-electric-violet group-hover:border-outline-variant/70">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">Standard Sneaker Clean</h3>
+<p class="font-caption text-caption text-on-surface-variant mt-xs flex items-center gap-xs">
+<span class="material-symbols-outlined" style="font-size: 14px;">schedule</span> 24–48 hrs
+                            </p>
+</div>
+<div class="text-right">
+<span class="font-mono-display text-mono-display text-on-surface">₹299</span>
+</div>
+</div>
+<!-- Selection Indicator -->
+<div class="absolute top-md right-md opacity-0 peer-checked:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-electric-violet" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</label>
+<!-- Premium Sneaker Clean (Selected) -->
+<label class="block cursor-pointer relative group">
+<input checked="" class="peer sr-only" name="service_tier" type="radio" value="premium"/>
+<div class="bg-surface-container border border-outline-variant/30 rounded-xl p-md transition-all duration-200 peer-checked:border-electric-violet peer-checked:bg-surface-container-high peer-focus-visible:ring-2 peer-focus-visible:ring-electric-violet group-hover:border-outline-variant/70">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<div class="flex items-center gap-sm">
+<h3 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">Premium Sneaker Clean</h3>
+<span class="bg-primary/20 text-primary font-caption text-caption px-2 py-0.5 rounded-full border border-primary/30">Selected</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mt-xs flex items-center gap-xs">
+<span class="material-symbols-outlined" style="font-size: 14px;">schedule</span> 24–48 hrs
+                            </p>
+</div>
+<div class="text-right">
+<span class="font-mono-display text-mono-display text-on-surface">₹449</span>
+</div>
+</div>
+<!-- Selection Indicator -->
+<div class="absolute top-md right-md opacity-0 peer-checked:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-electric-violet" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</label>
+<!-- Premium + Protection -->
+<label class="block cursor-pointer relative group">
+<input class="peer sr-only" name="service_tier" type="radio" value="premium_plus"/>
+<div class="bg-surface-container border border-outline-variant/30 rounded-xl p-md transition-all duration-200 peer-checked:border-electric-violet peer-checked:bg-surface-container-high peer-focus-visible:ring-2 peer-focus-visible:ring-electric-violet group-hover:border-outline-variant/70">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">Premium + Protection</h3>
+<p class="font-caption text-caption text-on-surface-variant mt-xs flex items-center gap-xs">
+<span class="material-symbols-outlined" style="font-size: 14px;">schedule</span> 48 hrs
+                            </p>
+</div>
+<div class="text-right flex flex-col items-end">
+<span class="font-mono-display text-mono-display text-on-surface">₹599</span>
+<span class="font-caption text-caption text-error hidden peer-checked:block transition-all" id="price-impact">+₹150</span>
+</div>
+</div>
+<!-- Selection Indicator -->
+<div class="absolute top-md right-md opacity-0 peer-checked:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-electric-violet" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</label>
+</div>
+<!-- Schedule Warning -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-sm mb-xl flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-size: 20px;">info</span>
+<p class="font-caption text-caption text-on-surface-variant">Changing this option may change your turnaround time.</p>
+</div>
+<!-- Action Area -->
+<div class="flex justify-end pt-md border-t border-outline-variant/30">
+<button class="bg-electric-violet text-white font-label-md text-label-md py-sm px-xl rounded-lg shadow-lg shadow-electric-violet/20 hover:bg-electric-violet/90 transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-offset-background focus:ring-electric-violet">
+                Update Selection
+            </button>
+</div>
+</div>
+<script>
+        // Simple script to toggle price impact visibility based on selection
+        // In a real app this would be reactive state
+        const radios = document.querySelectorAll('input[name="service_tier"]');
+        const priceImpact = document.getElementById('price-impact');
+
+        radios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.value === 'premium_plus') {
+                    priceImpact.classList.remove('hidden');
+                } else {
+                    priceImpact.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body></html>

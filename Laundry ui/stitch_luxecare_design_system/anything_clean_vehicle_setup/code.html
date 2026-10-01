@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vehicle Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#e5e2e3",
+                        "error": "#ffb4ab",
+                        "surface-container-highest": "#353436",
+                        "surface-container": "#201f20",
+                        "primary-fixed": "#efdbff",
+                        "primary": "#dcb8ff",
+                        "tertiary": "#c8c6c8",
+                        "outline": "#988ca0",
+                        "tertiary-container": "#646365",
+                        "surface-container-low": "#1c1b1c",
+                        "on-secondary": "#303032",
+                        "surface-container-lowest": "#0e0e0f",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface": "#131314",
+                        "on-tertiary-container": "#e3e0e2",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-error-container": "#ffdad6",
+                        "success-bg": "#1A3D24",
+                        "on-tertiary": "#303032",
+                        "on-primary-fixed": "#2c0051",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "inverse-surface": "#e5e2e3",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-variant": "#353436",
+                        "on-error": "#690005",
+                        "on-primary-container": "#eed9ff",
+                        "primary-container": "#8a2be2",
+                        "on-background": "#e5e2e3",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#474648",
+                        "outline-variant": "#4c4354",
+                        "error-red": "#ffb4ab",
+                        "tertiary-fixed": "#e4e2e4",
+                        "surface-dim": "#131314",
+                        "secondary-fixed": "#e4e2e4",
+                        "secondary-container": "#49494b",
+                        "on-secondary-container": "#b9b8ba",
+                        "surface-bright": "#39393a",
+                        "inverse-on-surface": "#313031",
+                        "electric-violet": "#8a2be2",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "surface-tint": "#dcb8ff",
+                        "success-green": "#81C784",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "background": "#131314",
+                        "on-surface-variant": "#cfc2d7",
+                        "surface-container-high": "#2a2a2b",
+                        "inverse-primary": "#8422dc",
+                        "secondary": "#c8c6c8",
+                        "on-primary": "#480081"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "xl": "32px",
+                        "3xl": "64px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "2xl": "48px"
+                    },
+                    "fontFamily": {
+                        "mono-display": ["monospace"],
+                        "h3": ["Geist"],
+                        "label-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "caption": ["Geist"],
+                        "body-md": ["Geist"],
+                        "h1": ["Geist"]
+                    },
+                    "fontSize": {
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+<!-- Top App Bar (Destination Rule: Suppressed as this is a setup/details screen) -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/5 h-16 flex items-center justify-between px-md max-w-md mx-auto left-0 right-0">
+<button aria-label="Go back" class="text-on-surface-variant hover:opacity-80 transition-opacity p-2 -ml-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-h3 text-h3 text-on-surface">Vehicle Details</h1>
+<div class="w-10"></div> <!-- Spacer for alignment -->
+</header>
+<!-- Main Content -->
+<main class="flex-1 px-md pt-24 pb-3xl max-w-md mx-auto w-full flex flex-col gap-lg">
+<!-- Vehicle Image Header -->
+<section class="flex flex-col items-center gap-md">
+<div class="w-32 h-32 rounded-full border-2 border-outline-variant/30 overflow-hidden bg-surface-container-low flex items-center justify-center relative">
+<img alt="Vehicle Image" class="object-cover w-full h-full" data-alt="A sleek, modern two-wheeler scooter, stylized in a technical blueprint or sleek vector style, isolated against a dark midnight background with subtle electric violet neon accents. High performance aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdBqSUGg1C_KBkKc_y2gTZiRtcb49vOmkS6OPlu-h44Su78CVXxj0CHU2GKV9SpkkfXYLxKUmdqt-QnukXhp1RbTjqpE1wiFlJJE_PK2yeEmeYSfrNT9i0sfoEFxvG5Ub5XQVoo5wCtDxrGxCesUx2J8ymu7HH-mhVR_oawlaUNS3oIWTpe7YTppLbfNZSzO_v-lx2HJMjfa1i02CSOBVxxGgRXbKyS8KJyF_Y49yvvnhAtfLMMNMsbA"/>
+<button class="absolute bottom-0 right-0 bg-primary-container text-on-primary-container rounded-full p-1 shadow-lg shadow-primary/20 m-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">edit</span>
+</button>
+</div>
+<div class="text-center">
+<h2 class="font-h1 text-h1 text-on-surface">Honda Activa</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">XXXX 2048</p>
+</div>
+</section>
+<!-- Details Form/List -->
+<section class="flex flex-col gap-sm">
+<div class="bg-surface-container rounded-xl p-md border border-outline-variant/20 flex justify-between items-center">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">Vehicle Type</span>
+<span class="font-body-md text-body-md text-on-surface">Two Wheeler</span>
+</div>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">two_wheeler</span>
+</div>
+<div class="bg-surface-container rounded-xl p-md border border-outline-variant/20 flex justify-between items-center">
+<div class="flex flex-col w-full">
+<label class="font-caption text-caption text-on-surface-variant mb-xs" for="vehicleColor">Vehicle Color (Optional)</label>
+<input class="bg-surface-container-low border border-outline-variant/50 rounded-lg px-3 py-2 font-body-md text-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all w-full placeholder-on-surface-variant/50" id="vehicleColor" placeholder="e.g. Matte Black" type="text"/>
+</div>
+</div>
+</section>
+<!-- Divider -->
+<hr class="border-outline-variant/30 my-sm"/>
+<!-- Document Status -->
+<section class="flex flex-col gap-md">
+<h3 class="font-label-md text-label-md font-bold text-on-surface uppercase tracking-wider">Document Status</h3>
+<div class="grid grid-cols-2 gap-md">
+<!-- Registration Card -->
+<div class="bg-surface-container rounded-xl p-md border border-outline-variant/20 flex flex-col gap-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-success-bg/20 rounded-bl-full -mr-4 -mt-4"></div>
+<span class="material-symbols-outlined text-success-green z-10" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div class="flex flex-col z-10">
+<span class="font-body-md text-body-md text-on-surface font-semibold">Registration</span>
+<span class="font-caption text-caption text-success-green flex items-center gap-1 mt-1">
+                            Verified
+                        </span>
+</div>
+</div>
+<!-- Insurance Card -->
+<div class="bg-surface-container rounded-xl p-md border border-outline-variant/20 flex flex-col gap-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-success-bg/20 rounded-bl-full -mr-4 -mt-4"></div>
+<span class="material-symbols-outlined text-success-green z-10" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<div class="flex flex-col z-10">
+<span class="font-body-md text-body-md text-on-surface font-semibold">Insurance</span>
+<span class="font-caption text-caption text-success-green flex items-center gap-1 mt-1">
+                            Verified
+                        </span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Actions -->
+<footer class="fixed bottom-0 left-0 w-full bg-surface-container p-md border-t border-outline-variant/20 flex flex-col gap-sm z-40 max-w-md mx-auto right-0 pb-safe">
+<button class="w-full bg-primary text-white font-label-md text-label-md font-bold py-3 rounded-lg shadow-lg shadow-primary/20 hover:opacity-90 active:scale-[0.98] transition-all">
+            Update Documents
+        </button>
+<button class="w-full bg-transparent border border-outline-variant text-on-surface font-label-md text-label-md font-bold py-3 rounded-lg hover:bg-surface-container-high active:scale-[0.98] transition-all">
+            Edit Vehicle Info
+        </button>
+</footer>
+</body></html>

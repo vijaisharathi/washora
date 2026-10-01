@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Delivery Completed</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Geist -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#474649",
+                    "primary-container": "#8a2be2",
+                    "inverse-on-surface": "#313031",
+                    "tertiary-fixed": "#e4e2e4",
+                    "on-primary-container": "#eed9ff",
+                    "background": "#131314",
+                    "on-error": "#690005",
+                    "on-secondary-fixed": "#1b1b1d",
+                    "secondary-fixed-dim": "#c8c6c8",
+                    "tertiary-container": "#646365",
+                    "tertiary-fixed-dim": "#c8c6c8",
+                    "on-background": "#e5e2e3",
+                    "on-primary-fixed": "#2c0051",
+                    "surface-variant": "#353436",
+                    "on-surface": "#e5e2e3",
+                    "secondary-container": "#474649",
+                    "surface-dim": "#131314",
+                    "on-secondary-container": "#b7b4b7",
+                    "error-container": "#93000a",
+                    "secondary": "#c8c6c8",
+                    "on-tertiary-fixed": "#1b1b1d",
+                    "surface-container-low": "#1c1b1c",
+                    "surface-container-lowest": "#0e0e0f",
+                    "secondary-fixed": "#e5e1e4",
+                    "on-tertiary-container": "#e3e0e2",
+                    "surface-bright": "#3a393a",
+                    "tertiary": "#c8c6c8",
+                    "on-primary": "#480081",
+                    "on-tertiary": "#303032",
+                    "outline-variant": "#4c4354",
+                    "surface-container-highest": "#353436",
+                    "error": "#ffb4ab",
+                    "primary-fixed": "#efdbff",
+                    "on-secondary-fixed-variant": "#474649",
+                    "on-secondary": "#303032",
+                    "inverse-primary": "#8422dc",
+                    "surface-container-high": "#2a2a2b",
+                    "on-error-container": "#ffdad6",
+                    "on-surface-variant": "#cfc2d7",
+                    "on-primary-fixed-variant": "#6700b5",
+                    "outline": "#988ca0",
+                    "inverse-surface": "#e5e2e3",
+                    "surface-tint": "#dcb8ff",
+                    "primary": "#dcb8ff",
+                    "primary-fixed-dim": "#dcb8ff",
+                    "surface-container": "#201f20",
+                    "surface": "#131314"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "xs": "4px",
+                    "3xl": "64px",
+                    "lg": "24px",
+                    "md": "16px",
+                    "sm": "8px",
+                    "2xl": "48px",
+                    "safe": "env(safe-area-inset-bottom, 24px)"
+            },
+            "fontFamily": {
+                    "headline-md": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "body-md": ["Geist"],
+                    "label-md": ["Geist"],
+                    "body-lg": ["Geist"],
+                    "display-lg-mobile": ["Geist"],
+                    "caption": ["Geist"],
+                    "display-lg": ["Geist"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Subtle glow effect for success state */
+        .success-glow {
+            box-shadow: 0 0 80px 20px rgba(138, 43, 226, 0.15);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-sans selection:bg-primary selection:text-on-primary">
+<!-- Mobile Container Wrapper -->
+<main class="max-w-md mx-auto w-full relative min-h-screen pb-[140px]">
+<!-- Canvas Content Area -->
+<div class="px-lg pt-3xl flex flex-col items-center justify-center text-center">
+<!-- Success Icon & Header -->
+<div class="relative flex flex-col items-center mb-xl">
+<!-- Background ambient glow -->
+<div class="absolute inset-0 bg-primary-container blur-3xl opacity-20 rounded-full w-24 h-24 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+<!-- Premium Success Icon -->
+<div class="relative z-10 w-20 h-20 bg-surface border border-white/5 rounded-full flex items-center justify-center mb-lg shadow-lg">
+<span class="material-symbols-outlined fill text-[40px] text-primary" style="font-size: 48px;">check_circle</span>
+</div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-on-background mb-sm">Delivery completed.</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[280px]">The order has been successfully delivered to the customer.</p>
+</div>
+<!-- Bento Grid Structure for Content -->
+<div class="w-full flex flex-col gap-sm">
+<!-- Earnings Highlight Card -->
+<div class="bg-surface-container-high rounded-xl p-md border border-white/5 flex items-center justify-between relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary blur-[50px] opacity-10 rounded-full -mr-16 -mt-16"></div>
+<div class="flex flex-col items-start z-10">
+<span class="font-label-md text-label-md text-on-surface-variant mb-xs">Final Earnings</span>
+<div class="flex items-baseline gap-xs text-primary">
+<span class="font-display-lg-mobile text-display-lg-mobile">₹62</span>
+</div>
+</div>
+<div class="z-10 w-12 h-12 bg-primary-container/20 rounded-full flex items-center justify-center text-primary border border-primary/20">
+<span class="material-symbols-outlined fill">account_balance_wallet</span>
+</div>
+</div>
+<!-- Order Summary & Stats Glassmorphism Card -->
+<div class="bg-surface/80 backdrop-blur-xl rounded-xl p-lg border border-white/5 flex flex-col gap-lg mt-xs">
+<!-- Item Header -->
+<div class="flex items-center gap-md pb-md border-b border-white/5">
+<img class="w-16 h-16 rounded-lg object-cover bg-surface-container-lowest border border-white/10" data-alt="A high-end product photograph of a single pristine white sneaker resting on a dark, sleek reflective surface. The lighting is dramatic and moody, utilizing a cinematic dark mode aesthetic with deep shadows and subtle violet edge lighting to emphasize the shoe's textures and contours. Minimalist and ultra-modern style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW79nNxnVeXV_vPqLsdMWKPcj9GqLzYSqBvvqaylrQjxgILXfw86PVBnGhDue6TRGU5KKGz3XSNKo2cPwqCss7DQXIgEV35MnLinHr9DkwyeCmN9WFZUN8Sh7FulJcl-0th8CSGGV7t_rZ4dHbsABiBxQhkkxxJPUObo_zLLWLqBL_owaAnERsS0VKMW3OppH9A1db7FrXLAooSEOiDUEm1XYIICXPefi0406IeWyVd7CSI9NbZb8neA"/>
+<div class="flex flex-col items-start flex-1">
+<span class="font-label-md text-label-md text-primary bg-primary-container/10 px-2 py-1 rounded-md mb-xs">#QH1024</span>
+<span class="font-body-lg text-body-lg text-on-surface font-semibold">White Sneaker</span>
+<span class="font-caption text-caption text-on-surface-variant">1 package</span>
+</div>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-3 gap-xs">
+<div class="bg-surface-container-lowest rounded-lg p-sm flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant mb-xs">schedule</span>
+<span class="font-label-md text-label-md text-on-surface">7:06 PM</span>
+<span class="font-caption text-caption text-on-surface-variant">Delivered</span>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-sm flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant mb-xs">timer</span>
+<span class="font-label-md text-label-md text-on-surface">18 min</span>
+<span class="font-caption text-caption text-on-surface-variant">Duration</span>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-sm flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant mb-xs">route</span>
+<span class="font-label-md text-label-md text-on-surface">3.8 km</span>
+<span class="font-caption text-caption text-on-surface-variant">Distance</span>
+</div>
+</div>
+<!-- Verification List -->
+<div class="flex flex-col gap-sm pt-xs">
+<div class="flex items-center gap-sm text-on-secondary-container">
+<span class="material-symbols-outlined fill text-[18px] text-primary">check_circle</span>
+<span class="font-body-md text-body-md text-sm">Customer signature collected</span>
+</div>
+<div class="flex items-center gap-sm text-on-secondary-container">
+<span class="material-symbols-outlined fill text-[18px] text-primary">check_circle</span>
+<span class="font-body-md text-body-md text-sm">Photo proof uploaded</span>
+</div>
+</div>
+</div>
+<!-- Next Job Available Card -->
+<div class="bg-surface-variant/50 border border-outline-variant/30 rounded-xl p-md flex items-center justify-between mt-sm shadow-sm">
+<div class="flex flex-col items-start">
+<span class="font-label-md text-label-md text-on-surface">Next delivery available</span>
+<span class="font-caption text-caption text-on-surface-variant">Nearby pickup in 2 mins</span>
+</div>
+<button class="bg-secondary-container text-on-secondary-container px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-tertiary-container transition-colors">
+                        View Request
+                    </button>
+</div>
+</div>
+</div>
+<!-- Fixed Bottom Action Area (Transactional End State) -->
+<!-- Suppressed main Nav Shell per rules, showing Contextual Actions instead -->
+<div class="fixed bottom-0 left-0 w-full bg-background/90 backdrop-blur-2xl border-t border-white/5 p-lg pb-safe z-50">
+<div class="max-w-md mx-auto flex flex-col gap-sm">
+<!-- Primary Action -->
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-4 rounded-xl flex items-center justify-center gap-sm hover:bg-surface-tint active:scale-[0.98] transition-all font-semibold tracking-wide">
+                    BACK TO DASHBOARD
+                </button>
+<!-- Secondary Action -->
+<button class="w-full bg-transparent border border-outline text-on-surface font-label-md text-label-md py-4 rounded-xl flex items-center justify-center gap-sm hover:bg-surface-variant active:scale-[0.98] transition-all font-medium">
+                    VIEW EARNINGS
+                </button>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Saved Payment Methods - Lumina</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#1c1b1c",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed": "#efdbff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-bright": "#39393a",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-dim": "#131314",
+                        "tertiary": "#c8c6c8",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-error": "#690005",
+                        "on-secondary-container": "#b9b8ba",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "secondary-container": "#49494b",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "surface-container": "#201f20",
+                        "surface-variant": "#353436",
+                        "secondary": "#c8c6c8",
+                        "error-container": "#93000a",
+                        "success-green": "#81C784",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-primary-container": "#eed9ff",
+                        "primary-container": "#8a2be2",
+                        "success-bg": "#1A3D24",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "outline-variant": "#4c4354",
+                        "tertiary-fixed": "#e4e2e4",
+                        "inverse-primary": "#8422dc",
+                        "on-secondary-fixed-variant": "#474648",
+                        "on-primary-fixed": "#2c0051",
+                        "on-primary": "#480081",
+                        "on-tertiary": "#303032",
+                        "secondary-fixed": "#e4e2e4",
+                        "electric-violet": "#8a2be2",
+                        "surface-container-highest": "#353436",
+                        "background": "#131314",
+                        "on-surface": "#e5e2e3",
+                        "surface": "#131314",
+                        "error-red": "#ffb4ab",
+                        "primary": "#dcb8ff",
+                        "on-secondary": "#303032",
+                        "surface-container-high": "#2a2a2b",
+                        "outline": "#988ca0",
+                        "on-background": "#e5e2e3",
+                        "on-tertiary-container": "#e3e0e2",
+                        "inverse-on-surface": "#313031",
+                        "surface-tint": "#dcb8ff",
+                        "surface-container-lowest": "#0e0e0f",
+                        "tertiary-container": "#646365"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "2xl": "48px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "3xl": "64px",
+                        "md": "16px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "caption": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "h3": ["Geist"],
+                        "label-md": ["Geist"],
+                        "h1": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col md:flex-row">
+<!-- SideNavBar (Web) -->
+<nav class="bg-surface-container-low text-primary font-body-md text-body-md fixed left-0 top-0 h-screen w-64 border-r border-outline-variant/30 hidden md:flex flex-col p-md gap-sm z-40">
+<div class="mb-lg">
+<h1 class="font-h1 text-h1 text-electric-violet">Lumina</h1>
+<div class="flex items-center gap-sm mt-md p-sm bg-surface-container rounded-lg border border-outline-variant/20">
+<div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden">
+<img alt="User profile picture" class="w-full h-full object-cover" data-alt="A futuristic, high-contrast avatar of a user in a deep charcoal and electric violet corporate environment. Minimalist, premium, dark mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwNH52GN3HBNrHZiyaMjTZF5ec9SAKOPkiUObrrVaLP5-SK61-o7FQlb-0tbPPb_E1f_YDBASmVhVd2CAeC79165amLr3MeGrzPmXBULYFzGAAZ4nEFR2LIckfYf4cnINgZrJKMYDMFJJQ8Rpk1Y9vSWCDs5DkwBmjF9lmR5zORtFOWeEzYGG1tQ2l2knBVAyJ2cbKNqsVc3ckQ0clwX_mp2XHnqJbv2ke2h2dyrXShARFaYgoqq36jg"/>
+</div>
+<div>
+<p class="font-label-md text-label-md font-bold">Alex Rivers</p>
+<p class="font-caption text-caption text-on-surface-variant">Premium Member</p>
+</div>
+</div>
+<button class="w-full mt-md bg-electric-violet text-white font-label-md text-label-md font-bold py-sm px-md rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-container transition-colors">Book a Cleaner</button>
+</div>
+<div class="flex-1 overflow-y-auto">
+<ul class="flex flex-col gap-xs">
+<li>
+<a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                        Dashboard
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+                        Bookings
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-sm p-sm rounded-lg bg-primary/10 text-primary font-bold active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+                        Payments
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+                        Addresses
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                        Preferences
+                    </a>
+</li>
+</ul>
+</div>
+<div class="mt-auto border-t border-outline-variant/30 pt-sm">
+<ul class="flex flex-col gap-xs">
+<li>
+<a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+                        Support
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                        Logout
+                    </a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- TopNavBar (Web) -->
+<header class="bg-surface-dim/80 backdrop-blur-md text-electric-violet font-label-md text-label-md fixed top-0 w-full border-b border-outline-variant/30 flex justify-between items-center px-lg h-16 z-50 md:pl-[calc(256px+32px)]">
+<div class="flex items-center gap-md">
+<span class="font-headline-lg text-headline-lg font-bold text-electric-violet md:hidden">Lumina Marketplace</span>
+<div class="hidden md:flex items-center gap-sm text-on-surface-variant font-caption text-caption">
+<a class="hover:text-primary transition-colors" href="#">Payments</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary">Saved Methods</span>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden cursor-pointer active:scale-95 transition-transform md:hidden">
+<img alt="Customer avatar" class="w-full h-full object-cover" data-alt="A futuristic, high-contrast avatar of a user in a deep charcoal and electric violet corporate environment. Minimalist, premium, dark mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWu3z_Hc9PmxHyc1MzgCXZBbgimqUe5jbYsWLnyNZgsff5yFECfTcs-csBcBY3bueXG4pR4cOBLxjdI9KR3ksusjYD9VOxn9pvJ3QWQsh1MAwSLgJ4P1gHpkyfUcvRqDDcvxtAuPrYG7pQYBcQExaonK8wJwxzpbIm9_1CrG_y6Vxz-q3VgP2Sm3ktJ47M5qTT1ePhi_bhEm5Ku0b-ow9EeStPPScrJleyl3uNX6CKBdUTshNpKOaITw"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-[1200px] mx-auto px-md md:px-xl pt-[88px] pb-24 md:pl-[calc(256px+32px)] md:pb-xl">
+<div class="flex justify-between items-end mb-lg">
+<div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface">Payment Methods</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Manage your saved cards and UPI IDs for seamless transactions.</p>
+</div>
+<button class="hidden md:flex items-center gap-xs bg-electric-violet text-white font-label-md text-label-md font-bold py-sm px-md rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-container transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                Add Payment Method
+            </button>
+</div>
+<div class="grid grid-cols-1 gap-md">
+<!-- Payment Method 1 -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md flex flex-col sm:flex-row justify-between items-start sm:items-center gap-md hover:border-primary/50 transition-colors">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-low border border-outline-variant/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[28px]" data-icon="account_balance">account_balance</span>
+</div>
+<div>
+<div class="flex items-center gap-sm">
+<h3 class="font-h3 text-h3 text-on-surface">UPI</h3>
+<span class="bg-success-bg text-success-green font-caption text-caption font-bold px-2 py-0.5 rounded-full uppercase tracking-wider text-[10px]">Default</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant font-mono-display text-[14px]">arun@upi</p>
+</div>
+</div>
+<div class="flex items-center gap-sm w-full sm:w-auto">
+<button class="flex-1 sm:flex-none border border-outline-variant bg-transparent text-on-surface font-label-md text-label-md py-sm px-md rounded-lg hover:bg-surface-container-highest transition-colors active:scale-95">Remove</button>
+<button class="flex-1 sm:flex-none bg-surface-container-low border border-outline-variant/50 text-on-surface-variant font-label-md text-label-md py-sm px-md rounded-lg opacity-50 cursor-not-allowed">In Use</button>
+</div>
+</div>
+<!-- Payment Method 2 -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md flex flex-col sm:flex-row justify-between items-start sm:items-center gap-md hover:border-primary/50 transition-colors">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-low border border-outline-variant/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[28px]" data-icon="credit_card">credit_card</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">Visa Card</h3>
+<p class="font-body-md text-body-md text-on-surface-variant font-mono-display text-[14px]">•••• 4242 <span class="text-outline mx-xs">|</span> Expires 08/29</p>
+</div>
+</div>
+<div class="flex items-center gap-sm w-full sm:w-auto">
+<button class="flex-1 sm:flex-none border border-outline-variant bg-transparent text-on-surface font-label-md text-label-md py-sm px-md rounded-lg hover:bg-surface-container-highest transition-colors active:scale-95" onclick="document.getElementById('remove-dialog').classList.remove('hidden')">Remove</button>
+<button class="flex-1 sm:flex-none border border-outline-variant/50 bg-transparent text-electric-violet font-label-md text-label-md py-sm px-md rounded-lg hover:bg-primary/10 transition-colors active:scale-95">Use</button>
+</div>
+</div>
+</div>
+<!-- Mobile FAB -->
+<button class="md:hidden fixed bottom-[88px] right-md w-14 h-14 bg-electric-violet text-white rounded-full shadow-lg shadow-primary/20 flex items-center justify-center hover:bg-primary-container transition-colors active:scale-90 z-40">
+<span class="material-symbols-outlined text-[28px]" data-icon="add">add</span>
+</button>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe bg-surface-container-low/90 backdrop-blur-lg rounded-t-xl border-t border-outline-variant/20 shadow-lg shadow-primary/5">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 tap-highlight-transparent active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md text-[10px] mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 tap-highlight-transparent active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="cleaning_services">cleaning_services</span>
+<span class="font-label-md text-[10px] mt-1">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container/20 text-primary rounded-xl p-2 tap-highlight-transparent active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-[10px] mt-1 font-bold">Account</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 tap-highlight-transparent active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-md text-[10px] mt-1">Support</span>
+</a>
+</nav>
+<!-- Removal Confirmation Dialog -->
+<div class="hidden fixed inset-0 z-[100] flex items-center justify-center px-md" id="remove-dialog">
+<div class="absolute inset-0 bg-background/80 backdrop-blur-sm" onclick="this.parentElement.classList.add('hidden')"></div>
+<div class="relative bg-surface-container-high border border-outline-variant/30 rounded-xl p-lg shadow-2xl max-w-sm w-full">
+<div class="flex items-center gap-sm text-error-red mb-md">
+<span class="material-symbols-outlined text-[32px]" data-icon="warning">warning</span>
+<h3 class="font-h3 text-h3 text-on-surface">Remove Payment Method</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">Are you sure you want to remove your Visa Card ending in 4242? You will need to add it again to use it for future bookings.</p>
+<div class="flex gap-md justify-end">
+<button class="border border-outline-variant bg-transparent text-on-surface font-label-md text-label-md py-sm px-md rounded-lg hover:bg-surface-container transition-colors active:scale-95" onclick="document.getElementById('remove-dialog').classList.add('hidden')">Cancel</button>
+<button class="bg-error-container/20 border border-error-red/30 text-error-red font-label-md text-label-md py-sm px-md rounded-lg hover:bg-error-container/40 transition-colors active:scale-95" onclick="document.getElementById('remove-dialog').classList.add('hidden')">Remove</button>
+</div>
+</div>
+</div>
+</body></html>

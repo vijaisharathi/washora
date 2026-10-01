@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Service Details - Sneaker Deep Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error": "#690005",
+                      "secondary-fixed": "#e4e2e4",
+                      "surface-bright": "#39393a",
+                      "inverse-primary": "#8422dc",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "on-tertiary-container": "#e3e0e2",
+                      "inverse-on-surface": "#313031",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "on-secondary": "#303032",
+                      "primary-container": "#8a2be2",
+                      "outline": "#988ca0",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "secondary": "#c8c6c8",
+                      "on-surface": "#e5e2e3",
+                      "on-primary-fixed": "#2c0051",
+                      "tertiary": "#c8c6c8",
+                      "on-surface-variant": "#cfc2d7",
+                      "surface-container-highest": "#353436",
+                      "error-container": "#93000a",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "surface-container-high": "#2a2a2b",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "surface-tint": "#dcb8ff",
+                      "primary-fixed": "#efdbff",
+                      "background": "#131314",
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-secondary-container": "#b9b8ba",
+                      "error-red": "#ffb4ab",
+                      "surface": "#131314",
+                      "on-primary-container": "#eed9ff",
+                      "electric-violet": "#8a2be2",
+                      "success-green": "#81C784",
+                      "on-background": "#e5e2e3",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "on-primary": "#480081",
+                      "outline-variant": "#4c4354",
+                      "success-bg": "#1A3D24",
+                      "surface-container-low": "#1c1b1c",
+                      "primary": "#dcb8ff",
+                      "tertiary-container": "#646365",
+                      "on-tertiary": "#303032",
+                      "tertiary-fixed": "#e4e2e4",
+                      "secondary-container": "#49494b",
+                      "inverse-surface": "#e5e2e3",
+                      "surface-container": "#201f20",
+                      "error": "#ffb4ab",
+                      "surface-variant": "#353436",
+                      "surface-dim": "#131314",
+                      "on-secondary-fixed-variant": "#474648",
+                      "on-error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "2xl": "48px",
+                      "lg": "24px",
+                      "xs": "4px",
+                      "xl": "32px",
+                      "md": "16px",
+                      "sm": "8px",
+                      "3xl": "64px"
+              },
+              "fontFamily": {
+                      "h3": ["Geist"],
+                      "mono-display": ["monospace"],
+                      "body-md": ["Geist"],
+                      "headline-lg": ["Geist"],
+                      "display-lg": ["Geist"],
+                      "label-md": ["Geist"],
+                      "h1": ["Geist"],
+                      "caption": ["Geist"]
+              },
+              "fontSize": {
+                      "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "mono-display": ["18px", {"letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "h1": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .symbol-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Subtle glow for interactive elements */
+        .glow-hover:hover {
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
+            border-color: rgba(138, 43, 226, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col items-center">
+<!-- Note: Top NavBar and Bottom NavBar are suppressed because this is a specific detail/transactional page (Service Details), which implies a temporary departure from the main flow. -->
+<main class="w-full max-w-[800px] flex-grow flex flex-col pb-3xl relative">
+<!-- Header Image & Hero -->
+<div class="relative w-full h-[300px] bg-surface-container rounded-b-xl overflow-hidden mb-lg">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full opacity-60 mix-blend-luminosity" data-alt="A macro, high-resolution shot of premium leather and suede sneakers being professionally cleaned. The lighting is dramatic and moody, utilizing the dark 'Corporate Modern' aesthetic with deep blacks and subtle electric violet accent lights reflecting off the water droplets and cleaning foam. The environment feels clinical, precise, and high-tech." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJPhpy7BET1lJaDQnPMt8QUtMYpJaMVjRs8-sWnmYGsLKiOuOMH66IgBcjOAHIMQk_qbzPKf5VZ9pWtDPi33iCWFz-mn-JdPk8vrvrlv3HL89xPcUMvAWqB7RruBhhb-u43BZ8S7Cj139-0IFc1R4apRRPWmJIhngO0ySKVRQ43zC3K8TiemVRjh1PWpddZt-qi6f7xFNzbV8xQVwtB94DEqsJxFAs-oPJO0HUk7pJXKkNgHCXfIN0mQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
+<!-- Top App Bar equivalent (embedded in hero) -->
+<header class="absolute top-0 left-0 w-full flex justify-between items-center px-xl py-md z-10">
+<button aria-label="Go back" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-low/80 backdrop-blur-md border border-outline-variant/30 text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<button aria-label="Favorite" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-low/80 backdrop-blur-md border border-outline-variant/30 text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite_border">favorite_border</span>
+</button>
+</header>
+<div class="absolute bottom-lg left-xl right-xl">
+<h1 class="font-display-lg text-display-lg text-primary mb-xs">Sneaker Deep Clean</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[600px]">
+                     Professional sneaker cleaning designed to remove surface dirt, stains and odor while preserving the shoe's material.
+                 </p>
+</div>
+</div>
+<div class="px-xl flex flex-col gap-xl">
+<!-- Quick Info Bento Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-md flex flex-col gap-xs hover:border-outline-variant/60 transition-colors">
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span class="font-caption text-caption uppercase tracking-wider">Suitable For</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">All Sneakers</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-md flex flex-col gap-xs hover:border-outline-variant/60 transition-colors">
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary" data-icon="texture">texture</span>
+<span class="font-caption text-caption uppercase tracking-wider">Material</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Leather, Suede, Fabric</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-md flex flex-col gap-xs hover:border-outline-variant/60 transition-colors">
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary" data-icon="schedule">schedule</span>
+<span class="font-caption text-caption uppercase tracking-wider">Turnaround</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">24–48 hrs</span>
+</div>
+</div>
+<!-- Main Content Area: Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl">
+<!-- Left Column: Includes & Excludes -->
+<div class="flex flex-col gap-lg">
+<!-- What's Included Card -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg">
+<h3 class="font-h3 text-h3 text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-success-green" data-icon="inventory">inventory</span>
+                            What's Included
+                        </h3>
+<ul class="flex flex-col gap-sm">
+<li class="flex items-start gap-sm font-body-md text-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-success-green mt-1 text-[20px]" data-icon="check">check</span>
+                                Exterior Cleaning
+                            </li>
+<li class="flex items-start gap-sm font-body-md text-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-success-green mt-1 text-[20px]" data-icon="check">check</span>
+                                Sole Cleaning
+                            </li>
+<li class="flex items-start gap-sm font-body-md text-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-success-green mt-1 text-[20px]" data-icon="check">check</span>
+                                Stain Treatment
+                            </li>
+<li class="flex items-start gap-sm font-body-md text-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-success-green mt-1 text-[20px]" data-icon="check">check</span>
+                                Odor Treatment
+                            </li>
+<li class="flex items-start gap-sm font-body-md text-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-success-green mt-1 text-[20px]" data-icon="check">check</span>
+                                Drying
+                            </li>
+<li class="flex items-start gap-sm font-body-md text-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-success-green mt-1 text-[20px]" data-icon="check">check</span>
+                                Finishing
+                            </li>
+</ul>
+</div>
+<!-- Not Included Card -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg">
+<h3 class="font-h3 text-h3 text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-error-red" data-icon="block">block</span>
+                            Not Included
+                        </h3>
+<ul class="flex flex-col gap-sm">
+<li class="flex items-start gap-sm font-body-md text-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-error-red mt-1 text-[20px]" data-icon="close">close</span>
+                                Major Material Repair
+                            </li>
+<li class="flex items-start gap-sm font-body-md text-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-error-red mt-1 text-[20px]" data-icon="close">close</span>
+                                Color Restoration
+                            </li>
+<li class="flex items-start gap-sm font-body-md text-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-error-red mt-1 text-[20px]" data-icon="close">close</span>
+                                Structural Damage Repair
+                            </li>
+</ul>
+</div>
+</div>
+<!-- Right Column: Process & Notes -->
+<div class="flex flex-col gap-lg">
+<!-- Process Stepper -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg relative overflow-hidden">
+<!-- Decorative background element -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/5 rounded-full blur-2xl -mr-16 -mt-16 pointer-events-none"></div>
+<h3 class="font-h3 text-h3 text-on-surface mb-md flex items-center gap-sm relative z-10">
+<span class="material-symbols-outlined text-primary" data-icon="manufacturing">manufacturing</span>
+                            Process
+                        </h3>
+<div class="flex flex-col relative z-10">
+<!-- Step 1 -->
+<div class="flex gap-md relative pb-md group">
+<div class="absolute left-[11px] top-6 bottom-0 w-[2px] bg-outline-variant/30 group-last:hidden"></div>
+<div class="w-6 h-6 rounded-full bg-surface-container-low border-2 border-primary flex items-center justify-center shrink-0 mt-1 z-10 text-[10px] text-primary font-bold">1</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Inspection</h4>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex gap-md relative pb-md group">
+<div class="absolute left-[11px] top-6 bottom-0 w-[2px] bg-outline-variant/30 group-last:hidden"></div>
+<div class="w-6 h-6 rounded-full bg-surface-container-low border-2 border-outline-variant/50 flex items-center justify-center shrink-0 mt-1 z-10 text-[10px] text-on-surface-variant font-bold">2</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface-variant">Cleaning</h4>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex gap-md relative pb-md group">
+<div class="absolute left-[11px] top-6 bottom-0 w-[2px] bg-outline-variant/30 group-last:hidden"></div>
+<div class="w-6 h-6 rounded-full bg-surface-container-low border-2 border-outline-variant/50 flex items-center justify-center shrink-0 mt-1 z-10 text-[10px] text-on-surface-variant font-bold">3</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface-variant">Treatment</h4>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex gap-md relative pb-md group">
+<div class="absolute left-[11px] top-6 bottom-0 w-[2px] bg-outline-variant/30 group-last:hidden"></div>
+<div class="w-6 h-6 rounded-full bg-surface-container-low border-2 border-outline-variant/50 flex items-center justify-center shrink-0 mt-1 z-10 text-[10px] text-on-surface-variant font-bold">4</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface-variant">Drying</h4>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="flex gap-md relative pb-md group">
+<div class="absolute left-[11px] top-6 bottom-0 w-[2px] bg-outline-variant/30 group-last:hidden"></div>
+<div class="w-6 h-6 rounded-full bg-surface-container-low border-2 border-outline-variant/50 flex items-center justify-center shrink-0 mt-1 z-10 text-[10px] text-on-surface-variant font-bold">5</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface-variant">Quality Check</h4>
+</div>
+</div>
+<!-- Step 6 -->
+<div class="flex gap-md relative group">
+<div class="absolute left-[11px] top-6 bottom-0 w-[2px] bg-outline-variant/30 hidden"></div>
+<div class="w-6 h-6 rounded-full bg-surface-container-low border-2 border-outline-variant/50 flex items-center justify-center shrink-0 mt-1 z-10 text-[10px] text-on-surface-variant font-bold">6</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface-variant">Return</h4>
+</div>
+</div>
+</div>
+</div>
+<!-- Important Note Warning -->
+<div class="bg-error-container/10 border border-error-container/30 rounded-lg p-md flex items-start gap-sm">
+<span class="material-symbols-outlined text-error-red shrink-0" data-icon="info">info</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface block mb-1">Important Note</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Some permanent stains may not be fully removable.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Fixed Bottom CTA -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-container-lowest/90 backdrop-blur-md border-t border-outline-variant/30 p-md z-40 flex justify-center">
+<div class="w-full max-w-[800px] flex justify-between items-center gap-md">
+<div class="hidden sm:block">
+<span class="font-caption text-caption text-on-surface-variant block uppercase tracking-wider">Service Selected</span>
+<span class="font-label-md text-label-md text-on-surface">Sneaker Deep Clean</span>
+</div>
+<button class="flex-grow sm:flex-grow-0 w-full sm:w-auto bg-electric-violet text-on-primary font-label-md text-label-md font-bold py-3 px-xl rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors flex items-center justify-center gap-sm">
+                 Choose Service
+                 <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</body></html>

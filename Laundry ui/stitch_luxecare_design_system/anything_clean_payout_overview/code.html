@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payout Overview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed-variant": "#573976",
+                      "on-tertiary-fixed-variant": "#6a3b00",
+                      "on-error-container": "#ffdad6",
+                      "inverse-surface": "#e5e2e3",
+                      "surface-variant": "#353436",
+                      "surface-tint": "#dcb8ff",
+                      "on-tertiary-container": "#ffdaba",
+                      "on-primary": "#480081",
+                      "primary": "#dcb8ff",
+                      "error": "#ffb4ab",
+                      "on-primary-fixed": "#2c0051",
+                      "surface-container-high": "#2a2a2b",
+                      "surface-container": "#201f20",
+                      "on-background": "#e5e2e3",
+                      "tertiary": "#ffb873",
+                      "critical": "#f87171",
+                      "tertiary-fixed-dim": "#ffb873",
+                      "on-secondary-fixed": "#290947",
+                      "surface": "#131314",
+                      "tertiary-fixed": "#ffdcbf",
+                      "inverse-primary": "#8422dc",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "secondary-container": "#573976",
+                      "surface-bright": "#39393a",
+                      "secondary": "#dcb8ff",
+                      "on-secondary-container": "#caa7ec",
+                      "tertiary-container": "#935400",
+                      "surface-container-lowest": "#0e0e0f",
+                      "secondary-fixed": "#efdbff",
+                      "warning": "#fbbf24",
+                      "error-container": "#93000a",
+                      "on-primary-container": "#eed9ff",
+                      "surface-container-low": "#1c1b1c",
+                      "primary-container": "#8a2be2",
+                      "on-surface-variant": "#cfc2d7",
+                      "inverse-on-surface": "#313031",
+                      "primary-fixed": "#efdbff",
+                      "surface-container-highest": "#353436",
+                      "background": "#131314",
+                      "success": "#4ade80",
+                      "on-tertiary": "#4b2800",
+                      "on-error": "#690005",
+                      "on-surface": "#e5e2e3",
+                      "outline": "#988ca0",
+                      "on-tertiary-fixed": "#2d1600",
+                      "surface-dim": "#131314",
+                      "outline-variant": "#4c4354",
+                      "info": "#60a5fa",
+                      "on-secondary": "#3f225e",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "secondary-fixed-dim": "#dcb8ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "sidebar-width": "260px",
+                      "gutter": "16px",
+                      "table-cell-padding": "12px",
+                      "margin-desktop": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "code": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "label-sm": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "code": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      }
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex">
+<!-- Side Navigation -->
+<nav class="bg-surface-container-lowest dark:bg-surface-container-lowest text-primary dark:text-primary fixed left-0 top-0 h-full w-[260px] border-r border-surface-variant flex flex-col h-full py-6 z-50 transition-all duration-200 ease-in-out hidden xl:flex">
+<div class="px-6 mb-8 flex items-center space-x-3">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary">Lumina Admin</span>
+</div>
+<div class="px-6 mb-4">
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-2">Operational Hub</p>
+</div>
+<ul class="flex-1 space-y-1 px-4">
+<li>
+<a class="text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center px-4 py-3 rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center px-4 py-3 rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3">payments</span>
+<span class="font-label-md text-label-md">Transactions</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center px-4 py-3 rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3">storefront</span>
+<span class="font-label-md text-label-md">Marketplaces</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center px-4 py-3 rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3">group</span>
+<span class="font-label-md text-label-md">Vendors</span>
+</a>
+</li>
+<li>
+<a class="border-l-4 border-primary text-on-surface font-bold bg-surface-container-low flex items-center px-4 py-3 rounded-r-lg" href="#">
+<span class="material-symbols-outlined mr-3 text-primary">account_balance_wallet</span>
+<span class="font-label-md text-label-md">Settlements</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center px-4 py-3 rounded-lg mt-8" href="#">
+<span class="material-symbols-outlined mr-3">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</li>
+</ul>
+<div class="px-6 mt-auto">
+<button class="w-full bg-primary-container text-on-primary-container font-label-md text-label-md py-2 px-4 rounded-lg hover:bg-primary transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined mr-2 text-[18px]">add</span> Add New Provider
+             </button>
+</div>
+<div class="mt-8 px-4 border-t border-surface-variant pt-4 space-y-1">
+<a class="text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center px-4 py-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3 text-[18px]">help</span>
+<span class="font-label-md text-label-md">Help Center</span>
+</a>
+<a class="text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center px-4 py-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3 text-[18px]">terminal</span>
+<span class="font-label-md text-label-md">System Logs</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 xl:ml-[260px] min-h-screen flex flex-col">
+<!-- Top App Bar -->
+<header class="bg-surface dark:bg-surface text-primary dark:text-primary fixed top-0 right-0 w-full xl:w-[calc(100%-260px)] z-40 border-b border-surface-variant flex justify-between items-center px-margin-desktop h-16">
+<div class="flex items-center space-x-4 w-full max-w-md">
+<!-- Mobile Menu Toggle -->
+<button class="xl:hidden text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="font-headline-sm text-headline-sm font-black text-on-surface hidden sm:block">Financial Workspace</span>
+<!-- Global Search -->
+<div class="relative w-full flex-1 sm:ml-4 focus-within:ring-2 focus-within:ring-primary rounded-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-low border border-surface-variant rounded-md py-1.5 pl-10 pr-4 text-on-surface font-body-md text-body-md focus:outline-none placeholder:text-outline-variant" placeholder="Search payouts..." type="text"/>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">history</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors hidden sm:block">
+<span class="material-symbols-outlined">apps</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-surface-variant border border-outline-variant overflow-hidden ml-2 cursor-pointer">
+<img alt="Provider Admin Avatar" class="w-full h-full object-cover" data-alt="A highly detailed close-up portrait of a professional corporate administrator in a modern, well-lit office setting. The lighting is soft and natural, creating a clean and trustworthy aesthetic with a dark mode background context. Crisp focus on the face." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB6OafoyC9nY0yPJHFvPVGQNGDyWhxFVSTKe2deFjyIqJ_WbRGCqQA8jcYF_9NntlvEoKxuBecjPP1L-raLC9aPD-lFcmhL52PUIuDQzCEyU9P3ZP7f5fjagxVWT8Vzkm00k4OC3l6Gb5DbAHmrSvROIuP8tXglMcpy9D5WzguDA3cUHCjWsYvfsvrk5AB2BpD050HqdBctObsQI_eEQPifjjEfMw017G9QkWFnCRqJM0yFGrQfcp6tw"/>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-margin-mobile md:p-margin-desktop mt-16 flex-1 space-y-6">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="font-display-lg text-display-lg text-on-surface">Payouts</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-1">Track money transferred to your payout account.</p>
+</div>
+<div class="flex space-x-3">
+<button class="bg-surface-container-high border border-surface-variant hover:border-primary hover:text-primary transition-colors font-label-md text-label-md py-2 px-4 rounded-lg flex items-center">
+<span class="material-symbols-outlined mr-2 text-[18px]">download</span> Export
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Next Payout Highlight (Large Card) -->
+<div class="md:col-span-8 bg-surface-container-low border border-surface-variant rounded-xl p-6 relative overflow-hidden group">
+<!-- Subtle background decoration -->
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all duration-500"></div>
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h2 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Next Scheduled Payout</h2>
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm py-1 px-2 rounded flex items-center border border-primary/20">
+<span class="material-symbols-outlined text-[14px] mr-1">schedule</span> Scheduled
+                                </span>
+</div>
+<div class="font-display-lg text-display-lg text-primary my-4">₹8,420</div>
+</div>
+<div class="flex items-center space-x-6 border-t border-surface-variant pt-4 mt-6">
+<div>
+<p class="font-label-sm text-label-sm text-outline-variant">Expected Date</p>
+<p class="font-body-md text-body-md text-on-surface">Sept 5, 2026</p>
+</div>
+<div class="h-8 w-px bg-surface-variant"></div>
+<div>
+<p class="font-label-sm text-label-sm text-outline-variant">Method</p>
+<div class="flex items-center text-on-surface">
+<span class="material-symbols-outlined text-[18px] mr-2 text-outline">account_balance</span>
+<span class="font-body-md text-body-md">Bank Account (XXXX 4821)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Balance Cards & Quick Actions -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<!-- Available Balance -->
+<div class="bg-surface-container-low border border-surface-variant rounded-xl p-5 hover:border-primary/50 transition-colors">
+<div class="flex items-center justify-between mb-2">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase">Available Balance</h3>
+<span class="material-symbols-outlined text-success">check_circle</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-on-surface">₹8,420</div>
+</div>
+<!-- Pending Balance -->
+<div class="bg-surface-container-low border border-surface-variant rounded-xl p-5 hover:border-primary/50 transition-colors">
+<div class="flex items-center justify-between mb-2">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase">Pending Clearance</h3>
+<span class="material-symbols-outlined text-warning">pending</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-on-surface">₹4,420</div>
+</div>
+<!-- Quick Actions -->
+<div class="bg-surface-container-low border border-surface-variant rounded-xl p-5 flex-1">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-4">Quick Actions</h3>
+<div class="space-y-2">
+<button class="w-full text-left bg-surface-container hover:bg-surface-container-high transition-colors p-3 rounded-lg flex items-center border border-transparent hover:border-surface-variant">
+<span class="material-symbols-outlined mr-3 text-outline">history</span>
+<span class="font-label-md text-label-md flex-1">View Payout History</span>
+<span class="material-symbols-outlined text-[16px] text-outline-variant">chevron_right</span>
+</button>
+<button class="w-full text-left bg-surface-container hover:bg-surface-container-high transition-colors p-3 rounded-lg flex items-center border border-transparent hover:border-surface-variant">
+<span class="material-symbols-outlined mr-3 text-outline">settings_applications</span>
+<span class="font-label-md text-label-md flex-1">Payout Settings</span>
+<span class="material-symbols-outlined text-[16px] text-outline-variant">chevron_right</span>
+</button>
+<button class="w-full text-left bg-surface-container hover:bg-surface-container-high transition-colors p-3 rounded-lg flex items-center border border-transparent hover:border-surface-variant">
+<span class="material-symbols-outlined mr-3 text-outline">receipt_long</span>
+<span class="font-label-md text-label-md flex-1">View Statements</span>
+<span class="material-symbols-outlined text-[16px] text-outline-variant">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Recent Payouts Table -->
+<div class="md:col-span-12 bg-surface-container-low border border-surface-variant rounded-xl overflow-hidden mt-2">
+<div class="p-5 border-b border-surface-variant flex justify-between items-center bg-surface-container-high/50">
+<h2 class="font-headline-md text-headline-md text-on-surface">Recent Payouts</h2>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md transition-colors">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-surface-variant bg-surface-container-highest/20">
+<th class="p-table-cell-padding font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Reference ID</th>
+<th class="p-table-cell-padding font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Amount</th>
+<th class="p-table-cell-padding font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="p-table-cell-padding font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Date</th>
+<th class="p-table-cell-padding font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider text-right">Action</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md">
+<tr class="border-b border-surface-variant hover:bg-surface-container-high transition-colors group cursor-pointer">
+<td class="p-table-cell-padding">
+<div class="flex items-center">
+<div class="w-8 h-8 rounded bg-surface-variant flex items-center justify-center mr-3 group-hover:bg-primary/20 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">account_balance</span>
+</div>
+<span class="font-code text-code text-on-surface">PAY-20260829-0037</span>
+</div>
+</td>
+<td class="p-table-cell-padding font-label-md text-label-md text-on-surface">₹7,850</td>
+<td class="p-table-cell-padding">
+<span class="bg-success/10 text-success font-label-sm text-label-sm py-1 px-2 rounded-full inline-flex items-center border border-success/20">
+<span class="material-symbols-outlined text-[14px] mr-1">check</span> Completed
+                                        </span>
+</td>
+<td class="p-table-cell-padding text-on-surface-variant">Aug 29, 2026</td>
+<td class="p-table-cell-padding text-right">
+<button class="text-outline-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors group cursor-pointer">
+<td class="p-table-cell-padding">
+<div class="flex items-center">
+<div class="w-8 h-8 rounded bg-surface-variant flex items-center justify-center mr-3 group-hover:bg-primary/20 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">account_balance</span>
+</div>
+<span class="font-code text-code text-on-surface">PAY-20260822-0029</span>
+</div>
+</td>
+<td class="p-table-cell-padding font-label-md text-label-md text-on-surface">₹6,420</td>
+<td class="p-table-cell-padding">
+<span class="bg-success/10 text-success font-label-sm text-label-sm py-1 px-2 rounded-full inline-flex items-center border border-success/20">
+<span class="material-symbols-outlined text-[14px] mr-1">check</span> Completed
+                                        </span>
+</td>
+<td class="p-table-cell-padding text-on-surface-variant">Aug 22, 2026</td>
+<td class="p-table-cell-padding text-right">
+<button class="text-outline-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

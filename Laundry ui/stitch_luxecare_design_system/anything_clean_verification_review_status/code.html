@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Verification Review - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-lowest": "#0e0e0f",
+                        "secondary-container": "#49494b",
+                        "background": "#131314",
+                        "outline": "#988ca0",
+                        "secondary-fixed": "#e4e2e4",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-tint": "#dcb8ff",
+                        "on-primary-fixed": "#2c0051",
+                        "primary-fixed": "#efdbff",
+                        "on-secondary-fixed-variant": "#474648",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "surface": "#131314",
+                        "success-bg": "#1A3D24",
+                        "inverse-on-surface": "#313031",
+                        "outline-variant": "#4c4354",
+                        "error-red": "#ffb4ab",
+                        "inverse-primary": "#8422dc",
+                        "inverse-surface": "#e5e2e3",
+                        "on-background": "#e5e2e3",
+                        "surface-container-highest": "#353436",
+                        "tertiary-container": "#646365",
+                        "error-container": "#93000a",
+                        "on-primary": "#480081",
+                        "electric-violet": "#8a2be2",
+                        "surface-container": "#201f20",
+                        "error": "#ffb4ab",
+                        "on-surface": "#e5e2e3",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "secondary": "#c8c6c8",
+                        "on-primary-container": "#eed9ff",
+                        "success-green": "#81C784",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-variant": "#353436",
+                        "primary": "#dcb8ff",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary": "#303032",
+                        "surface-container-high": "#2a2a2b",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "tertiary": "#c8c6c8",
+                        "surface-dim": "#131314",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-error": "#690005",
+                        "on-secondary": "#303032",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface-bright": "#39393a",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-secondary-container": "#b9b8ba",
+                        "primary-container": "#8a2be2"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "3xl": "64px",
+                        "xl": "32px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "sm": "8px"
+                    },
+                    fontFamily: {
+                        "h3": ["Geist", "sans-serif"],
+                        "caption": ["Geist", "sans-serif"],
+                        "display-lg": ["Geist", "sans-serif"],
+                        "body-md": ["Geist", "sans-serif"],
+                        "mono-display": ["monospace", "sans-serif"],
+                        "h1": ["Geist", "sans-serif"],
+                        "headline-lg": ["Geist", "sans-serif"],
+                        "label-md": ["Geist", "sans-serif"]
+                    },
+                    fontSize: {
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col md:flex-row antialiased overflow-x-hidden selection:bg-electric-violet/30 selection:text-white">
+<!-- Top Navigation (Mobile Only) -->
+<header class="md:hidden bg-background/80 backdrop-blur-md text-electric-violet font-body-md text-body-md fixed top-0 w-full z-50 border-b border-outline-variant/30 flex justify-between items-center px-xl h-16 w-full shadow-none">
+<h1 class="font-h1 text-h1 text-electric-violet m-0 tracking-tight">Anything Clean</h1>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-electric-violet cursor-pointer active:opacity-80 hover:text-primary transition-colors text-2xl" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-electric-violet cursor-pointer active:opacity-80 hover:text-primary transition-colors text-2xl" data-icon="help_outline">help_outline</span>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-outline-variant/50 ml-sm object-cover" data-alt="A modern, abstract geometric avatar placeholder featuring sleek dark purples and bright electric violet accents on a pure black background. Corporate, tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAprWRanAqkSBNyS7r0g-PnAex-_HhUvRXWEp9_iQDsNGNG2ujLvxlqLRN6w_SuGasgCuIphylcNpXE6mBLuLSFS19YVO3fS-5WAHehVx6rq3LdnEdCVvqUHjIcxxhNFsGc7q_UquWMQMgurwSgjEMKztCHBUkxsNp6e9HWJXfKIK1kZb0xTlJzKggV_HJiJje3E-IqyjAem6rhyPcgRVzt2ijd4apwTdYMG45F9UP0Z0IUKF4joErKcA"/>
+</div>
+</header>
+<!-- Side Navigation (Desktop) -->
+<nav class="hidden md:flex bg-surface-container-low text-primary font-label-md text-label-md fixed left-0 top-0 h-full w-64 border-r border-outline-variant/30 flex-col py-lg px-md gap-sm shadow-none z-40">
+<div class="mb-xl px-sm flex flex-col gap-sm">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container border border-outline-variant/50 flex items-center justify-center shrink-0 overflow-hidden">
+<img alt="Business logo" class="w-full h-full object-cover" data-alt="A professional corporate logo featuring abstract clean lines and deep midnight colors with a vibrant violet accent, suitable for a high-end SaaS platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF8V-2RIQb9itnZTpmqoJX6Gp02LNFY1aNrewQXe39iWW7nJ2aIDyq8ver3EDjOnjH5HlnA9W8Tu0mYIvSkAKdJXxL8d3ZI9f0yqOd6ajWkJnGbj6V8_2pv7QDRnFqTTglf1Ewhdi7501RpZC8AAkJzVuKEKs_A_YFR73gk4mlNZbMuUzC6Qp5rNN0FXg-EPomCTTc3EtcpQSr-gmDNKuJ_n3fHdLASsTPM338fJEZirhHqc3rLPlaLw"/>
+</div>
+<div>
+<h2 class="font-h3 text-h3 text-on-surface tracking-tight truncate w-36" title="Anything Clean">Anything Clean</h2>
+</div>
+</div>
+<div class="mt-xs">
+<p class="font-caption text-caption text-on-surface-variant">Verification Progress: 45%</p>
+<div class="w-full h-1 bg-surface-container mt-xs rounded-full overflow-hidden">
+<div class="h-full bg-electric-violet rounded-full" style="width: 45%;"></div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-xs flex-1">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors" data-icon="fingerprint">fingerprint</span>
+<span>Identity</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors" data-icon="location_on">location_on</span>
+<span>Address</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors" data-icon="business">business</span>
+<span>Registration</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors" data-icon="verified_user">verified_user</span>
+<span>KYC Check</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors" data-icon="description">description</span>
+<span>Documents</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors" data-icon="account_balance">account_balance</span>
+<span>Bank Setup</span>
+</a>
+<!-- Active Tab -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-primary/10 text-primary font-bold transition-all duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Final Review</span>
+</a>
+</div>
+<div class="mt-auto flex flex-col gap-sm pt-xl">
+<button class="w-full bg-electric-violet hover:bg-primary-container text-white font-label-md text-label-md font-bold py-md px-md rounded-lg shadow-lg shadow-electric-violet/20 transition-all active:scale-95 border border-transparent flex items-center justify-center gap-sm">
+                Complete Verification
+            </button>
+<div class="flex flex-col gap-xs mt-sm pt-sm border-t border-outline-variant/30">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary" data-icon="contact_support">contact_support</span>
+<span>Support</span>
+</a>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 pt-20 md:pt-0 p-md md:p-xl w-full max-w-[1200px] mx-auto min-h-screen flex flex-col relative z-10">
+<!-- Header -->
+<header class="mb-xl flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<div class="flex items-center gap-sm text-on-surface-variant font-caption text-caption mb-sm">
+<span>Applications</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+<span class="font-mono-display text-[12px] tracking-wider text-on-surface">PRV-20260901-0042</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface m-0 tracking-tight">Final Review</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs max-w-2xl">Review the status of your verification application. Ensure all documents and details are finalized.</p>
+</div>
+<!-- Global Action -->
+<button class="bg-surface-container-low border border-outline-variant text-on-surface hover:bg-surface-container hover:text-primary font-label-md text-label-md px-lg py-sm rounded-lg transition-all flex items-center gap-sm w-fit active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+                Download Summary
+            </button>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-md md:gap-lg flex-1 content-start">
+<!-- Primary Status Card (Spans 8 cols on large screens) -->
+<div class="lg:col-span-8 bg-surface-container border border-outline-variant/50 rounded-xl p-lg relative overflow-hidden flex flex-col justify-center min-h-[300px] group">
+<!-- Decorative background elements -->
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-electric-violet/5 rounded-full blur-3xl group-hover:bg-electric-violet/10 transition-colors duration-700"></div>
+<div class="absolute -left-10 -bottom-10 w-48 h-48 bg-primary/5 rounded-full blur-2xl"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-center gap-xl">
+<!-- Status Icon/Indicator -->
+<div class="relative flex-shrink-0">
+<div class="w-32 h-32 rounded-full border-4 border-surface-container-high flex items-center justify-center relative bg-surface-container-low shadow-inner">
+<!-- Spinning border effect (simulated with CSS for 'Under Review' state) -->
+<div class="absolute inset-0 rounded-full border-t-4 border-electric-violet animate-[spin_3s_linear_infinite] opacity-70"></div>
+<span class="material-symbols-outlined text-display-lg text-electric-violet" data-icon="hourglass_empty">hourglass_empty</span>
+</div>
+</div>
+<!-- Status Details -->
+<div class="text-center md:text-left flex-1">
+<div class="inline-flex items-center gap-xs px-sm py-xs rounded-full bg-electric-violet/10 border border-electric-violet/20 mb-sm">
+<span class="w-2 h-2 rounded-full bg-electric-violet animate-pulse"></span>
+<span class="font-label-md text-label-md text-electric-violet uppercase tracking-wider text-[11px]">Under Review</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-sm">Application Processing</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Your application is currently being reviewed by our compliance team. This process typically takes 1-2 business days.</p>
+<div class="mt-lg flex flex-wrap gap-md justify-center md:justify-start">
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-sm px-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="calendar_today">calendar_today</span>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant leading-tight">Submitted On</span>
+<span class="font-label-md text-label-md text-on-surface leading-tight">Oct 24, 2026</span>
+</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-sm px-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="schedule">schedule</span>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant leading-tight">Est. Completion</span>
+<span class="font-label-md text-label-md text-on-surface leading-tight">Oct 26, 2026</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Support / Contact Card (Spans 4 cols) -->
+<div class="lg:col-span-4 bg-surface-container-low border border-outline-variant/30 rounded-xl p-lg flex flex-col relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-electric-violet to-primary opacity-50"></div>
+<h3 class="font-h3 text-h3 text-on-surface mb-sm flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="support_agent">support_agent</span>
+                    Need Assistance?
+                </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg flex-1">Have questions about your verification status or need to provide additional context?</p>
+<div class="flex flex-col gap-sm">
+<button class="w-full bg-surface-container border border-outline-variant/50 hover:border-primary/50 text-on-surface hover:text-primary font-label-md text-label-md py-sm px-md rounded-lg transition-all flex items-center justify-center gap-sm active:scale-95 group">
+<span class="material-symbols-outlined text-[18px] group-hover:text-primary transition-colors" data-icon="chat_bubble_outline">chat_bubble_outline</span>
+                        Live Chat Support
+                    </button>
+<button class="w-full bg-transparent border border-transparent hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md py-sm px-md rounded-lg transition-all flex items-center justify-center gap-sm active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="mail">mail</span>
+                        Email Compliance Team
+                    </button>
+</div>
+</div>
+<!-- Detailed Checklist (Spans full width, complex internal grid) -->
+<div class="lg:col-span-12 bg-surface-container border border-outline-variant/40 rounded-xl overflow-hidden mt-md">
+<div class="p-lg border-b border-outline-variant/30 bg-surface-container-low flex justify-between items-center">
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">Verification Timeline</h3>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">Detailed status of required components.</p>
+</div>
+<div class="font-mono-display text-primary text-[14px] bg-primary/10 px-sm py-xs rounded-md border border-primary/20">
+                        ID: PRV-20260901
+                    </div>
+</div>
+<div class="p-0">
+<!-- Step 1: Business Profile (Done) -->
+<div class="flex flex-col md:flex-row border-b border-outline-variant/20 hover:bg-surface-container-highest/30 transition-colors">
+<div class="p-md md:p-lg md:w-1/3 flex items-start gap-md border-b md:border-b-0 md:border-r border-outline-variant/20">
+<div class="w-8 h-8 rounded-full bg-success-bg/20 text-success-green flex items-center justify-center shrink-0 border border-success-green/30">
+<span class="material-symbols-outlined text-[16px]" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-bold">Business Profile</h4>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">Company details and structure.</p>
+</div>
+</div>
+<div class="p-md md:p-lg flex-1 flex flex-col justify-center gap-sm">
+<div class="flex items-center gap-sm">
+<span class="px-2 py-1 rounded-sm bg-success-bg/30 text-success-green font-caption text-caption uppercase tracking-wider text-[10px] font-bold border border-success-green/20">Verified</span>
+<span class="font-caption text-caption text-on-surface-variant">Completed Oct 23, 10:42 AM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-[14px]">All basic company information, including registered name, DBA, and operational industry codes have been successfully verified against public registries.</p>
+</div>
+</div>
+<!-- Step 2: Identity (Done) -->
+<div class="flex flex-col md:flex-row border-b border-outline-variant/20 hover:bg-surface-container-highest/30 transition-colors">
+<div class="p-md md:p-lg md:w-1/3 flex items-start gap-md border-b md:border-b-0 md:border-r border-outline-variant/20">
+<div class="w-8 h-8 rounded-full bg-success-bg/20 text-success-green flex items-center justify-center shrink-0 border border-success-green/30">
+<span class="material-symbols-outlined text-[16px]" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-bold">Identity</h4>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">Key principals and UBOs.</p>
+</div>
+</div>
+<div class="p-md md:p-lg flex-1 flex flex-col justify-center gap-sm">
+<div class="flex items-center gap-sm">
+<span class="px-2 py-1 rounded-sm bg-success-bg/30 text-success-green font-caption text-caption uppercase tracking-wider text-[10px] font-bold border border-success-green/20">Verified</span>
+<span class="font-caption text-caption text-on-surface-variant">Completed Oct 23, 11:15 AM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-[14px]">Identity verification for all Ultimate Beneficial Owners (UBOs) holding &gt;25% stake is complete. No PEP or Sanction flags detected.</p>
+</div>
+</div>
+<!-- Step 3: Documents (Done) -->
+<div class="flex flex-col md:flex-row border-b border-outline-variant/20 hover:bg-surface-container-highest/30 transition-colors">
+<div class="p-md md:p-lg md:w-1/3 flex items-start gap-md border-b md:border-b-0 md:border-r border-outline-variant/20">
+<div class="w-8 h-8 rounded-full bg-success-bg/20 text-success-green flex items-center justify-center shrink-0 border border-success-green/30">
+<span class="material-symbols-outlined text-[16px]" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-bold">Documents</h4>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">Articles and proof of address.</p>
+</div>
+</div>
+<div class="p-md md:p-lg flex-1 flex flex-col justify-center gap-sm">
+<div class="flex items-center gap-sm">
+<span class="px-2 py-1 rounded-sm bg-success-bg/30 text-success-green font-caption text-caption uppercase tracking-wider text-[10px] font-bold border border-success-green/20">Approved</span>
+<span class="font-caption text-caption text-on-surface-variant">Completed Oct 24, 09:05 AM</span>
+</div>
+<div class="flex flex-wrap gap-sm mt-xs">
+<div class="flex items-center gap-xs bg-surface-container-low px-sm py-xs rounded border border-outline-variant/30">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant" data-icon="description">description</span>
+<span class="font-caption text-caption text-on-surface">Articles_of_Inc.pdf</span>
+</div>
+<div class="flex items-center gap-xs bg-surface-container-low px-sm py-xs rounded border border-outline-variant/30">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant" data-icon="description">description</span>
+<span class="font-caption text-caption text-on-surface">Utility_Bill_Oct.pdf</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 4: Final Review (Current) -->
+<div class="flex flex-col md:flex-row bg-surface-container-highest/20 relative">
+<!-- Active indicator bar -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-electric-violet"></div>
+<div class="p-md md:p-lg md:w-1/3 flex items-start gap-md border-b md:border-b-0 md:border-r border-outline-variant/20 relative">
+<div class="w-8 h-8 rounded-full bg-electric-violet/10 text-electric-violet flex items-center justify-center shrink-0 border border-electric-violet/40">
+<div class="w-2 h-2 rounded-full bg-electric-violet animate-pulse"></div>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-electric-violet font-bold">Manual Review</h4>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">Final compliance check.</p>
+</div>
+</div>
+<div class="p-md md:p-lg flex-1 flex flex-col justify-center gap-sm">
+<div class="flex items-center gap-sm">
+<span class="px-2 py-1 rounded-sm bg-electric-violet/20 text-primary font-caption text-caption uppercase tracking-wider text-[10px] font-bold border border-electric-violet/30">In Progress</span>
+<span class="font-caption text-caption text-on-surface-variant">Started Oct 24, 09:10 AM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-[14px]">A compliance officer is currently performing a final manual review of your submitted profile and risk assessment factors. We will notify you immediately upon completion.</p>
+<!-- Minor interaction dummy -->
+<div class="mt-sm">
+<button class="text-primary hover:text-electric-violet font-label-md text-[13px] flex items-center gap-xs transition-colors group">
+                                    View Review Criteria
+                                    <span class="material-symbols-outlined text-[14px] group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Simple ambient interaction for buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousedown', function() {
+                this.style.transform = 'scale(0.97)';
+            });
+            btn.addEventListener('mouseup', function() {
+                this.style.transform = '';
+            });
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+            });
+        });
+    </script>
+</body></html>

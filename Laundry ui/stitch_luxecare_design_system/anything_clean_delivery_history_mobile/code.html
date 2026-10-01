@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Deliveries - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#303032",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-variant": "#353436",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-bright": "#3a393a",
+                        "background": "#131314",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "secondary-container": "#474649",
+                        "primary-container": "#8a2be2",
+                        "on-error": "#690005",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-primary-container": "#eed9ff",
+                        "outline": "#988ca0",
+                        "surface-tint": "#dcb8ff",
+                        "on-primary-fixed": "#2c0051",
+                        "on-tertiary": "#303032",
+                        "secondary": "#c8c6c8",
+                        "surface-container-low": "#1c1b1c",
+                        "on-secondary-fixed-variant": "#474649",
+                        "primary": "#dcb8ff",
+                        "on-tertiary-container": "#e3e0e2",
+                        "surface-container-highest": "#353436",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131314",
+                        "on-background": "#e5e2e3",
+                        "on-surface": "#e5e2e3",
+                        "on-secondary-container": "#b7b4b7",
+                        "tertiary": "#c8c6c8",
+                        "outline-variant": "#4c4354",
+                        "primary-fixed": "#efdbff",
+                        "surface-container-lowest": "#0e0e0f",
+                        "surface": "#131314",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-container-high": "#2a2a2b",
+                        "on-primary": "#480081",
+                        "inverse-on-surface": "#313031",
+                        "tertiary-container": "#646365",
+                        "secondary-fixed": "#e5e1e4",
+                        "inverse-surface": "#e5e2e3",
+                        "inverse-primary": "#8422dc",
+                        "surface-container": "#201f20",
+                        "on-surface-variant": "#cfc2d7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "xl": "32px",
+                        "2xl": "48px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "3xl": "64px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "label-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "caption": ["Geist"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col max-w-[390px] mx-auto overflow-x-hidden relative">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full max-w-[390px] z-50 bg-surface/80 backdrop-blur-xl border-b border-white/5 flex items-center justify-between px-md h-16">
+<div class="flex items-center gap-sm">
+<button class="hover:opacity-80 transition-opacity active:scale-95 transition-transform text-primary p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Delivery Portal</h1>
+</div>
+<div class="flex items-center gap-xs">
+<button class="hover:opacity-80 transition-opacity active:scale-95 transition-transform text-on-surface-variant p-2">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="hover:opacity-80 transition-opacity active:scale-95 transition-transform text-on-surface-variant p-2">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+</button>
+<button class="hover:opacity-80 transition-opacity active:scale-95 transition-transform text-on-surface-variant p-2">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[80px] pb-[100px] px-5 flex flex-col gap-lg overflow-y-auto">
+<!-- Header -->
+<section>
+<h2 class="font-headline-lg text-headline-lg-mobile text-on-surface mb-sm">Deliveries</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Track your completed and pending routes.</p>
+</section>
+<!-- Summary Bento Grid -->
+<section class="grid grid-cols-2 gap-sm">
+<!-- Today (Highlight) -->
+<div class="col-span-2 bg-primary-container/10 border border-primary/20 rounded-xl p-md flex items-center justify-between relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-primary-container/5 to-transparent pointer-events-none"></div>
+<div>
+<p class="font-label-md text-label-md text-primary mb-xs">Today's Earnings</p>
+<div class="flex items-baseline gap-xs">
+<span class="font-display-lg-mobile text-display-lg-mobile text-on-surface">18</span>
+<span class="font-body-md text-body-md text-on-surface-variant">deliveries</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[32px] opacity-80" data-icon="directions_bike" data-weight="fill" style="font-variation-settings: 'FILL' 1;">directions_bike</span>
+</div>
+<!-- This Week -->
+<div class="bg-surface-container rounded-xl p-md flex flex-col justify-between border border-white/5">
+<p class="font-label-md text-label-md text-on-surface-variant mb-sm">This Week</p>
+<span class="font-headline-md text-headline-md text-on-surface">96</span>
+</div>
+<!-- This Month -->
+<div class="bg-surface-container rounded-xl p-md flex flex-col justify-between border border-white/5">
+<p class="font-label-md text-label-md text-on-surface-variant mb-sm">This Month</p>
+<span class="font-headline-md text-headline-md text-on-surface">342</span>
+</div>
+</section>
+<!-- Tabs -->
+<section class="border-b border-white/5 sticky top-[64px] bg-background z-40 py-sm -mx-5 px-5">
+<div class="flex gap-md overflow-x-auto no-scrollbar pb-sm items-center">
+<button class="whitespace-nowrap px-sm py-xs border-b-2 border-primary text-primary font-label-md text-label-md font-bold transition-colors">Completed</button>
+<button class="whitespace-nowrap px-sm py-xs border-b-2 border-transparent text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors">Failed</button>
+<button class="whitespace-nowrap px-sm py-xs border-b-2 border-transparent text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors">Returned</button>
+<button class="whitespace-nowrap px-sm py-xs border-b-2 border-transparent text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors">Cancelled</button>
+</div>
+</section>
+<!-- Delivery List -->
+<section class="flex flex-col gap-sm">
+<!-- Card 1 -->
+<article class="bg-surface-container rounded-xl p-md border border-white/5 relative overflow-hidden group hover:border-primary/30 transition-colors">
+<!-- Status Bar -->
+<div class="absolute top-0 left-0 w-1 h-full bg-primary rounded-l-xl"></div>
+<div class="flex justify-between items-start mb-md">
+<div>
+<div class="flex items-center gap-xs mb-xs">
+<span class="font-label-md text-label-md text-primary font-bold">#QH1024</span>
+<span class="bg-surface-variant px-2 py-0.5 rounded-full font-caption text-caption text-on-surface-variant border border-white/5">DELIVERED</span>
+</div>
+<h3 class="font-headline-md text-body-md text-on-surface font-medium">White Sneaker, CleanX</h3>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Aug 30, 7:06 PM</p>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-primary">₹62</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-sm border-t border-white/5">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]" data-icon="route">route</span>
+<span class="font-label-md text-label-md">3.8km</span>
+</div>
+<button class="text-primary font-label-md text-label-md flex items-center gap-xs hover:opacity-80 transition-opacity">
+                        View Details <span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container rounded-xl p-md border border-white/5 relative overflow-hidden group hover:border-primary/30 transition-colors">
+<!-- Status Bar -->
+<div class="absolute top-0 left-0 w-1 h-full bg-primary rounded-l-xl opacity-70"></div>
+<div class="flex justify-between items-start mb-md">
+<div>
+<div class="flex items-center gap-xs mb-xs">
+<span class="font-label-md text-label-md text-primary font-bold">#QH1025</span>
+<span class="bg-surface-variant px-2 py-0.5 rounded-full font-caption text-caption text-on-surface-variant border border-white/5">DELIVERED</span>
+</div>
+<h3 class="font-headline-md text-body-md text-on-surface font-medium">Helmet Cleaning</h3>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Aug 30, 5:45 PM</p>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-primary">₹78</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-sm border-t border-white/5">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]" data-icon="route">route</span>
+<span class="font-label-md text-label-md">5.2km</span>
+</div>
+<button class="text-primary font-label-md text-label-md flex items-center gap-xs hover:opacity-80 transition-opacity">
+                        View Details <span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface-container rounded-xl p-md border border-white/5 relative overflow-hidden group hover:border-primary/30 transition-colors">
+<!-- Status Bar -->
+<div class="absolute top-0 left-0 w-1 h-full bg-primary rounded-l-xl opacity-70"></div>
+<div class="flex justify-between items-start mb-md">
+<div>
+<div class="flex items-center gap-xs mb-xs">
+<span class="font-label-md text-label-md text-primary font-bold">#QH1022</span>
+<span class="bg-surface-variant px-2 py-0.5 rounded-full font-caption text-caption text-on-surface-variant border border-white/5">DELIVERED</span>
+</div>
+<h3 class="font-headline-md text-body-md text-on-surface font-medium">Premium Jacket Dry Clean</h3>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Aug 30, 2:15 PM</p>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-primary">₹110</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-sm border-t border-white/5">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]" data-icon="route">route</span>
+<span class="font-label-md text-label-md">7.1km</span>
+</div>
+<button class="text-primary font-label-md text-label-md flex items-center gap-xs hover:opacity-80 transition-opacity">
+                       View Details <span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</article>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full max-w-[390px] mx-auto flex justify-around items-center py-sm px-xs pb-safe z-50 bg-surface/90 backdrop-blur-xl border-t border-white/5 shadow-[0_-4px_20px_rgba(0,0,0,0.4)] rounded-t-xl h-[80px]">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded-lg transition-colors active:scale-90 transition-all duration-200 p-2 w-16">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-md text-label-md text-[10px]">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary font-bold hover:bg-surface-variant/20 rounded-lg transition-colors active:scale-90 transition-all duration-200 p-2 w-16">
+<span class="material-symbols-outlined mb-1" data-icon="local_shipping" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+<span class="font-label-md text-label-md text-[10px]">Deliveries</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded-lg transition-colors active:scale-90 transition-all duration-200 p-2 w-16">
+<span class="material-symbols-outlined mb-1" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md text-[10px]">Earnings</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded-lg transition-colors active:scale-90 transition-all duration-200 p-2 w-16 relative">
+<span class="material-symbols-outlined mb-1" data-icon="notifications">notifications</span>
+<span class="absolute top-1 right-3 w-2 h-2 bg-error rounded-full"></span>
+<span class="font-label-md text-label-md text-[10px]">Alerts</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded-lg transition-colors active:scale-90 transition-all duration-200 p-2 w-16">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-md text-label-md text-[10px]">Profile</span>
+</button>
+</nav>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom, 16px);
+        }
+    </style>
+</body></html>

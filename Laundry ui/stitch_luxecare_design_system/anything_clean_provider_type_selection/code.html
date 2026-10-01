@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Provider Type Selection - Lumina</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container": "#201f20",
+                      "error-container": "#93000a",
+                      "secondary": "#c8c6c8",
+                      "on-error-container": "#ffdad6",
+                      "on-tertiary": "#303032",
+                      "surface-container-high": "#2a2a2b",
+                      "on-tertiary-container": "#e3e0e2",
+                      "tertiary-container": "#646365",
+                      "on-primary-fixed": "#2c0051",
+                      "tertiary-fixed": "#e4e2e4",
+                      "error": "#ffb4ab",
+                      "inverse-on-surface": "#313031",
+                      "on-error": "#690005",
+                      "error-red": "#ffb4ab",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "on-primary": "#480081",
+                      "secondary-container": "#49494b",
+                      "background": "#131314",
+                      "on-surface-variant": "#cfc2d7",
+                      "primary-container": "#8a2be2",
+                      "surface-container-highest": "#353436",
+                      "secondary-fixed": "#e4e2e4",
+                      "inverse-primary": "#8422dc",
+                      "tertiary": "#c8c6c8",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "on-secondary-container": "#b9b8ba",
+                      "surface-dim": "#131314",
+                      "on-secondary": "#303032",
+                      "on-secondary-fixed-variant": "#474648",
+                      "inverse-surface": "#e5e2e3",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "surface-bright": "#39393a",
+                      "electric-violet": "#8a2be2",
+                      "outline-variant": "#4c4354",
+                      "surface-variant": "#353436",
+                      "on-background": "#e5e2e3",
+                      "success-green": "#81C784",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "on-surface": "#e5e2e3",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "surface-container-low": "#1c1b1c",
+                      "surface-tint": "#dcb8ff",
+                      "success-bg": "#1A3D24",
+                      "surface": "#131314",
+                      "on-primary-container": "#eed9ff",
+                      "outline": "#988ca0",
+                      "primary": "#dcb8ff",
+                      "primary-fixed": "#efdbff",
+                      "tertiary-fixed-dim": "#c8c6c8"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xs": "4px",
+                      "md": "16px",
+                      "sm": "8px",
+                      "xl": "32px",
+                      "lg": "24px",
+                      "3xl": "64px",
+                      "2xl": "48px"
+              },
+              "fontFamily": {
+                      "mono-display": [
+                              "monospace"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "h3": [
+                              "Geist"
+                      ],
+                      "h1": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill-1 {
+            font-variation-settings: 'FILL' 1;
+        }
+      </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-xl relative overflow-hidden">
+<!-- Background atmospheric effect -->
+<div class="absolute inset-0 pointer-events-none opacity-20 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-electric-violet/20 via-background to-background"></div>
+<main class="w-full max-w-3xl mx-auto relative z-10 flex flex-col items-center">
+<!-- Progress Indicator -->
+<div class="w-full flex items-center justify-center mb-2xl">
+<div class="flex items-center gap-sm">
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-surface-container-highest border border-outline-variant/30 text-primary-fixed">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="w-12 h-[2px] bg-outline-variant/30 relative">
+<div class="absolute top-0 left-0 h-full w-full bg-electric-violet"></div>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-electric-violet text-on-primary font-label-md text-label-md shadow-[0_0_15px_rgba(138,43,226,0.3)]">
+                        2
+                    </div>
+<span class="font-label-md text-label-md text-primary mt-sm absolute -bottom-lg whitespace-nowrap">Account</span>
+</div>
+<div class="w-12 h-[2px] bg-outline-variant/30"></div>
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-surface-container-highest border border-outline-variant/30 text-on-surface-variant font-label-md text-label-md">
+                    3
+                </div>
+</div>
+</div>
+<!-- Header -->
+<div class="text-center mb-xl w-full">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-sm">What type of provider are you?</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg mx-auto">Select the category that best describes your operational setup to help us tailor your experience.</p>
+</div>
+<!-- Selection Cards (Bento Grid Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md w-full mb-2xl">
+<!-- Professional Service Center (Selected) -->
+<label class="cursor-pointer group relative">
+<input checked="" class="peer sr-only" name="provider_type" type="radio" value="center"/>
+<div class="h-full p-lg rounded-xl bg-surface-container border-2 border-electric-violet shadow-[0_0_20px_rgba(138,43,226,0.15)] transition-all duration-200 flex flex-col gap-sm">
+<div class="flex justify-between items-start mb-sm">
+<div class="w-10 h-10 rounded-lg bg-electric-violet/20 flex items-center justify-center text-electric-violet">
+<span class="material-symbols-outlined icon-fill-1 text-[24px]">storefront</span>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-electric-violet bg-electric-violet flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface">Professional Service Center</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">You operate a dedicated physical location with staff and specific operating hours.</p>
+</div>
+</label>
+<!-- Independent Professional -->
+<label class="cursor-pointer group relative">
+<input class="peer sr-only" name="provider_type" type="radio" value="independent"/>
+<div class="h-full p-lg rounded-xl bg-surface-container-low border border-outline-variant/50 hover:bg-surface-container hover:border-outline-variant transition-all duration-200 peer-checked:border-2 peer-checked:border-electric-violet peer-checked:bg-surface-container flex flex-col gap-sm">
+<div class="flex justify-between items-start mb-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant group-hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[24px]">person</span>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant/50 peer-checked:border-electric-violet peer-checked:bg-electric-violet transition-colors flex items-center justify-center text-transparent peer-checked:text-on-primary">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface">Independent Professional</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">You operate as a solo practitioner or freelancer without a primary public-facing facility.</p>
+</div>
+</label>
+<!-- Mobile Service Provider -->
+<label class="cursor-pointer group relative">
+<input class="peer sr-only" name="provider_type" type="radio" value="mobile"/>
+<div class="h-full p-lg rounded-xl bg-surface-container-low border border-outline-variant/50 hover:bg-surface-container hover:border-outline-variant transition-all duration-200 peer-checked:border-2 peer-checked:border-electric-violet peer-checked:bg-surface-container flex flex-col gap-sm">
+<div class="flex justify-between items-start mb-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant group-hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[24px]">directions_car</span>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant/50 peer-checked:border-electric-violet peer-checked:bg-electric-violet transition-colors flex items-center justify-center text-transparent peer-checked:text-on-primary">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface">Mobile Service Provider</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">You travel directly to client locations to provide services rather than maintaining a fixed shop.</p>
+</div>
+</label>
+<!-- Multi-Location Business -->
+<label class="cursor-pointer group relative">
+<input class="peer sr-only" name="provider_type" type="radio" value="multi"/>
+<div class="h-full p-lg rounded-xl bg-surface-container-low border border-outline-variant/50 hover:bg-surface-container hover:border-outline-variant transition-all duration-200 peer-checked:border-2 peer-checked:border-electric-violet peer-checked:bg-surface-container flex flex-col gap-sm">
+<div class="flex justify-between items-start mb-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant group-hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[24px]">account_tree</span>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant/50 peer-checked:border-electric-violet peer-checked:bg-electric-violet transition-colors flex items-center justify-center text-transparent peer-checked:text-on-primary">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface">Multi-Location Business</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">You manage operations across several distinct geographic locations or franchises.</p>
+</div>
+</label>
+</div>
+<!-- CTA -->
+<div class="w-full flex justify-center">
+<button class="bg-electric-violet text-on-primary font-label-md text-label-md font-bold py-md px-2xl rounded-lg shadow-[0_4px_14px_rgba(138,43,226,0.25)] hover:bg-inverse-primary hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 min-w-[200px]">
+                Continue
+            </button>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer-Facing Details - Lumina Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#4c4354",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "secondary-fixed": "#e4e2e4",
+                        "on-primary-container": "#eed9ff",
+                        "surface-container-low": "#1c1b1c",
+                        "tertiary-container": "#646365",
+                        "electric-violet": "#8a2be2",
+                        "on-surface": "#e5e2e3",
+                        "primary-fixed": "#efdbff",
+                        "surface-dim": "#131314",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e5e2e3",
+                        "surface-container": "#201f20",
+                        "on-secondary": "#303032",
+                        "secondary": "#c8c6c8",
+                        "on-secondary-fixed-variant": "#474648",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#353436",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-tertiary": "#303032",
+                        "tertiary-fixed": "#e4e2e4",
+                        "surface-bright": "#39393a",
+                        "error": "#ffb4ab",
+                        "on-secondary-container": "#b9b8ba",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-primary": "#480081",
+                        "success-green": "#81C784",
+                        "error-red": "#ffb4ab",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "primary-container": "#8a2be2",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "surface-container-high": "#2a2a2b",
+                        "on-tertiary-container": "#e3e0e2",
+                        "inverse-on-surface": "#313031",
+                        "surface-variant": "#353436",
+                        "on-primary-fixed": "#2c0051",
+                        "outline": "#988ca0",
+                        "surface-tint": "#dcb8ff",
+                        "inverse-primary": "#8422dc",
+                        "background": "#131314",
+                        "surface-container-lowest": "#0e0e0f",
+                        "tertiary": "#c8c6c8",
+                        "inverse-surface": "#e5e2e3",
+                        "on-error": "#690005",
+                        "surface": "#131314",
+                        "secondary-container": "#49494b",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "success-bg": "#1A3D24",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "primary": "#dcb8ff",
+                        "on-surface-variant": "#cfc2d7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "md": "16px",
+                        "3xl": "64px",
+                        "xl": "32px",
+                        "xs": "4px",
+                        "2xl": "48px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "h3": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "caption": ["Geist"],
+                        "body-md": ["Geist"],
+                        "h1": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "mono-display": ["18px", {"letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h1": ["28px", {"lineHeight": "36px", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex selection:bg-electric-violet selection:text-white">
+<!-- SideNavBar -->
+<aside class="bg-surface-container-low dark:bg-surface-container-low fixed left-0 top-0 h-screen w-64 border-r border-outline-variant/30 flex flex-col h-full p-lg z-50">
+<div class="mb-2xl flex items-center gap-md">
+<div class="w-10 h-10 rounded bg-electric-violet flex items-center justify-center shadow-lg shadow-electric-violet/20">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">widgets</span>
+</div>
+<div>
+<div class="font-h1 text-h1 font-bold text-electric-violet tracking-tight leading-none">Lumina Admin</div>
+<div class="font-caption text-caption text-on-surface-variant">Service Suite</div>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-sm">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-95 duration-150 flex items-center gap-md p-md rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="font-label-md text-label-md bg-primary/10 text-primary font-bold rounded-lg hover:bg-surface-container-high transition-colors duration-200 active:scale-95 duration-150 flex items-center gap-md p-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+                Services
+            </a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-95 duration-150 flex items-center gap-md p-md rounded-lg" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+                Orders
+            </a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-95 duration-150 flex items-center gap-md p-md rounded-lg" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+                Availability
+            </a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-95 duration-150 flex items-center gap-md p-md rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+</nav>
+<div class="mt-auto flex flex-col gap-sm border-t border-outline-variant/30 pt-md">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-95 duration-150 flex items-center gap-md p-md rounded-lg" href="#">
+<span class="material-symbols-outlined">help</span>
+                Support
+            </a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-95 duration-150 flex items-center gap-md p-md rounded-lg" href="#">
+<span class="material-symbols-outlined">logout</span>
+                Sign Out
+            </a>
+<button class="mt-md w-full bg-electric-violet hover:bg-primary-container text-white font-label-md text-label-md font-bold py-md px-lg rounded-lg shadow-lg shadow-primary/20 transition-all active:scale-95">
+                Create Service
+            </button>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="bg-surface/80 backdrop-blur-md fixed top-0 right-0 w-[calc(100%-256px)] border-b border-outline-variant/30 flex justify-between items-center h-16 px-xl z-40">
+<div class="font-h3 text-h3 font-bold text-on-surface flex items-center gap-md">
+            Lumina Suite
+            <span class="material-symbols-outlined text-outline text-sm">chevron_right</span>
+<span class="font-body-md text-body-md text-on-surface-variant font-normal">Service Configuration</span>
+</div>
+<div class="flex items-center gap-lg">
+<div class="relative focus-within:ring-1 focus-within:ring-primary rounded-lg">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="bg-surface-container-low border-outline-variant/50 border rounded-lg pl-[40px] pr-md py-sm font-body-md text-body-md text-on-surface focus:outline-none w-64 bg-transparent" placeholder="Search services..." type="text"/>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-sm text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-sm text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/30 overflow-hidden ml-sm cursor-pointer">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A macro shot of a sleek, dark tech avatar placeholder with electric violet accents against a deep midnight background, professional lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC092KIDcaEmI-SqOPG7rp-Va2V6Ymo2i5ZEPNklWTC1140DL3DnTCp5GmTNWSGgT5OOVl4Fg03OE6Mlo2vkTLw3xnqhadNs8AkS_52U9OCZqy6q3vJJaQIyoYSzz3Ub6AccSYNnEVOeoTNUVOdArshVp4i_IaBWmzvuZwgWGP8dyT8_LKPUmn5wuDPIPn-3ILZVaq1ya61JluVUe_e5tqPNj7mycbKbTuHBYjlc7nVLr8eVTtfee8ajA"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 pt-16 w-full max-w-[1200px] mx-auto p-xl">
+<!-- Header -->
+<div class="mb-xl">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Customer-Facing Details</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Help customers understand your service before they book.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-lg">
+<!-- Left Column: Media & Visuals -->
+<div class="col-span-12 md:col-span-7 flex flex-col gap-lg">
+<!-- Service Image Card -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col gap-md relative overflow-hidden">
+<div class="flex justify-between items-center">
+<h2 class="font-h3 text-h3 text-on-surface">Service Media</h2>
+<span class="bg-success-bg text-success-green font-label-md text-[10px] uppercase font-bold tracking-widest py-xs px-sm rounded-full flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Uploaded
+                        </span>
+</div>
+<div class="relative rounded-lg overflow-hidden border border-outline-variant/30 group">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 to-transparent z-10 pointer-events-none"></div>
+<img alt="Service reference image" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A high-quality, professional photograph of a premium sneaker being meticulously cleaned with specialized tools and foam in a dark, engineered tech studio setting with moody electric violet lighting highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa9JhN-phu8i4cyx_4hEnI-nYENs1sBkvavz5hBJQbhF5nMiNm8fCUN0UKpqGqzmymIJAyDvtTM1_BF5NX2I0FaucnbyrZcN0RGF8YvgpXnnsKe1Vm8DRrmsJyT4QmiGV5b3j7zzlq9bBdfvNNlF5QeQOUkd2uhkENgzVxaAhh2xAER9Cjqs9pYRvBfJbInRh2ZypmwiRGoVkFzkgmMYcECPg2RKs8jDEInN5EoIYxXgIPEKuGaCW9mw"/>
+<div class="absolute bottom-md right-md z-20 flex gap-sm opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-surface-container/80 backdrop-blur-sm border border-outline-variant p-sm rounded hover:bg-surface-container-high text-on-surface transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="bg-error-container/80 backdrop-blur-sm border border-error-red/30 p-sm rounded hover:bg-error-container text-error-red transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<div class="flex gap-md overflow-x-auto pb-sm custom-scrollbar">
+<div class="w-24 h-24 shrink-0 rounded-lg border border-outline-variant/50 overflow-hidden relative group cursor-pointer">
+<img alt="Gallery thumbnail 1" class="w-full h-full object-cover" data-alt="A close up shot of sneaker cleaning materials and brushes neatly arranged on a dark industrial surface under precise studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1oXqKoBlwNKophjV66vkLhbjyVDxRdsLc08CLNhCyZJNXPhPDglq2ySxDfu-lsNynHG5MUcV93nWc9DGgngarKfhSJvt9LgXRXklQqeM9R1Oyotmn1-U5shoAPLFffQT5LnKTHXvtdJtkjBWwqTET5JG-I5uu6WXvQFyDap1RtqGgOBkV5vRwapJhD50SvXpO93dGyACIRI7d4oVySq6VYuNE9LEx8wk9sNk5evNO8uF6dpATWMF_JA"/>
+<div class="absolute inset-0 bg-surface-container-low/50 hidden group-hover:flex items-center justify-center">
+<span class="material-symbols-outlined text-white">open_in_full</span>
+</div>
+</div>
+<div class="w-24 h-24 shrink-0 rounded-lg border border-outline-variant/50 overflow-hidden relative group cursor-pointer">
+<img alt="Gallery thumbnail 2" class="w-full h-full object-cover" data-alt="A before and after split screen showing a dirty sneaker and a perfectly clean sneaker, modern dark UI framing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbKjHxWvpjXiMSjfs4FEIWcrRV9d5mdy8NMuBq5obmpeUBPLMbig2X1zd1Rfjd9ZdxtSX2hmBIhsUevj5JXhReMItFpBs2roS6YVTKsn3-fcWLsXjthHpbyj9-0QTflqjDOlWCSzhZmLBKUqpaLXNQ0JyQ3LU7XBXhRcyYg9LdOeiMVdTRqaEmt2ByFiSTPBI11lUrVgRuwhbySCoggz4VN9xV11-4HFmg1SkByajoVpI3ow1swuxBMg"/>
+<div class="absolute inset-0 bg-surface-container-low/50 hidden group-hover:flex items-center justify-center">
+<span class="material-symbols-outlined text-white">open_in_full</span>
+</div>
+</div>
+<div class="w-24 h-24 shrink-0 rounded-lg border border-outline-variant border-dashed flex flex-col items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-colors cursor-pointer bg-surface-container-low/50">
+<span class="material-symbols-outlined mb-xs">add_photo_alternate</span>
+<span class="font-caption text-caption text-[10px]">Add More</span>
+</div>
+</div>
+<!-- Guidance Box -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-md flex gap-md items-start mt-sm">
+<span class="material-symbols-outlined text-primary-fixed-dim mt-xs">info</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-bold">Image Guidance</h4>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">Use high-resolution images (min 1080x1080px). Clear, well-lit photos increase booking conversion by up to 30%. Avoid excessive text overlays.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Text & Details -->
+<div class="col-span-12 md:col-span-5 flex flex-col gap-lg">
+<!-- Description Card -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col gap-md">
+<h2 class="font-h3 text-h3 text-on-surface">Customer Description</h2>
+<div class="flex flex-col gap-sm">
+<label class="font-label-md text-label-md text-on-surface-variant">Marketing Copy</label>
+<textarea class="bg-surface-container-low border border-outline-variant/50 rounded-lg p-md font-body-md text-body-md text-on-surface focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors min-h-[120px] resize-none">Professional sneaker deep cleaning with careful material handling.</textarea>
+</div>
+<div class="flex flex-col gap-sm mt-sm">
+<label class="font-label-md text-label-md text-on-surface-variant">What's Included</label>
+<div class="bg-surface-container-low border border-outline-variant/50 rounded-lg p-xs">
+<ul class="flex flex-col">
+<li class="flex items-center gap-sm p-sm border-b border-outline-variant/30 last:border-0">
+<span class="material-symbols-outlined text-success-green text-sm">check</span>
+<span class="font-body-md text-body-md text-on-surface">Deep foam exterior wash</span>
+<button class="ml-auto text-on-surface-variant hover:text-error-red"><span class="material-symbols-outlined text-sm">close</span></button>
+</li>
+<li class="flex items-center gap-sm p-sm border-b border-outline-variant/30 last:border-0">
+<span class="material-symbols-outlined text-success-green text-sm">check</span>
+<span class="font-body-md text-body-md text-on-surface">Midsole detail scrub</span>
+<button class="ml-auto text-on-surface-variant hover:text-error-red"><span class="material-symbols-outlined text-sm">close</span></button>
+</li>
+<li class="flex items-center gap-sm p-sm border-b border-outline-variant/30 last:border-0">
+<span class="material-symbols-outlined text-success-green text-sm">check</span>
+<span class="font-body-md text-body-md text-on-surface">Lace cleaning & restringing</span>
+<button class="ml-auto text-on-surface-variant hover:text-error-red"><span class="material-symbols-outlined text-sm">close</span></button>
+</li>
+</ul>
+<div class="p-sm flex items-center gap-sm text-primary hover:text-primary-fixed-dim cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+<span class="font-label-md text-label-md font-bold">Add item</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Info & Requirements Card -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col gap-md">
+<h2 class="font-h3 text-h3 text-on-surface">Need to Know</h2>
+<div class="flex flex-col gap-sm">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">warning</span> Important Info
+                        </label>
+<input class="bg-surface-container-low border border-outline-variant/50 rounded-lg p-md font-body-md text-body-md text-on-surface focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors w-full" type="text" value="Some delicate materials may require additional handling."/>
+</div>
+<div class="flex flex-col gap-sm mt-sm">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">rule</span> Customer Requirements
+                        </label>
+<input class="bg-surface-container-low border border-outline-variant/50 rounded-lg p-md font-body-md text-body-md text-on-surface focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors w-full" type="text" value="Please remove loose accessories before pickup."/>
+</div>
+</div>
+<!-- Badges Card -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col gap-md">
+<h2 class="font-h3 text-h3 text-on-surface">Service Badges</h2>
+<p class="font-caption text-caption text-on-surface-variant">Highlight this service to customers.</p>
+<div class="flex flex-wrap gap-sm mt-xs">
+<div class="bg-primary/10 border border-primary/30 text-primary font-label-md text-label-md px-md py-sm rounded-full flex items-center gap-xs cursor-pointer hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-sm">local_fire_department</span>
+                             Popular
+                         </div>
+<div class="bg-surface-container-low border border-outline-variant/50 text-on-surface font-label-md text-label-md px-md py-sm rounded-full flex items-center gap-xs cursor-pointer hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm">workspace_premium</span>
+                             Best Value
+                         </div>
+<div class="bg-surface-container-low border border-outline-variant/50 text-on-surface font-label-md text-label-md px-md py-sm rounded-full flex items-center gap-xs cursor-pointer hover:bg-surface-container-high transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">new_releases</span>
+                             New
+                         </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="mt-xl flex justify-end gap-md border-t border-outline-variant/30 pt-lg pb-2xl">
+<button class="border border-outline-variant/50 text-on-surface font-label-md text-label-md font-bold py-md px-lg rounded-lg hover:bg-surface-container-high transition-colors">
+                Back
+            </button>
+<button class="bg-electric-violet hover:bg-primary-container text-white font-label-md text-label-md font-bold py-md px-xl rounded-lg shadow-lg shadow-primary/20 transition-all active:scale-95 flex items-center gap-sm">
+                Save & Continue
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</main>
+<style>
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(76, 67, 84, 0.1);
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(138, 43, 226, 0.3);
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(138, 43, 226, 0.5);
+        }
+    </style>
+</body></html>

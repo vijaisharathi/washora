@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Provider Profile - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary": "#303032",
+                      "tertiary": "#c8c6c8",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "secondary-fixed": "#e5e1e4",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "on-secondary-fixed-variant": "#474649",
+                      "error-container": "#93000a",
+                      "on-secondary": "#303032",
+                      "on-background": "#e5e2e3",
+                      "surface": "#131314",
+                      "on-tertiary-container": "#e3e0e2",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "on-primary-container": "#eed9ff",
+                      "secondary": "#c8c6c8",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "outline-variant": "#4c4354",
+                      "secondary-container": "#474649",
+                      "tertiary-fixed": "#e4e2e4",
+                      "primary": "#dcb8ff",
+                      "surface-variant": "#353436",
+                      "inverse-surface": "#e5e2e3",
+                      "primary-container": "#8a2be2",
+                      "error": "#ffb4ab",
+                      "surface-container-lowest": "#0e0e0f",
+                      "surface-container-high": "#2a2a2b",
+                      "on-primary-fixed": "#2c0051",
+                      "outline": "#988ca0",
+                      "surface-bright": "#3a393a",
+                      "surface-dim": "#131314",
+                      "on-error": "#690005",
+                      "on-surface-variant": "#cfc2d7",
+                      "on-secondary-container": "#b7b4b7",
+                      "on-surface": "#e5e2e3",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "surface-tint": "#dcb8ff",
+                      "primary-fixed": "#efdbff",
+                      "tertiary-container": "#646365",
+                      "surface-container-highest": "#353436",
+                      "on-primary": "#480081",
+                      "surface-container-low": "#1c1b1c",
+                      "on-tertiary-fixed-variant": "#474649",
+                      "surface-container": "#201f20",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "inverse-primary": "#8422dc",
+                      "on-error-container": "#ffdad6",
+                      "background": "#131314",
+                      "inverse-on-surface": "#313031"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "2xl": "48px",
+                      "3xl": "64px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "lg": "24px",
+                      "xl": "32px",
+                      "md": "16px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "display-lg-mobile": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "44px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen antialiased">
+<!-- TopNavBar (Hidden on Mobile) -->
+<nav class="hidden md:flex bg-surface/80 backdrop-blur-xl text-primary font-body-md text-body-md fixed top-0 w-full z-50 border-b border-white/5 shadow-sm justify-between items-center px-lg h-16 max-w-[1440px] mx-auto left-0 right-0">
+<div class="font-headline-md text-headline-md font-bold text-primary tracking-tight">Anything Clean</div>
+<div class="flex space-x-xl items-center">
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors px-md py-sm rounded-lg active:scale-95 transition-transform" href="#">Services</a>
+<a class="text-primary border-b-2 border-primary pb-1 px-md py-sm rounded-t-lg active:scale-95 transition-transform" href="#">Providers</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors px-md py-sm rounded-lg active:scale-95 transition-transform" href="#">How it Works</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors px-md py-sm rounded-lg active:scale-95 transition-transform" href="#">Support</a>
+</div>
+<div class="flex space-x-md items-center">
+<button class="text-on-surface-variant hover:text-on-surface active:scale-95 transition-transform p-sm rounded-full hover:bg-white/5 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface active:scale-95 transition-transform p-sm rounded-full hover:bg-white/5 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<div class="h-10 w-10 rounded-full bg-surface-container-high border border-white/10 overflow-hidden cursor-pointer active:scale-95 transition-transform">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A close up, high quality studio portrait of a professional domestic service provider wearing a clean, modern uniform. Dark, moody cinematic lighting highlights a friendly and trustworthy expression. Shot against a dark minimalist background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeujdhmMpNH-jZjlTJPHMeYvcn-rBh-6fm7Q1LETPyMb0WZoKtKUy-dkkkOzTDgzXsKXAt27hLkaOZ0QBiv_4X11gg640e71X_rLUGSx0XpwoWevYTH2Igeo9qHBQkukibvmLB5fCjh09od130R1VHHtn1dg5hExAKHoWL3p5qm3ZghyV5KscQAnSTIKVY_rfG3YeVgNSn0UQ6zHOq9Wqerl5q-NYyZ1QXmNr6kmfOYw2SRhSGjpCeNQ"/>
+</div>
+<button class="bg-primary-container text-on-primary-container px-lg py-sm rounded-full font-label-md text-label-md active:scale-95 transition-transform hover:bg-primary-container/80 transition-colors ml-sm">Book Now</button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="pt-24 md:pt-32 pb-32 md:pb-3xl max-w-[1280px] mx-auto px-md md:px-lg">
+<!-- Cover & Profile Header Header -->
+<section class="relative w-full rounded-2xl overflow-hidden bg-surface mb-2xl border border-white/5 shadow-lg group">
+<div class="w-full h-48 md:h-64 relative bg-surface-container-low">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-700" data-alt="A wide panoramic shot of an immaculately clean and modern luxury living room, demonstrating the high standard of cleaning service. The scene features deep shadow and sharp contrast, with natural light spilling across polished dark wood floors. Premium aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCRmbaNyY1f1R0vW6EAZpWqDVfVBBF2874gK4PzfLvfbCezZVAkGVRpCWgBLIzR3DSefaoj93kxhWIn63yp-0ib1weDlhyNZ9vK4bPbQdaZI2383fkC8TDHsetOp9IC13FWpm30N1P6DBB-nxNEuEHZWxOak2fqvVKABBjfI6kldQUcsTQSIEcHd-mpZZlEbNqHI4e91SAyJC4i4DC5G6chxNkvcJ8PHqDT1xDHUQzdfyS5Zp-n5IL_fw')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
+</div>
+<div class="relative px-lg pb-lg pt-2 md:pt-0 flex flex-col md:flex-row items-start md:items-end -mt-16 md:-mt-20 gap-lg z-10">
+<div class="w-24 h-24 md:w-32 md:h-32 rounded-xl bg-surface p-1 shadow-xl border border-white/10 relative z-20 shrink-0">
+<img alt="Provider Logo" class="w-full h-full object-cover rounded-lg" data-alt="A polished corporate logo for a premium cleaning service company named 'Elite Cleaners'. The logo features a minimalist geometric sparkle motif in primary violet against a dark background, exuding professionalism and luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASwpmkt2xeTUZhTWwIazmm23959Vol4QR1ulLaleYwOpidSmFxZ_zjKB4r_6Z9Vd7JIIW1gfLY89DzAzNcbk7Rh5zMY4kqOgqDjDeaXXI4GGwOWlyRpBeZanYbQLhAEDhYzcACBDOxWiVyfoaUnDy0Ps92P3m3DlNeNM0kvIv2nZjeA0Qspl-IhzhFdfhAt7_k7EqeHiSNaxchylqPE3S-CNhAXLFXIws5QlTFUyVD70vbIivRtnwHDQ"/>
+<div class="absolute -top-2 -right-2 bg-primary-container text-on-primary-container rounded-full p-xs shadow-md border border-surface flex items-center justify-center w-8 h-8" title="Verified Provider">
+<span class="material-symbols-outlined text-[18px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="flex-1 pb-sm">
+<div class="flex flex-col md:flex-row md:justify-between md:items-center gap-md">
+<div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-xs">Elite Home Services</h1>
+<div class="flex items-center gap-md text-on-surface-variant font-body-md text-body-md">
+<span class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-on-surface">4.9</span>
+<span>(128 Reviews)</span>
+</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="flex items-center gap-xs">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+                                    Downtown Seattle
+                                </span>
+</div>
+</div>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-xl py-md rounded-full hover:bg-primary-fixed transition-colors active:scale-95 shadow-[0_0_15px_rgba(220,184,255,0.2)] whitespace-nowrap hidden md:block w-full md:w-auto">
+                            Book a Service
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Layout for Details -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Left Column: Services & Gallery (Spans 8 cols on desktop) -->
+<div class="md:col-span-8 flex flex-col gap-lg">
+<!-- Services -->
+<section class="bg-surface border border-white/5 rounded-2xl p-lg relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-lg opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[120px]" data-icon="cleaning_services">cleaning_services</span>
+</div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-md">Services &amp; Pricing</h2>
+<p class="text-on-surface-variant mb-lg max-w-2xl">Select a service to see available booking times. All services are backed by our satisfaction guarantee.</p>
+<div class="flex flex-col gap-sm">
+<!-- Service Item 1 -->
+<div class="flex justify-between items-center p-md rounded-xl bg-surface-container-low border border-white/5 hover:border-primary/30 hover:bg-surface-container transition-all cursor-pointer group/item">
+<div class="flex items-start gap-md">
+<div class="p-sm bg-surface-container-high rounded-lg text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" data-icon="home_work">home_work</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs group-hover/item:text-primary transition-colors text-lg">Deep House Cleaning</h3>
+<p class="text-on-surface-variant font-caption text-caption">Comprehensive top-to-bottom clean, ideal for seasonal refreshing.</p>
+</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-headline-md text-headline-md text-primary">$45<span class="text-on-surface-variant font-caption text-caption">/hr</span></div>
+<div class="text-on-surface-variant font-caption text-caption mt-1 flex items-center justify-end gap-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span> 3hr min
+                                </div>
+</div>
+</div>
+<!-- Service Item 2 -->
+<div class="flex justify-between items-center p-md rounded-xl bg-surface-container-low border border-white/5 hover:border-primary/30 hover:bg-surface-container transition-all cursor-pointer group/item">
+<div class="flex items-start gap-md">
+<div class="p-sm bg-surface-container-high rounded-lg text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" data-icon="local_laundry_service">local_laundry_service</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs group-hover/item:text-primary transition-colors text-lg">Laundry &amp; Ironing</h3>
+<p class="text-on-surface-variant font-caption text-caption">Wash, fold, and professional ironing services.</p>
+</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-headline-md text-headline-md text-primary">$35<span class="text-on-surface-variant font-caption text-caption">/hr</span></div>
+<div class="text-on-surface-variant font-caption text-caption mt-1 flex items-center justify-end gap-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span> 2hr min
+                                </div>
+</div>
+</div>
+<!-- Service Item 3 -->
+<div class="flex justify-between items-center p-md rounded-xl bg-surface-container-low border border-white/5 hover:border-primary/30 hover:bg-surface-container transition-all cursor-pointer group/item">
+<div class="flex items-start gap-md">
+<div class="p-sm bg-surface-container-high rounded-lg text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" data-icon="chair">chair</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs group-hover/item:text-primary transition-colors text-lg">Upholstery Cleaning</h3>
+<p class="text-on-surface-variant font-caption text-caption">Specialized stain removal and fabric care.</p>
+</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-headline-md text-headline-md text-primary">$120<span class="text-on-surface-variant font-caption text-caption">/item</span></div>
+<div class="text-on-surface-variant font-caption text-caption mt-1 flex items-center justify-end gap-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="info">info</span> flat rate
+                                </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery -->
+<section class="bg-surface border border-white/5 rounded-2xl p-lg">
+<div class="flex justify-between items-center mb-md">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Recent Work</h2>
+<button class="text-primary hover:text-primary-fixed transition-colors font-label-md text-label-md flex items-center gap-xs">
+                            View All <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-sm">
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-container-low">
+<img alt="Gallery Image 1" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer" data-alt="A pristine, gleaming white modern kitchen after a deep cleaning service. Dark cabinetry contrasts with sparkling stainless steel appliances and perfectly spotless marble countertops. Ambient, slightly cool luxury lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5Qt6s3mm4oKRC3XlFdVe3vLTUbZRZD6JYrpvfE5z70K7jqIAy_v1KV9xZf6jEFRiIP_t9lCtSLIX_fTkBmJykBKgw-L9YTJQgYugMEFsUwROs0gB2KSyPeRFEMxQTvSvHBiUeM3qxjVjOSoMvvzPnT10jKJ2tfrAkLuGLfbB-N_LmXXTqgi5dd-4FBA730dI-p-xj-Q_vXxY6GmP39rU5oKNwh6uSfcff54ak2RLqz9oImNwFfnOJdw"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-container-low">
+<img alt="Gallery Image 2" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer" data-alt="A beautifully organized, minimalist walk-in closet. Clothes are immaculately hung and folded, demonstrating high-end organizational and laundry service quality. Warm, soft lighting creates an inviting and serene mood in a dark luxury setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZm7ERoC_w_61ukKdccbXlFNgr_8buND4UYh1QbMyNgnChsSrEvD6x2yflxDoqP0hzLpVM30pzCpiVsSeNT6eotvhtYwWgJYRl-3YU2-t2ZIEfOJrOhUbO_BbpGQspT_OoStcErPyVXpr56UM7XlpMKcLC2XNp_iTKMKHIa3Rwg3vWpqVLH7p6_S6MOqMd6XPohoj78-TjPHuynGzV5L4pNAsuR0WC7KxQbchaI-uN4eXfY5eplq_obw"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-container-low hidden md:block">
+<img alt="Gallery Image 3" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer" data-alt="A freshly detailed, luxurious living room sofa area. The upholstery looks brand new, with plush textures emphasized by dramatic side lighting against a dark grey wall. The scene conveys meticulous care and premium service quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSLnn4VcfJjkFIJlfy6nDv838Ub1D1KRyyrJrFgBYLbTXuhAL8SGlgdOvPD9Q5c9Y82Pyizd1asBD04pFJXtuaophArWBKoLEBCyaUTxhJ6DGnWKGI0uKR-TZEN4KImfDdAPAJeuQVre9t7YHnfc76bOjPMvj8QtEzuVcY2uq06tjriCiArziaZ5Yncp1s46ewhtkJlQWO1HZo9BGD5axjflsWPjWgSBNxWKCrT1YMuJq5_Q_D51VEDA"/>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Info & Details (Spans 4 cols on desktop) -->
+<div class="md:col-span-4 flex flex-col gap-lg">
+<!-- Availability / Hours -->
+<section class="bg-surface border border-white/5 rounded-2xl p-lg">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="event_available">event_available</span>
+                        Availability
+                    </h3>
+<ul class="space-y-sm text-on-surface-variant font-body-md text-body-md">
+<li class="flex justify-between items-center py-xs border-b border-white/5">
+<span class="text-on-surface">Monday - Friday</span>
+<span>8:00 AM - 6:00 PM</span>
+</li>
+<li class="flex justify-between items-center py-xs border-b border-white/5">
+<span class="text-on-surface">Saturday</span>
+<span>9:00 AM - 4:00 PM</span>
+</li>
+<li class="flex justify-between items-center py-xs">
+<span class="text-on-surface text-error">Sunday</span>
+<span class="text-error">Closed</span>
+</li>
+</ul>
+</section>
+<!-- Location & Map -->
+<section class="bg-surface border border-white/5 rounded-2xl p-lg flex flex-col h-full">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="map">map</span>
+                        Service Area
+                    </h3>
+<p class="text-on-surface-variant font-body-md text-body-md mb-md">Serving Downtown Seattle and surrounding neighborhoods within a 15-mile radius.</p>
+<div class="w-full h-48 rounded-lg overflow-hidden bg-surface-container-low mb-md mt-auto relative border border-white/10 group">
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay z-10 pointer-events-none group-hover:bg-transparent transition-colors duration-500"></div>
+<img alt="Service Area Map" class="w-full h-full object-cover" data-alt="A dark-themed, minimalist stylized map of Seattle, Washington. The map highlights key downtown areas and surrounding neighborhoods using subtle varying shades of deep gray and black, with a glowing primary violet accent marker indicating the service radius center." data-location="Seattle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9FN3wvlrzs7mg0d8ESbpsD-mPfNOr6Ocee3_BufTbeTe0ih6iRpuky-vSFz3ahhR3vL0ttKDb2x8UZ6_ei9NX6b4zz5I6Btub3apDQmhBFJ9hcY7AhQfsPCbJECzDFVjzyN1DolLccNptHFdRl8MhTyJX4-RJIMiOQv_J_wA4KFhNVPf_G5P4ebLXkFrZ-qDncmkVj9_DdPGSNUOEB6jDJw5Ywpz7RgVY7tZbidGhgu_sEcRjpu6ajg"/>
+</div>
+<div class="bg-primary-container/20 border border-primary-container text-on-primary-container p-sm rounded-lg flex items-start gap-sm">
+<span class="material-symbols-outlined shrink-0" data-icon="local_shipping">local_shipping</span>
+<div class="font-caption text-caption">
+<strong>Key Pickup Available:</strong> Can arrange to pick up keys from secure lockboxes or concierges.
+                        </div>
+</div>
+</section>
+</div>
+</div>
+<!-- Sticky Mobile CTA -->
+<div class="fixed bottom-20 left-0 right-0 p-md bg-surface/90 backdrop-blur-xl border-t border-white/10 md:hidden z-40">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md px-xl py-lg rounded-full hover:bg-primary-fixed transition-colors active:scale-95 shadow-lg flex justify-center items-center gap-sm">
+                Book a Service
+             </button>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="flex md:hidden bg-surface-container/90 backdrop-blur-lg text-primary font-label-md text-label-md-mobile fixed bottom-0 w-full z-50 rounded-t-xl border-t border-white/10 shadow-[0_-4px_20px_rgba(138,43,226,0.1)] justify-around items-center h-20 pb-safe px-md tap-highlight-transparent">
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-primary-container/20 p-sm rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined mb-xs" data-icon="search">search</span>
+<span>Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary active:bg-primary-container/20 p-sm rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined mb-xs" data-icon="calendar_today" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span>Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-primary-container/20 p-sm rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined mb-xs" data-icon="chat">chat</span>
+<span>Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-primary-container/20 p-sm rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined mb-xs" data-icon="person">person</span>
+<span>Profile</span>
+</a>
+</nav>
+</body></html>

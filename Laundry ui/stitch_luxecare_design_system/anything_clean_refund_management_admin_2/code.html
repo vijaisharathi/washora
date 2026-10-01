@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumina Control - Refund & Resolution Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#988ca0",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "on-secondary-container": "#b9b8ba",
+                      "on-primary-container": "#eed9ff",
+                      "on-tertiary-container": "#e3e0e2",
+                      "surface-dim": "#131314",
+                      "background": "#131314",
+                      "inverse-surface": "#e5e2e3",
+                      "on-surface": "#e5e2e3",
+                      "on-primary-fixed": "#2c0051",
+                      "on-secondary-fixed-variant": "#474648",
+                      "surface-container-highest": "#353436",
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-tertiary": "#303032",
+                      "surface-container-high": "#2a2a2b",
+                      "primary": "#dcb8ff",
+                      "surface-container": "#201f20",
+                      "on-surface-variant": "#cfc2d7",
+                      "secondary": "#c8c6c8",
+                      "on-error": "#690005",
+                      "inverse-primary": "#8422dc",
+                      "error-red": "#ffb4ab",
+                      "on-background": "#e5e2e3",
+                      "tertiary-container": "#646365",
+                      "primary-fixed": "#efdbff",
+                      "outline-variant": "#4c4354",
+                      "success-green": "#81C784",
+                      "on-secondary": "#303032",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "tertiary-fixed": "#e4e2e4",
+                      "secondary-fixed": "#e4e2e4",
+                      "primary-container": "#8a2be2",
+                      "surface-container-low": "#1c1b1c",
+                      "error": "#ffb4ab",
+                      "tertiary": "#c8c6c8",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "on-error-container": "#ffdad6",
+                      "surface-variant": "#353436",
+                      "secondary-container": "#49494b",
+                      "error-container": "#93000a",
+                      "surface": "#131314",
+                      "surface-bright": "#39393a",
+                      "electric-violet": "#8a2be2",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "surface-tint": "#dcb8ff",
+                      "on-primary": "#480081",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "inverse-on-surface": "#313031",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "success-bg": "#1A3D24"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "16px",
+                      "sm": "8px",
+                      "2xl": "48px",
+                      "xl": "32px",
+                      "lg": "24px",
+                      "3xl": "64px",
+                      "xs": "4px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Geist"],
+                      "h3": ["Geist"],
+                      "body-md": ["Geist"],
+                      "caption": ["Geist"],
+                      "mono-display": ["monospace"],
+                      "label-md": ["Geist"],
+                      "h1": ["Geist"],
+                      "headline-lg": ["Geist"]
+              },
+              "fontSize": {
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                      "mono-display": ["18px", {"letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "h1": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased h-screen overflow-hidden flex selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar -->
+<nav class="bg-surface-container-low dark:bg-surface-container-low w-64 h-screen fixed left-0 top-0 border-r border-outline-variant/30 flex flex-col h-full py-lg px-md z-20">
+<div class="mb-xl px-sm flex items-center gap-sm">
+<span class="material-symbols-outlined font-h1 text-h1 text-electric-violet dark:text-primary" data-weight="fill">token</span>
+<div>
+<h1 class="font-h1 text-h1 text-electric-violet dark:text-primary tracking-tight leading-none">Lumina Admin</h1>
+<p class="font-caption text-caption text-on-surface-variant">Service Marketplace</p>
+</div>
+</div>
+<button class="mb-lg w-full bg-electric-violet text-on-primary font-label-md text-label-md py-sm px-md rounded-lg shadow-lg shadow-primary/20 hover:bg-electric-violet/90 transition-colors flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[20px]">add</span>
+            New Report
+        </button>
+<ul class="flex flex-col gap-xs flex-1 overflow-y-auto font-body-md text-body-md">
+<li><a class="flex items-center gap-md px-md py-sm rounded-md text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out" href="#"><span class="material-symbols-outlined" data-icon="dashboard">dashboard</span> Dashboard</a></li>
+<li><a class="flex items-center gap-md px-md py-sm rounded-md text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out" href="#"><span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span> Orders</a></li>
+<li><a class="flex items-center gap-md px-md py-sm rounded-md text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out" href="#"><span class="material-symbols-outlined" data-icon="group">group</span> Providers</a></li>
+<li><a class="flex items-center gap-md px-md py-sm rounded-md text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out" href="#"><span class="material-symbols-outlined" data-icon="person">person</span> Customers</a></li>
+<li><a class="flex items-center gap-md px-md py-sm rounded-md text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out" href="#"><span class="material-symbols-outlined" data-icon="verified_user">verified_user</span> Verification</a></li>
+<li><a class="flex items-center gap-md px-md py-sm rounded-md text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out" href="#"><span class="material-symbols-outlined" data-icon="gavel">gavel</span> Disputes</a></li>
+<li><a class="flex items-center gap-md px-md py-sm rounded-md bg-primary-container/10 text-primary font-bold transition-colors duration-200 ease-in-out" href="#"><span class="material-symbols-outlined filled-icon" data-icon="payments">payments</span> Refunds</a></li>
+<li><a class="flex items-center gap-md px-md py-sm rounded-md text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out" href="#"><span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span> Payments</a></li>
+<li><a class="flex items-center gap-md px-md py-sm rounded-md text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out" href="#"><span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span> Logistics</a></li>
+<li><a class="flex items-center gap-md px-md py-sm rounded-md text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out" href="#"><span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span> Analytics</a></li>
+<li><a class="flex items-center gap-md px-md py-sm rounded-md text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out" href="#"><span class="material-symbols-outlined" data-icon="settings">settings</span> Settings</a></li>
+</ul>
+<div class="mt-auto pt-md border-t border-outline-variant/30 flex items-center gap-md px-sm">
+<img alt="Lumina Admin Profile" class="w-10 h-10 rounded-full border border-outline-variant/50" data-alt="A small, circular avatar portrait of a professional system administrator. Dark theme background. High-quality digital rendering in a modern corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxgd5rtx9JmmyhsjcbgaZ41IgeWR3FJh2S_wYclEpts5-3BBEjhFGF2tSHFHtlitWQGSDIuZZneJgZFDd0O6Q9QkESEUiBlkQ463SHPVNCMWmWBvXp6y-QtnakLm1mCUeN80tMS5L70REOND3p6wGf9mB63gVikmlefP9yzXEIqv9UajUlg5bX7ikwVbXNdgAyEUZYWdpc6jRKR8da7v36WGpS8ZhFl6Pc_kn1HbFi7Xk8AUvXqYrhhg"/>
+<div class="overflow-hidden">
+<p class="font-label-md text-label-md text-on-surface truncate">Admin User</p>
+<p class="font-caption text-caption text-on-surface-variant truncate">ID: ADM-7742</p>
+</div>
+</div>
+</nav>
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-surface/80 fixed top-0 right-0 left-64 h-16 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-xl w-[calc(100%-16rem)] z-10">
+<div class="flex items-center gap-lg">
+<span class="font-h3 text-h3 text-on-surface tracking-tight">Lumina Control</span>
+<div class="hidden md:flex items-center gap-xs font-caption text-caption text-on-surface-variant">
+<span>Refunds</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span>Case REF-20260902-0012</span>
+</div>
+</div>
+<div class="flex items-center gap-md flex-1 justify-end">
+<div class="relative w-64 max-w-sm hidden lg:block focus-within:ring-1 focus-within:ring-primary rounded-md transition-all">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-md py-[6px] pl-lg pr-sm font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:border-primary focus:ring-0 transition-colors" placeholder="Search REF, DSP, TXN..." type="text"/>
+</div>
+<button class="p-xs text-on-surface-variant hover:text-on-surface transition-all rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-xs text-on-surface-variant hover:text-on-surface transition-all rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<button class="flex items-center gap-sm ml-sm pl-sm border-l border-outline-variant/30 font-label-md text-label-md text-electric-violet dark:text-primary hover:text-on-surface transition-all">
+<img alt="Admin User Avatar" class="w-8 h-8 rounded-full border border-primary/30" data-alt="A small, circular avatar portrait of an admin user. Modern, digital painting style, dark background, professional look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2ocInckStP6elg7cP3apPhYsPDvD_AKNxRJ46dZkii4FlHCJ6hsMlQvP4uiKl8E1uAzYHhM18Mpk6iFHQIcGBRalGddwqX5qy5CmHTf2OeJwMR6FbGdeljo-ECMVZbb1jrJA1D0AzdowYmjPeAxrQMJPXD_vOlmoRDSNU23-NgeJqlM39feKYQYx_csnBVHPJ9nzlfuKnQigEHRXPwX1WZEZCS--JR__W6KcpGWT0MYuRnsx2dwrgWw"/>
+<span class="hidden sm:inline">Admin Profile</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-64 mt-16 p-xl overflow-y-auto bg-background relative w-[calc(100%-16rem)]">
+<div class="max-w-[1200px] mx-auto flex flex-col gap-xl pb-2xl">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-md border-b border-outline-variant/30 pb-md">
+<div>
+<div class="flex items-center gap-sm mb-xs">
+<span class="px-sm py-[2px] rounded-full bg-error-container/20 border border-error/30 text-error font-mono-display text-[12px] tracking-wider font-bold">CASE: REF-20260902-0012</span>
+<a class="flex items-center gap-xs px-sm py-[2px] rounded-full bg-surface-container border border-outline-variant/30 text-on-surface-variant font-caption text-caption hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[14px]">link</span>
+                            DSP-0018
+                        </a>
+</div>
+<h2 class="font-display-lg text-display-lg text-on-surface">Refund Resolution</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Reviewing financial adjustment for customer <span class="text-on-surface font-medium">Arun</span>.</p>
+</div>
+<div class="flex items-center gap-sm bg-surface-container-low border border-outline-variant/30 rounded-lg p-sm">
+<div class="flex flex-col items-center px-md border-r border-outline-variant/30">
+<span class="font-headline-lg text-headline-lg text-on-surface">2</span>
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">Pending</span>
+</div>
+<div class="flex flex-col items-center px-md text-primary">
+<span class="font-headline-lg text-headline-lg">1</span>
+<span class="font-caption text-caption uppercase tracking-wider">Processing</span>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-md">
+<!-- Financial Ledger (Left Col - Span 8) -->
+<div class="lg:col-span-8 flex flex-col gap-md">
+<!-- Adjustment Summary Card -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-electric-violet"></div>
+<h3 class="font-h3 text-h3 text-on-surface flex items-center gap-sm mb-lg">
+<span class="material-symbols-outlined text-primary">account_balance</span>
+                            Adjustment Ledger
+                        </h3>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-md mb-lg">
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-md">
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider block mb-xs">Order Total</span>
+<span class="font-mono-display text-[24px] text-on-surface">₹502.00</span>
+<span class="block mt-xs font-caption text-caption text-on-surface-variant">TXN-998234-A</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-md">
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider block mb-xs">Requested Refund</span>
+<span class="font-mono-display text-[24px] text-error">₹502.00</span>
+<span class="block mt-xs font-caption text-caption text-on-surface-variant">Full Amount</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-md flex flex-col justify-center border-l-2 border-l-primary/50">
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider block mb-xs">Suggested Action</span>
+<span class="font-label-md text-label-md text-primary font-bold">Approve Full</span>
+<span class="block mt-xs font-caption text-caption text-success-green flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Auto-verified
+                                </span>
+</div>
+</div>
+<!-- Mini Ledger Table -->
+<div class="border border-outline-variant/30 rounded-lg overflow-hidden">
+<table class="w-full text-left font-body-md text-body-md">
+<thead class="bg-surface-container-highest border-b border-outline-variant/30">
+<tr>
+<th class="py-sm px-md font-label-md text-label-md text-on-surface-variant font-medium">Date</th>
+<th class="py-sm px-md font-label-md text-label-md text-on-surface-variant font-medium">Type</th>
+<th class="py-sm px-md font-label-md text-label-md text-on-surface-variant font-medium">Reference</th>
+<th class="py-sm px-md font-label-md text-label-md text-on-surface-variant font-medium text-right">Amount (₹)</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-sm px-md text-on-surface">2026-09-01</td>
+<td class="py-sm px-md text-on-surface-variant">Charge</td>
+<td class="py-sm px-md font-mono-display text-[14px] text-on-surface-variant">TXN-998234-A</td>
+<td class="py-sm px-md text-right text-on-surface">502.00</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors bg-error-container/5">
+<td class="py-sm px-md text-on-surface">2026-09-02</td>
+<td class="py-sm px-md text-error flex items-center gap-xs"><span class="material-symbols-outlined text-[16px]">money_off</span> Hold</td>
+<td class="py-sm px-md font-mono-display text-[14px] text-on-surface-variant">DSP-0018-HLD</td>
+<td class="py-sm px-md text-right text-error">-502.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Context / Dispute Link Card -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-h3 text-h3 text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant">description</span>
+                                Case Context
+                            </h3>
+<button class="text-primary hover:text-primary-fixed transition-colors font-label-md text-label-md flex items-center gap-xs">
+                                View Full Dispute <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/20 rounded-lg p-md font-body-md text-body-md text-on-surface-variant italic">
+                            "Service provider did not arrive within the 2-hour SLA window. Attempted contact 3 times. Requesting full refund for missed service appointment."
+                        </div>
+<div class="mt-md flex gap-sm">
+<span class="px-sm py-xs rounded-md bg-surface-container-highest border border-outline-variant/30 text-caption font-caption text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">timer</span> SLA Violation
+                            </span>
+<span class="px-sm py-xs rounded-md bg-surface-container-highest border border-outline-variant/30 text-caption font-caption text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">call_missed</span> Comm Failure
+                            </span>
+</div>
+</div>
+</div>
+<!-- Action Panel (Right Col - Span 4) -->
+<div class="lg:col-span-4 flex flex-col gap-md">
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg sticky top-24 shadow-2xl shadow-background/50">
+<h3 class="font-h3 text-h3 text-on-surface mb-lg border-b border-outline-variant/30 pb-sm">Resolution Decision</h3>
+<div class="flex flex-col gap-md">
+<!-- Action: Approve Full -->
+<button class="w-full flex items-center justify-between p-md rounded-lg border border-primary/50 bg-primary/10 hover:bg-primary/20 transition-all group text-left" id="btn-approve-full">
+<div>
+<span class="block font-label-md text-label-md text-primary font-bold group-hover:text-primary-fixed">Approve Full Refund</span>
+<span class="block font-caption text-caption text-on-surface-variant mt-xs">Return ₹502.00 to original payment method.</span>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<!-- Action: Approve Partial -->
+<button class="w-full flex items-center justify-between p-md rounded-lg border border-outline-variant/50 hover:bg-surface-container-highest transition-all group text-left">
+<div>
+<span class="block font-label-md text-label-md text-on-surface">Approve Partial</span>
+<span class="block font-caption text-caption text-on-surface-variant mt-xs">Specify custom amount to return.</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface">edit</span>
+</button>
+<!-- Action: Reject -->
+<button class="w-full flex items-center justify-between p-md rounded-lg border border-error/30 hover:bg-error-container/10 transition-all group text-left">
+<div>
+<span class="block font-label-md text-label-md text-error">Reject Refund</span>
+<span class="block font-caption text-caption text-on-surface-variant mt-xs">Close case without financial adjustment.</span>
+</div>
+<span class="material-symbols-outlined text-error">block</span>
+</button>
+</div>
+<div class="mt-xl pt-md border-t border-outline-variant/30">
+<label class="block font-label-md text-label-md text-on-surface mb-sm">Internal Note (Required)</label>
+<textarea class="w-full bg-surface-container-low border border-outline-variant/50 rounded-md p-sm font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none h-24" placeholder="Briefly justify the decision..."></textarea>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Execution Modal (Hidden by default, shown via JS for demo) -->
+<div class="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300" id="execution-modal">
+<div class="bg-surface-container border border-outline-variant/30 rounded-xl p-xl max-w-md w-full shadow-2xl shadow-primary/10 transform scale-95 transition-transform duration-300" id="modal-content">
+<div class="flex items-center gap-md mb-lg">
+<div class="w-12 h-12 rounded-full bg-error-container/20 flex items-center justify-center border border-error/30 text-error">
+<span class="material-symbols-outlined text-[24px]">warning</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">Execute Full Refund</h3>
+<p class="font-caption text-caption text-on-surface-variant">This action cannot be undone.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-md mb-lg border border-outline-variant/30 font-mono-display text-[14px]">
+<div class="flex justify-between mb-sm">
+<span class="text-on-surface-variant">Amount:</span>
+<span class="text-error font-bold">-₹502.00</span>
+</div>
+<div class="flex justify-between mb-sm">
+<span class="text-on-surface-variant">Destination:</span>
+<span class="text-on-surface">Visa •••• 4242</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Case ID:</span>
+<span class="text-on-surface">REF-20260902-0012</span>
+</div>
+</div>
+<div class="flex gap-md justify-end">
+<button class="px-md py-sm rounded-lg border border-outline-variant text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" id="btn-cancel-modal">
+                    Cancel
+                </button>
+<button class="px-md py-sm rounded-lg bg-electric-violet text-on-primary font-label-md text-label-md hover:bg-electric-violet/90 shadow-lg shadow-primary/20 transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">done</span> Confirm Execution
+                </button>
+</div>
+</div>
+</div>
+<script>
+        // Simple interactions for the execution modal
+        const modal = document.getElementById('execution-modal');
+        const modalContent = document.getElementById('modal-content');
+        const triggerBtn = document.getElementById('btn-approve-full');
+        const cancelBtn = document.getElementById('btn-cancel-modal');
+
+        triggerBtn.addEventListener('click', () => {
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
+        });
+
+        cancelBtn.addEventListener('click', () => {
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+        });
+    </script>
+</body></html>

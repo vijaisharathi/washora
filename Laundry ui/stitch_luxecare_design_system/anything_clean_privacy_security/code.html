@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Privacy &amp; Security - Lumina Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#1c1b1c",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed": "#efdbff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-bright": "#39393a",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-dim": "#131314",
+                        "tertiary": "#c8c6c8",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-error": "#690005",
+                        "on-secondary-container": "#b9b8ba",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "secondary-container": "#49494b",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "surface-container": "#201f20",
+                        "surface-variant": "#353436",
+                        "secondary": "#c8c6c8",
+                        "error-container": "#93000a",
+                        "success-green": "#81C784",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-primary-container": "#eed9ff",
+                        "primary-container": "#8a2be2",
+                        "success-bg": "#1A3D24",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "outline-variant": "#4c4354",
+                        "tertiary-fixed": "#e4e2e4",
+                        "inverse-primary": "#8422dc",
+                        "on-secondary-fixed-variant": "#474648",
+                        "on-primary-fixed": "#2c0051",
+                        "on-primary": "#480081",
+                        "on-tertiary": "#303032",
+                        "secondary-fixed": "#e4e2e4",
+                        "electric-violet": "#8a2be2",
+                        "surface-container-highest": "#353436",
+                        "background": "#131314",
+                        "on-surface": "#e5e2e3",
+                        "surface": "#131314",
+                        "error-red": "#ffb4ab",
+                        "primary": "#dcb8ff",
+                        "on-secondary": "#303032",
+                        "surface-container-high": "#2a2a2b",
+                        "outline": "#988ca0",
+                        "on-background": "#e5e2e3",
+                        "on-tertiary-container": "#e3e0e2",
+                        "inverse-on-surface": "#313031",
+                        "surface-tint": "#dcb8ff",
+                        "surface-container-lowest": "#0e0e0f",
+                        "tertiary-container": "#646365"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "2xl": "48px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "3xl": "64px",
+                        "md": "16px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist", "sans-serif"],
+                        "caption": ["Geist", "sans-serif"],
+                        "mono-display": ["monospace"],
+                        "h3": ["Geist", "sans-serif"],
+                        "label-md": ["Geist", "sans-serif"],
+                        "h1": ["Geist", "sans-serif"],
+                        "display-lg": ["Geist", "sans-serif"],
+                        "body-md": ["Geist", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .icon-fill { font-variation-settings: 'FILL' 1; }
+        
+        /* Custom Toggle Switch Styles */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #8a2be2;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #8a2be2;
+        }
+        .toggle-checkbox:checked + .toggle-label:after {
+            transform: translateX(100%);
+            border-color: white;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col md:flex-row">
+<!-- SideNavBar (Desktop) -->
+<nav class="bg-surface-container-low text-primary font-body-md text-body-md fixed left-0 top-0 h-screen w-64 border-r border-outline-variant/30 hidden md:flex flex-col p-md gap-sm z-50">
+<div class="mb-lg px-sm">
+<h1 class="font-h1 text-h1 text-electric-violet">Lumina</h1>
+</div>
+<div class="flex items-center gap-sm mb-lg px-sm py-sm rounded-lg bg-surface-container border border-outline-variant/20">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-on-surface-variant">person</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Alex Rivers</p>
+<p class="font-caption text-caption text-on-surface-variant">Premium Member</p>
+</div>
+</div>
+<div class="flex flex-col gap-xs flex-1">
+<a class="text-on-surface-variant hover:bg-surface-container transition-all active:scale-[0.98] flex items-center gap-md px-md py-sm rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container transition-all active:scale-[0.98] flex items-center gap-md px-md py-sm rounded-lg" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span>Bookings</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container transition-all active:scale-[0.98] flex items-center gap-md px-md py-sm rounded-lg" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span>Payments</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container transition-all active:scale-[0.98] flex items-center gap-md px-md py-sm rounded-lg" href="#">
+<span class="material-symbols-outlined">location_on</span>
+<span>Addresses</span>
+</a>
+<a class="bg-primary/10 text-primary font-bold rounded-lg hover:bg-surface-container transition-all active:scale-[0.98] flex items-center gap-md px-md py-sm" href="#">
+<span class="material-symbols-outlined icon-fill">settings</span>
+<span>Preferences</span>
+</a>
+</div>
+<button class="bg-electric-violet text-white font-label-md text-label-md py-sm rounded-lg shadow-lg shadow-primary/5 mt-auto mb-md active:scale-95 transition-transform">
+            Book a Cleaner
+        </button>
+<div class="flex flex-col gap-xs border-t border-outline-variant/30 pt-md">
+<a class="text-on-surface-variant hover:bg-surface-container transition-all active:scale-[0.98] flex items-center gap-md px-md py-sm rounded-lg" href="#">
+<span class="material-symbols-outlined">contact_support</span>
+<span>Support</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container transition-all active:scale-[0.98] flex items-center gap-md px-md py-sm rounded-lg" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 p-md md:p-xl max-w-[1200px] w-full mx-auto pb-24 md:pb-xl">
+<!-- Header -->
+<header class="mb-lg">
+<div class="flex items-center text-on-surface-variant font-caption text-caption mb-sm">
+<span>Preferences</span>
+<span class="material-symbols-outlined mx-xs text-[14px]">chevron_right</span>
+<span class="text-on-surface">Privacy &amp; Security</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Privacy &amp; Security</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Manage your account protection controls and visibility settings.</p>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-md md:gap-lg">
+<!-- Account Protection Controls -->
+<section class="bg-surface-container border border-outline-variant/20 rounded-xl overflow-hidden col-span-1 lg:col-span-2">
+<div class="p-md border-b border-outline-variant/30 bg-surface-container-low">
+<h2 class="font-h3 text-h3 text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-electric-violet">shield_lock</span>
+                        Security Settings
+                    </h2>
+</div>
+<div class="flex flex-col">
+<!-- Change Password -->
+<div class="flex items-center justify-between p-md border-b border-outline-variant/30 hover:bg-surface-container-high/50 transition-colors">
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-on-surface-variant mt-1">key</span>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Password</h3>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Last changed 3 months ago</p>
+</div>
+</div>
+<button class="border border-outline-variant text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md px-md py-2 rounded-lg active:scale-95">
+                            Change
+                        </button>
+</div>
+<!-- Two-Step Verification -->
+<div class="flex items-center justify-between p-md border-b border-outline-variant/30 hover:bg-surface-container-high/50 transition-colors">
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-on-surface-variant mt-1">verified_user</span>
+<div>
+<div class="flex items-center gap-sm">
+<h3 class="font-label-md text-label-md text-on-surface">Two-Step Verification</h3>
+<span class="bg-error-container/10 border border-error-red/30 text-error-red font-bold text-[10px] tracking-wider uppercase px-2 py-0.5 rounded-full">OFF</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Add an extra layer of security to your account</p>
+</div>
+</div>
+<button class="bg-electric-violet text-white font-label-md text-label-md px-md py-2 rounded-lg shadow-lg shadow-electric-violet/20 hover:brightness-110 transition-all active:scale-95">
+                            Set Up
+                        </button>
+</div>
+<!-- Login Alerts -->
+<div class="flex items-center justify-between p-md hover:bg-surface-container-high/50 transition-colors">
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-on-surface-variant mt-1">notifications_active</span>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Login Alerts</h3>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Get notified of new logins from unrecognized devices</p>
+</div>
+</div>
+<!-- Toggle -->
+<div class="relative inline-block w-12 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 transition-transform duration-300 border-outline-variant bg-surface-variant checked:bg-white checked:border-electric-violet checked:translate-x-6 top-0 left-0" id="toggle1" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-electric-violet cursor-pointer shadow-inner" for="toggle1"></label>
+</div>
+</div>
+</div>
+</section>
+<!-- Active Sessions -->
+<section class="bg-surface-container border border-outline-variant/20 rounded-xl overflow-hidden flex flex-col">
+<div class="p-md border-b border-outline-variant/30 bg-surface-container-low flex justify-between items-center">
+<h2 class="font-h3 text-h3 text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-electric-violet">devices</span>
+                        Active Sessions
+                    </h2>
+</div>
+<div class="p-md flex-1 flex flex-col justify-center">
+<div class="flex items-center gap-md p-md bg-surface-container-low rounded-lg border border-outline-variant/30 mb-md">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[28px]">computer</span>
+</div>
+<div class="flex-1">
+<h3 class="font-label-md text-label-md text-on-surface">Windows • Chrome</h3>
+<p class="font-caption text-caption text-on-surface-variant mt-0.5">Seattle, WA • IP: 192.168.1.1</p>
+</div>
+<span class="bg-success-bg text-success-green font-bold text-[10px] tracking-widest uppercase px-3 py-1 rounded-full">Active Now</span>
+</div>
+<button class="w-full border border-outline-variant text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md py-2 rounded-lg active:scale-95">
+                        Manage Devices
+                    </button>
+</div>
+</section>
+<!-- Privacy -->
+<section class="bg-surface-container border border-outline-variant/20 rounded-xl overflow-hidden flex flex-col">
+<div class="p-md border-b border-outline-variant/30 bg-surface-container-low">
+<h2 class="font-h3 text-h3 text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-electric-violet">visibility</span>
+                        Privacy
+                    </h2>
+</div>
+<div class="flex flex-col p-md gap-md">
+<div class="flex justify-between items-center">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Profile Visibility</h3>
+<p class="font-caption text-caption text-on-surface-variant mt-0.5">Who can see your basic info</p>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant bg-surface-container-low px-3 py-1 rounded-lg border border-outline-variant/30">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span class="font-label-md text-label-md">Private</span>
+</div>
+</div>
+<div class="w-full h-px bg-outline-variant/20"></div>
+<div class="flex justify-between items-center">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Review Visibility</h3>
+<p class="font-caption text-caption text-on-surface-variant mt-0.5">Visibility of reviews you leave</p>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant bg-surface-container-low px-3 py-1 rounded-lg border border-outline-variant/30">
+<span class="material-symbols-outlined text-[16px]">public</span>
+<span class="font-label-md text-label-md">Public</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Secure Messaging Banner -->
+<div class="mt-lg p-md rounded-xl bg-surface-container-low border border-outline-variant/30 flex items-start gap-md">
+<span class="material-symbols-outlined text-electric-violet">info</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Never share your password, OTP, or payment PIN</p>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Lumina Marketplace will never ask you for this information outside of the secure login portal.</p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe bg-surface-container-low/90 backdrop-blur-lg border-t border-outline-variant/20 shadow-lg shadow-primary/5 rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 tap-highlight-transparent active:scale-90 transition-transform active:bg-surface-container-high rounded-xl" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md text-[10px] mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 tap-highlight-transparent active:scale-90 transition-transform active:bg-surface-container-high rounded-xl" href="#">
+<span class="material-symbols-outlined">cleaning_services</span>
+<span class="font-label-md text-label-md text-[10px] mt-1">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container/20 text-primary rounded-xl p-2 tap-highlight-transparent active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined icon-fill">person</span>
+<span class="font-label-md text-label-md font-bold text-[10px] mt-1">Account</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 tap-highlight-transparent active:scale-90 transition-transform active:bg-surface-container-high rounded-xl" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-md text-label-md text-[10px] mt-1">Support</span>
+</a>
+</nav>
+</body></html>

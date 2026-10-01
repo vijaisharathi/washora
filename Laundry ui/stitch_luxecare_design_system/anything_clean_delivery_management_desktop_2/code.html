@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anything Clean - Delivery Dispatch</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#474649",
+                        "inverse-on-surface": "#313031",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "surface-variant": "#353436",
+                        "background": "#131314",
+                        "on-primary-fixed": "#2c0051",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#4c4354",
+                        "surface-container-highest": "#353436",
+                        "secondary-fixed": "#e5e1e4",
+                        "on-primary": "#480081",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "tertiary": "#c8c6c8",
+                        "on-secondary": "#303032",
+                        "surface-dim": "#131314",
+                        "tertiary-container": "#646365",
+                        "surface-container-high": "#2a2a2b",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "primary": "#dcb8ff",
+                        "inverse-surface": "#e5e2e3",
+                        "tertiary-fixed": "#e4e2e4",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-tertiary": "#303032",
+                        "surface-tint": "#dcb8ff",
+                        "secondary-container": "#474649",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface-bright": "#3a393a",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-surface-variant": "#cfc2d7",
+                        "surface": "#131314",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "primary-container": "#8a2be2",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-container": "#201f20",
+                        "primary-fixed": "#efdbff",
+                        "error-container": "#93000a",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-background": "#e5e2e3",
+                        "inverse-primary": "#8422dc",
+                        "on-secondary-container": "#b7b4b7",
+                        "on-surface": "#e5e2e3",
+                        "secondary": "#c8c6c8",
+                        "outline": "#988ca0",
+                        "on-primary-container": "#eed9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "3xl": "64px",
+                        "md": "16px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "caption": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        .glass-panel {
+            background-color: theme('colors.surface');
+            border: 1px solid theme('colors.outline-variant');
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+        }
+        .btn-primary {
+            background-color: theme('colors.primary-container');
+            color: theme('colors.on-primary-container');
+        }
+        .btn-secondary {
+            border: 1px solid theme('colors.outline');
+            color: theme('colors.on-surface');
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex">
+<!-- SideNavBar (Desktop Only) -->
+<nav class="h-screen w-64 fixed left-0 top-0 hidden md:flex flex-col py-lg bg-surface-container-low border-r border-white/5 transition-all duration-200">
+<div class="font-headline-md text-primary mb-lg px-md font-headline-md">
+            Anything Clean
+        </div>
+<div class="flex-1 overflow-y-auto">
+<div class="space-y-sm px-sm">
+<!-- Dashboard -->
+<a class="flex items-center gap-md text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-lg mx-2 px-md py-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<!-- Schedule -->
+<a class="flex items-center gap-md bg-primary-container text-on-primary-container rounded-lg mx-2 px-md py-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">event_note</span>
+<span class="font-body-md text-body-md">Schedule</span>
+</a>
+<!-- Earnings -->
+<a class="flex items-center gap-md text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-lg mx-2 px-md py-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">payments</span>
+<span class="font-body-md text-body-md">Earnings</span>
+</a>
+<!-- Reviews -->
+<a class="flex items-center gap-md text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-lg mx-2 px-md py-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">star</span>
+<span class="font-body-md text-body-md">Reviews</span>
+</a>
+<!-- Services -->
+<a class="flex items-center gap-md text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-lg mx-2 px-md py-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">cleaning_services</span>
+<span class="font-body-md text-body-md">Services</span>
+</a>
+<!-- Settings -->
+<a class="flex items-center gap-md text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-lg mx-2 px-md py-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</div>
+</div>
+<div class="mt-auto px-sm pt-md border-t border-white/5">
+<a class="flex items-center gap-md text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-lg mx-2 px-md py-sm" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-body-md text-body-md">Help</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-lg mx-2 px-md py-sm" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-body-md text-body-md">Logout</span>
+</a>
+<div class="mt-lg px-md flex items-center gap-md">
+<img alt="Provider Profile" class="w-12 h-12 rounded-full object-cover border border-white/10" data-alt="A professional headshot of a service provider in a sleek, dark-themed marketplace environment. High-end lighting, deep purples and blacks in the background, conveying trust and luxury in the domestic care sector." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg8LWwlYaXFiwfvdrlqlV3cjc3Lb6wEbwAEasp9OtqzF-yXZ7MmsfbO5lxaXU9vQFbaJJ_K-VlOycG31w9M3GbSGdttAuPBhl6NWTUgnkwC_IoLR9TzeoAkHIFlZU10bO2upZXcfGYBoPiPgbbx7GFtCZzKymmhE36RfM3873kuY9-w8QFZVIUMnHZuh3V3Zj56NKq435grkRujz-uZ2FEdVJiqQyZWra5fBZn_yFGNDr8X0uAjTafNw"/>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Pro Dashboard</div>
+<div class="font-caption text-caption text-on-surface-variant">Elite Partner</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 p-lg max-w-[1280px] mx-auto w-full">
+<!-- Header Section -->
+<header class="flex justify-between items-end mb-2xl">
+<div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-sm">Dispatch Overview</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Manage ready orders and assign delivery partners.</p>
+</div>
+<div class="hidden md:flex gap-md">
+<button class="btn-secondary px-lg py-sm rounded-full font-label-md text-label-md hover:bg-white/5 transition-colors">
+                    Filter by Zone
+                </button>
+</div>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Ready for Dispatch Column -->
+<div class="lg:col-span-7 flex flex-col gap-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">package_2</span>
+                    Orders Ready for Handover
+                </h2>
+<!-- Order Card 1 -->
+<div class="glass-panel p-lg rounded-xl">
+<div class="flex justify-between items-start mb-md">
+<div>
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded-full bg-primary/20 text-primary font-caption text-caption mb-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> Ready
+                            </span>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">ORD-8829A</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Premium Deep Clean Kit</p>
+</div>
+<div class="text-right">
+<div class="font-label-md text-label-md text-on-surface">Pickup: 14:00</div>
+<div class="font-caption text-caption text-error">Overdue by 10m</div>
+</div>
+</div>
+<div class="border-t border-white/5 py-md my-md grid grid-cols-2 gap-md">
+<div>
+<div class="font-caption text-caption text-on-surface-variant mb-xs">Destination</div>
+<div class="font-body-md text-body-md text-on-surface">124 Luxury Ave, Unit 4B</div>
+</div>
+<div>
+<div class="font-caption text-caption text-on-surface-variant mb-xs">Client</div>
+<div class="font-body-md text-body-md text-on-surface">Eleanor V.</div>
+</div>
+</div>
+<!-- Assignment Section -->
+<div class="bg-surface-container-high rounded-lg p-md">
+<div class="flex justify-between items-center mb-md">
+<div class="font-label-md text-label-md text-on-surface">Assign Partner</div>
+<button class="text-primary font-label-md text-label-md hover:underline">Request New</button>
+</div>
+<!-- Partner List (Horizontal Scroll on Mobile) -->
+<div class="flex gap-md overflow-x-auto pb-sm snap-x">
+<!-- Partner Option 1 -->
+<div class="min-w-[200px] bg-surface p-sm rounded-lg border border-primary/30 flex-shrink-0 cursor-pointer snap-start relative">
+<div class="absolute top-sm right-sm text-primary material-symbols-outlined text-[16px]">check_circle</div>
+<div class="flex items-center gap-sm mb-sm">
+<img alt="Driver" class="w-10 h-10 rounded-full object-cover" data-alt="A portrait of a male delivery driver in a sleek, dark-themed urban setting. High-end marketplace aesthetic, wearing a subtle uniform, deep purple and dark grey background lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcimdudtJzy2XW8SB2wXjNhYvlihTrah4BTfXSeYOnVdaC1gnPRt2jmX29RcapC8xe3oULT2s989muevJmlTVvYVjLv9nDnQnBuBhZBxL7doZk-aYgSiIOxgt-b4fRu3cmLAPGeqgAb-iRhOG8SHWbXtgzfcgCxnZqRck4bxudrxK_uOe_DZ1JRxpHsmPIdT5ldwIPDyLKcnuf1gXZZhHVOmlKmoRNc0ehfFVZRLteq84BlYEl5NNTXQ"/>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Marcus T.</div>
+<div class="flex items-center text-primary text-caption font-caption">
+<span class="material-symbols-outlined text-[12px]">star</span> 4.9
+                                        </div>
+</div>
+</div>
+<div class="flex justify-between items-center text-caption font-caption">
+<span class="text-on-surface-variant">ETA: 5 mins</span>
+<span class="text-primary">Selected</span>
+</div>
+</div>
+<!-- Partner Option 2 -->
+<div class="min-w-[200px] bg-surface p-sm rounded-lg border border-outline-variant flex-shrink-0 cursor-pointer snap-start opacity-70 hover:opacity-100 transition-opacity">
+<div class="flex items-center gap-sm mb-sm">
+<img alt="Driver" class="w-10 h-10 rounded-full object-cover" data-alt="A portrait of a female delivery courier in a dark, luxury marketplace context. Clean, sharp lighting, conveying efficiency and trust. Subtle violet highlights in the environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXErQ4EYTMIPb6MfGVkKQbf6HM72mMRlWijrd0jJ-2Kdfyjkj3pJ3GOh4AP7W636c9abwUO1tI0ZeaOX1WvLlkV2NDcT0O3Nf2ZKgj3cMmGEcejbiNxSjU0QuPULq61VN-R1BZ5quRHB5MNF1YUlvF_5NZWon-MS5pxWekZLfgDeXL13n10TNoKiO1VDm6yySMj4I5t1xWn6lt9wgdHSve92Tkt91nN0GKj1ZmllBsweHRSoJ4_fWt2g"/>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Sarah J.</div>
+<div class="flex items-center text-[#FFCC00] text-caption font-caption">
+<span class="material-symbols-outlined text-[12px]">star</span> 4.7
+                                        </div>
+</div>
+</div>
+<div class="flex justify-between items-center text-caption font-caption">
+<span class="text-on-surface-variant">ETA: 12 mins</span>
+</div>
+</div>
+</div>
+<!-- OTP Verification for Handover -->
+<div class="mt-md pt-md border-t border-white/5">
+<label class="block font-caption text-caption text-on-surface-variant mb-sm">Handover Verification (OTP from Driver)</label>
+<div class="flex gap-sm">
+<input class="flex-1 bg-surface-dim border border-outline-variant rounded-lg px-md py-sm text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none font-body-md text-body-md tracking-[0.5em] text-center" placeholder="• • • •" type="text"/>
+<button class="btn-primary px-xl py-sm rounded-lg font-label-md text-label-md hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors whitespace-nowrap">
+                                    Verify &amp; Dispatch
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Active Map / Logistics Sidebar -->
+<div class="lg:col-span-5 flex flex-col gap-lg">
+<div class="glass-panel rounded-xl h-[400px] lg:h-full relative overflow-hidden flex flex-col">
+<div class="p-md bg-surface-container-high/90 backdrop-blur-md absolute top-0 w-full z-10 flex justify-between items-center border-b border-white/5">
+<span class="font-label-md text-label-md text-on-surface">Active Dispatch Map</span>
+<span class="material-symbols-outlined text-on-surface-variant">map</span>
+</div>
+<!-- Map Image Placeholder -->
+<div class="flex-1 w-full bg-cover bg-center" data-alt="A dark-themed, highly stylized digital map interface showing a city grid. The map features subtle deep violet and neon purple routes indicating delivery paths. High-tech, luxury aesthetic, minimalist layout, glowing nodes." data-location="New York" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBOPMVXzHjjj2Xj-N_RXTamMoR5DGwWSatXoyhq5ukTOixx_wNh_XHy9f5tS-ZEl-PAFYa6bjYwHW2zYCpfw3M7eO1Z3aXOcTYphXnpizF8rZ6wgWpjEzWB1xGWqH5QaJu2rN8itzfWg8IeH0Ezy1FeP6LfDxEW0EwTdcsr6TWz2NQS7SoSB1Bu0BOtdfD5_FsyOVyjQYLlt5FxM7u85np50X9R9PsTcT8zREIBOu9S9qrn_Tj9XAVsBA')"></div>
+<div class="p-md bg-surface-container-high/90 backdrop-blur-md absolute bottom-0 w-full z-10 border-t border-white/5">
+<div class="flex justify-between items-center">
+<div>
+<div class="font-caption text-caption text-on-surface-variant">Active Couriers in Zone</div>
+<div class="font-headline-md text-headline-md text-on-surface">14</div>
+</div>
+<div class="text-right">
+<div class="font-caption text-caption text-on-surface-variant">Avg Wait Time</div>
+<div class="font-headline-md text-headline-md text-primary">6 mins</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container/90 backdrop-blur-lg border-t border-white/10 shadow-[0_-4px_20px_rgba(138,43,226,0.1)] md:hidden">
+<div class="flex justify-around items-center h-20 pb-safe px-md">
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-primary-container/20 tap-highlight-transparent p-sm rounded-lg" href="#">
+<span class="material-symbols-outlined mb-xs">search</span>
+<span class="font-label-md text-label-md-mobile">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary active:bg-primary-container/20 tap-highlight-transparent p-sm rounded-lg" href="#">
+<span class="material-symbols-outlined mb-xs" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="font-label-md text-label-md-mobile">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-primary-container/20 tap-highlight-transparent p-sm rounded-lg" href="#">
+<span class="material-symbols-outlined mb-xs">chat</span>
+<span class="font-label-md text-label-md-mobile">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-primary-container/20 tap-highlight-transparent p-sm rounded-lg" href="#">
+<span class="material-symbols-outlined mb-xs">person</span>
+<span class="font-label-md text-label-md-mobile">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

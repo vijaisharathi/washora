@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Earnings Details - Lumina Delivery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-surface": "#e5e2e3",
+                  "error": "#ffb4ab",
+                  "surface-container-highest": "#353436",
+                  "surface-container": "#201f20",
+                  "primary-fixed": "#efdbff",
+                  "primary": "#dcb8ff",
+                  "tertiary": "#c8c6c8",
+                  "outline": "#988ca0",
+                  "tertiary-container": "#646365",
+                  "surface-container-low": "#1c1b1c",
+                  "on-secondary": "#303032",
+                  "surface-container-lowest": "#0e0e0f",
+                  "primary-fixed-dim": "#dcb8ff",
+                  "surface": "#131314",
+                  "on-tertiary-container": "#e3e0e2",
+                  "secondary-fixed-dim": "#c8c6c8",
+                  "on-error-container": "#ffdad6",
+                  "success-bg": "#1A3D24",
+                  "on-tertiary": "#303032",
+                  "on-primary-fixed": "#2c0051",
+                  "on-secondary-fixed": "#1b1b1d",
+                  "inverse-surface": "#e5e2e3",
+                  "on-tertiary-fixed": "#1b1b1d",
+                  "surface-variant": "#353436",
+                  "on-error": "#690005",
+                  "on-primary-container": "#eed9ff",
+                  "primary-container": "#8a2be2",
+                  "on-background": "#e5e2e3",
+                  "error-container": "#93000a",
+                  "on-secondary-fixed-variant": "#474648",
+                  "outline-variant": "#4c4354",
+                  "error-red": "#ffb4ab",
+                  "tertiary-fixed": "#e4e2e4",
+                  "surface-dim": "#131314",
+                  "secondary-fixed": "#e4e2e4",
+                  "secondary-container": "#49494b",
+                  "on-secondary-container": "#b9b8ba",
+                  "surface-bright": "#39393a",
+                  "inverse-on-surface": "#313031",
+                  "electric-violet": "#8a2be2",
+                  "on-tertiary-fixed-variant": "#474648",
+                  "surface-tint": "#dcb8ff",
+                  "success-green": "#81C784",
+                  "tertiary-fixed-dim": "#c8c6c8",
+                  "on-primary-fixed-variant": "#6700b5",
+                  "background": "#131314",
+                  "on-surface-variant": "#cfc2d7",
+                  "surface-container-high": "#2a2a2b",
+                  "inverse-primary": "#8422dc",
+                  "secondary": "#c8c6c8",
+                  "on-primary": "#480081"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "lg": "24px",
+                  "xl": "32px",
+                  "3xl": "64px",
+                  "md": "16px",
+                  "sm": "8px",
+                  "xs": "4px",
+                  "2xl": "48px"
+          },
+          "fontFamily": {
+                  "mono-display": [
+                          "monospace"
+                  ],
+                  "h3": [
+                          "Geist"
+                  ],
+                  "label-md": [
+                          "Geist"
+                  ],
+                  "display-lg": [
+                          "Geist"
+                  ],
+                  "headline-lg": [
+                          "Geist"
+                  ],
+                  "caption": [
+                          "Geist"
+                  ],
+                  "body-md": [
+                          "Geist"
+                  ],
+                  "h1": [
+                          "Geist"
+                  ]
+          },
+          "fontSize": {
+                  "mono-display": [
+                          "18px",
+                          {
+                                  "letterSpacing": "0.05em",
+                                  "fontWeight": "700"
+                          }
+                  ],
+                  "h3": [
+                          "20px",
+                          {
+                                  "lineHeight": "28px",
+                                  "fontWeight": "600"
+                          }
+                  ],
+                  "label-md": [
+                          "14px",
+                          {
+                                  "lineHeight": "20px",
+                                  "letterSpacing": "0.01em",
+                                  "fontWeight": "500"
+                          }
+                  ],
+                  "display-lg": [
+                          "48px",
+                          {
+                                  "lineHeight": "56px",
+                                  "letterSpacing": "-0.02em",
+                                  "fontWeight": "700"
+                          }
+                  ],
+                  "headline-lg": [
+                          "32px",
+                          {
+                                  "lineHeight": "40px",
+                                  "letterSpacing": "-0.01em",
+                                  "fontWeight": "600"
+                          }
+                  ],
+                  "caption": [
+                          "12px",
+                          {
+                                  "lineHeight": "16px",
+                                  "fontWeight": "400"
+                          }
+                  ],
+                  "body-md": [
+                          "16px",
+                          {
+                                  "lineHeight": "24px",
+                                  "fontWeight": "400"
+                          }
+                  ],
+                  "h1": [
+                          "28px",
+                          {
+                                  "lineHeight": "36px",
+                                  "fontWeight": "700"
+                          }
+                  ]
+          }
+        },
+      }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Geist', sans-serif;
+    }
+    
+    /* Ensure hardware acceleration for smoother mobile transitions */
+    .transform-gpu {
+      transform: translateZ(0);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-primary selection:text-on-primary">
+<!-- Mobile Container Strategy: Centers content on desktop, fills on mobile -->
+<div class="max-w-md mx-auto min-h-screen bg-surface-dim relative flex flex-col shadow-2xl shadow-black/50 overflow-hidden transform-gpu">
+<!-- Header (Task-Focused: Replaces standard TopAppBar) -->
+<header class="flex items-center px-md h-16 bg-surface/80 backdrop-blur-xl sticky top-0 z-50 border-b border-white/5 transition-all">
+<button class="p-2 -ml-2 text-on-surface-variant hover:text-primary active:scale-95 transition-all rounded-full hover:bg-surface-variant/20 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="ml-2 font-h3 text-h3 text-on-surface font-bold tracking-tight">Earnings Details</h1>
+</header>
+<!-- Main Content -->
+<main class="flex-1 p-md flex flex-col gap-lg pb-xl overflow-y-auto">
+<!-- Order Summary Card -->
+<section class="bg-surface-container rounded-xl p-lg border border-outline-variant/30 flex flex-col items-center gap-sm relative overflow-hidden group">
+<!-- Subtle gradient glow behind the text -->
+<div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="z-10 flex flex-col items-center">
+<span class="font-mono-display text-mono-display text-on-surface-variant text-sm mb-2">QH-20260902-1041</span>
+<h2 class="font-display-lg text-display-lg text-primary-fixed-dim drop-shadow-[0_0_15px_rgba(220,184,255,0.2)]">₹70</h2>
+<div class="flex gap-md mt-lg w-full justify-center">
+<!-- Status Badge: Completed -->
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-success-bg border border-success-green/30">
+<span class="material-symbols-outlined text-[14px] text-success-green" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-md text-label-md text-success-green uppercase tracking-widest text-[10px]">Completed</span>
+</div>
+<!-- Payout Badge: Paid -->
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary-container/20 border border-primary/30">
+<span class="material-symbols-outlined text-[14px] text-primary" data-icon="payments" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="font-label-md text-label-md text-primary uppercase tracking-widest text-[10px]">Paid</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Earnings Breakdown -->
+<section class="flex flex-col gap-sm">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest pl-2">Breakdown</h3>
+<div class="bg-surface-container rounded-xl border border-outline-variant/30 flex flex-col overflow-hidden">
+<!-- Line Item: Delivery Fee -->
+<div class="p-md flex justify-between items-center border-b border-outline-variant/10 hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant" data-icon="local_shipping">local_shipping</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Delivery Fee</span>
+</div>
+<span class="font-mono-display text-mono-display text-on-surface text-base">₹70</span>
+</div>
+<!-- Line Item: Adjustments -->
+<div class="p-md flex justify-between items-center border-b border-outline-variant/10 hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant" data-icon="tune">tune</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Adjustments</span>
+</div>
+<span class="font-mono-display text-mono-display text-on-surface-variant text-base">₹0</span>
+</div>
+<!-- Total: Net Earnings -->
+<div class="p-md flex justify-between items-center bg-surface-container-high border-t border-outline-variant/30 relative overflow-hidden">
+<!-- Accent line on the left -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<span class="font-h3 text-h3 text-on-surface pl-2">Net Earnings</span>
+<span class="font-display-lg text-display-lg text-primary text-[24px]">₹70</span>
+</div>
+</div>
+</section>
+<!-- Route Context Map -->
+<section class="flex flex-col gap-sm mt-2">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest pl-2">Delivery Route</h3>
+<div class="h-48 w-full rounded-xl overflow-hidden border border-outline-variant/30 relative group shadow-lg shadow-black/20">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A stylized, highly detailed 3D map view of a modern city at night, viewed from an isometric angle. The map features a glowing electric violet route tracing a delivery path between minimalist skyscrapers. The interface is sleek and corporate modern, utilizing a midnight color palette with deep blacks, dark grays, and subtle neon purple accents. High contrast, sharp edges, engineered aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDc9O0SeTTDHqQw9JOxlooUnGjUbg3tIGPkxIkzUHvOO7BAThPvLXQzftjMl69mOoMLs5vsHkvMunFzmX2kkcGMtjxK81q_2A5x2R0no7R2Y9GQ4o6kQb4g9wkZu64jAqflkgQFeprI77Ls0DUBzq_GAVQDZzanddDJ36vtn_Wbhz7927ZqTsa1dYYokTNNf-lELMu_qfVJlkLksvdpakKF48_-c_HxbgMvBkASh679hnlsbsZ4SSbLbw')"></div>
+<!-- Overlay Gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container/90 via-surface-container/20 to-transparent flex flex-col justify-end p-md pointer-events-none">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(220,184,255,0.8)] animate-pulse"></div>
+<span class="font-caption text-caption text-on-surface">Route trace verified</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Support Action -->
+<button class="mt-4 w-full py-md rounded-xl border border-outline-variant/50 bg-transparent hover:bg-surface-container text-on-surface font-label-md text-label-md font-bold flex items-center justify-center gap-2 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
+        Report an issue with this payout
+      </button>
+</main>
+</div>
+</body></html>

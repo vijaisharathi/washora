@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anything Clean - Services Directory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary": "#303032",
+                      "tertiary": "#c8c6c8",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "secondary-fixed": "#e5e1e4",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "on-secondary-fixed-variant": "#474649",
+                      "error-container": "#93000a",
+                      "on-secondary": "#303032",
+                      "on-background": "#e5e2e3",
+                      "surface": "#131314",
+                      "on-tertiary-container": "#e3e0e2",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "on-primary-container": "#eed9ff",
+                      "secondary": "#c8c6c8",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "outline-variant": "#4c4354",
+                      "secondary-container": "#474649",
+                      "tertiary-fixed": "#e4e2e4",
+                      "primary": "#dcb8ff",
+                      "surface-variant": "#353436",
+                      "inverse-surface": "#e5e2e3",
+                      "primary-container": "#8a2be2",
+                      "error": "#ffb4ab",
+                      "surface-container-lowest": "#0e0e0f",
+                      "surface-container-high": "#2a2a2b",
+                      "on-primary-fixed": "#2c0051",
+                      "outline": "#988ca0",
+                      "surface-bright": "#3a393a",
+                      "surface-dim": "#131314",
+                      "on-error": "#690005",
+                      "on-surface-variant": "#cfc2d7",
+                      "on-secondary-container": "#b7b4b7",
+                      "on-surface": "#e5e2e3",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "surface-tint": "#dcb8ff",
+                      "primary-fixed": "#efdbff",
+                      "tertiary-container": "#646365",
+                      "surface-container-highest": "#353436",
+                      "on-primary": "#480081",
+                      "surface-container-low": "#1c1b1c",
+                      "on-tertiary-fixed-variant": "#474649",
+                      "surface-container": "#201f20",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "inverse-primary": "#8422dc",
+                      "on-error-container": "#ffdad6",
+                      "background": "#131314",
+                      "inverse-on-surface": "#313031"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "2xl": "48px",
+                      "3xl": "64px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "lg": "24px",
+                      "xl": "32px",
+                      "md": "16px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "display-lg-mobile": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "44px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+          .glass-panel {
+              background: rgba(18, 18, 20, 0.7);
+              backdrop-filter: blur(20px);
+              -webkit-backdrop-filter: blur(20px);
+              border: 1px solid rgba(255, 255, 255, 0.05);
+          }
+          .hide-scrollbar::-webkit-scrollbar {
+              display: none;
+          }
+          .hide-scrollbar {
+              -ms-overflow-style: none;
+              scrollbar-width: none;
+          }
+      </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen pt-16 pb-20 md:pb-0">
+<!-- Top Navigation Bar -->
+<nav class="hidden md:flex fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/5 shadow-sm">
+<div class="flex justify-between items-center px-lg h-16 max-w-[1440px] mx-auto w-full">
+<!-- Brand -->
+<div class="font-headline-md text-headline-md font-bold text-primary">
+                Anything Clean
+            </div>
+<!-- Links -->
+<div class="flex space-x-lg font-body-md text-body-md">
+<a class="text-primary border-b-2 border-primary pb-1" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors px-2 py-1 rounded" href="#">Providers</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors px-2 py-1 rounded" href="#">How it Works</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors px-2 py-1 rounded" href="#">Support</a>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center space-x-md">
+<button class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="bg-primary-container text-on-primary-container font-label-md text-label-md px-4 py-2 rounded-lg active:scale-95 transition-transform hover:bg-white/5">
+                    Book Now
+                </button>
+<img alt="User profile" class="w-8 h-8 rounded-full object-cover ml-2 border border-outline-variant" data-alt="A high resolution portrait of a professional looking individual against a dark background, representing a user profile picture in a premium application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvFa9_7yE7GR9csX68Kylmo87K6aW-m4TzBwQ6L2SoPd-ru0ZkoC16b3xuFNsjNiJynfLsdU7VKzZD-QP4o3TphNwkTlrhK2f_boYCBgbNclLY5UgtA0eTJcogju36JLJSwlfWANAVKCZzyJmZV1OrwXCCBSUihkMMh_zfmnYmCZpVlTfs8xN8MrhjiC4ij1YpOlE_pCevuGnCeGyyvpKy-mVhCCmJwj_0g69J7fIPp_Bv1nnQN-WRgQ"/>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="max-w-[1280px] mx-auto px-md md:px-lg py-xl md:py-2xl">
+<!-- Header & Search -->
+<header class="mb-2xl text-center md:text-left">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-md">Our Services</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto md:mx-0 mb-xl">Explore our premium care categories. From delicate fabrics to high-performance vehicles, precision is our standard.</p>
+<div class="relative max-w-2xl mx-auto md:mx-0 group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full bg-surface-container border border-outline-variant rounded-xl py-3 pl-12 pr-4 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body-md text-body-md placeholder:text-on-surface-variant" placeholder="Search services (e.g., 'Leather Jacket Cleaning')" type="text"/>
+</div>
+</header>
+<!-- Bento Grid Services -->
+<section class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-md md:gap-lg">
+<!-- Clothing Care (Large Feature) -->
+<div class="relative overflow-hidden rounded-xl group md:col-span-2 md:row-span-2 min-h-[300px] md:min-h-[400px]">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A pristine, high-end dry cleaning environment. Garments hang perfectly aligned, illuminated by soft, cinematic lighting against a dark moody background. The atmosphere is luxurious and immaculate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRjTsEML_M2XwPFn1-w247Izf-Yc-jKCXzDIMeemlVW3YYApwTRB32qPhHk8XwsNZ8e5abghWAgKuScM8qg0klcH_vwJcPqsSK3LciAsVkhMuVPkPV-AM-_EblE9c9ucdeLaLerlcNs0KKZ3PsrNQukfTLuOFGNKEI3CnHRUJz9Jq-TuIPLglGUCaglJ6otPVXfKXUC0zBcErwMBrpkP-PCiAacH5O6gpsCnR_FRlaeZmhJj3YQrzzLQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-lg w-full">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Clothing Care</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Dry cleaning, alterations, and delicate fabric restoration.</p>
+<button class="bg-primary/10 text-primary hover:bg-primary/20 px-4 py-2 rounded-lg font-label-md text-label-md transition-colors flex items-center gap-2 w-fit">
+                        Explore <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Shoe Care -->
+<div class="relative overflow-hidden rounded-xl group min-h-[200px] md:min-h-[auto]">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close up of an artisan meticulously polishing a high-end leather dress shoe. The scene is dark, lit by a single spotlight highlighting the texture of the leather and the shine of the polish." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHaCj_Hj25Cs019lP1ABA8rSasz5-oikWsj9ra2aLw7TIYa9YEcduck_cHcUsbt19WduXtTGgordR4F64FIobDeJEHe38ui5RgRLTyO0Fna3-XvFvxGfBUCF0uVtnwn3cCvbclKvWlZFskXgMChv6NXpExz1RxTg8x0qQKXyns6M_864AlstYgfvl4YjdJJyCjmQ_Md1OH9JgXOm5yTDNsc9pcrARIfEGNx6U47-m5J3HjPLDCZBkfGg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-md w-full">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Shoe Care</h3>
+<button class="text-primary hover:text-primary-fixed-dim font-label-md text-label-md transition-colors flex items-center gap-1">
+                        View <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Car Care -->
+<div class="relative overflow-hidden rounded-xl group min-h-[200px] md:min-h-[auto]">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sleek sports car receiving a professional ceramic coating detailing service in a modern, dark, neon-lit garage. The paint gleams brilliantly under the dramatic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3HPDTAWgyrFogG60F2zE6jLGAEh7WIxEyp-pgVZ1p74pw2qWol5PSp1JbibNPTohxtbvTZR0I09HimWVCd4iij2z5GyPQj-aKk_v5nnX2-s594BBMc2g1YAYNW-xm4_n5iHiKhEDvJaC0Fuj_qyT9RKdW3sO-IMmNJHrT40PiNAsblDjNi2bnRhPwn-S0_CJVMnYLoVdCKefZqdiyv3UL01N_D5o-7ufUL6M-qfIeljFhAIu9QzjzFw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-md w-full">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Car Care</h3>
+<button class="text-primary hover:text-primary-fixed-dim font-label-md text-label-md transition-colors flex items-center gap-1">
+                        View <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Bag & Luggage -->
+<div class="relative overflow-hidden rounded-xl group md:col-span-2 min-h-[200px]">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A luxury designer handbag resting on a sleek, dark surface. Soft, directional lighting highlights the premium leather grain and metallic hardware details, conveying high-end restoration services." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6xDIehUDXb0YyJpbEhof8biwlX3768S-8H69Q94QOibj5JBvfn1zN6xxo7COodPh5-vhFJ13KeUZjTDuW7dZwzCgeX9BvHO5n997zipiF2_e2mNr0112qG_VKmGysOBKe7-AqtPMDzxMmT13snf3P00DQ4tGujMbfC342a9GB5u--lGeYEisZkOYqTTQJ6RYHjfKQFW6S5s2jBWKI8BQw_1hTfSgnoi4RX9Z1PzVQvehDEI1qVfHO4g"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-lg w-full md:w-2/3 h-full flex flex-col justify-end">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Bag &amp; Luggage</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm line-clamp-2">Premium restoration for leather goods and travel accessories.</p>
+<button class="text-primary hover:text-primary-fixed-dim font-label-md text-label-md transition-colors flex items-center gap-1 w-fit">
+                        Explore <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface-container/90 backdrop-blur-lg rounded-t-xl border-t border-white/10 shadow-[0_-4px_20px_rgba(138,43,226,0.1)]">
+<div class="flex justify-around items-center h-20 pb-safe px-md">
+<!-- Active state: Search mapping to Explore -->
+<a class="flex flex-col items-center justify-center text-primary active:bg-primary-container/20 tap-highlight-transparent p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-label-md text-label-md-mobile">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-primary-container/20 tap-highlight-transparent p-2 rounded-lg hover:text-on-surface" href="#">
+<span class="material-symbols-outlined mb-1">calendar_today</span>
+<span class="font-label-md text-label-md-mobile">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-primary-container/20 tap-highlight-transparent p-2 rounded-lg hover:text-on-surface" href="#">
+<span class="material-symbols-outlined mb-1">chat</span>
+<span class="font-label-md text-label-md-mobile">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-primary-container/20 tap-highlight-transparent p-2 rounded-lg hover:text-on-surface" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-md text-label-md-mobile">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

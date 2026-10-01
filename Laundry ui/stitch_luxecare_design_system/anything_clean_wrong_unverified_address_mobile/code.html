@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Address Verification</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-tertiary-container": "#e3e0e2",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-container-low": "#1c1b1c",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "secondary-container": "#474649",
+                        "surface-container-high": "#2a2a2b",
+                        "outline-variant": "#4c4354",
+                        "surface-tint": "#dcb8ff",
+                        "surface-variant": "#353436",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "tertiary-fixed": "#e4e2e4",
+                        "primary": "#dcb8ff",
+                        "inverse-on-surface": "#313031",
+                        "secondary": "#c8c6c8",
+                        "outline": "#988ca0",
+                        "on-secondary-fixed-variant": "#474649",
+                        "primary-container": "#8a2be2",
+                        "on-background": "#e5e2e3",
+                        "on-primary": "#480081",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-primary-fixed": "#2c0051",
+                        "surface-container": "#201f20",
+                        "on-tertiary": "#303032",
+                        "inverse-surface": "#e5e2e3",
+                        "tertiary-container": "#646365",
+                        "primary-fixed": "#efdbff",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-surface-variant": "#cfc2d7",
+                        "secondary-fixed": "#e5e1e4",
+                        "on-primary-container": "#eed9ff",
+                        "inverse-primary": "#8422dc",
+                        "surface-container-highest": "#353436",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "on-secondary": "#303032",
+                        "on-secondary-container": "#b7b4b7",
+                        "surface-dim": "#131314",
+                        "error": "#ffb4ab",
+                        "on-surface": "#e5e2e3",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface": "#131314",
+                        "on-error-container": "#ffdad6",
+                        "background": "#131314",
+                        "surface-bright": "#3a393a",
+                        "tertiary": "#c8c6c8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "2xl": "48px",
+                        "3xl": "64px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Geist", "sans-serif"],
+                        "display-lg": ["Geist", "sans-serif"],
+                        "display-lg-mobile": ["Geist", "sans-serif"],
+                        "headline-lg": ["Geist", "sans-serif"],
+                        "caption": ["Geist", "sans-serif"],
+                        "body-md": ["Geist", "sans-serif"],
+                        "body-lg": ["Geist", "sans-serif"],
+                        "headline-md": ["Geist", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        /* Mobile Specific overrides */
+        @media (max-width: 767px) {
+            .mobile-container {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased font-body-md h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface/80 backdrop-blur-xl border-b border-white/5 shadow-sm sticky top-0 z-50 flex items-center justify-between px-md h-16 w-full max-w-full">
+<div class="flex items-center gap-xs">
+<button aria-label="Go Back" class="text-on-surface-variant dark:text-on-surface-variant hover:opacity-80 transition-all duration-200 active:scale-95 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim leading-tight">Address needs verification</h1>
+<span class="font-caption text-caption text-on-surface-variant">Order #QH1024</span>
+</div>
+</div>
+<button aria-label="Help" class="text-on-surface-variant dark:text-on-surface-variant hover:opacity-80 transition-all duration-200 active:scale-95 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto pb-2xl mobile-container py-md space-y-md">
+<!-- Amber Warning Card -->
+<div class="bg-[#2C1F0C] border border-[#FF9900]/30 rounded-xl p-md flex items-start gap-md">
+<span class="material-symbols-outlined text-[#FF9900] flex-shrink-0" data-icon="warning">warning</span>
+<div>
+<p class="font-body-md text-body-md text-[#FF9900] mb-1">Unverified Destination</p>
+<p class="font-caption text-caption text-on-surface-variant">We couldn't verify this destination. Check the map and contact the customer before continuing.</p>
+</div>
+</div>
+<!-- Map Section -->
+<div class="rounded-xl overflow-hidden bg-surface-container-low border border-white/5 h-64 relative">
+<div class="w-full h-full bg-cover bg-center" data-alt="A stylized, highly detailed dark-mode digital map interface centered on a specific urban location. The map uses deep charcoal and near-black tones for landmasses, with slightly lighter grey-violet lines for roads. Two distinct glowing neon violet markers stand out, connected by a dashed line indicating a very short route (0.3 km away). The visual style aligns perfectly with a premium, sleek delivery app interface, utilizing subtle glassmorphic overlays in the corners." data-location="Riverfront Drive" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAWmfz8iETCxOrsseOBItgctIs7rO7ne8XHeFPjZida2QGp0Ju_wzYr3STyRVYzClM0sCIMviIqCxkm-a9AnlgIRiHCT0meJQ1JUOAVmLUc-DvpuqP7SNG0kdNKBNgDC3vWy-8IYr4Ogf1rJ-xn0__KpGbxniGg6PLgM1tTkPKEl3jSrBNNyj-Wn3urPnH4eCaxKyJ0scHHYFnnbNnVVbJLCO3oDQ2x6Azy-HKMZ9ZXPeaFT-MD7AParw')"></div>
+<!-- Map Overlay Info -->
+<div class="absolute bottom-md left-md right-md bg-surface/80 backdrop-blur-md p-sm rounded-lg border border-white/5 flex justify-between items-center shadow-lg">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="my_location">my_location</span>
+<span class="font-caption text-caption text-on-surface">You</span>
+</div>
+<div class="h-px bg-outline-variant flex-1 mx-sm relative">
+<span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-surface px-1 font-caption text-caption text-on-surface-variant rounded">0.3 km</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="font-caption text-caption text-on-surface">Destination</span>
+<span class="material-symbols-outlined text-[#FF9900] text-[20px]" data-icon="location_on">location_on</span>
+</div>
+</div>
+</div>
+<!-- Address Card -->
+<div class="bg-surface-container-low rounded-xl p-md border border-white/5">
+<div class="flex justify-between items-start mb-sm">
+<h2 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Expected Destination</h2>
+<span class="material-symbols-outlined text-outline" data-icon="content_copy">content_copy</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface">1042 Riverfront Drive<br/>Apt 4B</p>
+</div>
+<!-- Actions -->
+<div class="space-y-sm mt-lg">
+<button class="w-full bg-primary hover:bg-primary/90 text-on-primary font-label-md text-label-md py-md rounded-lg transition-colors flex justify-center items-center gap-sm">
+<span class="material-symbols-outlined" data-icon="phone">phone</span>
+                CONTACT CUSTOMER
+            </button>
+<button class="w-full bg-transparent border border-secondary text-secondary hover:bg-surface-container font-label-md text-label-md py-md rounded-lg transition-colors flex justify-center items-center gap-sm">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+                OPEN MAP
+            </button>
+<button class="w-full bg-transparent text-error hover:bg-error/10 font-label-md text-label-md py-md rounded-lg transition-colors mt-md">
+                REPORT INCORRECT ADDRESS
+            </button>
+</div>
+</main>
+</body></html>

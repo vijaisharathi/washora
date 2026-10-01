@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edit Personal Information - Lumina</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#1c1b1c",
+                      "on-error-container": "#ffdad6",
+                      "primary-fixed": "#efdbff",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "surface-bright": "#39393a",
+                      "inverse-surface": "#e5e2e3",
+                      "surface-dim": "#131314",
+                      "tertiary": "#c8c6c8",
+                      "on-surface-variant": "#cfc2d7",
+                      "on-error": "#690005",
+                      "on-secondary-container": "#b9b8ba",
+                      "error": "#ffb4ab",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "secondary-container": "#49494b",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "surface-container": "#201f20",
+                      "surface-variant": "#353436",
+                      "secondary": "#c8c6c8",
+                      "error-container": "#93000a",
+                      "success-green": "#81C784",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "on-primary-container": "#eed9ff",
+                      "primary-container": "#8a2be2",
+                      "success-bg": "#1A3D24",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "outline-variant": "#4c4354",
+                      "tertiary-fixed": "#e4e2e4",
+                      "inverse-primary": "#8422dc",
+                      "on-secondary-fixed-variant": "#474648",
+                      "on-primary-fixed": "#2c0051",
+                      "on-primary": "#480081",
+                      "on-tertiary": "#303032",
+                      "secondary-fixed": "#e4e2e4",
+                      "electric-violet": "#8a2be2",
+                      "surface-container-highest": "#353436",
+                      "background": "#131314",
+                      "on-surface": "#e5e2e3",
+                      "surface": "#131314",
+                      "error-red": "#ffb4ab",
+                      "primary": "#dcb8ff",
+                      "on-secondary": "#303032",
+                      "surface-container-high": "#2a2a2b",
+                      "outline": "#988ca0",
+                      "on-background": "#e5e2e3",
+                      "on-tertiary-container": "#e3e0e2",
+                      "inverse-on-surface": "#313031",
+                      "surface-tint": "#dcb8ff",
+                      "surface-container-lowest": "#0e0e0f",
+                      "tertiary-container": "#646365"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "8px",
+                      "2xl": "48px",
+                      "xs": "4px",
+                      "lg": "24px",
+                      "3xl": "64px",
+                      "md": "16px",
+                      "xl": "32px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Geist"],
+                      "caption": ["Geist"],
+                      "mono-display": ["monospace"],
+                      "h3": ["Geist"],
+                      "label-md": ["Geist"],
+                      "h1": ["Geist"],
+                      "display-lg": ["Geist"],
+                      "body-md": ["Geist"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                      "mono-display": ["18px", {"letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "h1": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex antialiased">
+<!-- SideNavBar (Suppressed for transactional focus, but prompt mentions it so I'll include it per instructions, normally would suppress for transactional "Edit" screen if full screen, but if it's a settings pane, it stays) -->
+<nav class="hidden md:flex flex-col p-md gap-sm bg-surface-container-low border-r border-outline-variant/30 fixed left-0 top-0 h-screen w-64 z-40">
+<div class="mb-xl pt-sm">
+<span class="font-h1 text-h1 text-electric-violet">Lumina</span>
+</div>
+<div class="flex items-center gap-md mb-lg p-sm">
+<img alt="User profile picture" class="w-12 h-12 rounded-full object-cover border border-outline-variant/30" data-alt="A small, circular avatar portrait of a professional male user in a tech environment. Deep charcoal background, high contrast lighting emphasizing the subject's face. Corporate modern aesthetic, electric violet rim light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGb_maJPjK2oe2hcfKPs9JOv5LmUX5T9UJ1nSZbaMYKNNQe60usW-BA4Z579Io08tLqDHya_XTC4Qqpa9aZtNJtcpHBy7WLlP9eNXC9QXwSzf44_dAZbyBWKgVyqKuXBw78ykTtc_vYs9jiNJ3z2jb1miA99YIUzzWEjyrErbLhBlaQzLFutdeSPJwHeDXW1_jX1HlnbOIMYMHphUlTyfCQDuU0RW6s-3oanW9-YvB3ALgdcBUqeIilw"/>
+<div>
+<h3 class="font-label-md text-label-md font-bold text-on-surface">Alex Rivers</h3>
+<p class="font-caption text-caption text-on-surface-variant">Premium Member</p>
+</div>
+</div>
+<button class="w-full bg-electric-violet text-white font-label-md text-label-md font-bold py-2 px-4 rounded-lg shadow-lg shadow-primary/20 hover:bg-electric-violet/90 transition-colors mb-xl">
+            Book a Cleaner
+        </button>
+<div class="flex-1 flex flex-col gap-sm">
+<a class="flex items-center gap-md p-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-all group" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+<span class="font-body-md text-body-md group-hover:text-primary transition-colors">Dashboard</span>
+</a>
+<a class="flex items-center gap-md p-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-all group" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">calendar_month</span>
+<span class="font-body-md text-body-md group-hover:text-primary transition-colors">Bookings</span>
+</a>
+<a class="flex items-center gap-md p-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-all group" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">payments</span>
+<span class="font-body-md text-body-md group-hover:text-primary transition-colors">Payments</span>
+</a>
+<a class="flex items-center gap-md p-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-all group" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">location_on</span>
+<span class="font-body-md text-body-md group-hover:text-primary transition-colors">Addresses</span>
+</a>
+<a class="flex items-center gap-md p-sm rounded-lg bg-primary/10 text-primary font-bold transition-all group" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-body-md text-body-md">Preferences</span>
+</a>
+</div>
+<div class="mt-auto flex flex-col gap-sm border-t border-outline-variant/30 pt-md">
+<a class="flex items-center gap-md p-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-all group" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">contact_support</span>
+<span class="font-body-md text-body-md group-hover:text-primary transition-colors">Support</span>
+</a>
+<a class="flex items-center gap-md p-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-all group" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">logout</span>
+<span class="font-body-md text-body-md group-hover:text-primary transition-colors">Logout</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 relative min-h-screen">
+<!-- TopNavBar (Settings specific variant or universal) -->
+<header class="flex justify-between items-center px-lg h-16 w-full z-50 bg-surface-dim/80 backdrop-blur-md border-b border-outline-variant/30 sticky top-0">
+<div class="flex items-center gap-sm">
+<a class="text-on-surface-variant hover:text-primary transition-colors md:hidden" href="#">
+<span class="material-symbols-outlined">arrow_back</span>
+</a>
+<h1 class="font-headline-lg text-headline-lg font-bold text-electric-violet">Lumina Marketplace</h1>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 transition-transform">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 transition-transform">
+<span class="material-symbols-outlined">help</span>
+</button>
+<img alt="Customer avatar" class="w-8 h-8 rounded-full border border-outline-variant/30" data-alt="Small circular avatar portrait of a customer. Corporate modern dark mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtoAx9T8I-0Mvz6sYBC4IbQRO5fooE5mBZOk6H0GrW2rTjk1nwJDq0wZ6vLNXpX3P2Iy8BMqA9n3ZTlCz8odpus8VnvhT8Vv19AoXo_46mw_nx-06lgBxtQchV_DvjW4n60DHNHa_GUBjnUuYQi4PSz60xx62EwBgT8tXISc3YxXA17DiqrUrnlrQZsNL2zGcmxSLEo-MT7ojQfmSN_5cwDQdA1aQjUuGemGrlmoCCjg56f9lWvEawXQ"/>
+</div>
+</header>
+<div class="max-w-[800px] mx-auto p-xl">
+<!-- Breadcrumbs / Page Header -->
+<div class="mb-xl">
+<div class="flex items-center gap-xs font-label-md text-label-md text-on-surface-variant mb-sm">
+<a class="hover:text-primary transition-colors" href="#">Preferences</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary font-bold">Personal Information</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Edit Personal Information</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Update your profile details and contact information.</p>
+</div>
+<!-- Main Form Card -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-xl shadow-lg shadow-black/10">
+<!-- Profile Photo Section -->
+<div class="flex items-center gap-xl pb-lg border-b border-outline-variant/30 mb-lg">
+<div class="relative group cursor-pointer">
+<img alt="Arun Kumar Profile Photo" class="w-24 h-24 rounded-full object-cover border-2 border-surface-container-low" data-alt="A larger, high-quality circular avatar portrait of Arun Kumar. High contrast, technical studio lighting, midnight charcoal background. Corporate modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB88-Nt90ITRFJMYJuZa4al-X5mZa8u0uyfIl1X3rfU2fIrnkDcy2zYw5KjK3-iZKc6YDRVkhIHQGMqXJzrqN2esVlakWO5A3dyprhUOpTXB3UW2Qfz51r3FtNctkwpGmkV5e-wIGmEwMeIvNwnGK4g-huYgdKllt89dJpMVpIIakNG8fWCjVk_J_6zNKKk3T7NgB0_4ARP_SLEQIigNJql2to5xTP4Veo78VpPrIkmdbOqQwvjW_zZMg"/>
+<div class="absolute inset-0 bg-black/60 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white">photo_camera</span>
+</div>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface mb-xs">Profile Photo</h3>
+<p class="font-caption text-caption text-on-surface-variant mb-sm">We recommend an image of at least 400x400px.</p>
+<button class="font-label-md text-label-md font-bold text-electric-violet hover:text-primary transition-colors border border-outline-variant/50 px-4 py-1.5 rounded-lg hover:bg-surface-container-high" type="button">
+                            Change Photo
+                        </button>
+</div>
+</div>
+<form class="flex flex-col gap-lg">
+<!-- Full Name -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface" for="fullName">Full Name</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-on-surface-variant/50" id="fullName" type="text" value="Arun Kumar"/>
+</div>
+<!-- Phone Number -->
+<div class="flex flex-col gap-xs">
+<div class="flex justify-between items-end">
+<label class="font-label-md text-label-md text-on-surface" for="phone">Phone Number</label>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container/10 border border-error-container/30 text-error-red font-caption text-caption">
+<span class="material-symbols-outlined text-[14px]">warning</span> Verification required
+                            </span>
+</div>
+<div class="flex gap-sm">
+<input class="flex-1 bg-surface-container-low border border-outline-variant/50 rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface-variant opacity-70 cursor-not-allowed" disabled="" id="phone" type="tel" value="+91 XXXXX XXXXX"/>
+<button class="font-label-md text-label-md font-bold text-on-surface bg-surface-container-low border border-outline-variant/50 px-6 py-3 rounded-lg hover:border-primary hover:text-primary transition-colors whitespace-nowrap" type="button">
+                                Change
+                            </button>
+</div>
+</div>
+<!-- Email -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface" for="email">Email Address</label>
+<div class="flex gap-sm">
+<input class="flex-1 bg-surface-container-low border border-outline-variant/50 rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface-variant opacity-70 cursor-not-allowed" disabled="" id="email" type="email" value="arun@example.com"/>
+<button class="font-label-md text-label-md font-bold text-on-surface bg-surface-container-low border border-outline-variant/50 px-6 py-3 rounded-lg hover:border-primary hover:text-primary transition-colors whitespace-nowrap" type="button">
+                                Change
+                            </button>
+</div>
+</div>
+<!-- Form Actions -->
+<div class="mt-md pt-lg border-t border-outline-variant/30 flex justify-end gap-sm">
+<button class="font-label-md text-label-md font-bold text-on-surface px-6 py-3 rounded-lg hover:bg-surface-container-high transition-colors" type="button">
+                            Cancel
+                        </button>
+<button class="font-label-md text-label-md font-bold bg-electric-violet text-white px-8 py-3 rounded-lg shadow-lg shadow-primary/20 hover:bg-electric-violet/90 active:scale-95 transition-all" type="submit">
+                            Save Changes
+                        </button>
+</div>
+</form>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe bg-surface-container-low/90 backdrop-blur-lg border-t border-outline-variant/20 rounded-t-xl shadow-lg shadow-primary/5">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 tap-highlight-transparent active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-label-md text-label-md mt-1 text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 tap-highlight-transparent active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">cleaning_services</span>
+<span class="font-label-md text-label-md mt-1 text-[10px]">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container/20 text-primary rounded-xl p-2 tap-highlight-transparent active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-md text-label-md mt-1 text-[10px]">Account</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 tap-highlight-transparent active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">chat_bubble</span>
+<span class="font-label-md text-label-md mt-1 text-[10px]">Support</span>
+</a>
+</nav>
+</body></html>

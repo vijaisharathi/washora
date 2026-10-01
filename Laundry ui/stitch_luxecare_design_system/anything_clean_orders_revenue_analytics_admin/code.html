@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anything Clean - Orders &amp; Revenue</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#eed9ff",
+                        "surface": "#131314",
+                        "tertiary-fixed": "#e4e2e4",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#cfc2d7",
+                        "inverse-primary": "#8422dc",
+                        "inverse-on-surface": "#313031",
+                        "primary-container": "#8a2be2",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-background": "#e5e2e3",
+                        "secondary-container": "#49494b",
+                        "on-secondary-container": "#b9b8ba",
+                        "tertiary-container": "#646365",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-surface": "#e5e2e3",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "outline-variant": "#4c4354",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#2c0051",
+                        "inverse-surface": "#e5e2e3",
+                        "background": "#131314",
+                        "on-secondary": "#303032",
+                        "success-green": "#81C784",
+                        "error-red": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#2a2a2b",
+                        "secondary-fixed": "#e4e2e4",
+                        "tertiary": "#c8c6c8",
+                        "surface-container-highest": "#353436",
+                        "on-error": "#690005",
+                        "on-secondary-fixed-variant": "#474648",
+                        "surface-container": "#201f20",
+                        "surface-container-lowest": "#0e0e0f",
+                        "surface-container-low": "#1c1b1c",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-tertiary-container": "#e3e0e2",
+                        "surface-dim": "#131314",
+                        "success-bg": "#1A3D24",
+                        "secondary": "#c8c6c8",
+                        "surface-variant": "#353436",
+                        "electric-violet": "#8a2be2",
+                        "surface-tint": "#dcb8ff",
+                        "on-primary": "#480081",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-tertiary": "#303032",
+                        "surface-bright": "#39393a",
+                        "outline": "#988ca0",
+                        "primary-fixed": "#efdbff",
+                        "primary": "#dcb8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "3xl": "64px",
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "xl": "32px",
+                        "xs": "4px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Geist", "sans-serif"],
+                        "display-lg": ["Geist", "sans-serif"],
+                        "caption": ["Geist", "sans-serif"],
+                        "body-md": ["Geist", "sans-serif"],
+                        "headline-lg": ["Geist", "sans-serif"],
+                        "h3": ["Geist", "sans-serif"],
+                        "h1": ["Geist", "sans-serif"],
+                        "mono-display": ["monospace"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "mono-display": ["18px", { "lineHeight": "24px", "letterSpacing": "0.05em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Chart specific subtle grids */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(76, 67, 84, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(76, 67, 84, 0.1) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen antialiased selection:bg-electric-violet/30 selection:text-white">
+<!-- Top Navigation (Mobile/Tablet) -->
+<header class="md:hidden bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 fixed top-0 right-0 left-0 z-50 flex items-center justify-between px-lg h-16">
+<div class="flex items-center gap-sm">
+<span class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-surface">Anything Clean</span>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary dark:text-primary cursor-pointer active:scale-95">notifications</span>
+<span class="material-symbols-outlined text-primary dark:text-primary cursor-pointer active:scale-95">account_circle</span>
+</div>
+</header>
+<!-- Side Navigation (Web) -->
+<nav class="hidden md:flex bg-surface-container dark:bg-surface-container fixed left-0 top-0 bottom-0 flex-col p-md gap-sm border-r border-outline-variant/20 w-64 z-50">
+<div class="px-md py-lg mb-4">
+<div class="font-headline-md text-headline-md font-black text-primary">Anything Clean</div>
+<div class="font-caption text-caption text-on-surface-variant mt-1">Management Portal</div>
+</div>
+<div class="flex-1 overflow-y-auto space-y-1">
+<a class="flex items-center gap-3 px-md py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-md py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-md py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-md text-label-md">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-md py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">cleaning_services</span>
+<span class="font-label-md text-label-md">Services</span>
+</a>
+<a class="flex items-center gap-3 px-md py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-label-md">Payments</span>
+</a>
+<a class="flex items-center gap-3 px-md py-3 bg-primary-container text-on-primary-container font-bold rounded-lg active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined icon-fill">analytics</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+</div>
+<div class="pt-4 border-t border-outline-variant/20 mt-auto">
+<a class="flex items-center gap-3 px-md py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 pt-16 md:pt-0 p-xl min-h-screen">
+<div class="max-w-[1200px] mx-auto space-y-xl">
+<!-- Header Section -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-md border-b border-outline-variant/30 pb-lg">
+<div>
+<h1 class="font-h1 text-h1 text-on-surface mb-2">Orders &amp; Revenue</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Deep analysis of volume and fulfillment across services.</p>
+</div>
+<!-- Time Period Selector -->
+<div class="flex items-center gap-sm bg-surface-container-low border border-outline-variant/50 rounded-lg p-1">
+<button class="px-md py-2 bg-surface-container-high rounded-md text-on-surface font-label-md text-label-md transition-colors shadow-sm">This Month</button>
+<button class="px-md py-2 text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors">Previous Month</button>
+</div>
+</div>
+<!-- Top KPIs Bento Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-md">
+<!-- Orders -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col justify-between hover:border-outline-variant/50 transition-colors group cursor-pointer">
+<div class="flex items-center justify-between mb-xl">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Total Orders</span>
+<div class="p-2 bg-primary-container/20 rounded-lg text-primary">
+<span class="material-symbols-outlined">shopping_cart</span>
+</div>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg text-on-surface mb-1">1,284</div>
+<div class="flex items-center gap-1 text-success-green font-caption text-caption">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+12.5%</span>
+<span class="text-on-surface-variant ml-1">vs last month</span>
+</div>
+</div>
+</div>
+<!-- Gross Value -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col justify-between hover:border-outline-variant/50 transition-colors group cursor-pointer">
+<div class="flex items-center justify-between mb-xl">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Gross Value</span>
+<div class="p-2 bg-primary-container/20 rounded-lg text-primary">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg text-on-surface mb-1">₹4,82,600</div>
+<div class="flex items-center gap-1 text-success-green font-caption text-caption">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+8.2%</span>
+<span class="text-on-surface-variant ml-1">vs last month</span>
+</div>
+</div>
+</div>
+<!-- Net Value -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col justify-between hover:border-outline-variant/50 transition-colors group cursor-pointer">
+<div class="flex items-center justify-between mb-xl">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Net Value</span>
+<div class="p-2 bg-surface-container-high rounded-lg text-on-surface-variant">
+<span class="material-symbols-outlined">payments</span>
+</div>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg text-on-surface mb-1">₹4,68,600</div>
+<div class="flex items-center gap-1 text-success-green font-caption text-caption">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+9.1%</span>
+</div>
+</div>
+</div>
+<!-- AOV -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col justify-between hover:border-outline-variant/50 transition-colors group cursor-pointer">
+<div class="flex items-center justify-between mb-xl">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Avg Order Value (AOV)</span>
+<div class="p-2 bg-surface-container-high rounded-lg text-on-surface-variant">
+<span class="material-symbols-outlined">receipt_long</span>
+</div>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg text-on-surface mb-1">₹376</div>
+<div class="flex items-center gap-1 text-error-red font-caption text-caption">
+<span class="material-symbols-outlined text-[16px]">trending_down</span>
+<span>-1.4%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary KPIs & Rates -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-md flex items-center justify-between">
+<div>
+<div class="font-caption text-caption text-on-surface-variant mb-1">Completion Rate</div>
+<div class="font-h3 text-h3 text-on-surface">92.1%</div>
+</div>
+<div class="w-12 h-12 rounded-full border-4 border-success-green/30 border-t-success-green flex items-center justify-center">
+<span class="material-symbols-outlined text-success-green text-[20px]">check</span>
+</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-md flex items-center justify-between">
+<div>
+<div class="font-caption text-caption text-on-surface-variant mb-1">Cancellation Rate</div>
+<div class="font-h3 text-h3 text-on-surface">3.2%</div>
+</div>
+<div class="w-12 h-12 rounded-full border-4 border-error-red/30 border-t-error-red flex items-center justify-center">
+<span class="material-symbols-outlined text-error-red text-[20px]">cancel</span>
+</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-md flex items-center justify-between">
+<div>
+<div class="font-caption text-caption text-on-surface-variant mb-1">Refund Rate</div>
+<div class="font-h3 text-h3 text-on-surface">2.9%</div>
+</div>
+<div class="w-12 h-12 rounded-full border-4 border-outline-variant/50 border-t-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">currency_exchange</span>
+</div>
+</div>
+</div>
+<!-- Charts Section -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-xl">
+<!-- Orders Over Time -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col h-96">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-h3 text-h3 text-on-surface">Orders Over Time</h3>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-on-surface transition-colors">more_vert</button>
+</div>
+<!-- Placeholder for Chart -->
+<div class="flex-1 bg-surface-container-low border border-outline-variant/30 rounded-lg relative overflow-hidden bg-grid-pattern">
+<!-- Simulated Chart Lines -->
+<div class="absolute inset-0 flex items-end justify-between px-md pb-md pt-lg gap-2">
+<div class="w-full flex items-end justify-between h-full border-b border-l border-outline-variant/50 pb-2 pl-2">
+<!-- Data points mocked with divs -->
+<div class="w-8 h-[40%] bg-primary/40 rounded-t-sm relative group"><div class="hidden group-hover:block absolute -top-8 left-1/2 -translate-x-1/2 bg-surface-highest text-caption px-2 py-1 rounded">W1</div></div>
+<div class="w-8 h-[65%] bg-primary/60 rounded-t-sm"></div>
+<div class="w-8 h-[50%] bg-primary/80 rounded-t-sm"></div>
+<div class="w-8 h-[90%] bg-electric-violet rounded-t-sm"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Revenue Over Time -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col h-96">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-h3 text-h3 text-on-surface">Revenue Trend</h3>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-on-surface transition-colors">more_vert</button>
+</div>
+<!-- Placeholder for Chart -->
+<div class="flex-1 bg-surface-container-low border border-outline-variant/30 rounded-lg relative overflow-hidden flex items-center justify-center bg-grid-pattern">
+<div class="w-full h-full p-4 flex flex-col justify-end relative">
+<!-- SVG mock line chart -->
+<svg class="w-full h-full preserve-3d" preserveaspectratio="none" viewbox="0 0 100 50">
+<path class="text-electric-violet" d="M0,45 L20,35 L40,40 L60,15 L80,25 L100,5" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+<path class="opacity-20" d="M0,45 L20,35 L40,40 L60,15 L80,25 L100,5 L100,50 L0,50 Z" fill="url(#gradient)"></path>
+<defs>
+<lineargradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#8a2be2" stop-opacity="1"></stop>
+<stop offset="100%" stop-color="#8a2be2" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<!-- Tables Section -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl overflow-hidden">
+<div class="p-lg border-b border-outline-variant/30 flex justify-between items-center bg-surface-container-low">
+<h3 class="font-h3 text-h3 text-on-surface">Service Revenue Breakdown</h3>
+<button class="text-primary font-label-md text-label-md hover:underline">View All Services</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-lowest border-b border-outline-variant/30">
+<th class="p-md font-label-md text-label-md text-on-surface-variant font-medium">Service Category</th>
+<th class="p-md font-label-md text-label-md text-on-surface-variant font-medium">Orders</th>
+<th class="p-md font-label-md text-label-md text-on-surface-variant font-medium">Gross Revenue</th>
+<th class="p-md font-label-md text-label-md text-on-surface-variant font-medium">Net Revenue</th>
+<th class="p-md font-label-md text-label-md text-on-surface-variant font-medium text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20">
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="p-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">cleaning_services</span>
+<span class="font-body-md text-on-surface">Deep Cleaning</span>
+</td>
+<td class="p-md font-body-md text-on-surface-variant">452</td>
+<td class="p-md font-body-md text-on-surface">₹2,10,000</td>
+<td class="p-md font-body-md text-success-green">₹2,05,500</td>
+<td class="p-md text-right">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-primary/10">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="p-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">dry_cleaning</span>
+<span class="font-body-md text-on-surface">Sofa Cleaning</span>
+</td>
+<td class="p-md font-body-md text-on-surface-variant">310</td>
+<td class="p-md font-body-md text-on-surface">₹1,25,400</td>
+<td class="p-md font-body-md text-success-green">₹1,20,100</td>
+<td class="p-md text-right">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-primary/10">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="p-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">pest_control</span>
+<span class="font-body-md text-on-surface">Pest Control</span>
+</td>
+<td class="p-md font-body-md text-on-surface-variant">285</td>
+<td class="p-md font-body-md text-on-surface">₹95,200</td>
+<td class="p-md font-body-md text-success-green">₹91,000</td>
+<td class="p-md text-right">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-primary/10">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</body></html>

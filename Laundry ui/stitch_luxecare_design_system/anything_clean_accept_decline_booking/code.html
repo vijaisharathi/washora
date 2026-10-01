@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Accept / Decline Booking</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-tint": "#dcb8ff",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "primary-fixed": "#efdbff",
+                      "on-primary-container": "#eed9ff",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "surface-dim": "#131314",
+                      "on-tertiary": "#303032",
+                      "on-background": "#e5e2e3",
+                      "error-container": "#93000a",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "on-secondary-container": "#b9b8ba",
+                      "success-bg": "#1A3D24",
+                      "surface-container-highest": "#353436",
+                      "secondary-container": "#49494b",
+                      "surface": "#131314",
+                      "on-secondary": "#303032",
+                      "on-primary-fixed": "#2c0051",
+                      "surface-container-lowest": "#0e0e0f",
+                      "inverse-surface": "#e5e2e3",
+                      "surface-container": "#201f20",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "error-red": "#ffb4ab",
+                      "secondary": "#c8c6c8",
+                      "surface-variant": "#353436",
+                      "success-green": "#81C784",
+                      "on-error-container": "#ffdad6",
+                      "on-secondary-fixed-variant": "#474648",
+                      "tertiary-fixed": "#e4e2e4",
+                      "on-tertiary-container": "#e3e0e2",
+                      "tertiary": "#c8c6c8",
+                      "inverse-primary": "#8422dc",
+                      "outline": "#988ca0",
+                      "on-error": "#690005",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "surface-container-high": "#2a2a2b",
+                      "primary": "#dcb8ff",
+                      "background": "#131314",
+                      "outline-variant": "#4c4354",
+                      "error": "#ffb4ab",
+                      "inverse-on-surface": "#313031",
+                      "on-surface-variant": "#cfc2d7",
+                      "on-primary": "#480081",
+                      "surface-container-low": "#1c1b1c",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "surface-bright": "#39393a",
+                      "tertiary-container": "#646365",
+                      "on-surface": "#e5e2e3",
+                      "secondary-fixed": "#e4e2e4",
+                      "electric-violet": "#8a2be2",
+                      "primary-container": "#8a2be2"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "32px",
+                      "3xl": "64px",
+                      "2xl": "48px",
+                      "lg": "24px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "md": "16px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "h3": [
+                              "Geist"
+                      ],
+                      "h1": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "mono-display": [
+                              "monospace"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-surface');
+            font-family: 'Geist', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(32, 31, 32, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid theme('colors.outline-variant' / 20%);
+        }
+        
+        /* Modal transitions */
+        .modal-enter {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        .modal-enter-active {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 300ms ease-out, transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .modal-exit {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .modal-exit-active {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 200ms ease-in, transform 200ms ease-in;
+        }
+        
+        .backdrop-enter {
+            opacity: 0;
+        }
+        .backdrop-enter-active {
+            opacity: 1;
+            transition: opacity 300ms ease-out;
+        }
+        .backdrop-exit {
+            opacity: 1;
+        }
+        .backdrop-exit-active {
+            opacity: 0;
+            transition: opacity 200ms ease-in;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col items-center justify-center p-md md:p-xl relative overflow-hidden">
+<!-- Ambient Background Effects -->
+<div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+<div class="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-primary-container/10 blur-[120px]"></div>
+<div class="absolute top-[60%] -right-[10%] w-[40%] h-[60%] rounded-full bg-primary-container/5 blur-[100px]"></div>
+</div>
+<!-- Main Content Container -->
+<main class="w-full max-w-2xl z-10 flex flex-col gap-lg">
+<!-- Header area (Transactional, so no global nav) -->
+<header class="flex items-center gap-md mb-sm">
+<button aria-label="Go back" class="p-sm rounded-full hover:bg-surface-variant transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div>
+<h1 class="font-h1 text-h1 text-on-surface">Review Booking</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs font-mono-display">QH-20260902-1041</p>
+</div>
+</header>
+<!-- Booking Summary Card -->
+<div class="glass-panel rounded-xl p-lg flex flex-col gap-md relative overflow-hidden">
+<!-- Subtle accent edge -->
+<div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+<div class="flex justify-between items-start">
+<div class="flex gap-md items-center">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary">cleaning_services</span>
+</div>
+<div>
+<h2 class="font-h3 text-h3 text-on-surface">Sneaker Deep Clean</h2>
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded-full bg-surface-container-high border border-outline-variant/50 mt-xs">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">schedule</span>
+<span class="font-caption text-caption text-on-surface-variant">Pickup: Today, 14:00 - 16:00</span>
+</span>
+</div>
+</div>
+<div class="text-right">
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-wider mb-xs">Estimated Value</p>
+<p class="font-h1 text-h1 text-primary">₹502</p>
+</div>
+</div>
+<div class="w-full h-px bg-outline-variant/30 my-sm"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div>
+<p class="font-caption text-caption text-on-surface-variant mb-xs">Customer</p>
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-surface-bright overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A highly detailed close-up portrait of a young professional wearing futuristic minimalist corporate attire against a dark gradient background, dramatic cinematic lighting, extremely high quality, hyperrealistic texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCejUhli6HMS8vNC12dn1fZ_7fJFbbotc2tp0axopk3tptBOVZBhNuV9-KiSV1OqFkf7eNWEuEaXiiz-JImEGK5ZW_SXv2sRvtmztcRbXHZ_Y477U2d97sCkrAyWB1cPNuBkIm9fPc_-mwAKwR-hnJoTNBHuRxh7t2iNzPh0U7BCCKYasWlD8DBYzY0BD1uoVUPgNWpXjsoKwhUCcoE7lOfK59mK8bFCEMreHQ0w5hzJ1WXzsJT3CqsvA"/>
+</div>
+<p class="font-label-md text-label-md text-on-surface">Arjun K.</p>
+</div>
+</div>
+<div>
+<p class="font-caption text-caption text-on-surface-variant mb-xs">Location</p>
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant mt-0.5">location_on</span>
+<p class="font-label-md text-label-md text-on-surface">Indiranagar, 100ft Road<br/><span class="text-on-surface-variant font-normal">2.4 km away</span></p>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row gap-md mt-md">
+<button class="flex-1 px-lg py-md rounded-lg border border-outline-variant text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors focus:ring-1 focus:ring-primary focus:outline-none" id="btn-decline">
+                Decline
+            </button>
+<button class="flex-1 px-lg py-md rounded-lg bg-electric-violet text-white font-label-md text-label-md shadow-lg shadow-electric-violet/20 hover:bg-electric-violet/90 hover:shadow-electric-violet/30 transition-all focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background focus:outline-none" id="btn-accept">
+                Accept Booking
+            </button>
+</div>
+</main>
+<!-- Modals (Hidden by default) -->
+<!-- Accept Modal Backdrop -->
+<div aria-hidden="true" class="fixed inset-0 bg-background/80 backdrop-blur-sm z-40 hidden" id="modal-accept-backdrop"></div>
+<!-- Accept Modal Content -->
+<div aria-labelledby="accept-modal-title" aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center p-md hidden" id="modal-accept" role="dialog">
+<div class="bg-surface-container rounded-xl border border-outline-variant/30 shadow-2xl p-lg w-full max-w-md transform scale-95 opacity-0 transition-all duration-300" id="modal-accept-panel">
+<div class="flex items-start gap-md mb-lg">
+<div class="w-10 h-10 rounded-full bg-success-bg/20 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-success-green">check_circle</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface mb-xs" id="accept-modal-title">Accept this booking?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">You will be responsible for completing the service within the confirmed schedule. Failing to meet the schedule may affect your rating.</p>
+</div>
+</div>
+<div class="flex justify-end gap-md">
+<button class="modal-close-btn px-md py-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:text-on-surface transition-colors focus:outline-none">
+                    Cancel
+                </button>
+<button class="px-md py-sm rounded-lg bg-electric-violet text-white font-label-md text-label-md shadow-lg shadow-electric-violet/20 hover:bg-electric-violet/90 transition-all focus:outline-none">
+                    Confirm Acceptance
+                </button>
+</div>
+</div>
+</div>
+<!-- Decline Modal Backdrop -->
+<div aria-hidden="true" class="fixed inset-0 bg-background/80 backdrop-blur-sm z-40 hidden" id="modal-decline-backdrop"></div>
+<!-- Decline Modal Content -->
+<div aria-labelledby="decline-modal-title" aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center p-md hidden" id="modal-decline" role="dialog">
+<div class="bg-surface-container rounded-xl border border-outline-variant/30 shadow-2xl p-lg w-full max-w-md transform scale-95 opacity-0 transition-all duration-300" id="modal-decline-panel">
+<h3 class="font-h3 text-h3 text-on-surface mb-xs" id="decline-modal-title">Decline Booking</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">Please select a reason for declining. This helps us optimize scheduling.</p>
+<div class="space-y-sm mb-lg">
+<label class="flex items-center gap-md p-sm rounded-lg hover:bg-surface-container-high transition-colors cursor-pointer group border border-transparent hover:border-outline-variant/30">
+<input class="w-4 h-4 text-electric-violet bg-surface-container-low border-outline-variant/50 focus:ring-primary focus:ring-offset-background" name="decline_reason" type="radio" value="fully_booked"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Fully booked</span>
+</label>
+<label class="flex items-center gap-md p-sm rounded-lg hover:bg-surface-container-high transition-colors cursor-pointer group border border-transparent hover:border-outline-variant/30">
+<input class="w-4 h-4 text-electric-violet bg-surface-container-low border-outline-variant/50 focus:ring-primary focus:ring-offset-background" name="decline_reason" type="radio" value="time_mismatch"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Unable to meet pickup time</span>
+</label>
+<label class="flex items-center gap-md p-sm rounded-lg hover:bg-surface-container-high transition-colors cursor-pointer group border border-transparent hover:border-outline-variant/30">
+<input class="w-4 h-4 text-electric-violet bg-surface-container-low border-outline-variant/50 focus:ring-primary focus:ring-offset-background" name="decline_reason" type="radio" value="location_far"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Location too far</span>
+</label>
+<label class="flex flex-col gap-sm p-sm rounded-lg cursor-pointer group">
+<div class="flex items-center gap-md">
+<input class="w-4 h-4 text-electric-violet bg-surface-container-low border-outline-variant/50 focus:ring-primary focus:ring-offset-background" id="radio-other" name="decline_reason" type="radio" value="other"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Other</span>
+</div>
+<textarea class="w-full mt-xs bg-surface-container-low border border-outline-variant/50 rounded-md font-body-md text-body-md text-on-surface p-sm focus:border-primary focus:ring-1 focus:ring-primary hidden placeholder:text-on-surface-variant/50" id="text-other" placeholder="Please specify..." rows="2"></textarea>
+</label>
+</div>
+<div class="flex justify-end gap-md">
+<button class="modal-close-btn px-md py-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:text-on-surface transition-colors focus:outline-none">
+                    Cancel
+                </button>
+<button class="px-md py-sm rounded-lg border border-error-red/50 text-error-red font-label-md text-label-md hover:bg-error-container/10 transition-colors focus:outline-none">
+                    Confirm Decline
+                </button>
+</div>
+</div>
+</div>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Modal Logic
+            const btnAccept = document.getElementById('btn-accept');
+            const btnDecline = document.getElementById('btn-decline');
+            const modalAccept = document.getElementById('modal-accept');
+            const modalAcceptBackdrop = document.getElementById('modal-accept-backdrop');
+            const modalAcceptPanel = document.getElementById('modal-accept-panel');
+            const modalDecline = document.getElementById('modal-decline');
+            const modalDeclineBackdrop = document.getElementById('modal-decline-backdrop');
+            const modalDeclinePanel = document.getElementById('modal-decline-panel');
+            const closeBtns = document.querySelectorAll('.modal-close-btn');
+            
+            // Radio 'Other' Logic
+            const radioOther = document.getElementById('radio-other');
+            const textOther = document.getElementById('text-other');
+            const allRadios = document.querySelectorAll('input[name="decline_reason"]');
+
+            function openModal(modal, backdrop, panel) {
+                modal.classList.remove('hidden');
+                backdrop.classList.remove('hidden');
+                
+                // Force reflow
+                void modal.offsetWidth;
+                
+                backdrop.classList.add('opacity-100');
+                panel.classList.remove('scale-95', 'opacity-0');
+                panel.classList.add('scale-100', 'opacity-100');
+            }
+
+            function closeModal(modal, backdrop, panel) {
+                backdrop.classList.remove('opacity-100');
+                panel.classList.remove('scale-100', 'opacity-100');
+                panel.classList.add('scale-95', 'opacity-0');
+                
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    backdrop.classList.add('hidden');
+                }, 300); // match transition duration
+            }
+
+            btnAccept.addEventListener('click', () => openModal(modalAccept, modalAcceptBackdrop, modalAcceptPanel));
+            btnDecline.addEventListener('click', () => openModal(modalDecline, modalDeclineBackdrop, modalDeclinePanel));
+
+            closeBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const isAcceptModal = e.target.closest('#modal-accept');
+                    if (isAcceptModal) {
+                        closeModal(modalAccept, modalAcceptBackdrop, modalAcceptPanel);
+                    } else {
+                        closeModal(modalDecline, modalDeclineBackdrop, modalDeclinePanel);
+                    }
+                });
+            });
+
+            // Handle clicking outside modal
+            [modalAcceptBackdrop, modalDeclineBackdrop].forEach(backdrop => {
+                backdrop.addEventListener('click', (e) => {
+                    if (e.target === modalAcceptBackdrop) {
+                        closeModal(modalAccept, modalAcceptBackdrop, modalAcceptPanel);
+                    }
+                    if (e.target === modalDeclineBackdrop) {
+                        closeModal(modalDecline, modalDeclineBackdrop, modalDeclinePanel);
+                    }
+                });
+            });
+
+            // Handle 'Other' text area visibility
+            allRadios.forEach(radio => {
+                radio.addEventListener('change', () => {
+                    if (radioOther.checked) {
+                        textOther.classList.remove('hidden');
+                        textOther.focus();
+                    } else {
+                        textOther.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body></html>

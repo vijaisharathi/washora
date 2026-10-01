@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pickup Failed - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#e5e2e3",
+                        "inverse-on-surface": "#313031",
+                        "secondary-fixed": "#e4e2e4",
+                        "on-background": "#e5e2e3",
+                        "surface-container-highest": "#353436",
+                        "surface-dim": "#131314",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "success-bg": "#1A3D24",
+                        "error-red": "#ffb4ab",
+                        "on-secondary-container": "#b9b8ba",
+                        "tertiary": "#c8c6c8",
+                        "electric-violet": "#8a2be2",
+                        "on-primary-container": "#eed9ff",
+                        "primary-fixed": "#efdbff",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-secondary": "#303032",
+                        "surface-bright": "#39393a",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-container": "#201f20",
+                        "error-container": "#93000a",
+                        "outline-variant": "#4c4354",
+                        "on-surface-variant": "#cfc2d7",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-secondary-fixed-variant": "#474648",
+                        "background": "#131314",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-primary-fixed": "#2c0051",
+                        "on-tertiary": "#303032",
+                        "outline": "#988ca0",
+                        "inverse-primary": "#8422dc",
+                        "surface-variant": "#353436",
+                        "surface-container-lowest": "#0e0e0f",
+                        "surface": "#131314",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "error": "#ffb4ab",
+                        "on-primary": "#480081",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "tertiary-container": "#646365",
+                        "success-green": "#81C784",
+                        "surface-container-high": "#2a2a2b",
+                        "on-surface": "#e5e2e3",
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#8a2be2",
+                        "surface-container-low": "#1c1b1c",
+                        "secondary": "#c8c6c8",
+                        "secondary-container": "#49494b",
+                        "primary": "#dcb8ff",
+                        "surface-tint": "#dcb8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "2xl": "48px",
+                        "3xl": "64px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "h3": ["Geist"],
+                        "h1": ["Geist"],
+                        "caption": ["Geist"],
+                        "label-md": ["Geist"],
+                        "body-md": ["Geist"],
+                        "display-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-sans">
+<!-- Task-Focused Navigation (Shell Suppressed) -->
+<header class="w-full bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 sticky top-0 z-50">
+<div class="max-w-4xl mx-auto px-md h-16 flex items-center gap-md">
+<button aria-label="Go back" class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-h3 font-h3 font-bold text-on-surface">Pickup Issue</h1>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-4xl mx-auto px-md py-xl flex flex-col gap-lg">
+<!-- Context Card -->
+<section class="bg-surface-container rounded-xl p-lg border border-outline-variant/20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-md relative overflow-hidden">
+<div class="absolute inset-0 bg-error-container/5 pointer-events-none"></div>
+<div class="flex flex-col gap-xs z-10">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">local_shipping</span>
+<span class="text-mono-display font-mono-display text-on-surface">QH-20260902-1041</span>
+</div>
+<div class="text-body-md font-body-md text-on-surface-variant flex items-center gap-sm">
+<span class="material-symbols-outlined text-[16px]">person</span>
+                    Customer: <span class="text-on-surface font-medium">Arun</span>
+</div>
+</div>
+<div class="z-10 bg-error-container/20 border border-error-container text-error px-md py-sm rounded-full flex items-center gap-sm">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">error</span>
+<span class="text-label-md font-label-md font-bold uppercase tracking-wider">Pickup Failed</span>
+</div>
+</section>
+<!-- Form Area -->
+<div class="flex flex-col lg:flex-row gap-lg">
+<!-- Left Column: Issue Details -->
+<div class="flex-1 flex flex-col gap-lg">
+<!-- Reason Selector -->
+<section class="bg-surface-container-low rounded-xl p-lg border border-outline-variant/30 flex flex-col gap-md">
+<h2 class="text-label-md font-label-md text-on-surface font-semibold uppercase tracking-widest">Select Reason</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-sm">
+<!-- Option 1 (Simulated Active) -->
+<label class="relative flex items-start p-md cursor-pointer rounded-lg border border-primary bg-primary/10 transition-colors">
+<div class="flex items-center h-5">
+<input checked="" class="h-4 w-4 text-electric-violet bg-transparent border-outline-variant focus:ring-primary focus:ring-offset-surface" id="reason-1" name="reason" type="radio"/>
+</div>
+<div class="ml-3 text-body-md font-body-md">
+<span class="text-primary font-medium block">Customer unavailable</span>
+</div>
+</label>
+<!-- Option 2 -->
+<label class="relative flex items-start p-md cursor-pointer rounded-lg border border-outline-variant/50 hover:bg-surface-container transition-colors">
+<div class="flex items-center h-5">
+<input class="h-4 w-4 text-electric-violet bg-transparent border-outline-variant focus:ring-primary focus:ring-offset-surface" id="reason-2" name="reason" type="radio"/>
+</div>
+<div class="ml-3 text-body-md font-body-md">
+<span class="text-on-surface block">Wrong address</span>
+</div>
+</label>
+<!-- Option 3 -->
+<label class="relative flex items-start p-md cursor-pointer rounded-lg border border-outline-variant/50 hover:bg-surface-container transition-colors">
+<div class="flex items-center h-5">
+<input class="h-4 w-4 text-electric-violet bg-transparent border-outline-variant focus:ring-primary focus:ring-offset-surface" id="reason-3" name="reason" type="radio"/>
+</div>
+<div class="ml-3 text-body-md font-body-md">
+<span class="text-on-surface block">Unable to access location</span>
+</div>
+</label>
+<!-- Option 4 -->
+<label class="relative flex items-start p-md cursor-pointer rounded-lg border border-outline-variant/50 hover:bg-surface-container transition-colors">
+<div class="flex items-center h-5">
+<input class="h-4 w-4 text-electric-violet bg-transparent border-outline-variant focus:ring-primary focus:ring-offset-surface" id="reason-4" name="reason" type="radio"/>
+</div>
+<div class="ml-3 text-body-md font-body-md">
+<span class="text-on-surface block">Pickup window missed</span>
+</div>
+</label>
+<!-- Option 5 -->
+<label class="relative flex items-start p-md cursor-pointer rounded-lg border border-outline-variant/50 hover:bg-surface-container transition-colors sm:col-span-2">
+<div class="flex items-center h-5">
+<input class="h-4 w-4 text-electric-violet bg-transparent border-outline-variant focus:ring-primary focus:ring-offset-surface" id="reason-5" name="reason" type="radio"/>
+</div>
+<div class="ml-3 text-body-md font-body-md">
+<span class="text-on-surface block">Other</span>
+</div>
+</label>
+</div>
+</section>
+<!-- Detailed Notes -->
+<section class="flex flex-col gap-sm">
+<label class="text-label-md font-label-md text-on-surface font-semibold uppercase tracking-widest pl-sm" for="issue-details">Add issue details</label>
+<textarea class="w-full bg-surface-container border border-outline-variant/50 rounded-lg p-md text-body-md font-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-shadow resize-y" id="issue-details" placeholder="Provide any additional context or instructions..." rows="4"></textarea>
+</section>
+</div>
+<!-- Right Column: Reschedule Module -->
+<div class="flex-1">
+<section class="bg-surface-container-low rounded-xl p-lg border border-outline-variant/30 flex flex-col gap-md h-full">
+<h2 class="text-label-md font-label-md text-on-surface font-semibold uppercase tracking-widest flex items-center gap-sm">
+<span class="material-symbols-outlined text-[18px]">calendar_clock</span>
+                        New Schedule
+                    </h2>
+<div class="flex flex-col gap-lg flex-1">
+<!-- Fake Date Picker -->
+<div class="flex flex-col gap-sm">
+<span class="text-caption font-caption text-on-surface-variant">Select Date</span>
+<div class="flex gap-sm overflow-x-auto pb-sm custom-scrollbar">
+<button class="flex flex-col items-center justify-center min-w-[72px] p-sm rounded-lg border border-primary bg-primary/10 text-primary">
+<span class="text-caption font-caption uppercase">Tomorrow</span>
+<span class="text-h3 font-h3 font-bold">12</span>
+</button>
+<button class="flex flex-col items-center justify-center min-w-[72px] p-sm rounded-lg border border-outline-variant/50 hover:bg-surface-container text-on-surface">
+<span class="text-caption font-caption uppercase">Thu</span>
+<span class="text-h3 font-h3 font-bold">13</span>
+</button>
+<button class="flex flex-col items-center justify-center min-w-[72px] p-sm rounded-lg border border-outline-variant/50 hover:bg-surface-container text-on-surface">
+<span class="text-caption font-caption uppercase">Fri</span>
+<span class="text-h3 font-h3 font-bold">14</span>
+</button>
+<button class="flex items-center justify-center min-w-[72px] p-sm rounded-lg border border-outline-variant/50 hover:bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined">calendar_month</span>
+</button>
+</div>
+</div>
+<!-- Fake Time Window Selector -->
+<div class="flex flex-col gap-sm">
+<span class="text-caption font-caption text-on-surface-variant">Select Time Window</span>
+<div class="grid grid-cols-2 gap-sm">
+<button class="py-sm px-md rounded-lg border border-outline-variant/50 bg-surface-container text-on-surface text-label-md font-label-md hover:border-primary transition-colors">08:00 - 10:00</button>
+<button class="py-sm px-md rounded-lg border border-primary bg-primary/10 text-primary text-label-md font-label-md transition-colors">10:00 - 12:00</button>
+<button class="py-sm px-md rounded-lg border border-outline-variant/50 bg-surface-container text-on-surface text-label-md font-label-md hover:border-primary transition-colors">13:00 - 15:00</button>
+<button class="py-sm px-md rounded-lg border border-outline-variant/50 bg-surface-container text-on-surface-variant text-label-md font-label-md opacity-50 cursor-not-allowed text-center flex flex-col items-center">
+                                    15:00 - 17:00 <span class="text-[10px] block text-error">Unavailable</span>
+</button>
+</div>
+</div>
+<div class="mt-auto pt-md border-t border-outline-variant/30 flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-[18px] mt-[2px]">notifications_active</span>
+<p class="text-caption font-caption text-on-surface-variant leading-relaxed">
+                                Customer will be notified about the updated pickup schedule via SMS and Email.
+                            </p>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Action Bar -->
+<footer class="mt-xl pt-lg border-t border-outline-variant/30 flex flex-col-reverse sm:flex-row items-center justify-between gap-md">
+<button class="text-label-md font-label-md text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-xs px-md py-sm">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+                Contact Support
+            </button>
+<div class="flex flex-col sm:flex-row w-full sm:w-auto gap-md">
+<button class="w-full sm:w-auto px-lg py-md rounded-lg border border-error/50 text-error bg-transparent hover:bg-error-container/20 text-label-md font-label-md transition-colors text-center">
+                    Cancel Booking
+                </button>
+<button class="w-full sm:w-auto px-lg py-md rounded-lg bg-electric-violet text-white text-label-md font-label-md font-bold shadow-lg shadow-electric-violet/20 hover:bg-primary-container hover:text-on-primary-container transition-all transform active:scale-95 text-center flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">sync</span>
+                    Reschedule Pickup
+                </button>
+</div>
+</footer>
+</main>
+</body></html>

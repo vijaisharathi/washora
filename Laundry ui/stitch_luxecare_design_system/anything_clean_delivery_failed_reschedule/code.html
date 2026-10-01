@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Delivery Issue - Reschedule</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-surface": "#e5e2e3",
+                        "inverse-on-surface": "#313031",
+                        "secondary-fixed": "#e4e2e4",
+                        "on-background": "#e5e2e3",
+                        "surface-container-highest": "#353436",
+                        "surface-dim": "#131314",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "success-bg": "#1A3D24",
+                        "error-red": "#ffb4ab",
+                        "on-secondary-container": "#b9b8ba",
+                        "tertiary": "#c8c6c8",
+                        "electric-violet": "#8a2be2",
+                        "on-primary-container": "#eed9ff",
+                        "primary-fixed": "#efdbff",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-secondary": "#303032",
+                        "surface-bright": "#39393a",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-container": "#201f20",
+                        "error-container": "#93000a",
+                        "outline-variant": "#4c4354",
+                        "on-surface-variant": "#cfc2d7",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-secondary-fixed-variant": "#474648",
+                        "background": "#131314",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-primary-fixed": "#2c0051",
+                        "on-tertiary": "#303032",
+                        "outline": "#988ca0",
+                        "inverse-primary": "#8422dc",
+                        "surface-variant": "#353436",
+                        "surface-container-lowest": "#0e0e0f",
+                        "surface": "#131314",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "error": "#ffb4ab",
+                        "on-primary": "#480081",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "tertiary-container": "#646365",
+                        "success-green": "#81C784",
+                        "surface-container-high": "#2a2a2b",
+                        "on-surface": "#e5e2e3",
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#8a2be2",
+                        "surface-container-low": "#1c1b1c",
+                        "secondary": "#c8c6c8",
+                        "secondary-container": "#49494b",
+                        "primary": "#dcb8ff",
+                        "surface-tint": "#dcb8ff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "2xl": "48px",
+                        "3xl": "64px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "md": "16px"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "h3": ["Geist"],
+                        "h1": ["Geist"],
+                        "caption": ["Geist"],
+                        "label-md": ["Geist"],
+                        "body-md": ["Geist"],
+                        "display-lg": ["Geist"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "mono-display": ["18px", { letterSpacing: "0.05em", fontWeight: "700" }],
+                        "h3": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+                        "h1": ["28px", { lineHeight: "36px", fontWeight: "700" }],
+                        "caption": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .icon-fill { font-variation-settings: 'FILL' 1; }
+        
+        /* Custom styled radio buttons for failure reasons */
+        .reason-card input[type="radio"]:checked + div {
+            border-color: theme('colors.electric-violet');
+            background-color: theme('colors.electric-violet / 10%');
+        }
+        .reason-card input[type="radio"]:checked + div .radio-indicator {
+            border-color: theme('colors.electric-violet');
+        }
+        .reason-card input[type="radio"]:checked + div .radio-indicator::after {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            background-color: theme('colors.electric-violet');
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col items-center py-xl px-md sm:px-xl antialiased">
+<!-- Main Focused Canvas (Navigation suppressed for transactional flow) -->
+<main class="w-full max-w-[800px] flex flex-col gap-lg">
+<!-- Header Section -->
+<header class="flex flex-col sm:flex-row sm:items-end justify-between gap-md border-b border-outline-variant/30 pb-lg">
+<div class="flex flex-col gap-sm">
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md w-fit mb-xs">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+                    Return to Dispatch
+                </button>
+<h1 class="text-headline-lg font-headline-lg text-on-surface">Delivery Issue</h1>
+</div>
+<div class="flex items-center gap-md bg-surface-container-high px-md py-sm rounded-lg border border-outline-variant/30">
+<div class="flex flex-col">
+<span class="text-caption font-caption text-on-surface-variant uppercase tracking-wider">Order Reference</span>
+<span class="text-mono-display font-mono-display text-primary">QH-20260902-1041</span>
+</div>
+<div class="w-px h-8 bg-outline-variant/30"></div>
+<div class="flex flex-col">
+<span class="text-caption font-caption text-on-surface-variant uppercase tracking-wider">Customer</span>
+<span class="text-label-md font-label-md text-on-surface">Arun</span>
+</div>
+</div>
+</header>
+<!-- Status Banner -->
+<div class="bg-error-container/10 border border-error-red/30 rounded-xl p-md flex items-start sm:items-center gap-md">
+<span class="material-symbols-outlined icon-fill text-error-red text-3xl">warning</span>
+<div class="flex flex-col">
+<h2 class="text-h3 font-h3 text-error-red mb-xs">Delivery Failed</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">The scheduled delivery could not be completed. Please record the reason and establish a new logistical plan.</p>
+</div>
+</div>
+<!-- Failure Reason Section (Bento style grid) -->
+<section class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-lg flex flex-col gap-md">
+<h3 class="text-h3 font-h3 text-on-surface">Failure Reason</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+<label class="reason-card cursor-pointer group">
+<input checked="" class="hidden" name="failure_reason" type="radio" value="customer_unavailable"/>
+<div class="border border-outline-variant/50 rounded-lg p-md flex items-center gap-md hover:bg-surface-container transition-colors h-full">
+<div class="radio-indicator w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center transition-colors"></div>
+<div class="flex flex-col">
+<span class="text-label-md font-label-md text-on-surface">Customer unavailable</span>
+<span class="text-caption font-caption text-on-surface-variant">No one present to receive</span>
+</div>
+</div>
+</label>
+<label class="reason-card cursor-pointer group">
+<input class="hidden" name="failure_reason" type="radio" value="incorrect_address"/>
+<div class="border border-outline-variant/50 rounded-lg p-md flex items-center gap-md hover:bg-surface-container transition-colors h-full">
+<div class="radio-indicator w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center transition-colors"></div>
+<div class="flex flex-col">
+<span class="text-label-md font-label-md text-on-surface">Incorrect address</span>
+<span class="text-caption font-caption text-on-surface-variant">Location not found or wrong</span>
+</div>
+</div>
+</label>
+<label class="reason-card cursor-pointer group">
+<input class="hidden" name="failure_reason" type="radio" value="unable_to_access"/>
+<div class="border border-outline-variant/50 rounded-lg p-md flex items-center gap-md hover:bg-surface-container transition-colors h-full">
+<div class="radio-indicator w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center transition-colors"></div>
+<div class="flex flex-col">
+<span class="text-label-md font-label-md text-on-surface">Unable to access location</span>
+<span class="text-caption font-caption text-on-surface-variant">Gate code failed, road blocked</span>
+</div>
+</div>
+</label>
+<label class="reason-card cursor-pointer group">
+<input class="hidden" name="failure_reason" type="radio" value="customer_reschedule"/>
+<div class="border border-outline-variant/50 rounded-lg p-md flex items-center gap-md hover:bg-surface-container transition-colors h-full">
+<div class="radio-indicator w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center transition-colors"></div>
+<div class="flex flex-col">
+<span class="text-label-md font-label-md text-on-surface">Customer requested reschedule</span>
+<span class="text-caption font-caption text-on-surface-variant">Contacted during route</span>
+</div>
+</div>
+</label>
+<label class="reason-card cursor-pointer group sm:col-span-2">
+<input class="hidden" name="failure_reason" type="radio" value="other"/>
+<div class="border border-outline-variant/50 rounded-lg p-md flex items-center gap-md hover:bg-surface-container transition-colors h-full">
+<div class="radio-indicator w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center transition-colors"></div>
+<span class="text-label-md font-label-md text-on-surface">Other Exception</span>
+</div>
+</label>
+</div>
+</section>
+<!-- Reschedule Module -->
+<section class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-lg flex flex-col gap-md">
+<h3 class="text-h3 font-h3 text-on-surface">Reschedule Delivery</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+<!-- Date Selector (Mockup of styled input) -->
+<div class="flex flex-col gap-xs group">
+<label class="text-caption font-caption text-on-surface-variant">New Delivery Date</label>
+<div class="flex items-center gap-sm bg-surface-container-highest border border-outline-variant/50 rounded-lg px-md py-sm focus-within:border-electric-violet focus-within:ring-1 focus-within:ring-electric-violet transition-all">
+<span class="material-symbols-outlined text-on-surface-variant">calendar_today</span>
+<input class="bg-transparent border-none text-body-md font-body-md text-on-surface w-full focus:ring-0 p-0" style="color-scheme: dark;" type="date" value="2026-09-03"/>
+</div>
+</div>
+<!-- Time Selector (Mockup of styled input) -->
+<div class="flex flex-col gap-xs group">
+<label class="text-caption font-caption text-on-surface-variant">Estimated Time Window</label>
+<div class="flex items-center gap-sm bg-surface-container-highest border border-outline-variant/50 rounded-lg px-md py-sm focus-within:border-electric-violet focus-within:ring-1 focus-within:ring-electric-violet transition-all">
+<span class="material-symbols-outlined text-on-surface-variant">schedule</span>
+<select class="bg-transparent border-none text-body-md font-body-md text-on-surface w-full focus:ring-0 p-0 cursor-pointer appearance-none">
+<option value="morning">Morning (08:00 - 12:00)</option>
+<option selected="" value="afternoon">Afternoon (12:00 - 17:00)</option>
+<option value="evening">Evening (17:00 - 20:00)</option>
+</select>
+<span class="material-symbols-outlined text-on-surface-variant pointer-events-none">arrow_drop_down</span>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-sm mt-xs bg-surface-container/50 p-sm rounded-lg border border-outline-variant/20">
+<span class="material-symbols-outlined text-electric-violet text-[18px] mt-xs">notifications_active</span>
+<p class="text-caption font-caption text-on-surface-variant leading-relaxed">
+                    Customer will be notified of the updated delivery schedule automatically via SMS and Email once confirmed.
+                </p>
+</div>
+</section>
+<!-- Action Footer -->
+<footer class="flex flex-col-reverse sm:flex-row justify-between items-center gap-md pt-lg border-t border-outline-variant/30 mt-md">
+<button class="w-full sm:w-auto px-lg py-md text-primary hover:bg-primary/10 rounded-lg text-label-md font-label-md transition-colors flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+                Contact Support
+            </button>
+<div class="flex flex-col sm:flex-row gap-md w-full sm:w-auto">
+<button class="w-full sm:w-auto px-lg py-md border border-outline-variant text-on-surface hover:bg-surface-container rounded-lg text-label-md font-label-md transition-colors">
+                    Return to Service Center
+                </button>
+<button class="w-full sm:w-auto px-lg py-md bg-electric-violet text-white hover:bg-electric-violet/90 rounded-lg text-label-md font-label-md transition-all shadow-lg shadow-electric-violet/20 flex items-center justify-center gap-sm">
+                    Reschedule Delivery
+                    <span class="material-symbols-outlined text-[18px]">check_circle</span>
+</button>
+</div>
+</footer>
+</main>
+</body></html>

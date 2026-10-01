@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Confirm Delivery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#474649",
+                        "primary-container": "#8a2be2",
+                        "inverse-on-surface": "#313031",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-primary-container": "#eed9ff",
+                        "background": "#131314",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "tertiary-container": "#646365",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-background": "#e5e2e3",
+                        "on-primary-fixed": "#2c0051",
+                        "surface-variant": "#353436",
+                        "on-surface": "#e5e2e3",
+                        "secondary-container": "#474649",
+                        "surface-dim": "#131314",
+                        "on-secondary-container": "#b7b4b7",
+                        "error-container": "#93000a",
+                        "secondary": "#c8c6c8",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-container-lowest": "#0e0e0f",
+                        "secondary-fixed": "#e5e1e4",
+                        "on-tertiary-container": "#e3e0e2",
+                        "surface-bright": "#3a393a",
+                        "tertiary": "#c8c6c8",
+                        "on-primary": "#480081",
+                        "on-tertiary": "#303032",
+                        "outline-variant": "#4c4354",
+                        "surface-container-highest": "#353436",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#efdbff",
+                        "on-secondary-fixed-variant": "#474649",
+                        "on-secondary": "#303032",
+                        "inverse-primary": "#8422dc",
+                        "surface-container-high": "#2a2a2b",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "outline": "#988ca0",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-tint": "#dcb8ff",
+                        "primary": "#dcb8ff",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-container": "#201f20",
+                        "surface": "#131314"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "xs": "4px",
+                        "3xl": "64px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "2xl": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "label-md": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "caption": ["Geist"],
+                        "display-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0B; /* Layer 0 */
+            color: #e5e2e3; /* on-background */
+        }
+        .glass-panel {
+            background-color: rgba(18, 18, 20, 0.7); /* Surface Layer 1 with opacity */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .otp-input {
+            width: 48px;
+            height: 64px;
+            text-align: center;
+            background-color: var(--color-surface-container-low);
+            border: 1px solid transparent;
+            border-radius: 8px;
+            color: var(--color-on-surface);
+            font-size: 24px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .otp-input:focus {
+            outline: none;
+            border-color: #dcb8ff; /* primary */
+            box-shadow: 0 0 0 2px rgba(220, 184, 255, 0.2);
+        }
+        .otp-input::-webkit-outer-spin-button,
+        .otp-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .success-overlay {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .success-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col font-body-md antialiased pb-20 md:pb-0">
+<!-- Top Navigation for Web (Hidden on Mobile) -->
+<header class="hidden md:flex fixed top-0 w-full z-50 border-b border-white/5 bg-surface/80 backdrop-blur-md shadow-sm items-center justify-between px-md h-16">
+<div class="flex items-center gap-md">
+<button class="text-primary hover:bg-surface-variant/50 p-2 rounded-full active:scale-95 transition-transform">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Delivery Pro</h1>
+</div>
+<div class="flex items-center gap-lg">
+<button class="text-primary hover:bg-surface-variant/50 p-2 rounded-full active:scale-95 transition-transform">
+<span class="material-symbols-outlined">offline_bolt</span>
+</button>
+</div>
+</header>
+<!-- Mobile Header (App-like specific to this screen) -->
+<div class="md:hidden glass-panel sticky top-0 z-40 px-lg py-md flex items-center justify-between">
+<button class="text-on-surface p-2 -ml-2 rounded-full hover:bg-surface-variant/50" onclick="history.back()">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<span class="font-headline-md text-headline-md-mobile">Confirm Delivery</span>
+<div class="w-10"></div> <!-- Spacer -->
+</div>
+<main class="flex-grow flex flex-col items-center justify-center p-lg md:pt-3xl max-w-[1280px] mx-auto w-full">
+<div class="w-full max-w-md">
+<!-- Context Header -->
+<div class="text-center mb-xl hidden md:block">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-sm">Confirm Delivery</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Ask the customer for the delivery verification code.</p>
+</div>
+<div class="text-center mb-xl md:hidden mt-lg">
+<p class="font-body-md text-body-md text-on-surface-variant">Ask the customer for the delivery verification code.</p>
+</div>
+<!-- Order Details Card -->
+<div class="glass-panel rounded-xl p-lg mb-xl flex items-center gap-md">
+<div class="w-16 h-16 rounded-lg overflow-hidden bg-surface-container-low shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Close up product photography of a pristine white sneaker, clean minimalist lighting, dark premium background with subtle purple accent rim lighting, high quality 8k resolution, professional studio shot." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0oj9EtX-4FJIMXRCpzq2gwfj0pzcMgoFh4bPD_5mFm5-qcDY1t6sVxjW7JnUSv8dFD2h722VVaeLR8qbevak1KltDVr-RNLFCdLtntJaPYA8zUfvzhcg9PEt_XTHAzBk2Bx-SBRmXFtU-ATdn5k0QwDzt95vle8HwtbD_nMKsBBbifYZiPypRb7TgJmdQzvSRj3rn_SAgKbZIWQywRASbbRPGQ_poVSeW43sELzVdvq-Y4YJSkGdEfw"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-xs">
+<span class="font-label-md text-label-md text-primary">Order #QH1024</span>
+</div>
+<h3 class="font-body-lg text-body-lg text-on-surface font-semibold">White Sneaker</h3>
+<div class="flex items-center gap-xs text-on-surface-variant font-caption text-caption mt-xs">
+<span class="material-symbols-outlined text-[16px]">person</span>
+<span>Customer: Arun</span>
+</div>
+</div>
+</div>
+<!-- OTP Input Section -->
+<div class="mb-xl">
+<div class="flex justify-between gap-sm mb-lg" id="otp-container">
+<input autofocus="" class="otp-input bg-surface-container-low focus:ring-primary focus:border-primary border-none rounded-lg text-center font-headline-md text-on-surface" maxlength="1" type="text"/>
+<input class="otp-input bg-surface-container-low focus:ring-primary focus:border-primary border-none rounded-lg text-center font-headline-md text-on-surface" maxlength="1" type="text"/>
+<input class="otp-input bg-surface-container-low focus:ring-primary focus:border-primary border-none rounded-lg text-center font-headline-md text-on-surface" maxlength="1" type="text"/>
+<input class="otp-input bg-surface-container-low focus:ring-primary focus:border-primary border-none rounded-lg text-center font-headline-md text-on-surface" maxlength="1" type="text"/>
+<input class="otp-input bg-surface-container-low focus:ring-primary focus:border-primary border-none rounded-lg text-center font-headline-md text-on-surface" maxlength="1" type="text"/>
+<input class="otp-input bg-surface-container-low focus:ring-primary focus:border-primary border-none rounded-lg text-center font-headline-md text-on-surface" maxlength="1" type="text"/>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-md">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-md rounded-lg flex items-center justify-center gap-sm transition-transform active:scale-95 shadow-[0_0_20px_rgba(220,184,255,0.15)] hover:bg-surface-tint" id="verify-btn">
+                    VERIFY DELIVERY
+                </button>
+<button class="w-full bg-transparent border border-outline-variant text-on-surface font-label-md text-label-md py-md rounded-lg flex items-center justify-center gap-sm transition-transform active:scale-95 hover:bg-surface-variant/30">
+<span class="material-symbols-outlined text-[18px]">help</span>
+                    Need Help?
+                </button>
+</div>
+</div>
+</main>
+<!-- Success Overlay -->
+<div class="success-overlay fixed inset-0 z-50 flex items-center justify-center bg-background/90 backdrop-blur-xl" id="success-overlay">
+<div class="text-center p-xl flex flex-col items-center">
+<div class="w-24 h-24 rounded-full bg-primary-container/20 flex items-center justify-center mb-lg shadow-[0_0_40px_rgba(138,43,226,0.3)]">
+<span class="material-symbols-outlined text-[48px] text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-sm">Delivery Verified</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Order #QH1024 has been successfully handed over.</p>
+</div>
+</div>
+<!-- This is a transactional flow (OTP entry), so nav shell is suppressed based on "Task-Focused" rule. -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputs = document.querySelectorAll('.otp-input');
+            const verifyBtn = document.getElementById('verify-btn');
+            const successOverlay = document.getElementById('success-overlay');
+
+            // OTP Input Logic
+            inputs.forEach((input, index) => {
+                input.addEventListener('input', (e) => {
+                    if (e.target.value.length > 0) {
+                        if (index < inputs.length - 1) {
+                            inputs[index + 1].focus();
+                        }
+                    }
+                    checkOTPComplete();
+                });
+
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Backspace' && e.target.value === '') {
+                        if (index > 0) {
+                            inputs[index - 1].focus();
+                        }
+                    }
+                });
+                
+                // Allow pasting 6 digits
+                input.addEventListener('paste', (e) => {
+                    e.preventDefault();
+                    const pastedData = e.clipboardData.getData('text').slice(0, 6);
+                    for (let i = 0; i < pastedData.length; i++) {
+                        if (i < inputs.length) {
+                            inputs[i].value = pastedData[i];
+                        }
+                    }
+                    if (pastedData.length > 0) {
+                        const nextFocus = Math.min(pastedData.length, inputs.length - 1);
+                        inputs[nextFocus].focus();
+                    }
+                    checkOTPComplete();
+                });
+            });
+
+            function checkOTPComplete() {
+                const isComplete = Array.from(inputs).every(input => input.value.length === 1);
+                // Optional: Enable/disable button visually based on completion
+            }
+
+            // Verify Button Logic
+            verifyBtn.addEventListener('click', () => {
+                const isComplete = Array.from(inputs).every(input => input.value.length === 1);
+                
+                // For demo purposes, we'll show success even if incomplete, but in a real app:
+                // if (!isComplete) return;
+
+                successOverlay.classList.add('active');
+                
+                // Auto hide after 3 seconds and navigate back or to next step
+                setTimeout(() => {
+                    successOverlay.classList.remove('active');
+                    // history.back();
+                }, 3000);
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Notifications & Communication Preferences - Lumina Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#1c1b1c",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed": "#efdbff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-bright": "#39393a",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-dim": "#131314",
+                        "tertiary": "#c8c6c8",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-error": "#690005",
+                        "on-secondary-container": "#b9b8ba",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "secondary-container": "#49494b",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "surface-container": "#201f20",
+                        "surface-variant": "#353436",
+                        "secondary": "#c8c6c8",
+                        "error-container": "#93000a",
+                        "success-green": "#81C784",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-primary-container": "#eed9ff",
+                        "primary-container": "#8a2be2",
+                        "success-bg": "#1A3D24",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "outline-variant": "#4c4354",
+                        "tertiary-fixed": "#e4e2e4",
+                        "inverse-primary": "#8422dc",
+                        "on-secondary-fixed-variant": "#474648",
+                        "on-primary-fixed": "#2c0051",
+                        "on-primary": "#480081",
+                        "on-tertiary": "#303032",
+                        "secondary-fixed": "#e4e2e4",
+                        "electric-violet": "#8a2be2",
+                        "surface-container-highest": "#353436",
+                        "background": "#131314",
+                        "on-surface": "#e5e2e3",
+                        "surface": "#131314",
+                        "error-red": "#ffb4ab",
+                        "primary": "#dcb8ff",
+                        "on-secondary": "#303032",
+                        "surface-container-high": "#2a2a2b",
+                        "outline": "#988ca0",
+                        "on-background": "#e5e2e3",
+                        "on-tertiary-container": "#e3e0e2",
+                        "inverse-on-surface": "#313031",
+                        "surface-tint": "#dcb8ff",
+                        "surface-container-lowest": "#0e0e0f",
+                        "tertiary-container": "#646365"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "2xl": "48px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "3xl": "64px",
+                        "md": "16px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "caption": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "h3": ["Geist"],
+                        "label-md": ["Geist"],
+                        "h1": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        /* Custom Toggle Switch Styles */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: theme('colors.electric-violet');
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: theme('colors.electric-violet');
+        }
+        .toggle-checkbox:disabled + .toggle-label {
+            background-color: theme('colors.surface-variant');
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+        
+    </style>
+</head>
+<body class="flex min-h-screen bg-background antialiased font-body-md text-body-md text-on-background">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-lg h-16 bg-surface-dim/80 backdrop-blur-md border-b border-outline-variant/30 hidden md:flex">
+<div class="flex items-center gap-md">
+<span class="font-headline-lg text-headline-lg font-bold text-electric-violet">Lumina Marketplace</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative flex items-center bg-surface-container-low border border-outline-variant/50 rounded-full px-sm py-xs focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] ml-xs mr-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-on-surface p-0 font-label-md text-label-md placeholder:text-on-surface-variant w-48" placeholder="Search..." type="text"/>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 transition-transform w-10 h-10 flex items-center justify-center rounded-full">
+<span class="material-symbols-outlined" data-weight="fill">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 transition-transform w-10 h-10 flex items-center justify-center rounded-full">
+<span class="material-symbols-outlined" data-weight="fill">help</span>
+</button>
+<img alt="Customer avatar" class="w-8 h-8 rounded-full border border-outline-variant/50 object-cover cursor-pointer active:scale-95 transition-transform" data-alt="A detailed headshot of a professional user, neutral background, corporate modern aesthetic, sharp focus, high contrast lighting, cool color temperature, 8k resolution, photorealistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0P2gcNfJOuMKJxZ5p2qDIcR9TeoFpyXMNt29apU1kwr9OXd3RuoQxlwOogRscxoEZvLz2zGkk4uyL5LZEdbcvtlF4PucTqYyBDHnc5wp7If3wVKw7WOW11LKZdu6zv_nL75WKFcEr1s5AqceHTDCFMquZJPZDo7vZfjRzQZ_RZE9jsrAv6ZKiuhrdKvcChJI_nK-TmbqEHn1KnmIcsMRPyVOs8D10Zwhe8So82rpPDktU1uI06iaAMQ"/>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col p-md gap-sm bg-surface-container-low border-r border-outline-variant/30 fixed left-0 top-0 h-screen w-64 pt-24 z-40">
+<div class="flex items-center gap-sm mb-lg px-sm">
+<img alt="User profile picture" class="w-12 h-12 rounded-full border border-outline-variant/50 object-cover" data-alt="A detailed profile picture of a young male professional, dark hair, wearing a sleek modern jacket, studio lighting, dark background matching a corporate dark mode theme, high resolution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzkwGPuN4i-4FSCD2H1wbNWQrwYpcVp4X6zARigWKtAgUZ2lmvYgcE-IY9urAfL7iDS08IU69ivEzNpUgdrWFQN593Ha3SWEKpqD-RgD5k1iUj9vdf5RMJ9Bhx4b9VDnDtzFwEXArTuLPjgylW2K85ujTVq34r9KuCHH70oWKxJpVBhEmWmY2CwMw0pPnaPHIDpUPL2rJWR7KVkGECP5hY2CK_WRd7VMlsBtXBHuOywVTFiCr1D5czlg"/>
+<div>
+<h3 class="font-label-md text-label-md font-bold text-on-surface">Alex Rivers</h3>
+<span class="font-caption text-caption text-on-surface-variant">Premium Member</span>
+</div>
+</div>
+<div class="flex flex-col gap-xs flex-1">
+<a class="flex items-center gap-md px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container transition-all active:scale-[0.98] transition-transform group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">dashboard</span>
+<span class="font-label-md text-label-md group-hover:text-primary transition-colors">Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container transition-all active:scale-[0.98] transition-transform group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">calendar_month</span>
+<span class="font-label-md text-label-md group-hover:text-primary transition-colors">Bookings</span>
+</a>
+<a class="flex items-center gap-md px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container transition-all active:scale-[0.98] transition-transform group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">payments</span>
+<span class="font-label-md text-label-md group-hover:text-primary transition-colors">Payments</span>
+</a>
+<a class="flex items-center gap-md px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container transition-all active:scale-[0.98] transition-transform group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">location_on</span>
+<span class="font-label-md text-label-md group-hover:text-primary transition-colors">Addresses</span>
+</a>
+<a class="flex items-center gap-md px-sm py-xs rounded-lg bg-primary/10 text-primary font-bold active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-primary">settings</span>
+<span class="font-label-md text-label-md">Preferences</span>
+</a>
+</div>
+<div class="mt-auto flex flex-col gap-xs pt-md border-t border-outline-variant/30">
+<button class="w-full bg-electric-violet hover:bg-electric-violet/90 text-white font-label-md text-label-md font-bold py-sm rounded-lg shadow-lg shadow-primary/20 transition-all active:scale-95 mb-sm flex justify-center items-center">
+                Book a Cleaner
+            </button>
+<a class="flex items-center gap-md px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container transition-all active:scale-[0.98] transition-transform group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">contact_support</span>
+<span class="font-label-md text-label-md group-hover:text-primary transition-colors">Support</span>
+</a>
+<a class="flex items-center gap-md px-sm py-xs rounded-lg text-error-red hover:bg-error-container/10 transition-all active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 pt-16 md:pt-24 pb-24 md:pb-xl px-4 md:px-xl max-w-[1200px] w-full">
+<div class="mb-lg">
+<div class="flex items-center gap-xs text-on-surface-variant font-label-md text-label-md mb-sm">
+<a class="hover:text-primary transition-colors" href="#">Account</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface">Preferences</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Notifications</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage how you receive updates and communications from Lumina Marketplace.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<!-- Left Column: Settings Groups -->
+<div class="lg:col-span-2 flex flex-col gap-lg">
+<!-- Order Updates Group -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md lg:p-lg flex flex-col gap-md">
+<div class="flex items-center gap-sm border-b border-outline-variant/30 pb-sm mb-sm">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+<h2 class="font-h3 text-h3 text-on-surface">Order Updates</h2>
+</div>
+<div class="flex justify-between items-center py-xs">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Order Confirmed</span>
+<span class="font-caption text-caption text-on-surface-variant mt-1">Get notified when a cleaner accepts your booking.</span>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-surface-variant appearance-none cursor-pointer z-10 transition-transform duration-200 ease-in-out transform translate-x-6 focus:ring-0 focus:outline-none" id="toggle_confirmed" name="toggle_confirmed" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-electric-violet cursor-pointer shadow-inner transition-colors duration-200 ease-in" for="toggle_confirmed"></label>
+</div>
+</div>
+<div class="flex justify-between items-center py-xs">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Cleaner En Route</span>
+<span class="font-caption text-caption text-on-surface-variant mt-1">Updates on cleaner arrival time.</span>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-surface-variant appearance-none cursor-pointer z-10 transition-transform duration-200 ease-in-out transform translate-x-6 focus:ring-0 focus:outline-none" id="toggle_pickup" name="toggle_pickup" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-electric-violet cursor-pointer shadow-inner transition-colors duration-200 ease-in" for="toggle_pickup"></label>
+</div>
+</div>
+<div class="flex justify-between items-center py-xs">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Service Started/Completed</span>
+<span class="font-caption text-caption text-on-surface-variant mt-1">Real-time status of your cleaning service.</span>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-surface-variant appearance-none cursor-pointer z-10 transition-transform duration-200 ease-in-out transform translate-x-6 focus:ring-0 focus:outline-none" id="toggle_service" name="toggle_service" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-electric-violet cursor-pointer shadow-inner transition-colors duration-200 ease-in" for="toggle_service"></label>
+</div>
+</div>
+</div>
+<!-- Promotional Group -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md lg:p-lg flex flex-col gap-md">
+<div class="flex items-center gap-sm border-b border-outline-variant/30 pb-sm mb-sm">
+<span class="material-symbols-outlined text-primary">campaign</span>
+<h2 class="font-h3 text-h3 text-on-surface">Promotional</h2>
+</div>
+<div class="flex justify-between items-center py-xs">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Special Offers</span>
+<span class="font-caption text-caption text-on-surface-variant mt-1">Discounts and seasonal promotions.</span>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-inverse-surface border-4 border-surface-variant appearance-none cursor-pointer z-10 transition-transform duration-200 ease-in-out transform translate-x-0 focus:ring-0 focus:outline-none" id="toggle_offers" name="toggle_offers" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-variant cursor-pointer shadow-inner transition-colors duration-200 ease-in" for="toggle_offers"></label>
+</div>
+</div>
+<div class="flex justify-between items-center py-xs">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">New Services</span>
+<span class="font-caption text-caption text-on-surface-variant mt-1">Updates on new features or service areas.</span>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-inverse-surface border-4 border-surface-variant appearance-none cursor-pointer z-10 transition-transform duration-200 ease-in-out transform translate-x-0 focus:ring-0 focus:outline-none" id="toggle_new_services" name="toggle_new_services" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-variant cursor-pointer shadow-inner transition-colors duration-200 ease-in" for="toggle_new_services"></label>
+</div>
+</div>
+</div>
+<!-- Support & Payment Group -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md lg:p-lg flex flex-col gap-md">
+<div class="flex items-center gap-sm border-b border-outline-variant/30 pb-sm mb-sm">
+<span class="material-symbols-outlined text-primary">security</span>
+<h2 class="font-h3 text-h3 text-on-surface">Support & Payment</h2>
+</div>
+<div class="flex justify-between items-center py-xs opacity-75">
+<div class="flex flex-col">
+<div class="flex items-center gap-sm">
+<span class="font-label-md text-label-md font-bold text-on-surface">Payment Receipts</span>
+<span class="bg-surface-variant text-on-surface-variant px-2 py-[2px] rounded-sm font-caption text-caption text-[10px] uppercase tracking-wider">Required</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant mt-1">Invoices and payment confirmations.</span>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-surface-variant appearance-none cursor-not-allowed z-10 transform translate-x-6 focus:ring-0 focus:outline-none" disabled="" id="toggle_payment" name="toggle_payment" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-variant cursor-not-allowed shadow-inner opacity-50" for="toggle_payment"></label>
+</div>
+</div>
+<div class="flex justify-between items-center py-xs opacity-75">
+<div class="flex flex-col">
+<div class="flex items-center gap-sm">
+<span class="font-label-md text-label-md font-bold text-on-surface">Security Alerts</span>
+<span class="bg-surface-variant text-on-surface-variant px-2 py-[2px] rounded-sm font-caption text-caption text-[10px] uppercase tracking-wider">Required</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant mt-1">Important updates regarding your account security.</span>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-surface-variant appearance-none cursor-not-allowed z-10 transform translate-x-6 focus:ring-0 focus:outline-none" disabled="" id="toggle_security" name="toggle_security" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-variant cursor-not-allowed shadow-inner opacity-50" for="toggle_security"></label>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Sticky Action / Summary -->
+<div class="lg:col-span-1">
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md lg:p-lg sticky top-24 flex flex-col gap-md">
+<h3 class="font-h3 text-h3 text-on-surface border-b border-outline-variant/30 pb-sm mb-xs">Save Changes</h3>
+<p class="font-caption text-caption text-on-surface-variant mb-md">Changes to your notification preferences will be applied immediately to all future communications.</p>
+<button class="w-full bg-electric-violet hover:bg-electric-violet/90 text-white font-label-md text-label-md font-bold py-sm rounded-lg shadow-lg shadow-primary/20 transition-all active:scale-95 flex justify-center items-center gap-sm">
+<span class="material-symbols-outlined">save</span>
+                        Save Preferences
+                    </button>
+<button class="w-full bg-transparent border border-outline-variant hover:bg-surface-container-high text-on-surface font-label-md text-label-md py-sm rounded-lg transition-all active:scale-95 flex justify-center items-center mt-xs">
+                        Discard Changes
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe bg-surface-container-low/90 backdrop-blur-lg border-t border-outline-variant/20 shadow-lg shadow-primary/5 rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 tap-highlight-transparent active:scale-90 transition-transform active:bg-surface-container-high rounded-xl" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-caption text-[10px] mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 tap-highlight-transparent active:scale-90 transition-transform active:bg-surface-container-high rounded-xl" href="#">
+<span class="material-symbols-outlined">cleaning_services</span>
+<span class="font-caption text-[10px] mt-1">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container/20 text-primary rounded-xl p-2 tap-highlight-transparent active:scale-90 transition-transform active:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined" data-weight="fill">person</span>
+<span class="font-caption text-[10px] mt-1 font-bold">Account</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 tap-highlight-transparent active:scale-90 transition-transform active:bg-surface-container-high rounded-xl" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-caption text-[10px] mt-1">Support</span>
+</a>
+</nav>
+<script>
+        // Simple script to handle custom toggle visual updates (though CSS mostly handles it, this ensures state parity if clicked)
+        document.querySelectorAll('input[type="checkbox"]:not(:disabled)').forEach(checkbox => {
+            checkbox.addEventListener('change', (e) => {
+                const label = e.target.nextElementSibling;
+                if(e.target.checked) {
+                    e.target.classList.replace('translate-x-0', 'translate-x-6');
+                    e.target.classList.add('border-electric-violet');
+                    label.classList.replace('bg-surface-variant', 'bg-electric-violet');
+                } else {
+                    e.target.classList.replace('translate-x-6', 'translate-x-0');
+                    e.target.classList.remove('border-electric-violet');
+                    label.classList.replace('bg-electric-violet', 'bg-surface-variant');
+                }
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Delivered - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#e4e2e4",
+                        "error": "#ffb4ab",
+                        "surface-container": "#201f20",
+                        "on-secondary": "#303032",
+                        "on-surface": "#e5e2e3",
+                        "on-tertiary-container": "#e3e0e2",
+                        "success-bg": "#1A3D24",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface-tint": "#dcb8ff",
+                        "surface-variant": "#353436",
+                        "on-primary": "#480081",
+                        "tertiary": "#c8c6c8",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-tertiary": "#303032",
+                        "secondary-container": "#49494b",
+                        "primary": "#dcb8ff",
+                        "inverse-primary": "#8422dc",
+                        "primary-container": "#8a2be2",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-surface-variant": "#cfc2d7",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "outline-variant": "#4c4354",
+                        "surface-container-high": "#2a2a2b",
+                        "inverse-on-surface": "#313031",
+                        "tertiary-container": "#646365",
+                        "on-primary-container": "#eed9ff",
+                        "error-red": "#ffb4ab",
+                        "on-background": "#e5e2e3",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-container-low": "#1c1b1c",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#131314",
+                        "on-secondary-fixed-variant": "#474648",
+                        "primary-fixed": "#efdbff",
+                        "surface-bright": "#39393a",
+                        "on-primary-fixed": "#2c0051",
+                        "secondary": "#c8c6c8",
+                        "surface-dim": "#131314",
+                        "on-secondary-container": "#b9b8ba",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "electric-violet": "#8a2be2",
+                        "surface-container-lowest": "#0e0e0f",
+                        "outline": "#988ca0",
+                        "success-green": "#81C784",
+                        "inverse-surface": "#e5e2e3",
+                        "secondary-fixed": "#e4e2e4",
+                        "background": "#131314",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-container-highest": "#353436"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "3xl": "64px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "2xl": "48px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "h1": ["Geist"],
+                        "h3": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "caption": ["Geist"],
+                        "label-md": ["Geist"],
+                        "display-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md h-screen w-screen overflow-hidden flex">
+<!-- Intent is transactional/success, suppressing TopAppBar and SideNavBar. -->
+<main class="flex-1 w-full h-full overflow-y-auto overflow-x-hidden flex flex-col justify-center items-center p-xl relative">
+<!-- Background subtle glow -->
+<div class="absolute inset-0 z-0 pointer-events-none flex justify-center items-center opacity-30">
+<div class="w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px]"></div>
+</div>
+<div class="w-full max-w-[800px] z-10 flex flex-col gap-xl">
+<!-- Success Header -->
+<div class="flex flex-col items-center text-center space-y-md mb-lg">
+<div class="w-24 h-24 rounded-full bg-success-bg/20 flex items-center justify-center border border-success-green/30 shadow-lg shadow-success-green/10 mb-sm">
+<span class="material-symbols-outlined text-display-lg text-success-green" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface">Order Delivered</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Your order was successfully delivered on Sep 2, 2026.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Order Summary Card -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/30 p-lg flex flex-col gap-md">
+<div class="flex justify-between items-center border-b border-outline-variant/30 pb-sm">
+<h3 class="font-h3 text-h3 text-on-surface">Order Summary</h3>
+<span class="font-mono-display text-mono-display text-primary">#AC-9824X</span>
+</div>
+<div class="flex gap-md items-start mt-sm">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0 border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="A pair of highly detailed, freshly cleaned premium sneakers, bright and gleaming, set against a dark, technical background with subtle electric violet lighting accents, modern corporate tech aesthetic, high contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzaII7utHX6u4kK7TeXE0qqLH8yKLW8277ynV71dT8jeMHkPijqi1cYuRsPKBMtvV5r7yVowrMoOExhFa_Kk2e6hHLqNk2DUWBB8R5tQIHnW0Zi89dtTsQN-V2ri6mj5qS1XotRnplb3lDmsrKshuMdBTCWVGOWS2kBsr0SSy_4_t4azCY2TtRi5QtJjwS3QsLJfLpyhZiSuhmp0OqkOR59VUU1FiAjoYJescXThLQZLi8-DmrqeNauw"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary">CleanX Service Center</span>
+<span class="font-h3 text-h3 text-on-surface">Sneaker Deep Clean</span>
+<span class="font-caption text-caption text-on-surface-variant mt-sm">Includes stain removal, odor treatment, and premium detailing.</span>
+</div>
+</div>
+<div class="mt-auto pt-md border-t border-outline-variant/30 flex justify-between items-end">
+<span class="font-body-md text-body-md text-on-surface-variant">Total Paid</span>
+<span class="font-headline-lg text-headline-lg text-on-surface">₹502</span>
+</div>
+</div>
+<!-- Timeline Card -->
+<div class="bg-surface-container-low rounded-xl border border-outline-variant/20 p-lg flex flex-col gap-md">
+<h3 class="font-h3 text-h3 text-on-surface border-b border-outline-variant/20 pb-sm mb-sm">Tracking History</h3>
+<div class="flex flex-col gap-md relative">
+<!-- Vertical Line -->
+<div class="absolute left-[11px] top-[14px] bottom-[14px] w-[2px] bg-outline-variant/30 z-0"></div>
+<!-- Step 1 -->
+<div class="flex gap-md items-start relative z-10">
+<div class="w-6 h-6 rounded-full bg-success-bg border border-success-green flex items-center justify-center shrink-0 mt-xs">
+<span class="material-symbols-outlined text-[14px] text-success-green" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Order Placed</span>
+<span class="font-caption text-caption text-on-surface-variant">Aug 28, 2026, 10:24 AM</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex gap-md items-start relative z-10">
+<div class="w-6 h-6 rounded-full bg-success-bg border border-success-green flex items-center justify-center shrink-0 mt-xs">
+<span class="material-symbols-outlined text-[14px] text-success-green" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Picked Up</span>
+<span class="font-caption text-caption text-on-surface-variant">Aug 29, 2026, 09:15 AM</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex gap-md items-start relative z-10">
+<div class="w-6 h-6 rounded-full bg-success-bg border border-success-green flex items-center justify-center shrink-0 mt-xs">
+<span class="material-symbols-outlined text-[14px] text-success-green" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">In Service</span>
+<span class="font-caption text-caption text-on-surface-variant">Aug 30, 2026, 02:45 PM</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex gap-md items-start relative z-10">
+<div class="w-6 h-6 rounded-full bg-success-bg border border-success-green flex items-center justify-center shrink-0 mt-xs shadow-[0_0_10px_rgba(129,199,132,0.5)]">
+<span class="material-symbols-outlined text-[14px] text-success-green" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Delivered</span>
+<span class="font-caption text-caption text-on-surface-variant">Sep 2, 2026, 11:30 AM</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row gap-md mt-lg w-full justify-center">
+<button class="bg-electric-violet hover:bg-primary-container text-white font-label-md text-label-md py-md px-xl rounded-lg shadow-lg shadow-primary/20 transition-all active:scale-95 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    Rate Your Experience
+                </button>
+<button class="bg-transparent border border-outline-variant hover:bg-surface-container text-on-surface font-label-md text-label-md py-md px-xl rounded-lg transition-all active:scale-95 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined">receipt_long</span>
+                    View Order Details
+                </button>
+<button class="bg-transparent border border-outline-variant hover:bg-surface-container text-on-surface font-label-md text-label-md py-md px-xl rounded-lg transition-all active:scale-95 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined">restart_alt</span>
+                    Book Again
+                </button>
+</div>
+</div>
+</main>
+</body></html>

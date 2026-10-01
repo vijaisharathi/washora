@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>In Transit - Delivery Pro</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config injected from Style Guidance -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed-variant": "#474649",
+                      "primary-container": "#8a2be2",
+                      "inverse-on-surface": "#313031",
+                      "tertiary-fixed": "#e4e2e4",
+                      "on-primary-container": "#eed9ff",
+                      "background": "#131314",
+                      "on-error": "#690005",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "tertiary-container": "#646365",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "on-background": "#e5e2e3",
+                      "on-primary-fixed": "#2c0051",
+                      "surface-variant": "#353436",
+                      "on-surface": "#e5e2e3",
+                      "secondary-container": "#474649",
+                      "surface-dim": "#131314",
+                      "on-secondary-container": "#b7b4b7",
+                      "error-container": "#93000a",
+                      "secondary": "#c8c6c8",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "surface-container-low": "#1c1b1c",
+                      "surface-container-lowest": "#0e0e0f",
+                      "secondary-fixed": "#e5e1e4",
+                      "on-tertiary-container": "#e3e0e2",
+                      "surface-bright": "#3a393a",
+                      "tertiary": "#c8c6c8",
+                      "on-primary": "#480081",
+                      "on-tertiary": "#303032",
+                      "outline-variant": "#4c4354",
+                      "surface-container-highest": "#353436",
+                      "error": "#ffb4ab",
+                      "primary-fixed": "#efdbff",
+                      "on-secondary-fixed-variant": "#474649",
+                      "on-secondary": "#303032",
+                      "inverse-primary": "#8422dc",
+                      "surface-container-high": "#2a2a2b",
+                      "on-error-container": "#ffdad6",
+                      "on-surface-variant": "#cfc2d7",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "outline": "#988ca0",
+                      "inverse-surface": "#e5e2e3",
+                      "surface-tint": "#dcb8ff",
+                      "primary": "#dcb8ff",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "surface-container": "#201f20",
+                      "surface": "#131314"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "32px",
+                      "xs": "4px",
+                      "3xl": "64px",
+                      "lg": "24px",
+                      "md": "16px",
+                      "sm": "8px",
+                      "2xl": "48px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Geist"
+                      ],
+                      "display-lg-mobile": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "44px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+          /* Map overlay gradient to blend map into content area seamlessly */
+          .map-gradient {
+              background: linear-gradient(to bottom, rgba(10, 10, 11, 0) 0%, rgba(10, 10, 11, 0.5) 70%, rgba(10, 10, 11, 1) 100%);
+          }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-sans h-screen w-full overflow-hidden flex flex-col relative">
+<!-- TopAppBar Component (from JSON) -->
+<!-- Note: Hidden on Mobile according to Responsive Pivot, but the instruction asks to use TopAppBar for desktop nav cluster. Since this is an operational screen in transit, standard nav is often suppressed or modified. Following standard execution. -->
+<header class="fixed top-0 w-full z-50 shadow-sm border-b border-white/5 bg-surface/80 backdrop-blur-md dark:bg-surface/80 hidden md:flex items-center justify-between px-md h-16 w-full">
+<!-- Leading Icon -->
+<button class="text-on-surface-variant hover:bg-surface-variant/50 p-2 rounded-full active:scale-95 transition-transform flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<!-- Headline -->
+<div class="flex-1 flex justify-center">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary">Delivery Pro</span>
+</div>
+<!-- Trailing Icon -->
+<button class="text-on-surface-variant hover:bg-surface-variant/50 p-2 rounded-full active:scale-95 transition-transform flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="offline_bolt">offline_bolt</span>
+</button>
+</header>
+<!-- Map Area (70% of screen) -->
+<div class="relative h-[618px] w-full" data-alt="A detailed overhead digital map view of a modern city at night. The map features high-contrast dark mode colors, with deep black backgrounds and subtle slate-grey roads. A glowing neon-violet route line clearly traces a path through the city streets. Small, crisp white geometric icons indicate the start and end points of the journey. The lighting is cinematic and moody, suggesting a premium, high-tech logistics interface." data-location="New York" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCXwA8apPDdXIITDPkmCrqBRG42HySq82xwR2FNwWu35V8DKi1pptT-gHsAiHacHCLeuxc_uTaXYIHsfiE46jNUkexl58VolL5QAyLMPuEs11mIrOAvpSmqCyhZ8e5-MJmhNyRz3XoWEju5OOWkixkSgwWBHwbmC9N8HL0x_bOFionbbKPuRTBTZxLMJHLVyKR1f-itkDMXOfK5OS4vCJzp8CggrB-ZofdKqSbdHhPgms_VFW3CSwh-NQ')">
+<!-- Mobile Operational Header Overlay (Since standard nav is hidden on mobile, we need an operational header) -->
+<div class="absolute top-0 left-0 w-full pt-12 pb-4 px-md md:hidden z-40 bg-gradient-to-b from-background/90 to-transparent flex justify-between items-start">
+<div class="flex flex-col gap-xs">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Order #QH1024</span>
+<div class="flex items-center gap-xs bg-surface-container-high rounded-full px-3 py-1 w-fit border border-outline-variant/30">
+<span class="block w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-md text-label-md text-primary">IN TRANSIT</span>
+</div>
+</div>
+<div class="flex items-center gap-sm bg-surface-container/80 backdrop-blur-md rounded-full pl-2 pr-3 py-1 border border-outline-variant/20">
+<div class="w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-on-secondary-container" data-icon="bolt">bolt</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Online</span>
+</div>
+</div>
+<!-- Desktop Operational Details Overlay (Floating Card) -->
+<div class="absolute top-24 left-md hidden md:flex flex-col gap-sm p-4 bg-surface-container/90 backdrop-blur-xl border border-white/5 rounded-xl shadow-lg z-40">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Order #QH1024</span>
+<div class="flex items-center gap-xs">
+<span class="block w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-headline-md text-headline-md text-primary">IN TRANSIT</span>
+</div>
+</div>
+<!-- Gradient fade to content -->
+<div class="absolute bottom-0 left-0 w-full h-32 map-gradient z-10"></div>
+</div>
+<!-- Bottom Content Area (Delivery Card) -->
+<div class="absolute bottom-0 left-0 w-full z-30 bg-surface md:bg-transparent md:static md:flex-1 md:px-lg md:py-md">
+<!-- Mobile Drag Handle indicator -->
+<div class="w-full flex justify-center pt-3 pb-1 md:hidden bg-surface rounded-t-[24px]">
+<div class="w-12 h-1 bg-surface-container-highest rounded-full"></div>
+</div>
+<div class="bg-surface md:bg-surface-container md:border md:border-white/5 rounded-t-[24px] md:rounded-2xl p-md md:p-lg flex flex-col gap-md h-full shadow-[0_-8px_30px_rgba(0,0,0,0.5)] md:shadow-none pb-[env(safe-area-inset-bottom,20px)] md:pb-lg">
+<!-- Delivery Info Header -->
+<div class="flex justify-between items-center pb-md border-b border-white/5">
+<div class="flex flex-col gap-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Delivering to</span>
+<span class="font-headline-md text-headline-md-mobile md:text-headline-md text-on-surface">Customer</span>
+</div>
+<div class="text-right flex flex-col gap-xs">
+<span class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary">8 min</span>
+<span class="font-body-md text-body-md text-on-surface-variant">1.8 km</span>
+</div>
+</div>
+<!-- Item Details -->
+<div class="flex items-center gap-md py-sm">
+<div class="w-12 h-12 rounded-lg overflow-hidden bg-surface-container-high border border-outline-variant/30 flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A close-up product shot of a pristine white designer sneaker. The background is a dark, moody grey to make the white shoe pop. The lighting is sharp and dramatic, highlighting the texture of the leather and the clean lines of the shoe. The aesthetic is modern, premium, and perfectly fits a luxury streetwear brand's dark-mode catalog." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzxxQiKBU5NVmCQA7waJy9MJnaf9LF8nVutqxUoLC0ac1S5XtQI_s4gEm3GO0RoBJLnKi6v4KIBbbl2tOqQP0Jz1I5V0CPRXNJHH3hHmMpml3yMseYQ-vDCzBWXZk7fB2gu5HtQ3TZv9Rag_xoaq_054hKaKgYaOs9M-SJvb2-F_kDHgozst09ChHYW56bc1uYtWgBmMzlKhWUX-WK_eK40oinH5SRvCrV9hidSDLdtG_FcQg9M5H1Dw"/>
+</div>
+<div class="flex flex-col flex-1">
+<span class="font-body-lg text-body-lg text-on-surface">White Sneaker</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Qty: 1</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-sm mt-auto md:mt-4">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-4 rounded-xl flex items-center justify-center gap-2 active:scale-[0.98] transition-transform shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" data-icon="navigation" data-weight="fill">navigation</span>
+                    NAVIGATION
+                </button>
+<div class="flex gap-sm">
+<button class="flex-1 bg-surface-container-highest border border-outline-variant/30 text-on-surface font-label-md text-label-md py-3 rounded-xl active:scale-[0.98] transition-transform">
+                        Delivery Details
+                    </button>
+<button class="flex-1 bg-surface-container-highest border border-outline-variant/30 text-on-surface font-label-md text-label-md py-3 rounded-xl flex items-center justify-center gap-2 active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined text-[20px]" data-icon="phone_in_talk">phone_in_talk</span>
+                        Contact
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- BottomNavBar Component (from JSON) -->
+<!-- Relevance Check: Suppressed. This is an operational "In Transit" screen, a highly focused task/journey. The bottom nav shell should be hidden to prioritize the canvas and delivery actions. -->
+</body></html>

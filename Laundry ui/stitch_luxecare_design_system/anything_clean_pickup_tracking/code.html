@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pickup in Progress - Anything Clean</title>
+<!-- Google Fonts: Geist for standard typography, monospace for technical details -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config for Lumina Theme -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed": "#e4e2e4",
+                        "error": "#ffb4ab",
+                        "surface-container": "#201f20",
+                        "on-secondary": "#303032",
+                        "on-surface": "#e5e2e3",
+                        "on-tertiary-container": "#e3e0e2",
+                        "success-bg": "#1A3D24",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface-tint": "#dcb8ff",
+                        "surface-variant": "#353436",
+                        "on-primary": "#480081",
+                        "tertiary": "#c8c6c8",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-tertiary": "#303032",
+                        "secondary-container": "#49494b",
+                        "primary": "#dcb8ff",
+                        "inverse-primary": "#8422dc",
+                        "primary-container": "#8a2be2",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-surface-variant": "#cfc2d7",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "outline-variant": "#4c4354",
+                        "surface-container-high": "#2a2a2b",
+                        "inverse-on-surface": "#313031",
+                        "tertiary-container": "#646365",
+                        "on-primary-container": "#eed9ff",
+                        "error-red": "#ffb4ab",
+                        "on-background": "#e5e2e3",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-container-low": "#1c1b1c",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#131314",
+                        "on-secondary-fixed-variant": "#474648",
+                        "primary-fixed": "#efdbff",
+                        "surface-bright": "#39393a",
+                        "on-primary-fixed": "#2c0051",
+                        "secondary": "#c8c6c8",
+                        "surface-dim": "#131314",
+                        "on-secondary-container": "#b9b8ba",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "electric-violet": "#8a2be2",
+                        "surface-container-lowest": "#0e0e0f",
+                        "outline": "#988ca0",
+                        "success-green": "#81C784",
+                        "inverse-surface": "#e5e2e3",
+                        "secondary-fixed": "#e4e2e4",
+                        "background": "#131314",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-container-highest": "#353436"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "3xl": "64px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "2xl": "48px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Geist", "sans-serif"],
+                        "headline-lg": ["Geist", "sans-serif"],
+                        "h1": ["Geist", "sans-serif"],
+                        "h3": ["Geist", "sans-serif"],
+                        "mono-display": ["monospace"],
+                        "caption": ["Geist", "sans-serif"],
+                        "label-md": ["Geist", "sans-serif"],
+                        "display-lg": ["Geist", "sans-serif"]
+                    },
+                    fontSize: {
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "h1": ["28px", { lineHeight: "36px", fontWeight: "700" }],
+                        "h3": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+                        "mono-display": ["18px", { letterSpacing: "0.05em", fontWeight: "700" }],
+                        "caption": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500" }],
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Base typography inheritance to ensure fallbacks */
+        body { font-family: 'Geist', sans-serif; }
+        
+        /* Subtle glow animation for active step */
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(220, 184, 255, 0.4); }
+            50% { box-shadow: 0 0 15px 4px rgba(220, 184, 255, 0.2); }
+        }
+        .active-pulse { animation: pulse-glow 2s infinite; }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex selection:bg-primary/30 selection:text-primary">
+<!-- JSON Component: SideNavBar -->
+<aside class="bg-surface-container-low text-primary font-label-md text-label-md fixed left-0 top-0 h-full w-[256px] border-r border-outline-variant/30 flex flex-col py-lg px-md z-40 hidden md:flex">
+<!-- Brand -->
+<div class="mb-2xl px-sm">
+<h1 class="font-h1 text-h1 text-electric-violet tracking-tight">Anything Clean</h1>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">Premium Marketplace</p>
+</div>
+<!-- Navigation -->
+<nav class="flex-1 flex flex-col gap-xs">
+<!-- Dashboard (Inactive) -->
+<a class="text-on-surface-variant hover:bg-surface-variant/50 hover:text-on-surface transition-all cursor-pointer flex items-center gap-md px-md py-sm rounded-lg group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<!-- Active Orders (Active Match for "Pickup Tracking") -->
+<a class="bg-primary/10 text-primary font-bold rounded-lg cursor-pointer flex items-center gap-md px-md py-sm" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="local_shipping" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+                Active Orders
+            </a>
+<!-- History (Inactive) -->
+<a class="text-on-surface-variant hover:bg-surface-variant/50 hover:text-on-surface transition-all cursor-pointer flex items-center gap-md px-md py-sm rounded-lg group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors" data-icon="history">history</span>
+                History
+            </a>
+<!-- Wallet (Inactive) -->
+<a class="text-on-surface-variant hover:bg-surface-variant/50 hover:text-on-surface transition-all cursor-pointer flex items-center gap-md px-md py-sm rounded-lg group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors" data-icon="payments">payments</span>
+                Wallet
+            </a>
+<!-- Support (Inactive) -->
+<a class="text-on-surface-variant hover:bg-surface-variant/50 hover:text-on-surface transition-all cursor-pointer flex items-center gap-md px-md py-sm rounded-lg group mt-md" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors" data-icon="contact_support">contact_support</span>
+                Support
+            </a>
+</nav>
+<!-- CTA & Footer -->
+<div class="mt-auto flex flex-col gap-md border-t border-outline-variant/30 pt-lg">
+<button class="w-full bg-electric-violet hover:bg-primary-container text-white font-label-md text-label-md font-bold py-sm px-md rounded-lg shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                New Request
+            </button>
+<a class="text-on-surface-variant hover:bg-surface-variant/50 hover:text-on-surface transition-all cursor-pointer flex items-center gap-md px-md py-sm rounded-lg group" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="logout">logout</span>
+                Logout
+            </a>
+</div>
+</aside>
+<!-- Main Content Wrapper (Offset for Side Nav) -->
+<div class="flex-1 flex flex-col min-h-screen md:ml-[256px]">
+<!-- JSON Component: TopAppBar -->
+<!-- Note: Following strict layout commands from JSON while avoiding overlap by wrapping in a structural div -->
+<header class="bg-surface-container-low/80 backdrop-blur-md fixed top-0 w-full md:w-[calc(100%-256px)] z-50 border-b border-outline-variant/30 h-16">
+<div class="flex justify-between items-center h-full px-xl max-w-[1200px] mx-auto w-full">
+<!-- Mobile Brand (Hidden on Desktop since SideNav handles it) -->
+<div class="md:hidden font-display-lg text-display-lg font-bold text-electric-violet text-2xl truncate">
+                    Anything Clean
+                </div>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex gap-xl h-full items-end">
+<a class="text-primary font-bold border-b-2 border-primary pb-4 pt-5 hover:text-primary transition-colors duration-200" href="#">Orders</a>
+<a class="text-on-surface-variant font-body-md text-body-md pb-4 pt-5 hover:text-primary transition-colors duration-200" href="#">Support</a>
+<a class="text-on-surface-variant font-body-md text-body-md pb-4 pt-5 hover:text-primary transition-colors duration-200" href="#">Settings</a>
+</nav>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-md">
+<button aria-label="notifications" class="text-on-surface-variant hover:text-primary transition-colors duration-200 w-10 h-10 rounded-full hover:bg-surface-variant/50 flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button aria-label="help" class="text-on-surface-variant hover:text-primary transition-colors duration-200 w-10 h-10 rounded-full hover:bg-surface-variant/50 flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="w-8 h-8 rounded-full border border-outline-variant/50 overflow-hidden ml-sm cursor-pointer hover:border-primary transition-colors">
+<img alt="Customer profile avatar" class="w-full h-full object-cover" data-alt="A close-up, highly detailed portrait of a modern user avatar within a sophisticated corporate dashboard environment, illuminated by soft studio lighting with subtle violet undertones, set against a dark tech-minimalist background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsOBl44uKFHQt8orMbKyecUNRUkZh7b9Ae_pcQ_jkNTV1fa9hX2nAOfzZOkx7WJVaa-cIz_D07wEY_R7ceRaGO6oTT_vy0r1bx21GMCwPcWqNTwtAyAQ6cnRs63OEYBVHAbfEpkLPjzgcHP7Gy8CcBBJANd4TKZ8er5HUV3x_fvwP6FNIr5hWHcI0r57Anoq7qYDJcqf8QptVLob611kg95zusaeJyrJWddClLFrw1E-7t-NBTkgK9JQ"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Workspace Area -->
+<main class="flex-1 pt-[88px] pb-xl px-md md:px-xl w-full max-w-[1200px] mx-auto">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md mb-xl">
+<div>
+<div class="flex items-center gap-sm mb-xs">
+<span class="text-on-surface-variant font-label-md text-label-md flex items-center cursor-pointer hover:text-primary transition-colors">
+                            Orders <span class="material-symbols-outlined text-[16px] mx-xs">chevron_right</span>
+</span>
+<span class="text-on-surface-variant font-label-md text-label-md">
+                            REQ-8492
+                        </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Pickup in Progress</h1>
+</div>
+<!-- Status Pill (Lumina Active Status) -->
+<div class="bg-success-bg text-success-green uppercase tracking-[0.2em] text-[10px] font-bold px-md py-sm rounded-full flex items-center gap-xs self-start md:self-auto border border-success-green/20">
+<div class="w-2 h-2 rounded-full bg-success-green animate-pulse"></div>
+                    Pickup Partner Assigned
+                </div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<!-- Left Column (Wider content) -->
+<div class="lg:col-span-2 flex flex-col gap-lg">
+<!-- Timeline Card -->
+<section class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col">
+<h2 class="font-h3 text-h3 text-on-surface mb-xl">Tracking Status</h2>
+<div class="relative flex items-start justify-between w-full pt-sm px-sm md:px-md">
+<!-- Background connecting line -->
+<div class="absolute top-5 left-[10%] right-[10%] h-px bg-outline-variant/30 -z-0"></div>
+<!-- Active progress line -->
+<div class="absolute top-5 left-[10%] w-[40%] h-px bg-primary z-0 shadow-[0_0_8px_rgba(220,184,255,0.4)]"></div>
+<!-- Step 1: Requested (Completed) -->
+<div class="flex flex-col items-center gap-sm relative z-10 w-1/4">
+<div class="w-10 h-10 rounded-full bg-surface-container-low border border-primary text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface text-center">Requested</span>
+<span class="font-caption text-caption text-on-surface-variant">09:15 AM</span>
+</div>
+<!-- Step 2: Assigned (Completed) -->
+<div class="flex flex-col items-center gap-sm relative z-10 w-1/4">
+<div class="w-10 h-10 rounded-full bg-surface-container-low border border-primary text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface text-center">Assigned</span>
+<span class="font-caption text-caption text-on-surface-variant">09:30 AM</span>
+</div>
+<!-- Step 3: Pickup (Active) -->
+<div class="flex flex-col items-center gap-sm relative z-10 w-1/4">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center active-pulse shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">package</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold text-center">Pickup</span>
+<span class="font-caption text-caption text-primary">In Progress</span>
+</div>
+<!-- Step 4: Cleaning (Pending) -->
+<div class="flex flex-col items-center gap-sm relative z-10 w-1/4">
+<div class="w-10 h-10 rounded-full bg-surface-container-low border border-outline-variant/50 text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">local_laundry_service</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant text-center">Processing</span>
+<span class="font-caption text-caption text-outline/50">Est. Tomorrow</span>
+</div>
+</div>
+</section>
+<!-- Details Card -->
+<section class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg">
+<h2 class="font-h3 text-h3 text-on-surface mb-md">Schedule &amp; Location</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Time -->
+<div class="flex gap-md bg-surface-container-low border border-outline-variant/30 rounded-lg p-md">
+<div class="w-12 h-12 rounded-full bg-surface-variant/30 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">schedule</span>
+</div>
+<div>
+<p class="font-caption text-caption text-on-surface-variant mb-xs">Pickup Window</p>
+<p class="font-body-md text-body-md text-on-surface font-medium">10:00 AM – 12:00 PM</p>
+<p class="font-caption text-caption text-success-green mt-1 flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+                                        On Schedule
+                                    </p>
+</div>
+</div>
+<!-- Location -->
+<div class="flex gap-md bg-surface-container-low border border-outline-variant/30 rounded-lg p-md">
+<div class="w-12 h-12 rounded-full bg-surface-variant/30 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div>
+<p class="font-caption text-caption text-on-surface-variant mb-xs">Pickup Address</p>
+<p class="font-body-md text-body-md text-on-surface font-medium">12, Example Street</p>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Building B, Front Desk</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column (Contextual Details) -->
+<div class="flex flex-col gap-lg">
+<!-- Map / Location Visualizer -->
+<section class="bg-surface-container border border-outline-variant/20 rounded-xl overflow-hidden flex flex-col h-[240px] relative group">
+<!-- Simulated technical map view using an image placeholder styled to look like a radar/map UI -->
+<div class="absolute inset-0 z-0 opacity-80 mix-blend-luminosity saturate-50 group-hover:saturate-100 transition-all duration-500">
+<img class="w-full h-full object-cover" data-alt="A highly stylized, minimalist vector-style city street map interface seen from a top-down perspective, featuring deep slate and charcoal black backgrounds with glowing electric violet path lines denoting navigation, designed in a sleek corporate dark mode tech aesthetic." data-location="12, Example Street, City" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8UjF3S0Cf8MmGnXFb8c3HuJZLmHwhO6ELOu103DY_lvJWJDuQ5jfe-srrN6lRXVF5kiIUILAuRqNDG4M8NvldzW8Ae8xAi-hf62ONhTYXWPvbjlPpjYax6INy3haI-ajkL3KeeENhPALSHVhAKs4YAJkDuZmTJwhdmwRSl-JQZS9-9hmGRN3dS9hIZyauy9P6J8ZSguSZWKxN8SafTU04Ru1ZpaXqU1MVimmXowk-SfCSdigT3fLnUA"/>
+</div>
+<!-- Overlay gradient to ensure text readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/20 to-transparent z-10"></div>
+<!-- Floating status indicator on map -->
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center">
+<div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center animate-pulse">
+<div class="w-4 h-4 bg-primary rounded-full shadow-[0_0_12px_#dcb8ff]"></div>
+</div>
+<span class="font-mono-display text-caption text-primary mt-sm bg-surface-container-highest/80 px-2 py-1 rounded backdrop-blur-sm border border-outline-variant/30">ETA: 14 MINS</span>
+</div>
+</section>
+<!-- Partner Info Card -->
+<section class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col gap-md relative overflow-hidden">
+<!-- Decorative top accent -->
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-transparent"></div>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-xs">Pickup Partner</h3>
+<div class="flex items-center gap-md">
+<div class="w-16 h-16 rounded-full border-2 border-primary/30 p-1 shrink-0 relative">
+<img class="w-full h-full rounded-full object-cover" data-alt="A professional headshot of a delivery logistics driver looking confidently forward, set against a dark grey background with subtle violet rim lighting, embodying a modern, reliable corporate tech service aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXp6qA-q7o8v_mFhQ25zlAwziYTQRLqJijOvxNQshfN9BuIGpJ1eBsh5yhQm5ktSmLSyt2--b9Fd8pDRwQmd7I2ZoPEw9w-zebnUkoehW3LKB27HnqMkLc6dOnKbGeJ_fCr5lk4W0x8wPGY1a-QeEohYAjOt1v7MpGYxsPS8b0qGD3e3QPKKfSY3adUIcH7vN31HoGjNm1hTQHsWYskZjVfL05tWchcz74e7mBzoUFRNGtG_SSs5lppA"/>
+<div class="absolute bottom-0 right-0 w-4 h-4 bg-success-green rounded-full border-2 border-surface-container"></div>
+</div>
+<div class="flex-1">
+<h4 class="font-h3 text-h3 text-on-surface">Marcus T.</h4>
+<div class="flex items-center gap-xs mt-1">
+<span class="material-symbols-outlined text-[16px] text-[#FFD700]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md text-on-surface">4.9</span>
+<span class="font-caption text-caption text-on-surface-variant">(1.2k+ jobs)</span>
+</div>
+</div>
+<!-- Action button right next to driver -->
+<button class="w-10 h-10 rounded-full bg-surface-container-low border border-outline-variant hover:border-primary hover:text-primary text-on-surface-variant flex items-center justify-center transition-colors group">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">chat</span>
+</button>
+</div>
+<!-- Vehicle Tech Specs -->
+<div class="bg-surface-container-low rounded-lg p-sm border border-outline-variant/30 flex justify-between items-center mt-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant">directions_car</span>
+<span class="font-mono-display text-[14px] text-on-surface tracking-widest">WHT VAN</span>
+</div>
+<div class="font-mono-display text-[14px] text-primary bg-primary/10 px-2 py-0.5 rounded border border-primary/20">
+                                LMN-892
+                            </div>
+</div>
+</section>
+<!-- Support Action -->
+<button class="w-full bg-surface-container-low border border-outline-variant/50 hover:bg-surface-variant/50 hover:border-outline text-on-surface font-label-md text-label-md py-md px-md rounded-xl transition-all flex items-center justify-center gap-sm shadow-sm active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+                        Contact Support
+                    </button>
+</div>
+</div>
+</main>
+</div>
+</body></html>

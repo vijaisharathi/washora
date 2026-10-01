@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Provider Dashboard - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#474649",
+                        "inverse-on-surface": "#313031",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "surface-variant": "#353436",
+                        "background": "#131314",
+                        "on-primary-fixed": "#2c0051",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#4c4354",
+                        "surface-container-highest": "#353436",
+                        "secondary-fixed": "#e5e1e4",
+                        "on-primary": "#480081",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "tertiary": "#c8c6c8",
+                        "on-secondary": "#303032",
+                        "surface-dim": "#131314",
+                        "tertiary-container": "#646365",
+                        "surface-container-high": "#2a2a2b",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "primary": "#dcb8ff",
+                        "inverse-surface": "#e5e2e3",
+                        "tertiary-fixed": "#e4e2e4",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-tertiary": "#303032",
+                        "surface-tint": "#dcb8ff",
+                        "secondary-container": "#474649",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface-bright": "#3a393a",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-surface-variant": "#cfc2d7",
+                        "surface": "#131314",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "primary-container": "#8a2be2",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-container": "#201f20",
+                        "primary-fixed": "#efdbff",
+                        "error-container": "#93000a",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-background": "#e5e2e3",
+                        "inverse-primary": "#8422dc",
+                        "on-secondary-container": "#b7b4b7",
+                        "on-surface": "#e5e2e3",
+                        "secondary": "#c8c6c8",
+                        "outline": "#988ca0",
+                        "on-primary-container": "#eed9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "3xl": "64px",
+                        "md": "16px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "caption": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 1; }
+        .glass-panel { background: rgba(18, 18, 20, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex bg-surface-container-low text-primary h-screen w-64 fixed left-0 top-0 border-r border-white/5 flex-col py-lg z-40">
+<div class="font-headline-md text-primary mb-lg px-md">Anything Clean</div>
+<div class="px-md mb-lg flex items-center gap-sm">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A small circular avatar placeholder for a professional cleaner profile, displaying a subtle geometric pattern in dark violet and gray tones to signify a high-end service provider within a dark mode UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkGfoauaZTp9fQRrbV6aYLs5eYgPopuMkO0O1kM6I0IX1nbQaYDwe9kacL70zLUNv0Vf1b9m4qImbUahKfgGoXV467ajmQt_Kl4NdZxSMad7Gdya0RDjdU7r4Uy7wBAV9aKPvazWF01251HyE1e6fqT3q0cLaI6brg8FHa_pQO2QSpXrOfNWo-U65vg5uwkTZzOuCR-sY3sN-ZfpzjBRP0Z8irlNdoJWIVvt_8iq9g4a090WYVRUoemw"/>
+<div>
+<div class="font-label-md text-on-surface">Pro Dashboard</div>
+<div class="font-caption text-on-surface-variant">Elite Partner</div>
+</div>
+</div>
+<button class="mx-md mb-lg bg-primary text-on-primary font-label-md py-sm rounded-lg hover:opacity-90 transition-opacity">Go Online</button>
+<div class="flex-1 flex flex-col gap-xs overflow-y-auto">
+<!-- Active Tab: Dashboard -->
+<a class="bg-primary-container text-on-primary-container rounded-lg mx-2 px-md py-sm flex items-center gap-sm transition-all duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md">Dashboard</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-lg mx-2 px-md py-sm flex items-center gap-sm transition-all duration-200 hover:bg-surface-variant" href="#">
+<span class="material-symbols-outlined">event_note</span>
+<span class="font-label-md">Schedule</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-lg mx-2 px-md py-sm flex items-center gap-sm transition-all duration-200 hover:bg-surface-variant" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md">Earnings</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-lg mx-2 px-md py-sm flex items-center gap-sm transition-all duration-200 hover:bg-surface-variant" href="#">
+<span class="material-symbols-outlined">star</span>
+<span class="font-label-md">Reviews</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-lg mx-2 px-md py-sm flex items-center gap-sm transition-all duration-200 hover:bg-surface-variant" href="#">
+<span class="material-symbols-outlined">cleaning_services</span>
+<span class="font-label-md">Services</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-lg mx-2 px-md py-sm flex items-center gap-sm transition-all duration-200 hover:bg-surface-variant" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md">Settings</span>
+</a>
+</div>
+<div class="mt-auto flex flex-col gap-xs pt-md border-t border-white/5">
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-lg mx-2 px-md py-sm flex items-center gap-sm transition-all duration-200 hover:bg-surface-variant" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-md">Help</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-lg mx-2 px-md py-sm flex items-center gap-sm transition-all duration-200 hover:bg-surface-variant" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md">Logout</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 pb-20 md:pb-0 min-h-screen flex flex-col">
+<!-- Header -->
+<header class="pt-lg px-md md:px-lg max-w-[1280px] mx-auto w-full flex justify-between items-end">
+<div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-on-surface">Good morning, CleanX</h1>
+<p class="font-body-lg text-on-surface-variant mt-xs">Here is your operational overview for today.</p>
+</div>
+<div class="hidden md:flex gap-sm">
+<button class="p-sm bg-surface-container rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-on-surface">notifications</span>
+</button>
+</div>
+</header>
+<!-- Dashboard Content Grid -->
+<div class="p-md md:p-lg max-w-[1280px] mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-lg flex-1">
+<!-- KPI Cards (Top Row) -->
+<div class="col-span-1 md:col-span-12 grid grid-cols-2 md:grid-cols-5 gap-md">
+<div class="glass-panel p-md rounded-xl flex flex-col justify-between">
+<span class="font-label-md text-on-surface-variant">Today's Orders</span>
+<span class="font-headline-lg text-on-surface mt-sm">24</span>
+</div>
+<div class="glass-panel p-md rounded-xl flex flex-col justify-between">
+<span class="font-label-md text-on-surface-variant">Pending</span>
+<span class="font-headline-lg text-error mt-sm">8</span>
+</div>
+<div class="glass-panel p-md rounded-xl flex flex-col justify-between">
+<span class="font-label-md text-on-surface-variant">Processing</span>
+<span class="font-headline-lg text-primary mt-sm">11</span>
+</div>
+<div class="glass-panel p-md rounded-xl flex flex-col justify-between">
+<span class="font-label-md text-on-surface-variant">Ready</span>
+<span class="font-headline-lg text-[#FFCC00] mt-sm">5</span>
+</div>
+<div class="glass-panel p-md rounded-xl flex flex-col justify-between col-span-2 md:col-span-1">
+<span class="font-label-md text-on-surface-variant">Revenue (Est)</span>
+<span class="font-headline-lg text-on-surface mt-sm">$1,240</span>
+</div>
+</div>
+<!-- Urgent Actions (Left Column) -->
+<div class="col-span-1 md:col-span-8 flex flex-col gap-lg">
+<div class="glass-panel rounded-xl p-lg border-l-4 border-error">
+<h2 class="font-headline-md text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-error">warning</span>
+                        Urgent Actions Required
+                    </h2>
+<div class="mt-md flex flex-col gap-sm">
+<div class="bg-surface-container p-md rounded-lg flex justify-between items-center">
+<span class="font-body-md text-on-surface">3 orders require inspection</span>
+<button class="font-label-md text-primary hover:underline">Review</button>
+</div>
+<div class="bg-surface-container p-md rounded-lg flex justify-between items-center">
+<span class="font-body-md text-on-surface">2 orders ready for pickup</span>
+<button class="font-label-md text-primary hover:underline">Dispatch</button>
+</div>
+</div>
+</div>
+<!-- Order Pipeline Visualization -->
+<div class="glass-panel rounded-xl p-lg flex-1">
+<h2 class="font-headline-md text-on-surface mb-lg">Order Pipeline</h2>
+<!-- Minimalist pipeline using structural divs -->
+<div class="flex items-center w-full h-24 relative mt-xl">
+<!-- Progress Line -->
+<div class="absolute top-1/2 left-0 w-full h-1 bg-surface-container-high -translate-y-1/2 rounded-full z-0"></div>
+<div class="absolute top-1/2 left-0 w-3/4 h-1 bg-primary -translate-y-1/2 rounded-full z-0 opacity-50"></div>
+<!-- Nodes -->
+<div class="w-full flex justify-between items-center relative z-10 px-sm">
+<div class="flex flex-col items-center gap-sm">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center shadow-[0_0_10px_rgba(220,184,255,0.5)]">
+<span class="material-symbols-outlined text-[14px] text-on-primary">check</span>
+</div>
+<span class="font-label-md text-on-surface">New (24)</span>
+</div>
+<div class="flex flex-col items-center gap-sm">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center shadow-[0_0_10px_rgba(220,184,255,0.5)]">
+<span class="material-symbols-outlined text-[14px] text-on-primary">check</span>
+</div>
+<span class="font-label-md text-on-surface">Sorting (16)</span>
+</div>
+<div class="flex flex-col items-center gap-sm">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center shadow-[0_0_10px_rgba(220,184,255,0.5)]">
+<span class="material-symbols-outlined text-[14px] text-on-primary">autorenew</span>
+</div>
+<span class="font-label-md text-on-surface">Processing (11)</span>
+</div>
+<div class="flex flex-col items-center gap-sm">
+<div class="w-6 h-6 rounded-full bg-surface-container-high border border-primary flex items-center justify-center">
+</div>
+<span class="font-label-md text-on-surface-variant">Ready (5)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Schedule List (Right Column) -->
+<div class="col-span-1 md:col-span-4 flex flex-col gap-lg">
+<div class="glass-panel rounded-xl p-lg flex-1 flex flex-col">
+<div class="flex justify-between items-center mb-md">
+<h2 class="font-headline-md text-on-surface">Today's Schedule</h2>
+<span class="font-label-md text-primary cursor-pointer">View All</span>
+</div>
+<div class="flex flex-col gap-sm overflow-y-auto">
+<!-- Schedule Item -->
+<div class="bg-surface-container p-md rounded-lg flex gap-md items-start border border-transparent hover:border-white/5 transition-colors">
+<div class="bg-surface-container-high rounded p-sm flex flex-col items-center justify-center min-w-[50px]">
+<span class="font-label-md text-primary">09:00</span>
+<span class="font-caption text-on-surface-variant">AM</span>
+</div>
+<div>
+<h3 class="font-label-md text-on-surface">Commercial Deep Clean</h3>
+<p class="font-caption text-on-surface-variant">Downtown Office Park, Bldg 4</p>
+<div class="mt-xs inline-flex items-center px-2 py-1 rounded bg-primary-container/20 text-primary font-caption">In Progress</div>
+</div>
+</div>
+<div class="bg-surface-container p-md rounded-lg flex gap-md items-start border border-transparent hover:border-white/5 transition-colors">
+<div class="bg-surface-container-high rounded p-sm flex flex-col items-center justify-center min-w-[50px]">
+<span class="font-label-md text-on-surface-variant">11:30</span>
+<span class="font-caption text-on-surface-variant">AM</span>
+</div>
+<div>
+<h3 class="font-label-md text-on-surface">Residential Standard</h3>
+<p class="font-caption text-on-surface-variant">124 Maple St, Apt 3B</p>
+<div class="mt-xs inline-flex items-center px-2 py-1 rounded bg-surface-container-high text-on-surface-variant font-caption">Pending</div>
+</div>
+</div>
+<div class="bg-surface-container p-md rounded-lg flex gap-md items-start border border-transparent hover:border-white/5 transition-colors">
+<div class="bg-surface-container-high rounded p-sm flex flex-col items-center justify-center min-w-[50px]">
+<span class="font-label-md text-on-surface-variant">02:00</span>
+<span class="font-caption text-on-surface-variant">PM</span>
+</div>
+<div>
+<h3 class="font-label-md text-on-surface">Move-out Inspection</h3>
+<p class="font-caption text-on-surface-variant">789 Oak Ave</p>
+<div class="mt-xs inline-flex items-center px-2 py-1 rounded bg-surface-container-high text-on-surface-variant font-caption">Scheduled</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden bg-surface-container/90 backdrop-blur-lg text-primary font-label-md text-label-md-mobile fixed bottom-0 w-full z-50 rounded-t-xl border-t border-white/10 shadow-[0_-4px_20px_rgba(138,43,226,0.1)] tap-highlight-transparent flex justify-around items-center h-20 pb-safe px-md">
+<!-- Active: Dashboard/Home logic fallback (closest is Explore/Home equivalent, assuming Dashboard context) -->
+<a class="flex flex-col items-center justify-center text-primary active:bg-primary-container/20 p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-primary-container/20 p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span>Schedule</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-primary-container/20 p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span>Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-primary-container/20 p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">person</span>
+<span>Profile</span>
+</a>
+</nav>
+</body></html>

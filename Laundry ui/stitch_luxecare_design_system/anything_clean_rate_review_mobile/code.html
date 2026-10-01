@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rate &amp; Review</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline": "#988ca0",
+                        "secondary-container": "#474649",
+                        "tertiary": "#c8c6c8",
+                        "error": "#ffb4ab",
+                        "on-secondary-container": "#b7b4b7",
+                        "on-surface": "#e5e2e3",
+                        "inverse-surface": "#e5e2e3",
+                        "inverse-primary": "#8422dc",
+                        "surface-tint": "#dcb8ff",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "inverse-on-surface": "#313031",
+                        "primary": "#dcb8ff",
+                        "on-background": "#e5e2e3",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "primary-fixed": "#efdbff",
+                        "tertiary-fixed": "#e4e2e4",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-secondary-fixed-variant": "#474649",
+                        "background": "#131314",
+                        "surface-container-highest": "#353436",
+                        "on-tertiary-container": "#e3e0e2",
+                        "secondary-fixed": "#e5e1e4",
+                        "secondary": "#c8c6c8",
+                        "surface": "#131314",
+                        "outline-variant": "#4c4354",
+                        "surface-bright": "#3a393a",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-error-container": "#ffdad6",
+                        "surface-dim": "#131314",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-primary": "#480081",
+                        "surface-container": "#201f20",
+                        "surface-container-high": "#2a2a2b",
+                        "surface-container-low": "#1c1b1c",
+                        "error-container": "#93000a",
+                        "on-secondary": "#303032",
+                        "primary-container": "#8a2be2",
+                        "on-primary-fixed": "#2c0051",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "tertiary-container": "#646365",
+                        "on-error": "#690005",
+                        "on-primary-container": "#eed9ff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-tertiary": "#303032",
+                        "surface-variant": "#353436"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "lg": "24px",
+                        "md": "16px",
+                        "2xl": "48px",
+                        "xs": "4px",
+                        "3xl": "64px",
+                        "xl": "32px",
+                        "sm": "8px"
+                    },
+                    fontFamily: {
+                        "label-md": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "caption": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "display-lg-mobile": ["Geist"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Geist', sans-serif;
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        .star-rating .material-symbols-outlined {
+            cursor: pointer;
+            transition: color 0.2s ease, transform 0.1s ease;
+        }
+        .star-rating .material-symbols-outlined:hover {
+            transform: scale(1.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col pt-[72px] pb-[100px] md:pb-0 md:pt-[80px]">
+<!-- Top App Bar (From JSON) -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/5">
+<div class="flex justify-between items-center px-md py-sm w-full">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md-mobile text-primary dark:text-primary font-bold">Rate &amp; Review</h1>
+<div class="w-6"></div> <!-- Spacer for center alignment -->
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-[600px] mx-auto px-[20px] md:px-lg py-xl flex flex-col gap-2xl">
+<!-- Header Section -->
+<section class="flex flex-col items-center text-center space-y-sm">
+<h2 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-background">How was your experience?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Your feedback helps us maintain our premium service standards.</p>
+</section>
+<!-- Provider Info -->
+<section class="bg-surface-container-low rounded-xl p-md border border-white/5 flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg overflow-hidden shrink-0">
+<img alt="Provider Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a premium home service provider, a woman in her 30s with a neat uniform, against a minimalist dark grey background. High-quality portrait photography, dramatic studio lighting emphasizing trust and luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtxXBKDIMlvcwSwqEescya7vVFf_Aj-x67_jtffe29RuD8jMUijSESKvyW9FSxCQPhErw4OCpCH51Wi01WwWUKJ6A6BPJqqFlY5j6IDQJQK3nwbA5s4Fl4r0626m2rfQR9OwWAk4UnVAd0oUK7bcRGCqOOUthQltc0AR58qv-DLJ5x0RMheOYfT7_UvYMn2GGXJJkYyvaw3Jw-RZzyN7C3e-H_S8GmlsKzHBn3r0DKYmoxcTEeIt-Dcg"/>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md-mobile md:font-headline-md md:text-headline-md text-on-background">Elena R.</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Deep Clean • Nov 24, 2023</p>
+</div>
+</section>
+<!-- Rating Categories -->
+<section class="flex flex-col gap-xl">
+<!-- Overall Rating -->
+<div class="flex flex-col items-center gap-sm">
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Overall Rating</span>
+<div class="star-rating flex gap-xs text-3xl text-surface-variant" data-category="overall">
+<span class="material-symbols-outlined text-[40px] md:text-[48px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[40px] md:text-[48px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[40px] md:text-[48px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[40px] md:text-[48px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[40px] md:text-[48px]" style="font-variation-settings: 'FILL' 0;">star</span>
+</div>
+</div>
+<div class="h-px bg-white/5 w-full"></div>
+<!-- Sub-ratings Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Cleaning Quality -->
+<div class="flex justify-between items-center bg-surface-container-low p-md rounded-lg border border-white/5">
+<span class="font-body-lg text-body-lg text-on-surface">Cleaning Quality</span>
+<div class="star-rating flex gap-xs text-xl text-primary" data-category="quality">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<!-- Delivery/Punctuality -->
+<div class="flex justify-between items-center bg-surface-container-low p-md rounded-lg border border-white/5">
+<span class="font-body-lg text-body-lg text-on-surface">Punctuality</span>
+<div class="star-rating flex gap-xs text-xl text-primary" data-category="delivery">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-surface-variant" style="font-variation-settings: 'FILL' 0;">star</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Written Review -->
+<section class="flex flex-col gap-sm">
+<label class="font-label-md text-label-md text-on-surface uppercase tracking-wider" for="review-text">Written Review</label>
+<textarea class="w-full bg-surface-container-lowest border border-white/10 rounded-lg p-md text-on-background font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none" id="review-text" placeholder="Share details of your experience..." rows="4"></textarea>
+</section>
+<!-- Image Upload -->
+<section class="flex flex-col gap-sm">
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Final Result Photos</span>
+<div class="flex gap-md overflow-x-auto pb-sm">
+<!-- Upload Button -->
+<button class="w-[100px] h-[100px] shrink-0 bg-surface-container-low border-2 border-dashed border-outline-variant rounded-xl flex flex-col items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl mb-xs" style="font-variation-settings: 'FILL' 0;">add_a_photo</span>
+<span class="font-caption text-caption">Upload</span>
+</button>
+<!-- Uploaded Image Preview (Optional state representation) -->
+<div class="relative w-[100px] h-[100px] shrink-0 rounded-xl overflow-hidden group">
+<img alt="Uploaded Result" class="w-full h-full object-cover" data-alt="A spotless, modern living room interior showcasing a perfectly clean space after a premium cleaning service. Dark hardwood floors gleam under soft natural light, minimalist furniture, high-end luxury aesthetic, dark mode interior design tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhNw7WE4G1FQYczFoJjpcoB1DD9yxAgUOYMCkVyLFEoeeCJlG_c5Q8CnZlBdv1DZP-g-d_WStLs3hV7QRGQS-yVPFmqD1BlkZciMnbxpPLZDqdFlMI6NGZq2O7lJZE_8QTjH0eek0SchRjnt7SAwk-HwSQD_gq0lKWXG1PTyd4bxYEkcVlHeViSmWE8ksxijh2H5ctjB9wVBAgJISj3XsT4fUfwWYJkUwEPeF2oYUps-hFGRsleA7X1Q"/>
+<button class="absolute top-1 right-1 bg-surface-container/80 rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-sm text-on-surface" style="font-variation-settings: 'FILL' 0;">close</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Action Bar (Contextual FAB Replacement for Transactional Screen) -->
+<div class="fixed bottom-0 w-full bg-surface/90 dark:bg-surface/90 backdrop-blur-2xl border-t border-white/5 p-md pb-safe flex justify-center z-40">
+<button class="w-full max-w-[600px] bg-primary text-on-primary font-headline-md text-headline-md-mobile md:font-headline-md md:text-headline-md py-sm px-xl rounded-full hover:bg-primary-fixed-dim transition-colors active:scale-95 duration-150">
+            Submit Review
+        </button>
+</div>
+<script>
+        // Simple JS for interactive star rating visual feedback
+        document.querySelectorAll('.star-rating').forEach(ratingContainer => {
+            const stars = ratingContainer.querySelectorAll('span');
+            stars.forEach((star, index) => {
+                star.addEventListener('click', () => {
+                    // Reset all stars in this container
+                    stars.forEach((s, i) => {
+                        if (i <= index) {
+                            s.style.fontVariationSettings = "'FILL' 1";
+                            s.classList.remove('text-surface-variant');
+                            s.classList.add(ratingContainer.dataset.category === 'overall' ? 'text-primary' : 'text-primary');
+                        } else {
+                            s.style.fontVariationSettings = "'FILL' 0";
+                            s.classList.add('text-surface-variant');
+                            s.classList.remove('text-primary');
+                        }
+                    });
+                });
+            });
+        });
+
+        // Initialize overall stars color to primary for filled ones (simulating pre-filled state from design)
+        const overallStars = document.querySelector('[data-category="overall"]').querySelectorAll('span');
+        overallStars.forEach((star, index) => {
+            if(index < 4) {
+                 star.classList.remove('text-surface-variant');
+                 star.classList.add('text-primary');
+            }
+        });
+    </script>
+</body></html>

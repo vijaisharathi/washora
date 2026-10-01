@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anything Clean - Checkout</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<style type="text/css">
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.1/files/geist-sans-latin-400-normal.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.1/files/geist-sans-latin-500-normal.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.1/files/geist-sans-latin-600-normal.woff2') format('woff2');
+            font-weight: 600;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.1/files/geist-sans-latin-700-normal.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#303032",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "inverse-surface": "#e5e2e3",
+                        "on-error": "#690005",
+                        "success-bg": "#1A3D24",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface-dim": "#131314",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "success-green": "#81C784",
+                        "on-secondary-fixed-variant": "#474648",
+                        "inverse-on-surface": "#313031",
+                        "inverse-primary": "#8422dc",
+                        "on-primary-container": "#eed9ff",
+                        "on-primary": "#480081",
+                        "surface-variant": "#353436",
+                        "outline": "#988ca0",
+                        "primary": "#dcb8ff",
+                        "on-surface": "#e5e2e3",
+                        "on-secondary-container": "#b9b8ba",
+                        "surface-tint": "#dcb8ff",
+                        "tertiary-container": "#646365",
+                        "primary-container": "#8a2be2",
+                        "on-primary-fixed": "#2c0051",
+                        "primary-fixed": "#efdbff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-container-low": "#1c1b1c",
+                        "secondary-container": "#49494b",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-surface-variant": "#cfc2d7",
+                        "surface-bright": "#39393a",
+                        "surface": "#131314",
+                        "outline-variant": "#4c4354",
+                        "secondary-fixed": "#e4e2e4",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#353436",
+                        "surface-container": "#201f20",
+                        "surface-container-high": "#2a2a2b",
+                        "error-red": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "electric-violet": "#8a2be2",
+                        "tertiary": "#c8c6c8",
+                        "on-tertiary": "#303032",
+                        "background": "#131314",
+                        "on-background": "#e5e2e3",
+                        "secondary": "#c8c6c8",
+                        "on-primary-fixed-variant": "#6700b5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "sm": "8px",
+                        "xl": "32px",
+                        "2xl": "48px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "3xl": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Geist"],
+                        "h3": ["Geist"],
+                        "label-md": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "headline-lg": ["Geist"],
+                        "h1": ["Geist"],
+                        "body-md": ["Geist"],
+                        "caption": ["Geist"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen">
+<!-- TopNavBar (Linear/Transactional intent means we suppress full nav, but keep minimal header) -->
+<header class="fixed top-0 w-full z-50 bg-surface-dim/80 backdrop-blur-md border-b border-outline-variant/30 px-xl h-20 flex justify-between items-center max-w-[1200px] mx-auto left-0 right-0">
+<div class="font-display-lg text-display-lg font-bold text-electric-violet">Anything Clean</div>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer active:scale-95 flex items-center gap-xs" href="#">
+<span class="material-symbols-outlined">close</span> Cancel
+        </a>
+</header>
+<main class="max-w-[1200px] mx-auto pt-[120px] pb-3xl px-xl">
+<!-- Header & Progress -->
+<div class="mb-xl">
+<h1 class="font-h1 text-h1 mb-lg">Checkout Overview</h1>
+<div class="flex items-center gap-md font-label-md text-label-md text-on-surface-variant">
+<span class="flex items-center gap-xs text-primary"><span class="material-symbols-outlined text-[18px]">check_circle</span> Service</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="flex items-center gap-xs text-primary"><span class="material-symbols-outlined text-[18px]">check_circle</span> Details</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="flex items-center gap-xs text-on-surface"><span class="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold">3</span> Payment</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-xl">
+<!-- Left Column: Review Cards -->
+<div class="md:col-span-8 flex flex-col gap-md">
+<!-- Service Card -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg relative group">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm text-primary">
+<span class="material-symbols-outlined">cleaning_services</span>
+<h3 class="font-h3 text-h3 text-on-surface">Service Details</h3>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md">Edit</button>
+</div>
+<div class="flex justify-between items-center">
+<div>
+<p class="font-label-md text-label-md text-on-surface">Sneaker Deep Clean - Premium</p>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">Includes deep wash, laces, and sole whitening.</p>
+</div>
+<span class="font-mono-display text-mono-display text-primary">₹449</span>
+</div>
+</div>
+<!-- Add-ons Card -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg relative group">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm text-primary">
+<span class="material-symbols-outlined">add_box</span>
+<h3 class="font-h3 text-h3 text-on-surface">Add-ons</h3>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md">Edit</button>
+</div>
+<ul class="flex flex-col gap-sm">
+<li class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Water & Stain Protection</span>
+<span class="font-mono-display text-mono-display text-[14px]">₹99</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Odor Treatment</span>
+<span class="font-mono-display text-mono-display text-[14px]">₹79</span>
+</li>
+</ul>
+</div>
+<!-- Pickup Schedule Card -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg relative group">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm text-primary">
+<span class="material-symbols-outlined">calendar_month</span>
+<h3 class="font-h3 text-h3 text-on-surface">Pickup Schedule</h3>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md">Edit</button>
+</div>
+<div class="flex items-center gap-md">
+<div class="bg-surface-container-low p-sm rounded-lg border border-outline-variant/30 flex flex-col items-center justify-center min-w-[80px]">
+<span class="font-caption text-caption text-on-surface-variant uppercase">Sep</span>
+<span class="font-headline-lg text-headline-lg text-primary">01</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Sunday</p>
+<p class="font-body-md text-body-md text-on-surface-variant">10:00 AM - 12:00 PM</p>
+</div>
+</div>
+</div>
+<!-- Pickup Address Card -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg relative group">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm text-primary">
+<span class="material-symbols-outlined">location_on</span>
+<h3 class="font-h3 text-h3 text-on-surface">Pickup Address</h3>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md">Edit</button>
+</div>
+<div class="flex items-start gap-md">
+<div class="w-16 h-16 rounded-lg bg-surface-container-low overflow-hidden border border-outline-variant/30 shrink-0">
+<!-- Placeholder for map snippet -->
+<div class="w-full h-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant opacity-50">
+<span class="material-symbols-outlined">map</span>
+</div>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Home</p>
+<p class="font-body-md text-body-md text-on-surface-variant">12, Example Street, Anna Nagar<br/>Chennai, 600040</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Order Summary (Sticky) -->
+<div class="md:col-span-4">
+<div class="sticky top-[120px] bg-surface-container-low rounded-xl border border-outline-variant/30 p-lg">
+<h3 class="font-h3 text-h3 text-on-surface mb-lg">Order Summary</h3>
+<div class="flex flex-col gap-sm mb-lg border-b border-outline-variant/30 pb-lg">
+<div class="flex justify-between items-center text-on-surface-variant">
+<span class="font-body-md text-body-md">Subtotal</span>
+<span class="font-mono-display text-[16px]">₹627</span>
+</div>
+<div class="flex justify-between items-center text-success-green">
+<span class="font-body-md text-body-md flex items-center gap-xs"><span class="material-symbols-outlined text-[16px]">loyalty</span> FRESH20</span>
+<span class="font-mono-display text-[16px]">-₹125</span>
+</div>
+</div>
+<div class="flex justify-between items-end mb-xl">
+<span class="font-label-md text-label-md text-on-surface-variant">Total Amount</span>
+<span class="font-headline-lg text-headline-lg text-primary">₹502</span>
+</div>
+<button class="w-full bg-electric-violet hover:bg-primary-container text-white font-label-md text-label-md font-bold py-md px-lg rounded-lg shadow-lg shadow-primary/20 transition-all duration-200 active:scale-95 flex items-center justify-center gap-sm">
+                        Continue to Payment <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<p class="font-caption text-caption text-on-surface-variant text-center mt-md flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">lock</span> Secure Checkout
+                    </p>
+</div>
+</div>
+</div>
+</main>
+</body></html>

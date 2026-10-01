@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anything Clean - Design System</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#b7b4b7",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "surface-tint": "#dcb8ff",
+                        "outline-variant": "#4c4354",
+                        "error": "#ffb4ab",
+                        "surface-container": "#201f20",
+                        "on-tertiary": "#303032",
+                        "on-primary-container": "#eed9ff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "secondary-container": "#474649",
+                        "surface-container-high": "#2a2a2b",
+                        "error-container": "#93000a",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#353436",
+                        "surface": "#131314",
+                        "tertiary": "#c8c6c8",
+                        "primary": "#dcb8ff",
+                        "inverse-primary": "#8422dc",
+                        "on-surface": "#e5e2e3",
+                        "tertiary-fixed": "#e4e2e4",
+                        "background": "#131314",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-primary-fixed": "#2c0051",
+                        "on-tertiary-container": "#e3e0e2",
+                        "primary-fixed": "#efdbff",
+                        "on-secondary": "#303032",
+                        "on-background": "#e5e2e3",
+                        "on-primary": "#480081",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "tertiary-container": "#646365",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "outline": "#988ca0",
+                        "surface-container-low": "#1c1b1c",
+                        "inverse-on-surface": "#313031",
+                        "primary-container": "#8a2be2",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-bright": "#3a393a",
+                        "surface-container-lowest": "#0e0e0f",
+                        "secondary": "#c8c6c8",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-dim": "#131314",
+                        "surface-container-highest": "#353436",
+                        "secondary-fixed": "#e5e1e4",
+                        "on-error": "#690005",
+                        "on-secondary-fixed-variant": "#474649"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "3xl": "64px",
+                        "sm": "8px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "caption": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "label-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        .ds-section {
+            padding-top: theme('spacing.3xl');
+            padding-bottom: theme('spacing.3xl');
+            border-bottom: 1px solid theme('colors.surface-variant');
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen">
+<!-- TopNavBar Shell (Design System Version) -->
+<nav class="bg-surface/90 backdrop-blur-xl text-primary font-body-md text-body-md fixed top-0 w-full z-50 border-b border-white/5 shadow-sm flex justify-between items-center px-lg h-16 max-w-[1440px] mx-auto left-0 right-0">
+<div class="flex items-center gap-lg">
+<span class="text-headline-md font-headline-md font-bold text-primary">Anything Clean</span>
+<div class="hidden md:flex gap-md">
+<a class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md" href="#">Design System</a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md" href="#">Components</a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md" href="#">Patterns</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined hover:bg-white/5 transition-colors p-sm rounded-full cursor-pointer active:scale-95 transition-transform" data-icon="search">search</span>
+</div>
+</nav>
+<main class="max-w-[1280px] mx-auto px-lg pt-3xl mt-lg pb-3xl">
+<header class="mb-3xl">
+<h1 class="font-display-lg text-display-lg mb-md">Design System</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                The Anything Clean design system. A comprehensive guide to our premium, high-trust multi-vendor marketplace aesthetic focusing on efficiency, high-end lifestyle management, and technological superiority.
+            </p>
+</header>
+<!-- 1. Brand & Colors -->
+<section class="ds-section" id="colors">
+<h2 class="font-headline-lg text-headline-lg mb-xl">1. Brand &amp; Colors</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg mb-xl">
+<!-- Background/Surface -->
+<div class="flex flex-col gap-sm">
+<h3 class="font-headline-md text-headline-md mb-sm">Canvas &amp; Surfaces</h3>
+<div class="bg-background border border-surface-variant rounded-lg p-lg flex justify-between items-end h-24">
+<span class="font-label-md text-label-md">Background</span>
+<span class="font-caption text-caption text-on-surface-variant">#131314</span>
+</div>
+<div class="bg-surface rounded-lg p-lg flex justify-between items-end h-24 border border-white/5 shadow-sm">
+<span class="font-label-md text-label-md">Surface</span>
+<span class="font-caption text-caption text-on-surface-variant">#131314 (Layer 1)</span>
+</div>
+<div class="bg-surface-container-high rounded-lg p-lg flex justify-between items-end h-24 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)]">
+<span class="font-label-md text-label-md">Elevated</span>
+<span class="font-caption text-caption text-on-surface-variant">#2a2a2b</span>
+</div>
+</div>
+<!-- Primary / Accent -->
+<div class="flex flex-col gap-sm">
+<h3 class="font-headline-md text-headline-md mb-sm">Primary Brand</h3>
+<div class="bg-primary text-on-primary rounded-lg p-lg flex justify-between items-end h-24">
+<span class="font-label-md text-label-md">Primary</span>
+<span class="font-caption text-caption opacity-80">#dcb8ff</span>
+</div>
+<div class="bg-primary-container text-on-primary-container rounded-lg p-lg flex justify-between items-end h-24">
+<span class="font-label-md text-label-md">Primary Container</span>
+<span class="font-caption text-caption opacity-80">#8a2be2</span>
+</div>
+</div>
+<!-- Secondary -->
+<div class="flex flex-col gap-sm">
+<h3 class="font-headline-md text-headline-md mb-sm">Secondary</h3>
+<div class="bg-secondary text-on-secondary rounded-lg p-lg flex justify-between items-end h-24">
+<span class="font-label-md text-label-md">Secondary</span>
+<span class="font-caption text-caption opacity-80">#c8c6c8</span>
+</div>
+<div class="bg-secondary-container text-on-secondary-container rounded-lg p-lg flex justify-between items-end h-24">
+<span class="font-label-md text-label-md">Secondary Cont.</span>
+<span class="font-caption text-caption opacity-80">#474649</span>
+</div>
+</div>
+<!-- Status -->
+<div class="flex flex-col gap-sm">
+<h3 class="font-headline-md text-headline-md mb-sm">Status (Error)</h3>
+<div class="bg-error text-on-error rounded-lg p-lg flex justify-between items-end h-24">
+<span class="font-label-md text-label-md">Error</span>
+<span class="font-caption text-caption opacity-80">#ffb4ab</span>
+</div>
+<div class="bg-error-container text-on-error-container rounded-lg p-lg flex justify-between items-end h-24">
+<span class="font-label-md text-label-md">Error Container</span>
+<span class="font-caption text-caption opacity-80">#93000a</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Typography -->
+<section class="ds-section" id="typography">
+<h2 class="font-headline-lg text-headline-lg mb-xl">2. Typography</h2>
+<div class="bg-surface border border-white/5 rounded-xl p-xl shadow-sm flex flex-col gap-lg">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md items-baseline border-b border-surface-variant pb-md">
+<div class="font-caption text-caption text-on-surface-variant">Display Large</div>
+<div class="col-span-3 font-display-lg text-display-lg text-on-surface">The quick brown fox</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md items-baseline border-b border-surface-variant pb-md hidden md:grid">
+<div class="font-caption text-caption text-on-surface-variant">Display Large (Mobile)</div>
+<div class="col-span-3 font-display-lg-mobile text-display-lg-mobile text-on-surface">The quick brown fox</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md items-baseline border-b border-surface-variant pb-md">
+<div class="font-caption text-caption text-on-surface-variant">Headline Large</div>
+<div class="col-span-3 font-headline-lg text-headline-lg text-on-surface">Premium lifestyle management services</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md items-baseline border-b border-surface-variant pb-md">
+<div class="font-caption text-caption text-on-surface-variant">Headline Medium</div>
+<div class="col-span-3 font-headline-md text-headline-md text-on-surface">Book a verified professional today</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md items-baseline border-b border-surface-variant pb-md">
+<div class="font-caption text-caption text-on-surface-variant">Body Large</div>
+<div class="col-span-3 font-body-lg text-body-lg text-on-surface">Our highly vetted partners provide exceptional care for your home and personal items, ensuring peace of mind.</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md items-baseline border-b border-surface-variant pb-md">
+<div class="font-caption text-caption text-on-surface-variant">Body Medium</div>
+<div class="col-span-3 font-body-md text-body-md text-on-surface">Review the service details below before confirming your booking schedule and payment method.</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md items-baseline border-b border-surface-variant pb-md">
+<div class="font-caption text-caption text-on-surface-variant">Label Medium</div>
+<div class="col-span-3 font-label-md text-label-md text-on-surface">CONFIRM BOOKING</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md items-baseline">
+<div class="font-caption text-caption text-on-surface-variant">Caption</div>
+<div class="col-span-3 font-caption text-caption text-on-surface">Taxes and fees calculated at checkout. By continuing, you agree to our Terms of Service.</div>
+</div>
+</div>
+</section>
+</main>
+</body></html>

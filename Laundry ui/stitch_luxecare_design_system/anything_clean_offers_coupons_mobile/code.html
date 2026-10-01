@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Offers - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#39393a",
+                        "error": "#ffb4ab",
+                        "tertiary-container": "#646365",
+                        "success-bg": "#1A3D24",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-secondary-fixed-variant": "#474648",
+                        "outline": "#988ca0",
+                        "on-secondary-container": "#b9b8ba",
+                        "primary": "#dcb8ff",
+                        "secondary": "#c8c6c8",
+                        "on-background": "#e5e2e3",
+                        "surface-container": "#201f20",
+                        "tertiary-fixed": "#e4e2e4",
+                        "surface-dim": "#131314",
+                        "outline-variant": "#4c4354",
+                        "secondary-fixed": "#e4e2e4",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-error": "#690005",
+                        "on-surface": "#e5e2e3",
+                        "surface-container-lowest": "#0e0e0f",
+                        "inverse-on-surface": "#313031",
+                        "secondary-container": "#49494b",
+                        "on-primary": "#480081",
+                        "error-red": "#ffb4ab",
+                        "electric-violet": "#8a2be2",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface-container-low": "#1c1b1c",
+                        "on-primary-container": "#eed9ff",
+                        "on-secondary": "#303032",
+                        "inverse-primary": "#8422dc",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "primary-fixed": "#efdbff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "inverse-surface": "#e5e2e3",
+                        "on-primary-fixed": "#2c0051",
+                        "tertiary": "#c8c6c8",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "surface": "#131314",
+                        "on-tertiary": "#303032",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#2a2a2b",
+                        "surface-tint": "#dcb8ff",
+                        "primary-container": "#8a2be2",
+                        "on-surface-variant": "#cfc2d7",
+                        "background": "#131314",
+                        "success-green": "#81C784",
+                        "surface-variant": "#353436",
+                        "surface-container-highest": "#353436"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "3xl": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "caption": ["Geist"],
+                        "h1": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "h3": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:flex-row pb-16 md:pb-0 pt-[72px] md:pt-0">
+<!-- TopAppBar (Mobile Only - from JSON logic, hidden on md) -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-low/80 backdrop-blur-md flex justify-between items-center px-lg py-sm md:hidden border-b border-outline-variant/30">
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-200 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<span class="font-headline-lg text-headline-lg text-primary">Lumina</span>
+</div>
+<button class="text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-200 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<!-- NavigationDrawer (Desktop Only - hidden on mobile) -->
+<nav class="hidden md:flex flex-col h-screen fixed left-0 top-0 w-[256px] bg-surface-container-low border-r border-outline-variant/30 p-md z-40">
+<div class="mb-xl px-sm">
+<span class="font-h1 text-h1 text-primary">Lumina</span>
+</div>
+<div class="flex flex-col flex-1 gap-2">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-all active:translate-x-1 duration-150 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+                Discovery
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-primary/10 text-primary font-bold hover:bg-surface-container transition-all active:translate-x-1 duration-150 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="local_offer">local_offer</span>
+                Offers
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-all active:translate-x-1 duration-150 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="card_membership">card_membership</span>
+                Membership
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-all active:translate-x-1 duration-150 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="group_add">group_add</span>
+                Referrals
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-all active:translate-x-1 duration-150 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+                Notifications
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-all active:translate-x-1 duration-150 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="help_center">help_center</span>
+                Support
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-all active:translate-x-1 duration-150 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+                Safety
+            </a>
+</div>
+<div class="mt-auto pt-md border-t border-outline-variant/30 flex items-center gap-md px-sm">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A small, circular avatar portrait of a professional individual in a dimly lit, high-tech environment. The lighting features subtle electric violet highlights, consistent with a modern corporate tech aesthetic. The mood is serious and focused, captured with crisp, high-contrast digital photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSkKiPD_ZLMrrbhtt9igzX4Iq6iURVPMj29TQDiwUrBHJJ5dM-RLbnc5DJglFbqhodMjvqZBsbcjZm7tZWMrB6B2hSVCGtap8d7wjMNnmGdCnMFxeyGo77J_kKfY6k4S4sz3GJR47unezscOAN3oiWnqlBJ6RRBQPgEleqkQt3RB8PxpOFgktOGFa59qeQ_5mXnF2E8AnKM4tekOPEtpifJseI3wLIUaC3pYuT3Vsl-j--s03VDlaYdQ"/>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface">Alex Dev</div>
+<div class="font-caption text-caption text-on-surface-variant">Pro Member</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-[1200px] mx-auto p-md md:p-xl md:ml-[256px]">
+<!-- Header Section -->
+<header class="mb-xl">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Offers</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Save more on your next service.</p>
+</header>
+<!-- Bento Grid for Offers -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-md lg:gap-lg">
+<!-- Featured Offer Hero Card -->
+<div class="lg:col-span-8 bg-surface-container border border-outline-variant/20 rounded-xl overflow-hidden relative min-h-[300px] flex flex-col justify-end p-lg">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-30" data-alt="A dynamic abstract background featuring geometric glassmorphism shapes floating in a dark, atmospheric void. Subtle glows of electric violet (#8a2be2) edge the shapes, creating a sense of depth and modern technology. The image is rendered in high-definition 3D, embodying a clean, high-performance corporate SaaS aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYJt2T3Lp2ofLZDoSeCDLshbdvED7LHUTHY74i5milMbymYDfvW-fa-LqWGYOq8YD6ZsOPqxkXkRMdljKeZt_ownUg42IdWrDamljqkcjECiBwBfdqzSNcC-7ma-hTVY6Sxk58yhGPN3eSewMpCSjeNyr3Y-vgEgybADB0K3UyoUWQXwbK7Z0Y_lhJ_VzrzGhLjjK2RZ0sDN4DY3Gak5nfVicl3JmAztK7xiOBDcsd_8rDh15LmMdKIw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/80 to-transparent"></div>
+</div>
+<div class="relative z-10">
+<div class="inline-block px-md py-sm bg-electric-violet/20 border border-electric-violet/30 rounded-full mb-md backdrop-blur-sm">
+<span class="font-label-md text-label-md text-primary font-bold tracking-wider uppercase">Featured</span>
+</div>
+<h2 class="font-display-lg text-display-lg text-on-surface mb-sm max-w-lg">20% OFF on your first eligible booking</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mb-lg">Unlock premium cleaning services at a fraction of the cost. Valid for new users on select services.</p>
+<button class="bg-electric-violet text-on-primary font-label-md text-label-md px-lg py-sm rounded-lg shadow-lg shadow-electric-violet/20 hover:bg-electric-violet/90 transition-colors">Explore Services</button>
+</div>
+</div>
+<!-- Primary Coupon Card -->
+<div class="lg:col-span-4 bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col">
+<div class="flex justify-between items-start mb-lg pb-md border-b border-outline-variant/30">
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">CLEAN20</h3>
+<p class="font-caption text-caption text-success-green flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="check_circle">check_circle</span>
+                            Active Coupon
+                        </p>
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg border border-outline-variant/50 cursor-pointer hover:border-primary transition-colors group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="content_copy">content_copy</span>
+</div>
+</div>
+<div class="flex-1 space-y-md mb-xl">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Discount</span>
+<span class="font-mono-display text-mono-display text-primary">20%</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Max Value</span>
+<span class="font-label-md text-label-md text-on-surface">₹100</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Min Order</span>
+<span class="font-label-md text-label-md text-on-surface">₹499</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Valid Until</span>
+<span class="font-label-md text-label-md text-on-surface">Oct 31, 2023</span>
+</div>
+</div>
+<button class="w-full bg-electric-violet text-on-primary font-label-md text-label-md py-md rounded-lg shadow-lg shadow-electric-violet/20 hover:bg-electric-violet/90 transition-colors mt-auto">Apply Coupon</button>
+</div>
+<!-- Secondary Offers Row -->
+<div class="lg:col-span-6 bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex items-center gap-lg hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="w-16 h-16 rounded-full bg-surface-container-low border border-outline-variant/50 flex items-center justify-center flex-shrink-0 group-hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-3xl text-on-surface-variant group-hover:text-primary transition-colors" data-icon="diamond">diamond</span>
+</div>
+<div>
+<h4 class="font-h3 text-h3 text-on-surface mb-xs">Pro Member Exclusive</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Get a flat ₹500 off on deep cleaning packages over ₹2000.</p>
+</div>
+<div class="ml-auto">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<div class="lg:col-span-6 bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex items-center gap-lg hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="w-16 h-16 rounded-full bg-surface-container-low border border-outline-variant/50 flex items-center justify-center flex-shrink-0 group-hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-3xl text-on-surface-variant group-hover:text-primary transition-colors" data-icon="credit_card">credit_card</span>
+</div>
+<div>
+<h4 class="font-h3 text-h3 text-on-surface mb-xs">Bank Partner Offer</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">10% cashback using Axis Bank credit cards. T&amp;C Apply.</p>
+</div>
+<div class="ml-auto">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 md:hidden bg-surface-container-low/95 backdrop-blur-md shadow-lg shadow-primary/5 flex justify-around items-center h-16 px-md border-t border-outline-variant/30">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-md text-label-md text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="sell" data-weight="fill" style="font-variation-settings: 'FILL' 1;">sell</span>
+<span class="font-label-md text-label-md text-[10px] font-bold">Offers</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="search">search</span>
+<span class="font-label-md text-label-md text-[10px]">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="history">history</span>
+<span class="font-label-md text-label-md text-[10px]">Activity</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-md text-label-md text-[10px]">Profile</span>
+</a>
+</nav>
+</body></html>

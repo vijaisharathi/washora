@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Lumina Partner - Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#eed9ff",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#e3e0e2",
+                        "surface-container": "#201f20",
+                        "error-red": "#ffb4ab",
+                        "secondary": "#c8c6c8",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-container-high": "#2a2a2b",
+                        "secondary-fixed": "#e4e2e4",
+                        "tertiary-fixed": "#e4e2e4",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#efdbff",
+                        "outline": "#988ca0",
+                        "surface-dim": "#131314",
+                        "success-green": "#81C784",
+                        "inverse-primary": "#8422dc",
+                        "inverse-surface": "#e5e2e3",
+                        "secondary-container": "#49494b",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-primary": "#480081",
+                        "inverse-on-surface": "#313031",
+                        "background": "#131314",
+                        "on-background": "#e5e2e3",
+                        "surface-bright": "#39393a",
+                        "surface-container-highest": "#353436",
+                        "on-secondary-container": "#b9b8ba",
+                        "success-bg": "#1A3D24",
+                        "on-surface": "#e5e2e3",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-primary-fixed": "#2c0051",
+                        "surface-container-low": "#1c1b1c",
+                        "on-secondary-fixed-variant": "#474648",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface": "#131314",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "tertiary-container": "#646365",
+                        "surface-tint": "#dcb8ff",
+                        "on-tertiary": "#303032",
+                        "surface-variant": "#353436",
+                        "tertiary": "#c8c6c8",
+                        "electric-violet": "#8a2be2",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "outline-variant": "#4c4354",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#dcb8ff",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-secondary": "#303032",
+                        "primary-container": "#8a2be2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "2xl": "48px",
+                        "3xl": "64px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Geist"],
+                        "caption": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "h3": ["Geist"],
+                        "display-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        /* Hide scrollbar for clean app feel */
+        ::-webkit-scrollbar { display: none; }
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom, 20px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex justify-center w-full min-h-screen bg-surface-container-lowest antialiased">
+<!-- Mobile Container (390px width) -->
+<main class="w-full max-w-[390px] bg-background relative h-screen flex flex-col overflow-hidden shadow-2xl shadow-electric-violet/5">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-lg h-16 max-w-[390px] bg-surface-dim/80 dark:bg-surface-dim/80 text-primary dark:text-primary">
+<button aria-label="Menu" class="active:scale-95 transition-transform hover:bg-surface-container-high rounded-full p-2 -ml-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-h3 text-h3 font-bold text-electric-violet">Lumina Partner</h1>
+<div class="active:scale-95 transition-transform hover:bg-surface-container-high rounded-full overflow-hidden w-8 h-8 flex-shrink-0 border border-outline-variant/50 cursor-pointer">
+<img alt="Partner Profile Picture" class="w-full h-full object-cover" data-alt="A small, professional avatar portrait of a modern courier or driver, wearing high-tech sleek dark gear. Soft, high-key studio lighting with a neutral gray background. The image is crisp, realistic, and embodies a premium service provider aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_T3v-RJGVOgMVRsgYfBo0JgrZG00uBiSFy8jePS-gjtWc_qm43Jwi-_qgFqIoOKXsErTT1iOnNwsLPCsDc5Ru5B0HyVrDKFeHj1V2E9ZF6lwv5QmZ6oI0x_T2TY95-edcACJPJlCTXzTm23FhSFbkZ_e4aYSETP3RN025oneUcjFZ0E17N88xK7wzuHmllidUO82FzjJMouSJcUbs_ZgJig1sbl2C5REbRzG4h_LRztaVqBiSaCuJfA"/>
+</div>
+</header>
+<!-- Main Content Area -->
+<div class="flex-1 overflow-y-auto pt-20 pb-28 px-md space-y-lg">
+<h2 class="font-h1 text-h1 text-on-surface mb-md">Settings</h2>
+<!-- Group 1: Account -->
+<section class="bg-surface-container rounded-xl border border-outline-variant/20 overflow-hidden shadow-sm shadow-electric-violet/5">
+<h3 class="font-label-md text-label-md text-electric-violet uppercase tracking-wider px-md py-sm bg-surface-container-low border-b border-outline-variant/30">Account</h3>
+<div class="flex flex-col">
+<button class="flex items-center justify-between px-md py-md hover:bg-surface-container-high transition-colors text-left border-b border-outline-variant/10 active:bg-surface-variant">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="person">person</span>
+<span class="font-body-md text-body-md text-on-surface">Profile</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</button>
+<button class="flex items-center justify-between px-md py-md hover:bg-surface-container-high transition-colors text-left border-b border-outline-variant/10 active:bg-surface-variant">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="verified_user">verified_user</span>
+<span class="font-body-md text-body-md text-on-surface">Verification</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</button>
+<button class="flex items-center justify-between px-md py-md hover:bg-surface-container-high transition-colors text-left active:bg-surface-variant">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="directions_car">directions_car</span>
+<span class="font-body-md text-body-md text-on-surface">Vehicle</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Group 2: Delivery -->
+<section class="bg-surface-container rounded-xl border border-outline-variant/20 overflow-hidden shadow-sm shadow-electric-violet/5">
+<h3 class="font-label-md text-label-md text-electric-violet uppercase tracking-wider px-md py-sm bg-surface-container-low border-b border-outline-variant/30">Delivery</h3>
+<div class="flex flex-col">
+<button class="flex items-center justify-between px-md py-md hover:bg-surface-container-high transition-colors text-left border-b border-outline-variant/10 active:bg-surface-variant">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="schedule">schedule</span>
+<span class="font-body-md text-body-md text-on-surface">Availability</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</button>
+<button class="flex items-center justify-between px-md py-md hover:bg-surface-container-high transition-colors text-left active:bg-surface-variant">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="tune">tune</span>
+<span class="font-body-md text-body-md text-on-surface">Delivery Preferences</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Logout Action -->
+<div class="pt-md pb-xl">
+<button class="w-full bg-surface-container border border-error-container/30 rounded-xl py-md text-center hover:bg-error-container/10 active:scale-95 transition-all duration-200" onclick="document.getElementById('logout-modal').classList.remove('hidden'); document.getElementById('logout-modal').classList.add('flex')">
+<span class="font-h3 text-h3 font-bold text-error">Log Out</span>
+</button>
+</div>
+<!-- Spacer to ensure content doesn't hide behind nav -->
+<div class="h-8"></div>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 border-t border-outline-variant/30 flex justify-around items-center h-20 px-md pb-safe bg-surface-container-low dark:bg-surface-container-low max-w-[390px]">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface active:scale-90 transition-transform duration-200 w-16">
+<span class="material-symbols-outlined mb-1" data-icon="delivery_dining">delivery_dining</span>
+<span class="font-label-md text-label-md text-[10px]">Tasks</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface active:scale-90 transition-transform duration-200 w-16">
+<span class="material-symbols-outlined mb-1" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md text-[10px]">Earnings</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface active:scale-90 transition-transform duration-200 w-16">
+<span class="material-symbols-outlined mb-1" data-icon="shield">shield</span>
+<span class="font-label-md text-label-md text-[10px]">Safety</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface active:scale-90 transition-transform duration-200 w-16">
+<span class="material-symbols-outlined mb-1" data-icon="description">description</span>
+<span class="font-label-md text-label-md text-[10px]">Docs</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container/10 text-primary rounded-xl px-xs py-xs active:scale-90 transition-transform duration-200 w-16">
+<span class="material-symbols-outlined mb-1" data-icon="settings" data-weight="fill" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-label-md text-label-md text-[10px] font-bold">Settings</span>
+</button>
+</nav>
+<!-- Logout Confirmation Modal -->
+<div class="hidden fixed inset-0 z-[100] bg-background/80 backdrop-blur-sm items-center justify-center px-lg w-full max-w-[390px] left-1/2 -translate-x-1/2" id="logout-modal">
+<div class="bg-surface-container border border-outline-variant/30 rounded-xl p-lg w-full shadow-2xl flex flex-col items-center text-center animate-[fadeIn_0.2s_ease-out]">
+<div class="w-12 h-12 rounded-full bg-error-container/20 flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-error text-2xl" data-icon="logout">logout</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-sm">Log Out?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">Are you sure you want to end your current session?</p>
+<div class="flex gap-md w-full">
+<button class="flex-1 py-sm rounded-lg border border-outline-variant text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md" onclick="document.getElementById('logout-modal').classList.add('hidden'); document.getElementById('logout-modal').classList.remove('flex')">Cancel</button>
+<button class="flex-1 py-sm rounded-lg bg-error text-on-error hover:bg-error/90 transition-colors font-label-md text-label-md font-bold shadow-lg shadow-error/20">Log Out</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

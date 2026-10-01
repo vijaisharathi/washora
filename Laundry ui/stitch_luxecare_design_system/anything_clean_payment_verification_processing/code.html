@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Processing Payment - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary": "#303032",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "inverse-surface": "#e5e2e3",
+                      "on-error": "#690005",
+                      "success-bg": "#1A3D24",
+                      "error": "#ffb4ab",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "surface-dim": "#131314",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "success-green": "#81C784",
+                      "on-secondary-fixed-variant": "#474648",
+                      "inverse-on-surface": "#313031",
+                      "inverse-primary": "#8422dc",
+                      "on-primary-container": "#eed9ff",
+                      "on-primary": "#480081",
+                      "surface-variant": "#353436",
+                      "outline": "#988ca0",
+                      "primary": "#dcb8ff",
+                      "on-surface": "#e5e2e3",
+                      "on-secondary-container": "#b9b8ba",
+                      "surface-tint": "#dcb8ff",
+                      "tertiary-container": "#646365",
+                      "primary-container": "#8a2be2",
+                      "on-primary-fixed": "#2c0051",
+                      "primary-fixed": "#efdbff",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "surface-container-low": "#1c1b1c",
+                      "secondary-container": "#49494b",
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-surface-variant": "#cfc2d7",
+                      "surface-bright": "#39393a",
+                      "surface": "#131314",
+                      "outline-variant": "#4c4354",
+                      "secondary-fixed": "#e4e2e4",
+                      "error-container": "#93000a",
+                      "surface-container-highest": "#353436",
+                      "surface-container": "#201f20",
+                      "surface-container-high": "#2a2a2b",
+                      "error-red": "#ffb4ab",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-fixed": "#e4e2e4",
+                      "on-tertiary-container": "#e3e0e2",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "electric-violet": "#8a2be2",
+                      "tertiary": "#c8c6c8",
+                      "on-tertiary": "#303032",
+                      "background": "#131314",
+                      "on-background": "#e5e2e3",
+                      "secondary": "#c8c6c8",
+                      "on-primary-fixed-variant": "#6700b5"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xs": "4px",
+                      "sm": "8px",
+                      "xl": "32px",
+                      "2xl": "48px",
+                      "lg": "24px",
+                      "md": "16px",
+                      "3xl": "64px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Geist", "sans-serif"],
+                      "h3": ["Geist", "sans-serif"],
+                      "label-md": ["Geist", "sans-serif"],
+                      "mono-display": ["monospace"],
+                      "headline-lg": ["Geist", "sans-serif"],
+                      "h1": ["Geist", "sans-serif"],
+                      "body-md": ["Geist", "sans-serif"],
+                      "caption": ["Geist", "sans-serif"]
+              },
+              "fontSize": {
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "mono-display": ["18px", {"letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "h1": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .spin-slow {
+            animation: spin 3s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .pulse-soft {
+            animation: pulse-op 2s ease-in-out infinite;
+        }
+        @keyframes pulse-op {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex items-center justify-center font-sans antialiased overflow-hidden">
+<!-- Background atmospheric glow -->
+<div class="fixed inset-0 pointer-events-none flex items-center justify-center">
+<div class="w-[600px] h-[600px] bg-electric-violet/5 rounded-full blur-3xl pulse-soft"></div>
+</div>
+<!-- Main Processing Card -->
+<main class="relative z-10 w-full max-w-[500px] px-md">
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-xl flex flex-col items-center text-center">
+<!-- Amount Display -->
+<div class="mb-lg">
+<span class="font-label-md text-label-md text-on-surface-variant block mb-sm uppercase tracking-wider">Amount Processing</span>
+<div class="font-h1 text-h1 text-primary">
+                    ₹502
+                </div>
+</div>
+<!-- Loader Graphic -->
+<div class="relative w-2xl h-2xl mb-xl">
+<!-- Outer spinning ring -->
+<svg class="absolute inset-0 w-full h-full text-electric-violet/20 spin-slow" fill="none" viewbox="0 0 100 100">
+<circle cx="50" cy="50" r="45" stroke="currentColor" stroke-dasharray="283" stroke-dashoffset="70" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<!-- Inner spinning ring -->
+<svg class="absolute inset-0 w-full h-full text-electric-violet spin-slow" fill="none" style="animation-direction: reverse; animation-duration: 2s;" viewbox="0 0 100 100">
+<circle cx="50" cy="50" r="35" stroke="currentColor" stroke-dasharray="220" stroke-dashoffset="150" stroke-linecap="round" stroke-width="6"></circle>
+</svg>
+<!-- Center Icon -->
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[24px]">lock</span>
+</div>
+</div>
+<h1 class="font-h3 text-h3 text-on-surface mb-sm">Processing Payment</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-xl max-w-[300px]">
+                Please don't close this window. Your payment is being securely processed.
+            </p>
+<!-- Vertical Stepper -->
+<div class="w-full flex flex-col gap-md text-left border-t border-outline-variant/30 pt-lg">
+<!-- Step 1: Done -->
+<div class="flex items-start gap-md opacity-50">
+<div class="mt-[2px] flex-shrink-0 w-6 h-6 rounded-full bg-success-bg flex items-center justify-center border border-success-green/30">
+<span class="material-symbols-outlined text-[14px] text-success-green" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface block">Payment Initiated</span>
+<span class="font-caption text-caption text-on-surface-variant">Connected securely to gateway</span>
+</div>
+</div>
+<!-- Step 2: Active -->
+<div class="flex items-start gap-md">
+<div class="mt-[2px] flex-shrink-0 w-6 h-6 rounded-full bg-electric-violet/10 flex items-center justify-center border border-electric-violet">
+<div class="w-2 h-2 rounded-full bg-electric-violet animate-pulse"></div>
+</div>
+<div>
+<span class="font-label-md text-label-md text-primary block">Verifying Payment</span>
+<span class="font-caption text-caption text-on-surface-variant">Awaiting bank confirmation</span>
+</div>
+</div>
+<!-- Step 3: Pending -->
+<div class="flex items-start gap-md opacity-30">
+<div class="mt-[2px] flex-shrink-0 w-6 h-6 rounded-full bg-transparent flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">hourglass_empty</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface block">Confirming Order</span>
+<span class="font-caption text-caption text-on-surface-variant">Finalizing Anything Clean booking</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Secure footer branding -->
+<div class="mt-md text-center flex items-center justify-center gap-sm opacity-50">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span class="font-caption text-caption tracking-widest uppercase">Secured by 256-bit Encryption</span>
+</div>
+</main>
+</body></html>

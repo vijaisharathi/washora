@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Delivery Pro - Performance Dashboard</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error-container": "#ffdad6",
+                      "on-background": "#e5e2e3",
+                      "error-container": "#93000a",
+                      "primary-fixed": "#efdbff",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "surface-variant": "#353436",
+                      "primary": "#dcb8ff",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "secondary": "#c8c6c8",
+                      "inverse-surface": "#e5e2e3",
+                      "surface-dim": "#131314",
+                      "on-tertiary": "#303032",
+                      "surface": "#131314",
+                      "surface-container": "#201f20",
+                      "primary-container": "#8a2be2",
+                      "background": "#131314",
+                      "surface-container-highest": "#353436",
+                      "tertiary": "#c8c6c8",
+                      "surface-container-high": "#2a2a2b",
+                      "surface-tint": "#dcb8ff",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "on-tertiary-container": "#e3e0e2",
+                      "on-surface-variant": "#cfc2d7",
+                      "error": "#ffb4ab",
+                      "inverse-on-surface": "#313031",
+                      "tertiary-container": "#646365",
+                      "on-secondary-container": "#b7b4b7",
+                      "secondary-container": "#474649",
+                      "outline-variant": "#4c4354",
+                      "inverse-primary": "#8422dc",
+                      "on-primary-container": "#eed9ff",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "on-primary": "#480081",
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-error": "#690005",
+                      "on-primary-fixed": "#2c0051",
+                      "on-surface": "#e5e2e3",
+                      "tertiary-fixed": "#e4e2e4",
+                      "surface-container-low": "#1c1b1c",
+                      "outline": "#988ca0",
+                      "on-tertiary-fixed-variant": "#474649",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "on-secondary-fixed-variant": "#474649",
+                      "secondary-fixed": "#e5e1e4",
+                      "surface-bright": "#3a393a",
+                      "on-secondary": "#303032"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "2xl": "48px",
+                      "md": "16px",
+                      "xs": "4px",
+                      "sm": "8px",
+                      "3xl": "64px",
+                      "xl": "32px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "44px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        /* Base Styles */
+        body {
+            background-color: #0A0A0B;
+            color: #e5e2e3;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* Utility Classes */
+        .glass-panel {
+            background: rgba(18, 18, 20, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .glass-card {
+            background: rgba(28, 28, 30, 0.4);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #dcb8ff 0%, #efdbff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom, 20px);
+        }
+
+        /* Chart Animation */
+        @keyframes drawLine {
+            from { stroke-dashoffset: 1000; }
+            to { stroke-dashoffset: 0; }
+        }
+        .animate-line {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: drawLine 1.5s ease-out forwards;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md min-h-screen flex flex-col pt-16 pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 border-b border-white/5 bg-surface/80 backdrop-blur-md shadow-sm">
+<div class="flex items-center justify-between px-md h-16 w-full">
+<button class="text-on-surface-variant hover:bg-surface-variant/50 active:scale-95 transition-transform p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md-mobile font-bold text-primary dark:text-primary">Delivery Pro</h1>
+<button class="text-primary dark:text-primary-fixed hover:bg-surface-variant/50 active:scale-95 transition-transform p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">offline_bolt</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 px-5 w-full max-w-[390px] mx-auto overflow-y-auto">
+<!-- Header & Period Selector -->
+<div class="flex items-center justify-between mt-lg mb-md">
+<h2 class="font-headline-lg text-headline-lg-mobile text-on-surface">Performance</h2>
+<button class="flex items-center gap-2 bg-surface-container-high px-3 py-2 rounded-lg border border-white/5 active:scale-95 transition-transform">
+<span class="font-label-md text-label-md text-on-surface-variant">This Week</span>
+<span class="material-symbols-outlined text-on-surface-variant" style="font-size: 18px;">keyboard_arrow_down</span>
+</button>
+</div>
+<!-- Overall Score Card -->
+<section class="glass-card rounded-xl p-lg mb-lg relative overflow-hidden flex flex-col items-center justify-center text-center">
+<!-- Background Glow -->
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary-container/20 rounded-full blur-[40px]"></div>
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-sm uppercase tracking-wider">Overall Score</h3>
+<!-- Circular Progress Indicator (Simulated with CSS) -->
+<div class="relative w-3xl h-3xl flex items-center justify-center mb-sm">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<!-- Background Circle -->
+<circle cx="50" cy="50" fill="none" r="45" stroke="rgba(255,255,255,0.05)" stroke-linecap="round" stroke-width="8"></circle>
+<!-- Progress Circle -->
+<circle class="animate-line" cx="50" cy="50" fill="none" r="45" stroke="#dcb8ff" stroke-dasharray="283" stroke-dashoffset="17" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-display-lg text-display-lg-mobile gradient-text">94</span>
+<span class="font-caption text-caption text-on-surface-variant opacity-50">/100</span>
+</div>
+</div>
+<div class="flex items-center gap-xs text-primary bg-primary/10 px-3 py-1 rounded-full">
+<span class="material-symbols-outlined" style="font-size: 16px; font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-bold">Excellent</span>
+</div>
+</section>
+<!-- KPI Grid -->
+<section class="grid grid-cols-2 gap-md mb-lg">
+<!-- Acceptance Rate -->
+<div class="glass-card rounded-lg p-md flex flex-col justify-between">
+<div class="flex items-start justify-between mb-sm">
+<div class="p-2 bg-surface-container-highest rounded-full">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">task_alt</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 14px;">arrow_upward</span> 2%
+                    </span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-on-surface">92%</div>
+<div class="font-caption text-caption text-on-surface-variant">Acceptance Rate</div>
+</div>
+</div>
+<!-- Completion Rate -->
+<div class="glass-card rounded-lg p-md flex flex-col justify-between">
+<div class="flex items-start justify-between mb-sm">
+<div class="p-2 bg-surface-container-highest rounded-full">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">check_circle</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-size: 14px;">remove</span> 0%
+                    </span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-on-surface">98%</div>
+<div class="font-caption text-caption text-on-surface-variant">Completion Rate</div>
+</div>
+</div>
+<!-- On-Time Rate -->
+<div class="glass-card rounded-lg p-md flex flex-col justify-between">
+<div class="flex items-start justify-between mb-sm">
+<div class="p-2 bg-surface-container-highest rounded-full">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">schedule</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 14px;">arrow_upward</span> 1%
+                    </span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-on-surface">96%</div>
+<div class="font-caption text-caption text-on-surface-variant">On-Time Rate</div>
+</div>
+</div>
+<!-- Customer Rating -->
+<div class="glass-card rounded-lg p-md flex flex-col justify-between">
+<div class="flex items-start justify-between mb-sm">
+<div class="p-2 bg-surface-container-highest rounded-full">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px; font-variation-settings: 'FILL' 1;">star_rate</span>
+</div>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-on-surface">4.9</div>
+<div class="font-caption text-caption text-on-surface-variant">Customer Rating</div>
+</div>
+</div>
+</section>
+<!-- Trend Chart (Conceptual) -->
+<section class="glass-card rounded-xl p-md mb-lg">
+<h3 class="font-label-md text-label-md text-on-surface mb-md">7-Day Trend</h3>
+<div class="h-32 w-full relative">
+<!-- SVG Line Chart Placeholder -->
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 300 100">
+<!-- Grid Lines -->
+<line stroke="rgba(255,255,255,0.05)" stroke-width="1" x1="0" x2="300" y1="20" y2="20"></line>
+<line stroke="rgba(255,255,255,0.05)" stroke-width="1" x1="0" x2="300" y1="50" y2="50"></line>
+<line stroke="rgba(255,255,255,0.05)" stroke-width="1" x1="0" x2="300" y1="80" y2="80"></line>
+<!-- Line -->
+<path class="animate-line" d="M 0 60 C 50 60, 50 40, 100 40 C 150 40, 150 70, 200 60 C 250 50, 250 20, 300 30" fill="none" stroke="#dcb8ff" stroke-linecap="round" stroke-width="3" style="filter: drop-shadow(0px 4px 6px rgba(138, 43, 226, 0.3));"></path>
+<!-- Data Points -->
+<circle cx="100" cy="40" fill="#131314" r="4" stroke="#dcb8ff" stroke-width="2"></circle>
+<circle cx="200" cy="60" fill="#131314" r="4" stroke="#dcb8ff" stroke-width="2"></circle>
+<circle cx="300" cy="30" fill="#131314" r="4" stroke="#dcb8ff" stroke-width="2"></circle>
+</svg>
+<!-- X-Axis Labels -->
+<div class="absolute bottom-0 w-full flex justify-between text-[10px] text-on-surface-variant pt-2">
+<span>Mon</span>
+<span>Wed</span>
+<span>Fri</span>
+<span>Sun</span>
+</div>
+</div>
+</section>
+<!-- Insights -->
+<h3 class="font-headline-md text-headline-md text-on-surface mb-md">Insights</h3>
+<section class="flex flex-col gap-sm mb-lg">
+<!-- Great Job Insight -->
+<div class="glass-card rounded-lg p-md flex items-start gap-md border-l-2 border-l-primary">
+<div class="bg-primary-container/20 p-2 rounded-full mt-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">thumb_up</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-xs">Great job on punctuality!</h4>
+<p class="font-caption text-caption text-on-surface-variant">Your On-Time Rate is top 10% in your area this week.</p>
+</div>
+</div>
+<!-- Opportunity Insight -->
+<div class="glass-card rounded-lg p-md flex items-start gap-md border-l-2 border-l-surface-variant">
+<div class="bg-surface-container-highest p-2 rounded-full mt-1">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-size: 20px;">trending_up</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-xs">Opportunity to earn more</h4>
+<p class="font-caption text-caption text-on-surface-variant">Accepting orders between 5PM-8PM can boost your earnings by 20%.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl border-t border-white/10 bg-surface/90 backdrop-blur-2xl shadow-[0_-4px_20px_rgba(0,0,0,0.3)] pb-safe hidden md:hidden flex justify-around items-center h-20 px-2" style="display: flex;">
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:bg-surface-container-high active:scale-90 transition-all duration-200 p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-[10px] mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:bg-surface-container-high active:scale-90 transition-all duration-200 p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-label-md text-[10px] mt-1">Deliveries</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:bg-surface-container-high active:scale-90 transition-all duration-200 p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-[10px] mt-1">Earnings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold bg-primary-container/20 rounded-xl px-4 py-1 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">insights</span> <!-- using a relevant icon as 'Performance' isn't in JSON, mapping to Alerts/Insights -->
+<span class="font-label-md text-[10px] mt-1">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:bg-surface-container-high active:scale-90 transition-all duration-200 p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-[10px] mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

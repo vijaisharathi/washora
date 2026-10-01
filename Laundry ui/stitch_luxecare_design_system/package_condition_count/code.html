@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Delivery Pro - Package Condition &amp; Count</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+
+        /* Glassmorphism utilities */
+        .glass {
+            background: rgba(18, 18, 20, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        
+        .glass-border {
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .glass-glow {
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08), 
+                        0 4px 20px -2px rgba(138, 43, 226, 0.1);
+        }
+
+        /* Stepper input styling */
+        input[type="number"]::-webkit-inner-spin-button, 
+        input[type="number"]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#646365",
+                        "on-primary-fixed": "#2c0051",
+                        "secondary": "#c8c6c8",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#e4e2e4",
+                        "surface-dim": "#131314",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-primary-container": "#eed9ff",
+                        "on-tertiary": "#303032",
+                        "inverse-on-surface": "#313031",
+                        "surface-bright": "#3a393a",
+                        "outline-variant": "#4c4354",
+                        "surface-tint": "#dcb8ff",
+                        "on-error": "#690005",
+                        "on-background": "#e5e2e3",
+                        "secondary-fixed": "#e5e1e4",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "primary-container": "#8a2be2",
+                        "secondary-container": "#474649",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-variant": "#353436",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-secondary": "#303032",
+                        "on-secondary-container": "#b7b4b7",
+                        "surface-container-highest": "#353436",
+                        "surface": "#131314",
+                        "tertiary": "#c8c6c8",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#201f20",
+                        "inverse-primary": "#8422dc",
+                        "primary": "#dcb8ff",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "primary-fixed": "#efdbff",
+                        "outline": "#988ca0",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "background": "#131314",
+                        "on-primary": "#480081",
+                        "inverse-surface": "#e5e2e3",
+                        "on-secondary-fixed-variant": "#474649",
+                        "on-surface-variant": "#cfc2d7",
+                        "surface-container-high": "#2a2a2b",
+                        "on-surface": "#e5e2e3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "sm": "8px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "3xl": "64px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "label-md": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "caption": ["Geist"],
+                        "body-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation (Mobile & Desktop) -->
+<header class="fixed top-0 w-full z-50 border-b border-white/5 bg-surface/80 backdrop-blur-md shadow-sm">
+<div class="flex items-center justify-between px-md h-16 w-full max-w-7xl mx-auto">
+<button class="text-primary dark:text-primary-fixed hover:bg-surface-variant/50 active:scale-95 transition-transform p-sm rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md-mobile font-bold text-primary dark:text-primary">Delivery Pro</h1>
+<div class="flex items-center gap-xs">
+<button class="text-on-surface-variant hover:bg-surface-variant/50 active:scale-95 transition-transform p-sm rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="offline_bolt">offline_bolt</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-[88px] pb-[120px] px-md md:px-lg max-w-3xl mx-auto">
+<!-- Progress Stepper Header -->
+<div class="mb-lg">
+<div class="flex items-center justify-between mb-sm">
+<span class="font-label-md text-label-md text-on-surface-variant">Order #DP-8472-BX</span>
+<span class="font-label-md text-label-md text-primary">Step 2 of 4</span>
+</div>
+<div class="h-1 bg-surface-container-high rounded-full w-full overflow-hidden">
+<div class="h-full bg-primary w-1/2 rounded-full relative">
+<div class="absolute inset-0 bg-white/20 animate-pulse"></div>
+</div>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile mt-md text-on-surface">Verification</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Confirm package count and document physical condition upon arrival.</p>
+</div>
+<form class="space-y-xl" id="verification-form">
+<!-- Section 1: Package Count -->
+<section class="bg-surface-container rounded-xl p-md glass-border relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+<h3 class="font-headline-md text-headline-md-mobile text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="inventory_2">inventory_2</span>
+                    Package Count
+                </h3>
+<div class="flex flex-col md:flex-row gap-md items-center justify-between">
+<div class="w-full md:w-auto bg-surface-container-highest p-md rounded-lg flex-1 text-center md:text-left border border-white/5">
+<span class="block font-label-md text-label-md text-on-surface-variant mb-xs">Expected</span>
+<span class="font-display-lg text-display-lg-mobile text-on-surface">1</span>
+</div>
+<div class="hidden md:flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="compare_arrows">compare_arrows</span>
+</div>
+<div class="w-full md:w-auto bg-surface-container-highest p-md rounded-lg flex-1 border border-primary/30 relative glass-glow">
+<span class="block font-label-md text-label-md text-on-surface-variant mb-xs text-center md:text-left">Received</span>
+<div class="flex items-center justify-center md:justify-start gap-md">
+<button class="w-10 h-10 rounded-full bg-surface-variant hover:bg-tertiary-container flex items-center justify-center text-on-surface transition-colors" id="btn-decrease" type="button">
+<span class="material-symbols-outlined" data-icon="remove">remove</span>
+</button>
+<input class="w-16 bg-transparent text-center font-display-lg text-display-lg-mobile text-primary border-none focus:ring-0 p-0" id="received-count" max="10" min="0" readonly="" type="number" value="1"/>
+<button class="w-10 h-10 rounded-full bg-surface-variant hover:bg-tertiary-container flex items-center justify-center text-on-surface transition-colors" id="btn-increase" type="button">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+<div class="hidden mt-md p-sm bg-error-container/20 border border-error/50 rounded-lg flex items-start gap-sm text-error" id="count-warning">
+<span class="material-symbols-outlined shrink-0" data-icon="warning">warning</span>
+<p class="font-caption text-caption">Count mismatch. Please document reasons in notes if accepting partial delivery.</p>
+</div>
+</section>
+<!-- Section 2: Photo Evidence -->
+<section class="space-y-sm">
+<div class="flex justify-between items-end mb-sm">
+<h3 class="font-headline-md text-headline-md-mobile text-on-surface">Photo Evidence</h3>
+<span class="font-caption text-caption text-error">*Required</span>
+</div>
+<div class="relative w-full h-48 bg-surface-container rounded-xl border-2 border-dashed border-outline-variant hover:border-primary transition-colors cursor-pointer flex flex-col items-center justify-center group overflow-hidden">
+<!-- Image placeholder area -->
+<div class="absolute inset-0 hidden bg-cover bg-center z-10" data-alt="A high-quality, close-up photograph of a cardboard delivery box resting on a concrete surface. The box shows slight wear on the edges, illuminated by natural, diffused daylight. The style is hyper-realistic, documentary photography commonly found in modern logistics apps. The overall tone is objective, clear, and focused on physical condition details." id="photo-preview" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBXA8UTpn7YHvZf6jm1KwyzE2tUEKDvOiicVS4ZfmstVp3txg4PHxYlCcsNgB9sM2ga0Fotk9bSMa3iLKhfE1Y1qW8KiskN8H8oaJYW-pHe-7Oafha8-mjQjP9vHerksZ23lN7Z1taa4WP2gsfz2ROYf0tpDTom55C9WFxW8s_RrvM52fHWtioFqfulWEG-FifcPztvDkOTXfMFKe_ZLOCypc5dp1BfE9yv4cbIOlqRFIvUY1wbaKs7ow')">
+<button class="absolute top-sm right-sm bg-surface-container-highest/80 backdrop-blur-md p-sm rounded-full text-on-surface hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+<div class="z-0 flex flex-col items-center group-hover:scale-105 transition-transform duration-300">
+<div class="w-12 h-12 bg-surface-variant rounded-full flex items-center justify-center mb-sm text-primary">
+<span class="material-symbols-outlined" data-icon="add_a_photo">add_a_photo</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Tap to capture package</span>
+<span class="font-caption text-caption text-on-surface-variant mt-xs">Ensure shipping label is visible</span>
+</div>
+</div>
+</section>
+<!-- Section 3: Condition -->
+<section class="space-y-md">
+<h3 class="font-headline-md text-headline-md-mobile text-on-surface">Physical Condition</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-sm">
+<!-- Option 1 -->
+<label class="relative flex items-start p-md bg-surface-container rounded-lg border border-white/5 cursor-pointer hover:bg-surface-container-high transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary-container/10">
+<input checked="" class="peer sr-only" name="condition" type="radio" value="intact"/>
+<div class="w-5 h-5 rounded-full border-2 border-outline peer-checked:border-primary peer-checked:border-[6px] mr-md mt-xs transition-all"></div>
+<div class="flex-1">
+<span class="block font-label-md text-label-md text-on-surface mb-xs">Intact</span>
+<span class="block font-caption text-caption text-on-surface-variant">No visible damage to outer packaging.</span>
+</div>
+</label>
+<!-- Option 2 -->
+<label class="relative flex items-start p-md bg-surface-container rounded-lg border border-white/5 cursor-pointer hover:bg-surface-container-high transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary-container/10">
+<input class="peer sr-only" name="condition" type="radio" value="minor"/>
+<div class="w-5 h-5 rounded-full border-2 border-outline peer-checked:border-primary peer-checked:border-[6px] mr-md mt-xs transition-all"></div>
+<div class="flex-1">
+<span class="block font-label-md text-label-md text-on-surface mb-xs">Minor Damage</span>
+<span class="block font-caption text-caption text-on-surface-variant">Small dents or creases, contents appear safe.</span>
+</div>
+</label>
+<!-- Option 3 -->
+<label class="relative flex items-start p-md bg-surface-container rounded-lg border border-white/5 cursor-pointer hover:bg-surface-container-high transition-colors has-[:checked]:border-error has-[:checked]:bg-error-container/10">
+<input class="peer sr-only" name="condition" type="radio" value="damaged"/>
+<div class="w-5 h-5 rounded-full border-2 border-outline peer-checked:border-error peer-checked:border-[6px] mr-md mt-xs transition-all"></div>
+<div class="flex-1">
+<span class="block font-label-md text-label-md text-on-surface mb-xs">Severely Damaged</span>
+<span class="block font-caption text-caption text-on-surface-variant">Crushed, torn, or leaking. Requires investigation.</span>
+</div>
+</label>
+<!-- Option 4 -->
+<label class="relative flex items-start p-md bg-surface-container rounded-lg border border-white/5 cursor-pointer hover:bg-surface-container-high transition-colors has-[:checked]:border-error has-[:checked]:bg-error-container/10">
+<input class="peer sr-only" name="condition" type="radio" value="open"/>
+<div class="w-5 h-5 rounded-full border-2 border-outline peer-checked:border-error peer-checked:border-[6px] mr-md mt-xs transition-all"></div>
+<div class="flex-1">
+<span class="block font-label-md text-label-md text-on-surface mb-xs">Open / Unsecured</span>
+<span class="block font-caption text-caption text-on-surface-variant">Tape broken or box open upon arrival.</span>
+</div>
+</label>
+</div>
+</section>
+<!-- Section 4: Notes -->
+<section class="space-y-sm">
+<label class="block font-headline-md text-headline-md-mobile text-on-surface" for="observations">Observations</label>
+<div class="relative">
+<textarea class="w-full bg-surface-container border border-outline-variant rounded-lg p-md text-on-surface font-body-md focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none placeholder-on-surface-variant/50" id="observations" placeholder="Add any relevant details about location, handoff, or condition..." rows="3"></textarea>
+<div class="absolute bottom-sm right-md text-on-surface-variant font-caption text-caption">
+                        0/200
+                    </div>
+</div>
+</section>
+</form>
+<!-- Fixed Bottom Action Area (Above Nav) -->
+<div class="fixed bottom-[80px] left-0 w-full p-md bg-surface/90 backdrop-blur-xl border-t border-white/5 z-40 flex justify-center">
+<div class="w-full max-w-3xl">
+<button class="w-full h-14 bg-primary text-on-primary rounded-lg font-label-md text-label-md flex items-center justify-center gap-sm hover:bg-primary-fixed transition-all disabled:opacity-50 disabled:bg-surface-container-highest disabled:text-on-surface-variant disabled:cursor-not-allowed" id="btn-confirm" type="button">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+                    CONFIRM PACKAGE
+                </button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell (Mobile) -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl border-t border-white/10 bg-surface/90 backdrop-blur-2xl shadow-[0_-4px_20px_rgba(0,0,0,0.3)] md:hidden block">
+<div class="flex justify-around items-center h-20 px-2 pb-safe w-full">
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:bg-surface-container-high active:scale-90 transition-all duration-200 w-16 rounded-lg py-1" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md text-[10px] mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold bg-primary-container/20 rounded-xl px-4 py-1 hover:bg-surface-container-high active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined filled" data-icon="local_shipping">local_shipping</span>
+<span class="font-label-md text-[10px] mt-1">Deliveries</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:bg-surface-container-high active:scale-90 transition-all duration-200 w-16 rounded-lg py-1" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-md text-[10px] mt-1">Earnings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:bg-surface-container-high active:scale-90 transition-all duration-200 w-16 rounded-lg py-1 relative" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1 right-3 w-2 h-2 bg-error rounded-full"></span>
+<span class="font-label-md text-[10px] mt-1">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:bg-surface-container-high active:scale-90 transition-all duration-200 w-16 rounded-lg py-1" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-[10px] mt-1">Profile</span>
+</a>
+</div>
+</nav>
+<!-- Desktop Sidebar (Hidden on Mobile, placeholder for grid completeness) -->
+<aside class="hidden md:flex flex-col fixed left-0 top-16 bottom-0 w-64 bg-surface border-r border-white/5 z-40 p-md">
+<div class="space-y-xs">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-primary bg-primary-container/10 font-bold transition-colors" href="#">
+<span class="material-symbols-outlined filled" data-icon="local_shipping">local_shipping</span>
+<span class="font-label-md text-label-md">Active Deliveries</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-label-md text-label-md">History</span>
+</a>
+</div>
+</aside>
+<script>
+        // Simple logic for stepper and validation
+        const expectedCount = 1;
+        const countInput = document.getElementById('received-count');
+        const btnDecrease = document.getElementById('btn-decrease');
+        const btnIncrease = document.getElementById('btn-increase');
+        const warningBox = document.getElementById('count-warning');
+        const btnConfirm = document.getElementById('btn-confirm');
+        
+        function updateState() {
+            const currentVal = parseInt(countInput.value, 10);
+            
+            // Check mismatch
+            if (currentVal !== expectedCount) {
+                warningBox.classList.remove('hidden');
+                btnConfirm.disabled = true;
+                btnConfirm.innerHTML = '<span class="material-symbols-outlined" data-icon="error">error</span> COUNT MISMATCH';
+            } else {
+                warningBox.classList.add('hidden');
+                btnConfirm.disabled = false;
+                btnConfirm.innerHTML = '<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span> CONFIRM PACKAGE';
+            }
+        }
+
+        btnDecrease.addEventListener('click', () => {
+            let val = parseInt(countInput.value, 10);
+            if (val > 0) {
+                countInput.value = val - 1;
+                updateState();
+            }
+        });
+
+        btnIncrease.addEventListener('click', () => {
+            let val = parseInt(countInput.value, 10);
+            if (val < 10) {
+                countInput.value = val + 1;
+                updateState();
+            }
+        });
+        
+        // Mock photo toggle
+        document.querySelector('.group').addEventListener('click', function(e) {
+            if(e.target.closest('button')) return; // ignore delete button click
+            document.getElementById('photo-preview').classList.toggle('hidden');
+        });
+        
+        // Mock textarea counter
+        const textarea = document.getElementById('observations');
+        const counter = textarea.nextElementSibling;
+        textarea.addEventListener('input', () => {
+            counter.textContent = `${textarea.value.length}/200`;
+        });
+    </script>
+</body></html>

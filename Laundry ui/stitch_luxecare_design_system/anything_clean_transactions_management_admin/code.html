@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Transactions Management - Anything Clean Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-container": "#935400",
+                      "surface-container-high": "#2a2a2b",
+                      "on-secondary-fixed": "#290947",
+                      "surface-container-lowest": "#0e0e0f",
+                      "secondary-fixed": "#efdbff",
+                      "on-error": "#690005",
+                      "secondary-container": "#573976",
+                      "surface-tint": "#dcb8ff",
+                      "background": "#131314",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "on-tertiary": "#4b2800",
+                      "on-secondary-container": "#caa7ec",
+                      "inverse-primary": "#8422dc",
+                      "surface-bright": "#39393a",
+                      "tertiary-fixed": "#ffdcbf",
+                      "on-secondary": "#3f225e",
+                      "surface-container": "#201f20",
+                      "critical": "#f87171",
+                      "inverse-surface": "#e5e2e3",
+                      "secondary": "#dcb8ff",
+                      "on-primary": "#480081",
+                      "on-primary-fixed": "#2c0051",
+                      "primary-container": "#8a2be2",
+                      "on-tertiary-container": "#ffdaba",
+                      "on-surface-variant": "#cfc2d7",
+                      "error-container": "#93000a",
+                      "tertiary": "#ffb873",
+                      "on-primary-container": "#eed9ff",
+                      "on-tertiary-fixed-variant": "#6a3b00",
+                      "on-surface": "#e5e2e3",
+                      "error": "#ffb4ab",
+                      "surface-container-highest": "#353436",
+                      "on-error-container": "#ffdad6",
+                      "surface": "#131314",
+                      "outline-variant": "#4c4354",
+                      "tertiary-fixed-dim": "#ffb873",
+                      "surface-dim": "#131314",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "warning": "#fbbf24",
+                      "primary": "#dcb8ff",
+                      "on-secondary-fixed-variant": "#573976",
+                      "secondary-fixed-dim": "#dcb8ff",
+                      "on-tertiary-fixed": "#2d1600",
+                      "success": "#4ade80",
+                      "surface-variant": "#353436",
+                      "surface-container-low": "#1c1b1c",
+                      "info": "#60a5fa",
+                      "outline": "#988ca0",
+                      "inverse-on-surface": "#313031",
+                      "on-background": "#e5e2e3",
+                      "primary-fixed": "#efdbff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "gutter": "16px",
+                      "margin-desktop": "24px",
+                      "sidebar-width": "260px",
+                      "table-cell-padding": "12px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "code": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "label-sm": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "code": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-surface-container dark:bg-surface-container fixed top-0 right-0 w-[calc(100%-260px)] h-16 border-b border-outline-variant dark:border-outline-variant flex justify-between items-center px-margin-desktop w-full ml-sidebar-width z-40 max-md:w-full max-md:ml-0 max-md:px-margin-mobile">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant md:hidden">menu</span>
+<div class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-surface">Lumina Control Center</div>
+</div>
+<div class="flex-1 max-w-md mx-8 hidden md:block">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg py-2 pl-10 pr-4 text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder-on-surface-variant" placeholder="Global Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<button class="hover:bg-surface-container-highest dark:hover:bg-surface-container-highest rounded-lg p-2 text-on-surface-variant transition-opacity opacity-100 hover:opacity-80">
+<span class="material-symbols-outlined" data-weight="fill">notifications</span>
+</button>
+<button class="hover:bg-surface-container-highest dark:hover:bg-surface-container-highest rounded-lg p-2 text-on-surface-variant transition-opacity opacity-100 hover:opacity-80">
+<span class="material-symbols-outlined" data-weight="fill">help</span>
+</button>
+<button class="hover:bg-surface-container-highest dark:hover:bg-surface-container-highest rounded-lg p-2 text-on-surface-variant transition-opacity opacity-100 hover:opacity-80">
+<span class="material-symbols-outlined" data-weight="fill">settings</span>
+</button>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-variant border border-outline-variant overflow-hidden">
+<img alt="Admin User Avatar" class="w-full h-full object-cover" data-alt="A close-up headshot of a professional admin user in a high-tech control room setting. Lighting is cinematic and slightly dramatic, emphasizing the 'Super Admin' persona. The user looks focused, and the background subtly hints at glowing data screens in cool, Lumina-style hues. High quality, photorealistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiof5Fk9HOl9zxN_T3jk6F-eoo0BiPeughDGUWC8KGoV9VcnHTjcH4spjNpyPXnSeSXMSFGoYF18qPX8wrP9ze6FZ2McBC6aIrsUV8m3aRFIdIzJCYCVf7Qj2RHLV7xMuVIEFbtOATqOYDqpeEsi9A5pm7vjHCjix9e6QRPJm3lE3C6sB0NBglzcxzijV4A4rZyiWZf5nztFkLuOumvZSQLiZfEuhgLjy5QN5cVT-uCunbBS0a0A1ykQ"/>
+</div>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="bg-surface-container-lowest dark:bg-surface-container-lowest fixed left-0 top-0 h-full w-[260px] border-r border-outline-variant dark:border-outline-variant flex flex-col h-full py-6 z-50 max-md:hidden">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container font-bold text-[20px]">admin_panel_settings</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-surface leading-tight">Lumina Admin</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Super Admin Console</div>
+</div>
+</div>
+<div class="px-4 mb-2">
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2 px-2">Core</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors active:scale-[0.98] transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 border-l-4 border-primary text-on-surface dark:text-on-surface font-semibold bg-surface-container-high dark:bg-surface-container-high rounded-r-lg hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors active:scale-[0.98] transition-all duration-150 -ml-4 pl-7" href="#">
+<span class="material-symbols-outlined text-[20px] text-primary">shopping_cart</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors active:scale-[0.98] transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="font-label-md text-label-md">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors active:scale-[0.98] transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">store</span>
+<span class="font-label-md text-label-md">Providers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors active:scale-[0.98] transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+<span class="font-label-md text-label-md">Delivery Partners</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors active:scale-[0.98] transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">settings_input_component</span>
+<span class="font-label-md text-label-md">Operations</span>
+</a>
+</nav>
+<div class="px-4 mt-auto">
+<div class="h-px bg-outline-variant w-full mb-4"></div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors active:scale-[0.98] transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">terminal</span>
+<span class="font-label-md text-label-md">System Logs</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors active:scale-[0.98] transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-sidebar-width mt-16 p-margin-desktop min-h-[calc(100vh-64px)] max-md:ml-0 max-md:p-margin-mobile">
+<!-- Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+<div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-2">Transactions</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">View and investigate marketplace financial transactions.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 border border-outline-variant rounded-lg font-label-md text-label-md text-on-surface hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[18px]">export_notes</span>
+                    Export
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                    Filter
+                </button>
+</div>
+</div>
+<!-- Summary Strip -->
+<div class="grid grid-cols-2 md:grid-cols-5 gap-gutter mb-8">
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-4 flex flex-col justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant mb-2 uppercase tracking-wider">Total</span>
+<span class="font-headline-lg text-headline-lg text-on-surface">1,284</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-4 flex flex-col justify-between relative overflow-hidden group hover:border-success/50 transition-colors">
+<div class="absolute inset-0 bg-success/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="font-label-md text-label-md text-on-surface-variant mb-2 uppercase tracking-wider relative z-10">Successful</span>
+<div class="flex items-baseline gap-2 relative z-10">
+<span class="font-headline-lg text-headline-lg text-on-surface">1,210</span>
+<span class="material-symbols-outlined text-success text-[16px]">arrow_upward</span>
+</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-4 flex flex-col justify-between relative overflow-hidden group hover:border-critical/50 transition-colors">
+<div class="absolute inset-0 bg-critical/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="font-label-md text-label-md text-on-surface-variant mb-2 uppercase tracking-wider relative z-10">Failed</span>
+<span class="font-headline-lg text-headline-lg text-on-surface relative z-10">42</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-4 flex flex-col justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant mb-2 uppercase tracking-wider">Pending</span>
+<span class="font-headline-lg text-headline-lg text-on-surface">18</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-4 flex flex-col justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant mb-2 uppercase tracking-wider">Refunded</span>
+<span class="font-headline-lg text-headline-lg text-on-surface">14</span>
+</div>
+</div>
+<!-- Search & Filters -->
+<div class="bg-surface-container-low border border-outline-variant rounded-t-xl p-4 flex flex-col gap-4 border-b-0">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container border border-outline-variant rounded-lg py-3 pl-12 pr-4 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder-on-surface-variant" placeholder="Search transaction ID, order ID, customer or reference..." type="text"/>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 border border-outline-variant rounded-full font-label-sm text-label-sm text-on-surface hover:bg-surface-container-highest transition-colors flex items-center gap-1">
+                    Status <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+<button class="px-3 py-1.5 border border-outline-variant rounded-full font-label-sm text-label-sm text-on-surface hover:bg-surface-container-highest transition-colors flex items-center gap-1">
+                    Payment Method <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+<button class="px-3 py-1.5 border border-outline-variant rounded-full font-label-sm text-label-sm text-on-surface hover:bg-surface-container-highest transition-colors flex items-center gap-1">
+                    Amount <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+<button class="px-3 py-1.5 border border-outline-variant rounded-full font-label-sm text-label-sm text-on-surface hover:bg-surface-container-highest transition-colors flex items-center gap-1">
+                    Date <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+<button class="px-3 py-1.5 border border-outline-variant rounded-full font-label-sm text-label-sm text-on-surface hover:bg-surface-container-highest transition-colors flex items-center gap-1">
+                    Service <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+<button class="px-3 py-1.5 border border-outline-variant rounded-full font-label-sm text-label-sm text-on-surface hover:bg-surface-container-highest transition-colors flex items-center gap-1">
+                    Provider <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+<button class="px-3 py-1.5 border border-outline-variant rounded-full font-label-sm text-label-sm text-on-surface hover:bg-surface-container-highest transition-colors flex items-center gap-1">
+                    Refund <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Transaction Table -->
+<div class="bg-surface-container-low border border-outline-variant rounded-b-xl overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant bg-surface-container">
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant uppercase tracking-wider w-12 text-center">
+<input class="rounded border-outline-variant bg-surface text-primary focus:ring-primary focus:ring-offset-surface" type="checkbox"/>
+</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Transaction ID</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Order ID</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Customer</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant uppercase tracking-wider text-right">Amount</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Method</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Provider</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Created</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container-highest transition-colors group">
+<td class="p-table-cell-padding text-center">
+<input class="rounded border-outline-variant bg-surface text-primary focus:ring-primary focus:ring-offset-surface" type="checkbox"/>
+</td>
+<td class="p-table-cell-padding font-code text-code text-on-surface">TXN-20482</td>
+<td class="p-table-cell-padding"><a class="text-primary hover:underline" href="#">#QH1024</a></td>
+<td class="p-table-cell-padding text-on-surface">Arun Kumar</td>
+<td class="p-table-cell-padding text-on-surface text-right font-medium">₹420</td>
+<td class="p-table-cell-padding text-on-surface-variant">Online</td>
+<td class="p-table-cell-padding">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-success/10 text-success">PAID</span>
+</td>
+<td class="p-table-cell-padding text-on-surface">CleanX</td>
+<td class="p-table-cell-padding text-on-surface-variant">Aug 30, 14:23</td>
+<td class="p-table-cell-padding text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 text-on-surface-variant hover:text-primary transition-colors" title="View"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
+<button class="p-1 text-on-surface-variant hover:text-primary transition-colors" title="Refund"><span class="material-symbols-outlined text-[20px]">undo</span></button>
+<button class="p-1 text-on-surface-variant hover:text-on-surface transition-colors" title="More"><span class="material-symbols-outlined text-[20px]">more_vert</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-highest transition-colors group">
+<td class="p-table-cell-padding text-center">
+<input class="rounded border-outline-variant bg-surface text-primary focus:ring-primary focus:ring-offset-surface" type="checkbox"/>
+</td>
+<td class="p-table-cell-padding font-code text-code text-on-surface">TXN-20481</td>
+<td class="p-table-cell-padding"><a class="text-primary hover:underline" href="#">#QH1023</a></td>
+<td class="p-table-cell-padding text-on-surface">Priya</td>
+<td class="p-table-cell-padding text-on-surface text-right font-medium">₹280</td>
+<td class="p-table-cell-padding text-on-surface-variant">UPI</td>
+<td class="p-table-cell-padding">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-success/10 text-success">PAID</span>
+</td>
+<td class="p-table-cell-padding text-on-surface">FreshCare</td>
+<td class="p-table-cell-padding text-on-surface-variant">Aug 30, 13:45</td>
+<td class="p-table-cell-padding text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 text-on-surface-variant hover:text-primary transition-colors" title="View"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
+<button class="p-1 text-on-surface-variant hover:text-primary transition-colors" title="Refund"><span class="material-symbols-outlined text-[20px]">undo</span></button>
+<button class="p-1 text-on-surface-variant hover:text-on-surface transition-colors" title="More"><span class="material-symbols-outlined text-[20px]">more_vert</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-highest transition-colors group">
+<td class="p-table-cell-padding text-center">
+<input class="rounded border-outline-variant bg-surface text-primary focus:ring-primary focus:ring-offset-surface" type="checkbox"/>
+</td>
+<td class="p-table-cell-padding font-code text-code text-on-surface">TXN-20480</td>
+<td class="p-table-cell-padding"><a class="text-primary hover:underline" href="#">#QH1022</a></td>
+<td class="p-table-cell-padding text-on-surface">Rahul</td>
+<td class="p-table-cell-padding text-on-surface text-right font-medium">₹640</td>
+<td class="p-table-cell-padding text-on-surface-variant">Card</td>
+<td class="p-table-cell-padding">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-critical/10 text-critical">FAILED</span>
+</td>
+<td class="p-table-cell-padding text-on-surface">WashPro</td>
+<td class="p-table-cell-padding text-on-surface-variant">Aug 30, 11:12</td>
+<td class="p-table-cell-padding text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 text-on-surface-variant hover:text-primary transition-colors" title="View"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
+<button class="p-1 text-on-surface-variant hover:text-primary transition-colors" disabled="" title="Refund"><span class="material-symbols-outlined text-[20px] opacity-50">undo</span></button>
+<button class="p-1 text-on-surface-variant hover:text-on-surface transition-colors" title="More"><span class="material-symbols-outlined text-[20px]">more_vert</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination -->
+<div class="p-4 border-t border-outline-variant flex items-center justify-between bg-surface-container-low">
+<span class="font-body-md text-body-md text-on-surface-variant">1-25 of 1,284</span>
+<div class="flex items-center gap-2">
+<button class="p-1 rounded text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface disabled:opacity-50 transition-colors" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

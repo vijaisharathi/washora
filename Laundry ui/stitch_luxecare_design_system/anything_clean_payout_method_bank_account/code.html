@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payout Method Management</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed-variant": "#573976",
+                      "on-tertiary-fixed-variant": "#6a3b00",
+                      "on-error-container": "#ffdad6",
+                      "inverse-surface": "#e5e2e3",
+                      "surface-variant": "#353436",
+                      "surface-tint": "#dcb8ff",
+                      "on-tertiary-container": "#ffdaba",
+                      "on-primary": "#480081",
+                      "primary": "#dcb8ff",
+                      "error": "#ffb4ab",
+                      "on-primary-fixed": "#2c0051",
+                      "surface-container-high": "#2a2a2b",
+                      "surface-container": "#201f20",
+                      "on-background": "#e5e2e3",
+                      "tertiary": "#ffb873",
+                      "critical": "#f87171",
+                      "tertiary-fixed-dim": "#ffb873",
+                      "on-secondary-fixed": "#290947",
+                      "surface": "#131314",
+                      "tertiary-fixed": "#ffdcbf",
+                      "inverse-primary": "#8422dc",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "secondary-container": "#573976",
+                      "surface-bright": "#39393a",
+                      "secondary": "#dcb8ff",
+                      "on-secondary-container": "#caa7ec",
+                      "tertiary-container": "#935400",
+                      "surface-container-lowest": "#0e0e0f",
+                      "secondary-fixed": "#efdbff",
+                      "warning": "#fbbf24",
+                      "error-container": "#93000a",
+                      "on-primary-container": "#eed9ff",
+                      "surface-container-low": "#1c1b1c",
+                      "primary-container": "#8a2be2",
+                      "on-surface-variant": "#cfc2d7",
+                      "inverse-on-surface": "#313031",
+                      "primary-fixed": "#efdbff",
+                      "surface-container-highest": "#353436",
+                      "background": "#131314",
+                      "success": "#4ade80",
+                      "on-tertiary": "#4b2800",
+                      "on-error": "#690005",
+                      "on-surface": "#e5e2e3",
+                      "outline": "#988ca0",
+                      "on-tertiary-fixed": "#2d1600",
+                      "surface-dim": "#131314",
+                      "outline-variant": "#4c4354",
+                      "info": "#60a5fa",
+                      "on-secondary": "#3f225e",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "secondary-fixed-dim": "#dcb8ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "sidebar-width": "260px",
+                      "gutter": "16px",
+                      "table-cell-padding": "12px",
+                      "margin-desktop": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Geist"],
+                      "body-lg": ["Geist"],
+                      "headline-lg": ["Geist"],
+                      "label-md": ["Geist"],
+                      "code": ["Geist"],
+                      "display-lg": ["Geist"],
+                      "label-sm": ["Geist"],
+                      "body-md": ["Geist"]
+              },
+              "fontSize": {
+                      "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "code": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                      "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- JSON Component: SideNavBar -->
+<nav class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-lowest dark:bg-surface-container-lowest border-r border-surface-variant flex flex-col py-6 z-50 transition-all duration-200 ease-in-out hidden md:flex">
+<!-- Header -->
+<div class="px-6 mb-8 flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-surface-variant overflow-hidden shrink-0">
+<img alt="Super Admin Profile" class="w-full h-full object-cover" data-alt="A highly detailed, professional avatar portrait of a super admin in a dark, high-tech operational control room setting. Cybernetic lighting accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX7vkyMSzJ1Cw3q0UM56Cu818R57CIExqk_nkrgW2TbwUUuqftxkSjFjPBq2k3l1kSsT3P2OvdhcTV2m9nfom_WPwMM76KOh879ZGp-T0PnGpduqQhQFLtixw4matUzSPbWI56AY4KxSj2rv---btMVm3ycv8T1eQYN8w8q3qi101LrNCO2ebr5iOM3TRHZEQ4BOFu_0PR5Z0_bff93cwimkC2M7TwHgrJF6e9NvdaV1Gr2z3mq9qrpw"/>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary">Lumina Admin</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Operational Hub</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+<span class="font-label-md text-label-md">Transactions</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">storefront</span>
+<span class="font-label-md text-label-md">Marketplaces</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="font-label-md text-label-md">Vendors</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+<span class="font-label-md text-label-md">Settlements</span>
+</a>
+<!-- Active State -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg border-l-4 border-primary text-on-surface font-bold bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] icon-fill text-primary">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+<!-- CTA & Footer -->
+<div class="px-4 mt-auto space-y-4">
+<button class="w-full flex items-center justify-center gap-2 bg-primary text-on-primary py-2.5 rounded-lg font-label-md text-label-md font-bold hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                Add New Provider
+            </button>
+<div class="pt-4 border-t border-surface-variant space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">help</span>
+<span class="font-label-md text-label-md">Help Center</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">terminal</span>
+<span class="font-label-md text-label-md">System Logs</span>
+</a>
+</div>
+</div>
+</nav>
+<!-- JSON Component: TopNavBar -->
+<header class="fixed top-0 right-0 w-full md:w-[calc(100%-260px)] z-40 bg-surface dark:bg-surface border-b border-surface-variant flex justify-between items-center px-margin-desktop h-16">
+<div class="flex items-center gap-4">
+<!-- Mobile Menu Toggle (Visible only on small screens) -->
+<button class="md:hidden text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="font-headline-sm text-headline-sm font-black text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                Financial Workspace
+            </div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container-high rounded-full focus-within:ring-2 focus-within:ring-primary outline-none">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container-high rounded-full focus-within:ring-2 focus-within:ring-primary outline-none">
+<span class="material-symbols-outlined">history</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container-high rounded-full focus-within:ring-2 focus-within:ring-primary outline-none">
+<span class="material-symbols-outlined">apps</span>
+</button>
+<div class="w-8 h-8 rounded-full ml-4 bg-surface-container border border-surface-variant overflow-hidden cursor-pointer">
+<img alt="Provider Admin Avatar" class="w-full h-full object-cover" data-alt="A highly detailed, professional avatar portrait of a provider admin in a dark, high-tech operational control room setting. Cybernetic lighting accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk1VY6KFZbfceWn_9iPB_4FSpSHtoilPPQpAuyP_GW5S-KpF6sdC1yGeWDHobbeXqOlhTAVy3MC-EBH2bkHEj30E3s6u3YxZ6f6z7xP-vqNLdrfgSezZTV1TPj0maq7SZJpxL5Yp11dBD8OABeUrLh23PRzp5v_GGNiJyaEoO_TvSTx_9NR8KD64RbFsb_6R3hXfXe3yIcfGnP-CHLnAuxtyZPIOS6GtDznpsmBbVK2HoywSAhye8Anw"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="md:ml-[260px] pt-16 min-h-screen">
+<div class="p-margin-desktop max-w-[1400px] mx-auto">
+<!-- Page Header -->
+<div class="mb-8">
+<h2 class="font-display-lg text-display-lg text-on-surface tracking-tight">Payout Method</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2 max-w-2xl">Manage the account used to receive your payouts.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter">
+<!-- Primary Payout Method Card (Span 8) -->
+<div class="xl:col-span-8 bg-surface-container-low border border-surface-variant rounded-xl overflow-hidden relative group">
+<!-- Subtle top glow for premium feel -->
+<div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+<div class="p-6">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">account_balance</span>
+                                Active Destination
+                            </h3>
+<div class="bg-success/10 text-success border border-success/20 px-3 py-1 rounded-full flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] icon-fill">check_circle</span>
+                                Verified
+                            </div>
+</div>
+<div class="flex flex-col md:flex-row items-start md:items-center gap-6 p-6 rounded-lg bg-surface-container border border-surface-variant">
+<!-- Bank Logo Placeholder -->
+<div class="w-16 h-16 rounded-lg bg-surface border border-surface-variant flex items-center justify-center shrink-0 shadow-sm relative overflow-hidden">
+<img class="w-10 h-10 object-contain opacity-80 z-10" data-alt="A minimalist, high-contrast flat vector logo of a fictitious generic banking institution. Dark mode color palette, sharp geometric edges." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe3a5oMbSIN1zt8BtmF67Aqx2NmaNErCw7HDC3U51LTuYhg3xAZO4qCRiscq068c206TOOV8pR9WKdX1NydCLSxl6Lpr_qRTv2q2MUG9Iz6tRTS3zHVaT6JHUx8IFx-nuL1wWLlAjkGreluoPniuGOzGFrMpgKt-qe2VmjNmWmhkx6yShG8P7AmqSXYUUr3KgfuMZBe2b0tNCV5WOG0msyDEJQwjCGOsrTDtBkivytR_ByMWxeVLh4xQ"/>
+<div class="absolute inset-0 bg-gradient-to-br from-surface to-surface-container-highest"></div>
+</div>
+<div class="flex-1 space-y-1">
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Bank Account</p>
+<div class="flex items-center gap-3">
+<p class="font-headline-lg text-headline-lg text-on-surface font-bold flex items-center gap-2">
+<span class="tracking-widest opacity-50">XXXX</span>
+<span>4821</span>
+</p>
+</div>
+<div class="mt-4 pt-4 border-t border-surface-variant flex items-center justify-between">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Account Holder</p>
+<p class="font-body-md text-body-md text-on-surface font-medium">Arun Kumar (CleanX Service Center)</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant group-hover:text-primary transition-colors cursor-pointer" title="View full details">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="mt-8 flex flex-col sm:flex-row items-center gap-4">
+<button class="w-full sm:w-auto bg-surface border border-surface-variant text-on-surface px-6 py-2.5 rounded-lg font-label-md text-label-md font-medium hover:bg-surface-container-high transition-colors focus:ring-2 focus:ring-primary outline-none">
+                                Update Bank Account
+                            </button>
+<button class="w-full sm:w-auto bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-md text-label-md font-bold hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 focus:ring-2 focus:ring-primary-container outline-none">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                                Add Payout Method
+                            </button>
+</div>
+</div>
+</div>
+<!-- Security & Context Card (Span 4) -->
+<div class="xl:col-span-4 flex flex-col gap-gutter">
+<!-- Security Notice Box -->
+<div class="bg-surface-container-low border border-surface-variant rounded-xl p-6 relative overflow-hidden">
+<!-- Background texture for tech feel -->
+<div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+<div class="relative z-10">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest border border-surface-variant flex items-center justify-center mb-4 text-primary">
+<span class="material-symbols-outlined icon-fill">shield_lock</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">Secure Information</h4>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                For your security, highly sensitive account numbers and routing details are masked by default. Lumina employs bank-grade encryption to protect your financial data.
+                            </p>
+</div>
+</div>
+<!-- Alternate Method Teaser (for visual balance) -->
+<div class="bg-surface-container-lowest border border-surface-variant border-dashed rounded-xl p-6 flex flex-col items-center justify-center text-center group cursor-pointer hover:border-primary/50 transition-colors">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mb-3 text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<h4 class="font-label-md text-label-md text-on-surface font-medium">Link Digital Wallet</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1 max-w-[200px]">Supports major providers for faster, flexible payouts.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

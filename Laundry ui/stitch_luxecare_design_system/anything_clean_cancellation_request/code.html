@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cancel Delivery - Lumina Partner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-container": "#eed9ff",
+                      "error-container": "#93000a",
+                      "on-tertiary-container": "#e3e0e2",
+                      "surface-container": "#201f20",
+                      "error-red": "#ffb4ab",
+                      "secondary": "#c8c6c8",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "surface-container-high": "#2a2a2b",
+                      "secondary-fixed": "#e4e2e4",
+                      "tertiary-fixed": "#e4e2e4",
+                      "error": "#ffb4ab",
+                      "primary-fixed": "#efdbff",
+                      "outline": "#988ca0",
+                      "surface-dim": "#131314",
+                      "success-green": "#81C784",
+                      "inverse-primary": "#8422dc",
+                      "inverse-surface": "#e5e2e3",
+                      "secondary-container": "#49494b",
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-primary": "#480081",
+                      "inverse-on-surface": "#313031",
+                      "background": "#131314",
+                      "on-background": "#e5e2e3",
+                      "surface-bright": "#39393a",
+                      "surface-container-highest": "#353436",
+                      "on-secondary-container": "#b9b8ba",
+                      "success-bg": "#1A3D24",
+                      "on-surface": "#e5e2e3",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "on-primary-fixed": "#2c0051",
+                      "surface-container-low": "#1c1b1c",
+                      "on-secondary-fixed-variant": "#474648",
+                      "on-error": "#690005",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "surface": "#131314",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "tertiary-container": "#646365",
+                      "surface-tint": "#dcb8ff",
+                      "on-tertiary": "#303032",
+                      "surface-variant": "#353436",
+                      "tertiary": "#c8c6c8",
+                      "electric-violet": "#8a2be2",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "outline-variant": "#4c4354",
+                      "on-error-container": "#ffdad6",
+                      "primary": "#dcb8ff",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "on-surface-variant": "#cfc2d7",
+                      "on-secondary": "#303032",
+                      "primary-container": "#8a2be2"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "32px",
+                      "xs": "4px",
+                      "sm": "8px",
+                      "lg": "24px",
+                      "md": "16px",
+                      "2xl": "48px",
+                      "3xl": "64px"
+              },
+              "fontFamily": {
+                      "h1": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "mono-display": [
+                              "monospace"
+                      ],
+                      "h3": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #131314;
+            color: #e5e2e3;
+        }
+        /* Custom radio button styling */
+        .radio-custom:checked + label .radio-indicator {
+            border-color: #dcb8ff;
+            background-color: #1c1b1c; /* surface-container-low */
+        }
+        .radio-custom:checked + label .radio-indicator::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #dcb8ff;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex justify-center bg-background min-h-screen">
+<!-- Main Mobile Container (390px) -->
+<main class="w-[390px] h-full min-h-screen bg-surface-dim relative flex flex-col shadow-2xl border-x border-outline-variant/20">
+<!-- Header: Linear flow, non-global nav -->
+<header class="flex items-center px-lg h-16 w-full border-b border-outline-variant/30 bg-surface-dim/90 backdrop-blur-sm sticky top-0 z-40">
+<button aria-label="Go Back" class="text-on-surface hover:text-primary transition-colors active:scale-95 p-xs rounded-full" type="button">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="flex-1 text-center font-h3 text-h3 text-on-surface mr-8">Cancel Delivery</h1>
+</header>
+<!-- Content Canvas -->
+<div class="flex-1 flex flex-col p-lg gap-lg overflow-y-auto pb-3xl">
+<section class="flex flex-col gap-sm">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Tell us why you cannot complete this delivery.
+                </p>
+</section>
+<!-- Reason Options (Radio List) -->
+<section class="flex flex-col gap-xs bg-surface-container rounded-xl p-xs border border-outline-variant/20 shadow-sm">
+<!-- Option 1 -->
+<div class="relative">
+<input class="radio-custom sr-only peer" id="reason_vehicle" name="cancel_reason" type="radio" value="vehicle_issue"/>
+<label class="flex items-center gap-md p-md rounded-lg cursor-pointer hover:bg-surface-container-high transition-colors peer-checked:bg-surface-container-high peer-checked:border-primary/50 border border-transparent" for="reason_vehicle">
+<div class="radio-indicator relative w-5 h-5 rounded-full border-2 border-outline-variant transition-colors flex-shrink-0"></div>
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">car_crash</span>
+<span class="font-body-md text-body-md text-on-surface">Vehicle Issue</span>
+</label>
+</div>
+<!-- Option 2 -->
+<div class="relative">
+<input class="radio-custom sr-only peer" id="reason_pickup" name="cancel_reason" type="radio" value="unable_pickup"/>
+<label class="flex items-center gap-md p-md rounded-lg cursor-pointer hover:bg-surface-container-high transition-colors peer-checked:bg-surface-container-high peer-checked:border-primary/50 border border-transparent" for="reason_pickup">
+<div class="radio-indicator relative w-5 h-5 rounded-full border-2 border-outline-variant transition-colors flex-shrink-0"></div>
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">store_mall_directory</span>
+<span class="font-body-md text-body-md text-on-surface">Unable to Reach Pickup</span>
+</label>
+</div>
+<!-- Option 3 -->
+<div class="relative">
+<input class="radio-custom sr-only peer" id="reason_customer" name="cancel_reason" type="radio" value="unable_customer"/>
+<label class="flex items-center gap-md p-md rounded-lg cursor-pointer hover:bg-surface-container-high transition-colors peer-checked:bg-surface-container-high peer-checked:border-primary/50 border border-transparent" for="reason_customer">
+<div class="radio-indicator relative w-5 h-5 rounded-full border-2 border-outline-variant transition-colors flex-shrink-0"></div>
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">person_off</span>
+<span class="font-body-md text-body-md text-on-surface">Unable to Reach Customer</span>
+</label>
+</div>
+<!-- Option 4 -->
+<div class="relative">
+<input class="radio-custom sr-only peer" id="reason_safety" name="cancel_reason" type="radio" value="safety_issue"/>
+<label class="flex items-center gap-md p-md rounded-lg cursor-pointer hover:bg-surface-container-high transition-colors peer-checked:bg-surface-container-high peer-checked:border-primary/50 border border-transparent" for="reason_safety">
+<div class="radio-indicator relative w-5 h-5 rounded-full border-2 border-outline-variant transition-colors flex-shrink-0"></div>
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 0;">health_and_safety</span>
+<span class="font-body-md text-body-md text-on-surface">Safety Issue</span>
+</label>
+</div>
+<!-- Option 5 -->
+<div class="relative">
+<input class="radio-custom sr-only peer" id="reason_info" name="cancel_reason" type="radio" value="incorrect_info"/>
+<label class="flex items-center gap-md p-md rounded-lg cursor-pointer hover:bg-surface-container-high transition-colors peer-checked:bg-surface-container-high peer-checked:border-primary/50 border border-transparent" for="reason_info">
+<div class="radio-indicator relative w-5 h-5 rounded-full border-2 border-outline-variant transition-colors flex-shrink-0"></div>
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">wrong_location</span>
+<span class="font-body-md text-body-md text-on-surface">Incorrect Information</span>
+</label>
+</div>
+<!-- Option 6 -->
+<div class="relative">
+<input checked="" class="radio-custom sr-only peer" id="reason_other" name="cancel_reason" type="radio" value="other"/>
+<label class="flex items-center gap-md p-md rounded-lg cursor-pointer hover:bg-surface-container-high transition-colors peer-checked:bg-surface-container-high peer-checked:border-primary/50 border border-transparent" for="reason_other">
+<div class="radio-indicator relative w-5 h-5 rounded-full border-2 border-outline-variant transition-colors flex-shrink-0"></div>
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">more_horiz</span>
+<span class="font-body-md text-body-md text-on-surface">Other</span>
+</label>
+</div>
+</section>
+<!-- Details Text Area -->
+<section class="flex flex-col gap-xs mt-sm">
+<label class="sr-only" for="details">Details</label>
+<textarea class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg p-md text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-colors placeholder-on-surface-variant" id="details" name="details" placeholder="Details..." rows="4"></textarea>
+</section>
+<!-- Warning Callout -->
+<div class="flex items-start gap-md bg-error-container/10 border border-error/30 rounded-xl p-md mt-sm">
+<span class="material-symbols-outlined text-error mt-xs" style="font-variation-settings: 'FILL' 1;">warning</span>
+<p class="font-caption text-caption text-on-surface-variant leading-relaxed">
+                    Cancellation may affect your partner performance rating.
+                </p>
+</div>
+</div>
+<!-- Sticky Bottom Actions -->
+<div class="mt-auto bg-surface border-t border-outline-variant/30 p-lg pb-safe shadow-[0_-4px_16px_rgba(0,0,0,0.5)] z-40">
+<div class="flex flex-col gap-md">
+<button class="w-full h-12 bg-error text-on-error font-label-md text-label-md font-bold rounded-lg shadow-lg shadow-error/10 hover:bg-error-red transition-all active:scale-[0.98] flex items-center justify-center gap-sm" type="button">
+                    Request Cancellation
+                </button>
+<button class="w-full h-12 bg-transparent border border-outline-variant text-primary font-label-md text-label-md font-bold rounded-lg hover:bg-surface-container transition-colors active:scale-[0.98] flex items-center justify-center gap-sm" type="button">
+                    Keep Delivery
+                </button>
+</div>
+</div>
+</main>
+</body></html>

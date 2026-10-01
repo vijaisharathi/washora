@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumina - Availability</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-primary-fixed": "#2c0051",
+                      "surface-container-high": "#2a2a2b",
+                      "on-tertiary-container": "#e3e0e2",
+                      "primary-fixed": "#efdbff",
+                      "error-container": "#93000a",
+                      "surface-container": "#201f20",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "secondary-fixed": "#e4e2e4",
+                      "on-error-container": "#ffdad6",
+                      "on-surface-variant": "#cfc2d7",
+                      "outline-variant": "#4c4354",
+                      "on-secondary-fixed-variant": "#474648",
+                      "primary": "#dcb8ff",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "on-tertiary": "#303032",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "on-primary-container": "#eed9ff",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "background": "#131314",
+                      "electric-violet": "#8a2be2",
+                      "surface-bright": "#39393a",
+                      "error": "#ffb4ab",
+                      "success-bg": "#1A3D24",
+                      "inverse-primary": "#8422dc",
+                      "on-secondary-container": "#b9b8ba",
+                      "on-primary": "#480081",
+                      "success-green": "#81C784",
+                      "surface-container-highest": "#353436",
+                      "inverse-surface": "#e5e2e3",
+                      "on-secondary": "#303032",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "error-red": "#ffb4ab",
+                      "surface-variant": "#353436",
+                      "secondary-container": "#49494b",
+                      "surface-container-low": "#1c1b1c",
+                      "secondary": "#c8c6c8",
+                      "surface": "#131314",
+                      "tertiary-container": "#646365",
+                      "surface-dim": "#131314",
+                      "inverse-on-surface": "#313031",
+                      "outline": "#988ca0",
+                      "surface-tint": "#dcb8ff",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "tertiary": "#c8c6c8",
+                      "primary-container": "#8a2be2",
+                      "on-error": "#690005",
+                      "tertiary-fixed": "#e4e2e4",
+                      "on-background": "#e5e2e3",
+                      "on-surface": "#e5e2e3"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "16px",
+                      "sm": "8px",
+                      "3xl": "64px",
+                      "xs": "4px",
+                      "xl": "32px",
+                      "2xl": "48px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "h3": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "mono-display": [
+                              "monospace"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "h1": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .material-symbols-outlined[data-weight="fill"] { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="bg-surface-container-low dark:bg-surface-container-low text-primary dark:text-primary font-label-md text-label-md fixed left-0 top-0 h-screen w-64 border-r border-outline-variant/30 flex flex-col py-lg px-md h-full z-40">
+<div class="mb-xl flex items-center gap-md">
+<div class="w-10 h-10 rounded bg-primary/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="lightbulb" data-weight="fill">lightbulb</span>
+</div>
+<div>
+<h1 class="font-h1 text-h1 font-bold text-primary">Lumina Admin</h1>
+<p class="font-caption text-caption text-on-surface-variant">Service Management</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-sm">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm bg-primary/10 text-primary font-bold rounded-lg transition-all scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month" data-weight="fill">calendar_month</span>
+<span>Schedule</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span>Services</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span>Earnings</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span>Analytics</span>
+</a>
+</nav>
+<button class="mt-auto mb-lg w-full bg-electric-violet hover:bg-primary-container text-white font-label-md text-label-md font-bold py-sm px-md rounded-lg shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+            Add New Service
+        </button>
+<div class="flex flex-col gap-sm border-t border-outline-variant/30 pt-md">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 ml-64 flex flex-col relative">
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-surface/80 text-primary dark:text-primary font-body-md text-body-md fixed top-0 right-0 w-[calc(100%-256px)] z-50 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center h-16 px-xl">
+<div class="flex-1">
+<!-- Search bar on left logic empty per JSON -->
+</div>
+<div class="flex items-center gap-md text-on-surface-variant">
+<button class="hover:text-primary transition-colors p-sm rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="hover:text-primary transition-colors p-sm rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+</button>
+<button class="hover:text-primary transition-colors p-sm rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<div class="ml-sm w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/50 overflow-hidden ml-md">
+<img alt="Provider profile picture" class="w-full h-full object-cover" data-alt="A futuristic, stylized 3D avatar of a professional in deep corporate colors with subtle glowing violet accents, rendered in a clean, modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5eQIsIS4ZGp5c5RB58JXK8rwv_OfRWjGh_CP6Mma4SYApJW_wbmIyD6Lnydd2q4k4neiD8NR3L47946oCV2J7sRYBslBZPfBXk31ATPOwQlHBYZ-XY2ljzuFoZpROq_CavsPeIlWoxkVXCf837YL4YXY9eN-ptjDOj3gMIuCf9FH5Li2yKTwb79o_OgXUqaBTLnSa4dAx3pGNk7vR95-hneFkAtfZYikAQWeAVbmc6U49gN8SncnJ_w"/>
+</div>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 mt-16 p-xl max-w-[1200px] mx-auto w-full">
+<!-- Page Header -->
+<div class="flex justify-between items-end mb-lg">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Availability Overview</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Central control center for provider availability.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg mb-xl">
+<!-- Status Card -->
+<div class="lg:col-span-4 bg-surface-container rounded-xl border border-outline-variant/20 p-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-sm mb-md">
+<span class="material-symbols-outlined text-success-green" data-icon="check_circle">check_circle</span>
+<span class="font-h3 text-h3 text-on-surface">Availability: Active</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-xl">Your services are currently visible and bookable by customers.</p>
+</div>
+<button class="w-full border border-outline-variant bg-transparent hover:bg-surface-container-high text-on-surface font-label-md text-label-md py-sm px-md rounded-lg transition-colors flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined" data-icon="pause_circle">pause_circle</span>
+                        Pause Availability
+                    </button>
+</div>
+<!-- Summary Cards Bento -->
+<div class="lg:col-span-8 grid grid-cols-2 gap-md">
+<div class="bg-surface-container-low border border-outline-variant/20 rounded-xl p-md flex flex-col justify-center">
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider mb-xs">Working Days</span>
+<div class="flex items-center gap-sm text-on-surface">
+<span class="material-symbols-outlined text-primary" data-icon="event">event</span>
+<span class="font-h3 text-h3">Mon - Sat</span>
+</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/20 rounded-xl p-md flex flex-col justify-center">
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider mb-xs">Daily Capacity</span>
+<div class="flex items-center gap-sm text-on-surface">
+<span class="material-symbols-outlined text-primary" data-icon="local_shipping">local_shipping</span>
+<span class="font-h3 text-h3">20 orders</span>
+</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/20 rounded-xl p-md flex flex-col justify-center">
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider mb-xs">Pickup Window</span>
+<div class="flex items-center gap-sm text-on-surface">
+<span class="material-symbols-outlined text-primary" data-icon="storefront">storefront</span>
+<span class="font-h3 text-h3">9:00 AM - 6:00 PM</span>
+</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/20 rounded-xl p-md flex flex-col justify-center">
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider mb-xs">Delivery Window</span>
+<div class="flex items-center gap-sm text-on-surface">
+<span class="material-symbols-outlined text-primary" data-icon="home_work">home_work</span>
+<span class="font-h3 text-h3">10:00 AM - 8:00 PM</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-xl">
+<h3 class="font-h3 text-h3 text-on-surface mb-md">Manage Availability</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<!-- Nav Cards -->
+<a class="group bg-surface-container hover:bg-surface-container-high border border-outline-variant/20 rounded-xl p-md transition-colors flex items-start gap-md" href="#">
+<div class="w-10 h-10 rounded bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="schedule">schedule</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-xs group-hover:text-primary transition-colors">Working Hours</h4>
+<p class="font-caption text-caption text-on-surface-variant">Set your daily operational hours.</p>
+</div>
+</a>
+<a class="group bg-surface-container hover:bg-surface-container-high border border-outline-variant/20 rounded-xl p-md transition-colors flex items-start gap-md" href="#">
+<div class="w-10 h-10 rounded bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="directions_car">directions_car</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-xs group-hover:text-primary transition-colors">Pickup &amp; Delivery Windows</h4>
+<p class="font-caption text-caption text-on-surface-variant">Configure timing for logistics.</p>
+</div>
+</a>
+<a class="group bg-surface-container hover:bg-surface-container-high border border-outline-variant/20 rounded-xl p-md transition-colors flex items-start gap-md" href="#">
+<div class="w-10 h-10 rounded bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="toggle_on">toggle_on</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-xs group-hover:text-primary transition-colors">Service Availability</h4>
+<p class="font-caption text-caption text-on-surface-variant">Toggle specific services on/off.</p>
+</div>
+</a>
+<a class="group bg-surface-container hover:bg-surface-container-high border border-outline-variant/20 rounded-xl p-md transition-colors flex items-start gap-md" href="#">
+<div class="w-10 h-10 rounded bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="map">map</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-xs group-hover:text-primary transition-colors">Service Areas</h4>
+<p class="font-caption text-caption text-on-surface-variant">Define geographical boundaries.</p>
+</div>
+</a>
+<a class="group bg-surface-container hover:bg-surface-container-high border border-outline-variant/20 rounded-xl p-md transition-colors flex items-start gap-md" href="#">
+<div class="w-10 h-10 rounded bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="bar_chart">bar_chart</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-xs group-hover:text-primary transition-colors">Capacity</h4>
+<p class="font-caption text-caption text-on-surface-variant">Adjust maximum daily limits.</p>
+</div>
+</a>
+<a class="group bg-surface-container hover:bg-surface-container-high border border-outline-variant/20 rounded-xl p-md transition-colors flex items-start gap-md" href="#">
+<div class="w-10 h-10 rounded bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="event_busy">event_busy</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-xs group-hover:text-primary transition-colors">Blackout Dates</h4>
+<p class="font-caption text-caption text-on-surface-variant">Mark days unavailable for booking.</p>
+</div>
+</a>
+</div>
+</div>
+<div class="border-t border-outline-variant/30 pt-lg">
+<div class="flex items-start gap-md bg-error-container/10 border border-outline-variant/30 rounded-lg p-md">
+<span class="material-symbols-outlined text-error-red mt-xs" data-icon="info">info</span>
+<div>
+<h5 class="font-label-md text-label-md text-on-surface mb-xs">Upcoming: September 10 Holiday</h5>
+<p class="font-caption text-caption text-on-surface-variant">This date is marked as unavailable. Changes to availability directly impact customer booking options in real-time.</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Addresses - Lumina Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#e5e2e3",
+                        "surface-container-high": "#2a2a2b",
+                        "on-primary-container": "#eed9ff",
+                        "on-primary": "#480081",
+                        "success": "#4ade80",
+                        "on-secondary-container": "#caa7ec",
+                        "tertiary-fixed-dim": "#ffb873",
+                        "inverse-surface": "#e5e2e3",
+                        "on-error": "#690005",
+                        "surface-bright": "#3a393a",
+                        "on-tertiary-container": "#ffdaba",
+                        "tertiary": "#ffb873",
+                        "error-container": "#93000a",
+                        "on-tertiary": "#4b2800",
+                        "surface-container-highest": "#353436",
+                        "on-tertiary-fixed": "#2d1600",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#cfc2d7",
+                        "secondary-fixed-dim": "#dcb8ff",
+                        "secondary-container": "#573976",
+                        "surface-container": "#201f20",
+                        "background": "#131314",
+                        "on-secondary": "#3f225e",
+                        "on-tertiary-fixed-variant": "#6a3b00",
+                        "outline": "#988ca0",
+                        "warning": "#fbbf24",
+                        "critical": "#f87171",
+                        "surface-container-lowest": "#0e0e0f",
+                        "secondary": "#dcb8ff",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "tertiary-fixed": "#ffdcbf",
+                        "tertiary-container": "#935400",
+                        "on-primary-fixed": "#2c0051",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#8422dc",
+                        "on-secondary-fixed-variant": "#573976",
+                        "primary": "#dcb8ff",
+                        "surface-variant": "#353436",
+                        "primary-fixed": "#efdbff",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "surface": "#131314",
+                        "primary-container": "#8a2be2",
+                        "outline-variant": "#4c4354",
+                        "on-background": "#e5e2e3",
+                        "inverse-on-surface": "#313031",
+                        "info": "#60a5fa",
+                        "surface-tint": "#dcb8ff",
+                        "surface-container-low": "#1c1b1c",
+                        "on-secondary-fixed": "#290947",
+                        "surface-dim": "#131314",
+                        "secondary-fixed": "#efdbff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "table-cell-padding": "12px",
+                        "gutter": "16px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "24px",
+                        "sidebar-width": "260px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "code": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "body-md": ["Geist"],
+                        "body-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "code": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Fallback if Geist font isn't loaded via Google Fonts or otherwise, though we defined it in JS, we should ideally load it */
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased overflow-x-hidden min-h-screen">
+<!-- TopNavBar -->
+<nav class="bg-surface-container text-primary font-label-md text-label-md fixed top-0 right-0 w-[calc(100%-260px)] h-16 border-b border-outline-variant flex justify-between items-center px-margin-desktop ml-sidebar-width z-40 transition-all duration-300 md:flex hidden" id="topNav">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" style="font-size: 20px;">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-DEFAULT py-2 pl-10 pr-4 text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-body-md placeholder-on-surface-variant transition-colors h-10" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-lg text-on-surface hover:bg-surface-container-highest transition-colors flex items-center justify-center h-10 w-10">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 rounded-lg text-on-surface hover:bg-surface-container-highest transition-colors flex items-center justify-center h-10 w-10">
+<span class="material-symbols-outlined">help</span>
+</button>
+<button class="p-2 rounded-lg text-on-surface hover:bg-surface-container-highest transition-colors flex items-center justify-center h-10 w-10">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-px bg-outline-variant mx-2"></div>
+<button class="flex items-center gap-3 hover:bg-surface-container-highest p-1 pr-3 rounded-lg transition-colors border border-transparent hover:border-outline-variant">
+<img alt="Admin User Avatar" class="w-8 h-8 rounded-DEFAULT object-cover border border-outline-variant bg-surface-container-low" data-alt="A professional headshot of an administrator in a corporate setting. The administrator is looking slightly off-camera with a neutral expression. The lighting is soft and even, highlighting their features against a subtle, dark background. The image has a crisp, modern aesthetic suitable for a high-end enterprise dashboard avatar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRXf6V4K9Oxeh8W8xY6WsevGY4xYj6QD2EbbQron5ms_7MVHXvG9URjwblSpIHm94xxKf-txaT0DfX-DX8J_RV0FHAiMZFMpjhf2jm4fG76Ra2AOsvFdEKK5VsTCmw6-JvX_g8RmqfwBbBLFydClQOr3Iap50LOGBaq3BInck3VJZMeE17dzz4q16-RPyp2GggFy5wZ9xdD-hOy5tpu7auFR7QNEzu66tAQl2Vq5VQUYq4lTORbg3jog"/>
+<div class="flex flex-col text-left hidden sm:flex">
+<span class="font-label-md text-label-md text-on-surface leading-tight">Admin User</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Super Admin</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">arrow_drop_down</span>
+</button>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="bg-surface-container-lowest text-primary fixed left-0 top-0 h-full w-[260px] border-r border-outline-variant flex flex-col py-6 z-50 transition-all duration-300 md:flex hidden" id="sideNav">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-8 h-8 rounded-DEFAULT bg-primary flex items-center justify-center text-on-primary font-bold">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">hexagon</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">Lumina Admin</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Super Admin Console</p>
+</div>
+</div>
+<div class="px-6 mb-3">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Main</span>
+</div>
+<nav class="flex-1 overflow-y-auto px-4 flex flex-col gap-1 custom-scrollbar">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-highest transition-colors active:scale-[0.98] group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-highest transition-colors active:scale-[0.98] group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">shopping_cart</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT border-l-4 border-primary text-on-surface font-semibold bg-surface-container-high transition-colors active:scale-[0.98] group" href="#">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-label-md text-label-md">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-highest transition-colors active:scale-[0.98] group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">store</span>
+<span class="font-label-md text-label-md">Providers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-highest transition-colors active:scale-[0.98] group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">local_shipping</span>
+<span class="font-label-md text-label-md">Delivery Partners</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-highest transition-colors active:scale-[0.98] group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">settings_input_component</span>
+<span class="font-label-md text-label-md">Operations</span>
+</a>
+</nav>
+<div class="mt-auto pt-4 px-4 flex flex-col gap-1 border-t border-outline-variant mx-4 pb-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-highest transition-colors active:scale-[0.98] group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">terminal</span>
+<span class="font-label-md text-label-md">System Logs</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-highest transition-colors active:scale-[0.98] group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">support_agent</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-12 px-margin-mobile md:px-margin-desktop md:ml-sidebar-width transition-all duration-300 min-h-screen flex flex-col">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+<div>
+<div class="flex items-center gap-2 text-on-surface-variant mb-2">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#"><span class="material-symbols-outlined text-[18px]">group</span> Customers</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Arun Kumar</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface">Addresses</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Customer Addresses</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Manage delivery locations for Arun Kumar (ID: CUS-8924).</p>
+</div>
+<div class="flex gap-3">
+<button class="bg-surface-container-low hover:bg-surface-container-highest text-on-surface font-label-md text-label-md px-4 py-2 rounded-DEFAULT border border-outline-variant transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">history</span> View Logs
+                </button>
+<button class="bg-primary hover:bg-primary-fixed text-on-primary-fixed font-label-md text-label-md px-4 py-2 rounded-DEFAULT transition-colors flex items-center gap-2 font-semibold">
+<span class="material-symbols-outlined text-[18px]">add</span> Add Address
+                </button>
+</div>
+</div>
+<!-- Content Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter flex-1">
+<!-- Address Cards List (Left Column) -->
+<div class="xl:col-span-8 flex flex-col gap-4">
+<!-- Address Card 1 (Default) -->
+<div class="bg-surface-container-low border border-primary/50 rounded-lg p-5 flex flex-col sm:flex-row gap-5 relative overflow-hidden group hover:border-primary transition-colors">
+<!-- Subtle Glow for Default -->
+<div class="absolute top-0 left-0 w-1 h-full bg-primary shadow-[0_0_8px_rgba(220,184,255,0.4)]"></div>
+<div class="flex-1">
+<div class="flex items-start justify-between mb-2">
+<div class="flex items-center gap-3">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">home</span>
+                                    Home
+                                </h3>
+<span class="bg-primary/10 text-primary border border-primary/20 px-2 py-0.5 rounded-full font-label-sm text-label-sm uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">star</span> Default
+                                </span>
+</div>
+<!-- Card Actions -->
+<div class="flex items-center gap-1 sm:hidden">
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors rounded-DEFAULT hover:bg-surface-container-highest"><span class="material-symbols-outlined">edit</span></button>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 max-w-lg">
+                            14, 2nd Main Road, Shanthi Colony<br/>
+                            Anna Nagar, Chennai - 600040<br/>
+                            Tamil Nadu
+                        </p>
+<div class="flex flex-wrap gap-x-6 gap-y-2 mt-auto">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Area</span>
+<span class="font-body-md text-body-md text-on-surface">Anna Nagar</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">City</span>
+<span class="font-body-md text-body-md text-on-surface">Chennai</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Last Used</span>
+<span class="font-body-md text-body-md text-on-surface">Oct 24, 2023</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Orders Delivered</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">42</span>
+</div>
+</div>
+</div>
+<div class="flex sm:flex-col justify-end gap-2 sm:border-l sm:border-outline-variant sm:pl-5 sm:min-w-[120px]">
+<button class="flex-1 sm:flex-none text-center px-3 py-1.5 bg-surface-container hover:bg-surface-container-highest text-on-surface border border-outline-variant rounded-DEFAULT transition-colors font-label-md text-label-md">View</button>
+<button class="flex-1 sm:flex-none text-center px-3 py-1.5 bg-surface-container hover:bg-surface-container-highest text-on-surface border border-outline-variant rounded-DEFAULT transition-colors font-label-md text-label-md hidden sm:block">Edit</button>
+<button class="flex-1 sm:flex-none text-center px-3 py-1.5 hover:bg-error/10 text-error rounded-DEFAULT transition-colors font-label-md text-label-md mt-auto hidden sm:block">Remove</button>
+</div>
+</div>
+<!-- Address Card 2 -->
+<div class="bg-surface-container-low border border-outline-variant rounded-lg p-5 flex flex-col sm:flex-row gap-5 relative overflow-hidden hover:border-outline transition-colors group">
+<div class="flex-1">
+<div class="flex items-start justify-between mb-2">
+<div class="flex items-center gap-3">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">work</span>
+                                    Work
+                                </h3>
+</div>
+<!-- Card Actions -->
+<div class="flex items-center gap-1 sm:hidden">
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors rounded-DEFAULT hover:bg-surface-container-highest"><span class="material-symbols-outlined">edit</span></button>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 max-w-lg">
+                            Tech Park, 8th Floor, Block C<br/>
+                            Sterling Road, Nungambakkam<br/>
+                            Chennai - 600034
+                        </p>
+<div class="flex flex-wrap gap-x-6 gap-y-2 mt-auto">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Area</span>
+<span class="font-body-md text-body-md text-on-surface">Nungambakkam</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">City</span>
+<span class="font-body-md text-body-md text-on-surface">Chennai</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Last Used</span>
+<span class="font-body-md text-body-md text-on-surface">Oct 12, 2023</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Orders Delivered</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">18</span>
+</div>
+</div>
+</div>
+<div class="flex sm:flex-col justify-end gap-2 sm:border-l sm:border-outline-variant sm:pl-5 sm:min-w-[120px]">
+<button class="flex-1 sm:flex-none text-center px-3 py-1.5 bg-surface-container hover:bg-surface-container-highest text-on-surface border border-outline-variant rounded-DEFAULT transition-colors font-label-md text-label-md">View</button>
+<button class="flex-1 sm:flex-none text-center px-3 py-1.5 bg-surface-container hover:bg-surface-container-highest text-on-surface border border-outline-variant rounded-DEFAULT transition-colors font-label-md text-label-md hidden sm:block">Edit</button>
+<button class="flex-1 sm:flex-none text-center px-3 py-1.5 hover:bg-surface-container-highest text-on-surface-variant rounded-DEFAULT transition-colors font-label-md text-label-md mt-auto hidden sm:block">Set Default</button>
+</div>
+</div>
+</div>
+<!-- Map Visualization (Right Column) -->
+<div class="xl:col-span-4">
+<div class="bg-surface-container-low border border-outline-variant rounded-lg overflow-hidden h-full min-h-[400px] flex flex-col sticky top-24">
+<div class="p-4 border-b border-outline-variant flex justify-between items-center bg-surface-container-highest/50">
+<h4 class="font-label-md text-label-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">map</span> Location Overview
+                        </h4>
+<div class="flex gap-1">
+<button class="p-1 text-on-surface-variant hover:text-on-surface transition-colors rounded"><span class="material-symbols-outlined text-[18px]">zoom_in</span></button>
+<button class="p-1 text-on-surface-variant hover:text-on-surface transition-colors rounded"><span class="material-symbols-outlined text-[18px]">zoom_out</span></button>
+</div>
+</div>
+<!-- Simulated Map Area -->
+<div class="flex-1 relative bg-surface-container-highest flex items-center justify-center overflow-hidden" data-location="Chennai" style="">
+<!-- Abstract Map Background -->
+<div class="absolute inset-0 bg-cover bg-center opacity-40" data-alt="A highly detailed, stylized digital map of a city layout rendered in a dark mode aesthetic. The map features intersecting roads, city blocks, and subtle terrain lines in muted dark grays (#131314 to #201f20) with fine, crisp outlines (#353436). It looks like a high-tech radar or tactical satellite view, completely desaturated except for subtle glows." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCze5Oy5f3_jt2kx7Lg38ZZ9dmU4F2tS0DDmN7oPi4rZYFJdmSzwWsHrt3ZWCFARDOoGCeSS3OFZK24tFilRqsS7DattNc7tUm7kpQkmosDoH5-qkQSEuac8CnemV1vgOkTKn5WGshyJKhlTNmUkKz4gQYj8Y_ExdLrum25KcWqjshaoEGPH3Jj2p9G2wPhoBzRMkift539hH2ApwukEotbJU5MKZ6csyH9b2-oF6uklUBV6sOFPXkXYA')"></div>
+<!-- Grid Overlay -->
+<div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+<!-- Map Markers -->
+<!-- Home Marker (Anna Nagar) -->
+<div class="absolute top-[35%] left-[40%] flex flex-col items-center group cursor-pointer">
+<div class="bg-surface-container-low border border-outline-variant px-2 py-1 rounded shadow-lg mb-1 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10 pointer-events-none">
+<span class="font-label-sm text-label-sm text-on-surface">Home (Anna Nagar)</span>
+</div>
+<div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(220,184,255,0.5)] border-2 border-background relative z-0">
+<span class="material-symbols-outlined text-on-primary text-[18px]">home</span>
+<!-- Ping Animation -->
+<div class="absolute inset-0 rounded-full border border-primary animate-ping opacity-75"></div>
+</div>
+</div>
+<!-- Work Marker (Nungambakkam) -->
+<div class="absolute top-[55%] left-[60%] flex flex-col items-center group cursor-pointer">
+<div class="bg-surface-container-low border border-outline-variant px-2 py-1 rounded shadow-lg mb-1 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10 pointer-events-none">
+<span class="font-label-sm text-label-sm text-on-surface">Work (Nungambakkam)</span>
+</div>
+<div class="w-6 h-6 bg-surface-container-highest border-2 border-on-surface-variant rounded-full flex items-center justify-center relative z-0 transition-colors group-hover:border-primary">
+<div class="w-2 h-2 bg-on-surface-variant rounded-full group-hover:bg-primary transition-colors"></div>
+</div>
+</div>
+<!-- Connection Line (Decorative) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" style="z-index: 0;">
+<path class="opacity-50" d="M 40% 35% Q 50% 45% 60% 55%" fill="none" stroke="rgba(220,184,255,0.2)" stroke-dasharray="4 4" stroke-width="2"></path>
+</svg>
+</div>
+<!-- Map Legend -->
+<div class="p-3 bg-surface-container border-t border-outline-variant flex items-center justify-center gap-6">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 bg-primary rounded-full shadow-[0_0_5px_rgba(220,184,255,0.5)]"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Default Address</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 border-2 border-on-surface-variant rounded-full"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Other Saved</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<style>
+        /* Custom Scrollbar for a cleaner look in Webkit */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #353436; /* surface-container-highest */
+            border-radius: 10px;
+        }
+        .custom-scrollbar:hover::-webkit-scrollbar-thumb {
+            background-color: #4c4354; /* outline-variant */
+        }
+    </style>
+</body></html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Incoming Delivery Request</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-surface": "#e5e2e3",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "background": "#131314",
+                      "on-primary": "#480081",
+                      "on-secondary-container": "#b7b4b7",
+                      "on-secondary": "#303032",
+                      "surface-container-high": "#2a2a2b",
+                      "surface-tint": "#dcb8ff",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "surface-variant": "#353436",
+                      "secondary-fixed": "#e5e1e4",
+                      "surface-container-highest": "#353436",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "secondary-container": "#474649",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "on-tertiary-fixed-variant": "#474649",
+                      "secondary": "#c8c6c8",
+                      "on-error": "#690005",
+                      "surface-container-low": "#1c1b1c",
+                      "on-primary-fixed": "#2c0051",
+                      "tertiary-fixed": "#e4e2e4",
+                      "on-surface-variant": "#cfc2d7",
+                      "inverse-on-surface": "#313031",
+                      "inverse-primary": "#8422dc",
+                      "tertiary": "#c8c6c8",
+                      "on-primary-container": "#eed9ff",
+                      "on-surface": "#e5e2e3",
+                      "tertiary-container": "#646365",
+                      "primary-container": "#8a2be2",
+                      "on-background": "#e5e2e3",
+                      "surface": "#131314",
+                      "on-tertiary": "#303032",
+                      "outline": "#988ca0",
+                      "on-secondary-fixed-variant": "#474649",
+                      "surface-dim": "#131314",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "outline-variant": "#4c4354",
+                      "primary-fixed": "#efdbff",
+                      "error-container": "#93000a",
+                      "surface-bright": "#3a393a",
+                      "on-tertiary-container": "#e3e0e2",
+                      "on-error-container": "#ffdad6",
+                      "surface-container": "#201f20",
+                      "surface-container-lowest": "#0e0e0f",
+                      "error": "#ffb4ab",
+                      "primary": "#dcb8ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "2xl": "48px",
+                      "xl": "32px",
+                      "3xl": "64px",
+                      "md": "16px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "display-lg-mobile": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "44px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 184, 255, 0.7); }
+            70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(220, 184, 255, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 184, 255, 0); }
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex items-center justify-center p-md md:p-lg">
+<div class="bg-surface-container w-full max-w-[420px] rounded-xl overflow-hidden relative shadow-2xl ring-1 ring-white/5 flex flex-col pulse-animation">
+<!-- Urgent Header -->
+<div class="bg-primary-container text-on-primary-container p-md flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">warning</span>
+<h1 class="font-headline-md text-headline-md m-0 uppercase tracking-widest text-center">New Delivery Request</h1>
+</div>
+<div class="p-lg flex flex-col gap-lg">
+<!-- Job Summary -->
+<div class="flex justify-between items-start">
+<div>
+<div class="inline-flex items-center gap-xs bg-surface-container-high rounded-full px-sm py-xs mb-xs">
+<span class="material-symbols-outlined text-primary text-[16px]">local_shipping</span>
+<span class="font-label-md text-label-md text-primary uppercase">Pickup</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile m-0">Shoe Cleaning</h2>
+<p class="font-body-md text-body-md text-on-surface-variant m-0 mt-xs">Order #QH1024</p>
+</div>
+<div class="text-right">
+<span class="font-display-lg-mobile text-display-lg-mobile text-primary block">₹62</span>
+<span class="font-caption text-caption text-on-surface-variant block mt-xs">Base ₹35 • Dist ₹27</span>
+</div>
+</div>
+<!-- Route Info -->
+<div class="bg-surface-container-low rounded-lg p-md border border-white/5 relative flex flex-col gap-md">
+<div class="flex items-start gap-md">
+<div class="flex flex-col items-center justify-start h-full mt-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">my_location</span>
+<div class="w-px h-8 bg-surface-variant my-xs"></div>
+<span class="material-symbols-outlined text-error text-[20px]" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="flex-1 flex flex-col gap-md">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant m-0">Pickup</p>
+<p class="font-body-md text-body-md m-0">CleanX Service Center</p>
+<p class="font-caption text-caption text-on-surface-variant m-0">1.4 km away</p>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant m-0">Destination</p>
+<p class="font-body-md text-body-md m-0">Customer Location</p>
+<p class="font-caption text-caption text-on-surface-variant m-0">Total 3.8 km • ETA 18 min</p>
+</div>
+</div>
+</div>
+<!-- Map Preview -->
+<div class="w-full h-32 rounded-lg bg-surface-variant overflow-hidden relative mt-sm">
+<div class="bg-cover bg-center w-full h-full opacity-60" data-alt="A detailed map UI showing a route between a cleanings service center and a residential neighborhood. The map is in a dark mode style with minimal details, featuring a glowing purple route line. There are distinct markers for pickup (blue) and dropoff (red). The aesthetic is modern, high-tech, and navigation-focused." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCE3ytfQZG6YaWktXgcqdU72gx_xJeHYDq-2S8lbYrRu8se8Q2LzcVR9rwgSdIoYEGPW5TH6zdWlQL80MH-IlglL2Zr2Hk-r1lZtKwSqzmWONiWBzkCTd3lf9aImwLTptPzzxTDm6J1f4K2brcVsmt6-GiMCHivIyJcjjksXrpCuIhUmQRRPvLPyw8L__s5tyWeNlCos97Og8DofoDi4GgwhxdsCl-IrqsXrFAXHoC2uPrtLsOGxr1ZHA')"></div>
+</div>
+</div>
+<!-- Package Details -->
+<div class="bg-surface-container-lowest rounded-lg p-md border border-white/5 flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<div>
+<p class="font-body-md text-body-md m-0">Sneaker (1)</p>
+<p class="font-caption text-caption text-error m-0 mt-xs flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">info</span>
+                        Keep package upright
+                    </p>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="p-lg pt-0 flex gap-md">
+<button class="flex-1 py-md px-lg rounded-full font-label-md text-label-md bg-transparent border border-outline-variant text-on-surface-variant hover:bg-surface-container-high transition-colors text-center uppercase tracking-wider">
+                Decline
+            </button>
+<button class="flex-[2] py-md px-lg rounded-full font-label-md text-label-md bg-primary text-on-primary hover:bg-primary/90 transition-colors text-center uppercase tracking-wider shadow-lg shadow-primary/20 flex items-center justify-center gap-sm">
+                Accept Delivery
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+<!-- Progress Bar for Time Limit -->
+<div class="h-1 bg-surface-variant w-full absolute bottom-0 left-0">
+<div class="h-full bg-primary w-full origin-left" style="animation: shrink 15s linear forwards;"></div>
+</div>
+<style>
+            @keyframes shrink {
+                from { transform: scaleX(1); }
+                to { transform: scaleX(0); }
+            }
+        </style>
+</div>
+</body></html>

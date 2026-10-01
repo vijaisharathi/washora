@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Business Document Verification - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#0e0e0f",
+                      "secondary-container": "#49494b",
+                      "background": "#131314",
+                      "outline": "#988ca0",
+                      "secondary-fixed": "#e4e2e4",
+                      "tertiary-fixed": "#e4e2e4",
+                      "on-surface-variant": "#cfc2d7",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "surface-tint": "#dcb8ff",
+                      "on-primary-fixed": "#2c0051",
+                      "primary-fixed": "#efdbff",
+                      "on-secondary-fixed-variant": "#474648",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "surface": "#131314",
+                      "success-bg": "#1A3D24",
+                      "inverse-on-surface": "#313031",
+                      "outline-variant": "#4c4354",
+                      "error-red": "#ffb4ab",
+                      "inverse-primary": "#8422dc",
+                      "inverse-surface": "#e5e2e3",
+                      "on-background": "#e5e2e3",
+                      "surface-container-highest": "#353436",
+                      "tertiary-container": "#646365",
+                      "error-container": "#93000a",
+                      "on-primary": "#480081",
+                      "electric-violet": "#8a2be2",
+                      "surface-container": "#201f20",
+                      "error": "#ffb4ab",
+                      "on-surface": "#e5e2e3",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "secondary": "#c8c6c8",
+                      "on-primary-container": "#eed9ff",
+                      "success-green": "#81C784",
+                      "surface-container-low": "#1c1b1c",
+                      "surface-variant": "#353436",
+                      "primary": "#dcb8ff",
+                      "on-error-container": "#ffdad6",
+                      "on-tertiary": "#303032",
+                      "surface-container-high": "#2a2a2b",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "tertiary": "#c8c6c8",
+                      "surface-dim": "#131314",
+                      "on-tertiary-container": "#e3e0e2",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "on-error": "#690005",
+                      "on-secondary": "#303032",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "surface-bright": "#39393a",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "on-secondary-container": "#b9b8ba",
+                      "primary-container": "#8a2be2"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "3xl": "64px",
+                      "xl": "32px",
+                      "xs": "4px",
+                      "md": "16px",
+                      "lg": "24px",
+                      "2xl": "48px",
+                      "sm": "8px"
+              },
+              "fontFamily": {
+                      "h3": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "mono-display": [
+                              "monospace"
+                      ],
+                      "h1": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #131314;
+            color: #e5e2e3;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased flex">
+<!-- Side Nav Bar Component -->
+<aside class="hidden md:flex flex-col py-lg px-md gap-sm bg-surface-container-low border-r border-outline-variant/30 fixed left-0 top-0 h-full w-64 z-40">
+<div class="mb-xl px-sm flex items-center gap-md">
+<img alt="Business logo" class="w-10 h-10 rounded bg-surface-container object-cover" data-alt="A stylized, modern geometric logo representing a cleaning or tech services company, utilizing a deep electric violet color scheme with sharp, precise edges. The logo is set against a dark midnight background, embodying a corporate modern aesthetic suitable for high-performance developer tools." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUoi2OqXhowNpdVIKxX8Wls2kPn0c2P5NbXCbRab8ccJz7cmEKwp2vpBfTOF93jo79t7id4cSae82-uBUbAuDzEMJTPEJyRloxStF2wz5aKG0CE4irPzliOcgCSMKrNRJGpXPjaBxST6iJRl9Cyz_0tCXFOlWTUGJsQrG2xJwitpQ5Uwevi_QRu7vxAXIubES1V9a9bMkWQR26hIdR12OIMH9dXqeRjnOGPjTczIHQb0IZqUIUd1bllQ"/>
+<div>
+<h1 class="font-h3 text-h3 text-on-surface">Anything Clean</h1>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">Verification Progress: 45%</p>
+<div class="w-full bg-surface-container rounded-full h-1 mt-sm overflow-hidden">
+<div class="bg-electric-violet h-1 rounded-full" style="width: 45%"></div>
+</div>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-xs">
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Overview</span>
+</a>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined">fingerprint</span>
+<span class="font-label-md text-label-md">Identity</span>
+</a>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined">location_on</span>
+<span class="font-label-md text-label-md">Address</span>
+</a>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined">business</span>
+<span class="font-label-md text-label-md">Registration</span>
+</a>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+<span class="font-label-md text-label-md">KYC Check</span>
+</a>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg bg-primary/10 text-primary font-bold transition-all duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-label-md text-label-md">Documents</span>
+</a>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined">account_balance</span>
+<span class="font-label-md text-label-md">Bank Setup</span>
+</a>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined">check_circle</span>
+<span class="font-label-md text-label-md">Final Review</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-outline-variant/30 pt-md flex flex-col gap-xs">
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined">contact_support</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+<button class="mt-sm w-full bg-electric-violet text-white font-label-md text-label-md py-sm rounded-lg shadow-lg shadow-electric-violet/20 hover:bg-electric-violet/90 transition-colors">
+                Complete Verification
+            </button>
+</div>
+</aside>
+<!-- Top Nav Bar (Mobile) -->
+<header class="md:hidden fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-md h-16">
+<h1 class="font-h1 text-h1 text-electric-violet">Anything Clean</h1>
+<div class="flex items-center gap-sm">
+<button class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:opacity-80 p-xs">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:opacity-80 p-xs">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:opacity-80 p-xs">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 pt-16 md:pt-0 min-h-screen">
+<div class="max-w-[1200px] mx-auto p-xl">
+<header class="mb-xl">
+<div class="flex items-center gap-sm text-on-surface-variant font-label-md text-label-md mb-sm">
+<span>Verification</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-on-surface">Documents</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Business Documents</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Upload and manage your required corporate documentation to proceed with compliance.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<!-- Main Documents List -->
+<div class="lg:col-span-2 flex flex-col gap-md">
+<!-- Document Card: Business Registration (Pending) -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-md transition-colors hover:border-outline-variant/50">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-low border border-outline-variant/30 flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-2xl">description</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">Business Registration</h3>
+<p class="font-caption text-caption text-on-surface-variant">Uploaded today, 10:42 AM • PDF (2.4 MB)</p>
+</div>
+</div>
+<div class="flex items-center gap-md w-full sm:w-auto justify-between sm:justify-end">
+<span class="inline-flex items-center gap-xs px-sm py-xs rounded-full bg-surface-variant text-on-surface font-caption text-caption uppercase tracking-wider font-bold">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                                Pending Review
+                            </span>
+<button class="text-on-surface-variant hover:text-electric-violet transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Document Card: Address Proof (Pending) -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-md transition-colors hover:border-outline-variant/50">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-low border border-outline-variant/30 flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-2xl">home_work</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">Address Proof</h3>
+<p class="font-caption text-caption text-on-surface-variant">Uploaded yesterday • Utility Bill.png</p>
+</div>
+</div>
+<div class="flex items-center gap-md w-full sm:w-auto justify-between sm:justify-end">
+<span class="inline-flex items-center gap-xs px-sm py-xs rounded-full bg-surface-variant text-on-surface font-caption text-caption uppercase tracking-wider font-bold">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                                Pending Review
+                            </span>
+<button class="text-on-surface-variant hover:text-electric-violet transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Document Card: GST Certificate (Action Required) -->
+<div class="bg-surface-container rounded-xl border-l-4 border-l-error-red border-y border-r border-outline-variant/20 p-md flex flex-col gap-md relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-error-container/5 rounded-bl-full pointer-events-none"></div>
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-md relative z-10">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-error-container/10 border border-error-red/30 flex items-center justify-center text-error-red">
+<span class="material-symbols-outlined text-2xl">error</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">GST Certificate</h3>
+<p class="font-caption text-caption text-on-surface-variant">Rejected today, 09:15 AM</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-xs px-sm py-xs rounded-full bg-error-container/20 text-error-red font-caption text-caption uppercase tracking-wider font-bold border border-error-red/30">
+                                Action Required
+                            </span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-sm border border-outline-variant/30 flex items-start gap-sm relative z-10">
+<span class="material-symbols-outlined text-on-surface-variant text-sm mt-0.5">info</span>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface">Needs Replacement</p>
+<p class="font-caption text-caption text-on-surface-variant mt-0.5">Reason: Document is unclear. Please upload a high-resolution scan where all text and stamps are legible.</p>
+</div>
+</div>
+<div class="flex justify-end gap-sm relative z-10 mt-sm">
+<button class="px-md py-sm rounded-lg border border-outline-variant text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors">
+                                View Original
+                            </button>
+<button class="px-md py-sm rounded-lg bg-electric-violet text-white font-label-md text-label-md shadow-lg shadow-electric-violet/20 hover:bg-electric-violet/90 transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">upload</span>
+                                Replace Document
+                            </button>
+</div>
+</div>
+<!-- Add New Document Ghost Button -->
+<button class="w-full border border-dashed border-outline-variant/50 rounded-xl p-lg flex flex-col items-center justify-center text-on-surface-variant hover:text-electric-violet hover:border-electric-violet/50 hover:bg-surface-container/50 transition-all group">
+<span class="material-symbols-outlined text-3xl mb-xs group-hover:scale-110 transition-transform">add_circle</span>
+<span class="font-h3 text-h3">Upload Additional Document</span>
+<span class="font-caption text-caption mt-xs">Support for PDF, JPG, PNG up to 10MB</span>
+</button>
+</div>
+<!-- Right Side Panel: Guidelines & Help -->
+<div class="flex flex-col gap-lg">
+<!-- Instructions Panel -->
+<div class="bg-surface-container-low rounded-xl border border-outline-variant/30 p-md">
+<h3 class="font-h3 text-h3 text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-electric-violet">policy</span>
+                            Document Guidelines
+                        </h3>
+<ul class="flex flex-col gap-sm">
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-success-green text-sm mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Ensure all four corners of the document are visible.</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-success-green text-sm mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Text must be clear and legible, without glare or blur.</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-success-green text-sm mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Documents must be issued within the last 3 months (where applicable).</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-error-red text-sm mt-1">cancel</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Do not upload password-protected files.</span>
+</li>
+</ul>
+</div>
+<!-- Support Promo -->
+<div class="bg-electric-violet/10 rounded-xl border border-electric-violet/20 p-md relative overflow-hidden">
+<div class="absolute -right-4 -top-4 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined" style="font-size: 120px;">support_agent</span>
+</div>
+<h3 class="font-h3 text-h3 text-electric-violet mb-xs relative z-10">Need Assistance?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-md relative z-10">Our compliance team is available 24/7 to help you with the verification process.</p>
+<button class="bg-surface text-on-surface border border-outline-variant/50 px-md py-xs rounded-lg font-label-md text-label-md hover:border-electric-violet transition-colors relative z-10">
+                            Contact Support
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

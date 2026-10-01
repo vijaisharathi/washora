@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumina - Pickup &amp; Delivery Windows</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-primary-fixed": "#2c0051",
+                        "surface-container-high": "#2a2a2b",
+                        "on-tertiary-container": "#e3e0e2",
+                        "primary-fixed": "#efdbff",
+                        "error-container": "#93000a",
+                        "surface-container": "#201f20",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "secondary-fixed": "#e4e2e4",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#cfc2d7",
+                        "outline-variant": "#4c4354",
+                        "on-secondary-fixed-variant": "#474648",
+                        "primary": "#dcb8ff",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-tertiary": "#303032",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-primary-container": "#eed9ff",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "background": "#131314",
+                        "electric-violet": "#8a2be2",
+                        "surface-bright": "#39393a",
+                        "error": "#ffb4ab",
+                        "success-bg": "#1A3D24",
+                        "inverse-primary": "#8422dc",
+                        "on-secondary-container": "#b9b8ba",
+                        "on-primary": "#480081",
+                        "success-green": "#81C784",
+                        "surface-container-highest": "#353436",
+                        "inverse-surface": "#e5e2e3",
+                        "on-secondary": "#303032",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "error-red": "#ffb4ab",
+                        "surface-variant": "#353436",
+                        "secondary-container": "#49494b",
+                        "surface-container-low": "#1c1b1c",
+                        "secondary": "#c8c6c8",
+                        "surface": "#131314",
+                        "tertiary-container": "#646365",
+                        "surface-dim": "#131314",
+                        "inverse-on-surface": "#313031",
+                        "outline": "#988ca0",
+                        "surface-tint": "#dcb8ff",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "tertiary": "#c8c6c8",
+                        "primary-container": "#8a2be2",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-background": "#e5e2e3",
+                        "on-surface": "#e5e2e3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "sm": "8px",
+                        "3xl": "64px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "2xl": "48px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Geist"],
+                        "h3": ["Geist"],
+                        "body-md": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "display-lg": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "h1": ["Geist"],
+                        "caption": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        /* Custom Scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.outline-variant');
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.outline');
+        }
+
+        /* Toggle Switch Styles */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: theme('colors.electric-violet');
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: theme('colors.electric-violet');
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen font-body-md text-body-md">
+<!-- Top Navigation (Inferred from Shell Mandate, as this looks like an admin/config screen within a larger app) -->
+<header class="fixed top-0 right-0 w-[calc(100%-256px)] z-50 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center h-16 px-xl bg-surface/80">
+<div class="flex items-center gap-md">
+<span class="font-h3 text-h3 font-bold text-on-surface">Lumina</span>
+<div class="h-6 w-px bg-outline-variant/30"></div>
+<nav aria-label="Breadcrumb">
+<ol class="flex items-center space-x-2 text-label-md font-label-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Settings</a></li>
+<li><span class="material-symbols-outlined text-sm">chevron_right</span></li>
+<li class="text-on-surface">Logistics</li>
+</ol>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<!-- Search placeholder if on_left wasn't specified, moving it here for balance -->
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">search</span>
+<input class="w-64 bg-surface-container-low border border-outline-variant/50 rounded-lg py-1.5 pl-10 pr-4 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="Search settings..." type="text"/>
+</div>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<div class="ml-4 w-8 h-8 rounded-full overflow-hidden border border-outline-variant/30">
+<img alt="Provider profile picture" class="w-full h-full object-cover" data-alt="A macro photography shot of a sleek, abstract metallic sphere glowing with internal neon violet light, resting on a dark slate surface. High contrast, sharp focus, capturing the corporate modern tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5jRleVknyJONp3k0wNQRIR3o6oKL6r8VBjk0CsLeGEbJco8x8RcbHhf6VBEIVrh2rkFXgvVf22YkYrSlHf7-W1GSGUmEddFhH-XhhIwv18TfGV4rTJDMhU9w_lnMK4UzxXBw9SygFWdTTOkfnlBi4tVSMVIYUviVSFBf5XblWI4a7k5bxFCjRKfJ4mK4D2Rodx0VadHN1vqpU2VM59iu10RhXqoN8QridFy6L7vlSmj4SEZoCOQ4c2Q"/>
+</div>
+</div>
+</header>
+<!-- Side Navigation -->
+<aside class="fixed left-0 top-0 h-screen w-64 bg-surface-container-low border-r border-outline-variant/30 flex flex-col py-lg px-md">
+<div class="mb-xl px-2 flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg overflow-hidden border border-outline-variant/30 bg-surface">
+<img alt="Provider Organization Logo" class="w-full h-full object-cover" data-alt="A stylized, minimalist logo featuring a geometric 'L' shape constructed from luminous purple neon lines against a matte black background. Corporate, sleek, and highly technical." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1YdjDV5HhjJa5DFVP6q6-nCql2pVsligtoLi1gS5TaFGPNEbr9zIbAXBc5f2mjzfdEmMwI0P3bigtLYxucq2FRRmn9RwUYTYwoZUOwPTEgUZ5hCCdHp2v2elExSJ1AX3dYuKvJwWzRZTJaBoagSVN9g9jmG4wI4U1q9BH1GLaUZYlXMRfIUHBzkCNvqWyXVhoIPP_BswRA_3aQ_L2zT_zYGL8UThbgavdqtPMdgF89nDcpf2Pur0Zog"/>
+</div>
+<div>
+<h1 class="font-h1 text-h1 font-bold text-primary">Lumina Admin</h1>
+<p class="font-caption text-caption text-on-surface-variant">Service Management</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-md px-3 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-md px-3 py-2 rounded-lg font-label-md text-label-md bg-primary/10 text-primary font-bold transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month" data-weight="fill" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+                Schedule
+            </a>
+<a class="flex items-center gap-md px-3 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+                Services
+            </a>
+<a class="flex items-center gap-md px-3 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+                Earnings
+            </a>
+<a class="flex items-center gap-md px-3 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+                Analytics
+            </a>
+</nav>
+<div class="mt-auto space-y-4">
+<button class="w-full py-2 bg-electric-violet text-white font-label-md text-label-md font-bold rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-container transition-colors">
+                Add New Service
+            </button>
+<div class="border-t border-outline-variant/30 pt-4 space-y-1">
+<a class="flex items-center gap-md px-3 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    Settings
+                </a>
+<a class="flex items-center gap-md px-3 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                    Support
+                </a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 mt-16 p-xl max-w-[1200px] w-full mx-auto">
+<div class="flex justify-between items-end mb-lg">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-2">Pickup &amp; Delivery Windows</h1>
+<p class="text-on-surface-variant font-body-md text-body-md">Configure available time slots for customer orders.</p>
+</div>
+<button class="px-6 py-2.5 bg-electric-violet text-white font-label-md text-label-md font-bold rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-container transition-colors flex items-center gap-2 active:scale-[0.98]">
+<span class="material-symbols-outlined text-sm">save</span>
+                Save Windows
+            </button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-lg">
+<!-- Pickup Section -->
+<section class="bg-surface-container border border-outline-variant/20 rounded-xl overflow-hidden flex flex-col">
+<div class="p-lg border-b border-outline-variant/30 bg-surface-container-low/50 flex justify-between items-center">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+</div>
+<div>
+<h2 class="font-h3 text-h3 text-on-surface">Pickup</h2>
+<p class="font-caption text-caption text-on-surface-variant">Customer collection slots</p>
+</div>
+</div>
+<!-- Toggle -->
+<div class="flex items-center gap-3">
+<span class="font-label-md text-label-md text-on-surface-variant">Available</span>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-surface-container appearance-none cursor-pointer z-10 top-0 left-0 checked:translate-x-6 checked:border-electric-violet transition-transform duration-200" id="pickup-toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-bright cursor-pointer transition-colors duration-200" for="pickup-toggle"></label>
+</div>
+</div>
+</div>
+<div class="p-lg flex-1 bg-surface-container">
+<div class="space-y-md">
+<!-- Slot 1 -->
+<div class="flex items-center gap-md p-md rounded-lg border border-outline-variant/30 bg-surface group hover:border-outline-variant/60 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant cursor-grab active:cursor-grabbing">drag_indicator</span>
+<div class="flex-1 grid grid-cols-2 gap-md">
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-caption text-caption">Start</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-2 pl-12 pr-3 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-on-surface" type="time" value="09:00"/>
+</div>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-caption text-caption">End</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-2 pl-10 pr-3 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-on-surface" type="time" value="11:00"/>
+</div>
+</div>
+<button class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-error-red transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+<!-- Slot 2 -->
+<div class="flex items-center gap-md p-md rounded-lg border border-outline-variant/30 bg-surface group hover:border-outline-variant/60 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant cursor-grab active:cursor-grabbing">drag_indicator</span>
+<div class="flex-1 grid grid-cols-2 gap-md">
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-caption text-caption">Start</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-2 pl-12 pr-3 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-on-surface" type="time" value="11:00"/>
+</div>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-caption text-caption">End</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-2 pl-10 pr-3 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-on-surface" type="time" value="13:00"/>
+</div>
+</div>
+<button class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-error-red transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+<!-- Slot 3 -->
+<div class="flex items-center gap-md p-md rounded-lg border border-outline-variant/30 bg-surface group hover:border-outline-variant/60 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant cursor-grab active:cursor-grabbing">drag_indicator</span>
+<div class="flex-1 grid grid-cols-2 gap-md">
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-caption text-caption">Start</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-2 pl-12 pr-3 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-on-surface" type="time" value="14:00"/>
+</div>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-caption text-caption">End</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-2 pl-10 pr-3 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-on-surface" type="time" value="16:00"/>
+</div>
+</div>
+<button class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-error-red transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+<!-- Slot 4 -->
+<div class="flex items-center gap-md p-md rounded-lg border border-outline-variant/30 bg-surface group hover:border-outline-variant/60 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant cursor-grab active:cursor-grabbing">drag_indicator</span>
+<div class="flex-1 grid grid-cols-2 gap-md">
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-caption text-caption">Start</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-2 pl-12 pr-3 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-on-surface" type="time" value="16:00"/>
+</div>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-caption text-caption">End</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-2 pl-10 pr-3 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-on-surface" type="time" value="18:00"/>
+</div>
+</div>
+<button class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-error-red transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+<button class="w-full py-3 mt-4 border border-dashed border-outline-variant/50 rounded-lg text-on-surface-variant font-label-md text-label-md hover:border-primary hover:text-primary hover:bg-primary/5 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                            Add Time Window
+                        </button>
+</div>
+</div>
+</section>
+<!-- Delivery Section -->
+<section class="bg-surface-container border border-outline-variant/20 rounded-xl overflow-hidden flex flex-col">
+<div class="p-lg border-b border-outline-variant/30 bg-surface-container-low/50 flex justify-between items-center">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-electric-violet/10 flex items-center justify-center text-electric-violet">
+<span class="material-symbols-outlined" data-icon="deployed_code">deployed_code</span>
+</div>
+<div>
+<h2 class="font-h3 text-h3 text-on-surface">Delivery</h2>
+<p class="font-caption text-caption text-on-surface-variant">Provider drop-off slots</p>
+</div>
+</div>
+<!-- Toggle -->
+<div class="flex items-center gap-3">
+<span class="font-label-md text-label-md text-on-surface-variant">Available</span>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-surface-container appearance-none cursor-pointer z-10 top-0 left-0 checked:translate-x-6 checked:border-electric-violet transition-transform duration-200" id="delivery-toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-bright cursor-pointer transition-colors duration-200" for="delivery-toggle"></label>
+</div>
+</div>
+</div>
+<div class="p-lg flex-1 bg-surface-container">
+<div class="space-y-md">
+<!-- Slot 1 -->
+<div class="flex items-center gap-md p-md rounded-lg border border-outline-variant/30 bg-surface group hover:border-outline-variant/60 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant cursor-grab active:cursor-grabbing">drag_indicator</span>
+<div class="flex-1 grid grid-cols-2 gap-md">
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-caption text-caption">Start</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-2 pl-12 pr-3 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-on-surface" type="time" value="10:00"/>
+</div>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-caption text-caption">End</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-2 pl-10 pr-3 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-on-surface" type="time" value="12:00"/>
+</div>
+</div>
+<button class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-error-red transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+<!-- Slot 2 -->
+<div class="flex items-center gap-md p-md rounded-lg border border-outline-variant/30 bg-surface group hover:border-outline-variant/60 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant cursor-grab active:cursor-grabbing">drag_indicator</span>
+<div class="flex-1 grid grid-cols-2 gap-md">
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-caption text-caption">Start</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-2 pl-12 pr-3 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-on-surface" type="time" value="12:00"/>
+</div>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-caption text-caption">End</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-2 pl-10 pr-3 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-on-surface" type="time" value="14:00"/>
+</div>
+</div>
+<button class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-error-red transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+<!-- Slot 3 -->
+<div class="flex items-center gap-md p-md rounded-lg border border-outline-variant/30 bg-surface group hover:border-outline-variant/60 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant cursor-grab active:cursor-grabbing">drag_indicator</span>
+<div class="flex-1 grid grid-cols-2 gap-md">
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-caption text-caption">Start</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-2 pl-12 pr-3 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-on-surface" type="time" value="16:00"/>
+</div>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-caption text-caption">End</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-2 pl-10 pr-3 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-on-surface" type="time" value="18:00"/>
+</div>
+</div>
+<button class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-error-red transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+<!-- Slot 4 -->
+<div class="flex items-center gap-md p-md rounded-lg border border-outline-variant/30 bg-surface group hover:border-outline-variant/60 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant cursor-grab active:cursor-grabbing">drag_indicator</span>
+<div class="flex-1 grid grid-cols-2 gap-md">
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-caption text-caption">Start</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-2 pl-12 pr-3 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-on-surface" type="time" value="18:00"/>
+</div>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-caption text-caption">End</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-2 pl-10 pr-3 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-on-surface" type="time" value="20:00"/>
+</div>
+</div>
+<button class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-error-red transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+<button class="w-full py-3 mt-4 border border-dashed border-outline-variant/50 rounded-lg text-on-surface-variant font-label-md text-label-md hover:border-primary hover:text-primary hover:bg-primary/5 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                            Add Time Window
+                        </button>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>

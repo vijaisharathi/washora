@@ -1,0 +1,60 @@
+# ==============================================================================
+# WASHORA Production .dockerignore
+# Prevents sensitive files, logs, local caches, and dependencies from leaking
+# into production Docker image layers.
+# ==============================================================================
+
+# Git metadata & version control
+.git
+.github
+.gitignore
+
+# Environment configurations & local secrets (CRITICAL: Zero Credential Leaks)
+.env
+.env*
+!.env.example
+!.env.production.example
+
+# Dependencies (Installed cleanly inside container via npm ci)
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Next.js build artifacts & caches
+.next/cache
+out/
+build/
+dist/
+
+# Test runners, master verification suites, and coverage
+coverage/
+.nyc_output/
+test_*.mjs
+*.test.ts
+*.spec.ts
+
+# Backups & disaster recovery artifacts
+backups/
+*.enc.json
+*.tar.gz
+*.sql
+
+# Logs & monitoring local files
+logs/
+*.log
+npm-debug.log*
+
+# IDE & system metadata
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Documentation & PRDs
+docs/
+*.pdf
+*.docx
+*.zip

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anything Clean - Support Tickets</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed": "#2c0051",
+                      "secondary": "#c8c6c8",
+                      "on-secondary-container": "#b7b4b7",
+                      "primary-container": "#8a2be2",
+                      "error-container": "#93000a",
+                      "on-error": "#690005",
+                      "tertiary-container": "#646365",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "inverse-primary": "#8422dc",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "inverse-on-surface": "#313031",
+                      "surface-container": "#201f20",
+                      "on-error-container": "#ffdad6",
+                      "surface-container-low": "#1c1b1c",
+                      "tertiary": "#c8c6c8",
+                      "on-primary-container": "#eed9ff",
+                      "secondary-container": "#474649",
+                      "on-tertiary-container": "#e3e0e2",
+                      "inverse-surface": "#e5e2e3",
+                      "on-tertiary": "#303032",
+                      "surface-tint": "#dcb8ff",
+                      "on-secondary-fixed-variant": "#474649",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "on-surface": "#e5e2e3",
+                      "outline": "#988ca0",
+                      "surface-dim": "#131314",
+                      "surface-container-high": "#2a2a2b",
+                      "background": "#131314",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "on-secondary": "#303032",
+                      "error": "#ffb4ab",
+                      "outline-variant": "#4c4354",
+                      "on-tertiary-fixed-variant": "#474649",
+                      "secondary-fixed": "#e5e1e4",
+                      "surface-container-highest": "#353436",
+                      "on-primary": "#480081",
+                      "on-background": "#e5e2e3",
+                      "primary-fixed": "#efdbff",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "surface-container-lowest": "#0e0e0f",
+                      "surface": "#131314",
+                      "tertiary-fixed": "#e4e2e4",
+                      "on-surface-variant": "#cfc2d7",
+                      "surface-variant": "#353436",
+                      "surface-bright": "#3a393a",
+                      "primary": "#dcb8ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "32px",
+                      "md": "16px",
+                      "sm": "8px",
+                      "2xl": "48px",
+                      "lg": "24px",
+                      "3xl": "64px",
+                      "xs": "4px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "display-lg-mobile": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "44px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .bg-glass {
+                @apply bg-surface/80 backdrop-blur-xl border border-white/[0.05];
+            }
+            .glass-card {
+                @apply bg-surface-container/60 backdrop-blur-md border border-white/[0.05] shadow-[0_8px_32px_rgba(0,0,0,0.12)];
+            }
+            .text-glow {
+                text-shadow: 0 0 10px rgba(220, 184, 255, 0.3);
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md antialiased selection:bg-primary-container/30 selection:text-primary">
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-white/5 shadow-sm hover:opacity-80 transition-opacity active:scale-95 transition-transform hidden md:block">
+<div class="flex justify-between items-center px-md h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-sm">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A small, circular profile picture of a professional service partner. The person is smiling, wearing a dark professional uniform. The background is a clean, softly lit modern office environment. The image has a premium, high-trust feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8HvJVN80pBeY0rvcAxo0mojr3gWgg06klz7EhNgqmR6WcMFQtm3u4OSn4eN37ubjqQfHmCknluWNE-y-Sqly0bjhKjNP1sgZsWsLjR-vEQPCc3O-bEB-mYcgg38AqT1SkC_cOIJYae3pwqdqQypVhrlKeikDkg1ETu27LMFO9yDFyfQe5xYymkYpajgOt1wTlRd4Jh7Qz89PIqEGqc0CBnuCIHIRGDzMZcvclFYt3hIIDJqiyeP8XHw"/>
+<span class="font-headline-md text-headline-md font-bold text-primary">Partner Portal</span>
+</div>
+<nav class="hidden lg:flex items-center gap-lg">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary/80 transition-colors" href="#">Dashboard</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary/80 transition-colors" href="#">Deliveries</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary/80 transition-colors" href="#">Earnings</a>
+<a class="font-label-md text-label-md text-primary bg-primary-container/20 px-3 py-1 rounded-full flex items-center gap-xs" href="#">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+                     Support
+                 </a>
+</nav>
+<button class="text-primary hover:bg-primary-container/20 p-2 rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-[88px] pb-[100px] md:pt-24 md:pb-16 px-5 md:px-lg max-w-5xl mx-auto min-h-screen flex flex-col">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-md mb-lg mt-md">
+<div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-background text-glow tracking-tight">Support</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-xl">Manage your support tickets and contact our team for assistance.</p>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-on-primary font-label-md text-label-md px-lg py-3 rounded-lg flex items-center justify-center gap-sm transition-all shadow-[0_0_15px_rgba(138,43,226,0.3)] hover:shadow-[0_0_25px_rgba(138,43,226,0.5)] shrink-0 self-start md:self-auto w-full md:w-auto">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                New Ticket
+            </button>
+</div>
+<!-- Tabs -->
+<div class="flex gap-sm border-b border-outline-variant mb-lg overflow-x-auto pb-xs scrollbar-hide -mx-5 px-5 md:mx-0 md:px-0">
+<button class="font-label-md text-label-md px-4 py-2 text-primary border-b-2 border-primary whitespace-nowrap">Open (1)</button>
+<button class="font-label-md text-label-md px-4 py-2 text-on-surface-variant hover:text-on-background transition-colors whitespace-nowrap border-b-2 border-transparent hover:border-outline-variant">Resolved (1)</button>
+<button class="font-label-md text-label-md px-4 py-2 text-on-surface-variant hover:text-on-background transition-colors whitespace-nowrap border-b-2 border-transparent hover:border-outline-variant">All</button>
+</div>
+<!-- Ticket List Container -->
+<div class="flex-1 flex flex-col gap-md">
+<!-- Open Ticket Card -->
+<div class="glass-card rounded-xl p-lg flex flex-col sm:flex-row gap-md sm:items-center justify-between group cursor-pointer hover:bg-surface-container/80 transition-colors relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary/80"></div>
+<div class="flex-1">
+<div class="flex items-center gap-sm mb-xs">
+<span class="font-caption text-caption text-primary bg-primary-container/20 px-2 py-0.5 rounded uppercase tracking-wider font-semibold">OPEN</span>
+<span class="font-caption text-caption text-on-surface-variant">#SUP-2048</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1 group-hover:text-primary transition-colors">Delivery Issue</h3>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 font-caption text-caption text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                            Created Aug 30, 2026
+                        </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">update</span>
+                            Last update 10 min ago
+                        </div>
+</div>
+</div>
+<div class="shrink-0 flex items-center">
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant group-hover:border-primary group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Resolved Ticket Card -->
+<div class="glass-card rounded-xl p-lg flex flex-col sm:flex-row gap-md sm:items-center justify-between group cursor-pointer hover:bg-surface-container/80 transition-colors opacity-75 hover:opacity-100">
+<div class="flex-1">
+<div class="flex items-center gap-sm mb-xs">
+<span class="font-caption text-caption text-tertiary-fixed-dim bg-surface-variant px-2 py-0.5 rounded uppercase tracking-wider font-semibold">RESOLVED</span>
+<span class="font-caption text-caption text-on-surface-variant">#SUP-1982</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Payment Query</h3>
+</div>
+<div class="shrink-0 flex items-center">
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant group-hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Empty State (Hidden in this view, shown for completeness based on prompt) -->
+<!-- 
+            <div class="glass-card rounded-xl p-2xl flex flex-col items-center justify-center text-center mt-md h-64 border-dashed">
+                <div class="w-16 h-16 rounded-full bg-surface-variant flex items-center justify-center mb-md">
+                    <span class="material-symbols-outlined text-3xl text-on-surface-variant">inbox</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-2">No support tickets</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant max-w-md mb-lg">You don't have any open support tickets at the moment. Need help?</p>
+                <button class="bg-transparent border border-outline hover:border-primary text-primary font-label-md text-label-md px-lg py-2 rounded-lg transition-colors">
+                    Create Ticket
+                </button>
+            </div>
+            -->
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface-container/90 dark:bg-surface-container/90 backdrop-blur-xl fixed bottom-0 w-full z-50 rounded-t-xl border-t border-white/5 shadow-[0_-4px_20px_rgba(138,43,226,0.1)] hover:text-primary/80 active:scale-90 transition-transform duration-200 flex justify-around items-center h-20 px-sm pb-safe w-full md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors w-16" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-md text-[10px] tracking-wide">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors w-16" href="#">
+<span class="material-symbols-outlined mb-1">local_shipping</span>
+<span class="font-label-md text-[10px] tracking-wide">Deliveries</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors w-16" href="#">
+<span class="material-symbols-outlined mb-1">payments</span>
+<span class="font-label-md text-[10px] tracking-wide">Earnings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors w-16" href="#">
+<span class="material-symbols-outlined mb-1">notifications</span>
+<span class="font-label-md text-[10px] tracking-wide">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary bg-primary-container/20 rounded-xl px-3 py-1 w-16" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+<span class="font-label-md text-[10px] tracking-wide">Support</span>
+</a>
+</nav>
+</body></html>

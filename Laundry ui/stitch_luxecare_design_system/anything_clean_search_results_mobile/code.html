@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Search Results - Shoe Cleaning</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#b7b4b7",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "surface-bright": "#3a393a",
+                        "primary-fixed": "#efdbff",
+                        "error": "#ffb4ab",
+                        "error-container": "#93000a",
+                        "outline-variant": "#4c4354",
+                        "on-secondary": "#303032",
+                        "on-surface-variant": "#cfc2d7",
+                        "secondary": "#c8c6c8",
+                        "on-primary-container": "#eed9ff",
+                        "on-secondary-fixed-variant": "#474649",
+                        "tertiary-fixed": "#e4e2e4",
+                        "tertiary": "#c8c6c8",
+                        "surface-container": "#201f20",
+                        "background": "#131314",
+                        "on-tertiary": "#303032",
+                        "surface-container-highest": "#353436",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-surface": "#e5e2e3",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-dim": "#131314",
+                        "on-primary": "#480081",
+                        "surface-container-high": "#2a2a2b",
+                        "secondary-fixed": "#e5e1e4",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e5e2e3",
+                        "primary-container": "#8a2be2",
+                        "on-primary-fixed": "#2c0051",
+                        "surface": "#131314",
+                        "surface-variant": "#353436",
+                        "inverse-primary": "#8422dc",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "tertiary-container": "#646365",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "secondary-container": "#474649",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "outline": "#988ca0",
+                        "inverse-on-surface": "#313031",
+                        "primary": "#dcb8ff",
+                        "on-tertiary-container": "#e3e0e2",
+                        "surface-container-low": "#1c1b1c",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-tint": "#dcb8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "sm": "8px",
+                        "xl": "32px",
+                        "3xl": "64px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "body-md": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "caption": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for dark theme */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #131314; }
+        ::-webkit-scrollbar-thumb { background: #353436; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #4c4354; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-safe antialiased">
+<!-- TopAppBar (From JSON) -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/5 no-shadows">
+<div class="flex justify-between items-center px-md py-sm w-full max-w-[1280px] mx-auto">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 duration-200 p-sm rounded-full bg-surface-container-low/50 hidden md:flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<button class="text-primary dark:text-primary hover:opacity-80 transition-opacity active:scale-95 duration-200 p-sm rounded-full bg-surface-container-low/50 md:hidden flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</button>
+<div class="font-headline-lg-mobile text-headline-lg-mobile text-primary dark:text-primary font-bold md:font-headline-lg md:text-headline-lg flex-1 text-center md:text-left md:ml-lg truncate">
+                New York, NY
+            </div>
+<div class="flex items-center gap-md">
+<!-- Desktop Nav Links -->
+<nav class="hidden md:flex items-center gap-lg mr-lg">
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors font-label-md text-label-md" href="#">Home</a>
+<a class="text-primary hover:text-primary-fixed-dim transition-colors font-label-md text-label-md relative after:content-[''] after:absolute after:-bottom-xs after:left-0 after:w-full after:h-[2px] after:bg-primary after:rounded-full" href="#">Explore</a>
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors font-label-md text-label-md" href="#">Bookings</a>
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors font-label-md text-label-md" href="#">Inbox</a>
+</nav>
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 duration-200 p-sm rounded-full bg-surface-container-low/50 relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-sm right-sm w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<button class="hidden md:flex h-10 w-10 rounded-full bg-surface-container-highest items-center justify-center overflow-hidden border border-white/10 hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="person">person</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Wrapper -->
+<main class="pt-[72px] md:pt-[80px] pb-[100px] md:pb-xl px-md md:px-lg max-w-[1280px] mx-auto w-full flex flex-col gap-xl">
+<!-- Search & Filter Header -->
+<section class="flex flex-col gap-md pt-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-background">Results for "Shoe Cleaning"</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">24 premium services found near you</p>
+</div>
+</div>
+<!-- Filter Bar -->
+<div class="flex items-center gap-sm overflow-x-auto pb-xs scrollbar-hide -mx-md px-md md:mx-0 md:px-0">
+<button class="flex items-center gap-xs px-md py-sm bg-surface-container border border-outline-variant/50 rounded-full font-label-md text-label-md text-on-surface hover:border-primary/50 transition-colors whitespace-nowrap active:scale-95 duration-150 shrink-0">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+                    All Filters
+                </button>
+<button class="flex items-center gap-xs px-md py-sm bg-primary/10 border border-primary/30 rounded-full font-label-md text-label-md text-primary hover:bg-primary/20 transition-colors whitespace-nowrap active:scale-95 duration-150 shrink-0">
+                    Distance
+                    <span class="material-symbols-outlined text-[18px]">keyboard_arrow_down</span>
+</button>
+<button class="flex items-center gap-xs px-md py-sm bg-surface-container border border-outline-variant/50 rounded-full font-label-md text-label-md text-on-surface hover:border-primary/50 transition-colors whitespace-nowrap active:scale-95 duration-150 shrink-0">
+                    Price
+                    <span class="material-symbols-outlined text-[18px]">keyboard_arrow_down</span>
+</button>
+<button class="flex items-center gap-xs px-md py-sm bg-surface-container border border-outline-variant/50 rounded-full font-label-md text-label-md text-on-surface hover:border-primary/50 transition-colors whitespace-nowrap active:scale-95 duration-150 shrink-0">
+                    Rating 4.5+
+                </button>
+<button class="flex items-center gap-xs px-md py-sm bg-surface-container border border-outline-variant/50 rounded-full font-label-md text-label-md text-on-surface hover:border-primary/50 transition-colors whitespace-nowrap active:scale-95 duration-150 shrink-0">
+                    Available Today
+                </button>
+</div>
+</section>
+<!-- Bento Grid Layout for Combined Results -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-md md:gap-lg">
+<!-- Top Services Section (Spans 8 cols on desktop) -->
+<div class="col-span-1 md:col-span-8 flex flex-col gap-md">
+<h2 class="font-headline-md text-headline-md text-on-background">Top Services</h2>
+<!-- Service Card 1 -->
+<div class="group bg-surface-container-low border border-white/5 rounded-xl overflow-hidden flex flex-col sm:flex-row hover:border-primary/30 transition-all duration-300 relative">
+<!-- Subtle Glow -->
+<div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300 pointer-events-none"></div>
+<div class="w-full sm:w-[240px] h-[200px] sm:h-full relative overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A pair of extremely clean, premium white leather sneakers resting on a dark slate surface, illuminated by sleek, modern studio lighting that highlights the pristine condition of the leather. The background is a moody, dark grey with subtle violet undertones, creating a luxurious and high-tech atmosphere typical of a high-end sneaker restoration clinic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB93TIlJXMgiInApalmxiyzYaz80oEWFlXVFayJQ8ZYxULVtqX4KyYECuwGyQIDZDJuNrTZuBqKSt5bqNE9b3sj_6NSlOJ1Tg0FwItOWjwITAnntV4ES0vopR0SEQfubSbB50dq0eEmufE7gG3ITP_FFLa4el8IrT_q90_7AtT08j1WU5UHt03NAlLuFjc7Gn3GN9qcKmxH0340aSvNs1Qy8gy2gtN0tcTqlXWzvwgIqo3svB2TjVoR9w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#131314]/90 via-[#131314]/30 to-transparent sm:hidden"></div>
+<div class="absolute top-sm right-sm bg-surface/90 backdrop-blur-md px-sm py-xs rounded-lg flex items-center gap-xs border border-white/10">
+<span class="material-symbols-outlined text-[14px] text-[#FFCC00] fill">star</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">4.9</span>
+</div>
+</div>
+<div class="p-md md:p-lg flex flex-col flex-1 justify-between z-10">
+<div>
+<div class="flex justify-between items-start mb-xs">
+<h3 class="font-headline-md text-headline-md text-on-background group-hover:text-primary transition-colors">Sneaker Deep Clean</h3>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite_border</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md line-clamp-2">Complete exterior and interior detailing, midsole unyellowing, and deodorization for premium leather and mesh sneakers.</p>
+<div class="flex flex-wrap gap-xs mb-md">
+<span class="px-sm py-xs bg-surface-container-highest rounded text-on-surface-variant font-caption text-caption border border-white/5">Takes 48h</span>
+<span class="px-sm py-xs bg-surface-container-highest rounded text-on-surface-variant font-caption text-caption border border-white/5">Drop-off / Pickup</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-end gap-xs">
+<span class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-background leading-none">$45</span>
+<span class="font-body-md text-body-md text-on-surface-variant mb-xs">/pair</span>
+</div>
+<button class="bg-primary hover:bg-primary-fixed text-on-primary font-label-md text-label-md px-lg py-sm rounded-full transition-all active:scale-95 shadow-[0_0_15px_rgba(138,43,226,0.3)] hover:shadow-[0_0_20px_rgba(138,43,226,0.5)]">
+                                Book
+                            </button>
+</div>
+</div>
+</div>
+<!-- Service Card 2 -->
+<div class="group bg-surface-container-low border border-white/5 rounded-xl overflow-hidden flex flex-col sm:flex-row hover:border-primary/30 transition-all duration-300 relative">
+<div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300 pointer-events-none"></div>
+<div class="w-full sm:w-[240px] h-[200px] sm:h-full relative overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A pair of rich brown suede boots undergoing a meticulous restoration process. A specialized brush is resting near the boots, set against a dark, textured workbench. The lighting is focused and warm, creating deep shadows that emphasize the premium quality of the suede and the precision of the artisan's workspace. Subtle violet highlights hint at the modern app interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBCKd4MN489hec6nnak1DCZKUY43WiiJysIP5dJcNDw1gV03CIc2OWF0gUXOR9B1gPG4CwstqWZZmOojprrJCc4wmVB68EmxHIJCNl4qIcRNxxu3BYVSxmiHuUEjJ4_EwbRi2vTxzAufKWAQZgf8riaUFvpzw7eQEg9ytylLA0lLLC0YKYPxA6ebuzlVrRnu3MMmm3i-Cud0QOnm5WIEL_a1_vijId_vooVbRc8mnGPNUiZrZ1VH77NQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#131314]/90 via-[#131314]/30 to-transparent sm:hidden"></div>
+<div class="absolute top-sm right-sm bg-surface/90 backdrop-blur-md px-sm py-xs rounded-lg flex items-center gap-xs border border-white/10">
+<span class="material-symbols-outlined text-[14px] text-[#FFCC00] fill">star</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">4.8</span>
+</div>
+</div>
+<div class="p-md md:p-lg flex flex-col flex-1 justify-between z-10">
+<div>
+<div class="flex justify-between items-start mb-xs">
+<h3 class="font-headline-md text-headline-md text-on-background group-hover:text-primary transition-colors">Suede Restoration</h3>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite_border</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md line-clamp-2">Specialized dry cleaning process to revive nap, remove water stains, and re-dye faded areas on premium suede footwear.</p>
+<div class="flex flex-wrap gap-xs mb-md">
+<span class="px-sm py-xs bg-surface-container-highest rounded text-on-surface-variant font-caption text-caption border border-white/5">Takes 72h</span>
+<span class="px-sm py-xs bg-surface-container-highest rounded text-on-surface-variant font-caption text-caption border border-white/5">Specialty Service</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-end gap-xs">
+<span class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-background leading-none">$65</span>
+<span class="font-body-md text-body-md text-on-surface-variant mb-xs">/pair</span>
+</div>
+<button class="bg-primary hover:bg-primary-fixed text-on-primary font-label-md text-label-md px-lg py-sm rounded-full transition-all active:scale-95 shadow-[0_0_15px_rgba(138,43,226,0.3)] hover:shadow-[0_0_20px_rgba(138,43,226,0.5)]">
+                                Book
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Top Rated Providers Section (Spans 4 cols on desktop) -->
+<div class="col-span-1 md:col-span-4 flex flex-col gap-md">
+<h2 class="font-headline-md text-headline-md text-on-background">Top Rated Providers</h2>
+<div class="flex flex-col gap-sm">
+<!-- Provider 1 -->
+<div class="bg-surface-container border border-white/5 rounded-xl p-md flex flex-col gap-md hover:border-primary/30 transition-all cursor-pointer group">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest overflow-hidden relative shrink-0">
+<img class="w-full h-full object-cover" data-alt="A macro shot of a sleek, dark logo for a luxury shoe repair service called The Cobblers Bench, embossed in subtle violet foil on a matte black background. The lighting is cinematic, casting long shadows and emphasizing the premium, minimalist design aesthetic of the high-end marketplace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ__XTZjYhGBx7rnGZAZXd4Q2KoYN-YMDKyrFe2m8BZQNWUxhaM82id0wlNxYY9KobplEAiqlLO-y0UPyPLCxjaI02Y7JuYlGcwBleJzbLxfGTbFSz2pKfEWZUdHVkVyaHSTFQGOPX-DjUS1PBbsLycr8AmFWoCLomRfy-12DbORZJpy9yXH0_vEitLKL2Ad6rcNIfNwFDU0gUgdYXE4VZ-0JttPcie6bOLrt_3-ka2BDNdt1poZ1RDA"/>
+<div class="absolute -bottom-1 -right-1 bg-primary text-on-primary w-5 h-5 rounded-full flex items-center justify-center border-2 border-surface-container">
+<span class="material-symbols-outlined text-[12px]">verified</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-headline-md text-body-lg text-on-background truncate group-hover:text-primary transition-colors">The Cobbler's Bench</h4>
+<div class="flex items-center gap-xs text-on-surface-variant font-caption text-caption mt-1">
+<span class="material-symbols-outlined text-[14px] text-[#FFCC00] fill">star</span>
+<span class="font-bold text-on-surface">5.0</span>
+<span>•</span>
+<span>1.2 mi</span>
+</div>
+</div>
+</div>
+<div class="flex gap-xs mt-auto">
+<span class="px-sm py-xs bg-surface-container-highest rounded text-on-surface-variant font-caption text-caption">Leather</span>
+<span class="px-sm py-xs bg-surface-container-highest rounded text-on-surface-variant font-caption text-caption">Repairs</span>
+</div>
+</div>
+<!-- Provider 2 -->
+<div class="bg-surface-container border border-white/5 rounded-xl p-md flex flex-col gap-md hover:border-primary/30 transition-all cursor-pointer group">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest overflow-hidden relative shrink-0">
+<img class="w-full h-full object-cover" data-alt="A modern, minimalist avatar image for a business called Sneaker Clinic, featuring a stylized glowing violet sneaker icon set against a deep charcoal gray background. The design is sleek, high-contrast, and fits perfectly within a premium, technology-driven dark mode marketplace app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB16VybjGXl7JXuikzlX8k9GMYnY2hxq0GruyZKSIJWnUBRWi6DBeynR-VMYHDxyxs3Kkn4YQialVRrCUi9CxQIEx3g-OlBjGDPLKewEuSRQWGodCC8yCNYgKGNVI6ujxUnFpEk7onwOeOVoaZ8MtEWb7nmWOKhcPdXjJ53bQoi5phDG8LD0RFEM-wPX4nqjJBW3RC3V0ep7bffbOzeFBdSyzpPuZHF0EcykOIrHScJjaJstM7sW4a8aw"/>
+<div class="absolute -bottom-1 -right-1 bg-primary text-on-primary w-5 h-5 rounded-full flex items-center justify-center border-2 border-surface-container">
+<span class="material-symbols-outlined text-[12px]">verified</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-headline-md text-body-lg text-on-background truncate group-hover:text-primary transition-colors">Sneaker Clinic</h4>
+<div class="flex items-center gap-xs text-on-surface-variant font-caption text-caption mt-1">
+<span class="material-symbols-outlined text-[14px] text-[#FFCC00] fill">star</span>
+<span class="font-bold text-on-surface">4.9</span>
+<span>•</span>
+<span>3.4 mi</span>
+</div>
+</div>
+</div>
+<div class="flex gap-xs mt-auto">
+<span class="px-sm py-xs bg-surface-container-highest rounded text-on-surface-variant font-caption text-caption">Sneakers</span>
+<span class="px-sm py-xs bg-surface-container-highest rounded text-on-surface-variant font-caption text-caption">Deep Clean</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (From JSON) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe px-lg bg-surface/90 dark:bg-surface/90 backdrop-blur-2xl rounded-t-xl border-t-0 shadow-[0_-4px_24px_rgba(138,43,226,0.1)] md:hidden">
+<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-secondary-container hover:text-primary-fixed-dim transition-colors active:scale-90 duration-150 gap-1 w-16" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-[10px] leading-[12px] font-medium tracking-wide">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary scale-110 transition-all hover:text-primary-fixed-dim active:scale-90 duration-150 gap-1 w-16 relative" href="#">
+<span class="material-symbols-outlined fill">search</span>
+<span class="font-label-md text-[10px] leading-[12px] font-bold tracking-wide">Explore</span>
+<div class="absolute -top-1 w-1 h-1 bg-primary rounded-full"></div>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-secondary-container hover:text-primary-fixed-dim transition-colors active:scale-90 duration-150 gap-1 w-16" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-label-md text-[10px] leading-[12px] font-medium tracking-wide">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-secondary-container hover:text-primary-fixed-dim transition-colors active:scale-90 duration-150 gap-1 w-16" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-label-md text-[10px] leading-[12px] font-medium tracking-wide">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-secondary-container hover:text-primary-fixed-dim transition-colors active:scale-90 duration-150 gap-1 w-16" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-[10px] leading-[12px] font-medium tracking-wide">Profile</span>
+</a>
+</nav>
+</body></html>

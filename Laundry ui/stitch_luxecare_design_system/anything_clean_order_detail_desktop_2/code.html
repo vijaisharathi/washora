@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Service Work Order - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error-red": "#ffb4ab",
+                      "surface-tint": "#dcb8ff",
+                      "on-tertiary-container": "#e3e0e2",
+                      "error-container": "#93000a",
+                      "secondary-container": "#49494b",
+                      "on-error": "#690005",
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "outline-variant": "#4c4354",
+                      "electric-violet": "#8a2be2",
+                      "surface-container-low": "#1c1b1c",
+                      "tertiary-container": "#646365",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "success-bg": "#1A3D24",
+                      "inverse-on-surface": "#313031",
+                      "background": "#131314",
+                      "primary-container": "#8a2be2",
+                      "on-primary": "#480081",
+                      "on-error-container": "#ffdad6",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "surface-container-highest": "#353436",
+                      "outline": "#988ca0",
+                      "surface-bright": "#39393a",
+                      "surface-container-high": "#2a2a2b",
+                      "on-surface": "#e5e2e3",
+                      "inverse-surface": "#e5e2e3",
+                      "on-secondary": "#303032",
+                      "on-tertiary": "#303032",
+                      "error": "#ffb4ab",
+                      "surface": "#131314",
+                      "inverse-primary": "#8422dc",
+                      "primary-fixed": "#efdbff",
+                      "surface-container": "#201f20",
+                      "success-green": "#81C784",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "tertiary": "#c8c6c8",
+                      "on-secondary-fixed-variant": "#474648",
+                      "primary": "#dcb8ff",
+                      "tertiary-fixed": "#e4e2e4",
+                      "secondary-fixed": "#e4e2e4",
+                      "surface-variant": "#353436",
+                      "on-primary-fixed": "#2c0051",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "on-secondary-container": "#b9b8ba",
+                      "on-primary-container": "#eed9ff",
+                      "on-surface-variant": "#cfc2d7",
+                      "surface-dim": "#131314",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "on-background": "#e5e2e3",
+                      "secondary": "#c8c6c8"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xs": "4px",
+                      "3xl": "64px",
+                      "lg": "24px",
+                      "xl": "32px",
+                      "md": "16px",
+                      "2xl": "48px",
+                      "sm": "8px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "h1": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "h3": [
+                              "Geist"
+                      ],
+                      "mono-display": [
+                              "monospace"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen selection:bg-electric-violet/30 flex">
+<!-- Top App Bar -->
+<header class="fixed top-0 right-0 w-[calc(100%-256px)] z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-xl h-16">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-2 text-on-surface-variant hover:text-on-surface transition-colors duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-on-surface transition-colors duration-200">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/30">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A small circular avatar placeholder showing a generic user silhouette or abstract pattern, used in a dark mode UI. Deep purple and grey tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3lWw6cKuriWjAo3mmHUJxIgBKK7EMP2E0VH3Wj3Bv8TEKD6OgcEATCjAVFUnD9lZ3RtaS1xG33qFNLJw5AkOBsrCQ_WXMrWIf3vpJYU34PikZ5GtbsjJb3_8AgkkzyMgelLDrOMX7jlHnnUsnvHf0f24rouxoVwWSu6aF0VMtcJj8Wbnca69Uorq30tYin14b1zi_EuHa9whnSjL_I5CK7PNz07TY2etF9VHlPfnkrV_zHaVYyiL1EQ"/>
+</div>
+</div>
+</header>
+<!-- Side Navigation -->
+<nav class="fixed left-0 top-0 h-full w-[256px] bg-surface-container-low border-r border-outline-variant/30 flex flex-col py-lg px-md z-40">
+<div class="mb-xl px-sm">
+<div class="font-display-lg text-display-lg font-bold text-electric-violet leading-none tracking-tight">Lumina Ops</div>
+<div class="text-on-surface-variant font-label-md text-label-md mt-1">Service Suite</div>
+</div>
+<div class="flex flex-col gap-xs font-label-md text-label-md">
+<a class="flex items-center gap-md px-md py-sm rounded bg-primary/10 text-primary font-bold transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">pending_actions</span>
+                Processing
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded text-on-surface-variant hover:bg-surface-container-highest transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded text-on-surface-variant hover:bg-surface-container-highest transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+                Orders
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded text-on-surface-variant hover:bg-surface-container-highest transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">build</span>
+                Services
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded text-on-surface-variant hover:bg-surface-container-highest transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="ml-[256px] mt-16 p-xl w-full max-w-[1200px] mx-auto pb-24">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-lg gap-md border-b border-outline-variant/30 pb-md">
+<div>
+<div class="flex items-center gap-sm mb-1 text-on-surface-variant font-label-md text-label-md">
+<a class="hover:text-primary transition-colors" href="#">Processing</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span>Order Details</span>
+</div>
+<h1 class="font-h1 text-h1 text-on-surface flex items-center gap-md">
+<span class="font-mono-display text-mono-display tracking-wider">QH-20260902-1041</span>
+<span class="inline-flex items-center px-2 py-1 rounded bg-electric-violet/20 text-electric-violet text-caption font-caption border border-electric-violet/30 font-bold tracking-widest uppercase">
+                        Inspection Pending
+                    </span>
+</h1>
+</div>
+<div class="flex gap-sm">
+<button class="px-md py-sm rounded border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-colors font-label-md text-label-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-[18px]">print</span>
+                    Print Label
+                </button>
+<button class="px-md py-sm rounded bg-electric-violet text-white font-label-md text-label-md font-bold shadow-lg shadow-electric-violet/20 hover:bg-electric-violet/90 transition-all flex items-center gap-sm">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+                    Start Inspection
+                </button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<!-- Left Column: Details -->
+<div class="lg:col-span-2 flex flex-col gap-lg">
+<!-- Order Info Card -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg">
+<h3 class="font-h3 text-h3 mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant">info</span>
+                        Item Details
+                    </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-y-md gap-x-xl">
+<div>
+<div class="text-caption font-caption text-on-surface-variant mb-1 uppercase tracking-wider">Customer</div>
+<div class="font-body-md text-body-md flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-surface-container-highest flex items-center justify-center text-caption font-bold text-electric-violet">A</div>
+                                Arun
+                            </div>
+</div>
+<div>
+<div class="text-caption font-caption text-on-surface-variant mb-1 uppercase tracking-wider">Service Type</div>
+<div class="font-body-md text-body-md">Sneaker Deep Clean (Premium)</div>
+</div>
+<div>
+<div class="text-caption font-caption text-on-surface-variant mb-1 uppercase tracking-wider">Item Description</div>
+<div class="font-body-md text-body-md">Premium Sneakers (Mesh + Synthetic)</div>
+</div>
+<div>
+<div class="text-caption font-caption text-on-surface-variant mb-1 uppercase tracking-wider">Intake Date</div>
+<div class="font-body-md text-body-md">Sept 2, 12:20 PM</div>
+</div>
+<div>
+<div class="text-caption font-caption text-on-surface-variant mb-1 uppercase tracking-wider">Reported Condition</div>
+<div class="font-body-md text-body-md">Good</div>
+</div>
+</div>
+<div class="mt-md pt-md border-t border-outline-variant/20">
+<div class="text-caption font-caption text-on-surface-variant mb-1 uppercase tracking-wider">Customer Instructions</div>
+<div class="bg-surface-container-low p-sm rounded border border-outline-variant/30 text-body-md font-body-md italic text-on-surface-variant border-l-2 border-l-electric-violet">
+                            "Please handle the white mesh carefully."
+                        </div>
+</div>
+</div>
+<!-- Documentation Card -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-h3 text-h3 flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant">photo_camera</span>
+                            Documentation
+                        </h3>
+<button class="px-sm py-xs rounded border border-outline-variant text-on-surface hover:bg-surface-container-highest transition-colors font-label-md text-label-md flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">add</span>
+                            Add Photos
+                        </button>
+</div>
+<div class="text-caption font-caption text-on-surface-variant mb-2 uppercase tracking-wider">Intake Photos</div>
+<div class="flex gap-md overflow-x-auto pb-2">
+<div class="w-32 h-32 rounded-lg bg-surface-container-highest border border-outline-variant/30 shrink-0 overflow-hidden relative group">
+<img alt="Intake photo 1" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Close up shot of premium white mesh sneakers with synthetic overlays, showing minor dirt and scuffs before cleaning, resting on a dark grey workshop table in a dimly lit studio setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvXjcWNGVLn6bYe5tdi5Ovb7QoR3gLwEHtmJOxvrBV8tu4pV0crhvGv5QBAJTwa3ou26Xx-9qY5fFCRT4Dysq0mycCIllW8CY5eYPlhoIn1K5N3HMBkxICSugyaK2kU7ZA_rY9jvm9eDYniFM-UB-hm43VGd9b6_2JRztgS7OUOWGpkVSMwB_A_TLZ0sdr_PX7SqB56c_pLxdPL5J5uhk5PgDFjIllWsq6YYTD99BFj5O0NEMc302bbg"/>
+<div class="absolute bottom-0 left-0 right-0 bg-background/80 backdrop-blur text-caption p-1 text-center truncate">Front view</div>
+</div>
+<div class="w-32 h-32 rounded-lg bg-surface-container-highest border border-outline-variant/30 shrink-0 overflow-hidden relative group">
+<img alt="Intake photo 2" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Side profile shot of premium white mesh sneakers, focusing on the sole and synthetic side panels showing typical street wear, resting on a dark grey surface under a cool white inspection light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_SE2IE5hcY92LNvZuSZXGCNOhzsA_HTjA3C-5xA60bf6msBM3Xu0pSJIt8etXfvwStbg3a3rsuMr10f79iyvw0-5ZADFz3M3cEoQ-KthEGztWMLgQelvfLRYMBJFaeyF5qRKPFonD2lnrm6glkmr8Fol0A8GPlKMUnru_rYwduXLs3_sjAbqXrhKYWBq-5YA6YxYXzfhWilRHkFVDSEsBO8z2wrtIydf84j1VgSLwetoZFBEgF8Qcvg"/>
+<div class="absolute bottom-0 left-0 right-0 bg-background/80 backdrop-blur text-caption p-1 text-center truncate">Side view</div>
+</div>
+<div class="w-32 h-32 rounded-lg bg-surface-container-highest border border-outline-variant/30 shrink-0 overflow-hidden relative group flex items-center justify-center border-dashed cursor-pointer hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant text-[32px]">add_photo_alternate</span>
+</div>
+</div>
+</div>
+<!-- Internal Notes Card -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg">
+<h3 class="font-h3 text-h3 mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant">edit_note</span>
+                        Internal Notes
+                    </h3>
+<textarea class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg p-md text-body-md font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all placeholder:text-on-surface-variant/50 min-h-[120px] resize-y" placeholder="Add internal processing notes here..."></textarea>
+<div class="flex justify-end mt-sm">
+<button class="px-md py-sm rounded text-primary hover:bg-primary/10 transition-colors font-label-md text-label-md font-bold">
+                            Save Note
+                        </button>
+</div>
+</div>
+</div>
+<!-- Right Column: Timeline -->
+<div class="lg:col-span-1">
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg sticky top-24">
+<h3 class="font-h3 text-h3 mb-xl flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant">timeline</span>
+                        Process Progress
+                    </h3>
+<div class="relative pl-6 border-l border-outline-variant/30 space-y-xl">
+<!-- Step 1: Completed -->
+<div class="relative">
+<div class="absolute -left-[33px] top-0 w-4 h-4 rounded-full bg-success-green flex items-center justify-center border-[3px] border-surface-container">
+<span class="material-symbols-outlined text-surface-container text-[10px] font-bold">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-success-green font-bold">Received</span>
+<span class="font-caption text-caption text-on-surface-variant">Sept 2, 12:20 PM</span>
+</div>
+</div>
+<!-- Step 2: Current -->
+<div class="relative">
+<div class="absolute -left-[33px] top-0 w-4 h-4 rounded-full bg-electric-violet flex items-center justify-center border-[3px] border-surface-container shadow-[0_0_8px_rgba(138,43,226,0.6)]">
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">Inspection</span>
+<span class="font-caption text-caption text-primary/70">Current Step</span>
+</div>
+</div>
+<!-- Step 3: Pending -->
+<div class="relative">
+<div class="absolute -left-[33px] top-0 w-4 h-4 rounded-full bg-surface-container-high border-[3px] border-outline-variant/50">
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant">Preparation</span>
+<span class="font-caption text-caption text-on-surface-variant/50">Pending</span>
+</div>
+</div>
+<!-- Step 4: Pending -->
+<div class="relative">
+<div class="absolute -left-[33px] top-0 w-4 h-4 rounded-full bg-surface-container-high border-[3px] border-outline-variant/50">
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant">Processing</span>
+<span class="font-caption text-caption text-on-surface-variant/50">Pending</span>
+</div>
+</div>
+<!-- Step 5: Pending -->
+<div class="relative">
+<div class="absolute -left-[33px] top-0 w-4 h-4 rounded-full bg-surface-container-high border-[3px] border-outline-variant/50">
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant">Treatment</span>
+<span class="font-caption text-caption text-on-surface-variant/50">Pending</span>
+</div>
+</div>
+<!-- Step 6: Pending -->
+<div class="relative">
+<div class="absolute -left-[33px] top-0 w-4 h-4 rounded-full bg-surface-container-high border-[3px] border-outline-variant/50">
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant">Drying</span>
+<span class="font-caption text-caption text-on-surface-variant/50">Pending</span>
+</div>
+</div>
+<!-- Step 7: Pending -->
+<div class="relative">
+<div class="absolute -left-[33px] top-0 w-4 h-4 rounded-full bg-surface-container-high border-[3px] border-outline-variant/50">
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant">Finishing</span>
+<span class="font-caption text-caption text-on-surface-variant/50">Pending</span>
+</div>
+</div>
+<!-- Step 8: Pending -->
+<div class="relative">
+<div class="absolute -left-[33px] top-0 w-4 h-4 rounded-full bg-surface-container-high border-[3px] border-outline-variant/50">
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant">Quality Check</span>
+<span class="font-caption text-caption text-on-surface-variant/50">Pending</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

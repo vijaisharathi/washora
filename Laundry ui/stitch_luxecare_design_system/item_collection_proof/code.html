@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Delivery Pro - Item Collection &amp; Proof</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-container": "#646365",
+                      "on-primary-fixed": "#2c0051",
+                      "secondary": "#c8c6c8",
+                      "error-container": "#93000a",
+                      "tertiary-fixed": "#e4e2e4",
+                      "surface-dim": "#131314",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "on-primary-container": "#eed9ff",
+                      "on-tertiary": "#303032",
+                      "inverse-on-surface": "#313031",
+                      "surface-bright": "#3a393a",
+                      "outline-variant": "#4c4354",
+                      "surface-tint": "#dcb8ff",
+                      "on-error": "#690005",
+                      "on-background": "#e5e2e3",
+                      "secondary-fixed": "#e5e1e4",
+                      "on-tertiary-container": "#e3e0e2",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "primary-container": "#8a2be2",
+                      "secondary-container": "#474649",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "surface-container-low": "#1c1b1c",
+                      "surface-variant": "#353436",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-secondary": "#303032",
+                      "on-secondary-container": "#b7b4b7",
+                      "surface-container-highest": "#353436",
+                      "surface": "#131314",
+                      "tertiary": "#c8c6c8",
+                      "error": "#ffb4ab",
+                      "on-error-container": "#ffdad6",
+                      "surface-container": "#201f20",
+                      "inverse-primary": "#8422dc",
+                      "primary": "#dcb8ff",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "primary-fixed": "#efdbff",
+                      "outline": "#988ca0",
+                      "on-tertiary-fixed-variant": "#474649",
+                      "background": "#131314",
+                      "on-primary": "#480081",
+                      "inverse-surface": "#e5e2e3",
+                      "on-secondary-fixed-variant": "#474649",
+                      "on-surface-variant": "#cfc2d7",
+                      "surface-container-high": "#2a2a2b",
+                      "on-surface": "#e5e2e3"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xs": "4px",
+                      "lg": "24px",
+                      "2xl": "48px",
+                      "sm": "8px",
+                      "xl": "32px",
+                      "md": "16px",
+                      "3xl": "64px"
+              },
+              "fontFamily": {
+                      "body-md": ["Geist"],
+                      "display-lg": ["Geist"],
+                      "headline-lg": ["Geist"],
+                      "headline-md": ["Geist"],
+                      "label-md": ["Geist"],
+                      "display-lg-mobile": ["Geist"],
+                      "caption": ["Geist"],
+                      "body-lg": ["Geist"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        /* Base styles mapped from JSON execution requirements */
+        .glass-panel {
+            background: rgba(18, 18, 20, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .glow-effect {
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 8px 32px 0 rgba(138, 43, 226, 0.1);
+        }
+        
+        .status-timeline-line {
+            width: 2px;
+            background: #8a2be2; /* primary-container */
+            height: 100%;
+            position: absolute;
+            left: 11px;
+            top: 24px;
+            z-index: 0;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col selection:bg-primary-container/30 selection:text-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 border-b border-white/5 bg-surface/80 backdrop-blur-md shadow-sm">
+<div class="flex items-center justify-between px-md h-16 w-full max-w-7xl mx-auto">
+<button class="text-primary dark:text-primary-fixed hover:bg-surface-variant/50 active:scale-95 transition-transform p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="menu" data-weight="fill" style="font-variation-settings: 'FILL' 1;">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md-mobile md:text-headline-md font-bold text-primary dark:text-primary">Delivery Pro</h1>
+<button class="text-primary dark:text-primary-fixed hover:bg-surface-variant/50 active:scale-95 transition-transform p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="offline_bolt" data-weight="fill" style="font-variation-settings: 'FILL' 1;">offline_bolt</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas (Transactional flow - no bottom nav) -->
+<main class="flex-grow pt-[88px] pb-3xl px-md md:px-lg max-w-3xl mx-auto w-full">
+<!-- Header Section -->
+<div class="mb-lg text-center flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center mb-sm border border-primary/30 glow-effect">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">✓ Pickup verified</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Order #ORD-7729-XA securely verified via OTP.</p>
+</div>
+<!-- Order Summary Card (Bento Style) -->
+<section class="glass-panel rounded-xl p-md mb-lg">
+<div class="flex justify-between items-start mb-md">
+<div>
+<h3 class="font-label-md text-label-md text-primary mb-xs">COLLECTED ITEM</h3>
+<p class="font-headline-md text-headline-md text-on-surface">MacBook Pro 16" (M3 Max)</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Space Black, 64GB RAM, 2TB SSD</p>
+</div>
+<div class="bg-surface-container py-1 px-3 rounded-full border border-outline-variant">
+<span class="font-label-md text-label-md text-on-surface">Qty: 1</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-sm pt-sm border-t border-white/10">
+<div>
+<p class="font-caption text-caption text-on-surface-variant mb-1">From</p>
+<p class="font-body-md text-body-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-sm">store</span> Apple Store, 5th Ave
+                    </p>
+</div>
+<div>
+<p class="font-caption text-caption text-on-surface-variant mb-1">Weight</p>
+<p class="font-body-md text-body-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-sm">scale</span> 2.14 kg
+                    </p>
+</div>
+</div>
+</section>
+<!-- Verification Checklist -->
+<section class="glass-panel rounded-xl p-md mb-lg">
+<h3 class="font-label-md text-label-md text-primary mb-md">COLLECTION CHECKLIST</h3>
+<div class="relative">
+<div class="status-timeline-line"></div>
+<ul class="space-y-sm">
+<li class="flex items-start gap-md relative z-10">
+<div class="mt-1 w-6 h-6 rounded-full bg-primary-container flex items-center justify-center shadow-[0_0_10px_rgba(138,43,226,0.3)]">
+<span class="material-symbols-outlined text-[14px] text-white" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface">Order Match</p>
+<p class="font-caption text-caption text-on-surface-variant">System verified order ID</p>
+</div>
+</li>
+<li class="flex items-start gap-md relative z-10">
+<div class="mt-1 w-6 h-6 rounded-full bg-primary-container flex items-center justify-center shadow-[0_0_10px_rgba(138,43,226,0.3)]">
+<span class="material-symbols-outlined text-[14px] text-white" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface">Item Condition</p>
+<p class="font-caption text-caption text-on-surface-variant">Visually inspected, no damage</p>
+</div>
+</li>
+<li class="flex items-start gap-md relative z-10">
+<div class="mt-1 w-6 h-6 rounded-full bg-primary-container flex items-center justify-center shadow-[0_0_10px_rgba(138,43,226,0.3)]">
+<span class="material-symbols-outlined text-[14px] text-white" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface">Quantity Check</p>
+<p class="font-caption text-caption text-on-surface-variant">1 of 1 items collected</p>
+</div>
+</li>
+<li class="flex items-start gap-md relative z-10">
+<div class="mt-1 w-6 h-6 rounded-full bg-primary-container flex items-center justify-center shadow-[0_0_10px_rgba(138,43,226,0.3)]">
+<span class="material-symbols-outlined text-[14px] text-white" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface">OTP Authorized</p>
+<p class="font-caption text-caption text-on-surface-variant">Vendor provided correct PIN</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<!-- Mandatory Photo Capture -->
+<section class="glass-panel rounded-xl p-md mb-xl border border-primary/20 glow-effect relative overflow-hidden group">
+<div class="absolute inset-0 bg-primary-container/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex justify-between items-center mb-sm relative z-10">
+<h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="photo_camera">photo_camera</span>
+                    MANDATORY PROOF
+                </h3>
+<span class="bg-error-container/20 text-error px-2 py-0.5 rounded text-xs font-semibold">REQUIRED</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md relative z-10">Capture the package before leaving the pickup location.</p>
+<button class="w-full h-32 md:h-40 border-2 border-dashed border-outline hover:border-primary bg-surface-container hover:bg-surface-container-high rounded-lg flex flex-col items-center justify-center transition-colors relative z-10">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="add_a_photo">add_a_photo</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Tap to open camera</span>
+</button>
+</section>
+<!-- Bottom Action Area -->
+<div class="fixed bottom-0 left-0 right-0 p-md bg-surface/90 backdrop-blur-2xl border-t border-white/10 z-40 max-w-3xl mx-auto pb-safe flex justify-center">
+<button class="w-full max-w-sm bg-primary-container hover:bg-primary-container/90 text-white font-label-md text-label-md py-4 rounded-xl flex items-center justify-center gap-2 transition-all active:scale-95 shadow-lg shadow-primary-container/20">
+<span>CONFIRM ITEM COLLECTION</span>
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</main>
+<script>
+        // Simple interaction script to simulate photo capture state change
+        document.addEventListener('DOMContentLoaded', () => {
+            const photoBtn = document.querySelector('button.border-dashed');
+            const mainCTA = document.querySelector('.fixed.bottom-0 button');
+            
+            if (photoBtn && mainCTA) {
+                // Initially visually disable the main CTA slightly
+                mainCTA.style.opacity = '0.5';
+                
+                photoBtn.addEventListener('click', () => {
+                    // Simulate opening camera and taking photo
+                    setTimeout(() => {
+                        photoBtn.innerHTML = `
+                            <div class="absolute inset-0 bg-black/60 rounded-lg flex flex-col items-center justify-center z-20">
+                                <span class="material-symbols-outlined text-primary text-3xl mb-1" data-icon="task_alt">task_alt</span>
+                                <span class="font-label-md text-label-md text-white">Photo Captured</span>
+                            </div>
+                            <img src="placeholder" data-alt="A high quality, sharply focused close-up photo of a securely packaged electronic device box resting on a modern service counter. The setting features subtle, dark-themed glassmorphism elements in the background, illuminated by soft, cool-toned professional lighting highlighting the premium packaging texture." class="w-full h-full object-cover rounded-lg opacity-50">
+                        `;
+                        photoBtn.classList.remove('border-dashed');
+                        photoBtn.classList.add('border-solid', 'border-primary');
+                        
+                        // Enable main CTA
+                        mainCTA.style.opacity = '1';
+                        mainCTA.classList.add('animate-pulse');
+                        setTimeout(() => mainCTA.classList.remove('animate-pulse'), 1000);
+                    }, 500);
+                });
+            }
+        });
+    </script>
+</body></html>

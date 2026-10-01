@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order History - Partner Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#dcb8ff",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "primary-fixed": "#efdbff",
+                        "on-primary-container": "#eed9ff",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-dim": "#131314",
+                        "on-tertiary": "#303032",
+                        "on-background": "#e5e2e3",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-secondary-container": "#b9b8ba",
+                        "success-bg": "#1A3D24",
+                        "surface-container-highest": "#353436",
+                        "secondary-container": "#49494b",
+                        "surface": "#131314",
+                        "on-secondary": "#303032",
+                        "on-primary-fixed": "#2c0051",
+                        "surface-container-lowest": "#0e0e0f",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-container": "#201f20",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "error-red": "#ffb4ab",
+                        "secondary": "#c8c6c8",
+                        "surface-variant": "#353436",
+                        "success-green": "#81C784",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#474648",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-tertiary-container": "#e3e0e2",
+                        "tertiary": "#c8c6c8",
+                        "inverse-primary": "#8422dc",
+                        "outline": "#988ca0",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-container-high": "#2a2a2b",
+                        "primary": "#dcb8ff",
+                        "background": "#131314",
+                        "outline-variant": "#4c4354",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#313031",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-primary": "#480081",
+                        "surface-container-low": "#1c1b1c",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "surface-bright": "#39393a",
+                        "tertiary-container": "#646365",
+                        "on-surface": "#e5e2e3",
+                        "secondary-fixed": "#e4e2e4",
+                        "electric-violet": "#8a2be2",
+                        "primary-container": "#8a2be2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "3xl": "64px",
+                        "2xl": "48px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "label-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "h3": ["Geist"],
+                        "h1": ["Geist"],
+                        "caption": ["Geist"],
+                        "mono-display": ["monospace"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-background/80 backdrop-blur-xl dark:bg-background/80 fixed top-0 w-full z-50 border-b border-white/5 flex justify-between items-center px-lg h-16 w-full shadow-none hidden md:flex">
+<div class="flex items-center gap-md">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A small, professional corporate avatar image for a user profile picture, high contrast, clean background. The image should feature a stylized, minimalist depiction of a person suitable for a SaaS dashboard. The colors should be muted, aligning with a dark mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxiZiAdWzhWI9t5exM8IfYngpjMq4HqnkPY7GhZmGTlWul9d9w5UWP_ki-l5Y7P8h078-gp1kISJzWNwxycBGoCiWjU86xnE0ybG6eLNUndKIElk6fYCEHVcqTBnWmn7li1s2Zq52hmi4_Tk4S8PQHjCNwijs4o7966t1K7UBDFTCLOpGkYq7hIfP2N99Ht1EFdj1wX7Z7oLbtZmtUsQlN9kjZPsd8SPvS-GSft1hUuvt5A0c7X6c2uQ"/>
+<h1 class="font-headline-md text-headline-md-mobile text-primary dark:text-primary font-bold">Partner Portal</h1>
+</div>
+<div class="flex items-center gap-md">
+<!-- Full Nav Cluster for Web -->
+<nav class="flex gap-lg mr-xl">
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors flex items-center gap-sm" href="#">Home</a>
+<a class="text-primary font-label-md text-label-md hover:opacity-80 transition-opacity flex items-center gap-sm font-bold" href="#">Deliveries</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors flex items-center gap-sm" href="#">Earnings</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors flex items-center gap-sm" href="#">Alerts</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors flex items-center gap-sm" href="#">Profile</a>
+</nav>
+<button class="hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary dark:text-primary">sensors</span>
+</button>
+</div>
+</header>
+<!-- TopAppBar (Mobile) -->
+<header class="bg-background/80 backdrop-blur-xl dark:bg-background/80 fixed top-0 w-full z-50 border-b border-white/5 flex justify-between items-center px-lg h-16 w-full shadow-none md:hidden">
+<div class="flex items-center gap-md">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A small, professional corporate avatar image for a user profile picture, high contrast, clean background. The image should feature a stylized, minimalist depiction of a person suitable for a SaaS dashboard. The colors should be muted, aligning with a dark mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVS1GpJOd-h31EtTQ0Sg_8DI38xQD7_n_vztU39lhqy-xxCaz0knfCTOEE-oc-LpgBmUrl9AMCZW5pNs21MT6SzCqlOghfAufLncd4fSGRtI9QQCW0vnRAjkMk8D4sxnIjokNZnLCvXfJ2-8X7ecXoZqxboQTrPAtRqSobYQYP9Aks6xzhhrCFtGwqiV520ffeyxMAy4XGl_37I8-4ye74uFFmcXQ1kGqbCxfppUMwlN0GUt___DusDw"/>
+<h1 class="font-headline-md text-headline-md-mobile text-primary dark:text-primary font-bold">Partner Portal</h1>
+</div>
+<button class="hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary dark:text-primary">sensors</span>
+</button>
+</header>
+<main class="pt-24 pb-32 md:pb-24 px-md md:px-xl max-w-[1200px] mx-auto min-h-screen flex flex-col gap-xl">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h2 class="font-h1 text-h1 text-on-surface">Order History</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-sm">View and filter past bookings and transactions.</p>
+</div>
+<!-- Quick Date Filters -->
+<div class="flex gap-sm overflow-x-auto pb-2 md:pb-0 hide-scrollbar">
+<button class="bg-surface-container-low border border-outline-variant/50 text-on-surface font-label-md text-label-md px-md py-sm rounded-full whitespace-nowrap hover:bg-surface-container transition-colors">Today</button>
+<button class="bg-primary/10 border border-primary text-primary font-label-md text-label-md px-md py-sm rounded-full whitespace-nowrap">This Week</button>
+<button class="bg-surface-container-low border border-outline-variant/50 text-on-surface font-label-md text-label-md px-md py-sm rounded-full whitespace-nowrap hover:bg-surface-container transition-colors">This Month</button>
+<button class="bg-surface-container-low border border-outline-variant/50 text-on-surface font-label-md text-label-md px-md py-sm rounded-full whitespace-nowrap hover:bg-surface-container transition-colors flex items-center gap-xs"><span class="material-symbols-outlined" style="font-size: 16px;">calendar_today</span> Custom</button>
+</div>
+</div>
+<!-- Search and Filters Bar -->
+<div class="bg-surface-container p-md rounded-xl border border-outline-variant/20 flex flex-col md:flex-row gap-md">
+<!-- Search Input -->
+<div class="relative flex-grow">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg pl-3xl pr-md py-sm text-on-surface font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-on-surface-variant/70" placeholder="Search by Booking ID, Customer, Service..." type="text"/>
+</div>
+<!-- Filter Dropdowns -->
+<div class="flex gap-md overflow-x-auto hide-scrollbar">
+<select class="bg-surface-container-low border border-outline-variant/50 rounded-lg px-md py-sm text-on-surface font-label-md text-label-md focus:border-primary outline-none appearance-none cursor-pointer">
+<option value="">Status: All</option>
+<option value="completed">Completed</option>
+<option value="cancelled">Cancelled</option>
+<option value="issue">Issue Reported</option>
+</select>
+<select class="bg-surface-container-low border border-outline-variant/50 rounded-lg px-md py-sm text-on-surface font-label-md text-label-md focus:border-primary outline-none appearance-none cursor-pointer">
+<option value="">Sort: Newest</option>
+<option value="oldest">Oldest</option>
+<option value="highest">Highest Value</option>
+<option value="lowest">Lowest Value</option>
+</select>
+<button class="bg-surface-container-low border border-outline-variant/50 text-on-surface rounded-lg px-md py-sm flex items-center gap-sm hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" style="font-size: 20px;">tune</span>
+<span class="font-label-md text-label-md">More Filters</span>
+</button>
+</div>
+</div>
+<!-- Order List Grid -->
+<div class="flex flex-col gap-md">
+<!-- Order Card 1 -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg hover:border-primary/50 transition-colors cursor-pointer group flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div class="flex flex-col gap-sm">
+<div class="flex items-center gap-sm">
+<span class="font-mono-display text-mono-display text-on-surface">QH-20260901-1024</span>
+<div class="bg-[#1A3D24] text-[#81C784] font-label-md text-label-md px-sm py-xs rounded-full uppercase tracking-widest text-[10px] font-bold">Completed</div>
+</div>
+<div class="font-h3 text-h3 text-on-surface">Sneaker Deep Clean</div>
+<div class="font-body-md text-body-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined" style="font-size: 16px;">person</span> Arun • Sept 1, 2026
+                    </div>
+</div>
+<div class="flex md:flex-col items-center md:items-end justify-between md:justify-center gap-sm md:gap-xs mt-md md:mt-0 pt-md md:pt-0 border-t md:border-t-0 border-outline-variant/30">
+<div class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">₹502</div>
+<div class="font-caption text-caption text-on-surface-variant">Paid via Card</div>
+</div>
+</div>
+<!-- Order Card 2 -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg hover:border-primary/50 transition-colors cursor-pointer group flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div class="flex flex-col gap-sm">
+<div class="flex items-center gap-sm">
+<span class="font-mono-display text-mono-display text-on-surface">QH-20260828-0911</span>
+<div class="bg-[#1A3D24] text-[#81C784] font-label-md text-label-md px-sm py-xs rounded-full uppercase tracking-widest text-[10px] font-bold">Completed</div>
+</div>
+<div class="font-h3 text-h3 text-on-surface">Premium Jacket Dry Clean</div>
+<div class="font-body-md text-body-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined" style="font-size: 16px;">person</span> Priya • Aug 28, 2026
+                    </div>
+</div>
+<div class="flex md:flex-col items-center md:items-end justify-between md:justify-center gap-sm md:gap-xs mt-md md:mt-0 pt-md md:pt-0 border-t md:border-t-0 border-outline-variant/30">
+<div class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">₹850</div>
+<div class="font-caption text-caption text-on-surface-variant">Paid via UPI</div>
+</div>
+</div>
+<!-- Order Card 3 (Issue) -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg hover:border-primary/50 transition-colors cursor-pointer group flex flex-col md:flex-row md:items-center justify-between gap-md relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-error-red"></div>
+<div class="flex flex-col gap-sm pl-sm">
+<div class="flex items-center gap-sm">
+<span class="font-mono-display text-mono-display text-on-surface">QH-20260825-4420</span>
+<div class="bg-error-container/10 border border-error-container/30 text-error-red font-label-md text-label-md px-sm py-xs rounded-full uppercase tracking-widest text-[10px] font-bold">Issue Reported</div>
+</div>
+<div class="font-h3 text-h3 text-on-surface">Standard Wash &amp; Fold</div>
+<div class="font-body-md text-body-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined" style="font-size: 16px;">person</span> Vikram • Aug 25, 2026
+                    </div>
+</div>
+<div class="flex md:flex-col items-center md:items-end justify-between md:justify-center gap-sm md:gap-xs mt-md md:mt-0 pt-md md:pt-0 border-t md:border-t-0 border-outline-variant/30">
+<div class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">₹320</div>
+<div class="font-caption text-caption text-on-surface-variant">Pending Resolution</div>
+</div>
+</div>
+</div>
+<!-- Pagination / Load More -->
+<div class="flex justify-center mt-md">
+<button class="border border-outline-variant bg-transparent hover:bg-surface-container text-on-surface font-label-md text-label-md py-sm px-lg rounded-lg transition-colors">
+                Load More History
+            </button>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="bg-surface/90 backdrop-blur-xl dark:bg-surface/90 fixed bottom-0 w-full z-50 rounded-t-xl border-t border-white/5 shadow-2xl flex justify-around items-center h-20 px-md pb-safe md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors active:scale-90 transition-transform w-16" href="#">
+<span class="material-symbols-outlined" data-weight="fill">home</span>
+<span class="font-label-md text-label-md text-[10px] mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary bg-primary-container/10 rounded-xl px-sm py-xs active:scale-90 transition-transform w-16" href="#">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+<span class="font-label-md text-label-md text-[10px] mt-1">Deliveries</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors active:scale-90 transition-transform w-16" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-label-md text-[10px] mt-1">Earnings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors active:scale-90 transition-transform w-16" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-label-md text-label-md text-[10px] mt-1">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors active:scale-90 transition-transform w-16" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md text-[10px] mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,57 @@
+import { Module, Global } from '@nestjs/common';
+import {
+  TelemetryService,
+  RequestTracerService,
+  DatabaseMonitorService,
+  CacheMonitorService,
+  QueueMonitorService,
+  PaymentMonitorService,
+  SecurityMonitorService,
+  FrontendMonitorService,
+  DeploymentMonitorService,
+  BusinessHealthService,
+  AlertManagerService,
+  IncidentManagerService,
+  RCAEngineService,
+  SLOManagerService,
+  DashboardService,
+} from './observability.services';
+
+@Global()
+@Module({
+  providers: [
+    TelemetryService,
+    RequestTracerService,
+    DatabaseMonitorService,
+    CacheMonitorService,
+    QueueMonitorService,
+    PaymentMonitorService,
+    SecurityMonitorService,
+    FrontendMonitorService,
+    DeploymentMonitorService,
+    BusinessHealthService,
+    AlertManagerService,
+    IncidentManagerService,
+    RCAEngineService,
+    SLOManagerService,
+    DashboardService,
+  ],
+  exports: [
+    TelemetryService,
+    RequestTracerService,
+    DatabaseMonitorService,
+    CacheMonitorService,
+    QueueMonitorService,
+    PaymentMonitorService,
+    SecurityMonitorService,
+    FrontendMonitorService,
+    DeploymentMonitorService,
+    BusinessHealthService,
+    AlertManagerService,
+    IncidentManagerService,
+    RCAEngineService,
+    SLOManagerService,
+    DashboardService,
+  ],
+})
+export class ObservabilityModule {}

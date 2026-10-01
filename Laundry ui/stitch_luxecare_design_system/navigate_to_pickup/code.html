@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Delivery Pro - Navigate to Pickup</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-sans/style.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#646365",
+                        "on-primary-fixed": "#2c0051",
+                        "secondary": "#c8c6c8",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#e4e2e4",
+                        "surface-dim": "#131314",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-primary-container": "#eed9ff",
+                        "on-tertiary": "#303032",
+                        "inverse-on-surface": "#313031",
+                        "surface-bright": "#3a393a",
+                        "outline-variant": "#4c4354",
+                        "surface-tint": "#dcb8ff",
+                        "on-error": "#690005",
+                        "on-background": "#e5e2e3",
+                        "secondary-fixed": "#e5e1e4",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "primary-container": "#8a2be2",
+                        "secondary-container": "#474649",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-variant": "#353436",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-secondary": "#303032",
+                        "on-secondary-container": "#b7b4b7",
+                        "surface-container-highest": "#353436",
+                        "surface": "#131314",
+                        "tertiary": "#c8c6c8",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#201f20",
+                        "inverse-primary": "#8422dc",
+                        "primary": "#dcb8ff",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "primary-fixed": "#efdbff",
+                        "outline": "#988ca0",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "background": "#131314",
+                        "on-primary": "#480081",
+                        "inverse-surface": "#e5e2e3",
+                        "on-secondary-fixed-variant": "#474649",
+                        "on-surface-variant": "#cfc2d7",
+                        "surface-container-high": "#2a2a2b",
+                        "on-surface": "#e5e2e3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "sm": "8px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "3xl": "64px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "label-md": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "caption": ["Geist"],
+                        "body-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; background-color: #131314; color: #e5e2e3; }
+        .glass-panel { background: rgba(18, 18, 20, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background h-screen w-screen overflow-hidden flex flex-col relative">
+<!-- Map Background -->
+<div class="absolute inset-0 z-0 bg-surface-variant/30 flex items-center justify-center">
+<!-- Placeholder for actual map integration -->
+<img class="object-cover w-full h-full opacity-60 mix-blend-screen" data-alt="A dark-themed digital map interface showing a detailed city grid with a glowing violet route line connecting two points. The map style is modern, minimalist, and optimized for night mode navigation, featuring subtle neon highlights on major roads against deep charcoal backgrounds." data-location="Anna Nagar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAr8DZ3yh_TAQLOHqQOgTqm6D-YZZPTAK_2-aQY0I_pu4sqRtrf-EF3pdz4tLDzZKKwweGc6OZSmWKIgRRAX6YNOPDsM2zcD3GfVX6ZnbZfASRh-lzoKknsqkdHw-VjAQ-4z91rHWm7uiJp7Ofxr_BwYxK05V0iVgL2nHt7awyzEF3YlYI7PliKQ6r1zSCVG4ab5X67SUaDoU4lso41BgS_KffT5zU4UBwjbbLZVO4vspooyRN-yTYUg"/>
+<!-- Simulated Route overlay elements for visual context -->
+<div class="absolute inset-0 pointer-events-none">
+<!-- Simulated path -->
+<svg class="absolute inset-0 z-10 opacity-70" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path class="animate-[dash_30s_linear_infinite]" d="M 150 400 Q 200 300 250 200 T 350 150" fill="transparent" stroke="#dcb8ff" stroke-dasharray="8 8" stroke-width="4"></path>
+</svg>
+<!-- Current Location Pin -->
+<div class="absolute left-[150px] top-[400px] transform -translate-x-1/2 -translate-y-1/2 z-20">
+<div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center animate-pulse">
+<div class="w-4 h-4 bg-primary rounded-full shadow-[0_0_15px_rgba(220,184,255,0.8)]"></div>
+</div>
+</div>
+<!-- Destination Pin -->
+<div class="absolute left-[350px] top-[150px] transform -translate-x-1/2 -translate-y-full z-20">
+<span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+<!-- Top Navigation (Transactional intent -> no global nav shell, custom header) -->
+<header class="fixed top-0 w-full z-50 glass-panel shadow-sm px-md h-16 flex items-center justify-between">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-variant/50 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="text-center">
+<span class="block font-caption text-caption text-on-surface-variant tracking-wider uppercase">Order</span>
+<span class="block font-label-md text-label-md font-bold text-on-surface">#QH1024</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-variant/50 transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</header>
+<!-- Main Content Area (Spacer to push bottom card down) -->
+<main class="flex-1 relative z-10 flex flex-col justify-end pointer-events-none pb-sm">
+<!-- Bottom Info Card -->
+<div class="px-md pointer-events-auto w-full max-w-[600px] mx-auto">
+<div class="glass-panel rounded-xl shadow-[0_-4px_20px_rgba(0,0,0,0.4)] overflow-hidden flex flex-col">
+<!-- Status & ETA Banner -->
+<div class="bg-primary/10 px-lg py-sm flex justify-between items-center border-b border-white/5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">navigation</span>
+<span class="font-label-md text-label-md text-primary font-bold">NAVIGATING TO PICKUP</span>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md font-bold text-on-surface block">7 min</span>
+<span class="font-caption text-caption text-on-surface-variant block">1.4 km</span>
+</div>
+</div>
+<!-- Location Details -->
+<div class="p-lg flex flex-col gap-md relative">
+<!-- Progress Line -->
+<div class="absolute left-[39px] top-[40px] bottom-[40px] w-px bg-surface-variant"></div>
+<!-- Origin (Current Location implicit, focus on Destination) -->
+<div class="flex items-start gap-md z-10 relative">
+<div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" style="font-variation-settings: 'FILL' 1;">store</span>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-md text-headline-md-mobile text-on-surface mb-1">CleanX Service Center</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">142, 2nd Main Rd, Anna Nagar</p>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary shrink-0 hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</button>
+</div>
+<!-- Item Details -->
+<div class="flex items-start gap-md z-10 relative pt-2">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">inventory_2</span>
+</div>
+<div class="flex-1">
+<span class="font-caption text-caption text-on-surface-variant block mb-1">PICKUP ITEM</span>
+<span class="font-body-lg text-body-lg text-on-surface block">1x White Sneaker (Deep Clean)</span>
+</div>
+</div>
+</div>
+<!-- Action CTA -->
+<div class="px-lg pb-lg pt-sm">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md font-bold py-md rounded-lg flex items-center justify-center gap-2 hover:bg-primary-fixed transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined">directions</span>
+                        NAVIGATE TO PICKUP
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Suppressed Bottom Navigation & Global Top Nav per 'Transactional' rule. -->
+</body></html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Campaign Status - Fresh Start</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed": "#2c0051",
+                      "error-container": "#93000a",
+                      "on-error": "#690005",
+                      "outline": "#988ca0",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "tertiary-container": "#646365",
+                      "surface-container-highest": "#353436",
+                      "on-tertiary-container": "#e3e0e2",
+                      "background": "#131314",
+                      "surface-container-low": "#1c1b1c",
+                      "surface-tint": "#dcb8ff",
+                      "on-surface": "#e5e2e3",
+                      "surface-container": "#201f20",
+                      "on-secondary": "#303032",
+                      "surface-container-lowest": "#0e0e0f",
+                      "tertiary-fixed": "#e4e2e4",
+                      "surface": "#131314",
+                      "surface-variant": "#353436",
+                      "inverse-on-surface": "#313031",
+                      "inverse-surface": "#e5e2e3",
+                      "primary": "#dcb8ff",
+                      "outline-variant": "#4c4354",
+                      "on-tertiary": "#303032",
+                      "tertiary": "#c8c6c8",
+                      "on-tertiary-fixed-variant": "#474649",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "on-secondary-container": "#b7b4b7",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "primary-container": "#8a2be2",
+                      "primary-fixed": "#efdbff",
+                      "secondary-fixed": "#e5e1e4",
+                      "secondary": "#c8c6c8",
+                      "on-primary-container": "#eed9ff",
+                      "on-error-container": "#ffdad6",
+                      "on-background": "#e5e2e3",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "surface-container-high": "#2a2a2b",
+                      "on-secondary-fixed-variant": "#474649",
+                      "error": "#ffb4ab",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "on-primary": "#480081",
+                      "secondary-container": "#474649",
+                      "on-surface-variant": "#cfc2d7",
+                      "inverse-primary": "#8422dc",
+                      "surface-bright": "#3a393a",
+                      "surface-dim": "#131314"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "16px",
+                      "sm": "8px",
+                      "xl": "32px",
+                      "2xl": "48px",
+                      "lg": "24px",
+                      "xs": "4px",
+                      "3xl": "64px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Geist"],
+                      "display-lg": ["Geist"],
+                      "display-lg-mobile": ["Geist"],
+                      "headline-md": ["Geist"],
+                      "body-lg": ["Geist"],
+                      "label-md": ["Geist"],
+                      "caption": ["Geist"],
+                      "body-md": ["Geist"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        @font-face { font-family: 'Geist'; src: url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen antialiased flex">
+<!-- SideNavBar -->
+<nav class="bg-surface dark:bg-surface h-screen w-64 fixed left-0 top-0 flex flex-col h-full py-lg px-md bg-surface-container-low dark:bg-surface-container-low hidden md:flex border-r border-outline-variant/30">
+<div class="mb-xl px-sm">
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary">CareMarket Admin</h1>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">Management Suite</p>
+</div>
+<div class="flex-1 overflow-y-auto space-y-sm">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+                Orders
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">group</span>
+                Customers
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">engineering</span>
+                Service Providers
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">local_shipping</span>
+                Delivery Partners
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">build</span>
+                Services
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">payments</span>
+                Payments
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">gavel</span>
+                Disputes
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">star</span>
+                Reviews
+            </a>
+<a class="flex items-center gap-md px-md py-sm bg-primary-container text-on-primary-container font-bold rounded-lg hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">campaign</span>
+                Promotions
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+                Notifications
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">analytics</span>
+                Analytics
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">help</span>
+                Support
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 scale-95 active:scale-90 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+                Settings
+            </a>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col md:ml-64 min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-xl docked full-width top-0 sticky z-40 flex justify-between items-center w-full px-xl py-md text-primary dark:text-primary font-label-md text-label-md border-b border-outline-variant/30">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface cursor-pointer md:hidden hover:text-primary transition-all active:opacity-70">menu</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">CareMarket Console</span>
+</div>
+<!-- Search on Left -->
+<div class="flex-1 flex justify-start ml-xl hidden md:flex">
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-sm top-1/2 transform -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-high border border-outline-variant rounded-full py-2 pl-xl pr-md text-on-surface focus:outline-none focus:border-primary transition-colors text-label-md" placeholder="Search promotions..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all cursor-pointer active:opacity-70 text-[24px]">notifications_active</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all cursor-pointer active:opacity-70 text-[24px]">settings_suggest</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all cursor-pointer active:opacity-70 text-[24px]">account_circle</span>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 p-md md:p-2xl max-w-[1280px] mx-auto w-full">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-2xl">
+<div>
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">Fresh Start</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-sm">Lifecycle management and campaign health monitoring.</p>
+</div>
+<div class="mt-md md:mt-0 flex items-center gap-sm bg-surface-container-highest px-md py-sm rounded-full border border-primary/20">
+<div class="w-3 h-3 rounded-full bg-[#10b981] animate-pulse"></div>
+<span class="font-label-md text-label-md text-[#10b981] tracking-wider uppercase font-bold">ACTIVE</span>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Health Checklist Card -->
+<div class="lg:col-span-4 bg-surface-container rounded-2xl border border-surface-variant p-lg shadow-sm">
+<div class="flex items-center justify-between mb-lg border-b border-surface-variant pb-md">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">health_and_safety</span>
+                            Campaign Health
+                        </h3>
+</div>
+<ul class="space-y-md">
+<li class="flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">Configuration</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</li>
+<li class="flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">Eligibility</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</li>
+<li class="flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">Schedule</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</li>
+<li class="flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">Coupon</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</li>
+<li class="flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">Usage Limit</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</li>
+</ul>
+</div>
+<!-- Lifecycle Actions Card -->
+<div class="lg:col-span-8 bg-surface-container rounded-2xl border border-surface-variant p-lg shadow-sm flex flex-col gap-lg">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm border-b border-surface-variant pb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">route</span>
+                        Lifecycle Actions
+                    </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg flex-1">
+<!-- Pause Action -->
+<div class="bg-surface-container-high rounded-xl p-md border border-outline-variant/50 flex flex-col justify-between">
+<div>
+<h4 class="font-headline-md text-body-lg font-bold text-on-surface flex items-center gap-sm mb-sm">
+<span class="material-symbols-outlined text-on-surface-variant">pause_circle</span>
+                                    Pause Campaign
+                                </h4>
+<div class="bg-surface-variant/50 p-sm rounded-lg border-l-2 border-[#f59e0b] mb-md">
+<p class="font-caption text-caption text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-[#f59e0b] inline-block align-text-bottom mr-xs">warning</span>
+                                        This campaign is currently active. <strong>4,200</strong> eligible customers active.
+                                    </p>
+</div>
+</div>
+<button class="w-full py-sm rounded-lg bg-transparent border border-outline text-on-surface font-label-md text-label-md hover:bg-surface-variant transition-colors flex items-center justify-center gap-xs">
+                                PAUSE CAMPAIGN
+                            </button>
+</div>
+<!-- Archive Action -->
+<div class="bg-surface-container-high rounded-xl p-md border border-error-container/30 flex flex-col justify-between">
+<div>
+<h4 class="font-headline-md text-body-lg font-bold text-error flex items-center gap-sm mb-sm">
+<span class="material-symbols-outlined">archive</span>
+                                    Archive Campaign
+                                </h4>
+<div class="bg-error-container/10 p-sm rounded-lg border-l-2 border-error mb-md">
+<p class="font-caption text-caption text-on-surface-variant">
+                                        Archived campaigns cannot be reactivated. This action is permanent.
+                                    </p>
+</div>
+</div>
+<button class="w-full py-sm rounded-lg bg-error-container text-on-error-container font-label-md text-label-md hover:bg-error transition-colors flex items-center justify-center gap-xs">
+                                ARCHIVE CAMPAIGN
+                            </button>
+</div>
+</div>
+</div>
+<!-- Audit Log Card -->
+<div class="lg:col-span-12 bg-surface-container rounded-2xl border border-surface-variant p-lg shadow-sm">
+<div class="flex items-center justify-between mb-lg border-b border-surface-variant pb-md">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">history</span>
+                            Audit Log
+                        </h3>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-surface-variant text-on-surface-variant font-label-md text-label-md">
+<th class="py-md px-sm font-medium">Timestamp</th>
+<th class="py-md px-sm font-medium">Admin</th>
+<th class="py-md px-sm font-medium">Action</th>
+<th class="py-md px-sm font-medium">Reason / Details</th>
+<th class="py-md px-sm font-medium">State Transition</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface">
+<tr class="border-b border-surface-variant/50 hover:bg-surface-container-high transition-colors">
+<td class="py-md px-sm text-on-surface-variant font-caption text-caption">Oct 24, 2023 14:32</td>
+<td class="py-md px-sm flex items-center gap-sm">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center text-[10px] font-bold">JD</div>
+                                        Jane Doe
+                                    </td>
+<td class="py-md px-sm">Updated Limit</td>
+<td class="py-md px-sm text-on-surface-variant">Maximum discount updated to $50</td>
+<td class="py-md px-sm"><span class="px-2 py-1 rounded bg-surface-variant text-[12px]">Active</span> → <span class="px-2 py-1 rounded bg-surface-variant text-[12px]">Active</span></td>
+</tr>
+<tr class="border-b border-surface-variant/50 hover:bg-surface-container-high transition-colors">
+<td class="py-md px-sm text-on-surface-variant font-caption text-caption">Oct 20, 2023 09:15</td>
+<td class="py-md px-sm flex items-center gap-sm">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center text-[10px] font-bold">AS</div>
+                                        Admin System
+                                    </td>
+<td class="py-md px-sm">Campaign Started</td>
+<td class="py-md px-sm text-on-surface-variant">Scheduled start time reached</td>
+<td class="py-md px-sm"><span class="px-2 py-1 rounded bg-surface-variant text-[12px]">Scheduled</span> → <span class="px-2 py-1 rounded bg-primary/20 text-primary text-[12px]">Active</span></td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="py-md px-sm text-on-surface-variant font-caption text-caption">Oct 18, 2023 11:40</td>
+<td class="py-md px-sm flex items-center gap-sm">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center text-[10px] font-bold">JD</div>
+                                        Jane Doe
+                                    </td>
+<td class="py-md px-sm">Created Campaign</td>
+<td class="py-md px-sm text-on-surface-variant">Initial setup and configuration</td>
+<td class="py-md px-sm"><span class="px-2 py-1 rounded bg-surface-variant text-[12px]">Draft</span> → <span class="px-2 py-1 rounded bg-surface-variant text-[12px]">Scheduled</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

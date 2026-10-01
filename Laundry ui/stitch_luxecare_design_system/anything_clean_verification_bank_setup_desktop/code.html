@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anything Clean - Verification &amp; Bank Setup</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed-variant": "#474649",
+                      "inverse-on-surface": "#313031",
+                      "on-error-container": "#ffdad6",
+                      "on-error": "#690005",
+                      "surface-variant": "#353436",
+                      "background": "#131314",
+                      "on-primary-fixed": "#2c0051",
+                      "error": "#ffb4ab",
+                      "outline-variant": "#4c4354",
+                      "surface-container-highest": "#353436",
+                      "secondary-fixed": "#e5e1e4",
+                      "on-primary": "#480081",
+                      "on-tertiary-fixed-variant": "#474649",
+                      "tertiary": "#c8c6c8",
+                      "on-secondary": "#303032",
+                      "surface-dim": "#131314",
+                      "tertiary-container": "#646365",
+                      "surface-container-high": "#2a2a2b",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "primary": "#dcb8ff",
+                      "inverse-surface": "#e5e2e3",
+                      "tertiary-fixed": "#e4e2e4",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "on-tertiary-container": "#e3e0e2",
+                      "on-tertiary": "#303032",
+                      "surface-tint": "#dcb8ff",
+                      "secondary-container": "#474649",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "surface-bright": "#3a393a",
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "on-surface-variant": "#cfc2d7",
+                      "surface": "#131314",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "primary-container": "#8a2be2",
+                      "surface-container-low": "#1c1b1c",
+                      "surface-container": "#201f20",
+                      "primary-fixed": "#efdbff",
+                      "error-container": "#93000a",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "on-background": "#e5e2e3",
+                      "inverse-primary": "#8422dc",
+                      "on-secondary-container": "#b7b4b7",
+                      "on-surface": "#e5e2e3",
+                      "secondary": "#c8c6c8",
+                      "outline": "#988ca0",
+                      "on-primary-container": "#eed9ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "2xl": "48px",
+                      "xs": "4px",
+                      "xl": "32px",
+                      "3xl": "64px",
+                      "md": "16px",
+                      "sm": "8px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": ["Geist"],
+                      "body-lg": ["Geist"],
+                      "headline-md": ["Geist"],
+                      "display-lg": ["Geist"],
+                      "label-md": ["Geist"],
+                      "headline-lg": ["Geist"],
+                      "caption": ["Geist"],
+                      "body-md": ["Geist"]
+              },
+              "fontSize": {
+                      "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; background-color: #0A0A0B; color: #e5e2e3; }
+        .glass-panel {
+            background: rgba(18, 18, 20, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .inner-glow {
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col md:flex-row">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col py-lg bg-surface-container-low border-r border-white/5 h-screen w-64 fixed left-0 top-0 z-40 transition-all duration-200">
+<div class="font-headline-md font-headline-md text-primary mb-lg px-md">Anything Clean</div>
+<div class="flex-1 overflow-y-auto mt-lg">
+<ul class="space-y-sm px-sm">
+<li>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-lg mx-2 px-md py-sm font-body-md text-body-md transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+                        Dashboard
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-lg mx-2 px-md py-sm font-body-md text-body-md transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">event_note</span>
+                        Schedule
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-lg mx-2 px-md py-sm font-body-md text-body-md transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">payments</span>
+                        Earnings
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-lg mx-2 px-md py-sm font-body-md text-body-md transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">star</span>
+                        Reviews
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-lg mx-2 px-md py-sm font-body-md text-body-md transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">cleaning_services</span>
+                        Services
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-md bg-primary-container text-on-primary-container rounded-lg mx-2 px-md py-sm font-body-md text-body-md transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+                        Settings
+                    </a>
+</li>
+</ul>
+</div>
+<div class="mt-auto px-md">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-sm rounded-lg hover:bg-primary-fixed transition-colors mb-lg">
+                Go Online
+            </button>
+<div class="flex items-center gap-md p-sm border-t border-white/5 mt-md pt-md">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A professional headshot of a service provider in a well-lit studio, wearing a clean uniform. The lighting is crisp and modern, reflecting a high-end service platform aesthetic. Dark mode compatible background with subtle violet rim lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeJ6hk2jZ0hhoYTPaukkS5vgrEavYaizqpxd20faXysAj7hP2hKhvz7e_eowGx1p-FcvGPeHU20ZzVy4PvayLA5UXV4zdJlgyjKeKIyl2gN6vr5T46NNLkOd-9h8YBeMZW7aaoX0Uy1QNS1_3liv-cOIPQKM22bNWC5S9SwrSGAzHmrYWOKIML-W2ha_z5tb4hp60j9VeQjlpJDIrv6tbVMW8q9fKebCVIrTQOY8EO7kgNsqC7RsdH-Q"/>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Pro Dashboard</p>
+<p class="font-caption text-caption text-on-surface-variant">Elite Partner</p>
+</div>
+</div>
+<ul class="space-y-sm px-sm mt-md">
+<li>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-lg px-sm py-sm font-caption text-caption transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">help</span>
+                        Help
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-lg px-sm py-sm font-caption text-caption transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">logout</span>
+                        Logout
+                    </a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Top Navigation (Mobile only for Dashboard context, but since this is Settings, we usually just show a back button or basic header on mobile. We'll use a simple TopAppBar) -->
+<header class="md:hidden flex justify-between items-center px-lg h-16 w-full fixed top-0 z-50 bg-surface/80 backdrop-blur-xl border-b border-white/5">
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Settings</h1>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 pt-16 md:pt-0 p-lg md:p-2xl max-w-[1280px] mx-auto w-full pb-24 md:pb-2xl">
+<header class="mb-xl hidden md:block">
+<h1 class="font-display-lg text-display-lg text-on-surface">Verification &amp; Bank Setup</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-sm">Manage your compliance documents and payout details.</p>
+</header>
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-lg">
+<!-- Documents Column -->
+<div class="xl:col-span-2 space-y-lg">
+<section class="glass-panel rounded-xl p-lg inner-glow">
+<div class="flex justify-between items-center mb-md">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">description</span>
+                            Identity &amp; Business Documents
+                        </h2>
+<span class="bg-surface-variant text-on-surface-variant font-caption text-caption px-sm py-xs rounded-full">2/3 Verified</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">Upload clear copies of your documents. Max file size: 5MB.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Document Card 1: Verified -->
+<div class="bg-surface-container rounded-lg p-md border border-white/5 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-label-md text-label-md text-on-surface">Government ID</h3>
+<span class="flex items-center gap-xs text-[12px] text-[#4ade80] bg-[#4ade80]/10 px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
+                                    </span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mb-md">Passport, Driver's License, or National ID.</p>
+</div>
+<div class="flex items-center gap-sm p-sm bg-surface-container-high rounded-md">
+<span class="material-symbols-outlined text-on-surface-variant">image</span>
+<span class="font-caption text-caption text-on-surface truncate flex-1">driver_license_front.jpg</span>
+<button class="text-primary hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Document Card 2: Pending -->
+<div class="bg-surface-container rounded-lg p-md border border-primary/30 shadow-[0_0_15px_rgba(138,43,226,0.1)] flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-label-md text-label-md text-on-surface">Business License</h3>
+<span class="flex items-center gap-xs text-[12px] text-[#fbbf24] bg-[#fbbf24]/10 px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Pending Review
+                                    </span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mb-md">Valid commercial cleaning license.</p>
+</div>
+<div class="flex items-center gap-sm p-sm bg-surface-container-high rounded-md">
+<span class="material-symbols-outlined text-on-surface-variant">picture_as_pdf</span>
+<span class="font-caption text-caption text-on-surface truncate flex-1">biz_license_2024.pdf</span>
+<button class="text-primary hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Document Card 3: Missing -->
+<div class="bg-surface-container rounded-lg p-md border border-white/5 border-dashed flex flex-col justify-between md:col-span-2">
+<div>
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-label-md text-label-md text-on-surface">Insurance Certificate</h3>
+<span class="flex items-center gap-xs text-[12px] text-error bg-error/10 px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px]">error</span> Required
+                                    </span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mb-md">Proof of liability insurance.</p>
+</div>
+<label class="flex flex-col items-center justify-center p-lg border-2 border-dashed border-outline-variant rounded-lg cursor-pointer hover:bg-white/5 transition-colors group">
+<span class="material-symbols-outlined text-3xl text-on-surface-variant group-hover:text-primary transition-colors mb-sm">cloud_upload</span>
+<span class="font-label-md text-label-md text-primary">Click to upload</span>
+<span class="font-caption text-caption text-on-surface-variant">or drag and drop</span>
+<input accept=".pdf,.jpg,.png" class="hidden" type="file"/>
+</label>
+</div>
+</div>
+</section>
+</div>
+<!-- Bank Setup Column -->
+<div class="space-y-lg">
+<section class="glass-panel rounded-xl p-lg inner-glow h-full flex flex-col">
+<div class="flex justify-between items-center mb-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">account_balance</span>
+                            Payout Details
+                        </h2>
+</div>
+<form class="space-y-md flex-1">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-xs">Account Holder Name</label>
+<input class="w-full bg-surface-container-high border-none rounded-lg p-sm text-on-surface font-body-md focus:ring-1 focus:ring-primary transition-all" type="text" value="Jane Doe Services LLC"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-xs">Bank Name</label>
+<input class="w-full bg-surface-container-high border-none rounded-lg p-sm text-on-surface font-body-md focus:ring-1 focus:ring-primary transition-all" type="text" value="Global Secure Bank"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-xs">Account Number</label>
+<div class="relative">
+<input class="w-full bg-surface-container-high border-none rounded-lg p-sm text-on-surface font-body-md focus:ring-1 focus:ring-primary transition-all pr-10" type="password" value="••••••••1234"/>
+<button class="absolute right-sm top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility_off</span>
+</button>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-xs">Routing Number / IFSC</label>
+<input class="w-full bg-surface-container-high border-none rounded-lg p-sm text-on-surface font-body-md focus:ring-1 focus:ring-primary transition-all" type="text" value="GSB0001234"/>
+</div>
+</form>
+<div class="mt-xl pt-md border-t border-white/5">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-sm rounded-lg hover:bg-primary-fixed transition-colors flex justify-center items-center gap-sm">
+<span class="material-symbols-outlined text-[18px]">save</span>
+                            Save Bank Details
+                        </button>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body></html>

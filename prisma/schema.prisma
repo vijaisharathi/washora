@@ -1,0 +1,2357 @@
+// ============================================================================
+// WASHORA Production Database Schema
+// Authoritative Source of Truth: WASHORA_Complete_Production_Database_Schema_PRD.docx
+// Architecture: Multi-tenant relational marketplace on PostgreSQL with Prisma ORM
+// ============================================================================
+
+datasource db {
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  directUrl         = env("DIRECT_DATABASE_URL")
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["relationJoins"]
+}
+
+// ============================================================================
+// ENUMS
+// ============================================================================
+
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+  PENDING
+  SUSPENDED
+}
+
+enum OrganizationStatus {
+  ACTIVE
+  INACTIVE
+  PENDING
+  SUSPENDED
+}
+
+enum OrganizationType {
+  WASHORA
+  PARTNER_ORGANIZATION
+  INTERNAL_OPERATIONS
+}
+
+enum MemberStatus {
+  ACTIVE
+  INACTIVE
+  PENDING
+  SUSPENDED
+}
+
+enum PrimaryWorkArea {
+  CUSTOMER
+  PROVIDER
+  DELIVERY
+  PLATFORM
+}
+
+enum PreferredLanguage {
+  ENGLISH
+  TAMIL
+}
+
+enum RoleType {
+  ADMIN
+  OPERATIONS
+  FINANCE_ADMIN
+  SUPPORT_LEAD
+  SUPPORT_AGENT
+  READ_ONLY
+  CUSTOMER
+  PROVIDER
+  DELIVERY_PARTNER
+}
+
+enum MembershipTier {
+  STANDARD
+  PREMIUM
+  ELITE
+}
+
+enum AddressLabel {
+  HOME
+  WORK
+  OTHER
+}
+
+enum AddressStatus {
+  ACTIVE
+  INACTIVE
+}
+
+enum RewardTransactionType {
+  EARNED
+  REDEEMED
+  EXPIRED
+  ADJUSTED
+  REFUNDED
+}
+
+enum ProviderStatus {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+}
+
+enum ProviderApprovalStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum DeliveryPartnerStatus {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+}
+
+enum DeliveryPartnerApprovalStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum VehicleType {
+  BIKE
+  SCOOTER
+  EV_2W
+  VAN
+  OTHER
+}
+
+enum DocumentVerificationStatus {
+  PENDING
+  VERIFIED
+  REJECTED
+}
+
+enum CatalogStatus {
+  ACTIVE
+  INACTIVE
+  ARCHIVED
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum AssignmentStatus {
+  PENDING
+  ASSIGNED
+  ACCEPTED
+  REJECTED
+  IN_TRANSIT
+  ARRIVED
+  COMPLETED
+  CANCELLED
+}
+
+enum AssignmentType {
+  PROVIDER
+  DELIVERY_PARTNER
+  PICKUP_VALET
+  RETURN_VALET
+}
+
+enum AssignmentAction {
+  CREATED
+  OFFERED
+  ACCEPTED
+  REJECTED
+  REASSIGNED
+  ARRIVED
+  HANDED_OVER
+  COMPLETED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  PROCESSING
+  PAID
+  FAILED
+  REFUNDED
+  PARTIALLY_REFUNDED
+}
+
+enum PaymentMethod {
+  UPI
+  CARD
+  NET_BANKING
+  WALLET
+  CASH_ON_DELIVERY
+}
+
+enum TransactionType {
+  PAYMENT
+  REFUND
+  PROVIDER_EARNING
+  DELIVERY_PARTNER_EARNING
+}
+
+enum TransactionStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  REVERSED
+}
+
+enum EarningStatus {
+  PENDING
+  AVAILABLE
+  PROCESSING
+  PAID_OUT
+  CANCELLED
+}
+
+enum EarningTransactionType {
+  ORDER_CREDIT
+  BONUS
+  COMMISSION_DEDUCTION
+  PAYOUT
+  ADJUSTMENT
+}
+
+enum RefundStatus {
+  PENDING
+  APPROVED
+  PROCESSED
+  REJECTED
+  FAILED
+}
+
+enum DiscountType {
+  PERCENTAGE
+  FIXED_AMOUNT
+}
+
+enum CouponStatus {
+  ACTIVE
+  INACTIVE
+  EXPIRED
+  DEPLETED
+}
+
+enum OfferStatus {
+  ACTIVE
+  INACTIVE
+  EXPIRED
+}
+
+enum ReviewStatus {
+  PENDING
+  PUBLISHED
+  FLAGGED
+  HIDDEN
+  RESTORED
+  REJECTED
+  WITHDRAWN
+}
+
+enum ReviewModerationAction {
+  SUBMITTED
+  EDITED
+  PUBLISHED
+  HIDDEN
+  REJECTED
+  RESTORED
+  WITHDRAWN
+}
+
+enum ReviewReportStatus {
+  OPEN
+  UNDER_REVIEW
+  RESOLVED
+  DISMISSED
+}
+
+enum ReviewReportReason {
+  SPAM
+  ABUSIVE_LANGUAGE
+  HARASSMENT
+  FALSE_INFORMATION
+  PERSONAL_INFORMATION
+  INAPPROPRIATE_CONTENT
+  OTHER
+}
+
+enum ReviewModerationReason {
+  POLICY_VIOLATION
+  INAPPROPRIATE_LANGUAGE
+  FALSE_INFORMATION
+  SPAM
+  RESOLVED_DISPUTE
+  OTHER
+}
+
+enum NotificationType {
+  ORDER_STATUS
+  ASSIGNMENT
+  PAYMENT
+  PAYOUT
+  SUPPORT
+  DISPUTE
+  MARKETING
+  SYSTEM
+}
+
+enum NotificationPriority {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum NotificationStatus {
+  UNREAD
+  READ
+  ARCHIVED
+  DISMISSED
+}
+
+enum CommunicationChannel {
+  IN_APP
+  INTERNAL_MEMO
+  EMAIL
+  SMS
+  WHATSAPP
+  PUSH
+}
+
+enum CommunicationStatus {
+  DRAFT
+  QUEUED
+  PROCESSING
+  SENT
+  DELIVERED
+  FAILED
+  CANCELLED
+}
+
+enum RecipientType {
+  CUSTOMER
+  PROVIDER
+  DELIVERY_PARTNER
+  STAFF
+  ALL
+}
+
+enum SupportRequesterType {
+  CUSTOMER
+  PROVIDER
+  DELIVERY_PARTNER
+  INTERNAL
+}
+
+enum SupportCategory {
+  BOOKING_ISSUE
+  PAYMENT_ISSUE
+  QUALITY_DISPUTE
+  DELIVERY_DELAY
+  ACCOUNT_ACCESS
+  TECHNICAL_ERROR
+  GENERAL_INQUIRY
+  BOOKING
+  PAYMENT
+  REFUND
+  SERVICE
+  PROVIDER
+  DELIVERY
+  ACCOUNT
+  TECHNICAL
+  REVIEW
+  PROMOTION
+  REWARDS
+  OTHER
+}
+
+enum SupportPriority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+enum SupportStatus {
+  OPEN
+  IN_PROGRESS
+  WAITING_ON_CUSTOMER
+  WAITING_ON_PROVIDER
+  WAITING_FOR_CUSTOMER
+  WAITING_FOR_PROVIDER
+  WAITING_FOR_DELIVERY_PARTNER
+  ESCALATED
+  RESOLVED
+  CLOSED
+  REOPENED
+}
+
+enum DisputeParticipantType {
+  CUSTOMER
+  PROVIDER
+  DELIVERY_PARTNER
+  OPERATIONS
+}
+
+enum DisputeType {
+  DAMAGE
+  LOST_ITEM
+  QUALITY_DEFICIENCY
+  INCORRECT_BILLING
+  SERVICE_UNFULFILLED
+  BEHAVIOR_SAFETY
+  SERVICE_QUALITY
+  SERVICE_NOT_COMPLETED
+  MISSING_ITEM
+  WRONG_SERVICE
+  PAYMENT
+  REFUND
+  DELIVERY
+  PROVIDER_CONDUCT
+  CUSTOMER_CONDUCT
+  OTHER
+}
+
+enum DisputeStatus {
+  OPEN
+  UNDER_REVIEW
+  EVIDENCE_REQUESTED
+  DECISION_PENDING
+  WAITING_FOR_CUSTOMER
+  WAITING_FOR_PROVIDER
+  WAITING_FOR_DELIVERY_PARTNER
+  ESCALATED
+  RESOLVED
+  REJECTED
+  CLOSED
+  REOPENED
+}
+
+enum DisputeOutcome {
+  FULL_REFUND
+  PARTIAL_REFUND
+  RE_SERVICE
+  COUPON_CREDIT
+  DISMISSED
+  NO_ACTION
+  SERVICE_REDO
+  CREDIT
+  PROVIDER_WARNING
+  CUSTOMER_WARNING
+  DELIVERY_CORRECTION
+  OTHER
+}
+
+// ============================================================================
+// 1. IDENTITY & ACCESS DOMAIN
+// ============================================================================
+
+model User {
+  id                String       @id @default(uuid()) @db.Uuid
+  email             String       @unique @db.VarChar(254)
+  passwordHash      String       @map("password_hash") @db.Text
+  phone             String?      @db.VarChar(20)
+  status            UserStatus   @default(ACTIVE)
+  emailVerifiedAt   DateTime?    @map("email_verified_at") @db.Timestamptz
+  phoneVerifiedAt   DateTime?    @map("phone_verified_at") @db.Timestamptz
+  lastLoginAt       DateTime?    @map("last_login_at") @db.Timestamptz
+  createdAt         DateTime     @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt         DateTime     @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  sessions             Session[]
+  organizationMembers  OrganizationMember[]
+  customers            Customer[]
+  providers            Provider[]
+  deliveryPartners     DeliveryPartner[]
+  statusHistories      BookingStatusHistory[]
+  authoredNotes        BookingNote[]
+  assignmentHistories  AssignmentHistory[]
+  createdRefunds       Refund[]
+  moderatedReviews     ReviewModerationHistory[]
+  reportedReviews      ReviewReport[]            @relation("ReviewReporter")
+  resolvedReviewReports ReviewReport[]           @relation("ReviewReportResolver")
+  notifications        Notification[]
+  notificationPref     NotificationPreference?
+  sentCommunications   Communication[]
+  communicationRecipients CommunicationRecipient[]
+  assignedTickets      SupportTicket[]           @relation("AssignedTickets")
+  createdTickets       SupportTicket[]           @relation("TicketCreator")
+  sentSupportMessages  SupportMessage[]
+  supportNotes         SupportNote[]
+  supportActivities    SupportTicketActivity[]
+  assignedDisputes     Dispute[]                 @relation("AssignedDisputes")
+  createdDisputes      Dispute[]                 @relation("DisputeCreator")
+  sentDisputeMessages  DisputeMessage[]
+  submittedEvidence    DisputeEvidence[]
+  disputeActivities    DisputeActivity[]
+  auditEvents          AuditEvent[]
+  analyticsEvents      AnalyticsEvent[]
+  emailVerificationTokens EmailVerificationToken[]
+  passwordResetTokens     PasswordResetToken[]
+
+  @@map("users")
+}
+
+model Session {
+  id               String    @id @default(uuid()) @db.Uuid
+  userId           String    @map("user_id") @db.Uuid
+  refreshTokenHash String    @map("refresh_token_hash") @db.Text
+  expiresAt        DateTime  @map("expires_at") @db.Timestamptz
+  revokedAt        DateTime? @map("revoked_at") @db.Timestamptz
+  lastUsedAt       DateTime? @map("last_used_at") @db.Timestamptz
+  ipAddress        String?   @map("ip_address") @db.VarChar(45)
+  userAgent        String?   @map("user_agent") @db.Text
+  createdAt        DateTime  @default(now()) @map("created_at") @db.Timestamptz
+
+  // Relations
+  user             User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([expiresAt])
+  @@map("sessions")
+}
+
+model EmailVerificationToken {
+  id        String    @id @default(uuid()) @db.Uuid
+  userId    String    @map("user_id") @db.Uuid
+  tokenHash String    @map("token_hash") @db.Text
+  expiresAt DateTime  @map("expires_at") @db.Timestamptz
+  usedAt    DateTime? @map("used_at") @db.Timestamptz
+  createdAt DateTime  @default(now()) @map("created_at") @db.Timestamptz
+
+  // Relations
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([expiresAt])
+  @@map("email_verification_tokens")
+}
+
+model PasswordResetToken {
+  id        String    @id @default(uuid()) @db.Uuid
+  userId    String    @map("user_id") @db.Uuid
+  tokenHash String    @map("token_hash") @db.Text
+  expiresAt DateTime  @map("expires_at") @db.Timestamptz
+  usedAt    DateTime? @map("used_at") @db.Timestamptz
+  createdAt DateTime  @default(now()) @map("created_at") @db.Timestamptz
+
+  // Relations
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([expiresAt])
+  @@map("password_reset_tokens")
+}
+
+model OrganizationMember {
+  id               String            @id @default(uuid()) @db.Uuid
+  organizationId   String            @map("organization_id") @db.Uuid
+  userId           String            @map("user_id") @db.Uuid
+  roleId           String            @map("role_id") @db.Uuid
+  fullName         String            @map("full_name") @db.VarChar(120)
+  phone            String            @db.VarChar(20)
+  profileImageUrl  String?           @map("profile_image_url") @db.Text
+  primaryWorkArea  PrimaryWorkArea   @default(PLATFORM) @map("primary_work_area")
+  preferredLanguage PreferredLanguage @default(ENGLISH) @map("preferred_language")
+  timezone         String            @default("Asia/Kolkata") @db.VarChar(64)
+  status           MemberStatus      @default(ACTIVE)
+  joinedAt         DateTime          @default(now()) @map("joined_at") @db.Timestamptz
+  updatedAt        DateTime          @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  organization     Organization      @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  user             User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role             Role              @relation(fields: [roleId], references: [id])
+
+  @@unique([organizationId, userId])
+  @@index([organizationId, status])
+  @@index([roleId])
+  @@map("organization_members")
+}
+
+model Role {
+  id          String           @id @default(uuid()) @db.Uuid
+  type        RoleType         @unique
+  name        String           @db.VarChar(80)
+  description String?          @db.VarChar(255)
+  createdAt   DateTime         @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt   DateTime         @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  members     OrganizationMember[]
+  permissions RolePermission[]
+
+  @@map("roles")
+}
+
+model Permission {
+  id          String           @id @default(uuid()) @db.Uuid
+  code        String           @unique @db.VarChar(100) // e.g., "customer.read", "booking.update"
+  module      String           @db.VarChar(50)
+  description String?          @db.VarChar(255)
+  createdAt   DateTime         @default(now()) @map("created_at") @db.Timestamptz
+
+  // Relations
+  roles       RolePermission[]
+
+  @@map("permissions")
+}
+
+model RolePermission {
+  roleId       String     @map("role_id") @db.Uuid
+  permissionId String     @map("permission_id") @db.Uuid
+  createdAt    DateTime   @default(now()) @map("created_at") @db.Timestamptz
+
+  // Relations
+  role         Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  @@id([roleId, permissionId])
+  @@map("role_permissions")
+}
+
+// ============================================================================
+// 2. ORGANIZATION (TENANT ROOT)
+// ============================================================================
+
+model Organization {
+  id          String             @id @default(uuid()) @db.Uuid
+  publicId    String             @unique @map("public_id") @db.VarChar(30) // e.g. "ORG-0001"
+  name        String             @db.VarChar(150)
+  email       String             @db.VarChar(254)
+  phone       String             @db.VarChar(20)
+  type        OrganizationType   @default(WASHORA)
+  status      OrganizationStatus @default(ACTIVE)
+  logoUrl     String?            @map("logo_url") @db.Text
+  address     String?            @db.Text
+  city        String?            @db.VarChar(80)
+  state       String?            @db.VarChar(80)
+  country     String             @default("IN") @db.VarChar(10)
+  createdAt   DateTime           @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt   DateTime           @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Tenant Child Relations
+  members              OrganizationMember[]
+  customers            Customer[]
+  customerAddresses    CustomerAddress[]
+  customerFavorites    CustomerFavorite[]
+  rewardAccounts       CustomerRewardAccount[]
+  rewardTransactions   CustomerRewardTransaction[]
+  providers            Provider[]
+  providerServiceAreas ProviderServiceArea[]
+  providerServices     ProviderService[]
+  providerAvailability ProviderAvailability[]
+  providerDocuments    ProviderDocument[]
+  deliveryPartners     DeliveryPartner[]
+  deliveryServiceAreas DeliveryServiceArea[]
+  deliveryAvailability DeliveryAvailability[]
+  deliveryDocuments    DeliveryDocument[]
+  categories           ServiceCategory[]
+  services             Service[]
+  variants             ServiceVariant[]
+  serviceImages        ServiceImage[]
+  bookings             Booking[]
+  bookingItems         BookingItem[]
+  bookingAddresses     BookingAddress[]
+  bookingSchedules     BookingSchedule[]
+  pickupSlots          PickupSlot[]
+  bookingStatusHist    BookingStatusHistory[]
+  bookingNotes         BookingNote[]
+  bookingAssignments   BookingAssignment[]
+  assignmentHistories  AssignmentHistory[]
+  deliveryEvents       DeliveryEvent[]
+  payments             Payment[]
+  transactions         Transaction[]
+  earnings             Earning[]
+  earningTransactions  EarningTransaction[]
+  refunds              Refund[]
+  coupons              Coupon[]
+  couponRedemptions    CouponRedemption[]
+  promotionalOffers    PromotionalOffer[]
+  offerRedemptions     OfferRedemption[]
+  reviews              Review[]
+  reviewModerations    ReviewModerationHistory[]
+  reviewResponses      ReviewResponse[]
+  reviewReports        ReviewReport[]
+  notifications        Notification[]
+  notificationPrefs    NotificationPreference[]
+  notificationTemplates NotificationTemplate[]
+  notificationEventLogs NotificationEventLog[]
+  communications       Communication[]
+  communicationRecips  CommunicationRecipient[]
+  supportTickets       SupportTicket[]
+  supportMessages      SupportMessage[]
+  supportNotes         SupportNote[]
+  supportTicketActivities SupportTicketActivity[]
+  disputes             Dispute[]
+  disputeMessages      DisputeMessage[]
+  disputeEvidence      DisputeEvidence[]
+  disputeActivities    DisputeActivity[]
+  auditEvents          AuditEvent[]
+  analyticsEvents      AnalyticsEvent[]
+  experiments          Experiment[]
+  productImprovements  ProductImprovement[]
+
+  @@index([status])
+  @@map("organizations")
+}
+
+// ============================================================================
+// 3. CUSTOMER DOMAIN
+// ============================================================================
+
+model Customer {
+  id              String         @id @default(uuid()) @db.Uuid
+  publicId        String         @map("public_id") @db.VarChar(30) // e.g. "CUS-0001"
+  organizationId  String         @map("organization_id") @db.Uuid
+  userId          String         @map("user_id") @db.Uuid
+  fullName        String         @map("full_name") @db.VarChar(120)
+  email           String         @db.VarChar(254)
+  phone           String         @db.VarChar(20)
+  profileImageUrl String?        @map("profile_image_url") @db.Text
+  membershipTier  MembershipTier @default(STANDARD) @map("membership_tier")
+  status          UserStatus     @default(ACTIVE)
+  joinedAt        DateTime       @default(now()) @map("joined_at") @db.Timestamptz
+  updatedAt       DateTime       @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  organization       Organization            @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  user               User                    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  addresses          CustomerAddress[]
+  favorites          CustomerFavorite[]
+  rewardAccount      CustomerRewardAccount?
+  rewardTransactions CustomerRewardTransaction[]
+  bookings           Booking[]
+  couponRedemptions  CouponRedemption[]
+  offerRedemptions   OfferRedemption[]
+  reviews            Review[]
+  supportTickets     SupportTicket[]
+  disputes           Dispute[]
+
+  @@unique([organizationId, publicId])
+  @@unique([organizationId, userId])
+  @@index([organizationId, fullName])
+  @@index([organizationId, email])
+  @@index([organizationId, phone])
+  @@index([organizationId, status])
+  @@map("customers")
+}
+
+model CustomerAddress {
+  id             String        @id @default(uuid()) @db.Uuid
+  customerId     String        @map("customer_id") @db.Uuid
+  organizationId String        @map("organization_id") @db.Uuid
+  label          AddressLabel  @default(HOME)
+  recipientName  String        @map("recipient_name") @db.VarChar(120)
+  recipientPhone String        @map("recipient_phone") @db.VarChar(20)
+  addressLine1   String        @map("address_line1") @db.VarChar(200)
+  addressLine2   String?       @map("address_line2") @db.VarChar(200)
+  area           String        @db.VarChar(100)
+  city           String        @db.VarChar(80)
+  state          String        @db.VarChar(80)
+  postalCode     String        @map("postal_code") @db.VarChar(10)
+  landmark       String?       @db.VarChar(150)
+  latitude       Decimal?      @db.Decimal(10, 8)
+  longitude      Decimal?      @db.Decimal(11, 8)
+  isDefault      Boolean       @default(false) @map("is_default")
+  status         AddressStatus @default(ACTIVE)
+  createdAt      DateTime      @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt      DateTime      @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  customer       Customer      @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  organization   Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([customerId, isDefault])
+  @@index([organizationId, city])
+  @@map("customer_addresses")
+}
+
+model CustomerFavorite {
+  id             String       @id @default(uuid()) @db.Uuid
+  customerId     String       @map("customer_id") @db.Uuid
+  organizationId String       @map("organization_id") @db.Uuid
+  serviceId      String       @map("service_id") @db.Uuid
+  createdAt      DateTime     @default(now()) @map("created_at") @db.Timestamptz
+
+  // Relations
+  customer       Customer     @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  service        Service      @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+
+  @@unique([customerId, serviceId])
+  @@index([organizationId, customerId])
+  @@map("customer_favorites")
+}
+
+model CustomerRewardAccount {
+  id               String       @id @default(uuid()) @db.Uuid
+  customerId       String       @unique @map("customer_id") @db.Uuid
+  organizationId   String       @map("organization_id") @db.Uuid
+  pointsBalance    Int          @default(0) @map("points_balance")
+  lifetimeEarned   Int          @default(0) @map("lifetime_earned")
+  lifetimeRedeemed Int          @default(0) @map("lifetime_redeemed")
+  createdAt        DateTime     @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt        DateTime     @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  customer         Customer     @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  organization     Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  transactions     CustomerRewardTransaction[]
+
+  @@index([organizationId, customerId])
+  @@map("customer_reward_accounts")
+}
+
+model CustomerRewardTransaction {
+  id              String                @id @default(uuid()) @db.Uuid
+  rewardAccountId String                @map("reward_account_id") @db.Uuid
+  customerId      String                @map("customer_id") @db.Uuid
+  organizationId  String                @map("organization_id") @db.Uuid
+  bookingId       String?               @map("booking_id") @db.Uuid
+  type            RewardTransactionType
+  points          Int
+  balanceAfter    Int                   @map("balance_after")
+  description     String                @db.VarChar(300)
+  createdAt       DateTime              @default(now()) @map("created_at") @db.Timestamptz
+
+  // Relations
+  rewardAccount   CustomerRewardAccount @relation(fields: [rewardAccountId], references: [id], onDelete: Cascade)
+  customer        Customer              @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  organization    Organization          @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  booking         Booking?              @relation(fields: [bookingId], references: [id])
+
+  @@index([rewardAccountId, createdAt])
+  @@index([organizationId, customerId])
+  @@map("customer_reward_transactions")
+}
+
+// ============================================================================
+// 4. PROVIDER DOMAIN
+// ============================================================================
+
+model Provider {
+  id                String                 @id @default(uuid()) @db.Uuid
+  publicId          String                 @map("public_id") @db.VarChar(30) // e.g. "PRO-0001"
+  organizationId    String                 @map("organization_id") @db.Uuid
+  userId            String                 @map("user_id") @db.Uuid
+  businessName      String?                @map("business_name") @db.VarChar(150)
+  fullName          String                 @map("full_name") @db.VarChar(120)
+  email             String                 @db.VarChar(254)
+  phone             String                 @db.VarChar(20)
+  profileImageUrl   String?                @map("profile_image_url") @db.Text
+  coverImageUrl     String?                @map("cover_image_url") @db.Text
+  description       String?                @db.Text
+  city              String                 @db.VarChar(80)
+  address           String?                @db.Text
+  status            ProviderStatus         @default(INACTIVE)
+  approvalStatus    ProviderApprovalStatus @default(PENDING) @map("approval_status")
+  rating            Decimal                @default(0.00) @db.Decimal(3, 2)
+  totalReviews      Int                    @default(0) @map("total_reviews")
+  totalBookings     Int                    @default(0) @map("total_bookings")
+  completedBookings Int                    @default(0) @map("completed_bookings")
+  cancelledBookings Int                    @default(0) @map("cancelled_bookings")
+  totalEarnings     Decimal                @default(0.00) @map("total_earnings") @db.Decimal(12, 2)
+  lastActiveAt      DateTime?              @map("last_active_at") @db.Timestamptz
+  joinedAt          DateTime               @default(now()) @map("joined_at") @db.Timestamptz
+  updatedAt         DateTime               @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  organization      Organization           @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  user              User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  serviceAreas      ProviderServiceArea[]
+  services          ProviderService[]
+  availabilities    ProviderAvailability[]
+  documents         ProviderDocument[]
+  bookings          Booking[]
+  assignments       BookingAssignment[]
+  earnings          Earning[]
+  reviews           Review[]
+  reviewResponses   ReviewResponse[]
+  supportTickets    SupportTicket[]
+  disputes          Dispute[]
+
+  @@unique([organizationId, publicId])
+  @@unique([organizationId, userId])
+  @@index([organizationId, status])
+  @@index([organizationId, approvalStatus])
+  @@index([organizationId, city])
+  @@map("providers")
+}
+
+model ProviderServiceArea {
+  id             String       @id @default(uuid()) @db.Uuid
+  providerId     String       @map("provider_id") @db.Uuid
+  organizationId String       @map("organization_id") @db.Uuid
+  areaName       String       @map("area_name") @db.VarChar(100)
+  postalCode     String       @map("postal_code") @db.VarChar(10)
+  city           String       @db.VarChar(80)
+  isActive       Boolean      @default(true) @map("is_active")
+  createdAt      DateTime     @default(now()) @map("created_at") @db.Timestamptz
+
+  // Relations
+  provider       Provider     @relation(fields: [providerId], references: [id], onDelete: Cascade)
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@unique([providerId, postalCode])
+  @@index([organizationId, postalCode])
+  @@map("provider_service_areas")
+}
+
+model ProviderService {
+  id             String        @id @default(uuid()) @db.Uuid
+  providerId     String        @map("provider_id") @db.Uuid
+  organizationId String        @map("organization_id") @db.Uuid
+  serviceId      String        @map("service_id") @db.Uuid
+  customPrice    Decimal?      @map("custom_price") @db.Decimal(12, 2)
+  status         CatalogStatus @default(ACTIVE)
+  createdAt      DateTime      @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt      DateTime      @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  provider       Provider      @relation(fields: [providerId], references: [id], onDelete: Cascade)
+  organization   Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  service        Service       @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+
+  @@unique([providerId, serviceId])
+  @@index([organizationId, serviceId])
+  @@map("provider_services")
+}
+
+model ProviderAvailability {
+  id             String       @id @default(uuid()) @db.Uuid
+  providerId     String       @map("provider_id") @db.Uuid
+  organizationId String       @map("organization_id") @db.Uuid
+  dayOfWeek      Int          @map("day_of_week") // 0=Sunday, 6=Saturday
+  startTime      String       @map("start_time") @db.VarChar(10) // "08:00"
+  endTime        String       @map("end_time") @db.VarChar(10)   // "20:00"
+  isAvailable    Boolean      @default(true) @map("is_available")
+  maxDailyOrders Int          @default(30) @map("max_daily_orders")
+  createdAt      DateTime     @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt      DateTime     @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  provider       Provider     @relation(fields: [providerId], references: [id], onDelete: Cascade)
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@unique([providerId, dayOfWeek])
+  @@index([organizationId, providerId])
+  @@map("provider_availability")
+}
+
+model ProviderDocument {
+  id                 String                     @id @default(uuid()) @db.Uuid
+  providerId         String                     @map("provider_id") @db.Uuid
+  organizationId     String                     @map("organization_id") @db.Uuid
+  documentType       String                     @map("document_type") @db.VarChar(60) // "BUSINESS_PAN", "GST", "SHOP_ESTABLISHMENT"
+  documentNumber     String?                    @map("document_number") @db.VarChar(100)
+  documentUrl        String                     @map("document_url") @db.Text
+  verificationStatus DocumentVerificationStatus @default(PENDING) @map("verification_status")
+  verifiedAt         DateTime?                  @map("verified_at") @db.Timestamptz
+  rejectionReason    String?                    @map("rejection_reason") @db.Text
+  createdAt          DateTime                   @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt          DateTime                   @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  provider           Provider                   @relation(fields: [providerId], references: [id], onDelete: Cascade)
+  organization       Organization               @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, verificationStatus])
+  @@map("provider_documents")
+}
+
+// ============================================================================
+// 5. DELIVERY PARTNER DOMAIN
+// ============================================================================
+
+model DeliveryPartner {
+  id                String                       @id @default(uuid()) @db.Uuid
+  publicId          String                       @map("public_id") @db.VarChar(30) // e.g. "DLP-0001"
+  organizationId    String                       @map("organization_id") @db.Uuid
+  userId            String                       @map("user_id") @db.Uuid
+  fullName          String                       @map("full_name") @db.VarChar(120)
+  email             String                       @db.VarChar(254)
+  phone             String                       @db.VarChar(20)
+  profileImageUrl   String?                      @map("profile_image_url") @db.Text
+  vehicleType       VehicleType                  @default(BIKE) @map("vehicle_type")
+  vehicleNumber     String?                      @map("vehicle_number") @db.VarChar(30)
+  city              String                       @db.VarChar(80)
+  status            DeliveryPartnerStatus         @default(INACTIVE)
+  approvalStatus    DeliveryPartnerApprovalStatus @default(PENDING) @map("approval_status")
+  rating            Decimal                      @default(0.00) @db.Decimal(3, 2)
+  totalDeliveries   Int                          @default(0) @map("total_deliveries")
+  completedDeliveries Int                        @default(0) @map("completed_deliveries")
+  totalEarnings     Decimal                      @default(0.00) @map("total_earnings") @db.Decimal(12, 2)
+  currentLatitude   Decimal?                     @map("current_latitude") @db.Decimal(10, 8)
+  currentLongitude  Decimal?                     @map("current_longitude") @db.Decimal(11, 8)
+  lastActiveAt      DateTime?                    @map("last_active_at") @db.Timestamptz
+  joinedAt          DateTime                     @default(now()) @map("joined_at") @db.Timestamptz
+  updatedAt         DateTime                     @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  organization      Organization                 @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  user              User                         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  serviceAreas      DeliveryServiceArea[]
+  availabilities    DeliveryAvailability[]
+  documents         DeliveryDocument[]
+  assignments       BookingAssignment[]
+  deliveryEvents    DeliveryEvent[]
+  earnings          Earning[]
+  supportTickets    SupportTicket[]
+  disputes          Dispute[]
+
+  @@unique([organizationId, publicId])
+  @@unique([organizationId, userId])
+  @@index([organizationId, status])
+  @@index([organizationId, approvalStatus])
+  @@index([organizationId, city])
+  @@map("delivery_partners")
+}
+
+model DeliveryServiceArea {
+  id                String          @id @default(uuid()) @db.Uuid
+  deliveryPartnerId String          @map("delivery_partner_id") @db.Uuid
+  organizationId    String          @map("organization_id") @db.Uuid
+  areaName          String          @map("area_name") @db.VarChar(100)
+  postalCode        String          @map("postal_code") @db.VarChar(10)
+  city              String          @db.VarChar(80)
+  isActive          Boolean         @default(true) @map("is_active")
+  createdAt         DateTime        @default(now()) @map("created_at") @db.Timestamptz
+
+  // Relations
+  deliveryPartner   DeliveryPartner @relation(fields: [deliveryPartnerId], references: [id], onDelete: Cascade)
+  organization      Organization    @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@unique([deliveryPartnerId, postalCode])
+  @@index([organizationId, postalCode])
+  @@map("delivery_service_areas")
+}
+
+model DeliveryAvailability {
+  id                String          @id @default(uuid()) @db.Uuid
+  deliveryPartnerId String          @map("delivery_partner_id") @db.Uuid
+  organizationId    String          @map("organization_id") @db.Uuid
+  dayOfWeek         Int             @map("day_of_week") // 0=Sunday, 6=Saturday
+  startTime         String          @map("start_time") @db.VarChar(10)
+  endTime           String          @map("end_time") @db.VarChar(10)
+  isAvailable       Boolean         @default(true) @map("is_available")
+  createdAt         DateTime        @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt         DateTime        @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  deliveryPartner   DeliveryPartner @relation(fields: [deliveryPartnerId], references: [id], onDelete: Cascade)
+  organization      Organization    @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@unique([deliveryPartnerId, dayOfWeek])
+  @@index([organizationId, deliveryPartnerId])
+  @@map("delivery_availability")
+}
+
+model DeliveryDocument {
+  id                 String                     @id @default(uuid()) @db.Uuid
+  deliveryPartnerId  String                     @map("delivery_partner_id") @db.Uuid
+  organizationId     String                     @map("organization_id") @db.Uuid
+  documentType       String                     @map("document_type") @db.VarChar(60) // "DRIVING_LICENSE", "AADHAAR", "VEHICLE_RC"
+  documentNumber     String?                    @map("document_number") @db.VarChar(100)
+  documentUrl        String                     @map("document_url") @db.Text
+  verificationStatus DocumentVerificationStatus @default(PENDING) @map("verification_status")
+  verifiedAt         DateTime?                  @map("verified_at") @db.Timestamptz
+  rejectionReason    String?                    @map("rejection_reason") @db.Text
+  createdAt          DateTime                   @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt          DateTime                   @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  deliveryPartner    DeliveryPartner            @relation(fields: [deliveryPartnerId], references: [id], onDelete: Cascade)
+  organization       Organization               @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, verificationStatus])
+  @@map("delivery_documents")
+}
+
+// ============================================================================
+// 6. CATALOG DOMAIN
+// ============================================================================
+
+model ServiceCategory {
+  id             String        @id @default(uuid()) @db.Uuid
+  publicId       String        @map("public_id") @db.VarChar(30) // e.g. "CAT-0001"
+  organizationId String        @map("organization_id") @db.Uuid
+  name           String        @db.VarChar(100)
+  slug           String        @db.VarChar(120)
+  description    String?       @db.Text
+  iconUrl        String?       @map("icon_url") @db.Text
+  bannerUrl      String?       @map("banner_url") @db.Text
+  displayOrder   Int           @default(0) @map("display_order")
+  status         CatalogStatus @default(ACTIVE)
+  createdAt      DateTime      @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt      DateTime      @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  organization   Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  services       Service[]
+
+  @@unique([organizationId, publicId])
+  @@unique([organizationId, slug])
+  @@index([organizationId, status, displayOrder])
+  @@map("service_categories")
+}
+
+model Service {
+  id               String           @id @default(uuid()) @db.Uuid
+  publicId         String           @map("public_id") @db.VarChar(30) // e.g. "SVC-0001"
+  organizationId   String           @map("organization_id") @db.Uuid
+  categoryId       String           @map("category_id") @db.Uuid
+  name             String           @db.VarChar(150)
+  slug             String           @db.VarChar(160)
+  tagline          String?          @db.VarChar(255)
+  description      String           @db.Text
+  basePrice        Decimal          @map("base_price") @db.Decimal(12, 2)
+  unit             String           @default("kg") @db.VarChar(30)
+  turnaroundHours  Int              @default(24) @map("turnaround_hours")
+  isFeatured       Boolean          @default(false) @map("is_featured")
+  rating           Decimal          @default(0.00) @db.Decimal(3, 2)
+  totalReviews     Int              @default(0) @map("total_reviews")
+  status           CatalogStatus    @default(ACTIVE)
+  createdAt        DateTime         @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt        DateTime         @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  organization     Organization     @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  category         ServiceCategory  @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  variants         ServiceVariant[]
+  images           ServiceImage[]
+  providerLinks    ProviderService[]
+  favorites        CustomerFavorite[]
+  bookings         Booking[]
+  reviews          Review[]
+
+  @@unique([organizationId, publicId])
+  @@unique([organizationId, slug])
+  @@index([organizationId, categoryId])
+  @@index([organizationId, status])
+  @@index([organizationId, updatedAt])
+  @@map("services")
+}
+
+model ServiceVariant {
+  id             String        @id @default(uuid()) @db.Uuid
+  publicId       String        @map("public_id") @db.VarChar(30) // e.g. "VAR-0001"
+  organizationId String        @map("organization_id") @db.Uuid
+  serviceId      String        @map("service_id") @db.Uuid
+  name           String        @db.VarChar(120) // "Standard", "Express", "Premium Fragrance"
+  priceMultiplier Decimal      @default(1.00) @map("price_multiplier") @db.Decimal(4, 2)
+  additionalPrice Decimal      @default(0.00) @map("additional_price") @db.Decimal(12, 2)
+  description    String?       @db.Text
+  turnaroundHours Int?         @map("turnaround_hours")
+  status         CatalogStatus @default(ACTIVE)
+  createdAt      DateTime      @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt      DateTime      @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  organization   Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  service        Service       @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  bookingItems   BookingItem[]
+
+  @@unique([organizationId, publicId])
+  @@index([serviceId, status])
+  @@map("service_variants")
+}
+
+model ServiceImage {
+  id             String       @id @default(uuid()) @db.Uuid
+  organizationId String       @map("organization_id") @db.Uuid
+  serviceId      String       @map("service_id") @db.Uuid
+  imageUrl       String       @map("image_url") @db.Text
+  altText        String?      @map("alt_text") @db.VarChar(200)
+  displayOrder   Int          @default(0) @map("display_order")
+  isPrimary      Boolean      @default(false) @map("is_primary")
+  createdAt      DateTime     @default(now()) @map("created_at") @db.Timestamptz
+
+  // Relations
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  service        Service      @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+
+  @@index([serviceId, displayOrder])
+  @@map("service_images")
+}
+
+// ============================================================================
+// 7. BOOKING DOMAIN
+// ============================================================================
+
+model Booking {
+  id               String        @id @default(uuid()) @db.Uuid
+  bookingNumber    String        @map("booking_number") @db.VarChar(40) // e.g. "WAS-2026-000001"
+  organizationId   String        @map("organization_id") @db.Uuid
+  customerId       String        @map("customer_id") @db.Uuid
+  providerId       String?       @map("provider_id") @db.Uuid
+  serviceId        String        @map("service_id") @db.Uuid
+  status           BookingStatus @default(PENDING)
+  subtotal         Decimal       @db.Decimal(12, 2)
+  serviceFee       Decimal       @default(0.00) @map("service_fee") @db.Decimal(12, 2)
+  taxAmount        Decimal       @default(0.00) @map("tax_amount") @db.Decimal(12, 2)
+  discountAmount   Decimal       @default(0.00) @map("discount_amount") @db.Decimal(12, 2)
+  rewardDiscount   Decimal       @default(0.00) @map("reward_discount") @db.Decimal(12, 2)
+  totalAmount      Decimal       @map("total_amount") @db.Decimal(12, 2)
+  currency         String        @default("INR") @db.VarChar(5)
+  scheduledAt      DateTime      @map("scheduled_at") @db.Timestamptz
+  completedAt      DateTime?     @map("completed_at") @db.Timestamptz
+  cancelledAt      DateTime?     @map("cancelled_at") @db.Timestamptz
+  cancellationReason String?     @map("cancellation_reason") @db.Text
+  createdAt        DateTime      @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt        DateTime      @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  organization        Organization            @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  customer            Customer                @relation(fields: [customerId], references: [id])
+  provider            Provider?               @relation(fields: [providerId], references: [id])
+  service             Service                 @relation(fields: [serviceId], references: [id])
+  items               BookingItem[]
+  address             BookingAddress?
+  schedule            BookingSchedule?
+  statusHistory       BookingStatusHistory[]
+  notes               BookingNote[]
+  assignments         BookingAssignment[]
+  deliveryEvents      DeliveryEvent[]
+  payment             Payment?
+  transactions        Transaction[]
+  earnings            Earning[]
+  refunds             Refund[]
+  rewardTransactions  CustomerRewardTransaction[]
+  couponRedemptions   CouponRedemption[]
+  offerRedemptions    OfferRedemption[]
+  review              Review?
+  supportTickets      SupportTicket[]
+  disputes            Dispute[]
+
+  @@unique([organizationId, bookingNumber])
+  @@index([organizationId, status])
+  @@index([organizationId, scheduledAt])
+  @@index([organizationId, createdAt])
+  @@index([organizationId, customerId])
+  @@index([organizationId, providerId])
+  @@map("bookings")
+}
+
+model BookingItem {
+  id                  String          @id @default(uuid()) @db.Uuid
+  bookingId           String          @map("booking_id") @db.Uuid
+  organizationId      String          @map("organization_id") @db.Uuid
+  variantId           String?         @map("variant_id") @db.Uuid
+  serviceNameSnapshot String          @map("service_name_snapshot") @db.VarChar(150)
+  variantNameSnapshot String?         @map("variant_name_snapshot") @db.VarChar(120)
+  unitPrice           Decimal         @map("unit_price") @db.Decimal(12, 2)
+  quantity            Int             @default(1)
+  serviceFee          Decimal         @default(0.00) @map("service_fee") @db.Decimal(12, 2)
+  discountAmount      Decimal         @default(0.00) @map("discount_amount") @db.Decimal(12, 2)
+  totalAmount         Decimal         @map("total_amount") @db.Decimal(12, 2)
+  createdAt           DateTime        @default(now()) @map("created_at") @db.Timestamptz
+
+  // Relations
+  booking             Booking         @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  organization        Organization    @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  variant             ServiceVariant? @relation(fields: [variantId], references: [id])
+
+  @@index([bookingId])
+  @@index([organizationId, bookingId])
+  @@map("booking_items")
+}
+
+model BookingAddress {
+  id             String       @id @default(uuid()) @db.Uuid
+  bookingId      String       @unique @map("booking_id") @db.Uuid
+  organizationId String       @map("organization_id") @db.Uuid
+  recipientName  String       @map("recipient_name") @db.VarChar(120)
+  recipientPhone String       @map("recipient_phone") @db.VarChar(20)
+  addressLine1   String       @map("address_line1") @db.VarChar(200)
+  addressLine2   String?      @map("address_line2") @db.VarChar(200)
+  area           String       @db.VarChar(100)
+  city           String       @db.VarChar(80)
+  state          String       @db.VarChar(80)
+  postalCode     String       @map("postal_code") @db.VarChar(10)
+  landmark       String?      @db.VarChar(150)
+  latitude       Decimal?     @db.Decimal(10, 8)
+  longitude      Decimal?     @db.Decimal(11, 8)
+  createdAt      DateTime     @default(now()) @map("created_at") @db.Timestamptz
+
+  // Relations
+  booking        Booking      @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, city])
+  @@map("booking_addresses")
+}
+
+model BookingSchedule {
+  id             String       @id @default(uuid()) @db.Uuid
+  bookingId      String       @unique @map("booking_id") @db.Uuid
+  organizationId String       @map("organization_id") @db.Uuid
+  pickupDate     DateTime     @map("pickup_date") @db.Date
+  pickupTimeSlot String       @map("pickup_time_slot") @db.VarChar(30) // "08:00 AM - 10:00 AM"
+  returnDate     DateTime?    @map("return_date") @db.Date
+  returnTimeSlot String?      @map("return_time_slot") @db.VarChar(30)
+  specialInstructions String? @map("special_instructions") @db.Text
+  createdAt      DateTime     @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt      DateTime     @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  booking        Booking      @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, pickupDate])
+  @@map("booking_schedules")
+}
+
+model PickupSlot {
+  id             String       @id @default(uuid()) @db.Uuid
+  organizationId String       @map("organization_id") @db.Uuid
+  date           DateTime     @db.Date
+  startTime      String       @map("start_time") @db.VarChar(10)
+  endTime        String       @map("end_time") @db.VarChar(10)
+  maxCapacity    Int          @default(20) @map("max_capacity")
+  bookedCount    Int          @default(0) @map("booked_count")
+  isAvailable    Boolean      @default(true) @map("is_available")
+  createdAt      DateTime     @default(now()) @map("created_at") @db.Timestamptz
+
+  // Relations
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@unique([organizationId, date, startTime, endTime])
+  @@index([organizationId, date])
+  @@map("pickup_slots")
+}
+
+model BookingStatusHistory {
+  id              String        @id @default(uuid()) @db.Uuid
+  bookingId       String        @map("booking_id") @db.Uuid
+  organizationId  String        @map("organization_id") @db.Uuid
+  fromStatus      BookingStatus? @map("from_status")
+  toStatus        BookingStatus @map("to_status")
+  changedByUserId String?       @map("changed_by_user_id") @db.Uuid
+  reason          String?       @db.VarChar(200)
+  note            String?       @db.Text
+  createdAt       DateTime      @default(now()) @map("created_at") @db.Timestamptz
+
+  // Relations
+  booking         Booking       @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  organization    Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  changedByUser   User?         @relation(fields: [changedByUserId], references: [id])
+
+  @@index([bookingId, createdAt])
+  @@index([organizationId, bookingId])
+  @@map("booking_status_history")
+}
+
+model BookingNote {
+  id             String       @id @default(uuid()) @db.Uuid
+  bookingId      String       @map("booking_id") @db.Uuid
+  organizationId String       @map("organization_id") @db.Uuid
+  authorUserId   String       @map("author_user_id") @db.Uuid
+  note           String       @db.Text
+  isInternalOnly Boolean      @default(true) @map("is_internal_only")
+  createdAt      DateTime     @default(now()) @map("created_at") @db.Timestamptz
+
+  // Relations
+  booking        Booking      @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  authorUser     User         @relation(fields: [authorUserId], references: [id])
+
+  @@index([bookingId])
+  @@index([organizationId, bookingId])
+  @@map("booking_notes")
+}
+
+// ============================================================================
+// 8. OPERATIONS DOMAIN
+// ============================================================================
+
+model BookingAssignment {
+  id                String           @id @default(uuid()) @db.Uuid
+  publicId          String           @map("public_id") @db.VarChar(30) // e.g. "ASN-0001"
+  bookingId         String           @map("booking_id") @db.Uuid
+  organizationId    String           @map("organization_id") @db.Uuid
+  providerId        String?          @map("provider_id") @db.Uuid
+  deliveryPartnerId String?          @map("delivery_partner_id") @db.Uuid
+  type              AssignmentType
+  status            AssignmentStatus @default(PENDING)
+  notes             String?          @db.Text
+  assignedAt        DateTime         @default(now()) @map("assigned_at") @db.Timestamptz
+  acceptedAt        DateTime?        @map("accepted_at") @db.Timestamptz
+  completedAt       DateTime?        @map("completed_at") @db.Timestamptz
+  cancelledAt       DateTime?        @map("cancelled_at") @db.Timestamptz
+  createdAt         DateTime         @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt         DateTime         @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  booking           Booking          @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  organization      Organization     @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  provider          Provider?        @relation(fields: [providerId], references: [id])
+  deliveryPartner   DeliveryPartner? @relation(fields: [deliveryPartnerId], references: [id])
+  history           AssignmentHistory[]
+  deliveryEvents    DeliveryEvent[]
+
+  @@unique([organizationId, publicId])
+  @@index([organizationId, status])
+  @@index([organizationId, bookingId])
+  @@index([organizationId, providerId])
+  @@index([organizationId, deliveryPartnerId])
+  @@map("booking_assignments")
+}
+
+model AssignmentHistory {
+  id             String            @id @default(uuid()) @db.Uuid
+  assignmentId   String            @map("assignment_id") @db.Uuid
+  organizationId String            @map("organization_id") @db.Uuid
+  action         AssignmentAction
+  actorUserId    String?           @map("actor_user_id") @db.Uuid
+  details        String?           @db.Text
+  createdAt      DateTime          @default(now()) @map("created_at") @db.Timestamptz
+
+  // Relations
+  assignment     BookingAssignment @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+  organization   Organization      @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  actorUser      User?             @relation(fields: [actorUserId], references: [id])
+
+  @@index([assignmentId, createdAt])
+  @@index([organizationId, assignmentId])
+  @@map("assignment_history")
+}
+
+model DeliveryEvent {
+  id                String            @id @default(uuid()) @db.Uuid
+  bookingId         String            @map("booking_id") @db.Uuid
+  assignmentId      String?           @map("assignment_id") @db.Uuid
+  organizationId    String            @map("organization_id") @db.Uuid
+  deliveryPartnerId String?           @map("delivery_partner_id") @db.Uuid
+  eventType         String            @map("event_type") @db.VarChar(60) // "ARRIVED_AT_PICKUP", "OTP_VERIFIED", "HANDED_TO_STUDIO", "DELIVERED"
+  latitude          Decimal?          @db.Decimal(10, 8)
+  longitude         Decimal?          @db.Decimal(11, 8)
+  proofImageUrl     String?           @map("proof_image_url") @db.Text
+  notes             String?           @db.Text
+  createdAt         DateTime          @default(now()) @map("created_at") @db.Timestamptz
+
+  // Relations
+  booking           Booking           @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  assignment        BookingAssignment? @relation(fields: [assignmentId], references: [id])
+  organization      Organization      @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  deliveryPartner   DeliveryPartner?  @relation(fields: [deliveryPartnerId], references: [id])
+
+  @@index([bookingId, createdAt])
+  @@index([organizationId, bookingId])
+  @@map("delivery_events")
+}
+
+// ============================================================================
+// 9. FINANCE DOMAIN
+// ============================================================================
+
+model Payment {
+  id             String        @id @default(uuid()) @db.Uuid
+  publicId       String        @map("public_id") @db.VarChar(30) // e.g. "PAY-0001"
+  bookingId      String        @unique @map("booking_id") @db.Uuid
+  organizationId String        @map("organization_id") @db.Uuid
+  amount         Decimal       @db.Decimal(12, 2)
+  currency       String        @default("INR") @db.VarChar(5)
+  method         PaymentMethod
+  status         PaymentStatus @default(PENDING)
+  gatewayRef     String?       @map("gateway_ref") @db.VarChar(120)
+  gatewayName    String?       @map("gateway_name") @db.VarChar(50)
+  paidAt         DateTime?     @map("paid_at") @db.Timestamptz
+  failureReason  String?       @map("failure_reason") @db.Text
+  createdAt      DateTime      @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt      DateTime      @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  booking        Booking       @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  organization   Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  transactions   Transaction[]
+  refunds        Refund[]
+  supportTickets SupportTicket[]
+  disputes       Dispute[]
+
+  @@unique([organizationId, publicId])
+  @@index([organizationId, status])
+  @@index([organizationId, bookingId])
+  @@index([organizationId, createdAt])
+  @@map("payments")
+}
+
+model Transaction {
+  id                 String             @id @default(uuid()) @db.Uuid
+  publicId           String             @map("public_id") @db.VarChar(30) // e.g. "TXN-0001"
+  organizationId     String             @map("organization_id") @db.Uuid
+  bookingId          String?            @map("booking_id") @db.Uuid
+  paymentId          String?            @map("payment_id") @db.Uuid
+  type               TransactionType
+  amount             Decimal            @db.Decimal(12, 2)
+  currency           String             @default("INR") @db.VarChar(5)
+  status             TransactionStatus  @default(COMPLETED)
+  referenceNumber    String?            @map("reference_number") @db.VarChar(100)
+  description        String             @db.VarChar(255)
+  createdAt          DateTime           @default(now()) @map("created_at") @db.Timestamptz
+
+  // Relations
+  organization       Organization       @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  booking            Booking?           @relation(fields: [bookingId], references: [id])
+  payment            Payment?           @relation(fields: [paymentId], references: [id])
+  earningTransactions EarningTransaction[]
+  refunds            Refund[]
+
+  @@unique([organizationId, publicId])
+  @@index([organizationId, type, status])
+  @@index([organizationId, bookingId])
+  @@index([organizationId, createdAt])
+  @@map("transactions")
+}
+
+model Earning {
+  id                String             @id @default(uuid()) @db.Uuid
+  publicId          String             @map("public_id") @db.VarChar(30) // e.g. "ERN-0001"
+  organizationId    String             @map("organization_id") @db.Uuid
+  bookingId         String             @map("booking_id") @db.Uuid
+  providerId        String?            @map("provider_id") @db.Uuid
+  deliveryPartnerId String?            @map("delivery_partner_id") @db.Uuid
+  grossAmount       Decimal            @map("gross_amount") @db.Decimal(12, 2)
+  platformFee       Decimal            @default(0.00) @map("platform_fee") @db.Decimal(12, 2)
+  taxWithheld       Decimal            @default(0.00) @map("tax_withheld") @db.Decimal(12, 2)
+  netAmount         Decimal            @map("net_amount") @db.Decimal(12, 2)
+  currency          String             @default("INR") @db.VarChar(5)
+  status            EarningStatus      @default(PENDING)
+  payoutDate        DateTime?          @map("payout_date") @db.Timestamptz
+  payoutRef         String?            @map("payout_ref") @db.VarChar(100)
+  createdAt         DateTime           @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt         DateTime           @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  organization      Organization       @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  booking           Booking            @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  provider          Provider?          @relation(fields: [providerId], references: [id])
+  deliveryPartner   DeliveryPartner?   @relation(fields: [deliveryPartnerId], references: [id])
+  transactions      EarningTransaction[]
+
+  @@unique([organizationId, publicId])
+  @@index([organizationId, status])
+  @@index([organizationId, providerId])
+  @@index([organizationId, deliveryPartnerId])
+  @@index([organizationId, createdAt])
+  @@map("earnings")
+}
+
+model EarningTransaction {
+  id             String                @id @default(uuid()) @db.Uuid
+  earningId      String                @map("earning_id") @db.Uuid
+  organizationId String                @map("organization_id") @db.Uuid
+  transactionId  String?               @map("transaction_id") @db.Uuid
+  type           EarningTransactionType
+  amount         Decimal               @db.Decimal(12, 2)
+  currency       String                @default("INR") @db.VarChar(5)
+  notes          String?               @db.VarChar(255)
+  createdAt      DateTime              @default(now()) @map("created_at") @db.Timestamptz
+
+  // Relations
+  earning        Earning               @relation(fields: [earningId], references: [id], onDelete: Cascade)
+  organization   Organization          @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  transaction    Transaction?          @relation(fields: [transactionId], references: [id])
+
+  @@index([earningId])
+  @@index([organizationId, earningId])
+  @@map("earning_transactions")
+}
+
+model Refund {
+  id              String        @id @default(uuid()) @db.Uuid
+  publicId        String        @map("public_id") @db.VarChar(30) // e.g. "REF-0001"
+  bookingId       String        @map("booking_id") @db.Uuid
+  paymentId       String        @map("payment_id") @db.Uuid
+  organizationId  String        @map("organization_id") @db.Uuid
+  transactionId   String?       @map("transaction_id") @db.Uuid
+  amount          Decimal       @db.Decimal(12, 2)
+  currency        String        @default("INR") @db.VarChar(5)
+  status          RefundStatus  @default(PENDING)
+  reason          String        @db.VarChar(255)
+  gatewayRefundRef String?      @map("gateway_refund_ref") @db.VarChar(120)
+  processedByUserId String?     @map("processed_by_user_id") @db.Uuid
+  processedAt     DateTime?     @map("processed_at") @db.Timestamptz
+  createdAt       DateTime      @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt       DateTime      @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  booking         Booking       @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  payment         Payment       @relation(fields: [paymentId], references: [id], onDelete: Cascade)
+  organization    Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  transaction     Transaction?  @relation(fields: [transactionId], references: [id])
+  processedByUser User?         @relation(fields: [processedByUserId], references: [id])
+
+  @@unique([organizationId, publicId])
+  @@index([organizationId, status])
+  @@index([organizationId, bookingId])
+  @@index([organizationId, createdAt])
+  @@map("refunds")
+}
+
+// ============================================================================
+// 10. PROMOTIONS & REWARDS DOMAIN
+// ============================================================================
+
+model Coupon {
+  id             String        @id @default(uuid()) @db.Uuid
+  publicId       String        @map("public_id") @db.VarChar(30) // e.g. "CPN-0001"
+  organizationId String        @map("organization_id") @db.Uuid
+  code           String        @db.VarChar(30)
+  title          String        @db.VarChar(120)
+  description    String?       @db.Text
+  discountType   DiscountType  @map("discount_type")
+  discountValue  Decimal       @map("discount_value") @db.Decimal(12, 2)
+  minOrderAmount Decimal       @default(0.00) @map("min_order_amount") @db.Decimal(12, 2)
+  maxDiscount    Decimal?      @map("max_discount") @db.Decimal(12, 2)
+  usageLimit     Int?          @map("usage_limit")
+  usedCount      Int           @default(0) @map("used_count")
+  validFrom      DateTime      @map("valid_from") @db.Timestamptz
+  validUntil     DateTime      @map("valid_until") @db.Timestamptz
+  status         CouponStatus  @default(ACTIVE)
+  createdAt      DateTime      @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt      DateTime      @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  organization   Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  redemptions    CouponRedemption[]
+
+  @@unique([organizationId, publicId])
+  @@unique([organizationId, code])
+  @@index([organizationId, status, validUntil])
+  @@map("coupons")
+}
+
+model CouponRedemption {
+  id             String       @id @default(uuid()) @db.Uuid
+  couponId       String       @map("coupon_id") @db.Uuid
+  customerId     String       @map("customer_id") @db.Uuid
+  bookingId      String       @map("booking_id") @db.Uuid
+  organizationId String       @map("organization_id") @db.Uuid
+  discountApplied Decimal     @map("discount_applied") @db.Decimal(12, 2)
+  redeemedAt     DateTime     @default(now()) @map("redeemed_at") @db.Timestamptz
+
+  // Relations
+  coupon         Coupon       @relation(fields: [couponId], references: [id], onDelete: Cascade)
+  customer       Customer     @relation(fields: [customerId], references: [id])
+  booking        Booking      @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([couponId])
+  @@index([customerId])
+  @@index([organizationId, customerId])
+  @@map("coupon_redemptions")
+}
+
+model PromotionalOffer {
+  id             String       @id @default(uuid()) @db.Uuid
+  publicId       String       @map("public_id") @db.VarChar(30) // e.g. "OFF-0001"
+  organizationId String       @map("organization_id") @db.Uuid
+  title          String       @db.VarChar(150)
+  bannerText     String?      @map("banner_text") @db.VarChar(255)
+  bannerImageUrl String?      @map("banner_image_url") @db.Text
+  discountType   DiscountType @map("discount_type")
+  discountValue  Decimal      @map("discount_value") @db.Decimal(12, 2)
+  minOrderAmount Decimal      @default(0.00) @map("min_order_amount") @db.Decimal(12, 2)
+  validFrom      DateTime     @map("valid_from") @db.Timestamptz
+  validUntil     DateTime     @map("valid_until") @db.Timestamptz
+  status         OfferStatus  @default(ACTIVE)
+  createdAt      DateTime     @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt      DateTime     @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  redemptions    OfferRedemption[]
+
+  @@unique([organizationId, publicId])
+  @@index([organizationId, status, validUntil])
+  @@map("promotional_offers")
+}
+
+model OfferRedemption {
+  id             String           @id @default(uuid()) @db.Uuid
+  offerId        String           @map("offer_id") @db.Uuid
+  customerId     String           @map("customer_id") @db.Uuid
+  bookingId      String           @map("booking_id") @db.Uuid
+  organizationId String           @map("organization_id") @db.Uuid
+  discountApplied Decimal         @map("discount_applied") @db.Decimal(12, 2)
+  redeemedAt     DateTime         @default(now()) @map("redeemed_at") @db.Timestamptz
+
+  // Relations
+  offer          PromotionalOffer @relation(fields: [offerId], references: [id], onDelete: Cascade)
+  customer       Customer         @relation(fields: [customerId], references: [id])
+  booking        Booking          @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  organization   Organization     @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([offerId])
+  @@index([customerId])
+  @@index([organizationId, customerId])
+  @@map("offer_redemptions")
+}
+
+// ============================================================================
+// 11. REVIEWS DOMAIN
+// ============================================================================
+
+model Review {
+  id               String         @id @default(uuid()) @db.Uuid
+  publicId         String         @map("public_id") @db.VarChar(30) // e.g. "REV-0001"
+  bookingId        String         @unique @map("booking_id") @db.Uuid
+  organizationId   String         @map("organization_id") @db.Uuid
+  customerId       String         @map("customer_id") @db.Uuid
+  providerId       String         @map("provider_id") @db.Uuid
+  serviceId        String         @map("service_id") @db.Uuid
+  rating           Int            // 1–5
+  title            String?        @db.VarChar(120)
+  comment          String?        @db.Text
+  response         String?        @db.Text
+  responseAt       DateTime?      @map("response_at") @db.Timestamptz
+  status           ReviewStatus   @default(PENDING)
+  createdAt        DateTime       @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt        DateTime       @updatedAt @map("updated_at") @db.Timestamptz
+  publishedAt      DateTime?      @map("published_at") @db.Timestamptz
+  moderatedAt      DateTime?      @map("moderated_at") @db.Timestamptz
+  moderatedBy      String?        @map("moderated_by") @db.Uuid
+  moderationReason String?        @map("moderation_reason") @db.Text
+
+  // Relations
+  booking          Booking        @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  organization     Organization   @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  customer         Customer       @relation(fields: [customerId], references: [id])
+  provider         Provider       @relation(fields: [providerId], references: [id])
+  service          Service        @relation(fields: [serviceId], references: [id])
+  moderationHist   ReviewModerationHistory[]
+  reviewResponse   ReviewResponse?
+  reports          ReviewReport[]
+
+  @@unique([organizationId, publicId])
+  @@index([organizationId, status])
+  @@index([organizationId, providerId])
+  @@index([organizationId, serviceId])
+  @@map("reviews")
+}
+
+model ReviewModerationHistory {
+  id              String                 @id @default(uuid()) @db.Uuid
+  reviewId        String                 @map("review_id") @db.Uuid
+  organizationId  String                 @map("organization_id") @db.Uuid
+  moderatorUserId String                 @map("moderator_user_id") @db.Uuid
+  actorUserId     String?                @map("actor_user_id") @db.Uuid
+  fromStatus      ReviewStatus           @map("from_status")
+  toStatus        ReviewStatus           @map("to_status")
+  action          ReviewModerationAction @default(PUBLISHED)
+  reason          ReviewModerationReason
+  notes           String?                @db.Text
+  createdAt       DateTime               @default(now()) @map("created_at") @db.Timestamptz
+
+  // Relations
+  review          Review                 @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  organization    Organization           @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  moderatorUser   User                   @relation(fields: [moderatorUserId], references: [id])
+
+  @@index([reviewId, createdAt])
+  @@index([organizationId, reviewId])
+  @@map("review_moderation_history")
+}
+
+model ReviewResponse {
+  id             String       @id @default(uuid()) @db.Uuid
+  reviewId       String       @unique @map("review_id") @db.Uuid
+  organizationId String       @map("organization_id") @db.Uuid
+  providerId     String       @map("provider_id") @db.Uuid
+  comment        String       @db.Text
+  createdAt      DateTime     @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt      DateTime     @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  review         Review       @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  provider       Provider     @relation(fields: [providerId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, providerId])
+  @@map("review_responses")
+}
+
+model ReviewReport {
+  id               String             @id @default(uuid()) @db.Uuid
+  publicId         String             @map("public_id") @db.VarChar(30) // e.g. "RPT-0001"
+  organizationId   String             @map("organization_id") @db.Uuid
+  reviewId         String             @map("review_id") @db.Uuid
+  reportedByUserId String             @map("reported_by_user_id") @db.Uuid
+  reason           ReviewReportReason
+  description      String?            @db.Text
+  status           ReviewReportStatus @default(OPEN)
+  createdAt        DateTime           @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt        DateTime           @updatedAt @map("updated_at") @db.Timestamptz
+  resolvedAt       DateTime?          @map("resolved_at") @db.Timestamptz
+  resolvedByUserId String?            @map("resolved_by_user_id") @db.Uuid
+  resolutionNote   String?            @map("resolution_note") @db.Text
+
+  // Relations
+  review           Review             @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  organization     Organization       @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  reportedByUser   User               @relation("ReviewReporter", fields: [reportedByUserId], references: [id])
+  resolvedByUser   User?              @relation("ReviewReportResolver", fields: [resolvedByUserId], references: [id])
+
+  @@unique([reviewId, reportedByUserId])
+  @@unique([organizationId, publicId])
+  @@index([organizationId, status])
+  @@index([organizationId, reviewId])
+  @@map("review_reports")
+}
+
+// ============================================================================
+// 12. COMMUNICATION DOMAIN
+// ============================================================================
+
+model Notification {
+  id              String               @id @default(uuid()) @db.Uuid
+  publicId        String               @map("public_id") @db.VarChar(30) // e.g. "NOT-0001"
+  organizationId  String               @map("organization_id") @db.Uuid
+  recipientUserId String               @map("recipient_user_id") @db.Uuid
+  type            NotificationType
+  title           String               @db.VarChar(150)
+  message         String               @db.Text
+  priority        NotificationPriority @default(MEDIUM)
+  status          NotificationStatus   @default(UNREAD)
+  linkUrl         String?              @map("link_url") @db.Text
+  data            Json?                @map("data")
+  readAt          DateTime?            @map("read_at") @db.Timestamptz
+  createdAt       DateTime             @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt       DateTime             @default(now()) @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  organization    Organization         @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  recipientUser   User                 @relation(fields: [recipientUserId], references: [id], onDelete: Cascade)
+  communications  Communication[]
+
+  @@unique([organizationId, publicId])
+  @@index([organizationId, recipientUserId, status])
+  @@index([organizationId, createdAt])
+  @@map("notifications")
+}
+
+model NotificationPreference {
+  id              String       @id @default(uuid()) @db.Uuid
+  userId          String       @unique @map("user_id") @db.Uuid
+  organizationId  String       @map("organization_id") @db.Uuid
+  inAppEnabled    Boolean      @default(true) @map("in_app_enabled")
+  emailEnabled    Boolean      @default(true) @map("email_enabled")
+  smsEnabled      Boolean      @default(false) @map("sms_enabled")
+  whatsappEnabled Boolean      @default(true) @map("whatsapp_enabled")
+  pushEnabled     Boolean      @default(true) @map("push_enabled")
+  orderUpdates    Boolean      @default(true) @map("order_updates")
+  marketingOffers Boolean      @default(true) @map("marketing_offers")
+  systemAlerts    Boolean      @default(true) @map("system_alerts")
+  categories      Json?        @map("categories")
+  createdAt       DateTime     @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt       DateTime     @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  user            User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  organization    Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, userId])
+  @@map("notification_preferences")
+}
+
+model NotificationTemplate {
+  id             String               @id @default(uuid()) @db.Uuid
+  publicId       String               @map("public_id") @db.VarChar(30) // e.g. "TMP-2026-000001"
+  organizationId String               @map("organization_id") @db.Uuid
+  type           String               @db.VarChar(80) // e.g. "ORDER_STATUS", "BOOKING_CONFIRMED"
+  channel        CommunicationChannel @default(IN_APP)
+  subject        String?              @db.VarChar(200)
+  titleTemplate  String               @map("title_template") @db.VarChar(200)
+  bodyTemplate   String               @map("body_template") @db.Text
+  version        Int                  @default(1)
+  status         String               @default("ACTIVE") @db.VarChar(30) // "ACTIVE", "ARCHIVED"
+  createdAt      DateTime             @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt      DateTime             @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  organization   Organization         @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@unique([organizationId, publicId])
+  @@unique([organizationId, type, channel, version])
+  @@index([organizationId, type, channel, status])
+  @@map("notification_templates")
+}
+
+model Communication {
+  id                String               @id @default(uuid()) @db.Uuid
+  publicId          String               @map("public_id") @db.VarChar(30) // e.g. "COM-0001"
+  organizationId    String               @map("organization_id") @db.Uuid
+  senderUserId      String               @map("sender_user_id") @db.Uuid
+  notificationId    String?              @map("notification_id") @db.Uuid
+  type              String               @default("TRANSACTIONAL") @db.VarChar(40)
+  channel           CommunicationChannel @default(IN_APP)
+  subject           String               @db.VarChar(200)
+  body              String               @db.Text
+  content           String?              @map("content") @db.Text
+  status            CommunicationStatus  @default(SENT)
+  provider          String?              @default("MOCK") @db.VarChar(60)
+  providerMessageId String?              @map("provider_message_id") @db.VarChar(100)
+  attemptCount      Int                  @default(1) @map("attempt_count")
+  lastAttemptAt     DateTime?            @map("last_attempt_at") @db.Timestamptz
+  failedAt          DateTime?            @map("failed_at") @db.Timestamptz
+  failureReason     String?              @map("failure_reason") @db.Text
+  sentAt            DateTime?            @map("sent_at") @db.Timestamptz
+  createdAt         DateTime             @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt         DateTime             @default(now()) @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  organization      Organization         @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  senderUser        User                 @relation(fields: [senderUserId], references: [id])
+  notification      Notification?        @relation(fields: [notificationId], references: [id], onDelete: SetNull)
+  recipients        CommunicationRecipient[]
+
+  @@unique([organizationId, publicId])
+  @@index([organizationId, status])
+  @@index([organizationId, notificationId])
+  @@index([organizationId, createdAt])
+  @@map("communications")
+}
+
+model CommunicationRecipient {
+  id              String               @id @default(uuid()) @db.Uuid
+  communicationId String               @map("communication_id") @db.Uuid
+  organizationId  String               @map("organization_id") @db.Uuid
+  recipientType   RecipientType        @map("recipient_type")
+  recipientId     String?              @map("recipient_id") @db.Uuid
+  userId          String?              @map("user_id") @db.Uuid
+  channelAddress  String?              @map("channel_address") @db.VarChar(150)
+  status          CommunicationStatus  @default(SENT) @map("status")
+  isRead          Boolean              @default(false) @map("is_read")
+  readAt          DateTime?            @map("read_at") @db.Timestamptz
+  deliveredAt     DateTime?            @map("delivered_at") @db.Timestamptz
+  failedAt        DateTime?            @map("failed_at") @db.Timestamptz
+  failureReason   String?              @map("failure_reason") @db.Text
+  createdAt       DateTime             @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt       DateTime             @default(now()) @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  communication   Communication        @relation(fields: [communicationId], references: [id], onDelete: Cascade)
+  organization    Organization         @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  user            User?                @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([communicationId])
+  @@index([organizationId, recipientId])
+  @@index([organizationId, userId])
+  @@map("communication_recipients")
+}
+
+model NotificationEventLog {
+  id             String       @id @default(uuid()) @db.Uuid
+  eventId        String       @unique @map("event_id") @db.VarChar(100) // SHA-256 or UUID
+  organizationId String       @map("organization_id") @db.Uuid
+  eventType      String       @map("event_type") @db.VarChar(80)
+  resourceType   String       @map("resource_type") @db.VarChar(60)
+  resourceId     String       @map("resource_id") @db.VarChar(60)
+  payload        Json         @map("payload")
+  processedAt    DateTime     @default(now()) @map("processed_at") @db.Timestamptz
+
+  // Relations
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, eventType])
+  @@index([organizationId, resourceType, resourceId])
+  @@map("notification_event_logs")
+}
+
+// ============================================================================
+// 13. SUPPORT & DISPUTES DOMAIN
+// ============================================================================
+
+model SupportTicket {
+  id               String               @id @default(uuid()) @db.Uuid
+  publicId         String               @map("public_id") @db.VarChar(30) // e.g. "SUP-2026-000001"
+  organizationId   String               @map("organization_id") @db.Uuid
+  createdByUserId  String?              @map("created_by_user_id") @db.Uuid
+  requesterType    SupportRequesterType @map("requester_type")
+  customerId       String?              @map("customer_id") @db.Uuid
+  providerId       String?              @map("provider_id") @db.Uuid
+  deliveryPartnerId String?             @map("delivery_partner_id") @db.Uuid
+  bookingId        String?              @map("booking_id") @db.Uuid
+  paymentId        String?              @map("payment_id") @db.Uuid
+  category         SupportCategory
+  priority         SupportPriority      @default(MEDIUM)
+  status           SupportStatus        @default(OPEN)
+  subject          String               @db.VarChar(200)
+  description      String               @db.Text
+  assignedToUserId String?              @map("assigned_to_user_id") @db.Uuid
+  resolvedAt       DateTime?            @map("resolved_at") @db.Timestamptz
+  resolutionNote   String?              @map("resolution_note") @db.Text
+  closedAt         DateTime?            @map("closed_at") @db.Timestamptz
+  createdAt        DateTime             @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt        DateTime             @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  organization     Organization         @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  createdByUser    User?                @relation("TicketCreator", fields: [createdByUserId], references: [id])
+  customer         Customer?            @relation(fields: [customerId], references: [id])
+  provider         Provider?            @relation(fields: [providerId], references: [id])
+  deliveryPartner  DeliveryPartner?     @relation(fields: [deliveryPartnerId], references: [id])
+  booking          Booking?             @relation(fields: [bookingId], references: [id])
+  payment          Payment?             @relation(fields: [paymentId], references: [id])
+  assignedToUser   User?                @relation("AssignedTickets", fields: [assignedToUserId], references: [id])
+  notes            SupportNote[]
+  messages         SupportMessage[]
+  activities       SupportTicketActivity[]
+  disputes         Dispute[]
+
+  @@unique([organizationId, publicId])
+  @@index([organizationId, status, priority])
+  @@index([organizationId, assignedToUserId])
+  @@index([organizationId, createdByUserId])
+  @@index([organizationId, customerId])
+  @@index([organizationId, providerId])
+  @@index([organizationId, deliveryPartnerId])
+  @@index([organizationId, bookingId])
+  @@index([organizationId, paymentId])
+  @@index([organizationId, createdAt])
+  @@map("support_tickets")
+}
+
+model SupportMessage {
+  id             String        @id @default(uuid()) @db.Uuid
+  publicId       String        @map("public_id") @db.VarChar(30) // e.g. "MSG-2026-000001"
+  organizationId String        @map("organization_id") @db.Uuid
+  ticketId       String        @map("ticket_id") @db.Uuid
+  senderUserId   String        @map("sender_user_id") @db.Uuid
+  message        String        @db.Text
+  isInternal     Boolean       @default(false) @map("is_internal")
+  createdAt      DateTime      @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt      DateTime      @default(now()) @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  ticket         SupportTicket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  organization   Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  senderUser     User          @relation(fields: [senderUserId], references: [id])
+
+  @@unique([organizationId, publicId])
+  @@index([ticketId, createdAt])
+  @@index([organizationId, ticketId])
+  @@index([organizationId, senderUserId])
+  @@map("support_messages")
+}
+
+model SupportNote {
+  id             String        @id @default(uuid()) @db.Uuid
+  publicId       String?       @map("public_id") @db.VarChar(30)
+  ticketId       String        @map("ticket_id") @db.Uuid
+  organizationId String        @map("organization_id") @db.Uuid
+  authorUserId   String        @map("author_user_id") @db.Uuid
+  message        String        @db.Text
+  isInternalOnly Boolean       @default(true) @map("is_internal_only")
+  createdAt      DateTime      @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt      DateTime      @default(now()) @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  ticket         SupportTicket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  organization   Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  authorUser     User          @relation(fields: [authorUserId], references: [id])
+
+  @@index([ticketId, createdAt])
+  @@index([organizationId, ticketId])
+  @@map("support_notes")
+}
+
+model SupportTicketActivity {
+  id             String        @id @default(uuid()) @db.Uuid
+  ticketId       String        @map("ticket_id") @db.Uuid
+  organizationId String        @map("organization_id") @db.Uuid
+  actorUserId    String?       @map("actor_user_id") @db.Uuid
+  action         String        @db.VarChar(100)
+  previousValue  String?       @map("previous_value") @db.Text
+  newValue       String?       @map("new_value") @db.Text
+  metadata       Json?         @map("metadata")
+  createdAt      DateTime      @default(now()) @map("created_at") @db.Timestamptz
+
+  // Relations
+  ticket         SupportTicket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  organization   Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  actorUser      User?         @relation(fields: [actorUserId], references: [id])
+
+  @@index([ticketId, createdAt])
+  @@index([organizationId, ticketId])
+  @@map("support_ticket_activities")
+}
+
+model Dispute {
+  id                String                 @id @default(uuid()) @db.Uuid
+  publicId          String                 @map("public_id") @db.VarChar(30) // e.g. "DSP-0001"
+  organizationId    String                 @map("organization_id") @db.Uuid
+  ticketId          String?                @map("ticket_id") @db.Uuid
+  bookingId         String                 @map("booking_id") @db.Uuid
+  paymentId         String?                @map("payment_id") @db.Uuid
+  createdByUserId   String?                @map("created_by_user_id") @db.Uuid
+  raisedByType      DisputeParticipantType @map("raised_by_type")
+  customerId        String?                @map("customer_id") @db.Uuid
+  providerId        String?                @map("provider_id") @db.Uuid
+  deliveryPartnerId String?                @map("delivery_partner_id") @db.Uuid
+  type              DisputeType
+  priority          SupportPriority        @default(HIGH)
+  status            DisputeStatus          @default(OPEN)
+  claimAmount       Decimal?               @map("claim_amount") @db.Decimal(12, 2)
+  resolvedAmount    Decimal?               @map("resolved_amount") @db.Decimal(12, 2)
+  currency          String                 @default("INR") @db.VarChar(10)
+  outcome           DisputeOutcome?
+  resolutionType    String?                @map("resolution_type") @db.VarChar(50)
+  resolutionNote    String?                @map("resolution_note") @db.Text
+  reason            String                 @db.VarChar(255)
+  description       String                 @db.Text
+  assignedToUserId  String?                @map("assigned_to_user_id") @db.Uuid
+  decisionReason    String?                @map("decision_reason") @db.Text
+  resolvedAt        DateTime?              @map("resolved_at") @db.Timestamptz
+  closedAt          DateTime?              @map("closed_at") @db.Timestamptz
+  createdAt         DateTime               @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt         DateTime               @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  organization      Organization           @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  ticket            SupportTicket?         @relation(fields: [ticketId], references: [id])
+  booking           Booking                @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  payment           Payment?               @relation(fields: [paymentId], references: [id])
+  createdByUser     User?                  @relation("DisputeCreator", fields: [createdByUserId], references: [id])
+  customer          Customer?              @relation(fields: [customerId], references: [id])
+  provider          Provider?              @relation(fields: [providerId], references: [id])
+  deliveryPartner   DeliveryPartner?       @relation(fields: [deliveryPartnerId], references: [id])
+  assignedToUser    User?                  @relation("AssignedDisputes", fields: [assignedToUserId], references: [id])
+  evidence          DisputeEvidence[]
+  activities        DisputeActivity[]
+  messages          DisputeMessage[]
+
+  @@unique([organizationId, publicId])
+  @@index([organizationId, status, priority])
+  @@index([organizationId, assignedToUserId])
+  @@index([organizationId, createdByUserId])
+  @@index([organizationId, bookingId])
+  @@index([organizationId, ticketId])
+  @@index([organizationId, customerId])
+  @@index([organizationId, providerId])
+  @@index([organizationId, deliveryPartnerId])
+  @@map("disputes")
+}
+
+model DisputeMessage {
+  id             String        @id @default(uuid()) @db.Uuid
+  publicId       String        @map("public_id") @db.VarChar(30)
+  organizationId String        @map("organization_id") @db.Uuid
+  disputeId      String        @map("dispute_id") @db.Uuid
+  senderUserId   String        @map("sender_user_id") @db.Uuid
+  message        String        @db.Text
+  isInternal     Boolean       @default(false) @map("is_internal")
+  createdAt      DateTime      @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt      DateTime      @default(now()) @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  dispute        Dispute       @relation(fields: [disputeId], references: [id], onDelete: Cascade)
+  organization   Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  senderUser     User          @relation(fields: [senderUserId], references: [id])
+
+  @@unique([organizationId, publicId])
+  @@index([disputeId, createdAt])
+  @@index([organizationId, disputeId])
+  @@index([organizationId, senderUserId])
+  @@map("dispute_messages")
+}
+
+model DisputeEvidence {
+  id                String       @id @default(uuid()) @db.Uuid
+  publicId          String?      @map("public_id") @db.VarChar(30)
+  disputeId         String       @map("dispute_id") @db.Uuid
+  organizationId    String       @map("organization_id") @db.Uuid
+  submittedByUserId String?      @map("submitted_by_user_id") @db.Uuid
+  title             String       @db.VarChar(150)
+  description       String?      @db.Text
+  fileUrl           String       @map("file_url") @db.Text
+  fileType          String       @map("file_type") @db.VarChar(50) // "PHOTO", "VIDEO", "DOCUMENT", "RECEIPT", "SCREENSHOT", "OTHER"
+  storageKey        String?      @map("storage_key") @db.VarChar(255)
+  mimeType          String?      @map("mime_type") @db.VarChar(100)
+  fileName          String?      @map("file_name") @db.VarChar(255)
+  fileSize          Int?         @map("file_size")
+  uploadedByType    String       @map("uploaded_by_type") @db.VarChar(30)
+  status            String       @default("SUBMITTED") @db.VarChar(30)
+  rejectionReason   String?      @map("rejection_reason") @db.Text
+  createdAt         DateTime     @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt         DateTime     @default(now()) @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  dispute           Dispute      @relation(fields: [disputeId], references: [id], onDelete: Cascade)
+  organization      Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  submittedByUser   User?        @relation(fields: [submittedByUserId], references: [id])
+
+  @@index([disputeId])
+  @@index([organizationId, disputeId])
+  @@map("dispute_evidence")
+}
+
+model DisputeActivity {
+  id             String        @id @default(uuid()) @db.Uuid
+  disputeId      String        @map("dispute_id") @db.Uuid
+  organizationId String        @map("organization_id") @db.Uuid
+  actorUserId    String?       @map("actor_user_id") @db.Uuid
+  action         String        @db.VarChar(100)
+  previousValue  String?       @map("previous_value") @db.Text
+  newValue       String?       @map("new_value") @db.Text
+  details        String?       @db.Text
+  metadata       Json?         @map("metadata")
+  createdAt      DateTime      @default(now()) @map("created_at") @db.Timestamptz
+
+  // Relations
+  dispute        Dispute       @relation(fields: [disputeId], references: [id], onDelete: Cascade)
+  organization   Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  actorUser      User?         @relation(fields: [actorUserId], references: [id])
+
+  @@index([disputeId, createdAt])
+  @@index([organizationId, disputeId])
+  @@map("dispute_activities")
+}
+
+// ============================================================================
+// 14. AUDIT DOMAIN
+// ============================================================================
+
+model AuditEvent {
+  id             String        @id @default(uuid()) @db.Uuid
+  organizationId String?       @map("organization_id") @db.Uuid
+  actorUserId    String?       @map("actor_user_id") @db.Uuid
+  action         String        @db.VarChar(100) // e.g., "CUSTOMER_PROFILE_UPDATED", "PAYMENT_REFUNDED"
+  entityType     String        @map("entity_type") @db.VarChar(60) // "Booking", "Payment", "Provider"
+  entityId       String        @map("entity_id") @db.VarChar(60)
+  metadataJson   Json?         @map("metadata_json")
+  ipHash         String?       @map("ip_hash") @db.VarChar(64)
+  createdAt      DateTime      @default(now()) @map("created_at") @db.Timestamptz
+
+  // Relations
+  organization   Organization? @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  actorUser      User?         @relation(fields: [actorUserId], references: [id])
+
+  @@index([organizationId, createdAt])
+  @@index([organizationId, entityType, entityId])
+  @@map("audit_events")
+}
+
+// ============================================================================
+// 15. ANALYTICS & EXPERIMENTATION DOMAIN (C8)
+// ============================================================================
+
+model AnalyticsEvent {
+  id             String        @id @default(uuid()) @db.Uuid
+  organizationId String        @map("organization_id") @db.Uuid
+  actorUserId    String?       @map("actor_user_id") @db.Uuid
+  actorRole      String        @map("actor_role") @db.VarChar(50)
+  sessionId      String?       @map("session_id") @db.VarChar(100)
+  eventName      String        @map("event_name") @db.VarChar(100)
+  eventCategory  String        @map("event_category") @db.VarChar(50)
+  requestId      String?       @map("request_id") @db.VarChar(100)
+  source         String        @default("web") @db.VarChar(50)
+  platform       String?       @db.VarChar(50)
+  entityType     String?       @map("entity_type") @db.VarChar(60)
+  entityId       String?       @map("entity_id") @db.VarChar(60)
+  properties     Json?         @map("properties")
+  schemaVersion  String        @default("1.0.0") @map("schema_version") @db.VarChar(20)
+  createdAt      DateTime      @default(now()) @map("created_at") @db.Timestamptz
+
+  organization   Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  actorUser      User?         @relation(fields: [actorUserId], references: [id])
+
+  @@index([organizationId, eventName, createdAt])
+  @@index([organizationId, eventCategory, createdAt])
+  @@index([organizationId, actorUserId])
+  @@map("analytics_events")
+}
+
+model Experiment {
+  id             String        @id @default(uuid()) @db.Uuid
+  organizationId String        @map("organization_id") @db.Uuid
+  key            String        @unique @db.VarChar(100)
+  name           String        @db.VarChar(150)
+  hypothesis     String        @db.Text
+  status         String        @default("DRAFT") @db.VarChar(30)
+  targetAudience String        @default("ALL") @map("target_audience") @db.VarChar(50)
+  primaryMetric  String        @map("primary_metric") @db.VarChar(100)
+  startDate      DateTime?     @map("start_date") @db.Timestamptz
+  endDate        DateTime?     @map("end_date") @db.Timestamptz
+  createdAt      DateTime      @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt      DateTime      @updatedAt @map("updated_at") @db.Timestamptz
+
+  organization   Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  variants       ExperimentVariant[]
+  assignments    ExperimentAssignment[]
+
+  @@index([organizationId, status])
+  @@map("experiments")
+}
+
+model ExperimentVariant {
+  id                String        @id @default(uuid()) @db.Uuid
+  experimentId      String        @map("experiment_id") @db.Uuid
+  key               String        @db.VarChar(50)
+  name              String        @db.VarChar(100)
+  trafficAllocation Int           @default(50) @map("traffic_allocation")
+  payloadJson       Json?         @map("payload_json")
+
+  experiment        Experiment    @relation(fields: [experimentId], references: [id], onDelete: Cascade)
+  assignments       ExperimentAssignment[]
+
+  @@unique([experimentId, key])
+  @@map("experiment_variants")
+}
+
+model ExperimentAssignment {
+  id             String            @id @default(uuid()) @db.Uuid
+  experimentId   String            @map("experiment_id") @db.Uuid
+  variantId      String            @map("variant_id") @db.Uuid
+  actorUserId    String?           @map("actor_user_id") @db.Uuid
+  anonymousId    String?           @map("anonymous_id") @db.VarChar(100)
+  assignedAt     DateTime          @default(now()) @map("assigned_at") @db.Timestamptz
+  hasExposed     Boolean           @default(false) @map("has_exposed")
+  hasConverted   Boolean           @default(false) @map("has_converted")
+
+  experiment     Experiment        @relation(fields: [experimentId], references: [id], onDelete: Cascade)
+  variant        ExperimentVariant @relation(fields: [variantId], references: [id], onDelete: Cascade)
+
+  @@index([experimentId, actorUserId])
+  @@index([experimentId, anonymousId])
+  @@map("experiment_assignments")
+}
+
+model ProductImprovement {
+  id                  String        @id @default(uuid()) @db.Uuid
+  organizationId      String        @map("organization_id") @db.Uuid
+  title               String        @db.VarChar(200)
+  problem             String        @db.Text
+  evidence            String        @db.Text
+  hypothesis          String        @db.Text
+  proposedChange      String        @map("proposed_change") @db.Text
+  expectedImpact      String        @map("expected_impact") @db.VarChar(100)
+  priority            String        @default("MEDIUM") @db.VarChar(20)
+  status              String        @default("IDEA") @db.VarChar(30)
+  owner               String        @db.VarChar(100)
+  linkedKpi           String?       @map("linked_kpi") @db.VarChar(100)
+  linkedExperimentKey String?       @map("linked_experiment_key") @db.VarChar(100)
+  decision            String?       @db.Text
+  createdAt           DateTime      @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt           DateTime      @updatedAt @map("updated_at") @db.Timestamptz
+
+  organization        Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, status])
+  @@map("product_improvements")
+}
+

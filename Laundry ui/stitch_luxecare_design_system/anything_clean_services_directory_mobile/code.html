@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anything Clean - Mobile Services Directory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary": "#303032",
+                      "tertiary": "#c8c6c8",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "secondary-fixed": "#e5e1e4",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "on-secondary-fixed-variant": "#474649",
+                      "error-container": "#93000a",
+                      "on-secondary": "#303032",
+                      "on-background": "#e5e2e3",
+                      "surface": "#131314",
+                      "on-tertiary-container": "#e3e0e2",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "on-primary-container": "#eed9ff",
+                      "secondary": "#c8c6c8",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "outline-variant": "#4c4354",
+                      "secondary-container": "#474649",
+                      "tertiary-fixed": "#e4e2e4",
+                      "primary": "#dcb8ff",
+                      "surface-variant": "#353436",
+                      "inverse-surface": "#e5e2e3",
+                      "primary-container": "#8a2be2",
+                      "error": "#ffb4ab",
+                      "surface-container-lowest": "#0e0e0f",
+                      "surface-container-high": "#2a2a2b",
+                      "on-primary-fixed": "#2c0051",
+                      "outline": "#988ca0",
+                      "surface-bright": "#3a393a",
+                      "surface-dim": "#131314",
+                      "on-error": "#690005",
+                      "on-surface-variant": "#cfc2d7",
+                      "on-secondary-container": "#b7b4b7",
+                      "on-surface": "#e5e2e3",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "surface-tint": "#dcb8ff",
+                      "primary-fixed": "#efdbff",
+                      "tertiary-container": "#646365",
+                      "surface-container-highest": "#353436",
+                      "on-primary": "#480081",
+                      "surface-container-low": "#1c1b1c",
+                      "on-tertiary-fixed-variant": "#474649",
+                      "surface-container": "#201f20",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "inverse-primary": "#8422dc",
+                      "on-error-container": "#ffdad6",
+                      "background": "#131314",
+                      "inverse-on-surface": "#313031"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "2xl": "48px",
+                      "3xl": "64px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "lg": "24px",
+                      "xl": "32px",
+                      "md": "16px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "display-lg-mobile": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "44px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col font-body-md pb-24">
+<!-- Header / Search -->
+<header class="sticky top-0 z-40 bg-surface/80 backdrop-blur-xl border-b border-white/5 pt-md pb-sm px-md">
+<div class="flex items-center justify-between mb-md">
+<h1 class="font-headline-md text-headline-md text-primary font-bold tracking-tight">Anything Clean</h1>
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden flex-shrink-0 border border-white/10">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A sophisticated, high-end profile portrait of a user in a dark theme interface. Subtle violet ambient lighting reflects on their features, maintaining a premium, trustworthy look against a minimal background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7lmO3QpDNMrNYMoswlvtAM3iggb0xDQjnYeKfj93XmKdN1wTkH_skaR-8ZVCEQJEvGlz4_LoSHBqealfOUenAAuT7tebNZgp_JsHgEVWJud2wW1szr03YLeW-51N6WFkCw5Id3p1yHuzZNm2xMRloz9b9Tb6iB5nfBZsc7srdlYksIIduXyp9KBC_C1RPsc2knUcWItsp8A7erNfqFt8paRd-6su9_1xH8m-l4wKWbmhv2eQP6j6R2Q"/>
+</div>
+</div>
+<div class="relative w-full">
+<span aria-hidden="true" class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant z-10 p-sm" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-lg py-md pl-3xl pr-md text-body-md focus:ring-1 focus:ring-primary focus:bg-surface-container transition-colors text-on-surface placeholder:text-on-surface-variant" placeholder="What needs cleaning today?" type="text"/>
+<span aria-hidden="true" class="material-symbols-outlined absolute right-sm top-1/2 -translate-y-1/2 text-primary z-10 p-sm cursor-pointer" data-icon="mic">mic</span>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 px-md pt-lg pb-2xl max-w-lg mx-auto w-full md:hidden">
+<!-- Hero Offer -->
+<section class="mb-xl relative rounded-xl overflow-hidden h-40 shadow-sm border border-white/5 bg-surface-container">
+<img alt="Promo background" class="absolute inset-0 w-full h-full object-cover opacity-60" data-alt="A dynamic, wide-angle shot of a luxurious, impeccably clean living space with subtle deep violet LED accent lighting. The scene is immaculate, showcasing the high-end result of premium cleaning services, with rich dark tones contrasting against crisp, sparkling surfaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXcVUC5b4IKsqCrJh0v6m1zHAhlHiW14ew1s8rGZyWm2S4UpdqdBVAVDUfDyMBlduxhX3CYGmHLR6mq197GmOTdn29lpKQt7re3Hjx5bI29puGeXwhRbQVxoIiT9uL-aOb4ORWCHQKw3l97dzqXqs-EuZvGP_HjOEDTrMjLGznpEFfOGbtWC5FyJrbiU37LiHwJGvyZFOJSBjT4nV3E5g4QqPf2ujOkKm0yg-iE7lWW1qy0CygzR3f2g"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background/90 to-transparent p-lg flex flex-col justify-center">
+<h2 class="font-headline-md text-headline-md text-white font-bold mb-xs">Spring Renewal</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Get 20% off whole-home deep cleaning.</p>
+<button class="bg-primary text-on-primary font-label-md text-label-md-mobile px-md py-sm rounded-lg w-fit transition-transform active:scale-95">Book Now</button>
+</div>
+</section>
+<!-- Category Grid -->
+<h3 class="font-headline-md text-headline-md text-on-surface mb-md">Our Services</h3>
+<div class="grid grid-cols-2 gap-md">
+<!-- Card 1 -->
+<a class="group relative rounded-xl overflow-hidden aspect-square border border-white/5 bg-surface-container hover:border-primary/50 transition-all block" href="#">
+<img alt="Clothing care" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-500" data-alt="Close-up macro shot of premium fabric care. Neatly folded, high-quality textiles with a subtle soft-focus background in deep dark mode tones. A hint of sophisticated violet lighting grazes the edges of the fabric." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJBWaKdStH3z6ELkAx4G9I0wKwvm-Hqpc8MuHrLeUzUFVU0JUX-l5m1VktTLyLiU7vOef2T3GazkrhCjpfcTl-0Q-KnHuIj6i7-qPDQcZ2WaZu-zmxIe2_u4E2iPFxW4RuJwKXDFWz_Y5ChMh6dTv2uPKDO2q0iVRLnDqwUgoy9qm8Wz9ZRJIqOnuSGz9JRMlhLsQf1iL9Nv785LC5QYq53IsaarW3s6fWtonP3z33r9DMh9khAcQP3g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-md w-full">
+<h4 class="font-headline-md text-headline-md text-white mb-xs">Clothing</h4>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-1">Dry cleaning &amp; mending</p>
+</div>
+</a>
+<!-- Card 2 -->
+<a class="group relative rounded-xl overflow-hidden aspect-square border border-white/5 bg-surface-container hover:border-primary/50 transition-all block" href="#">
+<img alt="Auto detailing" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-500" data-alt="A gleaming, high-end luxury vehicle parked in a minimalist, dark studio environment. The car's surface is polished to a mirror finish, reflecting a faint, elegant purple neon light, emphasizing premium detailing services." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT8z5pyVxNQSKbUdZ-1BPshFg9z92UcDjEKPUB6YJcFGa4QP-1q10zIvJFNWzUqDwSf1TiPJCEeOG82hZ3Jr590V3xqc1sAkjKyIDQe_XhtjT0Le1ukFU72UPBMOA1S6LvJe45oXbbuefObQoikRCHHq1G3snkdDa4XL8cS0a_W7mgumUt_04F70EnmqlO-r6RVR5p8A5XElxty6XJCjSiA0My99J5a4HSWyOKW34VBY-W-AVXxe-GXQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-md w-full">
+<h4 class="font-headline-md text-headline-md text-white mb-xs">Vehicles</h4>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-1">Interior &amp; exterior</p>
+</div>
+</a>
+<!-- Card 3 -->
+<a class="group relative rounded-xl overflow-hidden aspect-square border border-white/5 bg-surface-container hover:border-primary/50 transition-all block" href="#">
+<img alt="Home cleaning" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-500" data-alt="An immaculate, modern living room interior shot at dusk. Dark, rich wood tones and minimalist furniture are highlighted by strategic, warm yet slightly violet-tinted accent lighting, showcasing residential cleaning excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBARyQWbisr3bOA1sIQrBVuWWgMCDH6VyXN_Irx1FHY6uQjdpqXuxhKaUhnoYfRNB4TAEp_BlZoGVircMxwWJYU5SS-w9OV-sE7B9EirPG2Ouur7WbzsYZW20xWbY7XjBhI4XQtV9v33Fxk6h7nFH4nNJEbGEQdFlE8WHpP3vEB3i256PKnJnlPtyCTKrL2KGoyTsPjlJWJJzlCMmvQoM3I3GG8JM8u7U6pmfFQ65HienQalPog57s6pA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-md w-full">
+<h4 class="font-headline-md text-headline-md text-white mb-xs">Home</h4>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-1">Deep &amp; recurring</p>
+</div>
+</a>
+<!-- Card 4 -->
+<a class="group relative rounded-xl overflow-hidden aspect-square border border-white/5 bg-surface-container hover:border-primary/50 transition-all block" href="#">
+<img alt="Shoe shine" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-500" data-alt="A row of premium leather shoes, expertly shined and arranged on a dark slate surface. The lighting is dramatic and moody, emphasizing the rich textures and expert craftsmanship of shoe restoration services." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwC43BOvAZxv2LCyKGCXIbKcLoccyKPUoi8mXy6O6s6wLeEaAtAnSm6LxyYFUSlkBsFMMVthAFE310Bq0sZGiiL4OZ00Vxz_ZQmxEIOssVcPIM31B_XtBYXs1b5dbdqlw70HvBcp-kKm8d1SjydTda7j7HzKK777dBkiuaNJcVsovUzA7442nTo4-Yb5xl-Imbe3gSW52WtiGjbZdrrO73lre9cjzFjlvQ1m1gBBtoDdeSOSmQbStOeQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-md w-full">
+<h4 class="font-headline-md text-headline-md text-white mb-xs">Shoes</h4>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-1">Shine &amp; repair</p>
+</div>
+</a>
+<!-- Card 5 -->
+<a class="group relative rounded-xl overflow-hidden aspect-square border border-white/5 bg-surface-container hover:border-primary/50 transition-all block" href="#">
+<img alt="Office cleaning" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-500" data-alt="A sleek, modern commercial office space at night, with pristine glass walls and spotless floors reflecting subtle ambient lighting. The atmosphere is professional, sterile yet inviting, perfect for corporate cleaning." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7YoP518UUfofOe-nx1e2JKMFzmybwNpYI8I9-tK9tnUhDWzi6bS1F5q7fvhegD_bXhwIDtEm7teYpA73qJM8zi4slT4RxPDg_4-vlnTnlDsmsva10MTwiC91_BYBKK1nj9yS5-V2laNdGqqOoXAHdTLnkbK6nkJRJoLNVG76hqr7Nn52o7AuJA_e4QgzYCed1sw0lqLjY7enRV7ivOIPV7j3G-91DKfw5y1D3UBcYxhR__kAXTLUtrg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-md w-full">
+<h4 class="font-headline-md text-headline-md text-white mb-xs">Office</h4>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-1">Commercial spaces</p>
+</div>
+</a>
+<!-- Card 6 -->
+<a class="group relative rounded-xl overflow-hidden aspect-square border border-white/5 bg-surface-container hover:border-primary/50 transition-all block flex items-center justify-center bg-surface-container-low" href="#">
+<div class="flex flex-col items-center justify-center p-md text-center">
+<span aria-hidden="true" class="material-symbols-outlined text-primary mb-sm text-3xl" data-icon="widgets">widgets</span>
+<h4 class="font-headline-md text-headline-md text-white mb-xs text-lg">All Services</h4>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-1">View full directory</p>
+</div>
+</a>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden bg-surface-container/90 backdrop-blur-lg fixed bottom-0 w-full z-50 rounded-t-xl shadow-[0_-4px_20px_rgba(138,43,226,0.1)] border-t border-white/10 flex justify-around items-center h-20 pb-safe px-md">
+<a class="flex flex-col items-center justify-center text-primary font-label-md text-label-md-mobile active:bg-primary-container/20 tap-highlight-transparent p-sm rounded-lg transition-colors" href="#">
+<span aria-hidden="true" class="material-symbols-outlined mb-xs" data-icon="search" data-weight="fill" style="font-variation-settings: 'FILL' 1;">search</span>
+<span>Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-label-md text-label-md-mobile active:bg-primary-container/20 tap-highlight-transparent p-sm rounded-lg transition-colors" href="#">
+<span aria-hidden="true" class="material-symbols-outlined mb-xs" data-icon="calendar_today">calendar_today</span>
+<span>Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-label-md text-label-md-mobile active:bg-primary-container/20 tap-highlight-transparent p-sm rounded-lg transition-colors" href="#">
+<span aria-hidden="true" class="material-symbols-outlined mb-xs relative" data-icon="chat">
+                chat
+                <span class="absolute -top-1 -right-1 w-2 h-2 bg-error rounded-full"></span>
+</span>
+<span>Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-label-md text-label-md-mobile active:bg-primary-container/20 tap-highlight-transparent p-sm rounded-lg transition-colors" href="#">
+<span aria-hidden="true" class="material-symbols-outlined mb-xs" data-icon="person">person</span>
+<span>Profile</span>
+</a>
+</nav>
+</body></html>

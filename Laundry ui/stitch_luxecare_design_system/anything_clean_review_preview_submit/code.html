@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Review Your Feedback</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#131314",
+                        "on-error": "#690005",
+                        "primary": "#dcb8ff",
+                        "tertiary-container": "#646365",
+                        "inverse-primary": "#8422dc",
+                        "on-surface": "#e5e2e3",
+                        "error-container": "#93000a",
+                        "surface-container-high": "#2a2a2b",
+                        "on-secondary-container": "#b9b8ba",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "secondary-container": "#49494b",
+                        "outline-variant": "#4c4354",
+                        "electric-violet": "#8a2be2",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "secondary-fixed": "#e4e2e4",
+                        "primary-container": "#8a2be2",
+                        "on-primary": "#480081",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-dim": "#131314",
+                        "error-red": "#ffb4ab",
+                        "on-tertiary-container": "#e3e0e2",
+                        "outline": "#988ca0",
+                        "on-tertiary": "#303032",
+                        "on-background": "#e5e2e3",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-surface-variant": "#cfc2d7",
+                        "success-green": "#81C784",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "primary-fixed": "#efdbff",
+                        "surface-bright": "#39393a",
+                        "background": "#131314",
+                        "inverse-on-surface": "#313031",
+                        "surface-tint": "#dcb8ff",
+                        "on-secondary-fixed-variant": "#474648",
+                        "surface-variant": "#353436",
+                        "surface-container": "#201f20",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "tertiary": "#c8c6c8",
+                        "on-primary-container": "#eed9ff",
+                        "on-error-container": "#ffdad6",
+                        "success-bg": "#1A3D24",
+                        "on-secondary": "#303032",
+                        "secondary": "#c8c6c8",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-container-highest": "#353436",
+                        "tertiary-fixed": "#e4e2e4",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-primary-fixed": "#2c0051",
+                        "on-tertiary-fixed": "#1b1b1d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "2xl": "48px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "3xl": "64px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "caption": ["Geist"],
+                        "body-md": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "h1": ["Geist"],
+                        "h3": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "label-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-400-normal.woff2') format('woff2');
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-500-normal.woff2') format('woff2');
+            font-weight: 500;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-600-normal.woff2') format('woff2');
+            font-weight: 600;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-700-normal.woff2') format('woff2');
+            font-weight: 700;
+        }
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<div class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30">
+<div class="flex items-center justify-between px-xl w-full max-w-[1200px] mx-auto h-16">
+<div class="flex items-center gap-sm">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-sm">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="font-h3 text-h3 font-bold text-electric-violet">Lumina Marketplace</div>
+</div>
+</div>
+</div>
+<main class="pt-24 pb-xl px-md md:px-xl max-w-[800px] mx-auto">
+<div class="mb-lg">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-sm">Review Your Feedback</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Check your review before submitting.</p>
+</div>
+<div class="space-y-lg">
+<!-- Service Summary -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+<div class="flex justify-between items-start mb-md">
+<div>
+<h3 class="font-h3 text-h3 text-on-surface mb-xs">Sneaker Deep Clean</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">Order #98234 - Completed Oct 12</p>
+</div>
+</div>
+</div>
+<!-- Ratings Section -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg relative group">
+<button class="absolute top-md right-md text-on-surface-variant hover:text-primary transition-colors p-sm rounded-full hover:bg-surface-variant/50">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<h4 class="font-label-md text-label-md text-on-surface mb-md">Ratings</h4>
+<div class="space-y-md">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Overall Quality</span>
+<div class="flex gap-xs text-electric-violet">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Communication</span>
+<div class="flex gap-xs text-electric-violet">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-outline-variant" data-icon="star">star</span>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Timeliness</span>
+<div class="flex gap-xs text-electric-violet">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Written Review & Tags -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg relative group">
+<button class="absolute top-md right-md text-on-surface-variant hover:text-primary transition-colors p-sm rounded-full hover:bg-surface-variant/50">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<h4 class="font-label-md text-label-md text-on-surface mb-md">Written Review</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">
+                    Incredible attention to detail! They managed to get out stains I thought were permanent. The suede looks brand new again. Highly recommend their premium deep clean service.
+                </p>
+<div class="flex flex-wrap gap-sm">
+<span class="px-md py-xs rounded-full border border-primary/30 bg-primary/10 text-primary font-caption text-caption">Exceptional Detail</span>
+<span class="px-md py-xs rounded-full border border-primary/30 bg-primary/10 text-primary font-caption text-caption">Fast Turnaround</span>
+</div>
+</div>
+<!-- Photos -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg relative group">
+<button class="absolute top-md right-md text-on-surface-variant hover:text-primary transition-colors p-sm rounded-full hover:bg-surface-variant/50">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<h4 class="font-label-md text-label-md text-on-surface mb-md">Photos</h4>
+<div class="grid grid-cols-3 sm:grid-cols-4 gap-md">
+<div class="aspect-square rounded-lg overflow-hidden border border-outline-variant/20 relative group/photo">
+<img class="w-full h-full object-cover" data-alt="Close up of a freshly cleaned white sneaker with premium suede detailing resting on a dark polished surface under dramatic studio lighting highlighting the pristine texture. Corporate modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_TQLw2Y4uVQzMrfbwgRgSYnVPBHCls5MfAwRP19AN-DmQxAeOjuMbd9cHUJKePqMNtZ_1Unn3t9FF4y7enZPgDpfpakurs63QEihc7527cK7SwQu4dru5naWBZKzfb9SNP_9uFjgTXKDl4jH88Bod47lWEBSOthj4kvnw1B5nIGOWZWKIt-trjNy8eFJCDTex16b0WY4aA2NJpLNNbT8nsxXlkSL_SjvKN_vVfwOWE1tkOkJ4se7P4w"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden border border-outline-variant/20 relative group/photo">
+<img class="w-full h-full object-cover" data-alt="Macro shot of the sole of a sneaker showing no dirt, perfectly clean ridges and patterns, set against a deep midnight background with subtle violet edge lighting. High contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcG_O1oDBcZUvRn3JJavA--MX_tSitYPhrjmk1xPNwNwS0rLL4kh3_xnHtoz97nQSA9Yrh52AoCMxN9Z4eyb7UvEBT9UglRfpZtmIjp4sSRkdTt44SljfQjtJAbOsE4idixmzsd--qFsyVElsg1s2qYifpboqWCrqwZFtd-3udg1oug-azWIjbs6SqH8h-nZxCHcsThm99CoNIuoLeKrCObQTMSVwEdB7CeUgxV0ezHcKXIscIbpPEvw"/>
+</div>
+</div>
+</div>
+<!-- Visibility Notice -->
+<div class="flex items-start gap-md p-md bg-surface-container-low rounded-lg border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary mt-xs" data-icon="info">info</span>
+<p class="font-caption text-caption text-on-surface-variant">
+                    Your review will be public and visible to other users on the vendor's profile. Your name will be displayed as configured in your privacy settings.
+                </p>
+</div>
+<!-- Actions -->
+<div class="flex justify-end gap-md pt-md">
+<button class="px-xl py-md rounded-lg font-label-md text-label-md font-bold text-on-surface-variant hover:bg-surface-container transition-colors border border-outline-variant">
+                    Cancel
+                </button>
+<button class="px-xl py-md rounded-lg font-label-md text-label-md font-bold text-white bg-electric-violet hover:bg-primary-container shadow-lg shadow-electric-violet/20 hover:shadow-electric-violet/40 transition-all active:scale-95">
+                    Submit Review
+                </button>
+</div>
+</div>
+</main>
+</body></html>

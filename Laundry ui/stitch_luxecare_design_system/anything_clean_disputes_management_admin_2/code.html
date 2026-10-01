@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumina Control - Disputes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#988ca0",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-secondary-container": "#b9b8ba",
+                        "on-primary-container": "#eed9ff",
+                        "on-tertiary-container": "#e3e0e2",
+                        "surface-dim": "#131314",
+                        "background": "#131314",
+                        "inverse-surface": "#e5e2e3",
+                        "on-surface": "#e5e2e3",
+                        "on-primary-fixed": "#2c0051",
+                        "on-secondary-fixed-variant": "#474648",
+                        "surface-container-highest": "#353436",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-tertiary": "#303032",
+                        "surface-container-high": "#2a2a2b",
+                        "primary": "#dcb8ff",
+                        "surface-container": "#201f20",
+                        "on-surface-variant": "#cfc2d7",
+                        "secondary": "#c8c6c8",
+                        "on-error": "#690005",
+                        "inverse-primary": "#8422dc",
+                        "error-red": "#ffb4ab",
+                        "on-background": "#e5e2e3",
+                        "tertiary-container": "#646365",
+                        "primary-fixed": "#efdbff",
+                        "outline-variant": "#4c4354",
+                        "success-green": "#81C784",
+                        "on-secondary": "#303032",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "tertiary-fixed": "#e4e2e4",
+                        "secondary-fixed": "#e4e2e4",
+                        "primary-container": "#8a2be2",
+                        "surface-container-low": "#1c1b1c",
+                        "error": "#ffb4ab",
+                        "tertiary": "#c8c6c8",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#353436",
+                        "secondary-container": "#49494b",
+                        "error-container": "#93000a",
+                        "surface": "#131314",
+                        "surface-bright": "#39393a",
+                        "electric-violet": "#8a2be2",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-tint": "#dcb8ff",
+                        "on-primary": "#480081",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "inverse-on-surface": "#313031",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "success-bg": "#1A3D24"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "sm": "8px",
+                        "2xl": "48px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "3xl": "64px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Geist"],
+                        "h3": ["Geist"],
+                        "body-md": ["Geist"],
+                        "caption": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "label-md": ["Geist"],
+                        "h1": ["Geist"],
+                        "headline-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 left-64 h-16 bg-surface/80 dark:bg-surface/80 text-electric-violet dark:text-primary font-label-md text-label-md backdrop-blur-md border-b border-outline-variant/30 z-40 flex justify-between items-center px-xl w-[calc(100%-16rem)]">
+<div class="flex items-center gap-md">
+<span class="font-h3 text-h3 text-on-surface">Lumina Control</span>
+</div>
+<div class="flex items-center gap-lg">
+<div class="relative bg-surface-container-low border border-outline-variant/50 rounded-full flex items-center px-md py-xs focus-within:ring-1 focus-within:ring-primary focus-within:border-primary transition-all text-on-surface-variant h-10 w-64">
+<span class="material-symbols-outlined text-[20px] mr-sm">search</span>
+<input class="bg-transparent border-none outline-none text-body-md w-full placeholder-on-surface-variant/50 text-on-surface" placeholder="Search..." type="text"/>
+</div>
+<div class="flex items-center gap-md">
+<button aria-label="Notifications" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button aria-label="Help" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<div class="flex items-center gap-sm cursor-pointer hover:bg-surface-container p-xs rounded-full transition-all">
+<img alt="Admin User Avatar" class="w-8 h-8 rounded-full object-cover" data-alt="A small, circular avatar image showing a professional headshot of an administrative user. High key lighting, clean corporate style, deep black background with soft rim light, 8k resolution, photorealistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnIYaOi_3IoC7AVaRE6uKa1-HMAIzzF0OpS0DuNx2fvDPKAia4a-KpSdEitW3WLh6XgobPbrgyeUFMrN_CVkeKtIht_xeHHWPYnv2WoSlHpZOCZE-RdTYegr_RQNCi06S0UWCTpTy87myx2wR-ZKmFSSStyu_-VFZ2bv4EqIXlhUrHCkqicr6blZuCTsbR0HGDQ4WAyujKSPEH1ZFpxxRA7mh5VI8KWk1KvTtSo0I6nMsMOuDg1fI4UA"/>
+<span class="text-on-surface hidden md:block">Admin Profile</span>
+</div>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="w-64 h-screen fixed left-0 top-0 bg-surface-container-low dark:bg-surface-container-low text-electric-violet dark:text-primary font-body-md text-body-md border-r border-outline-variant/30 z-50 flex flex-col h-full py-lg px-md">
+<div class="mb-xl px-sm flex flex-col items-start">
+<div class="flex items-center gap-md mb-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center overflow-hidden border border-outline-variant/30">
+<img alt="Lumina Admin Profile" class="w-full h-full object-cover" data-alt="A stylized geometric logo featuring a glowing electric violet prism shape against a pitch black background, sleek and modern corporate branding design, high contrast, crisp edges." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfVCLoo8BTt8f6JZFJK2OICCy8PuAsAiRwUZNWOvC6Zy06nbsZ16IIQndQsgCrUr1duwhfMFzgngGVobI8Vxwr4ArY9QgRF1NzgfriHKaFWt-wiGiX-SBa-oiiBzNgeMdsz9etYvmJok5ktORMnKk7D-7ZNYt2Ld1Zt6NneHnS-yH2LqUzVWR1QGVlZuye2sg6VrLME0h5J6IN5xNKebmfmT_Sh_yjKQBZUbC9WQU0UHTqfG95gTt4-A"/>
+</div>
+<div>
+<h2 class="font-h1 text-h1 text-electric-violet dark:text-primary tracking-tight">Lumina</h2>
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">Service Marketplace</p>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-sm px-md rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-fixed transition-colors flex items-center justify-center gap-sm mt-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                New Report
+            </button>
+</div>
+<div class="flex-1 overflow-y-auto space-y-xs">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors" data-icon="shopping_cart">shopping_cart</span>
+<span>Orders</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors" data-icon="group">group</span>
+<span>Providers</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors" data-icon="person">person</span>
+<span>Customers</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors" data-icon="verified_user">verified_user</span>
+<span>Verification</span>
+</a>
+<!-- Active State -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-primary-container/10 text-primary font-bold duration-200 ease-in-out relative" href="#">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-primary rounded-r-full"></div>
+<span class="material-symbols-outlined text-[20px]" data-icon="gavel" style="font-variation-settings: 'FILL' 1;">gavel</span>
+<span>Disputes</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors" data-icon="payments">payments</span>
+<span>Refunds</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors" data-icon="receipt_long">receipt_long</span>
+<span>Payments</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors" data-icon="local_shipping">local_shipping</span>
+<span>Logistics</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors" data-icon="leaderboard">leaderboard</span>
+<span>Analytics</span>
+</a>
+</div>
+<div class="mt-auto pt-md border-t border-outline-variant/30">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="ml-64 pt-16 min-h-screen bg-background">
+<div class="max-w-[1200px] mx-auto p-xl">
+<!-- Breadcrumbs & Header -->
+<div class="mb-lg">
+<div class="flex items-center gap-xs font-caption text-caption text-on-surface-variant mb-sm">
+<a class="hover:text-primary transition-colors" href="#">Disputes</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface">DSP-20260902-0018</span>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Case Investigation</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Resolution workspace for active issues.</p>
+</div>
+<div class="flex gap-sm">
+<div class="flex items-center gap-xs bg-surface-container border border-outline-variant/30 rounded-lg px-md py-sm">
+<div class="w-2 h-2 rounded-full bg-error-red"></div>
+<span class="font-label-md text-label-md text-on-surface">3 Open</span>
+</div>
+<div class="flex items-center gap-xs bg-surface-container border border-outline-variant/30 rounded-lg px-md py-sm">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="font-label-md text-label-md text-on-surface">2 Review</span>
+</div>
+<div class="flex items-center gap-xs bg-surface-container border border-outline-variant/30 rounded-lg px-md py-sm">
+<div class="w-2 h-2 rounded-full bg-success-green"></div>
+<span class="font-label-md text-label-md text-on-surface">14 Resolved</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-md">
+<!-- Left Column: Case Details & Evidence (8 cols) -->
+<div class="col-span-8 flex flex-col gap-md">
+<!-- Case Header Card -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-error-red"></div>
+<div class="flex justify-between items-start mb-md">
+<div>
+<div class="flex items-center gap-sm mb-xs">
+<span class="font-mono-display text-mono-display text-primary">DSP-20260902-0018</span>
+<span class="px-sm py-xs bg-error-container/10 border border-error-red/30 text-error-red rounded-full font-caption text-caption font-bold tracking-wider uppercase">Open</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Linked Order: <a class="text-primary hover:underline" href="#">QH-20260902-1041</a></p>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md text-on-surface block">Type: Service Quality</span>
+<span class="font-caption text-caption text-on-surface-variant">Opened 2 hrs ago</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-md border border-outline-variant/10">
+<h3 class="font-label-md text-label-md text-on-surface mb-xs flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px] text-error-red">campaign</span>
+                                Customer Complaint
+                            </h3>
+<p class="font-body-md text-body-md text-on-surface italic">"Item was not cleaned as expected. There are still noticeable stains on the upholstery that were promised to be removed during the premium detailing service."</p>
+</div>
+</div>
+<!-- Evidence Section -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg">
+<h2 class="font-h3 text-h3 text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-[24px] text-primary">perm_media</span>
+                            Evidence Gallery
+                        </h2>
+<div class="grid grid-cols-3 gap-sm">
+<!-- Photo Before -->
+<div class="relative group cursor-pointer rounded-lg overflow-hidden border border-outline-variant/30 h-48">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Close up shot of dirty car interior upholstery before cleaning, showing visible dark stains on grey fabric, harsh overhead lighting, unedited documentary style photo, highly detailed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5boZBLE2t9uCf0D-ibQVrCJ-IeFPHjnC3UEQBvA-NKLHKKYlIbfHAtLE52W1PP24wheMW_zzs_ppWJkL5lDCVK6s5XXj-ul54tWu2yC18vLTCFTAqeD47jGGFJGwbwpZmq3_MXSE28QNX-gJsnAwSg5ls6BIw4b3UCaq2pXmlKDgPhMeQuVSwvDm0A2NPBWyX-osgV1WiFM5rPOPLxyNx96jtp-PehRBtTjizqgVp8KyjQIBbBJKyug"/>
+<div class="absolute bottom-0 left-0 right-0 bg-surface-dim/80 backdrop-blur-sm p-sm">
+<span class="font-caption text-caption text-on-surface block">Before Service</span>
+</div>
+</div>
+<!-- Photo During -->
+<div class="relative group cursor-pointer rounded-lg overflow-hidden border border-outline-variant/30 h-48">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Action shot of a worker using a steam cleaner on car upholstery, hazy atmosphere from steam, dramatic side lighting highlighting the water droplets, industrial aesthetic, sharp focus on the tool." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKgjcARZDJWfPjkTJl1BdTj7eooDshxhevfFGoDLRZINYcIGIFHuJHomKr4Ca84j48t5_owecuUyF5HcXUJMo8XVMB0i7Lhe7gIvcSZEEYioCBw97H9wXYyBUOAUDcFPxaAblKxEzkbFIf4I1E1D7DeqAwokDIxfFGNZgeGx13QHlYFXYiSW8uDq972eEJOBFpaJEpeBRK3nTKbLko_QlfIk47IJHIAu8jtXXLfl_KpPQHZDMkUPTxlg"/>
+<div class="absolute bottom-0 left-0 right-0 bg-surface-dim/80 backdrop-blur-sm p-sm">
+<span class="font-caption text-caption text-on-surface block">During Service</span>
+</div>
+</div>
+<!-- Photo Final (Disputed) -->
+<div class="relative group cursor-pointer rounded-lg overflow-hidden border border-error-red/50 h-48">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Close up shot of allegedly cleaned car interior upholstery showing lingering faint stains on grey fabric, clear bright lighting to show imperfections, evidence photo style, highly detailed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNcYxcIw4z8M2OQ3ofVjddmSy7IcjfRDrGBX19Wb9oLjyrVt8xY6Rf0dUWhCaah3KO0m1X-s9wOCOyOm3XuZ1VRCDgikht1PdyIz2JZXjP3RVVOoReRrhqbgTg3U9AzafnIk27T1UYxOxE-X_mzY3zCC0KojlEprAYWVtURnNtDebqLtmohqwnX8XqH01i1iwJImdGnWTuG7qEiBQpaONRW1tT_RlVg5AtJswTpzaa_eDQ6Yv1TXLLGw"/>
+<div class="absolute top-sm right-sm bg-error-red text-on-error rounded-full p-xs flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[16px]">priority_high</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 bg-error-container/90 backdrop-blur-sm p-sm">
+<span class="font-caption text-caption text-error-red block font-bold">Customer Upload (Final)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Communication Timeline -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg flex-1">
+<h2 class="font-h3 text-h3 text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-[24px] text-primary">forum</span>
+                            Messages & Timeline
+                        </h2>
+<div class="relative pl-lg border-l border-outline-variant/30 space-y-lg py-sm">
+<!-- Event 1 -->
+<div class="relative">
+<div class="absolute -left-[37px] w-4 h-4 rounded-full bg-surface-container border-2 border-primary mt-1"></div>
+<div class="font-caption text-caption text-on-surface-variant mb-xs">Today, 10:41 AM</div>
+<div class="bg-surface-container-low p-md rounded-lg rounded-tl-none border border-outline-variant/10">
+<span class="font-label-md text-label-md text-on-surface block mb-xs">System</span>
+<p class="font-body-md text-body-md text-on-surface-variant">Order QH-20260902-1041 marked as complete by provider.</p>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="relative">
+<div class="absolute -left-[37px] w-4 h-4 rounded-full bg-surface-container border-2 border-error-red mt-1"></div>
+<div class="font-caption text-caption text-on-surface-variant mb-xs">Today, 11:15 AM</div>
+<div class="bg-error-container/5 p-md rounded-lg rounded-tl-none border border-error-red/20">
+<span class="font-label-md text-label-md text-error-red block mb-xs flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">person</span>
+                                        Customer (Sarah J.)
+                                    </span>
+<p class="font-body-md text-body-md text-on-surface">Opened dispute. Uploaded 1 photo. Reason: Service Quality.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Actions & Internal (4 cols) -->
+<div class="col-span-4 flex flex-col gap-md">
+<!-- Action Panel -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg shadow-lg shadow-black/50">
+<h2 class="font-h3 text-h3 text-on-surface mb-md">Resolution Actions</h2>
+<div class="flex flex-col gap-sm">
+<button class="w-full bg-surface-container-low border border-primary/50 text-primary hover:bg-primary hover:text-on-primary font-label-md text-label-md py-sm px-md rounded-lg transition-all duration-200 flex items-center justify-between group">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+                                    Approve Full Refund
+                                </div>
+<span class="font-mono-display text-[14px]">$120.00</span>
+</button>
+<button class="w-full bg-surface-container-low border border-outline-variant/50 text-on-surface hover:bg-surface-container-highest font-label-md text-label-md py-sm px-md rounded-lg transition-all duration-200 flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-[20px]">pie_chart</span>
+                                    Issue Partial Refund
+                                </div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">chevron_right</span>
+</button>
+<button class="w-full bg-surface-container-low border border-outline-variant/50 text-on-surface hover:bg-surface-container-highest font-label-md text-label-md py-sm px-md rounded-lg transition-all duration-200 flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-[20px]">find_in_page</span>
+                                    Request More Evidence
+                                </div>
+</button>
+<div class="h-px bg-outline-variant/30 my-sm"></div>
+<button class="w-full bg-transparent border border-error-red/50 text-error-red hover:bg-error-red/10 font-label-md text-label-md py-sm px-md rounded-lg transition-all duration-200 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[20px]">block</span>
+                                Reject Dispute
+                            </button>
+</div>
+</div>
+<!-- Internal Notes -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg flex-1 flex flex-col">
+<h2 class="font-h3 text-h3 text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-[24px] text-tertiary-fixed-dim">edit_note</span>
+                            Internal Notes
+                        </h2>
+<div class="flex-1 bg-surface-container-lowest rounded-lg border border-outline-variant/30 p-md mb-md min-h-[150px] overflow-y-auto font-body-md text-body-md text-on-surface-variant">
+<p class="mb-sm"><span class="text-primary font-bold">Admin (JD):</span> Reviewed photos. The final photo from customer does show faint marks, but it's unclear if they are original stains or shadow.</p>
+<p><span class="text-primary font-bold">System:</span> Provider history shows 98% positive rating for detailing services.</p>
+</div>
+<div class="mt-auto relative">
+<textarea class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg p-sm text-body-md text-on-surface focus:ring-1 focus:ring-primary focus:border-primary transition-all resize-none placeholder-on-surface-variant/50" placeholder="Add a private note (visible only to admins)..." rows="3"></textarea>
+<button class="absolute bottom-sm right-sm bg-primary/20 text-primary hover:bg-primary hover:text-on-primary rounded-md p-xs transition-colors">
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Delivery Partner Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#e5e2e3",
+                    "secondary-fixed-dim": "#c8c6c8",
+                    "background": "#131314",
+                    "on-primary": "#480081",
+                    "on-secondary-container": "#b7b4b7",
+                    "on-secondary": "#303032",
+                    "surface-container-high": "#2a2a2b",
+                    "surface-tint": "#dcb8ff",
+                    "tertiary-fixed-dim": "#c8c6c8",
+                    "surface-variant": "#353436",
+                    "secondary-fixed": "#e5e1e4",
+                    "surface-container-highest": "#353436",
+                    "primary-fixed-dim": "#dcb8ff",
+                    "secondary-container": "#474649",
+                    "on-tertiary-fixed": "#1b1b1d",
+                    "on-secondary-fixed": "#1b1b1d",
+                    "on-tertiary-fixed-variant": "#474649",
+                    "secondary": "#c8c6c8",
+                    "on-error": "#690005",
+                    "surface-container-low": "#1c1b1c",
+                    "on-primary-fixed": "#2c0051",
+                    "tertiary-fixed": "#e4e2e4",
+                    "on-surface-variant": "#cfc2d7",
+                    "inverse-on-surface": "#313031",
+                    "inverse-primary": "#8422dc",
+                    "tertiary": "#c8c6c8",
+                    "on-primary-container": "#eed9ff",
+                    "on-surface": "#e5e2e3",
+                    "tertiary-container": "#646365",
+                    "primary-container": "#8a2be2",
+                    "on-background": "#e5e2e3",
+                    "surface": "#131314",
+                    "on-tertiary": "#303032",
+                    "outline": "#988ca0",
+                    "on-secondary-fixed-variant": "#474649",
+                    "surface-dim": "#131314",
+                    "on-primary-fixed-variant": "#6700b5",
+                    "outline-variant": "#4c4354",
+                    "primary-fixed": "#efdbff",
+                    "error-container": "#93000a",
+                    "surface-bright": "#3a393a",
+                    "on-tertiary-container": "#e3e0e2",
+                    "on-error-container": "#ffdad6",
+                    "surface-container": "#201f20",
+                    "surface-container-lowest": "#0e0e0f",
+                    "error": "#ffb4ab",
+                    "primary": "#dcb8ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "2xl": "48px",
+                    "xl": "32px",
+                    "3xl": "64px",
+                    "md": "16px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Geist"],
+                    "caption": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "display-lg-mobile": ["Geist"],
+                    "body-md": ["Geist"],
+                    "headline-md": ["Geist"],
+                    "body-lg": ["Geist"],
+                    "label-md": ["Geist"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pt-16 pb-[100px] selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-background/80 backdrop-blur-xl dark:bg-background/80 fixed top-0 w-full z-50 border-b border-white/5 flex justify-between items-center px-lg h-16">
+<div class="flex items-center gap-sm">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A small, professional portrait photo of a delivery partner wearing a dark jacket, facing the camera with a neutral expression, against a plain gray background. High quality, clear, modern lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY705aixMfXyaJu3u3nhUtOmCwmelq956O1wySgbYNP_7DPFFVI8RZOwztrpdBWMJDlpfV9r7-I_vVo1nvGUCZBe_j20UB5e7-3CbE9VjN2h3s1Z57xZBh1LIBDPjUNibhpHCVvpolNzmQ5ReB2x0qNhkfCGKlcuBAxwmPxO4JP_szgXqAhdDtAKNYYCSlcnQaCf3t-y5naciN4hzvyl8bJFWr8Z9C9URIrlKsXKFDqFHzZTNlj6AcAw"/>
+<h1 class="font-headline-md text-headline-md-mobile text-primary dark:text-primary">Partner Portal</h1>
+</div>
+<button class="text-primary dark:text-primary hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="sensors">sensors</span>
+</button>
+</header>
+<main class="max-w-[1280px] mx-auto px-[20px] md:px-lg flex flex-col gap-lg mt-md">
+<!-- Profile Header & Status -->
+<section class="flex flex-col gap-md">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile">Arun Kumar</h2>
+<div class="flex items-center gap-sm text-on-surface-variant mt-xs">
+<span class="font-label-md text-label-md bg-surface-container-high px-sm py-[2px] rounded-DEFAULT flex items-center gap-[4px]"><span class="material-symbols-outlined filled text-[#FFCC00] text-[14px]">star</span> 4.9</span>
+<span class="font-body-md text-body-md">Bike • TN XX XX 1234</span>
+</div>
+</div>
+</div>
+<!-- Availability Control -->
+<div class="bg-surface rounded-xl p-lg border border-white/5 flex flex-col items-center justify-center gap-md relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-background/50 pointer-events-none"></div>
+<div class="flex items-center gap-sm text-on-surface-variant relative z-10">
+<span class="w-3 h-3 rounded-full bg-surface-variant shadow-[0_0_8px_rgba(255,255,255,0.1)]"></span>
+<span class="font-headline-md text-headline-md-mobile tracking-widest text-surface-variant">OFFLINE</span>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-md text-headline-md-mobile py-md rounded-lg hover:opacity-90 active:scale-[0.98] transition-all shadow-[0_4px_24px_rgba(220,184,255,0.2)] relative z-10 font-bold">
+                    GO ONLINE
+                </button>
+<p class="font-caption text-caption text-on-surface-variant text-center relative z-10 mt-xs">You are currently invisible to customers. Go online to receive delivery requests.</p>
+</div>
+</section>
+<!-- KPI Summary Cards -->
+<section class="grid grid-cols-2 gap-sm">
+<div class="bg-surface rounded-lg p-md border border-white/5">
+<div class="flex items-center gap-xs text-on-surface-variant mb-sm">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+<span class="font-label-md text-label-md">Today's Earnings</span>
+</div>
+<div class="font-headline-lg-mobile text-headline-lg-mobile">₹0</div>
+</div>
+<div class="bg-surface rounded-lg p-md border border-white/5">
+<div class="flex items-center gap-xs text-on-surface-variant mb-sm">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+<span class="font-label-md text-label-md">Deliveries</span>
+</div>
+<div class="font-headline-lg-mobile text-headline-lg-mobile">0</div>
+</div>
+<div class="bg-surface rounded-lg p-md border border-white/5">
+<div class="flex items-center gap-xs text-on-surface-variant mb-sm">
+<span class="material-symbols-outlined text-[18px]">route</span>
+<span class="font-label-md text-label-md">Distance</span>
+</div>
+<div class="font-headline-lg-mobile text-headline-lg-mobile">0 <span class="font-body-md text-body-md text-on-surface-variant">km</span></div>
+</div>
+<div class="bg-surface rounded-lg p-md border border-white/5">
+<div class="flex items-center gap-xs text-on-surface-variant mb-sm">
+<span class="material-symbols-outlined text-[18px]">thumb_up</span>
+<span class="font-label-md text-label-md">Rating</span>
+</div>
+<div class="font-headline-lg-mobile text-headline-lg-mobile">4.9</div>
+</div>
+</section>
+<!-- Active Delivery Empty State -->
+<section class="bg-surface rounded-xl p-lg border border-white/5 flex flex-col items-center justify-center gap-sm text-center min-h-[160px]">
+<span class="material-symbols-outlined text-[48px] text-surface-variant mb-sm">box</span>
+<h3 class="font-headline-md text-headline-md-mobile text-on-surface-variant">No active delivery</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[250px]">Go online to start receiving new delivery requests in your area.</p>
+</section>
+<!-- Incentive Section -->
+<section class="bg-surface rounded-xl p-md border border-white/5">
+<div class="flex justify-between items-center mb-md">
+<div class="flex items-center gap-xs text-primary">
+<span class="material-symbols-outlined text-[20px]">emoji_events</span>
+<h3 class="font-label-md text-label-md">Weekend Delivery Target</h3>
+</div>
+<span class="font-label-md text-label-md bg-surface-container-high px-sm py-[2px] rounded-DEFAULT">0 / 20</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2 overflow-hidden mb-sm">
+<div class="bg-primary h-full rounded-full transition-all duration-500" style="width: 0%"></div>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Complete 20 deliveries this weekend to earn a ₹500 bonus.</p>
+</section>
+<!-- Service Area Map Preview -->
+<section class="bg-surface rounded-xl p-sm border border-white/5">
+<div class="w-full h-[120px] rounded-lg overflow-hidden relative mb-md">
+<img class="w-full h-full object-cover" data-alt="A dark mode digital map showing a dense urban grid, glowing purple and blue road lines, highlighting a specific circular neighborhood. Clean, minimalist, high-tech interface aesthetic." data-location="Anna Nagar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUU_PvgSNn7VwfqpbqrclKYwo4bfCCOnb0DMzrEPsFggBZz8BsxZA1eEa4SDINiM4ZWiSeCQcXgmQCjN0Lgm_hYfz-2WPkH36WMTsWlwwQghQN2pueQ4wCl7EGRssxURy_nemC1p_3eAbfnoseex3XK727V1EYOJ_ozyzxEdNMZgZVN9Z7fZVn_gOCJoSgTgUr6t7DJR3K9IqFo_LGv3U2kgGHLHpiuffmdke2Y5crLnAqjOBzuma8fA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent flex items-end p-sm">
+<div class="flex items-center gap-xs font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+                        Anna Nagar
+                    </div>
+</div>
+</div>
+<button class="w-full border border-outline-variant text-on-surface font-label-md text-label-md py-sm rounded-lg hover:bg-surface-container-high transition-colors">
+                View Area
+            </button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface/90 backdrop-blur-xl dark:bg-surface/90 fixed bottom-0 w-full z-50 rounded-t-xl border-t border-white/5 shadow-2xl flex justify-around items-center h-20 px-md pb-safe md:hidden">
+<button class="flex flex-col items-center justify-center text-primary bg-primary-container/10 rounded-xl px-sm py-xs hover:text-primary/80 transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined filled" data-icon="home">home</span>
+<span class="font-label-md text-label-md mt-[2px] text-[12px]">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span class="font-label-md text-label-md mt-[2px] text-[12px]">Deliveries</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md mt-[2px] text-[12px]">Earnings</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-label-md text-label-md mt-[2px] text-[12px]">Alerts</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-label-md mt-[2px] text-[12px]">Profile</span>
+</button>
+</nav>
+</body></html>

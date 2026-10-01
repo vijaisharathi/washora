@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OpsCentral - Shoe Services</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "error-red": "#ffb4ab",
+                        "success-green": "#81C784",
+                        "error-container": "#93000a",
+                        "surface-variant": "#353436",
+                        "surface-container-highest": "#353436",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-primary": "#480081",
+                        "primary-container": "#8a2be2",
+                        "primary-fixed": "#efdbff",
+                        "surface-tint": "#dcb8ff",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface": "#131314",
+                        "background": "#131314",
+                        "tertiary-container": "#646365",
+                        "on-tertiary": "#303032",
+                        "on-secondary": "#303032",
+                        "success-bg": "#1A3D24",
+                        "surface-bright": "#39393a",
+                        "on-secondary-container": "#b9b8ba",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-surface": "#e5e2e3",
+                        "inverse-primary": "#8422dc",
+                        "secondary-fixed": "#e4e2e4",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-tertiary-container": "#e3e0e2",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-container-high": "#2a2a2b",
+                        "outline": "#988ca0",
+                        "surface-container": "#201f20",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#474648",
+                        "secondary-container": "#49494b",
+                        "on-background": "#e5e2e3",
+                        "outline-variant": "#4c4354",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-primary-container": "#eed9ff",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-primary-fixed": "#2c0051",
+                        "tertiary": "#c8c6c8",
+                        "on-surface-variant": "#cfc2d7",
+                        "inverse-on-surface": "#313031",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-container-low": "#1c1b1c",
+                        "electric-violet": "#8a2be2",
+                        "primary": "#dcb8ff",
+                        "secondary": "#c8c6c8",
+                        "surface-dim": "#131314",
+                        "error": "#ffb4ab",
+                        "surface-container-lowest": "#0e0e0f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "sm": "8px",
+                        "3xl": "64px",
+                        "2xl": "48px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "h1": ["Geist"],
+                        "h3": ["Geist"],
+                        "body-md": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "label-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "caption": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="bg-surface/80 backdrop-blur-xl docked full-width top-0 sticky shadow-sm z-50 flex justify-between items-center w-full px-lg h-16 bg-surface-container-low border-b border-white/5">
+<div class="flex items-center gap-md">
+<span class="font-headline-md text-headline-md font-bold text-primary cursor-pointer active:opacity-80">OpsCentral</span>
+</div>
+<div class="flex-1 max-w-xl mx-xl relative hidden md:block">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg pl-xl pr-md py-sm text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-on-surface" placeholder="Search services..." type="text"/>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-sm text-on-surface-variant hover:bg-white/5 transition-colors rounded-full cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-sm text-on-surface-variant hover:bg-white/5 transition-colors rounded-full cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<img alt="Provider profile avatar" class="w-8 h-8 rounded-full ml-sm object-cover border border-outline-variant/50 cursor-pointer" data-alt="A professional headshot of a service provider in a well-lit studio. Dark, engineered lighting aesthetic with a subtle electric violet rim light. Modern corporate SaaS style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKRmktW4UdkNMylCuy0HzNVuzSTrwdvRdSkseKaCyVkXUkz7othyQ9CcQrkuBxV8WWGt7eknA--L1X9aDr6QveXyfVR0RJhj_8KHlklx59yS-PYcACdUywOJLzbV9llCOm1IxLKeDmwh7MwMjXNi67Yhd1Zz65bzZGmW2Om10MhUoA1i4k5ojiWaIw1irk1uO4ldjOXlrTDKyGlDAim5i6Lk5-MNB5W-bpQymtcwsUbba5RkVNstl1ug"/>
+</div>
+</header>
+<div class="flex">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-16 bg-surface-container-low border-r border-white/5 hidden md:flex flex-col py-lg px-md gap-sm z-40 overflow-y-auto pb-24">
+<div class="mb-lg px-sm">
+<h2 class="font-headline-md text-headline-md font-black text-primary">Service Pro</h2>
+<p class="font-caption text-caption text-on-surface-variant">Operational Suite</p>
+</div>
+<nav class="flex-1 flex flex-col gap-xs">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-primary-container text-on-primary-container font-bold transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="cleaning_services">cleaning_services</span>
+<span class="font-label-md text-label-md">Services</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md">Earnings</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-sm">
+<button class="w-full bg-electric-violet text-white font-label-md text-label-md font-bold py-sm rounded-lg shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity">Add Service</button>
+<div class="h-px w-full bg-border-outline-variant/30 my-sm"></div>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="help_center">help_center</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 p-lg md:p-xl max-w-[1200px] mx-auto w-full pt-24 md:pt-xl">
+<!-- Breadcrumbs & Header -->
+<div class="mb-lg">
+<div class="flex items-center gap-xs text-on-surface-variant mb-md">
+<a class="font-label-md text-label-md hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="font-label-md text-label-md hover:text-primary transition-colors" href="#">Categories</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="font-label-md text-label-md text-on-surface">Shoes</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h1 class="font-h1 text-h1 text-on-surface mb-xs">Shoe Care & Cleaning</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">8 services available in Anna Nagar</p>
+</div>
+<div class="flex items-center gap-sm">
+<span class="font-label-md text-label-md text-on-surface-variant">Sort:</span>
+<div class="relative">
+<select class="appearance-none bg-surface-container-low border border-outline-variant/50 rounded-lg pl-md pr-xl py-sm font-label-md text-label-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary cursor-pointer">
+<option>Recommended</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Rating</option>
+</select>
+<span class="material-symbols-outlined absolute right-sm top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">arrow_drop_down</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Filters -->
+<div class="flex gap-sm overflow-x-auto pb-sm mb-xl hide-scrollbar w-full">
+<button class="whitespace-nowrap px-md py-[6px] rounded-full border border-outline-variant/50 bg-surface text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center gap-xs">
+                    Price <span class="material-symbols-outlined text-[16px]">arrow_drop_down</span>
+</button>
+<button class="whitespace-nowrap px-md py-[6px] rounded-full border border-outline-variant/50 bg-surface text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center gap-xs">
+                    Rating <span class="material-symbols-outlined text-[16px]">arrow_drop_down</span>
+</button>
+<button class="whitespace-nowrap px-md py-[6px] rounded-full border border-outline-variant/50 bg-surface text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors">
+                    Availability
+                </button>
+<button class="whitespace-nowrap px-md py-[6px] rounded-full border border-outline-variant/50 bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">check</span> Pickup
+                </button>
+<button class="whitespace-nowrap px-md py-[6px] rounded-full border border-outline-variant/50 bg-surface text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center gap-xs">
+                    Turnaround <span class="material-symbols-outlined text-[16px]">arrow_drop_down</span>
+</button>
+</div>
+<!-- Service Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+<!-- Card 1 -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl overflow-hidden hover:border-primary/50 transition-colors group flex flex-col">
+<div class="h-48 relative overflow-hidden">
+<img alt="Sneaker Deep Clean" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up shot of a pair of dirty white sneakers being cleaned with a premium brush. High contrast, dark background, electric violet accent lighting highlighting the soapy foam. Engineered corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYP4D39KMS-goY8eX4kl_a4C0b86goo0QVXvWS63dwrh-qSkIb968e_kMFVwGjZGEKLTrz-cjXDxkAfLIfEe_WWdcm-yjpGgFG10473F45revaDM_Q2TRx3u3sK0iFmTrEsTIRAAsbGP47eLl3WqYP4yKp6ucq4vPeCFUCvYxrwIOGmu9E233yNUuK3smxGCAd2bh9wbaappvK6z34Myc91KwMct8u_Xdk_4TnmsGjJBWiKsT74JxJpA"/>
+<div class="absolute top-sm right-sm bg-surface/80 backdrop-blur-md px-sm py-[2px] rounded-full border border-white/10 flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px] text-success-green" data-weight="fill">star</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">4.9</span>
+</div>
+</div>
+<div class="p-lg flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-h3 text-h3 text-on-surface">Sneaker Deep Clean</h3>
+<span class="font-h3 text-h3 font-bold text-primary">₹299</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Premium stain removal, deodorizing, and laces washing for all sneaker types.</p>
+<div class="mt-auto flex flex-col gap-sm">
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">store</span>
+<span class="font-label-md text-label-md">ShoeSpa Experts</span>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-label-md text-label-md">24-48 hrs turnaround</span>
+</div>
+</div>
+<div class="h-px w-full bg-border-outline-variant/30 my-md"></div>
+<button class="w-full py-sm rounded-lg border border-outline-variant text-on-surface font-label-md text-label-md font-bold hover:bg-surface-container-high transition-colors text-center">View Service</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl overflow-hidden hover:border-primary/50 transition-colors group flex flex-col">
+<div class="h-48 relative overflow-hidden">
+<img alt="Leather Shoe Care" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional applying premium leather conditioner to a classic brown leather brogue shoe. Dark, moody lighting with sharp focus on the leather texture. High-end, technical aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmQCCL4znYkQePLNMOG8AL4kZ18tLqCGMOtFHa8z2HZcFuHDWBDzunAPWj7fB_AnfObClP_HPTsB4kwrZp-EMWb_xo2qgn07UJp59u8QndSumqzsARzo8F1Xq_bFkhH7XPbiXBknUHvN-2omtFZra2ZZRqC_vrly-Pk2Pmcpkf2JklyQpBDdmp72mO_-sGoElN7HeRuBh1wwfWxoi4OmTpNiedGCh6ytqPSTaYMgvuTk9uTpuCx68vAQ"/>
+<div class="absolute top-sm right-sm bg-surface/80 backdrop-blur-md px-sm py-[2px] rounded-full border border-white/10 flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px] text-success-green" data-weight="fill">star</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">4.8</span>
+</div>
+</div>
+<div class="p-lg flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-h3 text-h3 text-on-surface">Leather Shoe Care</h3>
+<span class="font-h3 text-h3 font-bold text-primary">₹349</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Deep conditioning, polishing, and minor scuff repair for formal and leather shoes.</p>
+<div class="mt-auto flex flex-col gap-sm">
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">store</span>
+<span class="font-label-md text-label-md">Elite Cobblers</span>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-label-md text-label-md">48 hrs turnaround</span>
+</div>
+</div>
+<div class="h-px w-full bg-border-outline-variant/30 my-md"></div>
+<button class="w-full py-sm rounded-lg border border-outline-variant text-on-surface font-label-md text-label-md font-bold hover:bg-surface-container-high transition-colors text-center">View Service</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl overflow-hidden hover:border-primary/50 transition-colors group flex flex-col">
+<div class="h-48 relative overflow-hidden">
+<img alt="Sports Shoe Cleaning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Action shot of a sports running shoe being hydro-washed in a specialized machine. Dynamic water splashes against a dark technical background. Modern, engineered aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1KY65d1u6B04hNGpVKBbVgqv5x5vCEJ6sQCoxkTRprF-Yq_GA7tD1by9yeqe8dtm96qzw-3vCATaHkuGLjGgCR_UONxi5HuIV3CSmSIKq_K_MJHW6xoHxCREjjxLw_PrYxdcdpoO6N2hl_O7zIYvhUbwbALCWHnvKLnBZDSwqfnrqx0X9b1dUtOeABZ1K6Rh2Du5X4WtgfLJp1QnOw3QKsnbDEwoYipf3xyViJPcyrw2R9YyqufFbwA"/>
+<div class="absolute top-sm right-sm bg-surface/80 backdrop-blur-md px-sm py-[2px] rounded-full border border-white/10 flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px] text-success-green" data-weight="fill">star</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">4.8</span>
+</div>
+</div>
+<div class="p-lg flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-h3 text-h3 text-on-surface">Sports Shoe Cleaning</h3>
+<span class="font-h3 text-h3 font-bold text-primary">₹249</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Intensive dirt removal and odor neutralization designed specifically for athletic footwear.</p>
+<div class="mt-auto flex flex-col gap-sm">
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">store</span>
+<span class="font-label-md text-label-md">Active Kicks</span>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-label-md text-label-md">24 hrs turnaround</span>
+</div>
+</div>
+<div class="h-px w-full bg-border-outline-variant/30 my-md"></div>
+<button class="w-full py-sm rounded-lg border border-outline-variant text-on-surface font-label-md text-label-md font-bold hover:bg-surface-container-high transition-colors text-center">View Service</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

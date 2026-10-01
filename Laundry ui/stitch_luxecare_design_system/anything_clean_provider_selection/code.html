@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Provider Selection - Lumina Care</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#690005",
+                        "secondary-fixed": "#e4e2e4",
+                        "surface-bright": "#39393a",
+                        "inverse-primary": "#8422dc",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-tertiary-container": "#e3e0e2",
+                        "inverse-on-surface": "#313031",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-secondary": "#303032",
+                        "primary-container": "#8a2be2",
+                        "outline": "#988ca0",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "secondary": "#c8c6c8",
+                        "on-surface": "#e5e2e3",
+                        "on-primary-fixed": "#2c0051",
+                        "tertiary": "#c8c6c8",
+                        "on-surface-variant": "#cfc2d7",
+                        "surface-container-highest": "#353436",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-container-high": "#2a2a2b",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-tint": "#dcb8ff",
+                        "primary-fixed": "#efdbff",
+                        "background": "#131314",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-secondary-container": "#b9b8ba",
+                        "error-red": "#ffb4ab",
+                        "surface": "#131314",
+                        "on-primary-container": "#eed9ff",
+                        "electric-violet": "#8a2be2",
+                        "success-green": "#81C784",
+                        "on-background": "#e5e2e3",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-primary": "#480081",
+                        "outline-variant": "#4c4354",
+                        "success-bg": "#1A3D24",
+                        "surface-container-low": "#1c1b1c",
+                        "primary": "#dcb8ff",
+                        "tertiary-container": "#646365",
+                        "on-tertiary": "#303032",
+                        "tertiary-fixed": "#e4e2e4",
+                        "secondary-container": "#49494b",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-container": "#201f20",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#353436",
+                        "surface-dim": "#131314",
+                        "on-secondary-fixed-variant": "#474648",
+                        "on-error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "2xl": "48px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "3xl": "64px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "body-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "h1": ["Geist"],
+                        "caption": ["Geist"]
+                    },
+                    "fontSize": {
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Geist', sans-serif;
+            background-color: #131314; /* Default background fallback */
+        }
+        
+        /* Ensure custom font sizing utilities work even if Geist isn't loaded */
+        .font-headline-lg { font-size: 32px; line-height: 40px; font-weight: 600; letter-spacing: -0.01em; }
+        .font-h1 { font-size: 28px; line-height: 36px; font-weight: 700; }
+        .font-h3 { font-size: 20px; line-height: 28px; font-weight: 600; }
+        .font-body-md { font-size: 16px; line-height: 24px; font-weight: 400; }
+        .font-label-md { font-size: 14px; line-height: 20px; font-weight: 500; letter-spacing: 0.01em; }
+        .font-caption { font-size: 12px; line-height: 16px; font-weight: 400; }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex">
+<!-- JSON Sidebar Component Implementation -->
+<!-- Applying Active State to "Providers" based on contextual logic (Provider Selection screen) -->
+<aside class="fixed left-0 top-0 h-full w-[256px] bg-surface-container-low border-r border-outline-variant/30 hidden md:flex flex-col p-md gap-sm z-50">
+<!-- Brand Header -->
+<div class="flex items-center gap-md mb-xl px-sm py-md">
+<div class="w-10 h-10 rounded-lg bg-electric-violet/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-electric-violet" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+</div>
+<div>
+<h1 class="font-h3 text-h3 font-bold text-on-surface">Lumina Care</h1>
+<p class="font-caption text-caption text-on-surface-variant">Premium Services</p>
+</div>
+</div>
+<!-- Main Navigation -->
+<nav class="flex-1 flex flex-col gap-sm">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-all hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">home</span>
+                Home
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-all hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">receipt_long</span>
+                Orders
+            </a>
+<!-- Active State Navigation based on "Provider Selection" intent -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-primary/10 text-primary font-bold font-label-md text-label-md translate-x-1 transition-transform group" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">storefront</span>
+                Providers
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-all hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">sell</span>
+                Promos
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-all hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">support_agent</span>
+                Support
+            </a>
+</nav>
+<!-- CTA Button -->
+<div class="mt-auto mb-lg">
+<button class="w-full bg-electric-violet hover:bg-on-primary-fixed-variant text-white font-label-md text-label-md font-bold py-md rounded-lg shadow-lg shadow-primary/20 transition-all active:scale-95 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+                Book Now
+            </button>
+</div>
+<!-- Footer Navigation -->
+<div class="flex flex-col gap-xs border-t border-outline-variant/30 pt-md">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-all hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined group-hover:rotate-45 transition-transform">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-all hover:bg-error/10 hover:text-error-red font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined group-hover:-translate-x-1 transition-transform">logout</span>
+                Logout
+            </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-[256px] flex flex-col min-h-screen relative overflow-x-hidden">
+<!-- JSON TopNavBar Component Implementation -->
+<header class="fixed top-0 md:left-[256px] right-0 z-40 bg-surface-container-low/80 backdrop-blur-md border-b border-outline-variant/30 hidden md:block">
+<div class="flex justify-between items-center px-xl py-md max-w-[1200px] mx-auto w-full">
+<!-- Navigation Links -->
+<div class="flex items-center gap-xl">
+<a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Laundry</a>
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1 active:opacity-80 active:scale-95 transition-all" href="#">Shoes</a>
+<a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Helmets</a>
+<a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Vehicles</a>
+</div>
+<!-- Trailing Icon Actions -->
+<div class="flex items-center gap-md text-on-surface-variant">
+<button class="p-sm rounded-full hover:bg-surface-container-high hover:text-primary transition-colors duration-200 group">
+<span class="material-symbols-outlined group-active:scale-95 transition-transform">location_on</span>
+</button>
+<button class="p-sm rounded-full hover:bg-surface-container-high hover:text-primary transition-colors duration-200 relative group">
+<span class="material-symbols-outlined group-active:scale-95 transition-transform">notifications</span>
+<span class="absolute top-1 right-2 w-2 h-2 bg-electric-violet rounded-full"></span>
+</button>
+<button class="p-sm rounded-full hover:bg-surface-container-high hover:text-primary transition-colors duration-200 group">
+<span class="material-symbols-outlined group-active:scale-95 transition-transform">shopping_cart</span>
+</button>
+<div class="w-8 h-8 rounded-full ml-sm overflow-hidden border border-outline-variant/50 hover:border-primary transition-colors cursor-pointer">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A macro photography style portrait of a futuristic cyberpunk user avatar with neon purple ambient lighting, high contrast, highly detailed, deep midnight dark tech background setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOHweL-lUxRlGOEY3jNxSMTyPajwGB9cUMjU4P0q7jGRnNqqgv6NxtoZB_EVYz3jeprx9rIuS8jRYSfpVpWqmemInAeTICrVUFXGjXLVcqa-CfRYRP-ir7rCE_AhvCytZuKqq-xTAzC5vVKauDxxuEQPJsdsOLRAKsBvNIi0pv3vsj_sHOIlV2wh9DhjXnu0DOoaNBXLD-k2oNnZC3YDpNBoD7cllKU1r9WHCWfg9o7maC_J1Y-X1ZDQ"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Page Content Canvas -->
+<div class="flex-1 w-full max-w-[1200px] mx-auto px-md md:px-xl py-xl md:pt-[104px] pb-[120px] md:pb-xl flex flex-col gap-lg lg:gap-xl">
+<!-- Mobile Header (Visible only on small screens) -->
+<div class="md:hidden flex items-center justify-between mb-sm">
+<button class="p-xs -ml-xs text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<div class="font-label-md text-label-md font-bold uppercase tracking-wider text-on-surface-variant">Step 4 of 5</div>
+<div class="w-[24px]"></div> <!-- Spacer for centering -->
+</div>
+<!-- Page Header Area -->
+<div class="flex flex-col gap-sm">
+<div class="flex items-center gap-sm text-on-surface-variant font-label-md text-label-md mb-xs hidden md:flex">
+<a class="hover:text-primary transition-colors" href="#">Service</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Location</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface font-medium">Provider Selection</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Choose a Provider</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Select a trusted provider available in Anna Nagar.</p>
+</div>
+<!-- Service Summary Pill -->
+<div class="bg-surface-container-high border border-outline-variant/30 rounded-full px-md py-sm flex items-center gap-sm shrink-0">
+<div class="w-6 h-6 rounded-full bg-electric-violet/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-electric-violet text-[14px]">dry_cleaning</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Sneaker Deep Clean</span>
+<span class="w-[1px] h-4 bg-outline-variant/50 mx-xs"></span>
+<span class="font-label-md text-label-md font-bold text-primary">From ₹299</span>
+</div>
+</div>
+</div>
+<!-- Filters & Sort -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-md border-y border-outline-variant/30 py-md">
+<!-- Filter Chips -->
+<div class="flex flex-wrap items-center gap-sm">
+<button class="bg-surface-container hover:bg-surface-container-high border border-outline-variant/50 text-on-surface font-label-md text-label-md px-md py-sm rounded-full flex items-center gap-xs transition-colors">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+                        Filters
+                    </button>
+<button class="bg-primary/10 border border-primary/30 text-primary font-label-md text-label-md px-md py-sm rounded-full flex items-center gap-xs transition-colors">
+                        Distance
+                        <span class="material-symbols-outlined text-[16px]">keyboard_arrow_down</span>
+</button>
+<button class="bg-surface-container hover:bg-surface-container-high border border-outline-variant/50 text-on-surface font-label-md text-label-md px-md py-sm rounded-full flex items-center gap-xs transition-colors">
+                        Rating
+                        <span class="material-symbols-outlined text-[16px]">keyboard_arrow_down</span>
+</button>
+<button class="bg-surface-container hover:bg-surface-container-high border border-outline-variant/50 text-on-surface font-label-md text-label-md px-md py-sm rounded-full flex items-center gap-xs transition-colors">
+                        Price
+                    </button>
+<button class="bg-surface-container hover:bg-surface-container-high border border-outline-variant/50 text-on-surface font-label-md text-label-md px-md py-sm rounded-full flex items-center gap-xs transition-colors hidden sm:flex">
+                        Availability
+                    </button>
+</div>
+<!-- Sort Dropdown -->
+<div class="relative min-w-[200px] w-full md:w-auto">
+<button class="w-full bg-surface-container-low border border-outline-variant/50 hover:border-primary/50 text-on-surface font-label-md text-label-md px-md py-sm rounded-lg flex items-center justify-between transition-colors focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary">
+<div class="flex items-center gap-sm">
+<span class="text-on-surface-variant font-normal">Sort:</span>
+<span class="font-medium">Recommended</span>
+</div>
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">sort</span>
+</button>
+</div>
+</div>
+<!-- Provider List Layout (Bento/Card Grid) -->
+<div class="flex flex-col gap-md">
+<!-- Provider 1 (Selected/Recommended) -->
+<div class="bg-surface-container border border-primary relative rounded-xl p-0 overflow-hidden transition-all duration-300 transform group hover:shadow-lg hover:shadow-primary/5 cursor-pointer">
+<!-- Selection Indicator -->
+<div class="absolute top-0 right-0 w-0 h-0 border-t-[40px] border-l-[40px] border-t-primary border-l-transparent z-10"></div>
+<span class="material-symbols-outlined absolute top-2 right-2 text-background text-[16px] font-bold z-20" style="font-variation-settings: 'FILL' 1;">check</span>
+<div class="p-lg flex flex-col md:flex-row gap-lg">
+<!-- Provider Image/Avatar Grid -->
+<div class="flex gap-sm shrink-0">
+<div class="w-20 h-20 md:w-[100px] md:h-[100px] rounded-lg bg-surface-container-highest border border-outline-variant/30 overflow-hidden relative">
+<img alt="CleanX Storefront" class="w-full h-full object-cover" data-alt="A clean, modern storefront or workshop exterior of a premium sneaker cleaning service, dramatic cinematic lighting, deep dark moody technical aesthetic, high resolution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-iIbmHRDrwoC0vbNb5pWPoTmL5l6Z_0KLYH83j7DLO7xIFo6ny-AZ9q1hZtuzpealS0euI-r1pMMCO7XAoI3scAcl2j4d4El_Ks75Y_2ONOH2CJbV5IUCmqqh2fQXrHCXQwNUa8b6uv6tJV_avw--PBPdRUqvtel5abPd4sWraAJQJgLJIvL3rcwO5rei3mVRv54EsS7UzO5LvjZWj93NIAbIFGrkiOhb3hjq3vxVR-m8FYQ_BVJn5A"/>
+<div class="absolute top-1 left-1 bg-background/80 backdrop-blur-sm border border-outline-variant/50 rounded flex items-center gap-xs px-xs py-1">
+<span class="material-symbols-outlined text-success-green text-[12px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+</div>
+<!-- Provider Info -->
+<div class="flex-1 flex flex-col justify-between">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<div class="flex items-center gap-sm mb-xs">
+<span class="bg-primary-container text-on-primary-container font-caption text-caption font-bold px-sm py-1 rounded text-[10px] uppercase tracking-wider">Recommended</span>
+<span class="bg-success-bg text-success-green font-caption text-caption font-bold px-sm py-1 rounded text-[10px] uppercase tracking-wider flex items-center gap-xs">
+<span class="w-1.5 h-1.5 bg-success-green rounded-full"></span> Available Today
+                                        </span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-xs">CleanX Service Center</h3>
+<div class="flex items-center flex-wrap gap-x-md gap-y-xs font-label-md text-label-md text-on-surface-variant">
+<div class="flex items-center gap-xs text-primary-fixed-dim font-bold">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                            4.9
+                                            <span class="text-on-surface-variant font-normal text-[12px] ml-xs">(1,240 reviews)</span>
+</div>
+<span class="w-[3px] h-[3px] bg-outline-variant rounded-full"></span>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                            1.2 km away
+                                        </div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md mt-md pt-md border-t border-outline-variant/20">
+<div class="flex flex-col gap-xs">
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span> Pickup
+                                    </span>
+<span class="font-label-md text-label-md text-on-surface">Available</span>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">timer</span> Turnaround
+                                    </span>
+<span class="font-label-md text-label-md text-on-surface">48 Hours</span>
+</div>
+<div class="col-span-2 md:col-span-2 flex flex-col md:items-end justify-end">
+<span class="font-caption text-caption text-on-surface-variant">Service Price</span>
+<span class="font-h3 text-h3 font-bold text-electric-violet">₹299</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Provider 2 -->
+<div class="bg-surface-container border border-outline-variant/30 rounded-xl p-0 overflow-hidden transition-all duration-300 transform group hover:border-outline-variant hover:shadow-lg hover:shadow-primary/5 cursor-pointer">
+<div class="p-lg flex flex-col md:flex-row gap-lg">
+<div class="flex gap-sm shrink-0">
+<div class="w-20 h-20 md:w-[100px] md:h-[100px] rounded-lg bg-surface-container-highest border border-outline-variant/30 overflow-hidden relative">
+<div class="w-full h-full bg-surface-bright flex items-center justify-center">
+<span class="material-symbols-outlined text-outline-variant text-[32px]">local_laundry_service</span>
+</div>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<div class="flex items-center gap-sm mb-xs">
+<span class="bg-success-bg/50 text-success-green/80 font-caption text-caption font-medium px-sm py-1 rounded text-[10px] uppercase tracking-wider flex items-center gap-xs">
+<span class="w-1.5 h-1.5 bg-success-green/80 rounded-full"></span> Available Today
+                                        </span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-xs">FreshCare</h3>
+<div class="flex items-center flex-wrap gap-x-md gap-y-xs font-label-md text-label-md text-on-surface-variant">
+<div class="flex items-center gap-xs text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+                                            4.8
+                                            <span class="text-on-surface-variant font-normal text-[12px] ml-xs">(684 reviews)</span>
+</div>
+<span class="w-[3px] h-[3px] bg-outline-variant rounded-full"></span>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                            2.4 km away
+                                        </div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md mt-md pt-md border-t border-outline-variant/20 opacity-80 group-hover:opacity-100 transition-opacity">
+<div class="flex flex-col gap-xs">
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span> Pickup
+                                    </span>
+<span class="font-label-md text-label-md text-on-surface">Available</span>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">timer</span> Turnaround
+                                    </span>
+<span class="font-label-md text-label-md text-on-surface">48-72 Hours</span>
+</div>
+<div class="col-span-2 md:col-span-2 flex flex-col md:items-end justify-end">
+<span class="font-caption text-caption text-on-surface-variant">Service Price</span>
+<span class="font-h3 text-h3 font-bold text-on-surface">₹319</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Provider 3 -->
+<div class="bg-surface-container border border-outline-variant/30 rounded-xl p-0 overflow-hidden transition-all duration-300 transform group hover:border-outline-variant hover:shadow-lg hover:shadow-primary/5 cursor-pointer opacity-75 hover:opacity-100">
+<div class="p-lg flex flex-col md:flex-row gap-lg">
+<div class="flex gap-sm shrink-0">
+<div class="w-20 h-20 md:w-[100px] md:h-[100px] rounded-lg bg-surface-container-highest border border-outline-variant/30 overflow-hidden relative">
+<div class="w-full h-full bg-surface-bright flex items-center justify-center">
+<span class="material-symbols-outlined text-outline-variant text-[32px]">cleaning_services</span>
+</div>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<div class="flex items-center gap-sm mb-xs">
+<span class="bg-surface-variant text-on-surface-variant font-caption text-caption font-medium px-sm py-1 rounded text-[10px] uppercase tracking-wider flex items-center gap-xs">
+                                            Available Tomorrow
+                                        </span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-xs">WashPro</h3>
+<div class="flex items-center flex-wrap gap-x-md gap-y-xs font-label-md text-label-md text-on-surface-variant">
+<div class="flex items-center gap-xs text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+                                            4.7
+                                            <span class="text-on-surface-variant font-normal text-[12px] ml-xs">(426 reviews)</span>
+</div>
+<span class="w-[3px] h-[3px] bg-outline-variant rounded-full"></span>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                            3.1 km away
+                                        </div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md mt-md pt-md border-t border-outline-variant/20 opacity-80 group-hover:opacity-100 transition-opacity">
+<div class="flex flex-col gap-xs">
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span> Pickup
+                                    </span>
+<span class="font-label-md text-label-md text-on-surface">Available</span>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">timer</span> Turnaround
+                                    </span>
+<span class="font-label-md text-label-md text-on-surface">72 Hours</span>
+</div>
+<div class="col-span-2 md:col-span-2 flex flex-col md:items-end justify-end">
+<span class="font-caption text-caption text-on-surface-variant">Service Price</span>
+<span class="font-h3 text-h3 font-bold text-on-surface">₹279</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom CTA Area -->
+<div class="fixed bottom-0 md:left-[256px] right-0 bg-surface-container-low/95 backdrop-blur-md border-t border-outline-variant/30 p-md md:px-xl z-30">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-md">
+<div class="hidden md:flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">Selected Provider</span>
+<span class="font-label-md text-label-md font-bold text-on-surface flex items-center gap-xs">
+                        CleanX Service Center <span class="material-symbols-outlined text-primary text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+<button class="w-full md:w-auto min-w-[240px] bg-electric-violet hover:bg-on-primary-fixed-variant text-white font-label-md text-label-md font-bold py-md px-xl rounded-lg shadow-lg shadow-primary/20 transition-all active:scale-95 flex items-center justify-center gap-sm">
+                    Continue with CleanX
+                    <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+</body></html>

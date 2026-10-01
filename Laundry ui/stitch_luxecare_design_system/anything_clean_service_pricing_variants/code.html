@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Service Pricing - Lumina Care</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#690005",
+                        "secondary-fixed": "#e4e2e4",
+                        "surface-bright": "#39393a",
+                        "inverse-primary": "#8422dc",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-tertiary-container": "#e3e0e2",
+                        "inverse-on-surface": "#313031",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-secondary": "#303032",
+                        "primary-container": "#8a2be2",
+                        "outline": "#988ca0",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "secondary": "#c8c6c8",
+                        "on-surface": "#e5e2e3",
+                        "on-primary-fixed": "#2c0051",
+                        "tertiary": "#c8c6c8",
+                        "on-surface-variant": "#cfc2d7",
+                        "surface-container-highest": "#353436",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-container-high": "#2a2a2b",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-tint": "#dcb8ff",
+                        "primary-fixed": "#efdbff",
+                        "background": "#131314",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-secondary-container": "#b9b8ba",
+                        "error-red": "#ffb4ab",
+                        "surface": "#131314",
+                        "on-primary-container": "#eed9ff",
+                        "electric-violet": "#8a2be2",
+                        "success-green": "#81C784",
+                        "on-background": "#e5e2e3",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-primary": "#480081",
+                        "outline-variant": "#4c4354",
+                        "success-bg": "#1A3D24",
+                        "surface-container-low": "#1c1b1c",
+                        "primary": "#dcb8ff",
+                        "tertiary-container": "#646365",
+                        "on-tertiary": "#303032",
+                        "tertiary-fixed": "#e4e2e4",
+                        "secondary-container": "#49494b",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-container": "#201f20",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#353436",
+                        "surface-dim": "#131314",
+                        "on-secondary-fixed-variant": "#474648",
+                        "on-error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "2xl": "48px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "3xl": "64px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "body-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "h1": ["Geist"],
+                        "caption": ["Geist"]
+                    },
+                    "fontSize": {
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- Top Navigation (Hidden on Mobile, Displayed on Desktop) -->
+<nav class="hidden md:flex bg-surface-container-low/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/30 flex justify-between items-center px-xl py-md max-w-[1200px] mx-auto">
+<div class="font-h1 text-h1 font-bold text-electric-violet">Lumina Care</div>
+<div class="flex gap-lg">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Laundry</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Shoes</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Helmets</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Vehicles</a>
+</div>
+<div class="flex gap-md items-center">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer" data-icon="location_on">location_on</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer" data-icon="shopping_cart">shopping_cart</span>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-outline-variant/50" data-alt="A macro shot of a sleek, dark metallic texture with subtle electric violet neon reflections. The surface is smooth with microscopic brushed details, illuminated by a low-key, moody light setup emphasizing a premium, high-tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANyoJrG8NG9kQMzFHiFmHBbcWka_d_rhEA1aze-fRVc8Kg2YLMh6kXMMKPscNKOsLnSR5r-9d1vh_fVi2xXzO__w-GuxXyu59zIPdY7QY5t3XvooiwPNx16t_VDKmE4sjLnI3bH1YovyoWyhoUgrbYieym8StdpqEh4bhGekIBHBOs9fgSOYIqjJ5ci1mVN3E5AtOHH3FdxPqJPlLxb-IZn3WLIdZsiIIUPFqnX9H71OzveXUzVaGF_A"/>
+</div>
+</nav>
+<!-- Side Navigation (Mobile: Bottom Nav, Web: Side Rail if appropriate, but suppressing here as this is a linear transactional flow) -->
+<!-- Suppressing SideNavBar / BottomNavBar due to transactional intent (Pricing & Variants) -->
+<!-- Main Content Area -->
+<main class="pt-3xl md:pt-[100px] pb-3xl px-md md:px-xl max-w-[1200px] mx-auto flex flex-col md:flex-row gap-xl">
+<!-- Left Column: Variants -->
+<section class="flex-1 flex flex-col gap-lg">
+<header class="mb-md">
+<h1 class="font-headline-lg text-headline-lg text-on-background">Choose Your Service</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-sm">Select the option that best matches your sneakers.</p>
+</header>
+<div class="flex flex-col gap-md">
+<!-- Variant 1: Standard -->
+<div class="bg-surface-container border border-outline-variant/50 rounded-lg p-lg hover:border-primary/50 transition-colors cursor-pointer flex justify-between items-start group">
+<div class="flex gap-md">
+<div class="mt-xs">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">Standard Sneaker Clean</h3>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">24–48 hrs</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-mono-display text-mono-display text-primary">₹299</span>
+</div>
+</div>
+<!-- Variant 2: Premium (SELECTED) -->
+<div class="bg-primary-container/10 border-2 border-primary rounded-lg p-lg relative flex justify-between items-start">
+<!-- Glow effect for selected state -->
+<div class="absolute inset-0 rounded-lg shadow-lg shadow-primary/10 pointer-events-none"></div>
+<div class="flex gap-md relative z-10">
+<div class="mt-xs">
+<span class="material-symbols-outlined text-primary" data-icon="radio_button_checked" data-weight="fill" style="font-variation-settings: 'FILL' 1;">radio_button_checked</span>
+</div>
+<div>
+<div class="flex items-center gap-sm">
+<h3 class="font-h3 text-h3 text-on-surface">Premium Sneaker Clean</h3>
+<span class="bg-primary/20 text-primary font-caption text-caption px-sm py-xs rounded-full border border-primary/30">Recommended</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-sm">Includes deeper stain treatment.</p>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">24–48 hrs</p>
+</div>
+</div>
+<div class="text-right relative z-10">
+<span class="font-mono-display text-mono-display text-primary">₹449</span>
+</div>
+</div>
+<!-- Variant 3: Premium + Protection -->
+<div class="bg-surface-container border border-outline-variant/50 rounded-lg p-lg hover:border-primary/50 transition-colors cursor-pointer flex justify-between items-start group">
+<div class="flex gap-md">
+<div class="mt-xs">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">Premium + Protection</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-sm">Includes protective finish.</p>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">48 hrs</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-mono-display text-mono-display text-primary">₹599</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Column: Summary Panel -->
+<aside class="w-full md:w-[380px] flex-shrink-0">
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-lg sticky top-[120px]">
+<h3 class="font-label-md text-label-md font-bold text-on-surface uppercase tracking-wider mb-lg">Order Summary</h3>
+<div class="flex flex-col gap-sm mb-lg border-b border-outline-variant/30 pb-lg">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Selected:</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Premium Sneaker Clean</span>
+</div>
+<div class="flex justify-between items-center mt-sm">
+<span class="font-body-md text-body-md text-on-surface-variant">Service:</span>
+<span class="font-mono-display text-on-surface">₹449</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Pickup:</span>
+<span class="font-mono-display text-on-surface">₹0</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Delivery:</span>
+<span class="font-mono-display text-on-surface">₹0</span>
+</div>
+</div>
+<div class="flex justify-between items-end mb-sm">
+<span class="font-h3 text-h3 text-on-surface">Estimated Total:</span>
+<span class="font-mono-display text-mono-display text-electric-violet text-2xl">₹449</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mb-xl">Final total calculated at checkout.</p>
+<button class="w-full bg-electric-violet text-white font-label-md text-label-md font-bold py-md px-lg rounded-lg shadow-lg shadow-electric-violet/20 hover:bg-primary-container hover:shadow-electric-violet/40 transition-all duration-300 flex justify-center items-center gap-sm">
+                    Continue
+                    <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</aside>
+</main>
+</body></html>

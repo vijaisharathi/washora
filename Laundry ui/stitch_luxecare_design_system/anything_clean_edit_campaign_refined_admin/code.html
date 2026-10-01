@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edit Campaign - Fresh Start</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#313031",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-container-highest": "#353436",
+                        "on-surface": "#e5e2e3",
+                        "secondary": "#c8c6c8",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#3a393a",
+                        "surface-tint": "#dcb8ff",
+                        "outline-variant": "#4c4354",
+                        "on-secondary-container": "#b7b4b7",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-primary-fixed": "#2c0051",
+                        "on-secondary": "#303032",
+                        "tertiary": "#c8c6c8",
+                        "on-secondary-fixed-variant": "#474649",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "primary-fixed": "#efdbff",
+                        "error": "#ffb4ab",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-container-low": "#1c1b1c",
+                        "background": "#131314",
+                        "on-background": "#e5e2e3",
+                        "surface": "#131314",
+                        "secondary-fixed": "#e5e1e4",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-primary-container": "#eed9ff",
+                        "on-tertiary": "#303032",
+                        "secondary-container": "#474649",
+                        "primary-container": "#8a2be2",
+                        "surface-container-high": "#2a2a2b",
+                        "surface-variant": "#353436",
+                        "surface-container": "#201f20",
+                        "primary": "#8a2be2",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-dim": "#131314",
+                        "error-container": "#93000a",
+                        "inverse-primary": "#8422dc",
+                        "tertiary-container": "#646365",
+                        "outline": "#988ca0",
+                        "electric-violet": "#8a2be2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.5rem",
+                        "sm": "0.25rem",
+                        "md": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "lg": "24px",
+                        "3xl": "64px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "sm": "8px",
+                        "2xl": "48px"
+                    },
+                    "fontFamily": {
+                        "sans": ["Geist", "sans-serif"],
+                        "caption": ["Geist", "sans-serif"],
+                        "body-lg": ["Geist", "sans-serif"],
+                        "label-md": ["Geist", "sans-serif"],
+                        "body-md": ["Geist", "sans-serif"],
+                        "headline-md": ["Geist", "sans-serif"],
+                        "display-lg-mobile": ["Geist", "sans-serif"],
+                        "display-lg": ["Geist", "sans-serif"],
+                        "headline-lg": ["Geist", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "h1": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "h2": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            font-family: 'Geist', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom scrollbar for dark mode */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: theme('colors.surface'); 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.surface-container-high'); 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.outline-variant'); 
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex w-full">
+<!-- Side Navigation Shell -->
+<nav class="bg-surface-container-low text-on-surface h-screen w-64 fixed left-0 top-0 flex flex-col py-lg px-md z-50 border-r border-outline-variant/30">
+<div class="mb-xl flex items-center gap-sm px-sm">
+<span class="material-symbols-outlined text-h2 font-bold text-electric-violet">local_mall</span>
+<span class="text-h2 font-bold tracking-tight">Lumina</span>
+</div>
+<div class="flex-1 overflow-y-auto space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-label-md" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-label-md" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+                Orders
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-label-md" href="#">
+<span class="material-symbols-outlined">group</span>
+                Customers
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-label-md" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                Products
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary font-label-md font-bold rounded-lg" href="#">
+<span class="material-symbols-outlined filled-icon text-primary">campaign</span>
+                Promotions
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-label-md" href="#">
+<span class="material-symbols-outlined">analytics</span>
+                Analytics
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-label-md" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 ml-64 flex flex-col min-h-screen bg-background">
+<!-- Top Nav Shell -->
+<header class="bg-surface/80 backdrop-blur-md sticky top-0 z-40 border-b border-outline-variant/30 flex justify-between items-center w-full px-xl py-4">
+<div class="flex items-center gap-2 text-sm text-on-surface-variant font-label-md">
+<a class="hover:text-primary transition-colors" href="#">Promotions</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Fresh Start</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface">Edit</span>
+</div>
+<div class="flex items-center gap-md bg-surface-container-low px-4 py-2 rounded-lg border border-outline-variant/50 focus-within:border-primary transition-colors w-96">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-on-surface w-full font-body-md placeholder-on-surface-variant/50 outline-none text-sm" placeholder="Search..." type="text"/>
+</div>
+<div class="flex items-center gap-lg">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center gap-sm">
+<img class="w-8 h-8 rounded-full border border-outline-variant object-cover" data-alt="Admin avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6UQE6GiD-TK4Pb5_nWJ7nRg1psBa_GFsbsyeAHkcaoYIim60Vhoaf6VrAAz7QxrrVarC8e893S5lPcIkR0SQBaXwjS_Y_BXjb7eeb0UOBXXarRFGDvX-3XM3NiJTYqLIQ3oW1sYwXSZX3f_noE6CBbaJIX_MICo5psLk9CbBRusiYoyvi2_4zlMl1dnVMaUCyB4zaRnY1gUcgXZJcdu8rdt4e15PCl00kRPYnpzjKIQz9BXc-QMPQow"/>
+</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 p-xl overflow-y-auto max-w-[1200px] w-full mx-auto">
+<!-- Header Section -->
+<div class="mb-xl flex justify-between items-end">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<h1 class="text-h1 text-on-surface m-0">Edit Campaign</h1>
+<span class="px-2 py-0.5 rounded-full bg-[#1A3D24] text-[#81C784] text-[10px] font-bold tracking-widest uppercase border border-[#2E7D32]">Active</span>
+</div>
+<p class="font-body-md text-on-surface-variant max-w-2xl">Modify parameters for this active promotion. Changes to limits will apply immediately to new checkouts.</p>
+</div>
+</div>
+<!-- Active Protection Warning -->
+<div class="mb-lg bg-error-container/10 border border-error-container/30 rounded-lg p-4 flex gap-3 items-start">
+<span class="material-symbols-outlined text-error text-[20px] mt-0.5">warning</span>
+<div>
+<h4 class="font-label-md text-error font-bold mb-1">This campaign is currently active.</h4>
+<p class="font-body-md text-on-surface-variant text-sm">Modifying total use limits while a campaign is running may cause in-flight checkouts to fail if limits are suddenly exhausted. Currently, 842 users have claimed this offer.</p>
+</div>
+</div>
+<!-- Tabs -->
+<div class="border-b border-outline-variant/30 mb-8 flex gap-8 overflow-x-auto">
+<button class="pb-3 font-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap">Overview</button>
+<button class="pb-3 font-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap">Discount</button>
+<button class="pb-3 font-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap">Eligibility</button>
+<button class="pb-3 font-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap">Schedule</button>
+<button class="pb-3 font-label-md text-primary font-bold border-b-2 border-primary whitespace-nowrap">Limits</button>
+<button class="pb-3 font-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap">Coupon</button>
+</div>
+<!-- Content Grid (Limits Tab) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+<!-- Left Column (Form) -->
+<div class="md:col-span-2 space-y-6">
+<!-- Limits Configuration Card -->
+<div class="bg-surface-container rounded-lg p-6 border border-outline-variant/20">
+<h3 class="text-h3 text-on-surface mb-6">Usage Limits</h3>
+<div class="space-y-6">
+<!-- Total Uses -->
+<div>
+<label class="block font-label-md text-on-surface mb-1">Total Campaign Uses</label>
+<p class="font-caption text-on-surface-variant mb-3">The maximum number of times this campaign can be redeemed globally.</p>
+<div class="flex items-center gap-3">
+<div class="relative w-full max-w-xs">
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-2 px-3 text-on-surface font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" type="number" value="2000"/>
+</div>
+<span class="text-on-surface-variant text-sm">uses</span>
+</div>
+</div>
+<hr class="border-outline-variant/20"/>
+<!-- Per Customer -->
+<div>
+<label class="block font-label-md text-on-surface mb-1">Per Customer Limit</label>
+<p class="font-caption text-on-surface-variant mb-3">How many times a single authenticated user can claim this offer.</p>
+<div class="flex items-center gap-3">
+<div class="relative w-full max-w-xs">
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-2 px-3 text-on-surface font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" type="number" value="1"/>
+</div>
+<span class="text-on-surface-variant text-sm">per user</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Coupon Code Section -->
+<div class="bg-surface-container rounded-lg p-6 border border-outline-variant/20">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-h3 text-on-surface">Associated Coupon Code</h3>
+<button class="text-primary font-label-md hover:underline">Edit Code</button>
+</div>
+<div class="bg-surface-container-low border border-dashed border-outline-variant/50 rounded-lg p-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-outline-variant text-[24px]">local_activity</span>
+<div>
+<div class="font-mono text-lg font-bold text-on-surface tracking-wider">FRESH20</div>
+<div class="text-on-surface-variant font-caption mt-1">Code type: Single-use per customer</div>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-[#1A3D24] text-[#81C784] font-label-md text-[12px] tracking-wide border border-[#2E7D32]">Active</span>
+</div>
+</div>
+</div>
+<!-- Right Column (Stats & History) -->
+<div class="space-y-6">
+<!-- Live Statistics Bento -->
+<div class="bg-surface-container rounded-lg p-6 border border-outline-variant/20">
+<h3 class="font-label-md text-on-surface mb-4 flex items-center gap-2 font-bold">
+<span class="material-symbols-outlined text-primary text-[18px]">monitoring</span>
+                            Live Utilization
+                        </h3>
+<div class="grid grid-cols-2 gap-3 mb-4">
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/20">
+<p class="text-on-surface-variant font-caption mb-1">Used</p>
+<p class="font-headline-md text-on-surface">842</p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/20">
+<p class="text-on-surface-variant font-caption mb-1">Remaining</p>
+<p class="font-headline-md text-primary">1,158</p>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-surface-container-high rounded-full h-1.5 mb-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 42.1%"></div>
+</div>
+<p class="text-right font-caption text-on-surface-variant">42% utilized of 2,000</p>
+</div>
+<!-- Change History -->
+<div class="bg-surface-container rounded-lg p-6 border border-outline-variant/20">
+<h3 class="font-label-md text-on-surface mb-4 flex items-center gap-2 font-bold">
+<span class="material-symbols-outlined text-outline text-[18px]">history</span>
+                            Recent Activity
+                        </h3>
+<div class="relative pl-4 border-l border-outline-variant/30 space-y-5 mt-2">
+<!-- Timeline Item -->
+<div class="relative">
+<div class="absolute -left-[21px] top-1.5 w-2 h-2 rounded-full bg-primary ring-4 ring-surface-container"></div>
+<p class="font-body-md text-sm text-on-surface">Admin changed Maximum Discount from ₹100 to ₹150</p>
+<div class="flex items-center gap-2 mt-1">
+<p class="font-caption text-on-surface-variant">Aug 30, 2024</p>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<p class="font-caption text-on-surface-variant italic">Reason: Campaign optimization</p>
+</div>
+</div>
+<!-- Timeline Item (Older) -->
+<div class="relative">
+<div class="absolute -left-[21px] top-1.5 w-2 h-2 rounded-full bg-outline-variant ring-4 ring-surface-container"></div>
+<p class="font-body-md text-sm text-on-surface-variant">Campaign published</p>
+<p class="font-caption text-outline mt-1">Aug 01, 2024</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="flex justify-end gap-3 pt-6 border-t border-outline-variant/30 mb-8">
+<button class="px-5 py-2 rounded-lg border border-outline-variant text-on-surface font-label-md hover:bg-surface-container transition-colors">Discard Changes</button>
+<button class="px-5 py-2 rounded-lg bg-primary text-on-primary font-label-md font-bold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">Save Changes</button>
+</div>
+</main>
+</div>
+</body></html>

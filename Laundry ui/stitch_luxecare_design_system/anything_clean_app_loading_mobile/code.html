@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Delivery Pro - Loading</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#131314",
+                    "on-tertiary": "#303032",
+                    "on-secondary-fixed-variant": "#474649",
+                    "surface-variant": "#353436",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-container": "#b7b4b7",
+                    "error-container": "#93000a",
+                    "surface-container-low": "#1c1b1c",
+                    "on-tertiary-fixed-variant": "#474649",
+                    "secondary": "#c8c6c8",
+                    "on-primary-container": "#eed9ff",
+                    "surface-container-high": "#2a2a2b",
+                    "on-surface": "#e5e2e3",
+                    "on-primary": "#480081",
+                    "on-tertiary-container": "#e3e0e2",
+                    "outline": "#988ca0",
+                    "on-primary-fixed": "#2c0051",
+                    "inverse-surface": "#e5e2e3",
+                    "primary-fixed-dim": "#dcb8ff",
+                    "outline-variant": "#4c4354",
+                    "inverse-primary": "#8422dc",
+                    "on-secondary-fixed": "#1b1b1d",
+                    "surface-container-highest": "#353436",
+                    "tertiary": "#c8c6c8",
+                    "on-tertiary-fixed": "#1b1b1d",
+                    "tertiary-container": "#646365",
+                    "secondary-container": "#474649",
+                    "on-surface-variant": "#cfc2d7",
+                    "primary": "#dcb8ff",
+                    "inverse-on-surface": "#313031",
+                    "on-secondary": "#303032",
+                    "secondary-fixed-dim": "#c8c6c8",
+                    "surface-container": "#201f20",
+                    "on-background": "#e5e2e3",
+                    "tertiary-fixed": "#e4e2e4",
+                    "surface": "#131314",
+                    "primary-fixed": "#efdbff",
+                    "secondary-fixed": "#e5e1e4",
+                    "surface-tint": "#dcb8ff",
+                    "on-primary-fixed-variant": "#6700b5",
+                    "surface-container-lowest": "#0e0e0f",
+                    "on-error": "#690005",
+                    "surface-bright": "#3a393a",
+                    "primary-container": "#8a2be2",
+                    "tertiary-fixed-dim": "#c8c6c8",
+                    "error": "#ffb4ab",
+                    "background": "#131314"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "2xl": "48px",
+                    "3xl": "64px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "headline-md": [
+                            "Geist"
+                    ],
+                    "display-lg-mobile": [
+                            "Geist"
+                    ],
+                    "body-lg": [
+                            "Geist"
+                    ],
+                    "label-md": [
+                            "Geist"
+                    ],
+                    "body-md": [
+                            "Geist"
+                    ],
+                    "caption": [
+                            "Geist"
+                    ],
+                    "headline-lg": [
+                            "Geist"
+                    ],
+                    "display-lg": [
+                            "Geist"
+                    ]
+            },
+            "fontSize": {
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg-mobile": [
+                            "36px",
+                            {
+                                    "lineHeight": "44px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.01em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "caption": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .shimmer {
+            background: linear-gradient(90deg, transparent, rgba(220, 184, 255, 0.1), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite linear;
+        }
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        .pulse-dot {
+            animation: pulse-dot 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: .5; transform: scale(0.8); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col justify-center items-center overflow-hidden">
+<!-- Background subtle glow -->
+<div class="absolute inset-0 z-0 flex items-center justify-center opacity-30 pointer-events-none">
+<div class="w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px]"></div>
+</div>
+<!-- Main Content Container -->
+<main class="relative z-10 w-full max-w-[390px] px-lg flex flex-col items-center">
+<!-- Brand Identity -->
+<div class="flex flex-col items-center mb-3xl">
+<div class="w-2xl h-2xl bg-surface-container-high rounded-2xl flex items-center justify-center mb-md shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] border border-white/5 relative overflow-hidden">
+<div class="absolute inset-0 shimmer"></div>
+<span class="material-symbols-outlined text-primary text-headline-lg relative z-10" style="font-variation-settings: 'FILL' 1;">
+                    local_shipping
+                </span>
+</div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-primary-fixed mb-sm">Delivery Pro</h1>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary pulse-dot"></span>
+                Getting everything ready...
+            </p>
+</div>
+<!-- Initialization Checklist -->
+<div class="w-full bg-surface-container-low/50 backdrop-blur-xl rounded-xl border border-white/5 p-lg flex flex-col gap-md">
+<!-- Step 1: Complete -->
+<div class="flex items-center gap-md">
+<div class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[16px]">check</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface">Account verified</p>
+</div>
+</div>
+<!-- Step 2: Complete -->
+<div class="flex items-center gap-md">
+<div class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[16px]">check</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface">Location services active</p>
+</div>
+</div>
+<!-- Step 3: In Progress -->
+<div class="flex items-center gap-md">
+<div class="w-6 h-6 rounded-full border border-primary flex items-center justify-center shrink-0 relative">
+<span class="w-2 h-2 rounded-full bg-primary pulse-dot"></span>
+</div>
+<div class="flex-1 flex flex-col gap-1">
+<p class="font-label-md text-label-md text-primary">Fetching delivery zones</p>
+<div class="h-1 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-2/3 rounded-full shimmer"></div>
+</div>
+</div>
+</div>
+<!-- Step 4: Pending -->
+<div class="flex items-center gap-md opacity-50">
+<div class="w-6 h-6 rounded-full border border-on-surface-variant flex items-center justify-center shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-on-surface-variant"></span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface-variant">Synchronizing notifications</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Note: Suppressed TopAppBar and BottomNavBar as this is a linear/transactional splash screen -->
+</body></html>

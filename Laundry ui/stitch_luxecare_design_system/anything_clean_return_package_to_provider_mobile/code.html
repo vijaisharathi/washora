@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Return Package - Delivery Partner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed-variant": "#6700b5",
+                      "on-tertiary-container": "#e3e0e2",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "surface-container-low": "#1c1b1c",
+                      "on-tertiary-fixed-variant": "#474649",
+                      "secondary-container": "#474649",
+                      "surface-container-high": "#2a2a2b",
+                      "outline-variant": "#4c4354",
+                      "surface-tint": "#dcb8ff",
+                      "surface-variant": "#353436",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "tertiary-fixed": "#e4e2e4",
+                      "primary": "#dcb8ff",
+                      "inverse-on-surface": "#313031",
+                      "secondary": "#c8c6c8",
+                      "outline": "#988ca0",
+                      "on-secondary-fixed-variant": "#474649",
+                      "primary-container": "#8a2be2",
+                      "on-background": "#e5e2e3",
+                      "on-primary": "#480081",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "on-primary-fixed": "#2c0051",
+                      "surface-container": "#201f20",
+                      "on-tertiary": "#303032",
+                      "inverse-surface": "#e5e2e3",
+                      "tertiary-container": "#646365",
+                      "primary-fixed": "#efdbff",
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-surface-variant": "#cfc2d7",
+                      "secondary-fixed": "#e5e1e4",
+                      "on-primary-container": "#eed9ff",
+                      "inverse-primary": "#8422dc",
+                      "surface-container-highest": "#353436",
+                      "on-error": "#690005",
+                      "error-container": "#93000a",
+                      "on-secondary": "#303032",
+                      "on-secondary-container": "#b7b4b7",
+                      "surface-dim": "#131314",
+                      "error": "#ffb4ab",
+                      "on-surface": "#e5e2e3",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "surface": "#131314",
+                      "on-error-container": "#ffdad6",
+                      "background": "#131314",
+                      "surface-bright": "#3a393a",
+                      "tertiary": "#c8c6c8"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "2xl": "48px",
+                      "3xl": "64px",
+                      "sm": "8px",
+                      "md": "16px",
+                      "lg": "24px",
+                      "xl": "32px",
+                      "xs": "4px"
+              },
+              "fontFamily": {
+                      "label-md": ["Geist"],
+                      "display-lg": ["Geist"],
+                      "display-lg-mobile": ["Geist"],
+                      "headline-lg": ["Geist"],
+                      "caption": ["Geist"],
+                      "body-md": ["Geist"],
+                      "body-lg": ["Geist"],
+                      "headline-md": ["Geist"]
+              },
+              "fontSize": {
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top App Bar (Task-focused, so standard shell is suppressed, custom header used) -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/5 shadow-sm transition-all duration-200">
+<div class="flex items-center justify-between px-md h-16 w-full max-w-[390px] mx-auto relative">
+<button aria-label="Go back" class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center p-xs active:scale-95">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex flex-col items-center justify-center absolute left-1/2 -translate-x-1/2">
+<h1 class="font-headline-md text-headline-md text-primary-fixed-dim">Return package</h1>
+<span class="font-caption text-caption text-on-surface-variant">#QH1024</span>
+</div>
+<div class="w-8"></div> <!-- Spacer for centering -->
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 pb-32 px-[20px] max-w-[390px] mx-auto w-full flex flex-col gap-lg">
+<!-- Status & Message -->
+<div class="flex flex-col gap-sm">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-error-container text-[20px]" data-icon="error" data-weight="fill" style="font-variation-settings: 'FILL' 1;">error</span>
+<span class="font-label-md text-label-md text-error-container bg-error-container/10 px-xs py-1 rounded">RETURN_REQUIRED</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant bg-surface-container-low p-md rounded-lg border border-white/5">
+                Return the package to the service provider. The package must be handed back before this delivery can be closed.
+            </p>
+</div>
+<!-- Return Location Card -->
+<section class="bg-surface-container rounded-xl p-md flex flex-col gap-sm border border-white/5 shadow-lg relative overflow-hidden">
+<!-- Glassmorphic glow -->
+<div class="absolute -top-10 -right-10 w-24 h-24 bg-primary/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-start justify-between z-10">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary border border-white/10">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+</div>
+<div>
+<h3 class="font-headline-md text-[18px] text-on-surface">CleanX Service Center</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-[14px]">Anna Nagar, Chennai</p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-md mt-sm border-t border-white/5 pt-sm z-10">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">Distance</span>
+<span class="font-label-md text-label-md text-on-surface">2.4 km</span>
+</div>
+<div class="w-px h-8 bg-white/10"></div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">ETA</span>
+<span class="font-label-md text-label-md text-on-surface">9 min</span>
+</div>
+</div>
+</section>
+<!-- Package Details Card -->
+<section class="bg-surface-container-low rounded-xl p-md flex flex-col gap-sm border border-white/5">
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Package Details</h4>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest overflow-hidden border border-white/10 relative">
+<img alt="White Sneaker" class="object-cover w-full h-full opacity-80" data-alt="A macro shot of a pristine white sneaker being carefully cleaned. The setting is a minimalist, high-end care facility with dark stone surfaces and subtle, precise spotlighting. The mood is meticulous and premium, fitting a luxury lifestyle management aesthetic. The color palette is predominantly deep charcoals and bright white with extremely subtle violet accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIoeO4IfDK717g2fWAFXtek3A7HP8HC5D_owRX21lkb_SwZhpI8r7iO9g0yUQR359o1SB6qFXwHsr9hx6zXblksjQX8pa9pprO7-n8wv3yBmIlnZjqO172EYjtXGLkPI7MeDLGwkiQ7h-05QhIpWwIe1AeZltLpmOXZ0R1QkptY1YZ25JprZDXE6t1VomvJe9sMjh2OJ6hawZ7Rg4CxEQSCeI8gBO7EysB4wwiB1wE3DD12jPFeUHuJA"/>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">White Sneaker</span>
+<span class="font-caption text-caption text-on-surface-variant">1 of 1</span>
+</div>
+</div>
+<div class="mt-xs pt-xs border-t border-white/5 flex items-center gap-xs text-error">
+<span class="material-symbols-outlined text-[16px]" data-icon="info">info</span>
+<span class="font-caption text-caption">Reason: Customer unavailable</span>
+</div>
+</section>
+<!-- Map Section -->
+<section class="rounded-xl overflow-hidden h-48 border border-white/5 relative group cursor-pointer shadow-lg bg-surface-container-lowest">
+<!-- Map placeholder using data-location -->
+<div class="w-full h-full absolute inset-0 opacity-50 transition-opacity duration-300 group-hover:opacity-70 bg-cover bg-center" data-alt="A highly stylized, dark-mode satellite map of an urban area, specifically Chennai. The map features minimal street details, emphasizing a sleek, high-tech aesthetic. The color palette consists of deep blacks, rich dark greys, and subtle, glowing violet route lines. The overall mood is modern, efficient, and sophisticated, fitting a premium digital interface." data-location="Chennai" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBOk6buHrYIVv1YrQenywZ5IgVd2m3Kb5qPTVeKqvNcFArpeuQKdxV7G5czl98etrU8c1Q-_8uryi8I-YiXXqvd5fKS0l-hVDb0t1aW4e5CtwcbW1RGbt1Jrk7-vOtyMrvIf5jpMdCvXf7Zl7Z0HgCxMfwOLJko6BVcDL-tDBFxj2JGkAb4DJ5diblomCAQHHNr4BGjMfCQRNmp4xNzD4M_Vn12W5Fo53TTTN9b8_smygW41nlWDo2EHQ')"></div>
+<!-- Overlay gradients for depth -->
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent pointer-events-none"></div>
+<!-- Map markers & route mock -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="relative w-full h-full">
+<!-- Route Line SVG Mock -->
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path class="opacity-70" d="M 20 80 Q 50 60 70 30" fill="none" stroke="var(--primary)" stroke-dasharray="4 4" stroke-width="2"></path>
+</svg>
+<!-- Current Location Marker -->
+<div class="absolute left-[20%] top-[80%] -translate-x-1/2 -translate-y-1/2">
+<div class="w-4 h-4 bg-primary rounded-full shadow-[0_0_10px_rgba(220,184,255,0.5)] border-2 border-background"></div>
+</div>
+<!-- Destination Marker -->
+<div class="absolute left-[70%] top-[30%] -translate-x-1/2 -translate-y-1/2">
+<div class="w-6 h-6 bg-surface-container rounded-full flex items-center justify-center border border-primary text-primary">
+<span class="material-symbols-outlined text-[14px]" data-icon="storefront">storefront</span>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-sm right-sm bg-surface-container-high/90 backdrop-blur-md px-sm py-xs rounded font-caption text-caption text-on-surface-variant border border-white/5">
+                View full route
+            </div>
+</section>
+</main>
+<!-- Fixed Bottom Action Area -->
+<div class="fixed bottom-0 w-full max-w-[390px] left-1/2 -translate-x-1/2 bg-surface-container/90 backdrop-blur-2xl border-t border-white/5 p-md pb-safe z-50 flex flex-col gap-sm shadow-[0_-10px_30px_-15px_rgba(0,0,0,0.5)]">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-lg rounded-full flex items-center justify-center gap-sm hover:opacity-90 transition-opacity active:scale-[0.98]">
+<span class="material-symbols-outlined" data-icon="navigation">navigation</span>
+            NAVIGATE TO PROVIDER
+        </button>
+</div>
+</body></html>

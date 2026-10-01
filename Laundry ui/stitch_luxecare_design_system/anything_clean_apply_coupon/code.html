@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Apply Coupon - Lumina</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#eed9ff",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-container": "#201f20",
+                        "inverse-primary": "#8422dc",
+                        "electric-violet": "#8a2be2",
+                        "on-background": "#e5e2e3",
+                        "error-container": "#93000a",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-tint": "#dcb8ff",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-secondary-container": "#b9b8ba",
+                        "on-surface-variant": "#cfc2d7",
+                        "surface-container-high": "#2a2a2b",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-surface": "#e5e2e3",
+                        "on-primary-fixed": "#2c0051",
+                        "outline-variant": "#4c4354",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-tertiary": "#303032",
+                        "on-secondary-fixed-variant": "#474648",
+                        "secondary-fixed": "#e4e2e4",
+                        "primary": "#dcb8ff",
+                        "secondary-container": "#49494b",
+                        "on-secondary": "#303032",
+                        "on-error": "#690005",
+                        "success-green": "#81C784",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "inverse-on-surface": "#313031",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "tertiary-container": "#646365",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "tertiary": "#c8c6c8",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-primary": "#480081",
+                        "surface-container-low": "#1c1b1c",
+                        "primary-fixed": "#efdbff",
+                        "surface-bright": "#39393a",
+                        "error-red": "#ffb4ab",
+                        "outline": "#988ca0",
+                        "secondary": "#c8c6c8",
+                        "surface-dim": "#131314",
+                        "background": "#131314",
+                        "primary-container": "#8a2be2",
+                        "surface": "#131314",
+                        "surface-container-lowest": "#0e0e0f",
+                        "surface-container-highest": "#353436",
+                        "surface-variant": "#353436",
+                        "success-bg": "#1A3D24"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "sm": "8px",
+                        "3xl": "64px",
+                        "2xl": "48px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "h3": ["Geist"],
+                        "body-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "caption": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "h1": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col antialiased selection:bg-primary/30 selection:text-primary">
+<!-- Task-Focused Header (Navigation Shell Suppressed per rules for transactional flows) -->
+<header class="sticky top-0 z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 h-20 flex items-center px-xl">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface transition-colors">arrow_back</span>
+</button>
+<h1 class="font-h3 text-h3 text-on-surface ml-md font-bold">Apply Coupon</h1>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 w-full max-w-2xl mx-auto p-xl flex flex-col gap-2xl">
+<!-- Input Section -->
+<section class="flex flex-col gap-sm">
+<label class="font-label-md text-label-md text-on-surface-variant">Promo Code</label>
+<div class="flex gap-md">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-primary">local_activity</span>
+<input class="w-full bg-surface-container-low border border-primary ring-1 ring-primary/50 rounded-lg pl-3xl pr-md py-md font-mono-display text-mono-display text-primary placeholder:text-on-surface-variant/50 focus:outline-none uppercase tracking-widest transition-all" type="text" value="FRESH20"/>
+</div>
+<button class="bg-primary-container text-on-primary-container font-label-md text-label-md font-bold px-xl py-md rounded-lg hover:brightness-110 transition-all shadow-lg shadow-primary/10 whitespace-nowrap">
+                    Apply
+                </button>
+</div>
+</section>
+<!-- Validation States Showcase (Pattern Library Style) -->
+<section class="flex flex-col gap-md">
+<h2 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-xs flex items-center gap-sm">
+<span class="material-symbols-outlined text-[16px]">pattern</span>
+                Validation State Examples
+            </h2>
+<div class="grid grid-cols-1 gap-md">
+<!-- Success -->
+<div class="bg-success-bg border border-success-green/30 rounded-lg p-md flex items-start gap-md transition-all hover:bg-success-bg/80">
+<span class="material-symbols-outlined text-success-green shrink-0 mt-xs">check_circle</span>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-success-green font-medium">Coupon applied successfully.</p>
+<p class="font-caption text-caption text-success-green/80 mt-xs">FRESH20 - 20% OFF. Discount: ₹90</p>
+</div>
+</div>
+<!-- Error: Invalid -->
+<div class="bg-error-container/10 border border-error-red/30 rounded-lg p-md flex items-start gap-md transition-all hover:bg-error-container/20">
+<span class="material-symbols-outlined text-error-red shrink-0 mt-xs">error</span>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-error-red font-medium">Invalid coupon code.</p>
+<p class="font-caption text-caption text-error-red/80 mt-xs">Check the code and try again.</p>
+</div>
+</div>
+<!-- Error: Expired -->
+<div class="bg-error-container/10 border border-error-red/30 rounded-lg p-md flex items-start gap-md transition-all hover:bg-error-container/20">
+<span class="material-symbols-outlined text-error-red shrink-0 mt-xs">history</span>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-error-red font-medium">Coupon expired.</p>
+<p class="font-caption text-caption text-error-red/80 mt-xs">This offer is no longer available.</p>
+</div>
+</div>
+<!-- Error: Minimum Order -->
+<div class="bg-error-container/10 border border-error-red/30 rounded-lg p-md flex items-start gap-md transition-all hover:bg-error-container/20">
+<span class="material-symbols-outlined text-error-red shrink-0 mt-xs">shopping_basket</span>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-error-red font-medium">Minimum order not met.</p>
+<p class="font-caption text-caption text-error-red/80 mt-xs">Add ₹150 more to use this coupon.</p>
+</div>
+</div>
+</div>
+</section>
+<div class="flex-1"></div> <!-- Spacer -->
+<!-- Price Update Snapshot & CTA Container -->
+<section class="mt-auto flex flex-col gap-xl">
+<!-- Snapshot Card -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-xl flex flex-col gap-md relative overflow-hidden">
+<!-- Decorative accent -->
+<div class="absolute top-0 left-0 w-1 h-full bg-success-green"></div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Subtotal</span>
+<span class="font-body-md text-body-md text-on-surface-variant line-through">₹449</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-success-green flex items-center gap-sm">
+<span class="material-symbols-outlined text-[18px]">local_offer</span>
+                        Discount (FRESH20)
+                    </span>
+<span class="font-body-md text-body-md text-success-green font-medium">-₹90</span>
+</div>
+<div class="h-px w-full bg-outline-variant/30 my-sm"></div>
+<div class="flex justify-between items-end">
+<span class="font-h3 text-h3 text-on-surface">Total</span>
+<div class="flex flex-col items-end">
+<span class="font-caption text-caption text-on-surface-variant mb-xs">After discount</span>
+<span class="font-headline-lg text-headline-lg text-primary">₹359</span>
+</div>
+</div>
+</div>
+<!-- Primary CTA -->
+<button class="w-full bg-electric-violet text-white font-label-md text-label-md font-bold py-lg rounded-xl shadow-lg shadow-primary/20 hover:bg-primary-container hover:text-on-primary-container transition-all flex items-center justify-center gap-sm group">
+                Apply &amp; Continue
+                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</section>
+</main>
+</body></html>

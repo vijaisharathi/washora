@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Profile - Lumina Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#1c1b1c",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed": "#efdbff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-bright": "#39393a",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-dim": "#131314",
+                        "tertiary": "#c8c6c8",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-error": "#690005",
+                        "on-secondary-container": "#b9b8ba",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "secondary-container": "#49494b",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "surface-container": "#201f20",
+                        "surface-variant": "#353436",
+                        "secondary": "#c8c6c8",
+                        "error-container": "#93000a",
+                        "success-green": "#81C784",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-primary-container": "#eed9ff",
+                        "primary-container": "#8a2be2",
+                        "success-bg": "#1A3D24",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "outline-variant": "#4c4354",
+                        "tertiary-fixed": "#e4e2e4",
+                        "inverse-primary": "#8422dc",
+                        "on-secondary-fixed-variant": "#474648",
+                        "on-primary-fixed": "#2c0051",
+                        "on-primary": "#480081",
+                        "on-tertiary": "#303032",
+                        "secondary-fixed": "#e4e2e4",
+                        "electric-violet": "#8a2be2",
+                        "surface-container-highest": "#353436",
+                        "background": "#131314",
+                        "on-surface": "#e5e2e3",
+                        "surface": "#131314",
+                        "error-red": "#ffb4ab",
+                        "primary": "#dcb8ff",
+                        "on-secondary": "#303032",
+                        "surface-container-high": "#2a2a2b",
+                        "outline": "#988ca0",
+                        "on-background": "#e5e2e3",
+                        "on-tertiary-container": "#e3e0e2",
+                        "inverse-on-surface": "#313031",
+                        "surface-tint": "#dcb8ff",
+                        "surface-container-lowest": "#0e0e0f",
+                        "tertiary-container": "#646365"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "2xl": "48px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "3xl": "64px",
+                        "md": "16px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "caption": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "h3": ["Geist"],
+                        "label-md": ["Geist"],
+                        "h1": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex">
+<!-- TopNavBar for Mobile -->
+<nav class="md:hidden fixed top-0 w-full bg-surface-dim/80 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-lg h-16 z-50">
+<div class="font-headline-lg text-headline-lg font-bold text-electric-violet">Lumina Marketplace</div>
+<div class="flex gap-md">
+<span class="material-symbols-outlined text-electric-violet cursor-pointer active:scale-95 transition-transform">notifications</span>
+<span class="material-symbols-outlined text-electric-violet cursor-pointer active:scale-95 transition-transform">help</span>
+</div>
+</nav>
+<!-- SideNavBar (Desktop) -->
+<aside class="hidden md:flex flex-col p-md gap-sm bg-surface-container-low fixed left-0 top-0 h-screen w-64 border-r border-outline-variant/30 z-40">
+<div class="mb-lg px-md pt-md">
+<div class="font-h1 text-h1 text-electric-violet mb-sm">Lumina</div>
+<div class="flex items-center gap-md mt-lg">
+<img alt="User profile picture" class="w-12 h-12 rounded-full object-cover border border-outline-variant/30" data-alt="A high-quality, professional headshot of a modern corporate professional in a softly lit, modern tech office setting. The lighting highlights features elegantly, contributing to a sleek, dark aesthetic. The background is a blurred charcoal workspace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqZWVzFfm5qdybfswKOtf4qqH6K04m3noDqv5Dg7EdZbSsYBibNjlh1BLx7ZFJEaSpE6oSrTiISbwas8VLYiubzQKufe4fbSnXjQVFAqg_EUDLcKSe2M8frBG1DiqUBQgNBI6kehwZJ_AudpNOAaSNjJ_NkSaWFPCHV0wU8SDN0Vm1XOjlmDZdZnA5cTRKWuoMlTs6oZkD6-AEEqRWszvppf-EChDL1RIuV-HHqtUyFrlSIK-785ssJQ"/>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface">Alex Rivers</div>
+<div class="font-caption text-caption text-on-surface-variant">Premium Member</div>
+</div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto">
+<nav class="flex flex-col gap-xs font-body-md text-body-md">
+<a class="flex items-center gap-md p-md rounded-lg text-on-surface-variant hover:bg-surface-container transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-md p-md rounded-lg text-on-surface-variant hover:bg-surface-container transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span>Bookings</span>
+</a>
+<a class="flex items-center gap-md p-md rounded-lg text-on-surface-variant hover:bg-surface-container transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span>Payments</span>
+</a>
+<a class="flex items-center gap-md p-md rounded-lg text-on-surface-variant hover:bg-surface-container transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+<span>Addresses</span>
+</a>
+<!-- Active State Example (Though user is Arun on Profile, mapping Preferences conceptually if this is a generic 'settings' view, or creating custom side rail items based on prompt) -->
+<!-- Assuming the prompt overrides the JSON side nav slightly for context, or we stick to JSON. We stick to JSON structure for SideNav, but map "Customer Profile" -> Settings/Preferences as Active -->
+<a class="flex items-center gap-md p-md rounded-lg bg-primary/10 text-primary font-bold active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Preferences</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto">
+<button class="w-full bg-electric-violet text-white font-label-md text-label-md font-bold py-md rounded-lg shadow-lg shadow-primary/20 mb-lg active:scale-95 transition-transform">
+                Book a Cleaner
+            </button>
+<nav class="flex flex-col gap-xs font-body-md text-body-md border-t border-outline-variant/30 pt-sm">
+<a class="flex items-center gap-md p-md rounded-lg text-on-surface-variant hover:bg-surface-container transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span>Support</span>
+</a>
+<a class="flex items-center gap-md p-md rounded-lg text-error-red hover:bg-error-container/10 transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</nav>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 pt-16 md:pt-0 p-xl max-w-[1200px] mx-auto w-full">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-sm font-label-md text-label-md text-on-surface-variant mb-xl">
+<span>Account</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-primary font-bold">Profile</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+<!-- Left Column: Profile Card & Quick Actions -->
+<div class="lg:col-span-4 flex flex-col gap-xl">
+<!-- Profile Header Card -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col items-center text-center">
+<div class="relative mb-md">
+<img alt="Arun Kumar Avatar" class="w-24 h-24 rounded-full object-cover border-2 border-primary" data-alt="A stylish, dark-themed avatar portrait of a man named Arun Kumar. The aesthetic is sharp, professional, and slightly tech-forward, lit with soft neon violet accents against a deep charcoal background. He exudes confidence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANxjaGXKgSK-cMNFk7Yr9XQDmijmDkpnXq99VeC0w0VfhPI08ZimhKWZTh7sg-xiiBowSkO-LOM3pBGKjLNI3su8Y4meB7RDn90ecogly6mbqeJCuIr64ffu11pJ21HTusq2zJuLWUekcZIRNDsP_KQ4Q2t6TZu-w4orIUWkt5kh8KcTxOucYhGGtLh3clwvONsI8aDGijLuszKRIlgjTNA8ma4VSumQfHd0PZ9XMmU6cKVCuN5lY7hQ"/>
+<button class="absolute bottom-0 right-0 bg-surface-container-high border border-outline-variant rounded-full p-xs hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-on-surface text-sm">edit</span>
+</button>
+</div>
+<h1 class="font-h1 text-h1 text-on-surface mb-xs">Arun Kumar</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">arun@example.com</p>
+<div class="w-full flex items-center justify-between p-md bg-surface-container-low rounded-lg border border-outline-variant/50">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant">phone_iphone</span>
+<span class="font-mono-display text-mono-display text-sm text-on-surface">+91 XXXXX XXXXX</span>
+</div>
+<span class="bg-success-bg text-success-green px-sm py-xs rounded-full font-label-md text-[10px] uppercase tracking-widest font-bold">Verified</span>
+</div>
+</div>
+<!-- Log Out Button (Mobile / Alternate Placement) -->
+<button class="w-full flex items-center justify-center gap-sm border border-outline-variant/50 text-error-red font-label-md text-label-md font-bold py-md rounded-lg hover:bg-error-container/10 transition-colors">
+<span class="material-symbols-outlined">logout</span>
+                    Log Out
+                </button>
+</div>
+<!-- Right Column: Quick Access & Sections -->
+<div class="lg:col-span-8 flex flex-col gap-xl">
+<!-- Quick Access: Recent Order -->
+<section>
+<h2 class="font-h3 text-h3 text-on-surface mb-md">Quick Access</h2>
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg">
+<div class="flex justify-between items-start mb-lg">
+<div class="flex items-start gap-md">
+<div class="bg-primary/10 p-sm rounded-lg text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dry_cleaning</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface">Sneaker Deep Clean</div>
+<div class="font-caption text-caption text-on-surface-variant">CleanX Service Center</div>
+</div>
+</div>
+<span class="bg-success-bg text-success-green px-md py-xs rounded-full font-label-md text-[10px] uppercase tracking-widest font-bold">Delivered</span>
+</div>
+<div class="flex justify-between items-center border-t border-outline-variant/30 pt-md">
+<div class="font-headline-lg text-headline-lg text-on-surface">₹502</div>
+<button class="bg-transparent border border-outline-variant text-on-surface font-label-md text-label-md py-sm px-lg rounded-lg hover:bg-surface-container-high transition-colors">
+                                View Order
+                            </button>
+</div>
+</div>
+</section>
+<!-- Account Sections Grid -->
+<section>
+<h2 class="font-h3 text-h3 text-on-surface mb-md">Account Settings</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<a class="group bg-surface-container-low border border-outline-variant/50 rounded-xl p-md flex items-center gap-md hover:border-primary/50 transition-colors" href="#">
+<div class="bg-surface-container-high p-sm rounded-lg text-on-surface-variant group-hover:text-primary group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">receipt_long</span>
+</div>
+<div class="flex-1">
+<div class="font-label-md text-label-md font-bold text-on-surface">Orders & Bookings</div>
+<div class="font-caption text-caption text-on-surface-variant">View past and active services</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</a>
+<a class="group bg-surface-container-low border border-outline-variant/50 rounded-xl p-md flex items-center gap-md hover:border-primary/50 transition-colors" href="#">
+<div class="bg-surface-container-high p-sm rounded-lg text-on-surface-variant group-hover:text-primary group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div class="flex-1">
+<div class="font-label-md text-label-md font-bold text-on-surface">Saved Addresses</div>
+<div class="font-caption text-caption text-on-surface-variant">Manage pickup/drop locations</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</a>
+<a class="group bg-surface-container-low border border-outline-variant/50 rounded-xl p-md flex items-center gap-md hover:border-primary/50 transition-colors" href="#">
+<div class="bg-surface-container-high p-sm rounded-lg text-on-surface-variant group-hover:text-primary group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div class="flex-1">
+<div class="font-label-md text-label-md font-bold text-on-surface">Payment Methods</div>
+<div class="font-caption text-caption text-on-surface-variant">Cards, UPI, and Wallets</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</a>
+<a class="group bg-surface-container-low border border-outline-variant/50 rounded-xl p-md flex items-center gap-md hover:border-primary/50 transition-colors" href="#">
+<div class="bg-surface-container-high p-sm rounded-lg text-on-surface-variant group-hover:text-primary group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">notifications_active</span>
+</div>
+<div class="flex-1">
+<div class="font-label-md text-label-md font-bold text-on-surface">Notifications</div>
+<div class="font-caption text-caption text-on-surface-variant">Alert preferences & history</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</a>
+<a class="group bg-surface-container-low border border-outline-variant/50 rounded-xl p-md flex items-center gap-md hover:border-primary/50 transition-colors" href="#">
+<div class="bg-surface-container-high p-sm rounded-lg text-on-surface-variant group-hover:text-primary group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">security</span>
+</div>
+<div class="flex-1">
+<div class="font-label-md text-label-md font-bold text-on-surface">Privacy & Security</div>
+<div class="font-caption text-caption text-on-surface-variant">Password and data management</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</a>
+<a class="group bg-surface-container-low border border-outline-variant/50 rounded-xl p-md flex items-center gap-md hover:border-primary/50 transition-colors" href="#">
+<div class="bg-surface-container-high p-sm rounded-lg text-on-surface-variant group-hover:text-primary group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">support_agent</span>
+</div>
+<div class="flex-1">
+<div class="font-label-md text-label-md font-bold text-on-surface">Help & Support</div>
+<div class="font-caption text-caption text-on-surface-variant">FAQs and contact info</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</a>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe bg-surface-container-low/90 backdrop-blur-lg rounded-t-xl border-t border-outline-variant/20 shadow-lg shadow-primary/5">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 tap-highlight-transparent active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md-mobile text-label-md-mobile">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 tap-highlight-transparent active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="cleaning_services">cleaning_services</span>
+<span class="font-label-md-mobile text-label-md-mobile">Bookings</span>
+</a>
+<!-- Account is Active on Profile Screen -->
+<a class="flex flex-col items-center justify-center bg-primary-container/20 text-primary rounded-xl p-2 tap-highlight-transparent active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-md-mobile text-label-md-mobile font-bold">Account</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 tap-highlight-transparent active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-md-mobile text-label-md-mobile">Support</span>
+</a>
+</nav>
+</body></html>

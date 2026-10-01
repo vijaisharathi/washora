@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dispute DSP-2048 - Anything Clean</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Custom Fonts (Assuming Geist is available or falling back gracefully) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#ffdaba",
+                        "surface-dim": "#131314",
+                        "surface-bright": "#3a393a",
+                        "surface-container-low": "#1c1b1c",
+                        "secondary-container": "#573976",
+                        "primary": "#dcb8ff",
+                        "secondary": "#dcb8ff",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-background": "#e5e2e3",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-tertiary-fixed-variant": "#6a3b00",
+                        "on-surface-variant": "#cfc2d7",
+                        "surface": "#131314",
+                        "on-secondary-fixed": "#290947",
+                        "secondary-fixed": "#efdbff",
+                        "primary-container": "#8a2be2",
+                        "tertiary-fixed-dim": "#ffb873",
+                        "inverse-primary": "#8422dc",
+                        "surface-container-highest": "#353436",
+                        "on-secondary-fixed-variant": "#573976",
+                        "surface-container": "#201f20",
+                        "on-secondary-container": "#caa7ec",
+                        "tertiary": "#ffb873",
+                        "primary-fixed": "#efdbff",
+                        "error": "#ffb4ab",
+                        "secondary-fixed-dim": "#dcb8ff",
+                        "info": "#60a5fa",
+                        "on-tertiary-fixed": "#2d1600",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-container": "#eed9ff",
+                        "on-surface": "#e5e2e3",
+                        "on-secondary": "#3f225e",
+                        "tertiary-fixed": "#ffdcbf",
+                        "outline": "#988ca0",
+                        "success": "#4ade80",
+                        "surface-container-lowest": "#0e0e0f",
+                        "surface-tint": "#dcb8ff",
+                        "on-primary": "#480081",
+                        "on-error": "#690005",
+                        "surface-variant": "#353436",
+                        "inverse-on-surface": "#313031",
+                        "on-primary-fixed": "#2c0051",
+                        "outline-variant": "#4c4354",
+                        "warning": "#fbbf24",
+                        "background": "#131314",
+                        "on-tertiary": "#4b2800",
+                        "surface-container-high": "#2a2a2b",
+                        "inverse-surface": "#e5e2e3",
+                        "error-container": "#93000a",
+                        "critical": "#f87171",
+                        "tertiary-container": "#935400"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "sidebar-width": "260px",
+                        "table-cell-padding": "12px",
+                        "gutter": "16px",
+                        "margin-desktop": "24px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "headline-md": ["Inter", "sans-serif"],
+                        "label-sm": ["Inter", "sans-serif"],
+                        "label-md": ["Inter", "sans-serif"],
+                        "headline-lg": ["Inter", "sans-serif"],
+                        "code": ["monospace"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "code": ["13px", { "lineHeight": "18px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Base typography fallbacks just in case */
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* Subtle scrollbar for dark mode admin panels */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131314; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #353436; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4c4354; 
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Shared Component: SideNavBar -->
+<nav class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-lowest border-r border-outline-variant flex flex-col py-margin-desktop z-50">
+<div class="px-6 mb-8 flex flex-col gap-1">
+<h1 class="font-display-lg text-display-lg font-bold text-primary tracking-tight truncate text-xl" title="ANYTHING CLEAN">ANYTHING CLEAN</h1>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Super Admin Console</span>
+</div>
+<div class="flex-1 overflow-y-auto">
+<ul class="flex flex-col space-y-1 px-3">
+<!-- Dashboard -->
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+</li>
+<!-- Disputes (ACTIVE) -->
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg border-l-4 border-primary bg-secondary-container/30 text-on-surface font-semibold transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'FILL' 1;">gavel</span>
+<span class="font-body-md text-body-md">Disputes</span>
+</a>
+</li>
+<!-- Reviews -->
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">reviews</span>
+<span class="font-body-md text-body-md">Reviews</span>
+</a>
+</li>
+<!-- Support -->
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+</li>
+<!-- Vendors -->
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">store</span>
+<span class="font-body-md text-body-md">Vendors</span>
+</a>
+</li>
+<!-- Audit Logs -->
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">history</span>
+<span class="font-body-md text-body-md">Audit Logs</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant/50 px-3">
+<ul class="flex flex-col space-y-1">
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span class="font-body-md text-body-md">Logout</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Shared Component: TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-260px)] h-16 bg-surface border-b border-outline-variant flex justify-between items-center px-margin-desktop z-40">
+<div class="flex items-center gap-4 w-1/3">
+<!-- Global Search Bar Placeholder -->
+<div class="relative w-full max-w-md group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface font-body-md text-body-md rounded-full py-1.5 pl-10 pr-4 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary placeholder:text-on-surface-variant/70 transition-all" placeholder="Search disputes, orders, or users... (Cmd+K)" type="text"/>
+</div>
+</div>
+<div class="flex-1 flex justify-center text-center">
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Dispute Resolution Hub</h2>
+</div>
+<div class="flex items-center justify-end gap-2 w-1/3">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-full transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-full transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]">dns</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-full transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]">help_outline</span>
+</button>
+<div class="ml-4 h-8 w-8 rounded-full overflow-hidden border border-outline-variant shrink-0 cursor-pointer hover:border-primary transition-colors">
+<img alt="Admin User Profile" class="w-full h-full object-cover" data-alt="A high-quality, close-up professional headshot of an administrative professional in a modern, dark-themed digital office setting. The lighting is cinematic, featuring soft violet and deep gray undertones that reflect a high-tech control center environment. The individual appears focused and authoritative, wearing sleek, minimalist business attire, seamlessly integrating into a sophisticated enterprise dashboard UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg4tVGILDbyaJnIhYyS-S40Tav3N_p5mcO3VGBXP_bL2QhBbMDVjpZdIeTXtGNZVQ6LP6iIecdE0CKM85Jzlw-9aEuZZQxnMHDPlQ_jvpnszo1z8zVE6x95v-Tezof1b6tyla9b-sTnaW59jST4iare4Xbx_0oXK1V7LIBsDmYkgmsOhVVIZDnnqsI7QloUYp7N3LAZktgnlpP3rIz4WUpndd1Fy7O0fi-LM7RWceDmPZUnXIyAq4zvg"/>
+</div>
+</div>
+</header>
+<!-- Main Workspace Canvas -->
+<main class="ml-[260px] mt-16 p-margin-desktop min-h-[calc(100vh-64px)] pb-24">
+<!-- Header Section -->
+<div class="mb-8">
+<nav class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md mb-2">
+<a class="hover:text-primary transition-colors" href="#">Disputes</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface">DSP-2048</span>
+</nav>
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+<div class="flex items-center flex-wrap gap-4">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Dispute DSP-2048</h1>
+<div class="flex gap-2">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-info/10 border border-info/20 text-info font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-info"></span>
+                            UNDER_REVIEW
+                        </span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-critical/10 border border-critical/20 text-critical font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">priority_high</span>
+                            HIGH PRIORITY
+                        </span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 bg-surface-container-lowest border border-outline-variant hover:bg-surface-container-high text-on-surface font-label-md text-label-md rounded-lg transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+                        Assign
+                    </button>
+<button class="px-4 py-2 bg-error-container/20 border border-error/30 hover:bg-error-container/40 text-error font-label-md text-label-md rounded-lg transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">rocket_launch</span>
+                        Escalate
+                    </button>
+<button class="p-2 bg-surface-container-lowest border border-outline-variant hover:bg-surface-container-high text-on-surface rounded-lg transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Density Grid Layout -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter items-start">
+<!-- Left Column: Primary Details & Evidence (8 cols) -->
+<div class="xl:col-span-8 flex flex-col gap-gutter">
+<!-- Summary Bento Box -->
+<section class="bg-surface-container-low border border-outline-variant rounded-xl p-6">
+<div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Issue Category</span>
+<span class="font-body-md text-body-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-warning">warning</span>
+                                Damaged Item
+                            </span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Related Order</span>
+<a class="font-body-md text-body-md text-primary hover:underline" href="#">#QH1024</a>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Created Date</span>
+<span class="font-body-md text-body-md text-on-surface">Aug 30, 2026</span>
+</div>
+<div class="col-span-2 md:col-span-3 border-t border-outline-variant/50 pt-4 mt-2 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Customer</span>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant font-label-sm">AK</div>
+<span class="font-body-md text-body-md text-on-surface">Arun Kumar</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Provider</span>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded border border-outline-variant bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">storefront</span>
+</div>
+<a class="font-body-md text-body-md text-primary hover:underline truncate" href="#">CleanX Service Center</a>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Delivery Partner</span>
+<span class="font-body-md text-body-md text-on-surface">Ravi Kumar</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Customer Claim -->
+<section class="bg-surface-container-low border border-outline-variant rounded-xl p-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">format_quote</span>
+                        Customer Claim
+                    </h3>
+<div class="bg-surface-container-lowest p-4 rounded-lg border-l-4 border-primary">
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+                            "I received the shoes with visible damage after cleaning."
+                        </p>
+</div>
+</section>
+<!-- Evidence Workspace -->
+<section class="bg-surface-container-low border border-outline-variant rounded-xl p-6">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface">Evidence Files</h3>
+<button class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                            Download All
+                        </button>
+</div>
+<div class="space-y-6">
+<!-- Customer Photos -->
+<div>
+<h4 class="font-label-md text-label-md text-on-surface-variant mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">person</span>
+                                Customer Provided (3 files)
+                            </h4>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+<div class="group relative aspect-square rounded-lg border border-outline-variant overflow-hidden bg-surface-container">
+<img alt="Evidence 1" class="w-full h-full object-cover transition-transform group-hover:scale-105" data-alt="A close-up, high-resolution photograph of a pair of damaged leather shoes acting as dispute evidence within a digital interface. The image is styled as a document preview in a dark-mode administrative dashboard, surrounded by deep charcoal and soft violet UI elements. The lighting highlights scratches and scuffs clearly, presenting a sterile, objective, and forensic aesthetic suitable for operational review." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkwN0rf9163i0AQz6hfKUXUV7K3as0Uj3Jnq4hd9hThZrRZco0jhSZZEkYXxZSvp-bisyJJEuh_p_zL6WzEQZmApIZVPsWCHZrqmJDWPOwr6jQhlxi2_TF-I5C7ULCbfgD950CSDtdsQ1l0s2n3kVSgIhpxr-qsa0KSnk1OHb_dpvrabF6T0DloyDg1oQ4dhoTN3kyRQZi2kEucvQXaD3jQd6N-W7BnGUz5j7chZyPx3Lhf2LpQeyYfA"/>
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+</div>
+</div>
+<div class="group relative aspect-square rounded-lg border border-outline-variant overflow-hidden bg-surface-container">
+<img alt="Evidence 2" class="w-full h-full object-cover transition-transform group-hover:scale-105" data-alt="A detailed, macro photograph focusing on a severe scuff mark on the heel of a dark leather dress shoe. This acts as digital evidence in a dark-themed admin control center. The surrounding aesthetic is minimalist and high-tech, utilizing deep blacks and subtle grays. The lighting is harsh and direct on the damaged area, serving an investigative, operational purpose." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfdJZ_gKOHnJGDqBrhMs8ooBJjFxrqyA1pmkLE8eUpxHhGTqefYXmkTni6YYCSgqxMZaQrB_Y1aBITwMOqrRkNFYPwHs7f9avXj20D-HNd2lZ-iY__555FykdVuvaSSn2tttI1-kqFCwvgww10b6AtJ1EHkN0N8qowcs2a9eaWKNWM9s-6bnEBX-yIuwy03qSOdh18Gyr5IFEd3JmaKrCTt6zQpE-0AmbKd1jUn2z5fLo9sXKXavmo1A"/>
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+</div>
+</div>
+<div class="group relative aspect-square rounded-lg border border-outline-variant overflow-hidden bg-surface-container">
+<img alt="Evidence 3" class="w-full h-full object-cover transition-transform group-hover:scale-105" data-alt="A digital photograph showing the sole of a recently cleaned but damaged sneaker, presented as an evidence file in a high-density operational dashboard. The environment is a true-dark mode interface with crisp borders. The lighting is clinical, emphasizing a tear in the rubber material. The overall tone is authoritative and functional, designed for swift administrative assessment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmBBHiIlvJlGFhDeifyJvygTSeDIw_CEnw086w9nYkC6Z_Ke-lfD-Cor98LJ5YRrK_QwZI7k_eIGeEGsob7NFsJ2dRRXOy9XvYbTdu6zcqYuDAndvEKJC9L10oU7_YTPiqwNrb160adOGf0G4QbS3xZOv5uUXNjuVOoWBMTd9NBX7oXyiYfuf2IApoBz2V3g0-V2jY_VzPpjeM-opAdn7b99G9Sz2h93Em9PGVWk1iGZoB_uoAHQI9xA"/>
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Provider Response -->
+<div class="pt-4 border-t border-outline-variant/30">
+<h4 class="font-label-md text-label-md text-on-surface-variant mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">storefront</span>
+                                Provider Response (2 files)
+                            </h4>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+<div class="relative aspect-[4/3] rounded-lg border border-outline-variant bg-surface-container-lowest p-3 flex flex-col justify-center items-center group cursor-pointer hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary mb-2">description</span>
+<span class="font-label-sm text-label-sm text-on-surface text-center truncate w-full">Intake_Condition.pdf</span>
+</div>
+<div class="relative aspect-[4/3] rounded-lg border border-outline-variant bg-surface-container-lowest p-3 flex flex-col justify-center items-center group cursor-pointer hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary mb-2">image</span>
+<span class="font-label-sm text-label-sm text-on-surface text-center truncate w-full">Pre_Wash_Photo.jpg</span>
+</div>
+</div>
+</div>
+<!-- Order Photos -->
+<div class="pt-4 border-t border-outline-variant/30">
+<h4 class="font-label-md text-label-md text-on-surface-variant mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">inventory_2</span>
+                                Initial Order Photos (2 files)
+                            </h4>
+<div class="flex gap-4">
+<div class="w-16 h-16 rounded border border-outline-variant overflow-hidden bg-surface-container opacity-70 hover:opacity-100 cursor-pointer transition-opacity">
+<img alt="Order Photo 1" class="w-full h-full object-cover" data-alt="A small thumbnail preview of a pair of dirty sneakers submitted before cleaning, rendered within a dark-mode enterprise application. The surrounding UI uses tonal blacks and grays. The image is small but clear, serving as baseline evidence for an operational dispute investigation. The mood is analytical and organized." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrOJ2Pq3iylbWMmdWjo1vYJaSSlJdg9FPRAR9lsFnnAjlaS6mkD40TUF14tzMsfGTMj5dRYdGJWqbXpEM_0YkciDOWbJIHJYv-Mj9Wno-9Wlq6hbRNtjAIFdrG99PJrAyilYltcDIveuKtYws0LdagtvrkvTN6WaiFKZq7I8I-S7LIBmFhMFjLwd11ZDbFKhazTKSfbjly5qfk3IdN57khUm6BX3oOCw7uNak-b0mrlwvCqFJoSQenMw"/>
+</div>
+<div class="w-16 h-16 rounded border border-outline-variant overflow-hidden bg-surface-container opacity-70 hover:opacity-100 cursor-pointer transition-opacity">
+<img alt="Order Photo 2" class="w-full h-full object-cover" data-alt="A small square thumbnail image showing a close-up of a stain on a garment before processing, situated in a high-density, dark-themed administrative control center. The borders are crisp, and the overall aesthetic is professional and technical, prioritizing data clarity over decorative elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-zn-yAh9I8Yo3gCUTqeThMmr06BQKksgfrwVETng42LZJmvtwuBdcK-f07C8f3eWb-g3XH4yFVFHMeLmeHNDpzuIbsKs83GhXlvVxaNe2fY-MEfqX_adcvJvYZ0pdkUw5FNDPQ3CVq9h4iGL1ORBs-FqLS_iHnvDQ9f3JkSiM1zMFn100vK_53veE94Cjp5obnlDd7pm5k78_Lo0pcilfn5iKasnxw7QsgLOpiSiog5Jg109t2LWy-g"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Context & Actions (4 cols) -->
+<div class="xl:col-span-4 flex flex-col gap-gutter">
+<!-- Decision Panel (Primary Action Area) -->
+<section class="bg-secondary-container/10 border border-secondary/30 rounded-xl p-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl -mr-10 -mt-10 pointer-events-none"></div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2 relative z-10">Resolution Console</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 relative z-10">Select an outcome to resolve this dispute and notify parties.</p>
+<div class="flex flex-col gap-3 relative z-10">
+<button class="w-full py-2.5 px-4 bg-primary text-on-primary font-label-md text-label-md font-semibold rounded-lg hover:bg-primary-fixed transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+                            Refund Customer
+                        </button>
+<button class="w-full py-2.5 px-4 bg-surface-container-high border border-outline-variant text-on-surface font-label-md text-label-md rounded-lg hover:bg-surface-container-highest transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+                            Rule for Provider
+                        </button>
+<button class="w-full py-2.5 px-4 bg-surface-container-lowest border border-outline-variant text-on-surface-variant font-label-md text-label-md rounded-lg hover:text-on-surface transition-colors">
+                            Request More Info
+                        </button>
+</div>
+</section>
+<!-- Context: Order & Transaction -->
+<section class="bg-surface-container-low border border-outline-variant rounded-xl p-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Financial Context</h3>
+<div class="space-y-4">
+<div class="bg-surface-container-lowest rounded-lg p-3 border border-outline-variant/50">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Order Value</span>
+<span class="inline-block px-2 py-0.5 rounded bg-warning/10 text-warning font-code text-[11px]">IN_TRANSIT</span>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface">₹420.00</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-3 border border-outline-variant/50">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Transaction ID</span>
+<span class="inline-block px-2 py-0.5 rounded bg-success/10 text-success font-code text-[11px]">PAID</span>
+</div>
+<div class="font-code text-code text-on-surface">TXN-20482</div>
+</div>
+</div>
+</section>
+<!-- Vertical Timeline -->
+<section class="bg-surface-container-low border border-outline-variant rounded-xl p-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6">Activity Log</h3>
+<div class="relative pl-3 border-l border-outline-variant/50 space-y-6">
+<!-- Step 5 (Current) -->
+<div class="relative">
+<div class="absolute -left-[17px] top-1 w-3 h-3 rounded-full bg-primary border-2 border-surface-container-low shadow-[0_0_8px_rgba(220,184,255,0.4)]"></div>
+<div class="pl-4">
+<h4 class="font-label-md text-label-md text-on-surface">Under Review</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-0.5">Admin actively investigating.</p>
+<span class="block mt-1 font-label-sm text-label-sm text-on-surface-variant/70">Just now</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="relative">
+<div class="absolute -left-[17px] top-1 w-3 h-3 rounded-full bg-outline-variant border-2 border-surface-container-low"></div>
+<div class="pl-4">
+<h4 class="font-label-md text-label-md text-on-surface">Admin Assigned</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-0.5">Assigned to Super Admin Profile.</p>
+<span class="block mt-1 font-label-sm text-label-sm text-on-surface-variant/70">2 hours ago</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative">
+<div class="absolute -left-[17px] top-1 w-3 h-3 rounded-full bg-outline-variant border-2 border-surface-container-low"></div>
+<div class="pl-4">
+<h4 class="font-label-md text-label-md text-on-surface">Provider Response</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-0.5">CleanX Service Center uploaded 2 files.</p>
+<span class="block mt-1 font-label-sm text-label-sm text-on-surface-variant/70">Yesterday, 14:30</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative">
+<div class="absolute -left-[17px] top-1 w-3 h-3 rounded-full bg-outline-variant border-2 border-surface-container-low"></div>
+<div class="pl-4">
+<h4 class="font-label-md text-label-md text-on-surface">Evidence Added</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-0.5">Customer Arun Kumar attached 3 photos.</p>
+<span class="block mt-1 font-label-sm text-label-sm text-on-surface-variant/70">Aug 30, 2026, 10:15</span>
+</div>
+</div>
+<!-- Step 1 -->
+<div class="relative">
+<div class="absolute -left-[17px] top-1 w-3 h-3 rounded-full bg-outline-variant border-2 border-surface-container-low"></div>
+<div class="pl-4">
+<h4 class="font-label-md text-label-md text-on-surface">Dispute Created</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-0.5">System generated DSP-2048.</p>
+<span class="block mt-1 font-label-sm text-label-sm text-on-surface-variant/70">Aug 30, 2026, 10:00</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Internal Notes -->
+<section class="bg-surface-container-low border border-outline-variant rounded-xl p-6 flex flex-col h-full min-h-[200px]">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">edit_note</span>
+                        Internal Notes
+                    </h3>
+<div class="flex-1 bg-surface-container-lowest rounded-lg border border-outline-variant p-3 overflow-y-auto mb-3">
+<div class="mb-3 pb-3 border-b border-outline-variant/30">
+<span class="font-label-sm text-label-sm text-primary">System</span>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Auto-flagged due to high user lifetime value.</p>
+</div>
+<p class="text-on-surface-variant text-sm italic">No active admin notes yet.</p>
+</div>
+<div class="relative">
+<input class="w-full bg-surface-container border border-outline-variant text-on-surface font-body-md text-body-md rounded-lg py-2 pl-3 pr-10 focus:outline-none focus:border-primary transition-colors" placeholder="Add a private note..." type="text"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 text-primary hover:text-primary-fixed p-1 rounded transition-colors">
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body></html>

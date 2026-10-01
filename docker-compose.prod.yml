@@ -1,0 +1,142 @@
+version: '3.8'
+
+# ==============================================================================
+# WASHORA Production Docker Compose Architecture (docker-compose.prod.yml)
+# Enforces private VPC subnetting, zero public DB exposure, resource limits,
+# and encrypted TLS reverse proxy.
+# ==============================================================================
+
+services:
+  # ----------------------------------------------------------------------------
+  # Ingress Reverse Proxy & TLS Termination (Public Perimeter)
+  # ----------------------------------------------------------------------------
+  ingress:
+    image: nginx:1.25-alpine
+    container_name: washora-ingress
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+    depends_on:
+      - app
+    networks:
+      - washora_public_net
+      - washora_app_net
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 512M
+
+  # ----------------------------------------------------------------------------
+  # WASHORA Application Runtime (Backend API & Frontend Portals)
+  # ----------------------------------------------------------------------------
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: washora-app
+    restart: unless-stopped
+    expose:
+      - "3000"
+      - "4000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      PORT: 4000
+      DATABASE_URL: "postgresql://${POSTGRES_USER:-washora_app}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-washora_prod}?schema=public&sslmode=disable&connection_limit=20&pool_timeout=30"
+      REDIS_URL: "redis://:${REDIS_PASSWORD}@redis:6379"
+      JWT_ACCESS_SECRET: ${JWT_ACCESS_SECRET}
+      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET}
+      ENCRYPTION_KEY: ${ENCRYPTION_KEY}
+      CORS_ORIGINS: "https://app.washora.com,https://provider.washora.com,https://valet.washora.com,https://admin.washora.com"
+      LOG_LEVEL: info
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:4000/api/v1/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    networks:
+      - washora_app_net
+      - washora_data_net
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2048M
+
+  # ----------------------------------------------------------------------------
+  # PostgreSQL 17 Relational Database (Strictly Private - No Host Port Mapping)
+  # ----------------------------------------------------------------------------
+  postgres:
+    image: postgres:17-alpine
+    container_name: washora-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-washora_app}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB:-washora_prod}
+    expose:
+      - "5432"
+    volumes:
+      - postgres_prod_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-washora_app} -d ${POSTGRES_DB:-washora_prod}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - washora_data_net
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 4096M
+
+  # ----------------------------------------------------------------------------
+  # Redis Cluster / Queue & Cache (Strictly Private - Authenticated)
+  # ----------------------------------------------------------------------------
+  redis:
+    image: redis:7-alpine
+    container_name: washora-redis
+    restart: unless-stopped
+    command: ["redis-server", "--requirepass", "${REDIS_PASSWORD}", "--maxmemory", "1024mb", "--maxmemory-policy", "allkeys-lru"]
+    expose:
+      - "6379"
+    volumes:
+      - redis_prod_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - washora_data_net
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1024M
+
+volumes:
+  postgres_prod_data:
+    driver: local
+  redis_prod_data:
+    driver: local
+
+networks:
+  washora_public_net:
+    driver: bridge
+  washora_app_net:
+    driver: bridge
+    internal: true
+  washora_data_net:
+    driver: bridge
+    internal: true

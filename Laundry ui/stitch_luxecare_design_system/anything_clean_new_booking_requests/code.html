@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>New Booking Requests - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .no-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+            .no-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary": "#480081",
+                      "primary-fixed": "#efdbff",
+                      "surface-container-low": "#1c1b1c",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "on-tertiary": "#303032",
+                      "success-bg": "#1A3D24",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "error-container": "#93000a",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "outline-variant": "#4c4354",
+                      "tertiary-container": "#646365",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "on-surface": "#e5e2e3",
+                      "on-secondary": "#303032",
+                      "success-green": "#81C784",
+                      "surface-container": "#201f20",
+                      "outline": "#988ca0",
+                      "error": "#ffb4ab",
+                      "surface-container-lowest": "#0e0e0f",
+                      "background": "#131314",
+                      "surface-variant": "#353436",
+                      "tertiary": "#c8c6c8",
+                      "inverse-primary": "#8422dc",
+                      "secondary-fixed": "#e4e2e4",
+                      "surface-container-high": "#2a2a2b",
+                      "inverse-surface": "#e5e2e3",
+                      "surface": "#131314",
+                      "primary-container": "#8a2be2",
+                      "on-error": "#690005",
+                      "surface-bright": "#39393a",
+                      "on-secondary-fixed-variant": "#474648",
+                      "error-red": "#ffb4ab",
+                      "surface-tint": "#dcb8ff",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "on-background": "#e5e2e3",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "electric-violet": "#8a2be2",
+                      "secondary-container": "#49494b",
+                      "on-surface-variant": "#cfc2d7",
+                      "on-primary-fixed": "#2c0051",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-fixed": "#e4e2e4",
+                      "primary": "#dcb8ff",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "on-secondary-container": "#b9b8ba",
+                      "surface-container-highest": "#353436",
+                      "surface-dim": "#131314",
+                      "secondary": "#c8c6c8",
+                      "on-tertiary-container": "#e3e0e2",
+                      "on-primary-container": "#eed9ff",
+                      "inverse-on-surface": "#313031"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xs": "4px",
+                      "3xl": "64px",
+                      "md": "16px",
+                      "lg": "24px",
+                      "sm": "8px",
+                      "2xl": "48px",
+                      "xl": "32px"
+              },
+              "fontFamily": {
+                      "mono-display": [
+                              "monospace"
+                      ],
+                      "h1": [
+                              "Geist"
+                      ],
+                      "h3": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen">
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-256px)] z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant/30 hidden md:flex justify-between items-center px-xl py-md max-w-[1200px] ml-auto">
+<div class="flex items-center gap-4">
+<span class="font-mono-display text-mono-display text-electric-violet">Anything Clean</span>
+</div>
+<div class="flex items-center gap-lg">
+<div class="relative group">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer" data-icon="notifications" style="font-variation-settings: 'FILL' 1;">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full ring-2 ring-background"></span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer" data-icon="help">help</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant/50 overflow-hidden cursor-pointer hover:ring-2 hover:ring-primary transition-all">
+<img alt="Service Provider Profile" class="w-full h-full object-cover" data-alt="A futuristic avatar of a service provider in a sleek dark gray spacesuit with neon violet accents, set against a deep midnight black background, highly detailed digital art, cinematic lighting, modern cyberpunk aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoFU8T48ZK8mPktszcvbpTF3aE8-T9P2FZaBrxWCR6uY87AcGR-YuDda0iKDE7dPtGxGHA8WFMRA5X43iF2z4CjBaYzdwEtY3joquUrTwacjRTg4gphis1gSAnVkJ3khnRfn9YGjjYp93RZyYjEWCY_k0BZ0bwWxsZZNSZCN1OlXsVmCwq6jL3qcA88gNSL7flAKx9UqAF6xmjQfRMKy_42YcKTTkSPmK5WL_uX6DuTqn-sGtkVbqRjg"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-full w-[256px] bg-surface-container-low border-r border-outline-variant/30 flex flex-col py-lg px-md z-50 hidden md:flex">
+<div class="mb-2xl flex flex-col items-start gap-2">
+<img alt="Anything Clean Logo" class="w-12 h-12 object-contain" data-alt="A minimalist tech logo for 'Anything Clean' featuring a stylized geometric mop or spray bottle icon in electric violet, set against a dark charcoal background, high contrast, sleek corporate modern aesthetic, digital vector art style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2jaHRxDtI_j5TPVXNIPePtcKjgsIpjAILZZhJl4hX37NBe9cae2ThwTy6hqYypcv_hEmgiJmCxy4KPx3Im5AKT6IWO58x6w7HFPVhliaVCaSK8p1ZDfUC56sjkVOJLIlRZ_5vwhqrBshIPiXhjQY3mJtMjP3rJdRQzU1B9p0Get0KBCUvPMJv7vp_W1cWl-5bXl45eCAMBtHCXViwC7U-qcfNgEEWBwRsYO1C1LJ9a9r9aBwRgUmz_Q"/>
+<h1 class="font-mono-display text-mono-display text-electric-violet">Anything Clean</h1>
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">Provider Dashboard</span>
+</div>
+<ul class="flex-1 flex flex-col gap-sm">
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-primary/10 text-primary font-bold active-nav-item transition-all duration-200 hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-200 hover:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-md text-label-md">Schedule</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-200 hover:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md">Earnings</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-200 hover:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="cleaning_services">cleaning_services</span>
+<span class="font-label-md text-label-md">Services</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-200 hover:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto flex flex-col gap-sm">
+<button class="w-full flex items-center justify-center gap-2 bg-surface-container border border-outline-variant/50 hover:border-primary text-on-surface py-2 rounded-lg font-label-md text-label-md transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="support_agent">support_agent</span>
+                Support
+            </button>
+<ul class="flex flex-col gap-1 mt-4 border-t border-outline-variant/30 pt-4">
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-error hover:bg-error-container/10 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-error" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="md:ml-[256px] pt-[80px] md:pt-[100px] px-md md:px-xl pb-2xl max-w-[1200px] mx-auto min-h-screen">
+<!-- Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-xl gap-4">
+<div>
+<h2 class="font-h1 text-h1 text-on-surface">New Booking Requests</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">You have 2 pending requests requiring immediate attention.</p>
+</div>
+</div>
+<!-- Requests Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-lg">
+<!-- Card 1 -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/50 p-lg relative overflow-hidden group hover:border-primary/50 transition-colors duration-300 flex flex-col h-full">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:bg-primary/10 transition-colors duration-300"></div>
+<div class="flex justify-between items-start mb-md">
+<div>
+<span class="font-mono-display text-[12px] text-on-surface-variant tracking-wider bg-surface-container-low px-2 py-1 rounded border border-outline-variant/30">QH-20260902-1041</span>
+<h3 class="font-h3 text-h3 text-on-surface mt-2">Sneaker Deep Clean</h3>
+<span class="font-caption text-caption text-electric-violet border border-electric-violet/30 bg-electric-violet/10 px-2 py-0.5 rounded-full inline-block mt-1">Premium</span>
+</div>
+<div class="text-right">
+<span class="font-headline-lg text-headline-lg text-primary">₹502</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-xl">
+<div class="flex flex-col gap-1">
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="person">person</span> Customer
+                        </span>
+<span class="font-label-md text-label-md text-on-surface">Arun</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span> Area
+                        </span>
+<span class="font-label-md text-label-md text-on-surface">Anna Nagar</span>
+</div>
+<div class="flex flex-col gap-1 col-span-2">
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span> Pickup Window
+                        </span>
+<span class="font-label-md text-label-md text-on-surface">10:00 AM – 12:00 PM</span>
+</div>
+</div>
+<div class="mt-auto">
+<div class="flex items-center gap-2 mb-md bg-surface-container-high p-2 rounded border border-outline-variant/30">
+<span class="material-symbols-outlined text-error-red text-[18px]" data-icon="timer" style="font-variation-settings: 'FILL' 1;">timer</span>
+<span class="font-caption text-caption text-error-red font-bold tracking-wide">Respond within 14 min</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-electric-violet hover:bg-primary-container text-white font-label-md text-label-md py-2 px-4 rounded-lg shadow-lg shadow-electric-violet/20 transition-all flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="check">check</span> Accept
+                        </button>
+<button class="flex-1 bg-transparent border border-outline-variant hover:bg-surface-container-high hover:border-error-red/50 hover:text-error-red text-on-surface font-label-md text-label-md py-2 px-4 rounded-lg transition-all flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="close">close</span> Decline
+                        </button>
+</div>
+<button class="w-full mt-3 text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors text-center text-[13px]">
+                        View Details
+                    </button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/50 p-lg relative overflow-hidden group hover:border-primary/50 transition-colors duration-300 flex flex-col h-full">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:bg-primary/10 transition-colors duration-300"></div>
+<div class="flex justify-between items-start mb-md">
+<div>
+<span class="font-mono-display text-[12px] text-on-surface-variant tracking-wider bg-surface-container-low px-2 py-1 rounded border border-outline-variant/30">QH-20260902-1045</span>
+<h3 class="font-h3 text-h3 text-on-surface mt-2">Helmet Deep Clean</h3>
+</div>
+<div class="text-right">
+<span class="font-headline-lg text-headline-lg text-primary">₹349</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-xl">
+<div class="flex flex-col gap-1">
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span> Area
+                        </span>
+<span class="font-label-md text-label-md text-on-surface">Kilpauk</span>
+</div>
+<div class="flex flex-col gap-1 col-span-2">
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span> Pickup Window
+                        </span>
+<span class="font-label-md text-label-md text-on-surface">2:00 PM – 4:00 PM</span>
+</div>
+</div>
+<div class="mt-auto">
+<div class="flex items-center gap-2 mb-md bg-surface-container-high p-2 rounded border border-outline-variant/30">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]" data-icon="timer">timer</span>
+<span class="font-caption text-caption text-on-surface-variant tracking-wide">Pending review</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-electric-violet hover:bg-primary-container text-white font-label-md text-label-md py-2 px-4 rounded-lg shadow-lg shadow-electric-violet/20 transition-all flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="check">check</span> Accept
+                        </button>
+<button class="flex-1 bg-transparent border border-outline-variant hover:bg-surface-container-high hover:border-error-red/50 hover:text-error-red text-on-surface font-label-md text-label-md py-2 px-4 rounded-lg transition-all flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="close">close</span> Decline
+                        </button>
+</div>
+<button class="w-full mt-3 text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors text-center text-[13px]">
+                        View Details
+                    </button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

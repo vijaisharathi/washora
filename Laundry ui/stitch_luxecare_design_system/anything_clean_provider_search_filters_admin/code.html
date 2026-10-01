@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Provider Search &amp; Advanced Filters - Lumina Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#e5e2e3",
+                      "primary-container": "#8a2be2",
+                      "on-tertiary-fixed": "#2d1600",
+                      "on-surface": "#e5e2e3",
+                      "surface-container-highest": "#353436",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "surface-container-lowest": "#0e0e0f",
+                      "tertiary": "#ffb873",
+                      "secondary": "#dcb8ff",
+                      "primary-fixed": "#efdbff",
+                      "on-tertiary-container": "#ffdaba",
+                      "tertiary-fixed": "#ffdcbf",
+                      "secondary-container": "#573976",
+                      "tertiary-fixed-dim": "#ffb873",
+                      "surface-bright": "#39393a",
+                      "surface-container-high": "#2a2a2b",
+                      "surface": "#131314",
+                      "critical": "#f87171",
+                      "surface-container": "#201f20",
+                      "on-tertiary": "#4b2800",
+                      "primary": "#dcb8ff",
+                      "error-container": "#93000a",
+                      "outline": "#988ca0",
+                      "on-secondary-fixed": "#290947",
+                      "success": "#4ade80",
+                      "info": "#60a5fa",
+                      "outline-variant": "#4c4354",
+                      "surface-variant": "#353436",
+                      "on-primary": "#480081",
+                      "background": "#131314",
+                      "on-secondary-fixed-variant": "#573976",
+                      "tertiary-container": "#935400",
+                      "warning": "#fbbf24",
+                      "on-secondary": "#3f225e",
+                      "on-error-container": "#ffdad6",
+                      "error": "#ffb4ab",
+                      "inverse-primary": "#8422dc",
+                      "secondary-fixed": "#efdbff",
+                      "on-surface-variant": "#cfc2d7",
+                      "surface-container-low": "#1c1b1c",
+                      "on-primary-container": "#eed9ff",
+                      "surface-dim": "#131314",
+                      "on-primary-fixed": "#2c0051",
+                      "inverse-on-surface": "#313031",
+                      "secondary-fixed-dim": "#dcb8ff",
+                      "inverse-surface": "#e5e2e3",
+                      "surface-tint": "#dcb8ff",
+                      "on-error": "#690005",
+                      "on-secondary-container": "#caa7ec",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "on-tertiary-fixed-variant": "#6a3b00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "sidebar-width": "260px",
+                      "table-cell-padding": "12px",
+                      "gutter": "16px",
+                      "margin-mobile": "16px",
+                      "margin-desktop": "24px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "label-sm": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "code": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-md": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "code": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface min-h-screen flex">
+<!-- SideNavBar (Shared Component) -->
+<nav class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-lowest border-r border-surface-container-highest flex flex-col py-margin-desktop z-50">
+<div class="px-6 mb-8 flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest">
+<img alt="Super Admin Profile" class="w-full h-full object-cover" data-alt="A professional portrait of an enterprise admin user in a high-tech control center setting. Cool blue and violet lighting. Cinematic depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAZitPSmTUIkzoWBUfIrGCEIOZZRU7z6-AwtYXd7RSK9eqbdsEonCZDBCCjgp6XFqVdeMQ8MLeV05FwHxOMKQIoPRGiMnwN72AOk-a7vwtuBnnxdIqpzrtOUlUslyY7jlXcniJvsLl2I5a3_15Ej3NKz0D83v1q3enYPI16bKGoGp_m2zo_qAPxtJpk_xZTjzbK8Q9zzE8sLfUyEqkWczFDGspPbMPYCpyvsVVnQxkYz3E1ZXjU9oieQ"/>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Lumina Admin</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Enterprise Control</p>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto px-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+                Orders
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">group</span>
+                Customers
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 border-l-4 border-primary-container bg-surface-container text-on-surface font-semibold font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-primary">storefront</span>
+                Service Providers
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+                Verification
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 ml-[260px] flex flex-col min-h-screen">
+<!-- TopNavBar (Shared Component) -->
+<header class="sticky top-0 z-40 w-full bg-surface border-b border-surface-container-highest flex justify-between items-center h-16 px-margin-desktop">
+<div class="flex items-center gap-4 flex-1 max-w-xl">
+<div class="relative w-full focus-within:ring-1 focus-within:ring-primary-container rounded-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border border-surface-container-highest rounded-md py-2 pl-10 pr-4 text-on-surface font-body-md text-body-md focus:outline-none focus:border-primary-container transition-colors" placeholder="Global search... (Cmd+K)" type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container-highest">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container-highest">
+<span class="material-symbols-outlined">help</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container-highest">
+<span class="material-symbols-outlined">apps</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-highest ml-2">
+<img alt="Admin Avatar" class="w-full h-full object-cover" data-alt="A small circular avatar of an enterprise admin user. Cool blue lighting. Cinematic depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD17X2p__3414Rd8lWk_9tzLAuN5MiL8YjSQizvFMEmgvT1prJOgnioW_DDksFPu-ojHSxQMiB7nI3KGHxwXk_1oNuHzAxv1KykdT9A7d4ibqQ2Y3R_1AmZsxaFCwqMbFEe85Q1-o96_NEb66YTD5x0iptjg6o6Uhl_OIIRoRcTy3wXQSWG1t2DB2n1somErnhn97n6_DTum-nF_wan39i-6toxzFKMxOmWjLDHX9DvXTir_fEMY8frDw"/>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<main class="flex-1 bg-background p-margin-desktop flex gap-6">
+<!-- Left Sidebar: Filters -->
+<aside class="w-72 flex-shrink-0 flex flex-col gap-6">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-1">Filters</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Refine provider search results</p>
+</div>
+<div class="bg-surface-container-low border border-surface-container-highest rounded-lg p-5 flex flex-col gap-5">
+<!-- Account Status -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-3">Account Status</label>
+<div class="space-y-2">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input checked="" class="form-checkbox bg-surface-container border-surface-container-highest text-primary-container rounded w-4 h-4 focus:ring-primary-container focus:ring-offset-background" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Active</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="form-checkbox bg-surface-container border-surface-container-highest text-primary-container rounded w-4 h-4 focus:ring-primary-container focus:ring-offset-background" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Suspended</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="form-checkbox bg-surface-container border-surface-container-highest text-primary-container rounded w-4 h-4 focus:ring-primary-container focus:ring-offset-background" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Pending Review</span>
+</label>
+</div>
+</div>
+<div class="h-px bg-surface-container-highest w-full"></div>
+<!-- Verification -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-3">Verification</label>
+<div class="space-y-2">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input checked="" class="form-checkbox bg-surface-container border-surface-container-highest text-primary-container rounded w-4 h-4 focus:ring-primary-container focus:ring-offset-background" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Fully Verified</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="form-checkbox bg-surface-container border-surface-container-highest text-primary-container rounded w-4 h-4 focus:ring-primary-container focus:ring-offset-background" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Unverified</span>
+</label>
+</div>
+</div>
+<div class="h-px bg-surface-container-highest w-full"></div>
+<!-- Service Type -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-3">Service Type</label>
+<select class="w-full bg-surface-container border border-surface-container-highest rounded-md py-2 px-3 text-on-surface font-body-md text-body-md focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors appearance-none">
+<option value="">All Services</option>
+<option value="laundry">Laundry</option>
+<option value="shoes">Shoe Care</option>
+<option value="tailoring">Tailoring</option>
+</select>
+</div>
+<!-- Location -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-3">Location</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">location_on</span>
+<input class="w-full bg-surface-container border border-surface-container-highest rounded-md py-2 pl-9 pr-3 text-on-surface font-body-md text-body-md focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors" placeholder="City or Area" type="text"/>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container hover:bg-inverse-primary font-label-md text-label-md font-semibold py-2 rounded-md transition-colors mt-2">
+                        Apply Filters
+                    </button>
+<button class="w-full bg-transparent text-on-surface-variant hover:text-on-surface font-label-md text-label-md py-1 rounded-md transition-colors">
+                        Reset
+                    </button>
+</div>
+</aside>
+<!-- Right Area: Results -->
+<div class="flex-1 flex flex-col">
+<div class="flex justify-between items-end mb-6">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Service Providers</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">24 providers match your filters</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-label-md text-label-md text-on-surface-variant">Sort by:</span>
+<select class="bg-surface-container border border-surface-container-highest rounded-md py-1.5 px-3 text-on-surface font-body-md text-body-md focus:outline-none focus:border-primary-container">
+<option>Highest Rating</option>
+<option>Most Orders</option>
+<option>Newest</option>
+</select>
+</div>
+</div>
+<!-- Grid Results -->
+<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-gutter">
+<!-- Provider Card 1 -->
+<div class="bg-surface-container-low border border-surface-container-highest rounded-lg p-5 hover:bg-surface-container-high hover:border-primary-container/50 transition-all cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded bg-surface-container-highest overflow-hidden">
+<img alt="Provider Business Image" class="w-full h-full object-cover" data-alt="A modern storefront of a high-end dry cleaning and laundry service. Clean, minimalist aesthetic. Bright daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGrvkvMMjXp5PjLHS0zvAnGLo29Jn4YCa_6GEzDd8z95UiKhNsBU76ZRdeg9br0-SO2b4ShUignBpcGEBpjGVmjwFZNhNQUCUL5FcWYULYEa1_04JiH_5IejDlJtvhh0OdqKSa0FE7FfQiXIqb7e3-By4R8y6Ca5yZLtfDGpigvzXsgQOZA4r8MWyM9EejewP0YCrjp3HpR9Ah3f6YfG2ef2ft_-S6S3L1NKkfgeEuDDMahWI432TypQ"/>
+</div>
+<span class="px-2 py-1 bg-success/10 text-success font-label-sm text-label-sm rounded-full border border-success/20">Active</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Pristine Care Dry Cleaners</h3>
+<p class="font-code text-code text-on-surface-variant mb-4">ID: PRV-8832-L</p>
+<div class="space-y-2 mb-4">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-body-md text-body-md">Downtown, Metro City</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">local_laundry_service</span>
+<span class="font-body-md text-body-md">Laundry &amp; Dry Cleaning</span>
+</div>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-surface-container-highest">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-warning text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md text-on-surface">4.9</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">(1.2k)</span>
+</div>
+<button class="text-primary hover:text-inverse-primary font-label-md text-label-md transition-colors flex items-center gap-1">
+                                Details <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Provider Card 2 -->
+<div class="bg-surface-container-low border border-surface-container-highest rounded-lg p-5 hover:bg-surface-container-high hover:border-primary-container/50 transition-all cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded bg-surface-container-highest overflow-hidden">
+<img alt="Provider Business Image" class="w-full h-full object-cover" data-alt="A detailed shot of premium leather shoes being polished in an artisanal workshop. Warm lighting, focus on craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmHXqqlCyIMyjRJrYtcge4tXZBv9zlWXJI6ZncCnF7bMQZf391pUYeFnDAi4yKk2Wox7CQ1m3jXb_pcmRB8WJpybVsOKYMBkzuzYsOzDZHDQERDuPZj8p5Xh7MpGfYriNV_6WcJtSlckkpFtKdCLaeb0tZx1rL0zH0YsPwbbWECrX6StuiBteBikUzKEHT2buQ7LpJ0rKABL0TKOveO0sxVTJQbHs0r5isDJG8ckpxNt8gLyPcxRq2xA"/>
+</div>
+<span class="px-2 py-1 bg-success/10 text-success font-label-sm text-label-sm rounded-full border border-success/20">Active</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Artisan Cobblers</h3>
+<p class="font-code text-code text-on-surface-variant mb-4">ID: PRV-2210-S</p>
+<div class="space-y-2 mb-4">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-body-md text-body-md">West End, Metro City</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">dry_cleaning</span>
+<span class="font-body-md text-body-md">Shoe Care &amp; Repair</span>
+</div>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-surface-container-highest">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-warning text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md text-on-surface">4.8</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">(856)</span>
+</div>
+<button class="text-primary hover:text-inverse-primary font-label-md text-label-md transition-colors flex items-center gap-1">
+                                Details <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Provider Card 3 -->
+<div class="bg-surface-container-low border border-surface-container-highest rounded-lg p-5 hover:bg-surface-container-high hover:border-primary-container/50 transition-all cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded bg-surface-container-highest overflow-hidden">
+<img alt="Provider Business Image" class="w-full h-full object-cover" data-alt="A modern industrial laundry facility with large washing machines. Clean, brightly lit, professional environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsdCmiqauEm6BIZ-VDopZOrHVuT7ugS7-nby0AMxcjXgyaHuUz_k2rFHBh0V1YElv7rmJZ5MxVvwGlZQMYtLjG1uHxglIdZ45eIOLPqI1tt0hHuPQOrwH8GuCleDHmsNjiDleJBIQ5TgIkXZyRRVdt_vINArg0N9r36VJDvYfgS7NDFUpJKf9SW1dSkaCIPAECZHBH4jm9jjVMduXBN6Jz-t2DRaKdVr9b3sEYb73Mtjy7eUuFnSiwjA"/>
+</div>
+<span class="px-2 py-1 bg-success/10 text-success font-label-sm text-label-sm rounded-full border border-success/20">Active</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Metro Wash Co.</h3>
+<p class="font-code text-code text-on-surface-variant mb-4">ID: PRV-5541-L</p>
+<div class="space-y-2 mb-4">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-body-md text-body-md">Northside, Metro City</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">local_laundry_service</span>
+<span class="font-body-md text-body-md">Laundry Only</span>
+</div>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-surface-container-highest">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-warning text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md text-on-surface">4.6</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">(3.1k)</span>
+</div>
+<button class="text-primary hover:text-inverse-primary font-label-md text-label-md transition-colors flex items-center gap-1">
+                                Details <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-8 flex justify-between items-center border-t border-surface-container-highest pt-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Showing 1-24 of 24 results</span>
+<div class="flex gap-2">
+<button class="p-1 rounded bg-surface-container-low border border-surface-container-highest text-on-surface-variant disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="p-1 rounded bg-surface-container-low border border-surface-container-highest text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payout Issue - Lumina Financial Workspace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#573976",
+                        "on-tertiary-fixed-variant": "#6a3b00",
+                        "on-error-container": "#ffdad6",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-variant": "#353436",
+                        "surface-tint": "#dcb8ff",
+                        "on-tertiary-container": "#ffdaba",
+                        "on-primary": "#480081",
+                        "primary": "#dcb8ff",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#2c0051",
+                        "surface-container-high": "#2a2a2b",
+                        "surface-container": "#201f20",
+                        "on-background": "#e5e2e3",
+                        "tertiary": "#ffb873",
+                        "critical": "#f87171",
+                        "tertiary-fixed-dim": "#ffb873",
+                        "on-secondary-fixed": "#290947",
+                        "surface": "#131314",
+                        "tertiary-fixed": "#ffdcbf",
+                        "inverse-primary": "#8422dc",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "secondary-container": "#573976",
+                        "surface-bright": "#39393a",
+                        "secondary": "#dcb8ff",
+                        "on-secondary-container": "#caa7ec",
+                        "tertiary-container": "#935400",
+                        "surface-container-lowest": "#0e0e0f",
+                        "secondary-fixed": "#efdbff",
+                        "warning": "#fbbf24",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#eed9ff",
+                        "surface-container-low": "#1c1b1c",
+                        "primary-container": "#8a2be2",
+                        "on-surface-variant": "#cfc2d7",
+                        "inverse-on-surface": "#313031",
+                        "primary-fixed": "#efdbff",
+                        "surface-container-highest": "#353436",
+                        "background": "#131314",
+                        "success": "#4ade80",
+                        "on-tertiary": "#4b2800",
+                        "on-error": "#690005",
+                        "on-surface": "#e5e2e3",
+                        "outline": "#988ca0",
+                        "on-tertiary-fixed": "#2d1600",
+                        "surface-dim": "#131314",
+                        "outline-variant": "#4c4354",
+                        "info": "#60a5fa",
+                        "on-secondary": "#3f225e",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "secondary-fixed-dim": "#dcb8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "sidebar-width": "260px",
+                        "gutter": "16px",
+                        "table-cell-padding": "12px",
+                        "margin-desktop": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "code": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "code": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:flex-row antialiased">
+<!-- TopNavBar for Mobile -->
+<header class="md:hidden bg-surface border-b border-surface-variant flex justify-between items-center px-margin-mobile h-16 sticky top-0 z-40">
+<div class="font-headline-sm text-[16px] font-black text-on-surface leading-tight tracking-tight">Financial Workspace</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+<img alt="Provider Admin Avatar" class="w-8 h-8 rounded-full object-cover border border-surface-variant" data-alt="A small, circular avatar portrait of a professional system administrator in a dark, tech-focused environment. Minimalist lighting, high contrast, professional attire, subtle cyber-punk undertones, 8k resolution, photorealistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPzRJqzVSpojFH39ZH6AkN-WJAoXOeHVO6ZGYrwdPOoOUGoNwzVmmaG9QzStaDQy5dSGZVZTtjQy7dVLyop5AFGOyeJn8h7s0iNkDdYsdbhxvvdwKSvH3pMQxkMZMRFP6Tw5kOwPcifG4kvEFQ1sRoUSEuoR7TgWTKqZnSVhEQPl0l8Az1ck8ZaARU4VqTssD86BhfcM-6k0QWo6zFfnEo9ahMlm0QjMnf0N9MFOiriWPWQmVuxletvA"/>
+</div>
+</header>
+<!-- SideNavBar (Desktop Only) -->
+<nav class="hidden md:flex flex-col h-screen fixed left-0 top-0 w-sidebar-width bg-surface-container-lowest border-r border-surface-variant py-6 z-30 transition-all duration-200 ease-in-out">
+<!-- Header -->
+<div class="px-6 mb-8 flex items-center gap-3">
+<img alt="Lumina Admin Logo" class="w-10 h-10 rounded-lg object-cover" data-alt="A detailed 3D render of a futuristic, glowing geometric logo floating against a pitch-black background. The logo features sharp angles and neon violet accents, conveying high-end technology and secure data flow. 8k resolution, cinematic lighting, sleek corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxqeeJQASpGNh49PCV17CccMO5GSzRYBRqBogD6AG_cxIFr7hkU7oF_a_gEUetTKXzNhNc5lKWfwzn8Jiad9orAGQLRFNuMBPSkwaRhLz9e5DdC9DDyFoJLq86PBwHuUxyFDti8xr0h6Y0pPYtP3ERfX3tKB5eszQfnw-TxVgfl6aj-heHiqU9laP9ilkbjF_vaCgsN2xAPwrLmTTOeUzJT6uFxuyoO7hv3cABKAtf212OgjLY34EZVg"/>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight leading-none mb-1">Lumina Admin</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Operational Hub</p>
+</div>
+</div>
+<!-- Main Navigation -->
+<div class="flex-1 overflow-y-auto px-4 space-y-1">
+<div class="px-2 mb-2 mt-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Dashboard</div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<div class="px-2 mb-2 mt-6 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Financials</div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md">Transactions</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg border-l-4 border-primary text-on-surface font-bold bg-surface-container-low hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined text-primary" data-icon="account_balance_wallet" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="font-label-md text-label-md">Settlements</span>
+</a>
+<div class="px-2 mb-2 mt-6 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Entities</div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-label-md text-label-md">Marketplaces</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Vendors</span>
+</a>
+<div class="px-2 mb-2 mt-6 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">System</div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+<!-- Footer Actions -->
+<div class="px-4 mt-auto pt-6 border-t border-surface-variant">
+<button class="w-full bg-primary-container text-on-primary-container hover:bg-primary/20 font-label-md text-label-md font-medium py-2.5 rounded-lg transition-colors flex justify-center items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                Add New Provider
+            </button>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="help">help</span>
+<span class="font-label-sm text-label-sm">Help Center</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="terminal">terminal</span>
+<span class="font-label-sm text-label-sm">System Logs</span>
+</a>
+</div>
+<div class="mt-6 flex items-center gap-3 px-2">
+<img alt="Super Admin Profile" class="w-8 h-8 rounded-full object-cover border border-surface-variant" data-alt="A small, circular avatar portrait of a professional system administrator in a dark, tech-focused environment. Minimalist lighting, high contrast, professional attire, subtle cyber-punk undertones, 8k resolution, photorealistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDca3Qseeh-91YI8JvFlmJg94aodYMRAf6dN50es4hIJRaKQeUjvi_2J7sJpTOnYKPgXtYVtKC18fTUwmUFcT7EEQdcrYOAHL5J7IPLSQZrR4FMYr6sEcqGDUb1g9jeoIfvpf1BEa6kyXA5d9fVlbAy1Y2KlYBEg1jVkmVHvOHfSxyGdpmRLGlu4VE6iHgecA0yj6S5t7A-ModCvvk3Q2u8Aq_UNbGH1tpV0v-u3uOtx1nCV2NpwsU6RA"/>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-label-md text-on-surface truncate">Admin User</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">admin@lumina.io</p>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col md:ml-[260px] min-h-screen bg-background">
+<!-- TopNavBar (Desktop) -->
+<header class="hidden md:flex justify-between items-center px-margin-desktop h-16 bg-surface border-b border-surface-variant z-20 sticky top-0">
+<div class="flex-1 flex items-center max-w-md">
+<div class="relative w-full focus-within:ring-2 focus-within:ring-primary rounded-lg transition-shadow">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border border-surface-variant rounded-lg pl-10 pr-4 py-2 text-body-md font-body-md text-on-surface placeholder-on-surface-variant focus:outline-none focus:border-primary transition-colors" placeholder="Search transactions, vendors, or IDs (Cmd+K)" type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-2 ml-4">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-high relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-primary rounded-full border border-surface"></span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined" data-icon="apps">apps</span>
+</button>
+</div>
+</header>
+<!-- Page Content Canvas -->
+<div class="flex-1 p-margin-mobile md:p-margin-desktop overflow-y-auto w-full max-w-5xl mx-auto flex flex-col justify-center">
+<div class="mb-6">
+<a class="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm mb-4" href="#">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+                    Back to Settlements
+                </a>
+</div>
+<!-- Exception Container (Bento Layout) -->
+<div class="bg-surface-container-low border border-warning/30 rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row relative">
+<!-- Subtle warning gradient background in dark mode -->
+<div class="absolute inset-0 bg-gradient-to-br from-warning/5 to-transparent pointer-events-none"></div>
+<!-- Left Column: Context & Amount -->
+<div class="p-8 md:w-5/12 border-b md:border-b-0 md:border-r border-surface-variant relative z-10 bg-surface/50 backdrop-blur-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-full bg-warning/20 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-warning" style="font-variation-settings: 'FILL' 1;">error</span>
+</div>
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface leading-tight">Payout Issue</h2>
+<p class="font-label-md text-label-md text-warning flex items-center gap-1 mt-1">
+<span class="w-2 h-2 rounded-full bg-warning animate-pulse"></span>
+                                    Status: On Hold
+                                </p>
+</div>
+</div>
+<div class="space-y-4">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Transaction ID</p>
+<p class="font-code text-code text-on-surface bg-surface-container-high px-2 py-1 rounded inline-block border border-surface-variant">PAY-20260905-0042</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Date Attempted</p>
+<p class="font-body-md text-body-md text-on-surface">Sept 05, 2026 • 00:42 UTC</p>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-surface-variant">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Total Amount</p>
+<p class="font-display-lg text-display-lg text-on-surface tracking-tight">₹8,420<span class="text-on-surface-variant text-headline-md font-headline-md ml-1">.00</span></p>
+</div>
+</div>
+<!-- Right Column: Reason & Resolution -->
+<div class="p-8 md:w-7/12 relative z-10 flex flex-col justify-center bg-surface-container/30">
+<div class="mb-8">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-warning" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+                            Bank account verification required.
+                        </h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                            Your payout is temporarily on hold until the payout account issue is resolved. The destination bank has rejected the transfer due to a mismatch in account holder details or an unverified routing number.
+                        </p>
+</div>
+<!-- Steps/Details -->
+<div class="bg-surface-container-high rounded-lg p-5 border border-surface-variant mb-8">
+<h4 class="font-label-md text-label-md text-on-surface mb-3 uppercase tracking-wider">Required Actions</h4>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Verify exact account name matches business entity.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Confirm correct IFSC/Routing code for branch.</span>
+</li>
+</ul>
+</div>
+<!-- Action Area -->
+<div class="flex flex-col sm:flex-row items-center gap-4 mt-auto pt-6 border-t border-surface-variant">
+<button class="w-full sm:w-auto px-6 py-3 bg-primary text-on-primary-fixed font-label-md text-label-md font-bold rounded-lg hover:bg-primary-fixed-dim transition-colors shadow-[0_0_15px_rgba(220,184,255,0.15)] flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+                            Update Payout Account
+                        </button>
+<button class="w-full sm:w-auto px-6 py-3 bg-transparent border border-surface-variant text-on-surface font-label-md text-label-md font-medium rounded-lg hover:bg-surface-container-high transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+                            Contact Support
+                        </button>
+</div>
+</div>
+</div>
+<!-- Contextual System Logs Snippet (Bento Secondary) -->
+<div class="mt-6 bg-surface-container-lowest border border-surface-variant rounded-xl p-6 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-label-md text-label-md text-on-surface uppercase tracking-wider flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+                        Recent Audit Trail
+                    </h3>
+<button class="text-primary hover:text-primary-fixed-dim font-label-sm text-label-sm transition-colors">View Full Logs</button>
+</div>
+<div class="font-code text-code text-on-surface-variant space-y-2 text-[12px]">
+<div class="flex gap-4"><span class="text-on-surface opacity-50">00:42:15</span> <span class="text-error">ERR_BANK_REJECT</span> <span>Transfer attempt failed. Reason: NAME_MISMATCH</span></div>
+<div class="flex gap-4"><span class="text-on-surface opacity-50">00:42:10</span> <span class="text-info">SYS_INIT</span> <span>Initiating batch payout job #905-A</span></div>
+<div class="flex gap-4"><span class="text-on-surface opacity-50">00:41:05</span> <span class="text-success">AUTH_OK</span> <span>Settlement criteria met for vendor ID: V-8891</span></div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

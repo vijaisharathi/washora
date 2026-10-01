@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Location Permission Required</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-dim": "#131314",
+                      "on-tertiary": "#303032",
+                      "on-secondary-fixed-variant": "#474649",
+                      "surface-variant": "#353436",
+                      "on-error-container": "#ffdad6",
+                      "on-secondary-container": "#b7b4b7",
+                      "error-container": "#93000a",
+                      "surface-container-low": "#1c1b1c",
+                      "on-tertiary-fixed-variant": "#474649",
+                      "secondary": "#c8c6c8",
+                      "on-primary-container": "#eed9ff",
+                      "surface-container-high": "#2a2a2b",
+                      "on-surface": "#e5e2e3",
+                      "on-primary": "#480081",
+                      "on-tertiary-container": "#e3e0e2",
+                      "outline": "#988ca0",
+                      "on-primary-fixed": "#2c0051",
+                      "inverse-surface": "#e5e2e3",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "outline-variant": "#4c4354",
+                      "inverse-primary": "#8422dc",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "surface-container-highest": "#353436",
+                      "tertiary": "#c8c6c8",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "tertiary-container": "#646365",
+                      "secondary-container": "#474649",
+                      "on-surface-variant": "#cfc2d7",
+                      "primary": "#dcb8ff",
+                      "inverse-on-surface": "#313031",
+                      "on-secondary": "#303032",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "surface-container": "#201f20",
+                      "on-background": "#e5e2e3",
+                      "tertiary-fixed": "#e4e2e4",
+                      "surface": "#131314",
+                      "primary-fixed": "#efdbff",
+                      "secondary-fixed": "#e5e1e4",
+                      "surface-tint": "#dcb8ff",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-error": "#690005",
+                      "surface-bright": "#3a393a",
+                      "primary-container": "#8a2be2",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "error": "#ffb4ab",
+                      "background": "#131314"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "32px",
+                      "2xl": "48px",
+                      "3xl": "64px",
+                      "md": "16px",
+                      "lg": "24px",
+                      "sm": "8px",
+                      "xs": "4px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Geist"],
+                      "display-lg-mobile": ["Geist"],
+                      "body-lg": ["Geist"],
+                      "label-md": ["Geist"],
+                      "body-md": ["Geist"],
+                      "caption": ["Geist"],
+                      "headline-lg": ["Geist"],
+                      "display-lg": ["Geist"]
+              },
+              "fontSize": {
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col items-center justify-center font-body-md overflow-hidden antialiased">
+<!-- Background Glow Effect -->
+<div class="fixed inset-0 pointer-events-none z-0 flex items-center justify-center overflow-hidden opacity-30">
+<div class="w-[800px] h-[800px] bg-primary-container rounded-full blur-[120px] mix-blend-screen opacity-20 animate-pulse" style="animation-duration: 8s;"></div>
+</div>
+<!-- Main Container -->
+<main class="relative z-10 w-full max-w-md px-md sm:px-lg flex flex-col h-full sm:h-auto py-2xl sm:py-xl bg-surface-container-lowest sm:bg-surface sm:rounded-3xl sm:border sm:border-white/5 sm:shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+<!-- Header Section -->
+<header class="flex flex-col items-center text-center mb-xl">
+<div class="w-3xl h-3xl bg-surface-container-high rounded-full flex items-center justify-center mb-lg shadow-[inset_0_1px_2px_rgba(255,255,255,0.1)] relative">
+<div class="absolute inset-0 rounded-full border border-primary/30 animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
+<span class="material-symbols-outlined text-display-lg text-primary" data-icon="location_disabled" data-weight="fill" style="font-variation-settings: 'FILL' 1;">location_disabled</span>
+</div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile sm:font-headline-lg sm:text-headline-lg text-on-surface mb-md">
+                Turn on location access to continue.
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-[320px]">
+                Delivery Pro requires background location access to connect you with nearby requests and provide accurate navigation.
+            </p>
+</header>
+<!-- Status List -->
+<div class="bg-surface-container-low rounded-xl p-md flex flex-col gap-sm border border-outline-variant/30 mb-2xl">
+<!-- Item 1 -->
+<div class="flex items-center justify-between p-sm rounded-lg bg-surface hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-amber-500/10 flex items-center justify-center border border-amber-500/20">
+<span class="material-symbols-outlined text-amber-400 text-xl" data-icon="gps_off" data-weight="fill" style="font-variation-settings: 'FILL' 1;">gps_off</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Location Services</span>
+<span class="font-caption text-caption text-amber-400 font-medium">Disabled</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-lg">info</span>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between p-sm rounded-lg bg-surface hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-amber-500/10 flex items-center justify-center border border-amber-500/20">
+<span class="material-symbols-outlined text-amber-400 text-xl" data-icon="block" data-weight="fill" style="font-variation-settings: 'FILL' 1;">block</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">App Permission</span>
+<span class="font-caption text-caption text-amber-400 font-medium">Denied</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-lg">info</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="mt-auto sm:mt-0 flex flex-col gap-md">
+<button class="w-full bg-primary hover:bg-primary-fixed-dim text-on-primary py-4 rounded-xl font-label-md text-label-md transition-all active:scale-[0.98] flex items-center justify-center gap-sm font-bold shadow-[0_4px_14px_rgba(220,184,255,0.2)]">
+<span class="material-symbols-outlined text-lg" data-icon="settings">settings</span>
+                OPEN SETTINGS
+            </button>
+<button class="w-full bg-transparent border border-outline-variant text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high py-4 rounded-xl font-label-md text-label-md transition-all active:scale-[0.98]">
+                Go Back
+            </button>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trust &amp; Safety - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#1c1b1c",
+                        "on-primary-container": "#eed9ff",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "error": "#ffb4ab",
+                        "electric-violet": "#8a2be2",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-primary": "#480081",
+                        "on-surface-variant": "#cfc2d7",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-primary-fixed": "#2c0051",
+                        "surface-tint": "#dcb8ff",
+                        "success-bg": "#1A3D24",
+                        "on-secondary-container": "#b9b8ba",
+                        "error-container": "#93000a",
+                        "tertiary-container": "#646365",
+                        "on-tertiary": "#303032",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "surface-variant": "#353436",
+                        "surface-dim": "#131314",
+                        "tertiary": "#c8c6c8",
+                        "surface-container-high": "#2a2a2b",
+                        "surface": "#131314",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-secondary": "#303032",
+                        "inverse-primary": "#8422dc",
+                        "on-tertiary-container": "#e3e0e2",
+                        "primary-container": "#8a2be2",
+                        "surface-container-highest": "#353436",
+                        "secondary-container": "#49494b",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "secondary-fixed": "#e4e2e4",
+                        "on-error": "#690005",
+                        "outline-variant": "#4c4354",
+                        "secondary": "#c8c6c8",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "primary-fixed": "#efdbff",
+                        "surface-container": "#201f20",
+                        "inverse-surface": "#e5e2e3",
+                        "on-background": "#e5e2e3",
+                        "outline": "#988ca0",
+                        "background": "#131314",
+                        "error-red": "#ffb4ab",
+                        "on-surface": "#e5e2e3",
+                        "primary": "#dcb8ff",
+                        "inverse-on-surface": "#313031",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-secondary-fixed-variant": "#474648",
+                        "success-green": "#81C784",
+                        "surface-bright": "#39393a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "sm": "8px",
+                        "2xl": "48px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "3xl": "64px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Geist"],
+                        "label-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "caption": ["Geist"],
+                        "h3": ["Geist"],
+                        "mono-display": ["monospace"]
+                    },
+                    "fontSize": {
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/5 shadow-sm">
+<div class="flex justify-between items-center px-lg h-16 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-md">
+<a class="font-headline-md text-headline-md font-bold text-primary active:scale-95 transition-transform" href="#">Anything Clean</a>
+</div>
+<div class="hidden md:flex items-center gap-md">
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors font-body-md text-body-md px-3 py-2 rounded-md" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors font-body-md text-body-md px-3 py-2 rounded-md" href="#">Providers</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-body-md text-body-md px-3 py-2" href="#">How it Works</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors font-body-md text-body-md px-3 py-2 rounded-md" href="#">Support</a>
+</div>
+<div class="flex items-center gap-sm">
+<button class="text-on-surface-variant hover:text-on-surface p-2 rounded-full hover:bg-white/5 transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface p-2 rounded-full hover:bg-white/5 transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<button class="bg-primary-container text-on-primary-container font-label-md text-label-md px-4 py-2 rounded-lg hover:bg-primary-fixed-dim transition-colors shadow-lg shadow-primary/20 active:scale-95 transition-transform ml-2">Book Now</button>
+<img alt="User profile" class="w-8 h-8 rounded-full ml-2 object-cover border border-outline-variant" data-alt="A small, circular avatar portrait of a professional smiling individual with short hair, shot against a neutral dark grey background in a corporate modern aesthetic style. The lighting is studio quality, emphasizing clarity and approachability, suitable for a sleek UI profile icon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXo3pDzVjo6uFzJBsAwbUeLuSholpNrwYlcrCwC9pBzUWySKBpdge0d0VQImIdjvzoFjkTcCU6a8ABDx--RxAfbGslg8TdbbyGOjTtj9NxE8b9l6dzh0tPRCzECgGhdf19_apvlM3jjipy96FOhkbVeiBCWeTxS2WJwnQ5BXyu1sXX63wrXRsEKB6Gl1l8Rwzz353wQVEIOuYJs4_DR-nLDb0xiDHNyzjw0vH7MH0GI9P64C8w7HkqYQ"/>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[100px] pb-3xl px-md md:px-lg max-w-[1200px] mx-auto w-full">
+<!-- Hero Section -->
+<section class="text-center mb-3xl">
+<h1 class="font-display-lg text-display-lg text-primary mb-md">Your Safety, Our Priority</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">At Anything Clean, trust isn't just a word; it's the foundation of our platform. We employ rigorous verification and secure technologies to ensure peace of mind with every booking.</p>
+</section>
+<!-- Trust Pillars Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-lg mb-3xl">
+<!-- Provider Verification -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col items-start transition-colors hover:bg-surface-container-high group">
+<div class="w-12 h-12 rounded-lg bg-surface-container-low border border-outline-variant/30 flex items-center justify-center mb-md group-hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-primary text-[28px]" data-icon="verified_user">verified_user</span>
+</div>
+<h3 class="font-h3 text-h3 mb-sm text-on-surface">Provider Verification</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Every professional on our platform undergoes a comprehensive background check, identity verification, and skill assessment before they can accept bookings.</p>
+</div>
+<!-- Secure Payments -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col items-start transition-colors hover:bg-surface-container-high group">
+<div class="w-12 h-12 rounded-lg bg-surface-container-low border border-outline-variant/30 flex items-center justify-center mb-md group-hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-primary text-[28px]" data-icon="lock">lock</span>
+</div>
+<h3 class="font-h3 text-h3 mb-sm text-on-surface">Secure Payments</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Your financial data is encrypted end-to-end. Payments are held securely in escrow and only released when the job is completed to your satisfaction.</p>
+</div>
+<!-- Order Tracking -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col items-start transition-colors hover:bg-surface-container-high group">
+<div class="w-12 h-12 rounded-lg bg-surface-container-low border border-outline-variant/30 flex items-center justify-center mb-md group-hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-primary text-[28px]" data-icon="my_location">my_location</span>
+</div>
+<h3 class="font-h3 text-h3 mb-sm text-on-surface">Real-Time Tracking</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Track your provider's arrival and monitor service progress directly from the app. Total transparency from booking confirmation to job completion.</p>
+</div>
+</section>
+<!-- Detail Section with Image -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-2xl items-center mb-3xl">
+<div class="order-2 lg:order-1">
+<h2 class="font-headline-lg text-headline-lg mb-md text-on-surface">A Commitment to Quality</h2>
+<ul class="space-y-md">
+<li class="flex items-start gap-md">
+<span class="material-symbols-outlined text-success-green mt-1" data-icon="check_circle">check_circle</span>
+<div>
+<strong class="font-label-md text-label-md block mb-xs text-on-surface">Continuous Monitoring</strong>
+<span class="font-body-md text-body-md text-on-surface-variant">We actively monitor service quality through user reviews and ratings to maintain high standards.</span>
+</div>
+</li>
+<li class="flex items-start gap-md">
+<span class="material-symbols-outlined text-success-green mt-1" data-icon="check_circle">check_circle</span>
+<div>
+<strong class="font-label-md text-label-md block mb-xs text-on-surface">Dispute Resolution</strong>
+<span class="font-body-md text-body-md text-on-surface-variant">Our dedicated support team is available 24/7 to mediate and resolve any issues swiftly and fairly.</span>
+</div>
+</li>
+<li class="flex items-start gap-md">
+<span class="material-symbols-outlined text-success-green mt-1" data-icon="check_circle">check_circle</span>
+<div>
+<strong class="font-label-md text-label-md block mb-xs text-on-surface">Insurance Coverage</strong>
+<span class="font-body-md text-body-md text-on-surface-variant">Every booking is backed by comprehensive liability insurance for added peace of mind.</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="order-1 lg:order-2 rounded-xl overflow-hidden border border-outline-variant/30 h-[400px]">
+<img alt="Security Dashboard" class="w-full h-full object-cover" data-alt="A modern, high-tech dashboard interface displaying security protocols and verification checkmarks overlaid on a dark, sleek corporate background. The scene is illuminated by subtle electric violet accents, conveying a sense of engineered precision and digital safety." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSKuXLriE5XNAxMsj6YnnDM6cxq7Qq_kz4UnT6h6lP7n9H9RXXkKcdek6qTL6V7bKh57R7LdPfzKHJFkiZhG8c_oWka4TN8vNjmSKbeti9j9b38ha_qGc9Me6kFBpFRaIrlXuRycvtaI6pZYrFhC7WTUCSp9kA80DkUSClMlpg7HamSp9sa_A1X69kW58Wp490VxkeEfZl_ewkaUacaEqcn9WvXDisJUojsHxGwR_Rxoa6-VA388Qyeg"/>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-2xl border-t border-white/5 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-lg max-w-[1280px] mx-auto gap-md">
+<div class="font-headline-md text-headline-md text-on-surface font-bold">
+                Anything Clean
+            </div>
+<div class="flex flex-wrap justify-center gap-lg">
+<a class="text-on-surface-variant hover:text-on-surface hover:underline underline-offset-4 transition-opacity font-caption text-caption" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:underline underline-offset-4 transition-opacity font-caption text-caption" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:underline underline-offset-4 transition-opacity font-caption text-caption" href="#">Partner with Us</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:underline underline-offset-4 transition-opacity font-caption text-caption" href="#">Careers</a>
+</div>
+<div class="text-on-surface-variant font-caption text-caption">
+                © 2024 Anything Clean. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KYC &amp; Documents - Delivery Pro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-surface": "#e5e2e3",
+                        "on-secondary-container": "#b7b4b7",
+                        "on-error": "#690005",
+                        "inverse-primary": "#8422dc",
+                        "on-secondary-fixed-variant": "#474649",
+                        "primary-fixed": "#efdbff",
+                        "on-tertiary-container": "#e3e0e2",
+                        "surface-bright": "#3a393a",
+                        "inverse-on-surface": "#313031",
+                        "tertiary-container": "#646365",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-tertiary": "#303032",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-primary-fixed": "#2c0051",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-tint": "#dcb8ff",
+                        "surface-variant": "#353436",
+                        "on-secondary": "#303032",
+                        "tertiary": "#c8c6c8",
+                        "secondary-container": "#474649",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface": "#131314",
+                        "on-background": "#e5e2e3",
+                        "tertiary-fixed": "#e4e2e4",
+                        "primary": "#dcb8ff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "outline-variant": "#4c4354",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "background": "#131314",
+                        "surface-dim": "#131314",
+                        "primary-container": "#8a2be2",
+                        "outline": "#988ca0",
+                        "surface-container-highest": "#353436",
+                        "on-primary": "#480081",
+                        "secondary": "#c8c6c8",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "error": "#ffb4ab",
+                        "surface-container": "#201f20",
+                        "on-primary-container": "#eed9ff",
+                        "on-surface-variant": "#cfc2d7",
+                        "secondary-fixed": "#e5e1e4",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#2a2a2b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "3xl": "64px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "caption": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "label-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased max-w-[390px] mx-auto min-h-screen flex flex-col relative overflow-x-hidden">
+<!-- Top Navigation (Suppressed per task logic for linear/transactional flow, but Header requested) -->
+<header class="flex items-center justify-between px-md h-16 w-full fixed top-0 z-50 bg-surface/80 backdrop-blur-xl border-b border-white/5 shadow-sm transition-transform active:scale-95">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</div>
+<div class="font-headline-md text-headline-md font-bold text-primary">Verify your identity</div>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">help_outline</span>
+</div>
+</header>
+<main class="flex-1 px-5 pt-24 pb-32">
+<!-- Progress Indicator -->
+<div class="mb-lg">
+<div class="flex justify-between items-center mb-sm">
+<span class="font-label-md text-label-md text-on-surface-variant">Step 4 of 6</span>
+<span class="font-label-md text-label-md text-primary">66%</span>
+</div>
+<div class="h-1 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[66%] rounded-full shadow-[0_0_10px_rgba(220,184,255,0.5)]"></div>
+</div>
+</div>
+<!-- Instructional Copy -->
+<div class="mb-xl">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                To activate your marketplace account, please provide the following verification documents. Clear photos are required.
+            </p>
+</div>
+<!-- Document Cards -->
+<div class="space-y-sm">
+<!-- Government ID (Verified) -->
+<div class="bg-surface-container-low rounded-xl p-md border border-white/5 flex items-center justify-between relative overflow-hidden group">
+<div class="flex items-center gap-md z-10">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">badge</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface mb-xs">Government ID</h3>
+<p class="font-caption text-caption text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span> Verified
+                        </p>
+</div>
+</div>
+<div class="z-10">
+<span class="material-symbols-outlined text-on-surface-variant opacity-70">chevron_right</span>
+</div>
+<!-- Subtle glow for verified -->
+<div class="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-primary/5 to-transparent pointer-events-none"></div>
+</div>
+<!-- Driving License (Under Review) -->
+<div class="bg-surface-container-low rounded-xl p-md border border-white/5 flex items-center justify-between relative overflow-hidden">
+<div class="flex items-center gap-md z-10">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">drive_eta</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface mb-xs">Driving License</h3>
+<p class="font-caption text-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">pending</span> Under review
+                        </p>
+</div>
+</div>
+<div class="z-10">
+<span class="material-symbols-outlined text-on-surface-variant opacity-70">chevron_right</span>
+</div>
+</div>
+<!-- Vehicle Document (Rejected) -->
+<div class="bg-surface-container-low rounded-xl p-md border border-error/20 flex items-center justify-between relative overflow-hidden">
+<div class="flex items-center gap-md z-10">
+<div class="w-12 h-12 rounded-full bg-error-container/20 flex items-center justify-center text-error">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">description</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface mb-xs">Vehicle Document</h3>
+<p class="font-caption text-caption text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">error</span> Rejected - Resubmit
+                        </p>
+</div>
+</div>
+<div class="z-10">
+<span class="material-symbols-outlined text-on-surface-variant opacity-70">chevron_right</span>
+</div>
+<!-- Subtle glow for error -->
+<div class="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-error/5 to-transparent pointer-events-none"></div>
+</div>
+<!-- Profile Verification (Pending Upload) -->
+<div class="bg-surface-container-low rounded-xl p-md border border-dashed border-outline-variant flex items-center justify-between relative overflow-hidden hover:border-primary/50 transition-colors">
+<div class="flex items-center gap-md z-10">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">face</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface mb-xs">Profile Verification</h3>
+<p class="font-caption text-caption text-on-surface-variant">Selfie with ID</p>
+</div>
+</div>
+<div class="z-10">
+<button class="px-sm py-xs bg-surface-variant text-on-surface rounded font-label-md text-caption hover:bg-surface-container-highest transition-colors">Upload</button>
+</div>
+</div>
+</div>
+<!-- Security Note -->
+<div class="mt-xl flex items-start gap-sm bg-surface-container/50 p-md rounded-xl border border-white/5">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+<p class="font-caption text-caption text-on-surface-variant">
+                Your documents are securely encrypted and stored solely for verification purposes in accordance with our Privacy Policy.
+            </p>
+</div>
+</main>
+<!-- Bottom Action Area -->
+<div class="fixed bottom-0 w-full max-w-[390px] p-5 bg-surface/90 backdrop-blur-2xl border-t border-white/5 z-50">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-md rounded-xl flex items-center justify-center gap-sm active:scale-[0.98] transition-transform opacity-50 cursor-not-allowed">
+            Submit Documents
+            <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</body></html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Confirm Delivery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#e5e2e3",
+                    "error": "#ffb4ab",
+                    "surface-container-highest": "#353436",
+                    "surface-container": "#201f20",
+                    "primary-fixed": "#efdbff",
+                    "primary": "#dcb8ff",
+                    "tertiary": "#c8c6c8",
+                    "outline": "#988ca0",
+                    "tertiary-container": "#646365",
+                    "surface-container-low": "#1c1b1c",
+                    "on-secondary": "#303032",
+                    "surface-container-lowest": "#0e0e0f",
+                    "primary-fixed-dim": "#dcb8ff",
+                    "surface": "#131314",
+                    "on-tertiary-container": "#e3e0e2",
+                    "secondary-fixed-dim": "#c8c6c8",
+                    "on-error-container": "#ffdad6",
+                    "success-bg": "#1A3D24",
+                    "on-tertiary": "#303032",
+                    "on-primary-fixed": "#2c0051",
+                    "on-secondary-fixed": "#1b1b1d",
+                    "inverse-surface": "#e5e2e3",
+                    "on-tertiary-fixed": "#1b1b1d",
+                    "surface-variant": "#353436",
+                    "on-error": "#690005",
+                    "on-primary-container": "#eed9ff",
+                    "primary-container": "#8a2be2",
+                    "on-background": "#e5e2e3",
+                    "error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#474648",
+                    "outline-variant": "#4c4354",
+                    "error-red": "#ffb4ab",
+                    "tertiary-fixed": "#e4e2e4",
+                    "surface-dim": "#131314",
+                    "secondary-fixed": "#e4e2e4",
+                    "secondary-container": "#49494b",
+                    "on-secondary-container": "#b9b8ba",
+                    "surface-bright": "#39393a",
+                    "inverse-on-surface": "#313031",
+                    "electric-violet": "#8a2be2",
+                    "on-tertiary-fixed-variant": "#474648",
+                    "surface-tint": "#dcb8ff",
+                    "success-green": "#81C784",
+                    "tertiary-fixed-dim": "#c8c6c8",
+                    "on-primary-fixed-variant": "#6700b5",
+                    "background": "#131314",
+                    "on-surface-variant": "#cfc2d7",
+                    "surface-container-high": "#2a2a2b",
+                    "inverse-primary": "#8422dc",
+                    "secondary": "#c8c6c8",
+                    "on-primary": "#480081"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "xl": "32px",
+                    "3xl": "64px",
+                    "md": "16px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "2xl": "48px"
+            },
+            "fontFamily": {
+                    "mono-display": ["monospace"],
+                    "h3": ["Geist", "sans-serif"],
+                    "label-md": ["Geist", "sans-serif"],
+                    "display-lg": ["Geist", "sans-serif"],
+                    "headline-lg": ["Geist", "sans-serif"],
+                    "caption": ["Geist", "sans-serif"],
+                    "body-md": ["Geist", "sans-serif"],
+                    "h1": ["Geist", "sans-serif"]
+            },
+            "fontSize": {
+                    "mono-display": ["18px", {"letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "h1": ["28px", {"lineHeight": "36px", "fontWeight": "700"}]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .material-symbols-outlined.filled { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col relative overflow-hidden">
+<!-- Task-Focused Header (Navigation shell suppressed) -->
+<header class="flex items-center px-lg h-16 w-full max-w-2xl mx-auto border-b border-outline-variant/30 bg-surface/80 backdrop-blur-xl z-50 sticky top-0">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-variant/30 transition-colors mr-md active:scale-95 text-on-surface">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-h3 text-h3 flex-1 text-on-surface tracking-tight">Confirm Delivery</h1>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-2xl mx-auto px-lg py-xl pb-3xl flex flex-col gap-lg overflow-y-auto">
+<!-- Order Details Card -->
+<section class="bg-surface-container rounded-xl border border-outline-variant/20 p-md flex flex-col gap-sm shadow-sm relative overflow-hidden">
+<div class="flex justify-between items-start mb-xs">
+<div>
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-wider mb-xs">Order ID</p>
+<p class="font-mono-display text-mono-display text-on-surface">QH-20260902-1041</p>
+</div>
+<div class="bg-success-bg/20 border border-success-green/30 px-sm py-xs rounded flex items-center gap-xs">
+<span class="material-symbols-outlined filled text-success-green text-sm" data-icon="payments" style="font-size: 16px;">payments</span>
+<span class="font-label-md text-label-md font-bold text-success-green">₹70</span>
+</div>
+</div>
+<hr class="border-outline-variant/20 my-xs"/>
+<div class="grid grid-cols-2 gap-md">
+<div>
+<p class="font-caption text-caption text-on-surface-variant">Customer</p>
+<p class="font-body-md text-body-md text-on-surface font-medium flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined text-outline" data-icon="person" style="font-size: 18px;">person</span>
+                        Arun
+                    </p>
+</div>
+<div>
+<p class="font-caption text-caption text-on-surface-variant">Item</p>
+<p class="font-body-md text-body-md text-on-surface font-medium flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined text-outline" data-icon="laundry" style="font-size: 18px;">laundry</span>
+                        Sneaker Deep Clean (1 Pair)
+                    </p>
+</div>
+</div>
+</section>
+<!-- Verification Section -->
+<section class="flex flex-col gap-sm mt-md">
+<h2 class="font-label-md text-label-md font-bold text-on-surface tracking-wide">Verification</h2>
+<p class="font-caption text-caption text-on-surface-variant mb-xs">Ask the customer for their unique delivery code.</p>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="dialpad">dialpad</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 text-on-surface font-body-md text-body-md rounded-lg py-md pl-3xl pr-md focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-outline outline-none" inputmode="numeric" maxlength="6" placeholder="Enter Delivery Code" type="text"/>
+</div>
+</section>
+<!-- Proof of Delivery Section -->
+<section class="flex flex-col gap-sm mt-md mb-2xl">
+<h2 class="font-label-md text-label-md font-bold text-on-surface tracking-wide">Proof of Delivery</h2>
+<p class="font-caption text-caption text-on-surface-variant mb-xs">Take a photo of the item at the drop-off location if customer is unavailable.</p>
+<button class="w-full border-2 border-dashed border-outline-variant/50 rounded-xl bg-surface-container-low/50 hover:bg-surface-container transition-colors py-xl flex flex-col items-center justify-center gap-sm group">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center group-hover:bg-primary/20 group-hover:text-primary transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="add_a_photo">add_a_photo</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-medium">Add Delivery Photo</span>
+</button>
+</section>
+</main>
+<!-- Sticky Bottom Action Area -->
+<div class="fixed bottom-0 left-0 w-full bg-surface/90 backdrop-blur-md border-t border-outline-variant/20 py-md px-lg z-50 flex justify-center pb-safe">
+<div class="w-full max-w-2xl">
+<button class="w-full bg-electric-violet hover:bg-primary-container text-white font-label-md text-label-md font-bold py-md rounded-lg shadow-lg shadow-primary/20 transition-all active:scale-[0.98] flex items-center justify-center gap-sm" id="confirmBtn">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+                Confirm Delivery
+            </button>
+</div>
+</div>
+<!-- Success Toast (Hidden initially, shown via JS on click) -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 bg-success-bg border border-success-green/30 px-lg py-md rounded-lg shadow-xl flex items-center gap-md z-[100] transform -translate-y-20 opacity-0 transition-all duration-300 pointer-events-none" id="successToast">
+<span class="material-symbols-outlined filled text-success-green" data-icon="task_alt">task_alt</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-success-green">Delivery Confirmed</span>
+<span class="font-caption text-caption text-success-green/80">₹70 added to your earnings.</span>
+</div>
+</div>
+<script>
+        // Simple micro-interaction for the confirm button to show the toast
+        document.getElementById('confirmBtn').addEventListener('click', function() {
+            const toast = document.getElementById('successToast');
+            const btn = this;
+            
+            // Button loading state simulation
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="progress_activity">progress_activity</span> Processing...';
+            btn.classList.add('opacity-80', 'pointer-events-none');
+            
+            setTimeout(() => {
+                // Restore button
+                btn.innerHTML = originalContent;
+                btn.classList.remove('opacity-80', 'pointer-events-none');
+                
+                // Show toast
+                toast.classList.remove('-translate-y-20', 'opacity-0');
+                toast.classList.add('translate-y-0', 'opacity-100');
+                
+                // Hide toast after 3s
+                setTimeout(() => {
+                    toast.classList.remove('translate-y-0', 'opacity-100');
+                    toast.classList.add('-translate-y-20', 'opacity-0');
+                }, 3000);
+            }, 800);
+        });
+    </script>
+</body></html>

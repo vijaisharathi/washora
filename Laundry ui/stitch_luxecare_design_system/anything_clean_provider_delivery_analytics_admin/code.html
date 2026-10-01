@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Provider &amp; Delivery Analytics - Lumina Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-container": "#eed9ff",
+                        "surface": "#131314",
+                        "tertiary-fixed": "#e4e2e4",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#cfc2d7",
+                        "inverse-primary": "#8422dc",
+                        "inverse-on-surface": "#313031",
+                        "primary-container": "#8a2be2",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-background": "#e5e2e3",
+                        "secondary-container": "#49494b",
+                        "on-secondary-container": "#b9b8ba",
+                        "tertiary-container": "#646365",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-surface": "#e5e2e3",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "outline-variant": "#4c4354",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#2c0051",
+                        "inverse-surface": "#e5e2e3",
+                        "background": "#131314",
+                        "on-secondary": "#303032",
+                        "success-green": "#81C784",
+                        "error-red": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#2a2a2b",
+                        "secondary-fixed": "#e4e2e4",
+                        "tertiary": "#c8c6c8",
+                        "surface-container-highest": "#353436",
+                        "on-error": "#690005",
+                        "on-secondary-fixed-variant": "#474648",
+                        "surface-container": "#201f20",
+                        "surface-container-lowest": "#0e0e0f",
+                        "surface-container-low": "#1c1b1c",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-tertiary-container": "#e3e0e2",
+                        "surface-dim": "#131314",
+                        "success-bg": "#1A3D24",
+                        "secondary": "#c8c6c8",
+                        "surface-variant": "#353436",
+                        "electric-violet": "#8a2be2",
+                        "surface-tint": "#dcb8ff",
+                        "on-primary": "#480081",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-tertiary": "#303032",
+                        "surface-bright": "#39393a",
+                        "outline": "#988ca0",
+                        "primary-fixed": "#efdbff",
+                        "primary": "#dcb8ff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "md": "16px",
+                        "3xl": "64px",
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "xl": "32px",
+                        "xs": "4px",
+                        "sm": "8px"
+                    },
+                    fontFamily: {
+                        "label-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "caption": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "h3": ["Geist"],
+                        "h1": ["Geist"],
+                        "mono-display": ["monospace"]
+                    },
+                    fontSize: {
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500" }],
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "caption": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "h3": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+                        "h1": ["28px", { lineHeight: "36px", fontWeight: "700" }],
+                        "mono-display": ["18px", { letterSpacing: "0.05em", fontWeight: "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131314;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #353436;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4c4354;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex antialiased">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col bg-surface-container border-r border-outline-variant/20 fixed left-0 top-0 bottom-0 h-full w-64 p-md gap-sm z-40">
+<div class="mb-lg px-sm pt-sm flex items-center gap-sm">
+<div class="w-8 h-8 rounded bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container fill">water_drop</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-black text-primary leading-tight">Anything Clean</h1>
+<p class="font-caption text-caption text-on-surface-variant">Management Portal</p>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto pr-xs flex flex-col gap-xs">
+<!-- Inactive Tabs -->
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="font-label-md text-label-md">Customers</span>
+</a>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">hail</span>
+<span class="font-label-md text-label-md">Service Providers</span>
+</a>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+<span class="font-label-md text-label-md">Delivery Partners</span>
+</a>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">cleaning_services</span>
+<span class="font-label-md text-label-md">Services</span>
+</a>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+<span class="font-label-md text-label-md">Payments</span>
+</a>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">gavel</span>
+<span class="font-label-md text-label-md">Disputes</span>
+</a>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">star</span>
+<span class="font-label-md text-label-md">Reviews</span>
+</a>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">campaign</span>
+<span class="font-label-md text-label-md">Promotions</span>
+</a>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="font-label-md text-label-md">Notifications</span>
+</a>
+<!-- Active Tab -->
+<a class="flex items-center gap-md px-sm py-sm rounded-lg bg-primary-container text-on-primary-container font-bold active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px] fill">analytics</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+<!-- Inactive Tabs -->
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+<div class="mt-auto pt-md border-t border-outline-variant/20 flex items-center gap-sm px-sm cursor-pointer hover:bg-surface-container-highest p-sm rounded-lg transition-colors">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A professional headshot of a corporate administrator in a dark studio setting. The lighting is moody with subtle purple rim light. The person looks focused and analytical. High resolution, sharp details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVRgry2KvLQPBOiBq-AAx_zrdFl8r99vRIJrkdEtw4zNmWxSKKa4fbqim8HBPAHVBwDkaykvx4bLWleEtBW59WYn5tQ13z89KcRAxrJI-8HKQxx6alw5L29UDmYkECeGmDGk9R3g_xgVnUKqXgQATh9B1Pltw6X4oKq0gAcy7TfBpq8Q2d8I9X-trReA0Wa7lLdnrkzz6T1tAkyyLm7OvuXHMYmWWdj9npjLCa-eRWv1tHNZVWOD9LZA"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Admin User</span>
+<span class="font-caption text-caption text-on-surface-variant">System Administrator</span>
+</div>
+</div>
+</nav>
+<!-- TopNavBar (Mobile Only) -->
+<nav class="md:hidden flex items-center justify-between px-lg h-16 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 fixed top-0 right-0 left-0 z-50">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">menu</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Anything Clean</span>
+</div>
+<div class="flex gap-md text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:text-on-surface">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-on-surface">account_circle</span>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-0 md:ml-64 pt-16 md:pt-0 p-xl flex flex-col gap-lg max-w-[1200px] w-full mx-auto">
+<!-- Page Header -->
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-md mb-md">
+<div>
+<h1 class="font-h1 text-h1 text-on-surface mb-xs">Provider &amp; Delivery Analytics</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Monitor supply capacity and fulfillment performance.</p>
+</div>
+<div class="flex gap-sm">
+<button class="flex items-center gap-xs px-md py-sm rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                    Last 30 Days
+                </button>
+<button class="flex items-center gap-xs px-md py-sm rounded-lg bg-electric-violet text-white shadow-lg shadow-primary/20 hover:bg-primary-container transition-colors font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                    Export Report
+                </button>
+</div>
+</header>
+<!-- Provider KPIs -->
+<section>
+<h2 class="font-h3 text-h3 text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">engineering</span>
+                Provider Capacity
+            </h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-md">
+<!-- KPI 1 -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md flex flex-col gap-xs relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-primary/5 rounded-bl-full blur-xl"></div>
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-xs">
+                        Active Providers
+                        <span class="material-symbols-outlined text-[14px] text-success-green">trending_up</span>
+</span>
+<span class="font-display-lg text-display-lg text-on-surface">126</span>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md flex flex-col gap-xs relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-primary/5 rounded-bl-full blur-xl"></div>
+<span class="font-caption text-caption text-on-surface-variant">Available Now</span>
+<span class="font-display-lg text-display-lg text-on-surface">84</span>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md flex flex-col gap-xs relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-success-green/5 rounded-bl-full blur-xl"></div>
+<span class="font-caption text-caption text-on-surface-variant">Avg Rating</span>
+<div class="flex items-end gap-sm">
+<span class="font-display-lg text-display-lg text-on-surface">4.7</span>
+<span class="material-symbols-outlined text-success-green fill text-[24px] mb-2">star</span>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md flex flex-col gap-xs relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-primary/5 rounded-bl-full blur-xl"></div>
+<span class="font-caption text-caption text-on-surface-variant">Completion Rate</span>
+<span class="font-display-lg text-display-lg text-on-surface">96.2<span class="text-h3 text-on-surface-variant">%</span></span>
+</div>
+</div>
+</section>
+<!-- Delivery KPIs -->
+<section>
+<h2 class="font-h3 text-h3 text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+                Fulfillment Performance
+            </h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-md">
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md flex flex-col gap-xs">
+<span class="font-caption text-caption text-on-surface-variant">Active Partners</span>
+<span class="font-display-lg text-display-lg text-on-surface">74</span>
+</div>
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md flex flex-col gap-xs">
+<span class="font-caption text-caption text-on-surface-variant">On Delivery</span>
+<span class="font-display-lg text-display-lg text-on-surface">48</span>
+</div>
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md flex flex-col gap-xs">
+<span class="font-caption text-caption text-on-surface-variant">On-Time Rate</span>
+<span class="font-display-lg text-display-lg text-on-surface">96<span class="text-h3 text-on-surface-variant">%</span></span>
+</div>
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md flex flex-col gap-xs">
+<span class="font-caption text-caption text-on-surface-variant">Avg Delivery Time</span>
+<div class="flex items-baseline gap-xs">
+<span class="font-display-lg text-display-lg text-on-surface">18</span>
+<span class="font-h3 text-h3 text-on-surface-variant">min</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Charts Section (Bento Grid) -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-lg">
+<!-- Chart 1 -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-label-md text-label-md font-bold text-on-surface">Active Providers Over Time</h3>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-on-surface">more_vert</button>
+</div>
+<div class="flex-1 min-h-[200px] w-full flex items-end justify-between gap-xs relative">
+<!-- Subtle background grid -->
+<div class="absolute inset-0 border-b border-outline-variant/10 flex flex-col justify-between">
+<div class="border-b border-outline-variant/10 w-full h-0"></div>
+<div class="border-b border-outline-variant/10 w-full h-0"></div>
+<div class="border-b border-outline-variant/10 w-full h-0"></div>
+<div class="w-full h-0"></div>
+</div>
+<!-- Minimal Bar Chart -->
+<div class="w-full bg-primary/20 hover:bg-primary/40 transition-colors rounded-t-sm relative z-10" style="height: 40%"></div>
+<div class="w-full bg-primary/20 hover:bg-primary/40 transition-colors rounded-t-sm relative z-10" style="height: 55%"></div>
+<div class="w-full bg-primary/20 hover:bg-primary/40 transition-colors rounded-t-sm relative z-10" style="height: 45%"></div>
+<div class="w-full bg-primary/20 hover:bg-primary/40 transition-colors rounded-t-sm relative z-10" style="height: 70%"></div>
+<div class="w-full bg-primary/20 hover:bg-primary/40 transition-colors rounded-t-sm relative z-10" style="height: 65%"></div>
+<div class="w-full bg-primary hover:bg-primary-container transition-colors rounded-t-sm relative z-10 shadow-[0_0_15px_rgba(138,43,226,0.3)]" style="height: 90%"></div>
+<div class="w-full bg-primary/20 hover:bg-primary/40 transition-colors rounded-t-sm relative z-10" style="height: 85%"></div>
+</div>
+<div class="flex justify-between mt-sm font-caption text-caption text-on-surface-variant">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+</div>
+</div>
+<!-- Chart 2 -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-label-md text-label-md font-bold text-on-surface">Average Delivery Time</h3>
+<span class="font-caption text-caption text-success-green bg-success-bg px-sm py-[2px] rounded-full uppercase tracking-wider font-bold">-2 min</span>
+</div>
+<div class="flex-1 min-h-[200px] w-full relative">
+<!-- Minimal Area Chart (SVG inline for pure CSS/HTML visual) -->
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<defs>
+<lineargradient id="grad1" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#8a2be2;stop-opacity:0.3"></stop>
+<stop offset="100%" style="stop-color:#8a2be2;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,80 Q10,70 20,75 T40,60 T60,65 T80,40 T100,45 L100,100 L0,100 Z" fill="url(#grad1)"></path>
+<path d="M0,80 Q10,70 20,75 T40,60 T60,65 T80,40 T100,45" fill="none" stroke="#dcb8ff" stroke-linecap="round" stroke-width="2"></path>
+<!-- Data point dot -->
+<circle cx="80" cy="40" fill="#131314" r="3" stroke="#dcb8ff" stroke-width="2"></circle>
+</svg>
+</div>
+<div class="flex justify-between mt-sm font-caption text-caption text-on-surface-variant">
+<span>Week 1</span><span>Week 2</span><span>Week 3</span><span>Week 4</span>
+</div>
+</div>
+</section>
+<!-- Bottlenecks & Tables -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<!-- Bottlenecks (1 col) -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col col-span-1">
+<h3 class="font-label-md text-label-md font-bold text-on-surface mb-md flex items-center gap-xs">
+<span class="material-symbols-outlined text-error">warning</span>
+                    System Bottlenecks
+                </h3>
+<div class="flex flex-col gap-sm">
+<div class="bg-error-container/10 border border-error/30 rounded-lg p-sm flex items-start gap-sm">
+<span class="material-symbols-outlined text-error text-[20px] mt-xs">group_off</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Low Capacity in Zone North</h4>
+<p class="font-caption text-caption text-on-surface-variant">Only 3 available providers for 15 pending orders.</p>
+</div>
+</div>
+<div class="bg-surface-container-high border border-outline-variant/30 rounded-lg p-sm flex items-start gap-sm hover:bg-surface-container-highest cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] mt-xs">schedule</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Delivery Delays</h4>
+<p class="font-caption text-caption text-on-surface-variant">Partner route optimization failing in downtown core.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Provider Performance Table (2 col) -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl flex flex-col col-span-1 lg:col-span-2 overflow-hidden">
+<div class="p-lg border-b border-outline-variant/20 flex justify-between items-center bg-surface-container-low/50">
+<h3 class="font-label-md text-label-md font-bold text-on-surface">Top Provider Performance</h3>
+<button class="font-label-md text-label-md text-primary hover:text-primary-fixed transition-colors">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant/20 bg-surface-container-low/20">
+<th class="p-md font-caption text-caption text-on-surface-variant font-medium">Provider</th>
+<th class="p-md font-caption text-caption text-on-surface-variant font-medium">Orders</th>
+<th class="p-md font-caption text-caption text-on-surface-variant font-medium">Rating</th>
+<th class="p-md font-caption text-caption text-on-surface-variant font-medium">Completion</th>
+<th class="p-md font-caption text-caption text-on-surface-variant font-medium text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="p-md flex items-center gap-sm">
+<div class="w-8 h-8 rounded bg-primary-container/20 flex items-center justify-center text-primary font-bold font-label-md">JD</div>
+<span class="font-body-md text-body-md text-on-surface">John Doe</span>
+</td>
+<td class="p-md font-body-md text-body-md text-on-surface-variant">142</td>
+<td class="p-md font-body-md text-body-md text-on-surface flex items-center gap-xs">
+                                    4.9 <span class="material-symbols-outlined text-[16px] text-success-green fill">star</span>
+</td>
+<td class="p-md">
+<div class="flex items-center gap-sm">
+<div class="h-2 w-16 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-success-green" style="width: 98%"></div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">98%</span>
+</div>
+</td>
+<td class="p-md text-right">
+<button class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors cursor-pointer">arrow_forward</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="p-md flex items-center gap-sm">
+<div class="w-8 h-8 rounded bg-secondary-container/50 flex items-center justify-center text-on-secondary-container font-bold font-label-md">AS</div>
+<span class="font-body-md text-body-md text-on-surface">Alice Smith</span>
+</td>
+<td class="p-md font-body-md text-body-md text-on-surface-variant">98</td>
+<td class="p-md font-body-md text-body-md text-on-surface flex items-center gap-xs">
+                                    4.7 <span class="material-symbols-outlined text-[16px] text-success-green fill">star</span>
+</td>
+<td class="p-md">
+<div class="flex items-center gap-sm">
+<div class="h-2 w-16 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-success-green" style="width: 95%"></div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">95%</span>
+</div>
+</td>
+<td class="p-md text-right">
+<button class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors cursor-pointer">arrow_forward</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</main>
+</body></html>

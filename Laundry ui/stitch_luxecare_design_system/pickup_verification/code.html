@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Delivery Pro - Pickup Verification</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#646365",
+                        "on-primary-fixed": "#2c0051",
+                        "secondary": "#c8c6c8",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#e4e2e4",
+                        "surface-dim": "#131314",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-primary-container": "#eed9ff",
+                        "on-tertiary": "#303032",
+                        "inverse-on-surface": "#313031",
+                        "surface-bright": "#3a393a",
+                        "outline-variant": "#4c4354",
+                        "surface-tint": "#dcb8ff",
+                        "on-error": "#690005",
+                        "on-background": "#e5e2e3",
+                        "secondary-fixed": "#e5e1e4",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "primary-container": "#8a2be2",
+                        "secondary-container": "#474649",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-variant": "#353436",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-secondary": "#303032",
+                        "on-secondary-container": "#b7b4b7",
+                        "surface-container-highest": "#353436",
+                        "surface": "#131314",
+                        "tertiary": "#c8c6c8",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#201f20",
+                        "inverse-primary": "#8422dc",
+                        "primary": "#dcb8ff",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "primary-fixed": "#efdbff",
+                        "outline": "#988ca0",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "background": "#131314",
+                        "on-primary": "#480081",
+                        "inverse-surface": "#e5e2e3",
+                        "on-secondary-fixed-variant": "#474649",
+                        "on-surface-variant": "#cfc2d7",
+                        "surface-container-high": "#2a2a2b",
+                        "on-surface": "#e5e2e3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "sm": "8px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "3xl": "64px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "label-md": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "caption": ["Geist"],
+                        "body-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md selection:bg-primary selection:text-on-primary">
+<!-- Linear flow screen - Navigation shell suppressed -->
+<!-- Top App Bar (Task Focused) -->
+<header class="fixed top-0 w-full z-50 border-b border-white/5 bg-surface/80 backdrop-blur-md shadow-sm">
+<div class="flex items-center justify-between px-md h-16 w-full">
+<button aria-label="Back" class="text-on-surface-variant hover:bg-surface-variant/50 p-2 rounded-full active:scale-95 transition-transform">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md-mobile font-bold text-primary">Pickup Verification</h1>
+<button aria-label="Help" class="text-on-surface-variant hover:bg-surface-variant/50 p-2 rounded-full active:scale-95 transition-transform">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pt-24 pb-32 px-md max-w-[1280px] mx-auto min-h-screen flex flex-col gap-lg">
+<!-- Verification Header & QR -->
+<section class="bg-surface rounded-xl p-lg flex flex-col items-center gap-md border border-white/5 shadow-sm">
+<div class="text-center">
+<p class="font-label-md text-label-md text-on-surface-variant">Order ID</p>
+<h2 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary tracking-tight">#QH1024</h2>
+</div>
+<div class="bg-white p-4 rounded-lg mt-sm shadow-md">
+<img alt="QR Code" class="w-48 h-48 object-cover" data-alt="A clean, minimalist high-contrast black and white QR code centered on a stark white square background. The design is precise and technological, suitable for scanning in a premium luxury delivery application. The image conveys efficiency and modern data transfer within a sophisticated digital environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVB3CCbKuL52Ixs8i0xeTDJ4s_P765-iT_kZtZ5-geMAhCHJM231qutxQ1870fD7USAIrvwueZYXKM-bg-GGbXmiWVjJXxrOi9PRS1T0wIjtAmmYGEdtV2SGABSDfhrBd9ue3NWZMDyNUlqcQ8TXJjOdvGkI3koUYfyobK6VFJA7aYsE3oJrz08d5e0b906M9pPvmYbtYb1Db81bf_QLQQlG2kDaBMhQREg5H1bDIskujdWuAL8wd0hA"/>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-center max-w-sm mt-sm">
+                Scan QR or match order ID with the partner before taking possession of the items.
+            </p>
+</section>
+<!-- Expected Items Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Item Details -->
+<div class="bg-surface rounded-xl p-lg border border-white/5 flex gap-md items-center">
+<div class="w-24 h-24 bg-surface-container rounded-lg shrink-0 overflow-hidden relative">
+<img alt="White Sneaker" class="w-full h-full object-cover absolute inset-0" data-alt="A pristine white luxury sneaker presented on a dark, moody studio background with dramatic overhead lighting. The composition highlights the premium materials and sleek silhouette of the shoe, utilizing a glassmorphic aesthetic with subtle reflections and deep shadows to convey high-end fashion and exclusivity within a dark theme UI context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmcxLTeIofeq4bQOe7UVKxjQ8n0tpppz2ZNvqThp_4J5sbagMDpuvbjdAgEFfobBUcbZoR72UDlffCBJkcj3toVL5u1IsOQG0GznMLBKmvVN7YKtAxjNEKgMRDUqE0whPYQwJ4ZdaPFK0asKmfGcu6wRyC0BvutpfFSy8bUQo2mFaG-E8DhG5Wrg8j6TLCSTNzc62JIKabaa9S1Daz9UWacAextpBm4gohLSOsMNqXjibLk4ak_6xu9Q"/>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-primary mb-xs">Shoe</p>
+<h3 class="font-headline-md text-headline-md-mobile md:font-headline-md md:text-headline-md text-on-surface">White Sneaker</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-sm">Size: 10 US</p>
+</div>
+</div>
+<!-- Quantity & Package -->
+<div class="grid grid-cols-2 gap-md">
+<div class="bg-surface rounded-xl p-lg border border-white/5 flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-primary text-3xl mb-sm" style="font-variation-settings: 'FILL' 0;">inventory_2</span>
+<p class="font-label-md text-label-md text-on-surface-variant">Packages</p>
+<p class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mt-xs">1</p>
+</div>
+<div class="bg-surface rounded-xl p-lg border border-white/5 flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-primary text-3xl mb-sm" style="font-variation-settings: 'FILL' 0;">format_list_numbered</span>
+<p class="font-label-md text-label-md text-on-surface-variant">Total Quantity</p>
+<p class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mt-xs">1</p>
+</div>
+</div>
+</section>
+<!-- Verification Checklist -->
+<section class="bg-surface rounded-xl p-lg border border-white/5">
+<h3 class="font-headline-md text-headline-md-mobile text-on-surface mb-lg">Checklist</h3>
+<div class="flex flex-col gap-md">
+<!-- Checklist Item 1 -->
+<label class="flex items-start gap-md cursor-pointer group">
+<div class="relative flex items-center justify-center w-6 h-6 rounded border border-outline-variant bg-surface-container mt-1 shrink-0 group-hover:border-primary transition-colors">
+<input class="peer appearance-none absolute inset-0 w-full h-full rounded cursor-pointer checked:bg-primary checked:border-primary transition-colors focus:ring-0 focus:outline-none" type="checkbox"/>
+<span class="material-symbols-outlined text-on-primary text-sm opacity-0 peer-checked:opacity-100 absolute pointer-events-none transition-opacity">check</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface group-hover:text-primary-fixed transition-colors">Order ID matches #QH1024</p>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">Confirm with partner verbally or via scan.</p>
+</div>
+</label>
+<!-- Checklist Item 2 -->
+<label class="flex items-start gap-md cursor-pointer group">
+<div class="relative flex items-center justify-center w-6 h-6 rounded border border-outline-variant bg-surface-container mt-1 shrink-0 group-hover:border-primary transition-colors">
+<input class="peer appearance-none absolute inset-0 w-full h-full rounded cursor-pointer checked:bg-primary checked:border-primary transition-colors focus:ring-0 focus:outline-none" type="checkbox"/>
+<span class="material-symbols-outlined text-on-primary text-sm opacity-0 peer-checked:opacity-100 absolute pointer-events-none transition-opacity">check</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface group-hover:text-primary-fixed transition-colors">Package condition is pristine</p>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">No visible damage, tears, or tampering.</p>
+</div>
+</label>
+</div>
+</section>
+<!-- Warning State (Hidden by default, shown for demonstration) -->
+<section class="bg-error-container/20 border border-error-container rounded-xl p-md flex gap-sm items-start">
+<span class="material-symbols-outlined text-error shrink-0">warning</span>
+<div>
+<h4 class="font-label-md text-label-md text-error mb-xs">Mismatch Detected</h4>
+<p class="font-body-md text-body-md text-on-error-container text-sm">Package details do not match expected manifest. Please resolve with partner before continuing.</p>
+</div>
+</section>
+</main>
+<!-- Fixed Bottom CTA Area -->
+<div class="fixed bottom-0 left-0 w-full bg-surface/90 backdrop-blur-2xl border-t border-white/10 p-md z-40 shadow-[0_-4px_20px_rgba(0,0,0,0.3)] pb-safe">
+<div class="max-w-[1280px] mx-auto flex gap-md">
+<button class="flex-1 bg-transparent border border-outline-variant text-on-surface hover:bg-surface-variant/50 font-label-md text-label-md py-4 rounded-xl transition-colors text-center uppercase tracking-wider">
+                Report Issue
+            </button>
+<button class="flex-[2] bg-primary text-on-primary hover:bg-primary-fixed font-label-md text-label-md py-4 rounded-xl transition-colors text-center uppercase tracking-wider font-bold shadow-lg shadow-primary/20">
+                Continue Verification
+            </button>
+</div>
+</div>
+</body></html>

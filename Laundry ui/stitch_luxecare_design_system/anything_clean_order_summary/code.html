@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Details - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#e4e2e4",
+                      "error": "#ffb4ab",
+                      "surface-container": "#201f20",
+                      "on-secondary": "#303032",
+                      "on-surface": "#e5e2e3",
+                      "on-tertiary-container": "#e3e0e2",
+                      "success-bg": "#1A3D24",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "surface-tint": "#dcb8ff",
+                      "surface-variant": "#353436",
+                      "on-primary": "#480081",
+                      "tertiary": "#c8c6c8",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "on-tertiary": "#303032",
+                      "secondary-container": "#49494b",
+                      "primary": "#dcb8ff",
+                      "inverse-primary": "#8422dc",
+                      "primary-container": "#8a2be2",
+                      "error-container": "#93000a",
+                      "on-error": "#690005",
+                      "on-surface-variant": "#cfc2d7",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "outline-variant": "#4c4354",
+                      "surface-container-high": "#2a2a2b",
+                      "inverse-on-surface": "#313031",
+                      "tertiary-container": "#646365",
+                      "on-primary-container": "#eed9ff",
+                      "error-red": "#ffb4ab",
+                      "on-background": "#e5e2e3",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "surface-container-low": "#1c1b1c",
+                      "on-error-container": "#ffdad6",
+                      "surface": "#131314",
+                      "on-secondary-fixed-variant": "#474648",
+                      "primary-fixed": "#efdbff",
+                      "surface-bright": "#39393a",
+                      "on-primary-fixed": "#2c0051",
+                      "secondary": "#c8c6c8",
+                      "surface-dim": "#131314",
+                      "on-secondary-container": "#b9b8ba",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "electric-violet": "#8a2be2",
+                      "surface-container-lowest": "#0e0e0f",
+                      "outline": "#988ca0",
+                      "success-green": "#81C784",
+                      "inverse-surface": "#e5e2e3",
+                      "secondary-fixed": "#e4e2e4",
+                      "background": "#131314",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "surface-container-highest": "#353436"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "3xl": "64px",
+                      "lg": "24px",
+                      "xl": "32px",
+                      "xs": "4px",
+                      "md": "16px",
+                      "sm": "8px",
+                      "2xl": "48px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "h1": [
+                              "Geist"
+                      ],
+                      "h3": [
+                              "Geist"
+                      ],
+                      "mono-display": [
+                              "monospace"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            background-color: #131314;
+            color: #e5e2e3;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex antialiased">
+<!-- Desktop Side Navigation (Suppressed on Mobile, rendered as requested for desktop reference) -->
+<nav class="hidden md:flex flex-col py-lg px-md h-screen fixed left-0 top-0 h-full w-[256px] border-r border-outline-variant/30 bg-surface-container-low z-40">
+<div class="mb-2xl flex items-center gap-sm">
+<span class="material-symbols-outlined text-electric-violet" style="font-variation-settings: 'FILL' 1;">cleaning_services</span>
+<span class="font-h1 text-h1 text-electric-violet tracking-tight">Anything Clean</span>
+</div>
+<div class="flex-1 flex flex-col gap-sm">
+<!-- Active Orders tab mapped to Order Details -->
+<a class="flex items-center gap-md px-md py-sm bg-primary/10 text-primary font-bold rounded-lg cursor-pointer" href="#">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-label-md text-label-md">Active Orders</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-variant/50 hover:text-on-surface transition-all cursor-pointer rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-variant/50 hover:text-on-surface transition-all cursor-pointer rounded-lg" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-label-md text-label-md">History</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-variant/50 hover:text-on-surface transition-all cursor-pointer rounded-lg" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-label-md">Wallet</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-variant/50 hover:text-on-surface transition-all cursor-pointer rounded-lg" href="#">
+<span class="material-symbols-outlined">contact_support</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+</div>
+<div class="mt-auto pt-lg border-t border-outline-variant/30 flex flex-col gap-sm">
+<button class="w-full py-sm px-md bg-electric-violet text-on-primary font-label-md text-label-md rounded-lg font-bold shadow-lg shadow-primary/20 hover:bg-inverse-primary transition-colors flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+                 New Request
+             </button>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-variant/50 hover:text-on-surface transition-all cursor-pointer rounded-lg mt-md" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 ml-[0px] md:ml-[256px] p-md md:p-xl w-full max-w-[1200px] mx-auto min-h-screen pb-[100px] md:pb-xl">
+<!-- Header -->
+<header class="mb-xl border-b border-outline-variant/30 pb-lg flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<div class="flex items-center gap-sm mb-xs text-on-surface-variant">
+<a class="font-label-md text-label-md hover:text-primary transition-colors flex items-center" href="#"><span class="material-symbols-outlined text-[16px] mr-xs">arrow_back</span> Orders</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="font-label-md text-label-md">Details</span>
+</div>
+<div class="flex items-center gap-md">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Order Details</h1>
+<span class="inline-flex items-center px-sm py-xs rounded-full bg-success-bg text-success-green font-caption text-caption font-bold tracking-[0.05em] uppercase border border-success-green/20">
+                        Confirmed
+                    </span>
+</div>
+<p class="font-mono-display text-mono-display text-on-surface-variant mt-sm">ID: QH-20260901-1024</p>
+</div>
+<div class="flex gap-sm">
+<button class="px-md py-sm border border-outline-variant rounded-lg text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined" style="font-size: 18px;">receipt</span>
+                    View Receipt
+                </button>
+<button class="px-md py-sm bg-electric-violet text-white rounded-lg font-label-md text-label-md font-bold shadow-lg shadow-primary/20 hover:bg-inverse-primary transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined" style="font-size: 18px;">my_location</span>
+                    Track Order
+                </button>
+</div>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-md">
+<!-- Service Details (Span 2 cols) -->
+<section class="lg:col-span-2 bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col">
+<div class="flex items-center gap-sm mb-md pb-sm border-b border-outline-variant/20">
+<span class="material-symbols-outlined text-primary">dry_cleaning</span>
+<h2 class="font-h3 text-h3 text-on-surface">Service Details</h2>
+</div>
+<div class="flex items-start gap-md mb-lg">
+<div class="w-16 h-16 rounded-lg bg-surface-container-high border border-outline-variant/30 flex items-center justify-center overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close up of a premium pair of sneakers being cleaned by a professional tool in a modern workshop with dark tech lighting and purple accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV4BlhTvYCv5J7F0HIgaHyLReLNF15NR6HZJ-PRnzFNjNV1aqV9Ck8GQqT1pN4IZ7bTeUye-IbpDvRlQmD-NjaM8geBtZivlOzBmJTAQZUJw8no7DHl6srvhHlBKz3jVJiVcn5ehy0Z3CI-SGoeZSu_d3w4I9c6LLjl2Rup6FjWKkec1KmpbG2Ws6Uhapm0NU1ojx10lHs4MD2K26riGNqDtUw5lv9_NHNC3SOCEV62545_EFCjALJHQ"/>
+</div>
+<div>
+<h3 class="font-label-md text-label-md font-bold text-on-surface text-lg">Sneaker Deep Clean - Premium</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined text-[16px]">storefront</span>
+                            CleanX Service Center
+                        </p>
+</div>
+</div>
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-sm">Add-ons</h4>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-sm">
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-sm flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">water_drop</span>
+<span class="font-body-md text-body-md text-on-surface">Water &amp; Stain Protection</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-sm flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">air</span>
+<span class="font-body-md text-body-md text-on-surface">Odor Treatment</span>
+</div>
+</div>
+</section>
+<!-- Price Breakdown -->
+<section class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col row-span-2">
+<div class="flex items-center gap-sm mb-md pb-sm border-b border-outline-variant/20">
+<span class="material-symbols-outlined text-primary">receipt_long</span>
+<h2 class="font-h3 text-h3 text-on-surface">Payment Summary</h2>
+</div>
+<div class="flex flex-col gap-sm flex-1">
+<div class="flex justify-between items-center py-xs">
+<span class="font-body-md text-body-md text-on-surface-variant">Service</span>
+<span class="font-mono-display text-mono-display text-on-surface">₹449</span>
+</div>
+<div class="flex justify-between items-center py-xs">
+<span class="font-body-md text-body-md text-on-surface-variant">Add-ons</span>
+<span class="font-mono-display text-mono-display text-on-surface">₹178</span>
+</div>
+<div class="flex justify-between items-center py-xs text-success-green">
+<span class="font-body-md text-body-md flex items-center gap-xs"><span class="material-symbols-outlined text-[16px]">sell</span> Discount</span>
+<span class="font-mono-display text-mono-display">-₹125</span>
+</div>
+<div class="mt-auto pt-md border-t border-outline-variant/30">
+<div class="flex justify-between items-end mb-xs">
+<span class="font-h3 text-h3 text-on-surface">Total</span>
+<span class="font-headline-lg text-headline-lg text-electric-violet">₹502</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-sm mt-md flex items-center justify-between border border-outline-variant/30">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-success-green">check_circle</span>
+<span class="font-label-md text-label-md text-on-surface">Paid via UPI</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Txn: UPI8273...</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Fulfillment Details -->
+<section class="lg:col-span-2 bg-surface-container border border-outline-variant/20 rounded-xl p-lg">
+<div class="flex items-center gap-sm mb-md pb-sm border-b border-outline-variant/20">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+<h2 class="font-h3 text-h3 text-on-surface">Fulfillment</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Schedule -->
+<div>
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-sm">Schedule</h4>
+<div class="flex gap-md relative">
+<!-- Vertical Timeline Line -->
+<div class="absolute left-3 top-6 bottom-2 w-[2px] bg-outline-variant/30"></div>
+<div class="flex flex-col gap-md">
+<div class="flex items-start gap-md z-10">
+<div class="w-6 h-6 rounded-full bg-surface-container border-2 border-primary flex items-center justify-center shrink-0 mt-1">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold">Pickup</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Sep 1, 10:00 AM – 12:00 PM</p>
+</div>
+</div>
+<div class="flex items-start gap-md z-10">
+<div class="w-6 h-6 rounded-full bg-surface-container border-2 border-outline-variant flex items-center justify-center shrink-0 mt-1">
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold">Delivery</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Pending Service Completion</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Address -->
+<div>
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-sm">Address</h4>
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-md">
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant mt-1 text-[20px]">location_on</span>
+<div>
+<p class="font-body-md text-body-md text-on-surface">Anna Nagar</p>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">Chennai, Tamil Nadu<br/>India</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Bottom Actions (Mobile) / Footer Actions (Desktop) -->
+<div class="mt-xl flex justify-center md:justify-start">
+<button class="px-lg py-sm border border-outline-variant rounded-lg text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+                Contact Support
+            </button>
+</div>
+</main>
+<!-- Mobile Bottom Navigation Shell -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface-container border-t border-outline-variant/30 shadow-lg shadow-primary/5 flex justify-around items-center h-20 px-md pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-variant transition-all rounded-xl w-16" href="#">
+<span class="material-symbols-outlined">route</span>
+<span class="font-caption text-[10px] mt-1">Track</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-variant transition-all rounded-xl w-16" href="#">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-caption text-[10px] mt-1">Support</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl p-2 active:scale-90 transition-all duration-150 w-16" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<span class="font-caption text-[10px] mt-1 font-bold">Details</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-variant transition-all rounded-xl w-16" href="#">
+<span class="material-symbols-outlined">cancel</span>
+<span class="font-caption text-[10px] mt-1">Cancel</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anything Clean - Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#8422dc",
+                        "surface-container": "#201f20",
+                        "inverse-surface": "#e5e2e3",
+                        "on-tertiary": "#4b2800",
+                        "on-error": "#690005",
+                        "tertiary": "#ffb873",
+                        "surface-container-low": "#1c1b1c",
+                        "on-secondary-container": "#caa7ec",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "success": "#4ade80",
+                        "surface-bright": "#3a393a",
+                        "surface-container-lowest": "#0e0e0f",
+                        "outline": "#988ca0",
+                        "on-primary-container": "#eed9ff",
+                        "on-secondary-fixed-variant": "#573976",
+                        "on-primary": "#480081",
+                        "background": "#131314",
+                        "error-container": "#93000a",
+                        "secondary-container": "#573976",
+                        "primary-fixed": "#efdbff",
+                        "secondary-fixed": "#efdbff",
+                        "critical": "#f87171",
+                        "on-surface": "#e5e2e3",
+                        "warning": "#fbbf24",
+                        "info": "#60a5fa",
+                        "outline-variant": "#4c4354",
+                        "tertiary-fixed": "#ffdcbf",
+                        "on-tertiary-fixed-variant": "#6a3b00",
+                        "surface-container-high": "#2a2a2b",
+                        "inverse-on-surface": "#313031",
+                        "error": "#ffb4ab",
+                        "surface-container-highest": "#353436",
+                        "on-secondary": "#3f225e",
+                        "on-tertiary-container": "#ffdaba",
+                        "tertiary-container": "#935400",
+                        "on-secondary-fixed": "#290947",
+                        "tertiary-fixed-dim": "#ffb873",
+                        "surface": "#131314",
+                        "secondary-fixed-dim": "#dcb8ff",
+                        "surface-dim": "#131314",
+                        "on-primary-fixed": "#2c0051",
+                        "secondary": "#dcb8ff",
+                        "on-background": "#e5e2e3",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#dcb8ff",
+                        "primary-container": "#8a2be2",
+                        "on-tertiary-fixed": "#2d1600",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "surface-tint": "#dcb8ff",
+                        "surface-variant": "#353436"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "sidebar-width": "260px",
+                        "gutter": "16px",
+                        "margin-desktop": "24px",
+                        "margin-mobile": "16px",
+                        "table-cell-padding": "12px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Geist"],
+                        "body-md": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "code": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "label-sm": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "code": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #131314; color: #e5e2e3; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .material-symbols-outlined.filled { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="font-body-md antialiased min-h-screen">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-lowest border-r border-outline-variant flex flex-col py-6 z-50">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-weight="fill">admin_panel_settings</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface">Lumina Admin</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Super Admin Console</p>
+</div>
+</div>
+<div class="px-4 mb-2">
+<p class="font-label-sm text-label-sm text-on-surface-variant px-2 uppercase tracking-wider">Main</p>
+</div>
+<div class="flex-1 flex flex-col gap-1 px-4 overflow-y-auto">
+<!-- Active Tab -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg border-l-4 border-primary text-on-surface font-semibold bg-surface-container-high transition-all duration-150 scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg border-l-4 border-transparent text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg border-l-4 border-transparent text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg border-l-4 border-transparent text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="store">store</span>
+<span class="font-label-md text-label-md">Providers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg border-l-4 border-transparent text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span class="font-label-md text-label-md">Delivery Partners</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg border-l-4 border-transparent text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings_input_component">settings_input_component</span>
+<span class="font-label-md text-label-md">Operations</span>
+</a>
+</div>
+<div class="px-4 mt-auto pt-6 border-t border-outline-variant/30 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg border-l-4 border-transparent text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+<span class="font-label-md text-label-md">System Logs</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg border-l-4 border-transparent text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+</div>
+</nav>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-260px)] h-16 bg-surface-container border-b border-outline-variant flex justify-between items-center px-margin-desktop ml-sidebar-width z-40">
+<div class="flex items-center gap-4 w-96">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg pl-10 pr-4 py-2 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Search orders, customers, or press Cmd + K..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="font-label-md text-label-md font-bold text-primary mr-4 hidden md:block">Lumina Control Center</div>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-colors hover:opacity-80">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-colors hover:opacity-80">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-colors hover:opacity-80">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant ml-2 shrink-0">
+<img alt="Admin User Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a business administrator in a dark studio setting. Clean lighting highlighting the face against a deep black background, consistent with a modern corporate avatar style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-KOGIYlC3FrDckk8EENm_NDQSaPVn0wbWrDNCYQRPL-8sDAM4pazM-hZkIAeUUxD_je01G3YLL-E-SY1cS8-L5CQgJyXVqqGuH2Hsmx0PzifCT6Yjyk9U7Ex3LXNeCZXQxBuaz3pjAOmPncMRVKAHU-Zg98hoEu1WuDqzgygj1hHK_XvqddV8XjiCos1VEX24PbMnNu1I7ucT2uO73LIG587QE84vjD1Ul8DscLJ5d_Armz4eKJY91w"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-[260px] pt-16 min-h-screen bg-background pb-12">
+<div class="p-margin-desktop max-w-[1600px] mx-auto">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-display-lg text-display-lg text-on-surface mb-1">Operational Overview</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Marketplace vitals across all active zones.</p>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 rounded-lg bg-surface-container-high border border-outline-variant text-on-surface font-label-md text-label-md flex items-center gap-2 hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                        Today
+                    </button>
+<button class="px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold flex items-center gap-2 hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                        Export Report
+                    </button>
+</div>
+</div>
+<!-- Primary KPI Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-8">
+<!-- KPI 1 -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-5 hover:border-outline-variant transition-colors">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Orders</span>
+<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+</div>
+</div>
+<div class="flex items-baseline gap-3">
+<span class="font-headline-lg text-headline-lg text-on-surface">1,284</span>
+<span class="font-label-sm text-label-sm text-success bg-success/10 px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +12.4%
+                        </span>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-5 hover:border-outline-variant transition-colors">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Gross Revenue</span>
+<div class="w-8 h-8 rounded-lg bg-success/10 flex items-center justify-center text-success">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+</div>
+<div class="flex items-baseline gap-3">
+<span class="font-headline-lg text-headline-lg text-on-surface">₹4,82,600</span>
+<span class="font-label-sm text-label-sm text-success bg-success/10 px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +8.7%
+                        </span>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-5 hover:border-outline-variant transition-colors">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Active Customers</span>
+<div class="w-8 h-8 rounded-lg bg-info/10 flex items-center justify-center text-info">
+<span class="material-symbols-outlined text-[20px]">group</span>
+</div>
+</div>
+<div class="flex items-baseline gap-3">
+<span class="font-headline-lg text-headline-lg text-on-surface">8,420</span>
+<span class="font-label-sm text-label-sm text-success bg-success/10 px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +6.2%
+                        </span>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-5 hover:border-outline-variant transition-colors">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Active Providers</span>
+<div class="w-8 h-8 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">store</span>
+</div>
+</div>
+<div class="flex items-baseline gap-3">
+<span class="font-headline-lg text-headline-lg text-on-surface">186</span>
+<span class="font-label-sm text-label-sm text-success bg-success/10 px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +4.1%
+                        </span>
+</div>
+</div>
+<!-- KPI 5 -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-5 hover:border-outline-variant transition-colors relative overflow-hidden">
+<div class="absolute right-0 top-0 w-32 h-32 bg-success/5 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
+<div class="flex justify-between items-start mb-4 relative">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Partners Online</span>
+<div class="w-8 h-8 rounded-lg bg-success/20 flex items-center justify-center text-success">
+<span class="material-symbols-outlined text-[20px]">two_wheeler</span>
+</div>
+</div>
+<div class="flex items-baseline gap-3 relative">
+<span class="font-headline-lg text-headline-lg text-on-surface">74</span>
+<span class="font-label-sm text-label-sm text-success flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-success animate-pulse"></span> LIVE
+                        </span>
+</div>
+</div>
+<!-- KPI 6 -->
+<div class="bg-surface-container-low border border-critical/50 rounded-xl p-5 shadow-[0_0_15px_rgba(248,113,113,0.1)] relative overflow-hidden">
+<div class="absolute right-0 bottom-0 w-32 h-32 bg-critical/10 rounded-full blur-2xl translate-y-1/2 translate-x-1/4"></div>
+<div class="flex justify-between items-start mb-4 relative">
+<span class="font-label-sm text-label-sm text-critical uppercase tracking-wider font-semibold">Orders Attention</span>
+<div class="w-8 h-8 rounded-lg bg-critical/20 flex items-center justify-center text-critical">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+</div>
+<div class="flex items-baseline gap-3 relative">
+<span class="font-headline-lg text-headline-lg text-on-surface">13</span>
+<span class="font-label-sm text-label-sm text-critical bg-critical/10 px-2 py-0.5 rounded-full">
+                            REQUIRES ACTION
+                        </span>
+</div>
+</div>
+</div>
+<!-- Order Status Strip -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-2 mb-8 flex flex-wrap gap-2">
+<div class="flex-1 min-w-[150px] bg-surface-container p-4 rounded-lg flex items-center gap-4">
+<div class="w-2 h-10 bg-outline rounded-full"></div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Pending</div>
+<div class="font-headline-md text-headline-md text-on-surface">128</div>
+</div>
+</div>
+<div class="flex-1 min-w-[150px] bg-surface-container p-4 rounded-lg flex items-center gap-4">
+<div class="w-2 h-10 bg-info rounded-full"></div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Processing</div>
+<div class="font-headline-md text-headline-md text-on-surface">246</div>
+</div>
+</div>
+<div class="flex-1 min-w-[150px] bg-surface-container p-4 rounded-lg flex items-center gap-4">
+<div class="w-2 h-10 bg-warning rounded-full"></div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Ready for Pickup</div>
+<div class="font-headline-md text-headline-md text-on-surface">84</div>
+</div>
+</div>
+<div class="flex-1 min-w-[150px] bg-surface-container p-4 rounded-lg flex items-center gap-4">
+<div class="w-2 h-10 bg-primary rounded-full"></div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">In Transit</div>
+<div class="font-headline-md text-headline-md text-on-surface">52</div>
+</div>
+</div>
+<div class="flex-1 min-w-[150px] bg-surface-container p-4 rounded-lg flex items-center gap-4">
+<div class="w-2 h-10 bg-success rounded-full"></div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Completed</div>
+<div class="font-headline-md text-headline-md text-on-surface">760</div>
+</div>
+</div>
+</div>
+<!-- Charts Section (Placeholder visuals with CSS) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+<!-- Revenue Chart -->
+<div class="lg:col-span-2 bg-surface-container-low border border-outline-variant/30 rounded-xl p-6 flex flex-col h-[400px]">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface">Revenue Overview</h3>
+<div class="flex bg-surface-container rounded-lg p-1 border border-outline-variant/50">
+<button class="px-3 py-1 text-label-sm font-label-sm rounded-md bg-surface-container-high text-on-surface">7D</button>
+<button class="px-3 py-1 text-label-sm font-label-sm rounded-md text-on-surface-variant hover:text-on-surface">30D</button>
+</div>
+</div>
+<div class="flex-1 relative w-full h-full border-b border-l border-outline-variant/30 flex items-end pt-4 pr-4">
+<!-- Y Axis labels -->
+<div class="absolute left-[-40px] top-0 h-full flex flex-col justify-between text-label-sm text-on-surface-variant pb-6">
+<span>₹100k</span>
+<span>₹50k</span>
+<span>0</span>
+</div>
+<!-- Simple CSS Grid lines -->
+<div class="absolute inset-0 border-t border-outline-variant/10 w-full top-1/4"></div>
+<div class="absolute inset-0 border-t border-outline-variant/10 w-full top-2/4"></div>
+<div class="absolute inset-0 border-t border-outline-variant/10 w-full top-3/4"></div>
+<!-- Faux Line Chart using SVG -->
+<svg class="w-full h-full overflow-visible z-10" preserveaspectratio="none" viewbox="0 0 100 100">
+<defs>
+<lineargradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#8422dc" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#8422dc" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,80 L15,60 L30,65 L45,40 L60,50 L75,20 L90,30 L100,10" fill="none" stroke="#dcb8ff" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+<path d="M0,80 L15,60 L30,65 L45,40 L60,50 L75,20 L90,30 L100,10 L100,100 L0,100 Z" fill="url(#chartGradient)"></path>
+</svg>
+<!-- X Axis Labels -->
+<div class="absolute bottom-[-25px] w-full flex justify-between text-label-sm text-on-surface-variant">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+</div>
+</div>
+</div>
+<!-- Order Volume -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-6 flex flex-col h-[400px]">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface">Order Volume</h3>
+</div>
+<div class="flex-1 flex items-end justify-around gap-2 pt-10 pb-6 border-b border-outline-variant/30">
+<div class="w-full bg-surface-container-high rounded-t-sm h-[40%] relative group hover:bg-primary/50 transition-colors"><div class="hidden group-hover:block absolute -top-8 left-1/2 -translate-x-1/2 bg-surface text-label-sm px-2 py-1 rounded">40</div></div>
+<div class="w-full bg-surface-container-high rounded-t-sm h-[60%] relative group hover:bg-primary/50 transition-colors"><div class="hidden group-hover:block absolute -top-8 left-1/2 -translate-x-1/2 bg-surface text-label-sm px-2 py-1 rounded">60</div></div>
+<div class="w-full bg-primary rounded-t-sm h-[85%] relative group shadow-[0_0_10px_rgba(220,184,255,0.3)]"><div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-surface border border-primary/30 text-label-sm px-2 py-1 rounded">85</div></div>
+<div class="w-full bg-surface-container-high rounded-t-sm h-[50%] relative group hover:bg-primary/50 transition-colors"><div class="hidden group-hover:block absolute -top-8 left-1/2 -translate-x-1/2 bg-surface text-label-sm px-2 py-1 rounded">50</div></div>
+<div class="w-full bg-surface-container-high rounded-t-sm h-[70%] relative group hover:bg-primary/50 transition-colors"><div class="hidden group-hover:block absolute -top-8 left-1/2 -translate-x-1/2 bg-surface text-label-sm px-2 py-1 rounded">70</div></div>
+</div>
+</div>
+</div>
+<!-- Bottom Row: Tables & Lists -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Live Ops & Top Services -->
+<div class="lg:col-span-1 flex flex-col gap-6">
+<!-- Live Operations -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-critical animate-pulse"></span>
+                            Live Operations
+                        </h3>
+<div class="flex flex-col gap-3">
+<div class="bg-surface-container p-4 rounded-lg flex justify-between items-center border border-warning/20">
+<div>
+<div class="font-label-md text-label-md text-on-surface">Orders waiting for pickup</div>
+<div class="font-label-sm text-label-sm text-warning mt-1">SLA At Risk</div>
+</div>
+<span class="font-headline-md text-headline-md text-warning">24</span>
+</div>
+<div class="bg-surface-container p-4 rounded-lg flex justify-between items-center border border-critical/20">
+<div>
+<div class="font-label-md text-label-md text-on-surface">Delayed orders</div>
+<div class="font-label-sm text-label-sm text-critical mt-1">Breached SLA</div>
+</div>
+<span class="font-headline-md text-headline-md text-critical">8</span>
+</div>
+</div>
+</div>
+<!-- Top Services -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-6 flex-1">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Top Services</h3>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">laundry</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="font-label-md text-label-md text-on-surface">Laundry</span>
+<span class="font-label-md text-label-md text-on-surface">45%</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full" style="width: 45%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-info">icecream</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="font-label-md text-label-md text-on-surface">Shoes</span>
+<span class="font-label-md text-label-md text-on-surface">30%</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-info h-full" style="width: 30%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary">home</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="font-label-md text-label-md text-on-surface">Deep Clean</span>
+<span class="font-label-md text-label-md text-on-surface">15%</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full" style="width: 15%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Orders Table -->
+<div class="lg:col-span-2 bg-surface-container-low border border-outline-variant/30 rounded-xl overflow-hidden flex flex-col">
+<div class="p-6 border-b border-outline-variant/30 flex justify-between items-center bg-[#1c1b1c]">
+<h3 class="font-headline-md text-headline-md text-on-surface">Recent Orders</h3>
+<button class="text-primary font-label-md text-label-md hover:underline">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#1c1b1c] border-b border-[#353436]">
+<th class="p-table-cell-padding font-label-md text-label-sm uppercase text-on-surface-variant font-semibold">Order ID</th>
+<th class="p-table-cell-padding font-label-md text-label-sm uppercase text-on-surface-variant font-semibold">Customer</th>
+<th class="p-table-cell-padding font-label-md text-label-sm uppercase text-on-surface-variant font-semibold">Service</th>
+<th class="p-table-cell-padding font-label-md text-label-sm uppercase text-on-surface-variant font-semibold">Provider</th>
+<th class="p-table-cell-padding font-label-md text-label-sm uppercase text-on-surface-variant font-semibold">Status</th>
+<th class="p-table-cell-padding font-label-md text-label-sm uppercase text-on-surface-variant font-semibold text-right">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-[#353436] hover:bg-[#2a2a2b] transition-colors group">
+<td class="p-table-cell-padding font-code text-on-surface">#QH1024</td>
+<td class="p-table-cell-padding font-body-md text-on-surface">Arun Kumar</td>
+<td class="p-table-cell-padding font-body-md text-on-surface-variant">Sneaker Cleaning</td>
+<td class="p-table-cell-padding font-body-md text-on-surface">CleanX</td>
+<td class="p-table-cell-padding">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                            IN_TRANSIT
+                                        </span>
+</td>
+<td class="p-table-cell-padding text-right">
+<button class="text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="border-b border-[#353436] hover:bg-[#2a2a2b] transition-colors group">
+<td class="p-table-cell-padding font-code text-on-surface">#QH1023</td>
+<td class="p-table-cell-padding font-body-md text-on-surface">Priya Singh</td>
+<td class="p-table-cell-padding font-body-md text-on-surface-variant">Dry Cleaning</td>
+<td class="p-table-cell-padding font-body-md text-on-surface">LaundroMat Plus</td>
+<td class="p-table-cell-padding">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                                            PENDING
+                                        </span>
+</td>
+<td class="p-table-cell-padding text-right">
+<button class="text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="border-b border-[#353436] hover:bg-[#2a2a2b] transition-colors group">
+<td class="p-table-cell-padding font-code text-on-surface">#QH1022</td>
+<td class="p-table-cell-padding font-body-md text-on-surface">Rahul Sharma</td>
+<td class="p-table-cell-padding font-body-md text-on-surface-variant">Wash &amp; Fold</td>
+<td class="p-table-cell-padding font-body-md text-on-surface">QuickWash</td>
+<td class="p-table-cell-padding">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-warning/10 text-warning font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-warning"></span>
+                                            PROCESSING
+                                        </span>
+</td>
+<td class="p-table-cell-padding text-right">
+<button class="text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-[#2a2a2b] transition-colors group">
+<td class="p-table-cell-padding font-code text-on-surface">#QH1021</td>
+<td class="p-table-cell-padding font-body-md text-on-surface">Neha Gupta</td>
+<td class="p-table-cell-padding font-body-md text-on-surface-variant">Premium Laundry</td>
+<td class="p-table-cell-padding font-body-md text-on-surface">Elite Care</td>
+<td class="p-table-cell-padding">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-success/10 text-success font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-success"></span>
+                                            COMPLETED
+                                        </span>
+</td>
+<td class="p-table-cell-padding text-right">
+<button class="text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Upload Photos &amp; AI Assistance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#988ca0",
+                    "secondary-container": "#474649",
+                    "tertiary": "#c8c6c8",
+                    "error": "#ffb4ab",
+                    "on-secondary-container": "#b7b4b7",
+                    "on-surface": "#e5e2e3",
+                    "inverse-surface": "#e5e2e3",
+                    "inverse-primary": "#8422dc",
+                    "surface-tint": "#dcb8ff",
+                    "on-tertiary-fixed-variant": "#474649",
+                    "on-secondary-fixed": "#1b1b1d",
+                    "inverse-on-surface": "#313031",
+                    "primary": "#dcb8ff",
+                    "on-background": "#e5e2e3",
+                    "on-tertiary-fixed": "#1b1b1d",
+                    "primary-fixed": "#efdbff",
+                    "tertiary-fixed": "#e4e2e4",
+                    "tertiary-fixed-dim": "#c8c6c8",
+                    "on-secondary-fixed-variant": "#474649",
+                    "background": "#131314",
+                    "surface-container-highest": "#353436",
+                    "on-tertiary-container": "#e3e0e2",
+                    "secondary-fixed": "#e5e1e4",
+                    "secondary": "#c8c6c8",
+                    "surface": "#131314",
+                    "outline-variant": "#4c4354",
+                    "surface-bright": "#3a393a",
+                    "surface-container-lowest": "#0e0e0f",
+                    "on-error-container": "#ffdad6",
+                    "surface-dim": "#131314",
+                    "on-surface-variant": "#cfc2d7",
+                    "on-primary-fixed-variant": "#6700b5",
+                    "on-primary": "#480081",
+                    "surface-container": "#201f20",
+                    "surface-container-high": "#2a2a2b",
+                    "surface-container-low": "#1c1b1c",
+                    "error-container": "#93000a",
+                    "on-secondary": "#303032",
+                    "primary-container": "#8a2be2",
+                    "on-primary-fixed": "#2c0051",
+                    "primary-fixed-dim": "#dcb8ff",
+                    "tertiary-container": "#646365",
+                    "on-error": "#690005",
+                    "on-primary-container": "#eed9ff",
+                    "secondary-fixed-dim": "#c8c6c8",
+                    "on-tertiary": "#303032",
+                    "surface-variant": "#353436"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "md": "16px",
+                    "2xl": "48px",
+                    "xs": "4px",
+                    "3xl": "64px",
+                    "xl": "32px",
+                    "sm": "8px"
+            },
+            "fontFamily": {
+                    "label-md": [
+                            "Geist"
+                    ],
+                    "headline-md": [
+                            "Geist"
+                    ],
+                    "caption": [
+                            "Geist"
+                    ],
+                    "display-lg": [
+                            "Geist"
+                    ],
+                    "headline-lg": [
+                            "Geist"
+                    ],
+                    "body-lg": [
+                            "Geist"
+                    ],
+                    "body-md": [
+                            "Geist"
+                    ],
+                    "display-lg-mobile": [
+                            "Geist"
+                    ]
+            },
+            "fontSize": {
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.01em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "caption": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg-mobile": [
+                            "36px",
+                            {
+                                    "lineHeight": "44px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+        }
+        }
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(18, 18, 20, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .ai-glow {
+            box-shadow: 0 0 30px rgba(220, 184, 255, 0.15);
+        }
+        .ai-pulse {
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 184, 255, 0.3); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(220, 184, 255, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 184, 255, 0); }
+        }
+        .progress-bar-fill {
+            transition: width 0.5s ease-in-out;
+        }
+        
+        /* Modal Transitions */
+        .modal-enter {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .modal-enter-active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 300ms, transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top App Bar (Modified for transactional flow - suppress global nav elements per mandate, keep back button and progress) -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/5 flex flex-col justify-center px-md py-sm w-full h-20">
+<div class="flex items-center justify-between w-full max-w-7xl mx-auto">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-sm -ml-sm rounded-full active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<div class="flex-1 flex justify-center">
+<div class="text-center">
+<h1 class="font-label-md text-label-md text-primary">Upload Photos</h1>
+<p class="font-caption text-caption text-on-surface-variant">Step 4 of 6</p>
+</div>
+</div>
+<button class="text-primary hover:text-primary-fixed-dim transition-colors p-sm -mr-sm font-label-md text-label-md">
+                Skip
+            </button>
+</div>
+<!-- Progress Stepper -->
+<div class="absolute bottom-0 left-0 w-full h-1 bg-surface-container-high">
+<div class="h-full bg-primary progress-bar-fill" style="width: 66%;"></div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-3xl px-md md:px-lg max-w-3xl mx-auto w-full min-h-screen flex flex-col relative z-10">
+<!-- Header Section -->
+<div class="mb-lg md:mb-xl mt-md">
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-sm">Show us the details.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Upload clear photos of your item so we can assess its condition and recommend the perfect service.</p>
+</div>
+<!-- Upload Grid (Bento Style) -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md mb-2xl">
+<!-- Front Upload (Completed State) -->
+<div class="relative group rounded-xl overflow-hidden aspect-square border border-white/5 bg-surface-container hover:border-primary/50 transition-colors cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full opacity-60" data-alt="A clean, high-resolution photograph of the front of a white luxury sneaker resting on a subtle dark grey surface, illuminated by soft studio lighting in a premium dark mode aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB2hv3f8h6iepvi_lnaBthB_KiRW0Ma5kss8kHD6-XeXDR4W9p68SM8SxLgEURp5EtLg78qJgdofvKeQfwIdce1GKqoIXooXfV8RnAMv4PfsJgSycb4NscPDTqJ_pOk67aAaTp4c_hpgBQRMAB9XIWd77fQiQp8nNHNS5S9svQjAkmlL0q0Fn4lfKVZmglockdYVfpsbpZj4n-mg6LaNHFEBPzftuulftQs_BfS5vUYrP7wmjBG3o2ifQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+<div class="absolute top-sm right-sm bg-primary text-on-primary rounded-full p-xs shadow-md">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="absolute bottom-sm left-sm right-sm text-center">
+<span class="font-label-md text-label-md text-on-surface shadow-sm">Front</span>
+</div>
+</div>
+<!-- Back Upload (Empty State) -->
+<div class="relative group rounded-xl aspect-square border border-dashed border-outline-variant bg-surface-container-lowest hover:border-primary hover:bg-surface-container-low transition-all cursor-pointer flex flex-col items-center justify-center p-sm">
+<span class="material-symbols-outlined text-outline text-3xl mb-sm group-hover:text-primary transition-colors" style="font-variation-settings: 'FILL' 0;">add_a_photo</span>
+<span class="font-label-md text-label-md text-outline group-hover:text-primary transition-colors text-center">Back</span>
+</div>
+<!-- Side Upload (Empty State) -->
+<div class="relative group rounded-xl aspect-square border border-dashed border-outline-variant bg-surface-container-lowest hover:border-primary hover:bg-surface-container-low transition-all cursor-pointer flex flex-col items-center justify-center p-sm">
+<span class="material-symbols-outlined text-outline text-3xl mb-sm group-hover:text-primary transition-colors" style="font-variation-settings: 'FILL' 0;">add_a_photo</span>
+<span class="font-label-md text-label-md text-outline group-hover:text-primary transition-colors text-center">Side</span>
+</div>
+<!-- Problem Area Upload (Empty State) -->
+<div class="relative group rounded-xl aspect-square border border-dashed border-outline-variant bg-surface-container-lowest hover:border-primary hover:bg-surface-container-low transition-all cursor-pointer flex flex-col items-center justify-center p-sm">
+<span class="material-symbols-outlined text-outline text-3xl mb-sm group-hover:text-primary transition-colors" style="font-variation-settings: 'FILL' 0;">add_a_photo</span>
+<span class="font-label-md text-label-md text-outline group-hover:text-primary transition-colors text-center text-error">Problem Area</span>
+</div>
+</div>
+<!-- AI Assistance Overlay / Modal Trigger Area -->
+<div class="mt-auto relative">
+<!-- Placeholder for AI scanning animation background effect if needed -->
+<!-- <div class="absolute inset-0 bg-primary/5 rounded-2xl filter blur-3xl z-0 pointer-events-none"></div> -->
+<div class="glass-panel rounded-2xl p-lg relative z-10 ai-glow overflow-hidden cursor-pointer" id="ai-trigger" onclick="showAIModal()">
+<!-- Subtle background gradient -->
+<div class="absolute -top-24 -right-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-sm mb-md">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center ai-pulse">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<h3 class="font-headline-md text-headline-md-mobile text-on-surface">AI Analysis Complete</h3>
+</div>
+<span class="font-caption text-caption text-primary border border-primary/30 rounded-full px-sm py-xs bg-primary/5">New</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">We've scanned your front photo. Tap to view our service recommendation.</p>
+<div class="flex items-center text-primary font-label-md text-label-md group">
+                     View Details 
+                     <span class="material-symbols-outlined ml-xs text-[18px] group-hover:translate-x-1 transition-transform" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Action Bar (Fixed, transactional) -->
+<div class="fixed bottom-0 left-0 w-full bg-surface/90 backdrop-blur-2xl border-t border-white/5 p-md pb-safe z-40 hidden" id="bottom-action">
+<div class="max-w-3xl mx-auto flex gap-md">
+<button class="flex-1 bg-surface-container text-on-surface font-label-md text-label-md py-sm rounded-lg hover:bg-surface-container-high transition-colors text-center">
+                Back
+            </button>
+<button class="flex-[2] bg-primary text-on-primary font-label-md text-label-md py-sm rounded-lg hover:opacity-90 transition-opacity text-center flex items-center justify-center gap-xs">
+                Continue <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- AI Assistance Modal / Overlay -->
+<div class="fixed inset-0 z-[100] hidden items-end sm:items-center justify-center" id="ai-modal">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-background/80 backdrop-blur-sm transition-opacity opacity-0" id="ai-modal-backdrop" onclick="hideAIModal()"></div>
+<!-- Modal Content -->
+<div class="relative w-full max-w-lg bg-surface border border-white/10 rounded-t-3xl sm:rounded-2xl shadow-2xl overflow-hidden flex flex-col modal-enter" id="ai-modal-content">
+<!-- Handle for mobile swipe down (visual only) -->
+<div class="w-full flex justify-center pt-sm pb-xs sm:hidden">
+<div class="w-12 h-1 bg-surface-container-highest rounded-full"></div>
+</div>
+<!-- Header -->
+<div class="p-lg pb-md border-b border-white/5 flex items-center justify-between bg-surface-container-low/50">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h3 class="font-headline-md text-headline-md-mobile text-on-surface">AI Assessment</h3>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-xs rounded-full hover:bg-surface-container transition-colors" onclick="hideAIModal()">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">close</span>
+</button>
+</div>
+<!-- Body -->
+<div class="p-lg flex-1 overflow-y-auto">
+<!-- Detected Item -->
+<div class="mb-xl">
+<p class="font-caption text-caption text-outline mb-xs uppercase tracking-wider">Detected Item</p>
+<div class="flex items-center gap-md">
+<div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden relative">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full opacity-80" data-alt="Thumbnail crop showing the clean white leather texture of a premium sneaker, moody dark background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAiOHsFVXp1RrtEp03486oqKN7l3CiPzqJcFxpSoEwqaP47NbKvooAD0edg-S44KVUt2edyTcvyNcUpO0T0nVAcHHn2JdnScKOGCPzDSy0yrKmPwPIcq6I5s2k5T4-FNCDv3OLMXVzEhf7GhFwFBu4jpdUxZX6qCmWyOZGmB4vPJgDwcFU6bpt18TSHUj0jzvhTv0pGaDnD2g_L6suKAMIZj3bOpUEr3fsU4cMi0YV5SEk_2jXSQOcw_A')"></div>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md-mobile text-on-surface">White Sneakers</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Leather / Synthetic</p>
+</div>
+</div>
+</div>
+<!-- Suggested Service -->
+<div class="bg-primary/5 border border-primary/20 rounded-xl p-md mb-xl relative overflow-hidden">
+<!-- decorative background accent -->
+<div class="absolute -right-4 -bottom-4 opacity-10 pointer-events-none text-primary">
+<span class="material-symbols-outlined text-9xl" style="font-variation-settings: 'FILL' 1;">dry_cleaning</span>
+</div>
+<p class="font-caption text-caption text-primary mb-xs uppercase tracking-wider font-semibold">Suggested Service</p>
+<h4 class="font-headline-lg-mobile text-headline-lg-mobile text-primary-fixed-dim mb-xs">Deep Restoration</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Recommended based on material type and minor scuffing detected on the toe box.</p>
+<div class="flex items-baseline gap-xs">
+<span class="font-caption text-caption text-on-surface-variant">Est. Price:</span>
+<span class="font-headline-md text-headline-md-mobile text-on-surface">$45 - $60</span>
+</div>
+</div>
+<!-- Confidence Score (Subtle) -->
+<div class="flex items-center justify-between px-xs">
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                        94% Match Confidence
+                    </span>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="p-lg pt-md bg-surface-container-lowest border-t border-white/5 flex flex-col sm:flex-row-reverse gap-md">
+<button class="w-full sm:w-auto flex-1 bg-primary text-on-primary font-label-md text-label-md py-md sm:py-sm px-lg rounded-xl hover:opacity-90 transition-opacity text-center flex items-center justify-center gap-sm" onclick="acceptAI()">
+                    Accept AI Suggestion
+                </button>
+<button class="w-full sm:w-auto flex-1 bg-transparent border border-outline text-on-surface font-label-md text-label-md py-md sm:py-sm px-lg rounded-xl hover:bg-surface-container transition-colors text-center" onclick="hideAIModal()">
+                    Choose Manually
+                </button>
+</div>
+</div>
+</div>
+<script>
+        // Simple JS for Modal interactions
+        const modal = document.getElementById('ai-modal');
+        const backdrop = document.getElementById('ai-modal-backdrop');
+        const content = document.getElementById('ai-modal-content');
+
+        function showAIModal() {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Trigger reflow
+            void modal.offsetWidth; 
+            
+            backdrop.classList.remove('opacity-0');
+            backdrop.classList.add('opacity-100');
+            
+            content.classList.add('modal-enter-active');
+        }
+
+        function hideAIModal() {
+            backdrop.classList.remove('opacity-100');
+            backdrop.classList.add('opacity-0');
+            
+            content.classList.remove('modal-enter-active');
+            content.style.transform = 'translateY(20px)';
+            content.style.opacity = '0';
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                content.style.transform = '';
+                content.style.opacity = '';
+            }, 300);
+        }
+        
+        function acceptAI() {
+            // Logic to apply AI suggestion
+            hideAIModal();
+            // Show bottom action bar to continue
+            document.getElementById('bottom-action').classList.remove('hidden');
+            // Hide the AI trigger area to show progression
+            document.getElementById('ai-trigger').style.display = 'none';
+        }
+        
+        // Show the AI trigger after a brief delay to simulate scanning completion
+        setTimeout(() => {
+             document.getElementById('ai-trigger').classList.remove('opacity-0', 'translate-y-4');
+        }, 800);
+    </script>
+</body></html>

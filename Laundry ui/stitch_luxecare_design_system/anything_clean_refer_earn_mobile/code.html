@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anything Clean - Refer &amp; Earn</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-bright": "#39393a",
+                      "error": "#ffb4ab",
+                      "tertiary-container": "#646365",
+                      "success-bg": "#1A3D24",
+                      "error-container": "#93000a",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "on-secondary-fixed-variant": "#474648",
+                      "outline": "#988ca0",
+                      "on-secondary-container": "#b9b8ba",
+                      "primary": "#dcb8ff",
+                      "secondary": "#c8c6c8",
+                      "on-background": "#e5e2e3",
+                      "surface-container": "#201f20",
+                      "tertiary-fixed": "#e4e2e4",
+                      "surface-dim": "#131314",
+                      "outline-variant": "#4c4354",
+                      "secondary-fixed": "#e4e2e4",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "on-tertiary-container": "#e3e0e2",
+                      "on-error": "#690005",
+                      "on-surface": "#e5e2e3",
+                      "surface-container-lowest": "#0e0e0f",
+                      "inverse-on-surface": "#313031",
+                      "secondary-container": "#49494b",
+                      "on-primary": "#480081",
+                      "error-red": "#ffb4ab",
+                      "electric-violet": "#8a2be2",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "surface-container-low": "#1c1b1c",
+                      "on-primary-container": "#eed9ff",
+                      "on-secondary": "#303032",
+                      "inverse-primary": "#8422dc",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "primary-fixed": "#efdbff",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "inverse-surface": "#e5e2e3",
+                      "on-primary-fixed": "#2c0051",
+                      "tertiary": "#c8c6c8",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "surface": "#131314",
+                      "on-tertiary": "#303032",
+                      "on-error-container": "#ffdad6",
+                      "surface-container-high": "#2a2a2b",
+                      "surface-tint": "#dcb8ff",
+                      "primary-container": "#8a2be2",
+                      "on-surface-variant": "#cfc2d7",
+                      "background": "#131314",
+                      "success-green": "#81C784",
+                      "surface-variant": "#353436",
+                      "surface-container-highest": "#353436"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xs": "4px",
+                      "sm": "8px",
+                      "lg": "24px",
+                      "2xl": "48px",
+                      "xl": "32px",
+                      "md": "16px",
+                      "3xl": "64px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "mono-display": [
+                              "monospace"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "h1": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "h3": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body { background-color: #131314; color: #e5e2e3; }
+        .glass-card {
+            background: rgba(32, 31, 32, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(76, 67, 84, 0.2);
+        }
+        .glow-text {
+            text-shadow: 0 0 10px rgba(220, 184, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased pb-24 md:pb-0 md:pl-[256px]">
+<!-- Sidebar Navigation (Desktop) -->
+<nav class="hidden md:flex flex-col h-full p-md bg-surface-container-low border-r border-outline-variant/30 fixed left-0 top-0 w-[256px]">
+<div class="flex items-center gap-sm mb-lg px-sm">
+<span class="material-symbols-outlined text-primary text-3xl">cleaning_services</span>
+<span class="font-headline-lg text-headline-lg text-primary">Lumina</span>
+</div>
+<div class="flex items-center gap-md p-md mb-xl border-b border-outline-variant/30 pb-lg">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="A futuristic portrait of a young professional in a neon-lit cyberpunk environment, wearing high-tech sleek clothing, deep shadows, electric violet and cool blue lighting, corporate modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo3r1LoxzohgiZpLEF-ERYiZV4zQBL7L4L-P0dwddHhA2tuIx-x9sYGKcvfH2DQ9MAmo4mEk3fBQ9bZKR_iulSAR02C9BGNMaTNribEdwy1VyS2sfiRE2wVbBfKXlla-YUO85w0FM3WERzvtQdRrHZca0iyLPUB8csexvyHimpOoW_VTbSODwAqIk8CRSNDuu-scepoc02bFsqVCekgO1dooW0X7BaFkSxhNI6z9vTHGdDlItPVwyoew"/>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Alex Dev</div>
+<div class="font-caption text-caption text-on-surface-variant">Pro Member</div>
+</div>
+</div>
+<div class="flex flex-col gap-sm flex-1">
+<a class="flex items-center gap-md p-sm text-on-surface-variant hover:bg-surface-container transition-all rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">explore</span>
+                Discovery
+            </a>
+<a class="flex items-center gap-md p-sm text-on-surface-variant hover:bg-surface-container transition-all rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">local_offer</span>
+                Offers
+            </a>
+<a class="flex items-center gap-md p-sm text-on-surface-variant hover:bg-surface-container transition-all rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">card_membership</span>
+                Membership
+            </a>
+<a class="flex items-center gap-md p-sm bg-primary/10 text-primary font-bold rounded-lg transition-all font-label-md text-label-md active:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group_add</span>
+                Referrals
+            </a>
+<a class="flex items-center gap-md p-sm text-on-surface-variant hover:bg-surface-container transition-all rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">notifications</span>
+                Notifications
+            </a>
+<a class="flex items-center gap-md p-sm text-on-surface-variant hover:bg-surface-container transition-all rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">help_center</span>
+                Support
+            </a>
+<a class="flex items-center gap-md p-sm text-on-surface-variant hover:bg-surface-container transition-all rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+                Safety
+            </a>
+<a class="flex items-center gap-md p-sm text-on-surface-variant hover:bg-surface-container transition-all rounded-lg font-label-md text-label-md mt-auto" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+                Account
+            </a>
+</div>
+<div class="font-caption text-caption text-on-surface-variant text-center mt-md">v2.4.0</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="max-w-[1200px] mx-auto p-xl relative min-h-screen">
+<!-- Header -->
+<header class="mb-xl">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-sm">Refer &amp; Earn</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Invite friends and earn rewards.</p>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Hero Card: Referral Code -->
+<div class="md:col-span-8 glass-card rounded-xl p-lg flex flex-col justify-center relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-electric-violet/20 to-transparent opacity-50"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-lg">
+<div class="flex-1">
+<div class="inline-flex items-center gap-xs px-sm py-xs rounded-full bg-surface-container-high border border-outline-variant/50 mb-md">
+<span class="material-symbols-outlined text-primary text-sm">stars</span>
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">Premium Reward</span>
+</div>
+<h2 class="font-h1 text-h1 text-on-surface mb-md">Earn <span class="text-primary glow-text">₹100</span></h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">when your friend completes their first eligible booking with Anything Clean.</p>
+</div>
+<div class="bg-surface-container-high border border-outline-variant p-md rounded-lg flex flex-col items-center gap-md min-w-[200px]">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Your Code</span>
+<div class="flex items-center gap-sm bg-surface-dim px-md py-sm rounded border border-outline-variant/50 w-full justify-between">
+<span class="font-mono-display text-mono-display text-primary tracking-widest">QHFRIEND20</span>
+<button aria-label="Copy Code" class="text-on-surface-variant hover:text-primary transition-colors focus:outline-none">
+<span class="material-symbols-outlined text-xl">content_copy</span>
+</button>
+</div>
+<button class="w-full bg-electric-violet hover:bg-primary-container text-white font-label-md text-label-md py-sm px-md rounded-lg shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-sm">share</span> Share Link
+                        </button>
+</div>
+</div>
+</div>
+<!-- Stats Card -->
+<div class="md:col-span-4 glass-card rounded-xl p-lg flex flex-col">
+<h3 class="font-h3 text-h3 text-on-surface mb-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">bar_chart</span> Your Impact
+                </h3>
+<div class="grid grid-cols-2 gap-md flex-1">
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-md flex flex-col justify-center">
+<span class="font-headline-lg text-headline-lg text-on-surface">4</span>
+<span class="font-caption text-caption text-on-surface-variant">Invited</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-md flex flex-col justify-center">
+<span class="font-headline-lg text-headline-lg text-on-surface">2</span>
+<span class="font-caption text-caption text-on-surface-variant">Joined</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-md flex flex-col justify-center">
+<span class="font-headline-lg text-headline-lg text-on-surface">1</span>
+<span class="font-caption text-caption text-on-surface-variant">Qualified</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-md flex flex-col justify-center relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-[64px] text-success-green">payments</span>
+</div>
+<span class="font-headline-lg text-headline-lg text-success-green">₹100</span>
+<span class="font-caption text-caption text-on-surface-variant">Earned</span>
+</div>
+</div>
+</div>
+<!-- How it Works Timeline -->
+<div class="md:col-span-12 glass-card rounded-xl p-lg mt-md">
+<h3 class="font-h3 text-h3 text-on-surface mb-xl text-center">How it works</h3>
+<div class="relative flex flex-col md:flex-row justify-between items-start md:items-center gap-lg md:gap-0 max-w-4xl mx-auto px-md">
+<!-- Connecting Line (Desktop) -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-[2px] bg-surface-container -translate-y-1/2 z-0">
+<div class="h-full bg-gradient-to-r from-electric-violet to-primary w-3/4"></div>
+</div>
+<!-- Connecting Line (Mobile) -->
+<div class="block md:hidden absolute left-6 top-8 bottom-8 w-[2px] bg-surface-container z-0">
+<div class="w-full bg-gradient-to-b from-electric-violet to-primary h-3/4"></div>
+</div>
+<!-- Step 1 -->
+<div class="relative z-10 flex md:flex-col items-center gap-md md:gap-sm text-center">
+<div class="w-12 h-12 rounded-full bg-electric-violet text-white flex items-center justify-center shadow-lg shadow-primary/20 shrink-0">
+<span class="material-symbols-outlined">send</span>
+</div>
+<div class="text-left md:text-center">
+<div class="font-label-md text-label-md text-on-surface">Invite</div>
+<div class="font-caption text-caption text-on-surface-variant">Share your code</div>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex md:flex-col items-center gap-md md:gap-sm text-center">
+<div class="w-12 h-12 rounded-full bg-electric-violet text-white flex items-center justify-center shadow-lg shadow-primary/20 shrink-0">
+<span class="material-symbols-outlined">person_add</span>
+</div>
+<div class="text-left md:text-center">
+<div class="font-label-md text-label-md text-on-surface">Sign Up</div>
+<div class="font-caption text-caption text-on-surface-variant">Friend joins app</div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex md:flex-col items-center gap-md md:gap-sm text-center">
+<div class="w-12 h-12 rounded-full bg-electric-violet text-white flex items-center justify-center shadow-lg shadow-primary/20 shrink-0">
+<span class="material-symbols-outlined">book_online</span>
+</div>
+<div class="text-left md:text-center">
+<div class="font-label-md text-label-md text-on-surface">Booking</div>
+<div class="font-caption text-caption text-on-surface-variant">Completes first service</div>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 flex md:flex-col items-center gap-md md:gap-sm text-center">
+<div class="w-12 h-12 rounded-full bg-surface-container border-2 border-primary text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">redeem</span>
+</div>
+<div class="text-left md:text-center">
+<div class="font-label-md text-label-md text-on-surface">Reward</div>
+<div class="font-caption text-caption text-on-surface-variant">You both earn ₹100</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="flex justify-around items-center h-16 w-full px-md bg-surface-container-low/95 backdrop-blur-md fixed bottom-0 w-full z-50 lg:hidden border-t border-outline-variant/30 shadow-lg shadow-primary/5">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md text-[10px] mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">sell</span>
+<span class="font-label-md text-label-md text-[10px] mt-1">Offers</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-md text-label-md text-[10px] mt-1">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-label-md text-label-md text-[10px] mt-1">Activity</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-md text-label-md text-[10px] mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

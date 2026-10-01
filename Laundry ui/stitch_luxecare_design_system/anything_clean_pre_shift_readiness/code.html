@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Pre-Shift Readiness - Lumina Partner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#eed9ff",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#e3e0e2",
+                        "surface-container": "#201f20",
+                        "error-red": "#ffb4ab",
+                        "secondary": "#c8c6c8",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-container-high": "#2a2a2b",
+                        "secondary-fixed": "#e4e2e4",
+                        "tertiary-fixed": "#e4e2e4",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#efdbff",
+                        "outline": "#988ca0",
+                        "surface-dim": "#131314",
+                        "success-green": "#81C784",
+                        "inverse-primary": "#8422dc",
+                        "inverse-surface": "#e5e2e3",
+                        "secondary-container": "#49494b",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-primary": "#480081",
+                        "inverse-on-surface": "#313031",
+                        "background": "#131314",
+                        "on-background": "#e5e2e3",
+                        "surface-bright": "#39393a",
+                        "surface-container-highest": "#353436",
+                        "on-secondary-container": "#b9b8ba",
+                        "success-bg": "#1A3D24",
+                        "on-surface": "#e5e2e3",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-primary-fixed": "#2c0051",
+                        "surface-container-low": "#1c1b1c",
+                        "on-secondary-fixed-variant": "#474648",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface": "#131314",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "tertiary-container": "#646365",
+                        "surface-tint": "#dcb8ff",
+                        "on-tertiary": "#303032",
+                        "surface-variant": "#353436",
+                        "tertiary": "#c8c6c8",
+                        "electric-violet": "#8a2be2",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "outline-variant": "#4c4354",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#dcb8ff",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-secondary": "#303032",
+                        "primary-container": "#8a2be2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "2xl": "48px",
+                        "3xl": "64px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Geist"],
+                        "caption": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "h3": ["Geist"],
+                        "display-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; background-color: #131314; color: #e5e2e3; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        /* Hide scrollbar for clean mobile look */
+        ::-webkit-scrollbar { display: none; }
+        * { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface flex justify-center w-full min-h-screen">
+<!-- Mobile Container - 390px width for high-fidelity representation -->
+<div class="w-[390px] h-[844px] relative bg-background overflow-hidden flex flex-col shadow-2xl border-x border-outline-variant/20">
+<!-- TopAppBar -->
+<header class="bg-surface-dim/80 dark:bg-surface-dim/80 fixed top-0 w-[390px] z-50 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-lg h-16">
+<button aria-label="Menu" class="p-2 -ml-2 text-primary dark:text-primary active:scale-95 transition-transform hover:bg-surface-container-high rounded-full">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-h3 text-h3 font-bold text-electric-violet">Lumina Partner</h1>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant/30 active:scale-95 transition-transform cursor-pointer">
+<img alt="Partner Profile Picture" class="object-cover w-full h-full" data-alt="A professional headshot of a delivery partner named Karthik. He looks confident and ready for work, wearing a dark tech-style uniform against a clean, charcoal-colored modern background. High-quality lighting highlights his features subtly. Lumina Dark Tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCcyj4H6QanAzdHqSVyihZD5ViBVfoUdb1s3PT-VzFEvXiE3Cx6wINc4Lsu3Ok86G-F3PSwyfCTDf4NYWFburIMsNnDYyDJJaCmBf28jCYhIQPst7DKxCrlQASJfrylKglmV751JBcDr7ipCKOk_Z5FBpbnb3Qjr0m8mPgCnZU2jzxm0MsI_N7DE8qd8LtSPbm8muMuSGRTwHAVTDjpbn38U_eLiH5eg90pG0P_E1hRa7gvwm8C3gDKg"/>
+</div>
+</header>
+<!-- Main Content Area - Scrollable -->
+<main class="flex-1 overflow-y-auto pt-16 pb-[100px] px-md flex flex-col gap-lg">
+<!-- Header Section -->
+<section class="mt-md flex flex-col gap-xs">
+<h2 class="font-h1 text-h1 text-on-surface">Ready to Deliver?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Complete your readiness check before starting your shift.</p>
+</section>
+<!-- Readiness Checklist Card -->
+<section class="bg-surface-container rounded-xl border border-outline-variant/20 p-md flex flex-col gap-md shadow-lg">
+<h3 class="font-h3 text-h3 text-on-surface">Core Readiness</h3>
+<ul class="flex flex-col gap-sm">
+<!-- Checklist Item 1 -->
+<li class="flex items-center justify-between p-sm rounded-lg hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-success-bg flex items-center justify-center text-success-green">
+<span class="material-symbols-outlined text-sm" data-icon="check">check</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Profile</span>
+</div>
+<span class="font-label-md text-label-md text-success-green uppercase tracking-wider">Verified</span>
+</li>
+<hr class="border-outline-variant/20"/>
+<!-- Checklist Item 2 -->
+<li class="flex items-center justify-between p-sm rounded-lg hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-success-bg flex items-center justify-center text-success-green">
+<span class="material-symbols-outlined text-sm" data-icon="check">check</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Vehicle</span>
+</div>
+<span class="font-label-md text-label-md text-success-green uppercase tracking-wider">Verified</span>
+</li>
+<hr class="border-outline-variant/20"/>
+<!-- Checklist Item 3 -->
+<li class="flex items-center justify-between p-sm rounded-lg hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-success-bg flex items-center justify-center text-success-green">
+<span class="material-symbols-outlined text-sm" data-icon="check">check</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Documents</span>
+</div>
+<span class="font-label-md text-label-md text-success-green uppercase tracking-wider">Valid</span>
+</li>
+<hr class="border-outline-variant/20"/>
+<!-- Checklist Item 4 -->
+<li class="flex items-center justify-between p-sm rounded-lg hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-success-bg flex items-center justify-center text-success-green">
+<span class="material-symbols-outlined text-sm" data-icon="check">check</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Availability</span>
+</div>
+<span class="font-label-md text-label-md text-success-green uppercase tracking-wider">Set</span>
+</li>
+<hr class="border-outline-variant/20"/>
+<!-- Checklist Item 5 -->
+<li class="flex items-center justify-between p-sm rounded-lg hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-success-bg flex items-center justify-center text-success-green">
+<span class="material-symbols-outlined text-sm" data-icon="check">check</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Service Area</span>
+</div>
+<span class="font-label-md text-label-md text-success-green uppercase tracking-wider">Active</span>
+</li>
+</ul>
+</section>
+<!-- Vehicle Status & Document Status (Bento Layout) -->
+<div class="grid grid-cols-2 gap-sm">
+<!-- Vehicle Status -->
+<section class="bg-surface-container rounded-xl border border-outline-variant/20 p-md flex flex-col gap-sm shadow-sm hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-sm text-primary">
+<span class="material-symbols-outlined" data-icon="two_wheeler">two_wheeler</span>
+<h4 class="font-label-md text-label-md font-bold">Vehicle</h4>
+</div>
+<div class="mt-xs">
+<p class="font-body-md text-body-md text-on-surface font-semibold">Honda Activa</p>
+<p class="font-caption text-caption text-on-surface-variant">Two Wheeler</p>
+</div>
+<div class="mt-auto pt-sm flex justify-between items-end">
+<span class="bg-success-bg text-success-green font-caption text-caption px-2 py-1 rounded-full uppercase tracking-widest font-bold">Ready</span>
+</div>
+</section>
+<!-- Document Status -->
+<section class="bg-surface-container rounded-xl border border-outline-variant/20 p-md flex flex-col gap-sm shadow-sm hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-sm text-primary">
+<span class="material-symbols-outlined" data-icon="folder_special">folder_special</span>
+<h4 class="font-label-md text-label-md font-bold">Docs</h4>
+</div>
+<ul class="flex flex-col gap-1 mt-xs">
+<li class="flex justify-between items-center">
+<span class="font-caption text-caption text-on-surface-variant">License</span>
+<span class="material-symbols-outlined text-success-green text-[16px]" data-icon="check_circle">check_circle</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="font-caption text-caption text-on-surface-variant">Insurance</span>
+<span class="material-symbols-outlined text-success-green text-[16px]" data-icon="check_circle">check_circle</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="font-caption text-caption text-on-surface-variant">Registration</span>
+<span class="material-symbols-outlined text-success-green text-[16px]" data-icon="check_circle">check_circle</span>
+</li>
+</ul>
+</section>
+</div>
+<!-- Availability Details -->
+<section class="bg-surface-container rounded-xl border border-outline-variant/20 p-md flex flex-col gap-sm shadow-sm mb-lg">
+<div class="flex justify-between items-center">
+<h3 class="font-h3 text-h3 text-on-surface">Today's Availability</h3>
+<span class="bg-success-bg text-success-green font-caption text-caption px-2 py-1 rounded-full uppercase tracking-widest font-bold">Available</span>
+</div>
+<div class="flex items-center gap-md mt-sm bg-surface-container-low p-sm rounded-lg border border-outline-variant/50">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="schedule">schedule</span>
+<p class="font-mono-display text-mono-display text-primary">9:00 AM – 7:00 PM</p>
+</div>
+</section>
+</main>
+<!-- Sticky CTA -->
+<div class="absolute bottom-0 w-[390px] bg-gradient-to-t from-background via-background/90 to-transparent pt-xl pb-md px-md z-40">
+<button class="w-full bg-electric-violet hover:bg-primary-container text-white font-label-md text-label-md font-bold py-4 rounded-xl shadow-lg shadow-primary/20 active:scale-95 transition-all flex justify-center items-center gap-sm">
+<span class="material-symbols-outlined" data-icon="power_settings_new">power_settings_new</span>
+            GO ONLINE
+        </button>
+</div>
+</div>
+</body></html>

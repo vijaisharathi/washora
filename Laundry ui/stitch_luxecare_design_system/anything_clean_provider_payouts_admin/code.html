@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CleanX Service Center - Provider Payouts</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#e5e2e3",
+                      "primary-container": "#8a2be2",
+                      "on-tertiary-fixed": "#2d1600",
+                      "on-surface": "#e5e2e3",
+                      "surface-container-highest": "#353436",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "surface-container-lowest": "#0e0e0f",
+                      "tertiary": "#ffb873",
+                      "secondary": "#dcb8ff",
+                      "primary-fixed": "#efdbff",
+                      "on-tertiary-container": "#ffdaba",
+                      "tertiary-fixed": "#ffdcbf",
+                      "secondary-container": "#573976",
+                      "tertiary-fixed-dim": "#ffb873",
+                      "surface-bright": "#39393a",
+                      "surface-container-high": "#2a2a2b",
+                      "surface": "#131314",
+                      "critical": "#f87171",
+                      "surface-container": "#201f20",
+                      "on-tertiary": "#4b2800",
+                      "primary": "#dcb8ff",
+                      "error-container": "#93000a",
+                      "outline": "#988ca0",
+                      "on-secondary-fixed": "#290947",
+                      "success": "#4ade80",
+                      "info": "#60a5fa",
+                      "outline-variant": "#4c4354",
+                      "surface-variant": "#353436",
+                      "on-primary": "#480081",
+                      "background": "#131314",
+                      "on-secondary-fixed-variant": "#573976",
+                      "tertiary-container": "#935400",
+                      "warning": "#fbbf24",
+                      "on-secondary": "#3f225e",
+                      "on-error-container": "#ffdad6",
+                      "error": "#ffb4ab",
+                      "inverse-primary": "#8422dc",
+                      "secondary-fixed": "#efdbff",
+                      "on-surface-variant": "#cfc2d7",
+                      "surface-container-low": "#1c1b1c",
+                      "on-primary-container": "#eed9ff",
+                      "surface-dim": "#131314",
+                      "on-primary-fixed": "#2c0051",
+                      "inverse-on-surface": "#313031",
+                      "secondary-fixed-dim": "#dcb8ff",
+                      "inverse-surface": "#e5e2e3",
+                      "surface-tint": "#dcb8ff",
+                      "on-error": "#690005",
+                      "on-secondary-container": "#caa7ec",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "on-tertiary-fixed-variant": "#6a3b00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "sidebar-width": "260px",
+                      "table-cell-padding": "12px",
+                      "gutter": "16px",
+                      "margin-mobile": "16px",
+                      "margin-desktop": "24px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "label-sm": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "code": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-md": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "code": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for data tables */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131314; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #353436; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4c4354; 
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body-md antialiased overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="bg-surface sticky top-0 z-40 w-full border-b border-surface-container-highest flat no shadows flex justify-between items-center h-16 px-margin-desktop ml-0 md:ml-[260px] md:w-[calc(100%-260px)] transition-all duration-300">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="font-headline-md text-headline-md font-bold text-primary">Lumina Marketplace</div>
+</div>
+<div class="flex-1 max-w-md mx-8 hidden md:block">
+<div class="relative flex items-center w-full focus-within:ring-1 focus-within:ring-primary-container rounded-lg overflow-hidden border border-surface-container-highest bg-surface-container-low">
+<span class="material-symbols-outlined pl-3 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full bg-transparent border-none text-body-md text-on-surface placeholder:text-on-surface-variant py-2 px-3 focus:ring-0" placeholder="Search orders, providers, payouts..." type="text"/>
+<div class="pr-2 hidden lg:flex items-center">
+<span class="text-[10px] text-on-surface-variant bg-surface-container px-1.5 py-0.5 rounded border border-surface-container-highest font-code">⌘K</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors relative group">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-critical rounded-full"></span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="apps">apps</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-surface-container-highest cursor-pointer hover:border-primary transition-colors ml-2">
+<img alt="Admin Avatar" class="w-full h-full object-cover" data-alt="Close up portrait of a professional corporate administrator in a dark, moody high-tech environment. Cinematic lighting, sharp focus, professional attire." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfJbidI5rdsOxUpK_WJvbrNWNZgDzHQ6Yo0TywQ8OEivslNm3qpzeltfV94cUgTo9mM5XA6xs35rLVZVUpf2Bs76FiIAuZ17ezw1qUpNdSJ_qHitlfF5IgBWg5SLMjo5avc8nKKwPpj7tSLZaxfoexWsiwSi1H8nKSqSbIdNkma1cyKkRFSUm0GuT1jsEoU0Qtwce3YfY9b8yFZfbSasrxHHAEKPwNJdgxhRecsgPHvTvHk7aawhpGpw"/>
+</div>
+</div>
+</header>
+<!-- Side Navigation Bar -->
+<aside class="bg-surface-container-lowest fixed left-0 top-0 h-full w-[260px] border-r border-surface-container-highest flat no shadows hidden md:flex flex-col py-margin-desktop z-50">
+<div class="px-6 mb-8 flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg overflow-hidden border border-surface-container-highest">
+<img alt="Super Admin Profile" class="w-full h-full object-cover" data-alt="Abstract minimal geometric logo design for an enterprise software dashboard. Sharp lines, deep violet and black hues, conveying trust and control." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBisrCEDm2KZc71Prtqsl5TUJp6gbKBxNj1r2_sARNxqAF1cnqDDpHQsZauOYO91sw-SC7ac3k_TxJrsZ7bKlrmuiC1P0RO0mGBV88xZ8DXZHcpY-Ge13diWkTzHLy6eaN9muOdDBbRnTXsLH-C92hBRxVkIJJ5NVEqnzeWtKoEnM3iWcnDJTnRpZrUU3Tpvo63Vswl6YeULznLwvVklhZxBrdIPrho3hVphvp4sTTWv9NkBitVoxQCmQ"/>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md font-bold text-primary truncate leading-tight">Lumina Admin</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">Enterprise Control</p>
+</div>
+</div>
+</div>
+<div class="px-4 mb-4">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider pl-4 mb-2">Operations</p>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-[0.98] transition-transform group" href="#">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-[0.98] transition-transform group" href="#">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-[0.98] transition-transform group" href="#">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg border-l-4 border-primary-container bg-surface-container text-on-surface font-semibold active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-primary" data-icon="storefront">storefront</span>
+<span class="font-label-md text-label-md">Service Providers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-[0.98] transition-transform group" href="#">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="verified_user">verified_user</span>
+<span class="font-label-md text-label-md">Verification</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto px-4">
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-[0.98] transition-transform group" href="#">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="md:ml-[260px] min-h-screen bg-background p-margin-mobile md:p-margin-desktop">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Service Providers / Financials</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface flex items-center gap-3">
+                    CleanX Service Center
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-success/10 text-success border border-success/20">Verified</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Provider Payout &amp; Financial Summary (Current Month)</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 rounded-lg border border-surface-container-highest bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="download">download</span>
+                    Export CSV
+                </button>
+<button class="px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="payments">payments</span>
+                    Initiate Payout
+                </button>
+</div>
+</div>
+<!-- KPI Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-8">
+<!-- Gross Order Value -->
+<div class="bg-surface-container-low border border-surface-container-highest rounded-xl p-6 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary/5 rounded-full blur-xl group-hover:bg-primary/10 transition-colors"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<span class="font-label-sm text-label-sm text-on-surface-variant">GROSS ORDER VALUE</span>
+<span class="material-symbols-outlined text-on-surface-variant text-opacity-50" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div class="relative z-10">
+<div class="font-display-lg text-display-lg text-on-surface mb-1">₹1,82,400</div>
+<div class="flex items-center gap-1 text-success font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>+12.5% vs last month</span>
+</div>
+</div>
+</div>
+<!-- Provider Earnings -->
+<div class="bg-surface-container-low border border-surface-container-highest rounded-xl p-6 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-success/5 rounded-full blur-xl group-hover:bg-success/10 transition-colors"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<span class="font-label-sm text-label-sm text-on-surface-variant">PROVIDER EARNINGS (80%)</span>
+<span class="material-symbols-outlined text-success/70" data-icon="monetization_on">monetization_on</span>
+</div>
+<div class="relative z-10">
+<div class="font-display-lg text-display-lg text-on-surface mb-1">₹1,46,000</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span>Total cleared earnings</span>
+</div>
+</div>
+</div>
+<!-- Platform Fees -->
+<div class="bg-surface-container-low border border-surface-container-highest rounded-xl p-6 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-info/5 rounded-full blur-xl group-hover:bg-info/10 transition-colors"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<span class="font-label-sm text-label-sm text-on-surface-variant">PLATFORM FEES (20%)</span>
+<span class="material-symbols-outlined text-info/70" data-icon="pie_chart">pie_chart</span>
+</div>
+<div class="relative z-10">
+<div class="font-display-lg text-display-lg text-on-surface mb-1">₹36,400</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span>Lumina revenue share</span>
+</div>
+</div>
+</div>
+<!-- Pending Payout -->
+<div class="bg-surface-container-low border border-warning/30 rounded-xl p-6 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-warning/5 rounded-full blur-xl group-hover:bg-warning/10 transition-colors"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<span class="font-label-sm text-label-sm text-warning">PENDING PAYOUT</span>
+<span class="material-symbols-outlined text-warning/70" data-icon="schedule">schedule</span>
+</div>
+<div class="relative z-10">
+<div class="font-display-lg text-display-lg text-on-surface mb-1">₹18,600</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span>Scheduled for Oct 15</span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Recent Payouts -->
+<div class="lg:col-span-1 flex flex-col gap-gutter">
+<div class="bg-surface-container-low border border-surface-container-highest rounded-xl overflow-hidden flex flex-col h-full">
+<div class="p-5 border-b border-surface-container-highest bg-surface-container flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface">Recent Payouts</h3>
+<button class="text-primary hover:text-primary-container transition-colors font-label-sm text-label-sm">View All</button>
+</div>
+<div class="overflow-y-auto max-h-[500px]">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container sticky top-0 z-10">
+<tr>
+<th class="py-3 px-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-medium border-b border-surface-container-highest">Date</th>
+<th class="py-3 px-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-medium border-b border-surface-container-highest">Amount</th>
+<th class="py-3 px-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-medium border-b border-surface-container-highest">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-highest">
+<tr class="hover:bg-surface-container-high transition-colors group cursor-pointer">
+<td class="py-4 px-4">
+<div class="font-label-md text-label-md text-on-surface">Oct 01, 2023</div>
+<div class="font-code text-code text-on-surface-variant text-[11px] mt-0.5">PO-2309-882</div>
+</td>
+<td class="py-4 px-4 font-body-md text-body-md text-on-surface">₹42,500</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-success/10 text-success border border-success/20">PAID</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors group cursor-pointer">
+<td class="py-4 px-4">
+<div class="font-label-md text-label-md text-on-surface">Sep 15, 2023</div>
+<div class="font-code text-code text-on-surface-variant text-[11px] mt-0.5">PO-2309-411</div>
+</td>
+<td class="py-4 px-4 font-body-md text-body-md text-on-surface">₹38,200</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-success/10 text-success border border-success/20">PAID</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors group cursor-pointer">
+<td class="py-4 px-4">
+<div class="font-label-md text-label-md text-on-surface">Sep 01, 2023</div>
+<div class="font-code text-code text-on-surface-variant text-[11px] mt-0.5">PO-2308-992</div>
+</td>
+<td class="py-4 px-4 font-body-md text-body-md text-on-surface">₹45,100</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-success/10 text-success border border-success/20">PAID</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors group cursor-pointer">
+<td class="py-4 px-4">
+<div class="font-label-md text-label-md text-on-surface">Aug 15, 2023</div>
+<div class="font-code text-code text-on-surface-variant text-[11px] mt-0.5">PO-2308-305</div>
+</td>
+<td class="py-4 px-4 font-body-md text-body-md text-on-surface">₹39,800</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-success/10 text-success border border-success/20">PAID</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors group cursor-pointer">
+<td class="py-4 px-4">
+<div class="font-label-md text-label-md text-on-surface">Aug 01, 2023</div>
+<div class="font-code text-code text-on-surface-variant text-[11px] mt-0.5">PO-2307-881</div>
+</td>
+<td class="py-4 px-4 font-body-md text-body-md text-on-surface">₹41,200</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-success/10 text-success border border-success/20">PAID</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Transaction Log -->
+<div class="lg:col-span-2">
+<div class="bg-surface-container-low border border-surface-container-highest rounded-xl overflow-hidden h-full flex flex-col">
+<div class="p-5 border-b border-surface-container-highest bg-surface-container flex flex-wrap gap-4 justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface">Transaction Log</h3>
+<div class="flex items-center gap-2">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-sm text-on-surface-variant" data-icon="filter_list">filter_list</span>
+<select class="bg-surface border border-surface-container-highest text-on-surface text-label-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-9 p-2 appearance-none pr-8">
+<option>All Statuses</option>
+<option>Completed</option>
+<option>Pending</option>
+</select>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-sm text-on-surface-variant" data-icon="calendar_month">calendar_month</span>
+<select class="bg-surface border border-surface-container-highest text-on-surface text-label-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-9 p-2 appearance-none pr-8">
+<option>This Month</option>
+<option>Last 30 Days</option>
+<option>Last Quarter</option>
+</select>
+</div>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse whitespace-nowrap">
+<thead class="bg-surface-container">
+<tr>
+<th class="py-3 px-table-cell-padding font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-medium border-b border-surface-container-highest">Order ID</th>
+<th class="py-3 px-table-cell-padding font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-medium border-b border-surface-container-highest">Service</th>
+<th class="py-3 px-table-cell-padding font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-medium border-b border-surface-container-highest text-right">Gross (₹)</th>
+<th class="py-3 px-table-cell-padding font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-medium border-b border-surface-container-highest text-right">Fee (20%)</th>
+<th class="py-3 px-table-cell-padding font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-medium border-b border-surface-container-highest text-right">Provider Share</th>
+<th class="py-3 px-table-cell-padding font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-medium border-b border-surface-container-highest text-center">Status</th>
+<th class="py-3 px-table-cell-padding font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-medium border-b border-surface-container-highest"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-highest">
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="py-3 px-table-cell-padding">
+<div class="font-code text-code text-primary">ORD-8921</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Today, 10:45 AM</div>
+</td>
+<td class="py-3 px-table-cell-padding">
+<div class="font-body-md text-body-md text-on-surface">Deep Cleaning - 3BHK</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Customer: A. Sharma</div>
+</td>
+<td class="py-3 px-table-cell-padding text-right font-body-md text-body-md text-on-surface">4,500</td>
+<td class="py-3 px-table-cell-padding text-right font-body-md text-body-md text-error">900</td>
+<td class="py-3 px-table-cell-padding text-right font-label-md text-label-md text-success font-semibold">3,600</td>
+<td class="py-3 px-table-cell-padding text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-warning/10 text-warning border border-warning/20">PENDING</span>
+</td>
+<td class="py-3 px-table-cell-padding text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="py-3 px-table-cell-padding">
+<div class="font-code text-code text-primary">ORD-8915</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Yesterday, 02:15 PM</div>
+</td>
+<td class="py-3 px-table-cell-padding">
+<div class="font-body-md text-body-md text-on-surface">Sofa Dry Cleaning</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Customer: V. Gupta</div>
+</td>
+<td class="py-3 px-table-cell-padding text-right font-body-md text-body-md text-on-surface">1,200</td>
+<td class="py-3 px-table-cell-padding text-right font-body-md text-body-md text-error">240</td>
+<td class="py-3 px-table-cell-padding text-right font-label-md text-label-md text-success font-semibold">960</td>
+<td class="py-3 px-table-cell-padding text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-warning/10 text-warning border border-warning/20">PENDING</span>
+</td>
+<td class="py-3 px-table-cell-padding text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors group bg-surface/30">
+<td class="py-3 px-table-cell-padding">
+<div class="font-code text-code text-primary">ORD-8890</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Oct 10, 09:30 AM</div>
+</td>
+<td class="py-3 px-table-cell-padding">
+<div class="font-body-md text-body-md text-on-surface">Bathroom Cleaning</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Customer: R. Iyer</div>
+</td>
+<td class="py-3 px-table-cell-padding text-right font-body-md text-body-md text-on-surface">1,800</td>
+<td class="py-3 px-table-cell-padding text-right font-body-md text-body-md text-error">360</td>
+<td class="py-3 px-table-cell-padding text-right font-label-md text-label-md text-success font-semibold">1,440</td>
+<td class="py-3 px-table-cell-padding text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-success/10 text-success border border-success/20">CLEARED</span>
+</td>
+<td class="py-3 px-table-cell-padding text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors group bg-surface/30">
+<td class="py-3 px-table-cell-padding">
+<div class="font-code text-code text-primary">ORD-8872</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Oct 09, 11:00 AM</div>
+</td>
+<td class="py-3 px-table-cell-padding">
+<div class="font-body-md text-body-md text-on-surface">Kitchen Deep Clean</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Customer: S. Patel</div>
+</td>
+<td class="py-3 px-table-cell-padding text-right font-body-md text-body-md text-on-surface">2,500</td>
+<td class="py-3 px-table-cell-padding text-right font-body-md text-body-md text-error">500</td>
+<td class="py-3 px-table-cell-padding text-right font-label-md text-label-md text-success font-semibold">2,000</td>
+<td class="py-3 px-table-cell-padding text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-success/10 text-success border border-success/20">CLEARED</span>
+</td>
+<td class="py-3 px-table-cell-padding text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors group bg-surface/30">
+<td class="py-3 px-table-cell-padding">
+<div class="font-code text-code text-primary">ORD-8855</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Oct 08, 04:45 PM</div>
+</td>
+<td class="py-3 px-table-cell-padding">
+<div class="font-body-md text-body-md text-on-surface">Full Home Cleaning - 2BHK</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Customer: M. Singh</div>
+</td>
+<td class="py-3 px-table-cell-padding text-right font-body-md text-body-md text-on-surface">3,200</td>
+<td class="py-3 px-table-cell-padding text-right font-body-md text-body-md text-error">640</td>
+<td class="py-3 px-table-cell-padding text-right font-label-md text-label-md text-success font-semibold">2,560</td>
+<td class="py-3 px-table-cell-padding text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-success/10 text-success border border-success/20">CLEARED</span>
+</td>
+<td class="py-3 px-table-cell-padding text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 border-t border-surface-container-highest bg-surface-container-low flex items-center justify-between mt-auto">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Showing 5 of 142 transactions</div>
+<div class="flex gap-1">
+<button class="w-8 h-8 rounded border border-surface-container-highest bg-surface flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary disabled:opacity-50 disabled:cursor-not-allowed" disabled="">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded border border-primary bg-primary/10 flex items-center justify-center text-primary font-label-sm text-label-sm">1</button>
+<button class="w-8 h-8 rounded border border-surface-container-highest bg-surface flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary font-label-sm text-label-sm">2</button>
+<button class="w-8 h-8 rounded border border-surface-container-highest bg-surface flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary font-label-sm text-label-sm">3</button>
+<span class="w-8 h-8 flex items-center justify-center text-on-surface-variant">...</span>
+<button class="w-8 h-8 rounded border border-surface-container-highest bg-surface flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

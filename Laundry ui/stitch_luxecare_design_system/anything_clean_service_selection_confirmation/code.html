@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Review Your Selection - Lumina Care</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error": "#690005",
+                      "secondary-fixed": "#e4e2e4",
+                      "surface-bright": "#39393a",
+                      "inverse-primary": "#8422dc",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "on-tertiary-container": "#e3e0e2",
+                      "inverse-on-surface": "#313031",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "on-secondary": "#303032",
+                      "primary-container": "#8a2be2",
+                      "outline": "#988ca0",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "secondary": "#c8c6c8",
+                      "on-surface": "#e5e2e3",
+                      "on-primary-fixed": "#2c0051",
+                      "tertiary": "#c8c6c8",
+                      "on-surface-variant": "#cfc2d7",
+                      "surface-container-highest": "#353436",
+                      "error-container": "#93000a",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "surface-container-high": "#2a2a2b",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "surface-tint": "#dcb8ff",
+                      "primary-fixed": "#efdbff",
+                      "background": "#131314",
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-secondary-container": "#b9b8ba",
+                      "error-red": "#ffb4ab",
+                      "surface": "#131314",
+                      "on-primary-container": "#eed9ff",
+                      "electric-violet": "#8a2be2",
+                      "success-green": "#81C784",
+                      "on-background": "#e5e2e3",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "on-primary": "#480081",
+                      "outline-variant": "#4c4354",
+                      "success-bg": "#1A3D24",
+                      "surface-container-low": "#1c1b1c",
+                      "primary": "#dcb8ff",
+                      "tertiary-container": "#646365",
+                      "on-tertiary": "#303032",
+                      "tertiary-fixed": "#e4e2e4",
+                      "secondary-container": "#49494b",
+                      "inverse-surface": "#e5e2e3",
+                      "surface-container": "#201f20",
+                      "error": "#ffb4ab",
+                      "surface-variant": "#353436",
+                      "surface-dim": "#131314",
+                      "on-secondary-fixed-variant": "#474648",
+                      "on-error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "2xl": "48px",
+                      "lg": "24px",
+                      "xs": "4px",
+                      "xl": "32px",
+                      "md": "16px",
+                      "sm": "8px",
+                      "3xl": "64px"
+              },
+              "fontFamily": {
+                      "h3": ["Geist"],
+                      "mono-display": ["monospace"],
+                      "body-md": ["Geist"],
+                      "headline-lg": ["Geist"],
+                      "display-lg": ["Geist"],
+                      "label-md": ["Geist"],
+                      "h1": ["Geist"],
+                      "caption": ["Geist"]
+              },
+              "fontSize": {
+                      "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "mono-display": ["18px", {"letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "h1": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body { background-color: #131314; color: #e5e2e3; }
+    </style>
+</head>
+<body class="font-body-md text-body-md bg-background text-on-background min-h-screen flex flex-col items-center justify-center p-md md:p-xl">
+<main class="w-full max-w-[600px] flex flex-col gap-lg">
+<!-- Header -->
+<header class="text-center md:text-left mb-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Review Your Selection</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Confirm your service before continuing.</p>
+</header>
+<!-- Details Card -->
+<section class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col gap-md">
+<div class="flex items-start justify-between gap-md border-b border-outline-variant/30 pb-md">
+<div class="flex gap-md items-center">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">cleaning_services</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">Sneaker Deep Clean (Premium)</h3>
+<p class="font-label-md text-label-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">storefront</span>
+                            CleanX Service Center • 4.9 ★ • 1.2 km
+                        </p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-mono-display text-mono-display text-electric-violet">₹449</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md pt-sm">
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant">local_shipping</span>
+<div>
+<p class="font-caption text-caption text-on-surface-variant">Fulfillment</p>
+<p class="font-label-md text-label-md text-on-surface">Pickup &amp; Delivery</p>
+</div>
+</div>
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant">location_on</span>
+<div>
+<p class="font-caption text-caption text-on-surface-variant">Location</p>
+<p class="font-label-md text-label-md text-on-surface">Anna Nagar, Chennai</p>
+</div>
+</div>
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant">calendar_month</span>
+<div>
+<p class="font-caption text-caption text-on-surface-variant">Date</p>
+<p class="font-label-md text-label-md text-on-surface">Tomorrow, Sep 1</p>
+</div>
+</div>
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant">schedule</span>
+<div>
+<p class="font-caption text-caption text-on-surface-variant">Time</p>
+<p class="font-label-md text-label-md text-on-surface">10:00 AM – 12:00 PM</p>
+</div>
+</div>
+<div class="flex items-start gap-sm md:col-span-2">
+<span class="material-symbols-outlined text-on-surface-variant">update</span>
+<div>
+<p class="font-caption text-caption text-on-surface-variant">Estimated Turnaround</p>
+<p class="font-label-md text-label-md text-on-surface">24–48 hrs</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Price Summary Card -->
+<section class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col gap-md">
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Price Summary</h4>
+<div class="flex flex-col gap-sm">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface">Service</span>
+<span class="font-body-md text-body-md text-on-surface">₹449</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Pickup</span>
+<span class="font-body-md text-body-md text-success-green">₹0</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Delivery</span>
+<span class="font-body-md text-body-md text-success-green">₹0</span>
+</div>
+</div>
+<div class="border-t border-outline-variant/30 pt-md flex justify-between items-center">
+<span class="font-h3 text-h3 text-on-surface">Estimated Total</span>
+<span class="font-mono-display text-mono-display text-electric-violet text-[24px]">₹449</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant text-center mt-xs italic">
+                Final total calculated at checkout.
+            </p>
+</section>
+<!-- Note -->
+<div class="bg-error-container/10 border border-outline-variant/30 rounded-lg p-sm flex items-center gap-sm">
+<span class="material-symbols-outlined text-error-red" style="font-variation-settings: 'FILL' 1;">info</span>
+<p class="font-label-md text-label-md text-on-surface">Please ensure the shoes are ready for pickup.</p>
+</div>
+<!-- Actions -->
+<div class="flex flex-col md:flex-row gap-md mt-sm">
+<button class="w-full md:w-auto flex-1 bg-surface-container border border-outline-variant text-on-surface font-label-md text-label-md py-md px-lg rounded-lg hover:bg-surface-container-high transition-colors text-center">
+                Edit Selection
+            </button>
+<button class="w-full md:w-auto flex-1 bg-electric-violet text-on-primary font-label-md text-label-md font-bold py-md px-lg rounded-lg shadow-lg shadow-electric-violet/20 hover:opacity-90 transition-opacity text-center flex items-center justify-center gap-sm">
+                Continue to Booking
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Account Status - Partner Management - Lumina Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#935400",
+                        "surface-container-low": "#1c1b1c",
+                        "inverse-primary": "#8422dc",
+                        "surface-bright": "#3a393a",
+                        "on-tertiary-container": "#ffdaba",
+                        "on-secondary-fixed": "#290947",
+                        "primary-fixed": "#efdbff",
+                        "primary-container": "#8a2be2",
+                        "surface-dim": "#131314",
+                        "surface-variant": "#353436",
+                        "secondary-fixed": "#efdbff",
+                        "on-surface": "#e5e2e3",
+                        "surface-container": "#201f20",
+                        "on-primary-container": "#eed9ff",
+                        "on-surface-variant": "#cfc2d7",
+                        "secondary-fixed-dim": "#dcb8ff",
+                        "inverse-surface": "#e5e2e3",
+                        "error-container": "#93000a",
+                        "background": "#131314",
+                        "surface": "#131314",
+                        "surface-tint": "#dcb8ff",
+                        "surface-container-highest": "#353436",
+                        "on-error": "#690005",
+                        "on-secondary": "#3f225e",
+                        "tertiary-fixed-dim": "#ffb873",
+                        "outline": "#988ca0",
+                        "on-secondary-container": "#caa7ec",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-background": "#e5e2e3",
+                        "warning": "#fbbf24",
+                        "on-tertiary-fixed": "#2d1600",
+                        "on-primary-fixed": "#2c0051",
+                        "info": "#60a5fa",
+                        "secondary": "#dcb8ff",
+                        "on-tertiary": "#4b2800",
+                        "on-tertiary-fixed-variant": "#6a3b00",
+                        "on-secondary-fixed-variant": "#573976",
+                        "surface-container-high": "#2a2a2b",
+                        "inverse-on-surface": "#313031",
+                        "success": "#4ade80",
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#ffb873",
+                        "primary": "#dcb8ff",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "tertiary-fixed": "#ffdcbf",
+                        "secondary-container": "#573976",
+                        "outline-variant": "#4c4354",
+                        "on-primary": "#480081",
+                        "critical": "#f87171"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "table-cell-padding": "12px",
+                        "gutter": "16px",
+                        "sidebar-width": "260px",
+                        "margin-desktop": "24px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "label-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "code": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "code": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen">
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-full md:w-[calc(100%-260px)] h-16 bg-surface-container-low border-b border-outline-variant flex justify-between items-center px-gutter md:ml-[260px] z-50">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="font-headline-md text-headline-md font-bold text-on-surface">Lumina Control Center</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center bg-surface-container-high rounded-full px-4 py-1.5 border border-outline-variant focus-within:ring-1 focus-within:ring-primary focus-within:border-primary transition-all">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] mr-2">search</span>
+<input class="bg-transparent border-none outline-none text-body-md font-body-md text-on-surface placeholder-on-surface-variant w-48 focus:ring-0" placeholder="Search operations..." type="text"/>
+<div class="ml-2 flex items-center justify-center w-5 h-5 bg-surface-container-highest rounded border border-outline-variant">
+<span class="font-code text-code text-on-surface-variant text-[10px]">⌘K</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:bg-surface-container-highest transition-all p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-highest transition-all p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">sensors</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-highest transition-all p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<img class="w-8 h-8 rounded-full border border-outline-variant object-cover ml-2" data-alt="A small circular profile avatar for a super admin, featuring a stylized tech-noir neon lighting aesthetic, high contrast dark theme, professional and authoritative mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF6b4Ky8_BODehWhIUIN6GM3ey3713N0Nvym6cqlENLuTF3sH7RCTgqJMWs3_K7lnlnQAyE1zYl2eVDi6-u4tn3ucM8P2SliAp0LHzdnoYqYrM8aP-Ad1LsjL2ZXYEKs6RolFry458KuPE5kZfxFTCaXRybhMKYgUsJ3nWEPiagArA-OaQnS6HpVHcG_Lx2kN_16X1IuHp2E7ffVC3MhF7HD_-pxqu0568asp0BMSHBN89ODLXu85Wqw"/>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="hidden md:flex fixed left-0 top-0 h-full w-[260px] bg-surface-container-lowest border-r border-outline-variant flex-col py-6 z-50">
+<div class="px-6 mb-8 flex items-center gap-3">
+<img class="w-8 h-8 object-contain" data-alt="A minimalist and sharp brand logo icon for an enterprise software platform, dark mode, sharp geometric lines, violet accents, technical precision mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVUAJvm0HLAsGwMSVos7JXWPYg1wNbJm9C2eFZN99-G4SMQMB9p8f_rPyS0AWk6sVDrQzl3gwURXGsoiedcUBhSX-9QDWTYT2VRvMZ2BZM4sJYVesMOi74tiT8GuNyVb0JEM422Gok5Gv3InTBXIY1xYR7JJ295YRSH0-hCpzaNoPrlVWsg9hCQrpNT_0PHY6dO_FBmgxS-rtxEFxDSUIh8LqQZ1lJfShWHgsm0rXlN8Bp_jg0DINIfQ"/>
+<div>
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface leading-none tracking-tight text-[20px]">Lumina Admin</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1">Operational Control</div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto px-3 space-y-1">
+<div class="px-3 py-2 mt-4 mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Management</span>
+</div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200 cursor-pointer active:scale-95 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200 cursor-pointer active:scale-95 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">shopping_cart</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200 cursor-pointer active:scale-95 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">inventory_2</span>
+<span class="font-label-md text-label-md">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200 cursor-pointer active:scale-95 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">group</span>
+<span class="font-label-md text-label-md">Customers</span>
+</a>
+<div class="px-3 py-2 mt-6 mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Network</span>
+</div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200 cursor-pointer active:scale-95 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">handyman</span>
+<span class="font-label-md text-label-md">Service Providers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-r-lg border-l-4 border-primary text-on-surface bg-surface-container-high transition-colors duration-200 cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+<span class="font-label-md text-label-md font-bold">Delivery Partners</span>
+</a>
+<div class="px-3 py-2 mt-6 mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">System</span>
+</div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200 cursor-pointer active:scale-95 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">terminal</span>
+<span class="font-label-md text-label-md">System Logs</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200 cursor-pointer active:scale-95 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+<div class="mt-auto px-6 pt-4 border-t border-outline-variant space-y-2">
+<button class="w-full flex items-center justify-between px-3 py-2 bg-surface-container hover:bg-surface-container-high rounded border border-outline-variant transition-colors text-on-surface-variant hover:text-on-surface font-label-md text-label-md">
+<span>Command Palette</span>
+<span class="font-code text-code text-[10px]">⌘K</span>
+</button>
+<div class="flex items-center gap-4 pt-2">
+<a class="flex items-center gap-2 text-on-surface-variant hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">help_outline</span>
+<span class="font-label-sm text-label-sm">Support</span>
+</a>
+<a class="flex items-center gap-2 text-on-surface-variant hover:text-on-surface transition-colors ml-auto" href="#">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+<span class="font-label-sm text-label-sm">Sign Out</span>
+</a>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="md:ml-[260px] pt-16 min-h-screen flex flex-col p-gutter md:p-margin-desktop gap-6">
+<!-- Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 text-on-surface-variant mb-2">
+<a class="font-label-sm text-label-sm hover:text-primary transition-colors" href="#">Delivery Partners</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="font-label-sm text-label-sm text-on-surface">Account Status</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface">Account Status</h1>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-low p-4 rounded-lg border border-outline-variant shadow-sm">
+<img class="w-12 h-12 rounded-full border border-outline-variant object-cover" data-alt="A professional headshot of a delivery partner named Ravi Kumar. The lighting is studio quality, modern dark background, serious but approachable expression, high resolution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD03NtiH4lnB4VtRMjcL9RwrRU9DajAPukyo6MeQzvMDaWViBAPBxIn3iSMt2wdZdHSMb7d0gc4pG5nnjBt75pF1Da06E_GUTb7zFnNFGP-U_6vW4H173XzWBmYknK20wEMOAyL-WwcOimuIt96_PXKLL2Bj86LVHsn1y_eDDmJBrqhEHicy3T4aILd8b8WR3Wq_GHiozk2TfpN1gYuZCXhw-oM4aodrdg1C31xOA_IYme3vnXdTs1bfg"/>
+<div>
+<div class="font-headline-md text-headline-md text-on-surface">Ravi Kumar</div>
+<div class="font-code text-code text-on-surface-variant">ID: PTNR-8842-X</div>
+</div>
+<div class="ml-4 pl-4 border-l border-outline-variant flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-1">Current Status</span>
+<div class="px-2.5 py-1 bg-success/10 border border-success/20 rounded-full flex items-center gap-1.5">
+<div class="w-2 h-2 rounded-full bg-success"></div>
+<span class="font-label-sm text-label-sm text-success font-bold tracking-wide">ACTIVE</span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-6">
+<!-- Left Column: Status & Warnings (Col 1-8) -->
+<div class="xl:col-span-8 flex flex-col gap-6">
+<!-- Active Delivery Warning (Highest Priority) -->
+<div class="bg-surface-container-low border border-warning/30 rounded-xl overflow-hidden relative">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-warning"></div>
+<div class="p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="p-2 bg-warning/10 rounded-full mt-0.5">
+<span class="material-symbols-outlined text-warning filled">local_shipping</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+                                    Active Order: #QH1024 
+                                    <span class="font-label-sm text-label-sm px-2 py-0.5 bg-info/10 text-info border border-info/20 rounded-full font-bold">IN_TRANSIT</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-2xl">
+                                    This partner is currently handling an active delivery. Administrative suspension requires manual reassignment of the payload before proceeding.
+                                </p>
+</div>
+</div>
+<button class="shrink-0 bg-surface-container-highest hover:bg-surface-variant text-on-surface border border-outline-variant font-label-md text-label-md px-4 py-2 rounded-lg transition-colors flex items-center gap-2">
+<span>Manage Reassignment</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Amber Alert: Action Required -->
+<div class="bg-surface-container-low border border-tertiary/30 rounded-xl overflow-hidden relative">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-tertiary"></div>
+<div class="p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="p-2 bg-tertiary/10 rounded-full mt-0.5">
+<span class="material-symbols-outlined text-tertiary filled">warning</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Partner Action Required</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+                                    Vehicle insurance documentation expired 2 days ago. Partner has a 5-day grace period remaining before auto-suspension.
+                                </p>
+</div>
+</div>
+<button class="shrink-0 bg-tertiary/10 hover:bg-tertiary/20 text-tertiary border border-tertiary/30 font-label-md text-label-md px-4 py-2 rounded-lg transition-colors flex items-center gap-2">
+<span>View Issue</span>
+</button>
+</div>
+</div>
+<!-- Health Grid (Bento style) -->
+<div class="bg-surface-container-low border border-outline-variant rounded-xl overflow-hidden flex flex-col">
+<div class="px-6 py-4 border-b border-outline-variant bg-surface-container-lowest flex justify-between items-center">
+<h2 class="font-headline-md text-headline-md text-on-surface">Compliance Health</h2>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors p-1"><span class="material-symbols-outlined text-[20px]">refresh</span></button>
+</div>
+<div class="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<!-- Verification -->
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-outline-variant/50 hover:border-outline-variant transition-colors group">
+<div class="flex justify-between items-start mb-3">
+<div class="p-2 bg-success/10 rounded-lg group-hover:bg-success/20 transition-colors">
+<span class="material-symbols-outlined text-success">verified_user</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 bg-success/10 text-success rounded-full">Verified</span>
+</div>
+<h4 class="font-label-md text-label-md text-on-surface-variant mb-1">Identity Verification</h4>
+<div class="font-headline-md text-headline-md text-on-surface">Level 3</div>
+</div>
+<!-- Documents -->
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-tertiary/30 bg-tertiary/5 hover:border-tertiary/50 transition-colors group relative overflow-hidden">
+<div class="absolute top-0 right-0 w-8 h-8 bg-tertiary/20 transform rotate-45 translate-x-4 -translate-y-4"></div>
+<div class="flex justify-between items-start mb-3">
+<div class="p-2 bg-tertiary/10 rounded-lg">
+<span class="material-symbols-outlined text-tertiary">description</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 bg-tertiary/10 text-tertiary rounded-full">Action Req</span>
+</div>
+<h4 class="font-label-md text-label-md text-on-surface-variant mb-1">Documents</h4>
+<div class="font-headline-md text-headline-md text-on-surface">1 Expired</div>
+</div>
+<!-- Vehicle -->
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-outline-variant/50 hover:border-outline-variant transition-colors group">
+<div class="flex justify-between items-start mb-3">
+<div class="p-2 bg-success/10 rounded-lg group-hover:bg-success/20 transition-colors">
+<span class="material-symbols-outlined text-success">directions_car</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 bg-success/10 text-success rounded-full">Verified</span>
+</div>
+<h4 class="font-label-md text-label-md text-on-surface-variant mb-1">Vehicle Status</h4>
+<div class="font-headline-md text-headline-md text-on-surface">Approved</div>
+</div>
+<!-- Payout -->
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-outline-variant/50 hover:border-outline-variant transition-colors group">
+<div class="flex justify-between items-start mb-3">
+<div class="p-2 bg-success/10 rounded-lg group-hover:bg-success/20 transition-colors">
+<span class="material-symbols-outlined text-success">account_balance</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 bg-success/10 text-success rounded-full">Verified</span>
+</div>
+<h4 class="font-label-md text-label-md text-on-surface-variant mb-1">Payout Account</h4>
+<div class="font-headline-md text-headline-md text-on-surface">Active</div>
+</div>
+<!-- Performance -->
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-outline-variant/50 hover:border-outline-variant transition-colors group sm:col-span-2 lg:col-span-2 flex items-center justify-between">
+<div>
+<div class="flex items-center gap-3 mb-1">
+<div class="p-2 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">trending_up</span>
+</div>
+<h4 class="font-label-md text-label-md text-on-surface-variant">Performance Standing</h4>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface mt-2">Top Tier (98.4%)</div>
+</div>
+<div class="w-32 h-16 opacity-70">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Admin Actions (Col 9-12) -->
+<div class="xl:col-span-4 flex flex-col gap-6">
+<div class="bg-surface-container-low border border-outline-variant rounded-xl overflow-hidden flex flex-col h-full">
+<div class="px-6 py-4 border-b border-outline-variant bg-surface-container-lowest flex justify-between items-center">
+<h2 class="font-headline-md text-headline-md text-on-surface">Administrative Actions</h2>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">admin_panel_settings</span>
+</div>
+<div class="p-6 flex flex-col gap-3">
+<!-- Standard Actions -->
+<button class="w-full flex items-center justify-between p-3 rounded-lg border border-outline-variant bg-surface-container hover:bg-surface-container-high transition-colors group text-left">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">fact_check</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Request Documents</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Trigger app notification</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-3 rounded-lg border border-outline-variant bg-surface-container hover:bg-surface-container-high transition-colors group text-left">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">how_to_reg</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Require Re-verification</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Force identity check</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">chevron_right</span>
+</button>
+<div class="w-full h-px bg-outline-variant my-2"></div>
+<!-- Danger Zone Actions -->
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1 mt-2">Sensitive Actions</h3>
+<button class="w-full flex items-center justify-between p-3 rounded-lg border border-warning/30 bg-warning/5 hover:bg-warning/10 transition-colors group text-left">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-warning">pause_circle</span>
+<div>
+<div class="font-label-md text-label-md text-warning font-bold">Suspend Partner</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Temporary halt (investigation)</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-warning text-[18px]">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-3 rounded-lg border border-critical/30 bg-critical/5 hover:bg-critical/10 transition-colors group text-left">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-critical">block</span>
+<div>
+<div class="font-label-md text-label-md text-critical font-bold">Deactivate Partner</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Permanent termination</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-critical text-[18px]">chevron_right</span>
+</button>
+<!-- Disabled Reactivation -->
+<button class="w-full flex items-center justify-between p-3 rounded-lg border border-outline-variant/30 bg-surface-container/30 opacity-50 cursor-not-allowed text-left mt-2" disabled="">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">play_circle</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface-variant">Reactivate Partner</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Partner is currently active</div>
+</div>
+</div>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Audit Log -->
+<div class="mt-4 bg-surface-container-low border border-outline-variant rounded-xl overflow-hidden">
+<div class="px-6 py-4 border-b border-outline-variant bg-surface-container-lowest flex justify-between items-center">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">history</span>
+                    Status Audit Log
+                </h2>
+<button class="font-label-sm text-label-sm text-primary hover:text-primary-fixed transition-colors">View All Logs</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant bg-surface-container-lowest">
+<th class="px-6 py-3 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-semibold">Timestamp</th>
+<th class="px-6 py-3 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-semibold">Action</th>
+<th class="px-6 py-3 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-semibold">Actor</th>
+<th class="px-6 py-3 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-semibold">Reason / Notes</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface">
+<tr class="border-b border-outline-variant hover:bg-surface-container-high transition-colors">
+<td class="px-6 py-4 whitespace-nowrap text-on-surface-variant">Oct 24, 2023 - 14:32:01</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="px-2 py-1 bg-warning/10 text-warning border border-warning/20 rounded-md font-code text-[12px]">FLAG_DOC_EXPIRY</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">smart_toy</span>
+                                System (Auto)
+                            </td>
+<td class="px-6 py-4">Vehicle insurance document #INS-992 expired. Grace period initiated.</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-high transition-colors">
+<td class="px-6 py-4 whitespace-nowrap text-on-surface-variant">Sep 12, 2023 - 09:15:44</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="px-2 py-1 bg-success/10 text-success border border-success/20 rounded-md font-code text-[12px]">STATUS_REACTIVATE</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap flex items-center gap-2">
+<div class="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center text-[10px] font-bold text-primary">JD</div>
+                                Jane Doe (Admin)
+                            </td>
+<td class="px-6 py-4">Investigation concluded. False report. Partner reactivated.</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="px-6 py-4 whitespace-nowrap text-on-surface-variant">Sep 10, 2023 - 18:02:11</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="px-2 py-1 bg-critical/10 text-critical border border-critical/20 rounded-md font-code text-[12px]">STATUS_SUSPEND</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap flex items-center gap-2">
+<div class="w-5 h-5 rounded-full bg-tertiary/20 flex items-center justify-center text-[10px] font-bold text-tertiary">MS</div>
+                                Mike Smith (Safety)
+                            </td>
+<td class="px-6 py-4">Pending investigation for customer dispute #TK-9921.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Bottom spacing for mobile -->
+<div class="h-8 md:h-0"></div>
+</main>
+</body></html>

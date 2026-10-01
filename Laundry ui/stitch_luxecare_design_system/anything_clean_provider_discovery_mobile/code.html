@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anything Clean - Provider Discovery</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Design System Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#303032",
+                        "tertiary": "#c8c6c8",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "secondary-fixed": "#e5e1e4",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-secondary-fixed-variant": "#474649",
+                        "error-container": "#93000a",
+                        "on-secondary": "#303032",
+                        "on-background": "#e5e2e3",
+                        "surface": "#131314",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-primary-container": "#eed9ff",
+                        "secondary": "#c8c6c8",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "outline-variant": "#4c4354",
+                        "secondary-container": "#474649",
+                        "tertiary-fixed": "#e4e2e4",
+                        "primary": "#dcb8ff",
+                        "surface-variant": "#353436",
+                        "inverse-surface": "#e5e2e3",
+                        "primary-container": "#8a2be2",
+                        "error": "#ffb4ab",
+                        "surface-container-lowest": "#0e0e0f",
+                        "surface-container-high": "#2a2a2b",
+                        "on-primary-fixed": "#2c0051",
+                        "outline": "#988ca0",
+                        "surface-bright": "#3a393a",
+                        "surface-dim": "#131314",
+                        "on-error": "#690005",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-secondary-container": "#b7b4b7",
+                        "on-surface": "#e5e2e3",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-tint": "#dcb8ff",
+                        "primary-fixed": "#efdbff",
+                        "tertiary-container": "#646365",
+                        "surface-container-highest": "#353436",
+                        "on-primary": "#480081",
+                        "surface-container-low": "#1c1b1c",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "surface-container": "#201f20",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "inverse-primary": "#8422dc",
+                        "on-error-container": "#ffdad6",
+                        "background": "#131314",
+                        "inverse-on-surface": "#313031"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "2xl": "48px",
+                        "3xl": "64px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "caption": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "body-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom map styling to match dark theme */
+        .map-overlay {
+            background: linear-gradient(180deg, rgba(10,10,11,0.8) 0%, rgba(10,10,11,0) 20%, rgba(10,10,11,0) 80%, rgba(10,10,11,1) 100%);
+        }
+        
+        /* Hide scrollbar for horizontal scrolling lists */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 1,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen relative overflow-hidden flex flex-col">
+<!-- Top Action Bar (Overlay on Map) -->
+<header class="fixed top-0 w-full z-40 px-md py-md flex justify-between items-center bg-surface/80 backdrop-blur-xl border-b border-white/5 shadow-sm md:hidden">
+<div class="flex items-center gap-sm bg-surface-container rounded-full px-4 py-2 border border-white/10 w-full max-w-xs shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-on-surface-variant font-label-md w-full outline-none" placeholder="Search areas, services..." type="text"/>
+</div>
+<button class="ml-sm p-2 bg-surface-container rounded-full border border-white/10 flex items-center justify-center text-on-surface active:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+</button>
+</header>
+<!-- Main Content Area: Map Canvas -->
+<main class="flex-grow relative h-screen w-full md:hidden">
+<!-- The Map -->
+<div class="absolute inset-0 w-full h-full">
+<img class="w-full h-full object-cover" data-alt="A highly detailed overhead map view of a modern urban city block at night, featuring dark mode aesthetics. The streets are deep charcoal gray, buildings are subtly glowing with soft purple and blue ambient light, and green spaces are a muted dark emerald. The style is sleek, technological, and premium, fitting a luxury lifestyle management app in a dark theme interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJKlQRezP384y-_OquxcwSBVelN_1HdQ7NC6d7vuUjZAAp-X4nR_aU9tE57HJEGsHwo9BuDZ1CMhv1T8viTqRIt-wo8iLNQK_GOVk6gPlQsT1EMaHnEZw4WSlBzWkCEjxLqUoFTSis-NitASiaOhe7k0MyjJjhslfrR_nF1Hj5mB_1DaKafL7nS3-NSMb8OjwQcSxhTYkfxwieC1mFrdXluRDZg56_bh5-glH9wgCslJyFpIvgl0DgBA"/>
+<!-- Gradient Overlay for depth -->
+<div class="absolute inset-0 map-overlay pointer-events-none"></div>
+</div>
+<!-- Map Pins (Providers) -->
+<div class="absolute top-[35%] left-[25%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="bg-surface border border-white/10 rounded-lg px-2 py-1 mb-1 shadow-lg text-primary font-label-md text-[10px] whitespace-nowrap">$45/hr</div>
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_15px_rgba(138,43,226,0.5)] border-2 border-surface">
+<span class="material-symbols-outlined text-on-primary text-[18px]" data-icon="cleaning_services">cleaning_services</span>
+</div>
+</div>
+<div class="absolute top-[45%] right-[30%] transform translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="bg-surface border border-white/10 rounded-lg px-2 py-1 mb-1 shadow-lg text-on-surface font-label-md text-[10px] whitespace-nowrap">$60/hr</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center shadow-lg border border-white/20">
+<img class="w-full h-full rounded-full object-cover" data-alt="A small, circular avatar portrait of a professional domestic care provider. A smiling young professional wearing a clean, modern dark uniform, lit with high-quality studio lighting against a dark gray background, embodying trust, efficiency, and premium service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmW-3pITDt48kFZLdoVnAgUZ-sJGd_bCQtlO0sr5WiCrxglxjz2AaZhT-Qw1q_uSBZ6Go7QQlwYMGVXDdwcmVoOSCLguGSUYSyAc_Jp-yQ692CdMN6pUrIha5Y89szRJBHut5DEHTI3RhUQKl3Cn2BuGFu_9j5Gw4PbdYPa8WGh0Xbu3GQ1rLccxJ7shuQK6i9TS1a_QhuYiYmOSMDnLU3kT4bQLVuy8DbsaCQlxQfPrVU3kEfITClhA"/>
+</div>
+</div>
+<div class="absolute bottom-[40%] left-[40%] transform -translate-x-1/2 translate-y-1/2 flex flex-col items-center">
+<div class="bg-surface border border-white/10 rounded-lg px-2 py-1 mb-1 shadow-lg text-on-surface font-label-md text-[10px] whitespace-nowrap">$55/hr</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center shadow-lg border border-white/20">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="home_work">home_work</span>
+</div>
+</div>
+<!-- Floating Controls (Toggle Map/List, Location) -->
+<div class="absolute bottom-32 right-md flex flex-col gap-sm z-30">
+<button class="w-12 h-12 bg-surface-container/90 backdrop-blur-md rounded-full flex items-center justify-center border border-white/10 shadow-lg text-on-surface active:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined" data-icon="my_location">my_location</span>
+</button>
+<button class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-[0_4px_15px_rgba(138,43,226,0.3)] transition-transform active:scale-95">
+<span class="material-symbols-outlined" data-icon="format_list_bulleted">format_list_bulleted</span>
+</button>
+</div>
+<!-- Provider Overlay Cards (Horizontal Scroll at bottom) -->
+<div class="absolute bottom-24 left-0 w-full z-30 overflow-x-auto no-scrollbar pb-md pt-sm px-md flex gap-md snap-x snap-mandatory">
+<!-- Active Card (Matches highlighted pin) -->
+<div class="snap-center shrink-0 w-72 bg-surface rounded-xl border border-primary/50 shadow-[0_8px_30px_rgba(0,0,0,0.5),0_0_10px_rgba(138,43,226,0.1)] p-md flex flex-col gap-sm relative overflow-hidden backdrop-blur-md">
+<!-- Subtle violet glow behind content -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl -mr-16 -mt-16 pointer-events-none"></div>
+<div class="flex gap-sm items-start">
+<img class="w-16 h-16 rounded-lg object-cover border border-white/10 shrink-0" data-alt="A close-up portrait of a female professional domestic cleaner smiling warmly. She is wearing a modern, minimalist dark gray polo shirt. The lighting is soft and flattering, set against a blurred high-end modern apartment background in dark mode tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1sM_VbtzV8zWZirz19HEFiDmxRRz2DBST1Dehq131lOxRXiGwV-V0D1KKdkHZz6fGuwVc3ImnlA1Z3lSUT2sU82jNCcDopMckG41bArb6cgw4NYliz2XV4WlhiiBCW4ITI2N-FO-rdtcNkCoL0F3A3nlWw7pVGzM5BMu7R7TtqF9PhjulxiLsDXaYlx1DDDWlpgvwti16jy-cUnm_NZTwXl5beSyWfMkDqVOyd89GCEocacE2RLwB3A"/>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-headline-md text-on-surface">Sarah J.</h3>
+<div class="flex items-center gap-xs bg-surface-container-high px-2 py-1 rounded text-caption">
+<span class="material-symbols-outlined text-[#FFCC00] text-[14px]" data-icon="star" data-weight="fill">star</span>
+<span class="text-on-surface font-label-md">4.9</span>
+</div>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant flex items-center gap-xs mt-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified" data-weight="fill">verified</span>
+                            Elite Partner
+                        </p>
+</div>
+</div>
+<div class="flex justify-between items-end mt-sm">
+<div>
+<p class="font-caption text-caption text-on-surface-variant">Deep Clean • 1.2 mi</p>
+<p class="font-display-lg text-display-lg-mobile text-primary mt-1">$45<span class="font-body-md text-body-md text-on-surface-variant">/hr</span></p>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md active:scale-95 transition-transform">
+                        Book
+                    </button>
+</div>
+</div>
+<!-- Inactive Card -->
+<div class="snap-center shrink-0 w-72 bg-surface/90 backdrop-blur-md rounded-xl border border-white/10 shadow-lg p-md flex flex-col gap-sm opacity-80 scale-95 transition-all">
+<div class="flex gap-sm items-start">
+<div class="w-16 h-16 rounded-lg bg-surface-container-high flex items-center justify-center border border-white/10 shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant text-[24px]" data-icon="person">person</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-headline-md text-on-surface">Michael T.</h3>
+<div class="flex items-center gap-xs bg-surface-container-high px-2 py-1 rounded text-caption">
+<span class="material-symbols-outlined text-[#FFCC00] text-[14px]" data-icon="star" data-weight="fill">star</span>
+<span class="text-on-surface font-label-md">4.7</span>
+</div>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant mt-1">Standard Clean</p>
+</div>
+</div>
+<div class="flex justify-between items-end mt-sm">
+<div>
+<p class="font-caption text-caption text-on-surface-variant">2.5 mi away</p>
+<p class="font-display-lg text-display-lg-mobile text-on-surface mt-1">$55<span class="font-body-md text-body-md text-on-surface-variant">/hr</span></p>
+</div>
+<button class="bg-transparent border border-outline-variant text-on-surface px-4 py-2 rounded-lg font-label-md active:bg-white/5 transition-colors">
+                        View
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Desktop Fallback Message (Since intent is mobile discovery) -->
+<div class="hidden md:flex flex-col items-center justify-center h-screen w-full bg-background p-2xl">
+<span class="material-symbols-outlined text-[64px] text-on-surface-variant mb-lg" data-icon="devices">devices</span>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-sm text-center">Mobile Experience Recommended</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant text-center max-w-md">The provider discovery map is optimized for mobile devices. Please view on a smaller screen to see the intended layout.</p>
+</div>
+<!-- BottomNavBar Component -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container/90 backdrop-blur-lg border-t border-white/10 shadow-[0_-4px_20px_rgba(138,43,226,0.1)] flex justify-around items-center h-20 pb-safe px-md md:hidden">
+<button class="flex flex-col items-center justify-center text-primary active:bg-primary-container/20 tap-highlight-transparent w-16 rounded-xl transition-colors py-2">
+<span class="material-symbols-outlined mb-1" data-icon="search" data-weight="fill">search</span>
+<span class="font-label-md text-label-md-mobile">Explore</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant active:bg-primary-container/20 tap-highlight-transparent w-16 rounded-xl transition-colors py-2">
+<span class="material-symbols-outlined mb-1" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-md text-label-md-mobile">Bookings</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant active:bg-primary-container/20 tap-highlight-transparent w-16 rounded-xl transition-colors py-2 relative">
+<span class="material-symbols-outlined mb-1" data-icon="chat">chat</span>
+<span class="absolute top-1 right-3 w-2 h-2 bg-error rounded-full"></span>
+<span class="font-label-md text-label-md-mobile">Inbox</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant active:bg-primary-container/20 tap-highlight-transparent w-16 rounded-xl transition-colors py-2">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-md text-label-md-mobile">Profile</span>
+</button>
+</nav>
+<script>
+        // Simple script to handle card snapping logic visual update (mock)
+        const scrollContainer = document.querySelector('.overflow-x-auto');
+        if(scrollContainer) {
+            scrollContainer.addEventListener('scroll', () => {
+                // In a real app, this would detect the centered card and update its styling
+                // to match the active state, and update the map pin accordingly.
+            });
+        }
+    </script>
+</body></html>

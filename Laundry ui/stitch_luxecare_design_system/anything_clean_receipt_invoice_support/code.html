@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Receipt &amp; Support</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "electric-violet": "#8a2be2",
+                      "inverse-primary": "#8422dc",
+                      "success-green": "#81C784",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "surface-container-high": "#2a2a2b",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "surface-bright": "#39393a",
+                      "primary-container": "#8a2be2",
+                      "inverse-surface": "#e5e2e3",
+                      "secondary-container": "#49494b",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "error-container": "#93000a",
+                      "inverse-on-surface": "#313031",
+                      "error": "#ffb4ab",
+                      "tertiary-container": "#646365",
+                      "on-tertiary": "#303032",
+                      "success-bg": "#1A3D24",
+                      "error-red": "#ffb4ab",
+                      "background": "#131314",
+                      "primary-fixed": "#efdbff",
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-secondary-container": "#b9b8ba",
+                      "on-secondary": "#303032",
+                      "outline-variant": "#4c4354",
+                      "surface": "#131314",
+                      "surface-container-low": "#1c1b1c",
+                      "secondary": "#c8c6c8",
+                      "secondary-fixed": "#e4e2e4",
+                      "on-primary": "#480081",
+                      "outline": "#988ca0",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "tertiary": "#c8c6c8",
+                      "on-background": "#e5e2e3",
+                      "on-secondary-fixed-variant": "#474648",
+                      "tertiary-fixed": "#e4e2e4",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "on-error": "#690005",
+                      "on-surface-variant": "#cfc2d7",
+                      "on-error-container": "#ffdad6",
+                      "surface-tint": "#dcb8ff",
+                      "surface-container": "#201f20",
+                      "on-primary-container": "#eed9ff",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "surface-container-highest": "#353436",
+                      "surface-dim": "#131314",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "on-surface": "#e5e2e3",
+                      "primary": "#dcb8ff",
+                      "on-tertiary-container": "#e3e0e2",
+                      "surface-variant": "#353436",
+                      "on-primary-fixed": "#2c0051"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "2xl": "48px",
+                      "xl": "32px",
+                      "xs": "4px",
+                      "3xl": "64px",
+                      "sm": "8px",
+                      "md": "16px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "h1": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "h3": [
+                              "Geist"
+                      ],
+                      "mono-display": [
+                              "monospace"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col">
+<!-- Top Navigation (Shell logic: Supressed for transactional/focused task like receipt view, but providing a 'Back' action) -->
+<header class="w-full bg-surface-container-low/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/30 flex justify-between items-center px-xl py-md max-w-[1200px] mx-auto">
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center p-sm rounded-full hover:bg-surface-container-highest">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-h1 text-h1 text-on-surface">Receipt &amp; Support</h1>
+</div>
+<div class="font-mono-display text-mono-display text-on-surface-variant bg-surface-container px-md py-sm rounded-lg border border-outline-variant/30">
+            ID: QH-20260901-1024
+        </div>
+</header>
+<main class="flex-grow w-full max-w-[1200px] mx-auto p-xl flex flex-col gap-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl items-start">
+<!-- Left Column: Financial & Documents -->
+<div class="lg:col-span-7 flex flex-col gap-xl">
+<!-- Financial Summary Card -->
+<section class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col gap-md">
+<div class="flex justify-between items-center border-b border-outline-variant/30 pb-sm">
+<h2 class="font-h3 text-h3 text-on-surface">Financial Summary</h2>
+<span class="bg-success-bg text-success-green px-md py-xs rounded-full font-label-md text-label-md uppercase tracking-widest font-bold">Paid</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-md mb-md">
+<div class="flex flex-col gap-xs">
+<span class="font-caption text-caption text-on-surface-variant uppercase">Payment Method</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">UPI</span>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-caption text-caption text-on-surface-variant uppercase">Transaction ID</span>
+<span class="font-mono-display text-mono-display text-sm text-on-surface font-medium truncate">TXN-20260901-1024</span>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-caption text-caption text-on-surface-variant uppercase">Date</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Sep 1, 2026</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-md border border-outline-variant/30 flex flex-col gap-sm">
+<div class="flex justify-between items-center font-body-md text-body-md text-on-surface-variant">
+<span>Service</span>
+<span>₹449</span>
+</div>
+<div class="flex justify-between items-center font-body-md text-body-md text-on-surface-variant">
+<span>Add-ons</span>
+<span>₹178</span>
+</div>
+<div class="flex justify-between items-center font-body-md text-body-md text-success-green">
+<span>Discount</span>
+<span>-₹125</span>
+</div>
+<div class="border-t border-outline-variant/30 mt-sm pt-sm flex justify-between items-center">
+<span class="font-h3 text-h3 text-on-surface">Total</span>
+<span class="font-h3 text-h3 text-electric-violet">₹502</span>
+</div>
+</div>
+</section>
+<!-- Document Actions Card -->
+<section class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col gap-md">
+<div class="border-b border-outline-variant/30 pb-sm mb-sm">
+<h2 class="font-h3 text-h3 text-on-surface">Documents</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+<button class="bg-surface-container-low border border-outline-variant/50 hover:border-primary hover:bg-surface-container-highest transition-all rounded-lg p-md flex items-center justify-between group">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary group-hover:text-electric-violet" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-md text-label-md text-on-surface">View Receipt</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface" data-icon="open_in_new">open_in_new</span>
+</button>
+<button class="bg-surface-container-low border border-outline-variant/50 hover:border-primary hover:bg-surface-container-highest transition-all rounded-lg p-md flex items-center justify-between group">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary group-hover:text-electric-violet" data-icon="download">download</span>
+<span class="font-label-md text-label-md text-on-surface">Download Receipt</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface" data-icon="file_download">file_download</span>
+</button>
+<button class="bg-transparent border border-outline-variant text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all rounded-lg p-md flex items-center justify-between group">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-label-md text-label-md">View Invoice</span>
+</div>
+</button>
+<button class="bg-transparent border border-outline-variant text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all rounded-lg p-md flex items-center justify-between group">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined" data-icon="file_download">file_download</span>
+<span class="font-label-md text-label-md">Download Invoice</span>
+</div>
+</button>
+</div>
+</section>
+</div>
+<!-- Right Column: Support Hub -->
+<div class="lg:col-span-5">
+<section class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col gap-lg sticky top-32">
+<div class="flex flex-col gap-xs">
+<h2 class="font-headline-lg text-headline-lg text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-electric-violet text-3xl" data-icon="support_agent" data-weight="fill">support_agent</span>
+                            Need Help?
+                        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Select an issue below to get started.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-sm">
+<button class="bg-surface-container-low border border-outline-variant/30 hover:border-primary/50 hover:bg-primary/5 transition-colors rounded-lg p-md flex flex-col items-center justify-center gap-sm text-center group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary text-2xl" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary">Order Issue</span>
+</button>
+<button class="bg-surface-container-low border border-outline-variant/30 hover:border-primary/50 hover:bg-primary/5 transition-colors rounded-lg p-md flex flex-col items-center justify-center gap-sm text-center group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary text-2xl" data-icon="local_shipping">local_shipping</span>
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary">Pickup Issue</span>
+</button>
+<button class="bg-surface-container-low border border-outline-variant/30 hover:border-primary/50 hover:bg-primary/5 transition-colors rounded-lg p-md flex flex-col items-center justify-center gap-sm text-center group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary text-2xl" data-icon="miscellaneous_services">mobile_arrow_right</span>
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary">Service Issue</span>
+</button>
+<button class="bg-surface-container-low border border-outline-variant/30 hover:border-primary/50 hover:bg-primary/5 transition-colors rounded-lg p-md flex flex-col items-center justify-center gap-sm text-center group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary text-2xl" data-icon="credit_card">credit_card</span>
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary">Payment Issue</span>
+</button>
+</div>
+<div class="mt-md flex flex-col gap-sm">
+<button class="w-full bg-electric-violet text-white font-label-md text-label-md font-bold py-md px-lg rounded-lg shadow-lg shadow-primary/20 hover:bg-inverse-primary transition-colors flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                            Contact Support
+                        </button>
+<p class="font-caption text-caption text-on-surface-variant text-center flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="info">info</span>
+                            Your order details will be automatically shared with support.
+                        </p>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body></html>

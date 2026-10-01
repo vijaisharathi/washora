@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Help &amp; Support Center - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#1c1b1c",
+                      "on-secondary-container": "#b9b8ba",
+                      "on-tertiary-container": "#e3e0e2",
+                      "on-primary-fixed": "#2c0051",
+                      "secondary": "#c8c6c8",
+                      "success-bg": "#1A3D24",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "outline": "#988ca0",
+                      "on-surface-variant": "#cfc2d7",
+                      "success-green": "#81C784",
+                      "primary": "#dcb8ff",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "surface-container-highest": "#353436",
+                      "surface": "#131314",
+                      "surface-bright": "#39393a",
+                      "on-secondary": "#303032",
+                      "error": "#ffb4ab",
+                      "inverse-on-surface": "#313031",
+                      "primary-container": "#8a2be2",
+                      "error-red": "#ffb4ab",
+                      "tertiary-fixed": "#e4e2e4",
+                      "on-background": "#e5e2e3",
+                      "surface-variant": "#353436",
+                      "inverse-surface": "#e5e2e3",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "surface-container-high": "#2a2a2b",
+                      "on-error": "#690005",
+                      "on-surface": "#e5e2e3",
+                      "surface-dim": "#131314",
+                      "error-container": "#93000a",
+                      "on-tertiary": "#303032",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "outline-variant": "#4c4354",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "on-primary": "#480081",
+                      "electric-violet": "#8a2be2",
+                      "on-secondary-fixed-variant": "#474648",
+                      "secondary-fixed": "#e4e2e4",
+                      "background": "#131314",
+                      "on-error-container": "#ffdad6",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "surface-tint": "#dcb8ff",
+                      "secondary-container": "#49494b",
+                      "inverse-primary": "#8422dc",
+                      "tertiary": "#c8c6c8",
+                      "primary-fixed": "#efdbff",
+                      "on-primary-container": "#eed9ff",
+                      "tertiary-container": "#646365",
+                      "surface-container": "#201f20",
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-tertiary-fixed-variant": "#474648"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "16px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "lg": "24px",
+                      "2xl": "48px",
+                      "3xl": "64px",
+                      "xl": "32px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "mono-display": [
+                              "monospace"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "h1": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "h3": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-400-normal.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-500-normal.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-600-normal.woff2') format('woff2');
+            font-weight: 600;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-700-normal.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            background-color: #131314;
+            color: #e5e2e3;
+        }
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+      </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:flex-row">
+<aside class="bg-surface-container-low text-primary font-body-md text-body-md w-64 h-full fixed left-0 top-0 border-r border-outline-variant/30 flex flex-col h-screen py-lg px-md hidden md:flex z-50">
+<div class="mb-xl px-sm">
+<h1 class="font-h1 text-h1 font-bold text-electric-violet">Anything Clean</h1>
+<p class="text-on-surface-variant font-caption text-caption mt-xs">Provider Portal</p>
+</div>
+<nav class="flex-1 space-y-sm">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+                Analytics
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="star">star</span>
+                Reviews
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+                Notifications
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Settings
+            </a>
+</nav>
+<div class="mt-auto space-y-sm">
+<button class="w-full bg-electric-violet text-on-primary font-label-md text-label-md font-bold py-sm px-md rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-container transition-colors active:scale-95 duration-150 mb-md">
+                Upgrade Plan
+            </button>
+<div class="border-t border-outline-variant/30 pt-md space-y-sm">
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-primary/10 text-primary font-bold hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="help" style="font-variation-settings: 'FILL' 1;">help</span>
+                    Help Center
+                </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                    Sign Out
+                </a>
+</div>
+</div>
+</aside>
+<header class="bg-surface/80 text-primary font-label-md text-label-md fixed top-0 right-0 w-full md:w-[calc(100%-256px)] h-16 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-xl z-40">
+<div class="flex items-center">
+<span class="font-h3 text-h3 font-bold text-on-surface hidden md:block">Provider Dashboard</span>
+<button class="md:hidden text-on-surface-variant p-sm rounded-md hover:bg-surface-container">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-opacity cursor-pointer p-xs rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-opacity cursor-pointer p-xs rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-opacity cursor-pointer p-xs rounded-full hover:bg-surface-container">
+<img alt="Provider Profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant/50" data-alt="A small circular avatar of a professional cleaner in a dark tech aesthetic environment, subtly lit with cool tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ0sOUsEyW59N-TyXhy2AyfhSTvNJif5VbJxcjC3RULeSjSdgHwwvxKXjkLjj7nnLcP_06LIIWrHTLxgDAEvg419Ytuj7Ublnaksrp7K7y5wItRb2SE5VQY8Dft4GLphfFqe_X87cCe-cEiqBvMWZ0fB39FMPBlr6BgrKfxU2DYka4ihHkpYnxDqY3wyM2-0P7Tu6vgFc64zBSk2GPI3CYSdaKPFPRG2Np1SY_jPfCdil85IogzJpTDA"/>
+</button>
+</div>
+</header>
+<main class="flex-1 w-full md:ml-64 pt-20 px-md md:px-xl pb-2xl max-w-[1200px] mx-auto">
+<section class="mb-2xl text-center md:text-left mt-xl">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-sm">Help &amp; Support</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Find answers or contact our support team.</p>
+<div class="mt-lg relative max-w-2xl mx-auto md:mx-0">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-md pl-3xl pr-md text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-all placeholder:text-on-surface-variant/50" placeholder="Search help articles..." type="text"/>
+</div>
+</section>
+</main>
+</body></html>

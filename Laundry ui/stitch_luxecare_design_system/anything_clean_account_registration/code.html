@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Account Registration - Lumina</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#201f20",
+                        "error-container": "#93000a",
+                        "secondary": "#c8c6c8",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary": "#303032",
+                        "surface-container-high": "#2a2a2b",
+                        "on-tertiary-container": "#e3e0e2",
+                        "tertiary-container": "#646365",
+                        "on-primary-fixed": "#2c0051",
+                        "tertiary-fixed": "#e4e2e4",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#313031",
+                        "on-error": "#690005",
+                        "error-red": "#ffb4ab",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-primary": "#480081",
+                        "secondary-container": "#49494b",
+                        "background": "#131314",
+                        "on-surface-variant": "#cfc2d7",
+                        "primary-container": "#8a2be2",
+                        "surface-container-highest": "#353436",
+                        "secondary-fixed": "#e4e2e4",
+                        "inverse-primary": "#8422dc",
+                        "tertiary": "#c8c6c8",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-secondary-container": "#b9b8ba",
+                        "surface-dim": "#131314",
+                        "on-secondary": "#303032",
+                        "on-secondary-fixed-variant": "#474648",
+                        "inverse-surface": "#e5e2e3",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "surface-bright": "#39393a",
+                        "electric-violet": "#8a2be2",
+                        "outline-variant": "#4c4354",
+                        "surface-variant": "#353436",
+                        "on-background": "#e5e2e3",
+                        "success-green": "#81C784",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-surface": "#e5e2e3",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-tint": "#dcb8ff",
+                        "success-bg": "#1A3D24",
+                        "surface": "#131314",
+                        "on-primary-container": "#eed9ff",
+                        "outline": "#988ca0",
+                        "primary": "#dcb8ff",
+                        "primary-fixed": "#efdbff",
+                        "tertiary-fixed-dim": "#c8c6c8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "2xl": "48px",
+                        "3xl": "64px"
+                    },
+                    "fontFamily": {
+                        "mono-display": ["monospace"],
+                        "label-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "h3": ["Geist"],
+                        "h1": ["Geist"],
+                        "caption": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex items-center justify-center p-md sm:p-xl">
+<!-- Main Container -->
+<main class="w-full max-w-[560px] mx-auto">
+<!-- Top App Bar (Simplified for Auth Flow) -->
+<header class="flex justify-between items-center mb-xl w-full">
+<div class="font-h1 text-h1 text-electric-violet tracking-tighter">Lumina</div>
+<a class="font-label-md text-label-md text-electric-violet dark:text-primary hover:text-primary-fixed transition-colors duration-200" href="#">Sign In</a>
+</header>
+<!-- Registration Card -->
+<section class="bg-surface-container rounded-xl border border-outline-variant/20 p-xl shadow-2xl relative overflow-hidden">
+<!-- Subtle glow effect -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-electric-violet/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+<!-- Progress Indicator -->
+<div class="mb-lg">
+<p class="font-caption text-caption text-on-surface-variant mb-xs">Step 1 of 3</p>
+<div class="flex gap-sm">
+<div class="h-1 flex-1 bg-electric-violet rounded-full"></div>
+<div class="h-1 flex-1 bg-surface-container-highest rounded-full"></div>
+<div class="h-1 flex-1 bg-surface-container-highest rounded-full"></div>
+</div>
+</div>
+<!-- Form Header -->
+<div class="mb-lg">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Create Your Partner Account</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Account Registration</p>
+</div>
+<!-- Registration Form -->
+<form action="#" class="space-y-lg" method="POST">
+<!-- Full Name -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-xs" for="fullName">Full Name</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg px-md py-sm font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" id="fullName" name="fullName" required="" type="text" value="Arun Kumar"/>
+</div>
+<!-- Email -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-xs" for="email">Email</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg px-md py-sm font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" id="email" name="email" required="" type="email" value="arun@cleanx.example"/>
+</div>
+<!-- Phone Number -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-xs" for="phone">Phone Number</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg px-md py-sm font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" id="phone" name="phone" required="" type="tel" value="+91 XXXXX XXXXX"/>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+<!-- Password -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-xs" for="password">Password</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg pl-md pr-10 py-sm font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" id="password" name="password" required="" type="password"/>
+<span class="material-symbols-outlined absolute right-sm top-1/2 -translate-y-1/2 text-on-surface-variant cursor-pointer" data-icon="visibility">visibility</span>
+</div>
+</div>
+<!-- Confirm Password -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-xs" for="confirmPassword">Confirm Password</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg px-md py-sm font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" id="confirmPassword" name="confirmPassword" required="" type="password"/>
+</div>
+</div>
+<!-- Password Requirements -->
+<div class="bg-surface-container-low p-sm rounded-lg border border-outline-variant/20">
+<ul class="font-caption text-caption text-on-surface-variant space-y-1">
+<li class="flex items-center gap-xs text-success-green">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+                            8+ characters
+                        </li>
+<li class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+                            Letters & numbers
+                        </li>
+</ul>
+</div>
+<!-- Terms -->
+<div class="flex items-start gap-sm mt-md">
+<div class="flex items-center h-5">
+<input class="w-4 h-4 rounded bg-surface-container-low border-outline-variant text-electric-violet focus:ring-electric-violet focus:ring-offset-background" id="terms" name="terms" required="" type="checkbox"/>
+</div>
+<label class="font-caption text-caption text-on-surface-variant" for="terms">
+                        I agree to the <a class="text-primary hover:underline" href="#">Terms of Service</a> and <a class="text-primary hover:underline" href="#">Privacy Policy</a>.
+                    </label>
+</div>
+<!-- CTA -->
+<button class="w-full bg-electric-violet text-white font-label-md text-label-md font-bold py-md px-lg rounded-lg shadow-lg shadow-primary-container/20 hover:bg-inverse-primary transition-colors duration-200 mt-xl flex items-center justify-center gap-sm" type="submit">
+                    Create Account
+                    <span class="material-symbols-outlined text-[20px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+</section>
+</main>
+<script>
+        // Simple script to toggle password visibility (for demonstration)
+        document.querySelectorAll('[data-icon="visibility"]').forEach(icon => {
+            icon.addEventListener('click', (e) => {
+                const input = e.target.previousElementSibling;
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    e.target.textContent = 'visibility_off';
+                } else {
+                    input.type = 'password';
+                    e.target.textContent = 'visibility';
+                }
+            });
+        });
+    </script>
+</body></html>

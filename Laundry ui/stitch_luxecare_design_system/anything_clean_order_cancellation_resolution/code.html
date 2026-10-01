@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cancel Order - Lumina Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#8422dc",
+                        "surface-container": "#201f20",
+                        "inverse-surface": "#e5e2e3",
+                        "on-tertiary": "#4b2800",
+                        "on-error": "#690005",
+                        "tertiary": "#ffb873",
+                        "surface-container-low": "#1c1b1c",
+                        "on-secondary-container": "#caa7ec",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "success": "#4ade80",
+                        "surface-bright": "#3a393a",
+                        "surface-container-lowest": "#0e0e0f",
+                        "outline": "#988ca0",
+                        "on-primary-container": "#eed9ff",
+                        "on-secondary-fixed-variant": "#573976",
+                        "on-primary": "#480081",
+                        "background": "#131314",
+                        "error-container": "#93000a",
+                        "secondary-container": "#573976",
+                        "primary-fixed": "#efdbff",
+                        "secondary-fixed": "#efdbff",
+                        "critical": "#f87171",
+                        "on-surface": "#e5e2e3",
+                        "warning": "#fbbf24",
+                        "info": "#60a5fa",
+                        "outline-variant": "#4c4354",
+                        "tertiary-fixed": "#ffdcbf",
+                        "on-tertiary-fixed-variant": "#6a3b00",
+                        "surface-container-high": "#2a2a2b",
+                        "inverse-on-surface": "#313031",
+                        "error": "#ffb4ab",
+                        "surface-container-highest": "#353436",
+                        "on-secondary": "#3f225e",
+                        "on-tertiary-container": "#ffdaba",
+                        "tertiary-container": "#935400",
+                        "on-secondary-fixed": "#290947",
+                        "tertiary-fixed-dim": "#ffb873",
+                        "surface": "#131314",
+                        "secondary-fixed-dim": "#dcb8ff",
+                        "surface-dim": "#131314",
+                        "on-primary-fixed": "#2c0051",
+                        "secondary": "#dcb8ff",
+                        "on-background": "#e5e2e3",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#dcb8ff",
+                        "primary-container": "#8a2be2",
+                        "on-tertiary-fixed": "#2d1600",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "surface-tint": "#dcb8ff",
+                        "surface-variant": "#353436"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "sidebar-width": "260px",
+                        "gutter": "16px",
+                        "margin-desktop": "24px",
+                        "margin-mobile": "16px",
+                        "table-cell-padding": "12px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Geist"],
+                        "body-md": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "code": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "label-sm": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "code": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col items-center justify-center p-6">
+<!-- Intent: Linear/Transactional (Cancellation Flow). Global Nav suppressed as per rules -->
+<main class="w-full max-w-3xl flex flex-col gap-6">
+<!-- Header -->
+<header class="flex items-center gap-4 pb-4 border-b border-outline-variant">
+<button class="p-2 rounded-lg hover:bg-surface-container-highest transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Cancel Order #QH1024</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Order Placed: Oct 24, 2023, 14:30 EST</p>
+</div>
+</header>
+<!-- Amber Warning -->
+<div class="bg-warning/10 border border-warning/20 rounded-lg p-4 flex gap-4 items-start">
+<span class="material-symbols-outlined text-warning shrink-0" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div>
+<h3 class="font-label-md text-label-md text-warning font-semibold">Critical Operational Notice</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">This order is currently in transit. Cancelling may require refund handling and package return coordination with the logistics provider.</p>
+</div>
+</div>
+<!-- Main Form Content -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Left Column: Form -->
+<div class="md:col-span-2 flex flex-col gap-6 bg-surface-container-low border border-outline-variant rounded-lg p-6 shadow-sm">
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant" for="cancellation-reason">Cancellation Reason <span class="text-error">*</span></label>
+<div class="relative">
+<select class="w-full bg-surface-container border border-outline-variant rounded-DEFAULT px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary appearance-none transition-colors" id="cancellation-reason">
+<option disabled="" selected="" value="">Select a reason...</option>
+<option value="customer_requested">Customer Requested</option>
+<option value="provider_issue">Provider Issue</option>
+<option value="logistics_failure">Logistics Failure</option>
+<option value="fraud_suspicion">Fraud Suspicion</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant" for="admin-note">Admin Note (Required for Audit)</label>
+<textarea class="w-full bg-surface-container border border-outline-variant rounded-DEFAULT px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors placeholder:text-outline" id="admin-note" placeholder="Enter detailed reason for cancellation..." rows="4"></textarea>
+</div>
+</div>
+<!-- Right Column: Impact Summary -->
+<div class="flex flex-col gap-4">
+<div class="bg-surface-container-low border border-outline-variant rounded-lg p-5 shadow-sm">
+<h3 class="font-label-md text-label-md text-on-surface mb-4 uppercase tracking-wider text-on-surface-variant border-b border-outline-variant pb-2">Order Impact</h3>
+<ul class="flex flex-col gap-3">
+<li class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Total Value</span>
+<span class="font-label-md text-label-md text-on-surface">₹420.00</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Refund Status</span>
+<span class="font-label-md text-label-md text-warning">Pending Review</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Logistics Return</span>
+<span class="font-label-md text-label-md text-critical">Required</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Action Area -->
+<div class="flex justify-end items-center gap-4 pt-4 border-t border-outline-variant">
+<!-- Audit Log Preview -->
+<div class="flex-1 flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center overflow-hidden border border-outline-variant shrink-0">
+<img class="w-full h-full object-cover" data-alt="A small, professional headshot photo of an administrator, high quality lighting, corporate style, deep true dark background setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7usrY3X3i2mnQPwmD5tlABUcJUSYzMv6HoxwEplMbvP_Qg-AMgpOve_2lQOTOOb5AGigRm70xchirpNSOZUBINzz97M86l4NgVB6cPetykUVA2OB-9Y5IeiXaCcwYEFIVjWjELiRf8M2JXJzeUbGbhBoAOhlwxvzUAl3Jjkbt-_hjOyA6_rC1mxBmCSyQ0URnD2_xoEM4T5-Nx8UtWhU2VHZwWeU7BBiADtSsQkzL2Bkhz1aLx6blKQ"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Pending Audit Log</span>
+<span class="font-code text-code text-outline">Action by: Sarah J. (Super Admin) • Today, 15:42</span>
+</div>
+</div>
+<button class="px-6 py-2 rounded-DEFAULT font-label-md text-label-md text-on-surface border border-outline-variant hover:bg-surface-container-highest transition-colors">
+                Keep Order
+            </button>
+<!-- Primary Action opens modal -->
+<button class="px-6 py-2 rounded-DEFAULT font-label-md text-label-md bg-error text-on-error hover:opacity-90 transition-opacity flex items-center gap-2" onclick="document.getElementById('confirmation-modal').classList.remove('hidden')">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+                CANCEL ORDER
+            </button>
+</div>
+</main>
+<!-- Confirmation Modal (Hidden by default) -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" id="confirmation-modal">
+<div class="bg-surface-container-low border border-outline-variant rounded-lg w-full max-w-md shadow-2xl flex flex-col overflow-hidden">
+<div class="p-6 pb-0 flex gap-4">
+<div class="w-12 h-12 rounded-full bg-error/10 flex items-center justify-center shrink-0 border border-error/20">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Confirm Cancellation?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">You are about to irreversibly cancel order #QH1024. A refund workflow will be initiated automatically and logistics will be notified to return the package.</p>
+</div>
+</div>
+<div class="p-6 flex justify-end gap-3 mt-4 bg-surface-container-lowest border-t border-outline-variant">
+<button class="px-4 py-2 rounded-DEFAULT font-label-md text-label-md text-on-surface hover:bg-surface-container transition-colors border border-transparent" onclick="document.getElementById('confirmation-modal').classList.add('hidden')">
+                    Go Back
+                </button>
+<button class="px-6 py-2 rounded-DEFAULT font-label-md text-label-md bg-error text-on-error hover:opacity-90 transition-opacity shadow-sm">
+                    Confirm & Cancel Order
+                </button>
+</div>
+</div>
+</div>
+</body></html>

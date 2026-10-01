@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Advanced Service Filters</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "error-red": "#ffb4ab",
+                        "success-green": "#81C784",
+                        "error-container": "#93000a",
+                        "surface-variant": "#353436",
+                        "surface-container-highest": "#353436",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-primary": "#480081",
+                        "primary-container": "#8a2be2",
+                        "primary-fixed": "#efdbff",
+                        "surface-tint": "#dcb8ff",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface": "#131314",
+                        "background": "#131314",
+                        "tertiary-container": "#646365",
+                        "on-tertiary": "#303032",
+                        "on-secondary": "#303032",
+                        "success-bg": "#1A3D24",
+                        "surface-bright": "#39393a",
+                        "on-secondary-container": "#b9b8ba",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-surface": "#e5e2e3",
+                        "inverse-primary": "#8422dc",
+                        "secondary-fixed": "#e4e2e4",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-tertiary-container": "#e3e0e2",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-container-high": "#2a2a2b",
+                        "outline": "#988ca0",
+                        "surface-container": "#201f20",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#474648",
+                        "secondary-container": "#49494b",
+                        "on-background": "#e5e2e3",
+                        "outline-variant": "#4c4354",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-primary-container": "#eed9ff",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-primary-fixed": "#2c0051",
+                        "tertiary": "#c8c6c8",
+                        "on-surface-variant": "#cfc2d7",
+                        "inverse-on-surface": "#313031",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-container-low": "#1c1b1c",
+                        "electric-violet": "#8a2be2",
+                        "primary": "#dcb8ff",
+                        "secondary": "#c8c6c8",
+                        "surface-dim": "#131314",
+                        "error": "#ffb4ab",
+                        "surface-container-lowest": "#0e0e0f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "sm": "8px",
+                        "3xl": "64px",
+                        "2xl": "48px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "h1": ["Geist"],
+                        "h3": ["Geist"],
+                        "body-md": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "label-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "caption": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #131314; color: #e5e2e3; font-family: 'Geist', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .icon-fill { font-variation-settings: 'FILL' 1; }
+        
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1c1b1c; }
+        ::-webkit-scrollbar-thumb { background: #4c4354; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #646365; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+<!-- TopNavBar (Shared Component) -->
+<nav class="bg-surface/80 backdrop-blur-xl flex justify-between items-center w-full px-lg h-16 z-50 bg-surface-container-low border-b border-white/5 shadow-sm sticky top-0 full-width">
+<div class="flex items-center gap-md">
+<span class="font-headline-md text-headline-md font-bold text-primary">OpsCentral</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative hidden md:flex items-center">
+<span class="material-symbols-outlined absolute left-sm text-on-surface-variant text-body-md">search</span>
+<input class="bg-surface-container-low border border-outline-variant/50 rounded-full py-[6px] pl-2xl pr-md text-body-md font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none w-64 transition-all" placeholder="Search..." type="text"/>
+</div>
+<button class="text-on-surface-variant hover:bg-white/5 transition-colors cursor-pointer active:opacity-80 p-sm rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:bg-white/5 transition-colors cursor-pointer active:opacity-80 p-sm rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/30">
+<img alt="Provider profile avatar" class="object-cover w-full h-full" data-alt="A small, circular avatar portrait of a professional service provider against a dark corporate background. High quality, clear, minimalist dark mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrDoGVSnDC2_GvVxlsn08i5d3aDo0VZab5MnEfQ6D_kLG3bR_wWJ5_0vD_lsRoWyNA8DIu1cjWafaGQM2tiID92CmBtxlCMHl43AXisjC9a8Xy4ldPaWIeQ0cqqFKdsiOaNyUpc9UFDZHjo2kTq-CUPC-cQev45WMV2Y9Hj_KVf2YwM1erofCdXXWWgtT1Hxynw2Ic1uJ_kzYKfJf-VWgKSmRhuPcEMJJNOL8rjqVTTxBI_crvUsZ9eg"/>
+</div>
+</div>
+</nav>
+<div class="flex flex-1 overflow-hidden relative w-full max-w-[1200px] mx-auto">
+<!-- Main Canvas (Background context) -->
+<main class="flex-1 p-xl overflow-y-auto opacity-40 transition-opacity">
+<div class="flex justify-between items-end mb-lg">
+<div>
+<h1 class="font-h1 text-h1 text-on-surface mb-xs">Available Services</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Browse and manage operational services</p>
+</div>
+<button class="bg-surface-container border border-outline-variant/50 text-on-surface py-sm px-md rounded-lg flex items-center gap-xs hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+<span class="font-label-md text-label-md">Filters (4)</span>
+</button>
+</div>
+<!-- Dummy content grid to show context -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md h-48"></div>
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md h-48"></div>
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md h-48"></div>
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md h-48"></div>
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md h-48"></div>
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md h-48"></div>
+</div>
+</main>
+<!-- Filter Overlay / Side Panel -->
+<div class="absolute inset-y-0 right-0 w-full md:w-[420px] bg-surface-container-low border-l border-white/5 shadow-2xl flex flex-col z-40 transform transition-transform duration-300">
+<!-- Panel Header -->
+<div class="flex justify-between items-center p-lg border-b border-outline-variant/30 bg-surface-container-low/95 sticky top-0 z-10 backdrop-blur-sm">
+<div>
+<h2 class="font-h3 text-h3 text-on-surface">Filters</h2>
+<p class="font-caption text-caption text-electric-violet mt-1 font-medium">4 filters applied</p>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-sm rounded-full hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Filter Content Scrollable Area -->
+<div class="flex-1 overflow-y-auto p-lg space-y-xl">
+<!-- Price Range Section -->
+<section>
+<h3 class="font-label-md text-label-md text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">payments</span>
+                        Price Range
+                    </h3>
+<div class="flex flex-wrap gap-sm">
+<button class="bg-primary-container/10 border border-primary text-primary font-label-md text-label-md py-1.5 px-3 rounded-full hover:bg-primary-container/20 transition-colors flex items-center gap-1">
+                            Under ₹200
+                            <span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+<button class="bg-surface-container border border-outline-variant/50 text-on-surface-variant font-label-md text-label-md py-1.5 px-3 rounded-full hover:border-outline transition-colors">₹200 - ₹500</button>
+<button class="bg-surface-container border border-outline-variant/50 text-on-surface-variant font-label-md text-label-md py-1.5 px-3 rounded-full hover:border-outline transition-colors">₹500 - ₹1000</button>
+<button class="bg-surface-container border border-outline-variant/50 text-on-surface-variant font-label-md text-label-md py-1.5 px-3 rounded-full hover:border-outline transition-colors">Over ₹1000</button>
+</div>
+</section>
+<div class="h-px w-full bg-outline-variant/30"></div>
+<!-- Rating Section -->
+<section>
+<h3 class="font-label-md text-label-md text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">star</span>
+                        Minimum Rating
+                    </h3>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container border border-outline-variant/50 text-on-surface-variant py-2 rounded-lg font-label-md text-label-md hover:border-outline transition-colors flex flex-col items-center justify-center gap-1">
+<span>Any</span>
+</button>
+<button class="flex-1 bg-surface-container border border-outline-variant/50 text-on-surface-variant py-2 rounded-lg font-label-md text-label-md hover:border-outline transition-colors flex flex-col items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px] icon-fill text-yellow-500">star</span>
+<span>3.0+</span>
+</button>
+<button class="flex-1 bg-surface-container border border-outline-variant/50 text-on-surface-variant py-2 rounded-lg font-label-md text-label-md hover:border-outline transition-colors flex flex-col items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px] icon-fill text-yellow-500">star</span>
+<span>4.0+</span>
+</button>
+<button class="flex-1 bg-primary-container/10 border border-primary text-primary py-2 rounded-lg font-label-md text-label-md hover:bg-primary-container/20 transition-colors flex flex-col items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px] icon-fill">star</span>
+<span>4.5+</span>
+</button>
+</div>
+</section>
+<div class="h-px w-full bg-outline-variant/30"></div>
+<!-- Availability Section -->
+<section>
+<h3 class="font-label-md text-label-md text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">calendar_today</span>
+                        Availability
+                    </h3>
+<div class="grid grid-cols-2 gap-sm">
+<label class="flex items-center gap-3 p-3 bg-surface-container border border-outline-variant/50 rounded-lg cursor-pointer hover:border-outline transition-colors">
+<input checked="" class="w-4 h-4 rounded border-outline-variant text-electric-violet focus:ring-electric-violet bg-surface-container-low" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">Today</span>
+</label>
+<label class="flex items-center gap-3 p-3 bg-surface-container border border-outline-variant/50 rounded-lg cursor-pointer hover:border-outline transition-colors">
+<input checked="" class="w-4 h-4 rounded border-outline-variant text-electric-violet focus:ring-electric-violet bg-surface-container-low" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">Tomorrow</span>
+</label>
+<label class="flex items-center gap-3 p-3 bg-surface-container border border-outline-variant/50 rounded-lg cursor-pointer hover:border-outline transition-colors">
+<input class="w-4 h-4 rounded border-outline-variant text-electric-violet focus:ring-electric-violet bg-surface-container-low" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">This Week</span>
+</label>
+<label class="flex items-center gap-3 p-3 bg-surface-container border border-outline-variant/50 rounded-lg cursor-pointer hover:border-outline transition-colors">
+<input class="w-4 h-4 rounded border-outline-variant text-electric-violet focus:ring-electric-violet bg-surface-container-low" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">Specific Date</span>
+</label>
+</div>
+</section>
+<div class="h-px w-full bg-outline-variant/30"></div>
+<!-- Service Method Section -->
+<section>
+<h3 class="font-label-md text-label-md text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">local_shipping</span>
+                        Service Method
+                    </h3>
+<div class="flex bg-surface-container p-1 rounded-lg border border-outline-variant/30">
+<button class="flex-1 py-2 font-label-md text-label-md text-on-surface-variant hover:text-on-surface rounded-md transition-colors">All</button>
+<button class="flex-1 py-2 font-label-md text-label-md text-on-surface-variant hover:text-on-surface rounded-md transition-colors">Pickup</button>
+<button class="flex-1 py-2 bg-surface-container-high border border-outline-variant/50 shadow-sm text-on-surface font-label-md text-label-md rounded-md transition-colors">Delivery</button>
+</div>
+</section>
+</div>
+<!-- Panel Footer Actions -->
+<div class="p-lg border-t border-outline-variant/30 bg-surface-container-low sticky bottom-0 z-10 flex gap-md">
+<button class="flex-1 py-3 px-4 rounded-lg border border-outline-variant text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors">
+                    Clear All
+                </button>
+<button class="flex-[2] py-3 px-4 rounded-lg bg-electric-violet text-white font-label-md text-label-md font-bold shadow-lg shadow-electric-violet/20 hover:bg-inverse-primary transition-colors">
+                    Apply Filters
+                </button>
+</div>
+</div>
+</div>
+</body></html>

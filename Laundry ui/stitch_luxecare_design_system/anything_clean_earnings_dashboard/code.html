@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Earnings - Lumina Delivery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#e5e2e3",
+                      "error": "#ffb4ab",
+                      "surface-container-highest": "#353436",
+                      "surface-container": "#201f20",
+                      "primary-fixed": "#efdbff",
+                      "primary": "#dcb8ff",
+                      "tertiary": "#c8c6c8",
+                      "outline": "#988ca0",
+                      "tertiary-container": "#646365",
+                      "surface-container-low": "#1c1b1c",
+                      "on-secondary": "#303032",
+                      "surface-container-lowest": "#0e0e0f",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "surface": "#131314",
+                      "on-tertiary-container": "#e3e0e2",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "on-error-container": "#ffdad6",
+                      "success-bg": "#1A3D24",
+                      "on-tertiary": "#303032",
+                      "on-primary-fixed": "#2c0051",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "inverse-surface": "#e5e2e3",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "surface-variant": "#353436",
+                      "on-error": "#690005",
+                      "on-primary-container": "#eed9ff",
+                      "primary-container": "#8a2be2",
+                      "on-background": "#e5e2e3",
+                      "error-container": "#93000a",
+                      "on-secondary-fixed-variant": "#474648",
+                      "outline-variant": "#4c4354",
+                      "error-red": "#ffb4ab",
+                      "tertiary-fixed": "#e4e2e4",
+                      "surface-dim": "#131314",
+                      "secondary-fixed": "#e4e2e4",
+                      "secondary-container": "#49494b",
+                      "on-secondary-container": "#b9b8ba",
+                      "surface-bright": "#39393a",
+                      "inverse-on-surface": "#313031",
+                      "electric-violet": "#8a2be2",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "surface-tint": "#dcb8ff",
+                      "success-green": "#81C784",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "background": "#131314",
+                      "on-surface-variant": "#cfc2d7",
+                      "surface-container-high": "#2a2a2b",
+                      "inverse-primary": "#8422dc",
+                      "secondary": "#c8c6c8",
+                      "on-primary": "#480081"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "xl": "32px",
+                      "3xl": "64px",
+                      "md": "16px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "2xl": "48px"
+              },
+              "fontFamily": {
+                      "mono-display": [
+                              "monospace"
+                      ],
+                      "h3": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "h1": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+      </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen pb-[100px] pt-16">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/5">
+<div class="flex items-center justify-between px-md h-16 w-full max-w-7xl mx-auto">
+<button aria-label="Menu" class="text-primary hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Delivery Portal</h1>
+<button aria-label="Profile" class="text-primary hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-md py-lg space-y-lg">
+<!-- Header -->
+<div class="mb-lg">
+<h2 class="font-headline-lg text-headline-lg">Earnings</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Track your financial performance and payouts.</p>
+</div>
+<!-- Summary Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Today's Earnings (Featured) -->
+<div class="col-span-1 md:col-span-3 lg:col-span-1 bg-surface-container border border-outline-variant/20 rounded-xl p-lg relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-md opacity-20 group-hover:opacity-40 transition-opacity">
+<span class="material-symbols-outlined text-display-lg text-primary" data-icon="payments">payments</span>
+</div>
+<div class="relative z-10">
+<p class="font-caption text-caption text-on-surface-variant mb-xs">Today's Earnings</p>
+<h3 class="font-display-lg text-display-lg text-primary mb-sm">₹560</h3>
+<div class="flex items-center gap-xs text-success-green bg-success-bg/30 px-sm py-xs rounded-full inline-flex">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_up">trending_up</span>
+<span class="font-label-md text-label-md">+12% vs yesterday</span>
+</div>
+</div>
+</div>
+<!-- This Week -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-sm">
+<p class="font-caption text-caption text-on-surface-variant">This Week</p>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]" data-icon="calendar_view_week">calendar_view_week</span>
+</div>
+<p class="font-h1 text-h1">₹3,840</p>
+</div>
+<div class="mt-md pt-sm border-t border-outline-variant/20">
+<p class="font-caption text-caption text-on-surface-variant">Payout on Monday</p>
+</div>
+</div>
+<!-- This Month -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-sm">
+<p class="font-caption text-caption text-on-surface-variant">This Month</p>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]" data-icon="calendar_month">calendar_month</span>
+</div>
+<p class="font-h1 text-h1">₹12,480</p>
+</div>
+<div class="mt-md pt-sm border-t border-outline-variant/20">
+<p class="font-caption text-caption text-on-surface-variant">Current Cycle</p>
+</div>
+</div>
+</div>
+<!-- Stats Row -->
+<div class="grid grid-cols-2 gap-md">
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-md flex items-center gap-md">
+<div class="bg-primary-container/20 p-sm rounded-full text-primary">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+</div>
+<div>
+<p class="font-caption text-caption text-on-surface-variant">Completed</p>
+<p class="font-h3 text-h3">84 <span class="font-caption text-caption text-on-surface-variant font-normal">deliveries</span></p>
+</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-md flex items-center gap-md">
+<div class="bg-primary-container/20 p-sm rounded-full text-primary">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</div>
+<div>
+<p class="font-caption text-caption text-on-surface-variant">Average</p>
+<p class="font-h3 text-h3">₹70 <span class="font-caption text-caption text-on-surface-variant font-normal">/delivery</span></p>
+</div>
+</div>
+</div>
+<!-- Earnings History -->
+<div>
+<div class="flex items-center justify-between mb-md">
+<h3 class="font-h3 text-h3">Earnings History</h3>
+<button class="font-label-md text-label-md text-primary hover:text-primary-fixed transition-colors">View All</button>
+</div>
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl overflow-hidden">
+<!-- History Item 1 -->
+<div class="p-md flex items-center justify-between border-b border-outline-variant/20 hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="bg-surface-container-highest p-sm rounded-full text-on-surface">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+</div>
+<div>
+<p class="font-label-md text-label-md font-bold">Payout: Week 42</p>
+<p class="font-caption text-caption text-on-surface-variant">Oct 16 - Oct 22</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-md text-label-md font-bold text-success-green mb-xs">+₹3,200</p>
+<span class="inline-flex items-center bg-success-bg text-success-green px-2 py-0.5 rounded-full font-caption text-[10px] uppercase tracking-wider font-bold">Paid</span>
+</div>
+</div>
+<!-- History Item 2 -->
+<div class="p-md flex items-center justify-between border-b border-outline-variant/20 hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="bg-surface-container-highest p-sm rounded-full text-on-surface">
+<span class="material-symbols-outlined" data-icon="pending">pending</span>
+</div>
+<div>
+<p class="font-label-md text-label-md font-bold">Payout: Week 43</p>
+<p class="font-caption text-caption text-on-surface-variant">Oct 23 - Oct 29</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-md text-label-md font-bold text-on-surface mb-xs">₹3,840</p>
+<span class="inline-flex items-center bg-tertiary-container/30 text-on-surface-variant px-2 py-0.5 rounded-full font-caption text-[10px] uppercase tracking-wider font-bold border border-outline-variant/50">Processing</span>
+</div>
+</div>
+<!-- History Item 3 -->
+<div class="p-md flex items-center justify-between hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="bg-surface-container-highest p-sm rounded-full text-on-surface">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+</div>
+<div>
+<p class="font-label-md text-label-md font-bold">Payout: Week 41</p>
+<p class="font-caption text-caption text-on-surface-variant">Oct 9 - Oct 15</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-md text-label-md font-bold text-success-green mb-xs">+₹2,950</p>
+<span class="inline-flex items-center bg-success-bg text-success-green px-2 py-0.5 rounded-full font-caption text-[10px] uppercase tracking-wider font-bold">Paid</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center py-sm px-xs pb-safe bg-surface/90 dark:bg-surface/90 backdrop-blur-xl z-50 rounded-t-xl border-t border-white/5 shadow-[0_-4px_20px_rgba(0,0,0,0.4)] md:hidden">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded-lg transition-colors active:scale-90 transition-all duration-200 p-2 w-16">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-md text-[10px]">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded-lg transition-colors active:scale-90 transition-all duration-200 p-2 w-16">
+<span class="material-symbols-outlined mb-1" data-icon="local_shipping">local_shipping</span>
+<span class="font-label-md text-[10px]">Deliveries</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary font-bold hover:bg-surface-variant/20 rounded-lg transition-colors active:scale-90 transition-all duration-200 p-2 w-16">
+<span class="material-symbols-outlined mb-1" data-icon="payments" data-weight="fill" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="font-label-md text-[10px]">Earnings</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded-lg transition-colors active:scale-90 transition-all duration-200 p-2 w-16">
+<span class="material-symbols-outlined mb-1" data-icon="notifications">notifications</span>
+<span class="font-label-md text-[10px]">Alerts</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded-lg transition-colors active:scale-90 transition-all duration-200 p-2 w-16">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-md text-[10px]">Profile</span>
+</button>
+</nav>
+</body></html>

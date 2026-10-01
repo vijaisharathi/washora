@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumina Care - Pickup Date Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#cfc2d7",
+                        "error-red": "#ffb4ab",
+                        "success-bg": "#1A3D24",
+                        "primary-container": "#8a2be2",
+                        "on-background": "#e5e2e3",
+                        "secondary-container": "#49494b",
+                        "error-container": "#93000a",
+                        "surface-bright": "#39393a",
+                        "error": "#ffb4ab",
+                        "surface-container-high": "#2a2a2b",
+                        "surface-container-low": "#1c1b1c",
+                        "on-secondary-fixed-variant": "#474648",
+                        "tertiary-fixed": "#e4e2e4",
+                        "inverse-on-surface": "#313031",
+                        "inverse-primary": "#8422dc",
+                        "primary-fixed": "#efdbff",
+                        "background": "#131314",
+                        "surface-variant": "#353436",
+                        "surface-tint": "#dcb8ff",
+                        "on-tertiary": "#303032",
+                        "primary": "#dcb8ff",
+                        "tertiary": "#c8c6c8",
+                        "on-secondary-container": "#b9b8ba",
+                        "on-primary-container": "#eed9ff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-container": "#201f20",
+                        "outline-variant": "#4c4354",
+                        "tertiary-container": "#646365",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-primary": "#480081",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-secondary": "#303032",
+                        "on-surface": "#e5e2e3",
+                        "electric-violet": "#8a2be2",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "surface-dim": "#131314",
+                        "secondary": "#c8c6c8",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface-container-highest": "#353436",
+                        "surface": "#131314",
+                        "secondary-fixed": "#e4e2e4",
+                        "outline": "#988ca0",
+                        "on-primary-fixed": "#2c0051",
+                        "inverse-surface": "#e5e2e3",
+                        "success-green": "#81C784"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "sm": "8px",
+                        "3xl": "64px",
+                        "xs": "4px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "h1": ["Geist"],
+                        "h3": ["Geist"],
+                        "caption": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar (Shared Component) - Suppressed as per instructions for a transactional flow -->
+<header class="bg-surface/80 backdrop-blur-md fixed top-0 w-full border-b border-outline-variant/30 flex justify-between items-center px-xl py-md max-w-[1200px] mx-auto z-50">
+<div class="flex items-center gap-sm">
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">arrow_back</span>
+</button>
+<h1 class="font-h3 text-h3 text-on-surface">Choose Pickup Date</h1>
+</div>
+<div class="hidden md:flex gap-sm">
+<span class="font-label-md text-label-md text-on-surface-variant">Step 3 of 4</span>
+<div class="flex gap-1 items-center">
+<div class="w-8 h-1 bg-primary rounded-full"></div>
+<div class="w-8 h-1 bg-primary rounded-full"></div>
+<div class="w-8 h-1 bg-primary rounded-full"></div>
+<div class="w-8 h-1 bg-surface-container-highest rounded-full"></div>
+</div>
+</div>
+</header>
+<main class="flex-grow pt-[88px] px-md md:px-xl max-w-[800px] mx-auto w-full pb-32">
+<!-- Mobile Progress Indicator -->
+<div class="md:hidden flex flex-col gap-xs mb-lg">
+<div class="flex justify-between items-center">
+<span class="font-caption text-caption text-on-surface-variant">Schedule</span>
+<span class="font-caption text-caption text-on-surface-variant">Step 3 of 4</span>
+</div>
+<div class="flex gap-1">
+<div class="flex-1 h-1 bg-primary rounded-full"></div>
+<div class="flex-1 h-1 bg-primary rounded-full"></div>
+<div class="flex-1 h-1 bg-primary rounded-full"></div>
+<div class="flex-1 h-1 bg-surface-container-highest rounded-full"></div>
+</div>
+</div>
+<!-- Service Summary Card -->
+<section class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-md mb-xl flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary text-[24px]">dry_cleaning</span>
+</div>
+<div>
+<h2 class="font-label-md text-label-md text-on-surface">Sneaker Deep Clean</h2>
+<p class="font-caption text-caption text-on-surface-variant">CleanX Service Center</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-h3 text-h3 text-primary">₹449</span>
+</div>
+</section>
+<!-- Date Selection -->
+<section>
+<h3 class="font-label-md text-label-md text-on-surface mb-md">Select a Pickup Date</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md">
+<!-- Today (Available) -->
+<button class="bg-surface-container-low border border-outline-variant/50 hover:border-primary/50 hover:bg-surface-container rounded-xl p-md flex flex-col items-center justify-center gap-xs transition-all relative overflow-hidden group focus:outline-none focus:ring-1 focus:ring-primary">
+<span class="font-label-md text-label-md text-on-surface">Today</span>
+<span class="font-h3 text-h3 text-primary group-hover:text-electric-violet transition-colors">Aug 31</span>
+<span class="font-caption text-caption text-on-surface-variant mt-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-success-green"></span>
+                        Available
+                    </span>
+</button>
+<!-- Tomorrow (Selected) -->
+<button class="bg-primary/10 border-2 border-primary rounded-xl p-md flex flex-col items-center justify-center gap-xs transition-all relative overflow-hidden focus:outline-none shadow-[0_0_15px_rgba(220,184,255,0.15)]">
+<div class="absolute top-2 right-2">
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<span class="font-label-md text-label-md text-primary">Tomorrow</span>
+<span class="font-h3 text-h3 text-on-surface">Sep 1</span>
+<span class="font-caption text-caption text-primary mt-sm">Selected</span>
+</button>
+<!-- Monday (Fully Booked/Disabled) -->
+<button class="bg-surface/50 border border-outline-variant/20 rounded-xl p-md flex flex-col items-center justify-center gap-xs opacity-50 cursor-not-allowed">
+<span class="font-label-md text-label-md text-on-surface-variant">Mon</span>
+<span class="font-h3 text-h3 text-on-surface-variant line-through decoration-error-red/50">Sep 2</span>
+<span class="font-caption text-caption text-error-red mt-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">block</span>
+                        Fully Booked
+                    </span>
+</button>
+<!-- Tuesday (Available) -->
+<button class="bg-surface-container-low border border-outline-variant/50 hover:border-primary/50 hover:bg-surface-container rounded-xl p-md flex flex-col items-center justify-center gap-xs transition-all relative overflow-hidden group focus:outline-none focus:ring-1 focus:ring-primary">
+<span class="font-label-md text-label-md text-on-surface">Tue</span>
+<span class="font-h3 text-h3 text-primary group-hover:text-electric-violet transition-colors">Sep 3</span>
+<span class="font-caption text-caption text-on-surface-variant mt-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-success-green"></span>
+                        Available
+                    </span>
+</button>
+</div>
+</section>
+</main>
+<!-- Bottom Action Bar (Fixed) -->
+<div class="fixed bottom-0 w-full bg-surface-container/90 backdrop-blur-md border-t border-outline-variant/30 p-md z-40">
+<div class="max-w-[800px] mx-auto flex justify-between items-center gap-md">
+<div class="hidden md:block">
+<p class="font-caption text-caption text-on-surface-variant">Selected Date</p>
+<p class="font-label-md text-label-md text-on-surface">Tomorrow (Sep 1)</p>
+</div>
+<button class="bg-electric-violet hover:bg-electric-violet/90 text-white font-label-md text-label-md py-3 px-xl rounded-lg shadow-lg shadow-primary/20 transition-all flex-grow md:flex-grow-0 flex items-center justify-center gap-sm group">
+                 Continue
+                 <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</body></html>

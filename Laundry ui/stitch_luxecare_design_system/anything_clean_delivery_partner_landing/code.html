@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Delivery Partner Landing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-surface": "#e5e2e3",
+                        "on-secondary-container": "#b7b4b7",
+                        "on-error": "#690005",
+                        "inverse-primary": "#8422dc",
+                        "on-secondary-fixed-variant": "#474649",
+                        "primary-fixed": "#efdbff",
+                        "on-tertiary-container": "#e3e0e2",
+                        "surface-bright": "#3a393a",
+                        "inverse-on-surface": "#313031",
+                        "tertiary-container": "#646365",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-tertiary": "#303032",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-primary-fixed": "#2c0051",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-tint": "#dcb8ff",
+                        "surface-variant": "#353436",
+                        "on-secondary": "#303032",
+                        "tertiary": "#c8c6c8",
+                        "secondary-container": "#474649",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface": "#131314",
+                        "on-background": "#e5e2e3",
+                        "tertiary-fixed": "#e4e2e4",
+                        "primary": "#dcb8ff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "outline-variant": "#4c4354",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "background": "#131314",
+                        "surface-dim": "#131314",
+                        "primary-container": "#8a2be2",
+                        "outline": "#988ca0",
+                        "surface-container-highest": "#353436",
+                        "on-primary": "#480081",
+                        "secondary": "#c8c6c8",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "error": "#ffb4ab",
+                        "surface-container": "#201f20",
+                        "on-primary-container": "#eed9ff",
+                        "on-surface-variant": "#cfc2d7",
+                        "secondary-fixed": "#e5e1e4",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#2a2a2b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "3xl": "64px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "caption": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "label-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        /* Mobile max-width constraint for intended viewport */
+        body { max-width: 390px; margin: 0 auto; min-height: 100vh; position: relative; }
+        
+        /* Subtle glow for dark theme luxury feel */
+        .glow-effect {
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(180deg, rgba(10,10,11,0) 0%, rgba(10,10,11,0.8) 70%, #0A0A0B 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#0A0A0B] text-on-surface font-body-md antialiased overflow-x-hidden">
+<!-- Header (Suppressed top app bar as this is a linear/transactional landing page) -->
+<header class="fixed top-0 w-full max-w-[390px] z-50 flex items-center justify-between px-5 h-16 bg-[#0A0A0B]/80 backdrop-blur-xl border-b border-white/5">
+<div class="font-headline-md text-headline-md font-bold text-primary">Anything Clean</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-16 pb-3xl">
+<!-- Hero Section -->
+<section class="relative h-[480px] w-full">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A professional delivery partner, a young adult in stylish functional dark athletic wear, smiling confidently while holding a premium packaged clean laundry bag. The setting is a modern urban environment with sleek architecture in the background. The scene is shot with high-end cinematic lighting, emphasizing a sophisticated dark aesthetic with subtle neon violet accents in the shadows, conveying trust and premium lifestyle service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbJaqxBhYNP47bu8gv8QSjOzXOwfm8aNr733oeIIcYGoRDUY6pyULbQr9kKn0Urdy_ZTEQieHdnccmj3lMqigs0KweWR425Vn8ECVVTzbFhIDSQC7DI3otlkTYSMqFjPBhm9YEST2dOKKFk5jjozdGIQOlp4SzUwa3uP50uFdl-071Z7p6Bh_qJ-6AixmZWl3A5zKdE0MV7yLdlLeGxXw-E1Go1Jzogmbj9yicTL1OU5646zGCVH_2TA"/>
+<div class="absolute inset-0 hero-overlay"></div>
+<div class="absolute bottom-0 left-0 w-full px-5 pb-lg flex flex-col justify-end">
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-on-surface mb-sm">Earn on your schedule.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg">Join the premium lifestyle management network. Deliver high-end care services locally.</p>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-4 rounded-xl flex items-center justify-center mb-sm active:scale-95 transition-transform">
+                    Become a Delivery Partner
+                </button>
+<button class="w-full bg-transparent border border-outline font-label-md text-label-md py-4 rounded-xl flex items-center justify-center text-on-surface active:scale-95 transition-transform">
+                    Already a partner? Sign In
+                </button>
+</div>
+</section>
+<!-- Benefits Section - Bento Grid Layout -->
+<section class="px-5 mt-2xl">
+<h2 class="font-headline-md text-headline-md mb-lg">Why partner with us?</h2>
+<div class="grid grid-cols-2 gap-sm">
+<!-- Card 1 -->
+<div class="col-span-2 bg-[#121214] rounded-xl p-md glow-effect relative overflow-hidden flex flex-col justify-between min-h-[140px]">
+<span class="material-symbols-outlined text-primary mb-sm" style="font-variation-settings: 'FILL' 1;">schedule</span>
+<div>
+<h3 class="font-headline-md text-body-lg font-semibold mb-xs">Flexible Hours</h3>
+<p class="font-body-md text-caption text-on-surface-variant">Work when you want, where you want. Total control over your availability.</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-[#121214] rounded-xl p-md glow-effect flex flex-col justify-between min-h-[140px]">
+<span class="material-symbols-outlined text-primary mb-sm" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<div>
+<h3 class="font-headline-md text-body-lg font-semibold mb-xs">Local Deliveries</h3>
+<p class="font-body-md text-caption text-on-surface-variant">Stay within your preferred neighborhoods.</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-[#121214] rounded-xl p-md glow-effect flex flex-col justify-between min-h-[140px]">
+<span class="material-symbols-outlined text-primary mb-sm" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<div>
+<h3 class="font-headline-md text-body-lg font-semibold mb-xs">Transparent Earnings</h3>
+<p class="font-body-md text-caption text-on-surface-variant">See what you'll make before you accept.</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-[#121214] rounded-xl p-md glow-effect flex flex-col justify-between min-h-[140px]">
+<span class="material-symbols-outlined text-primary mb-sm" style="font-variation-settings: 'FILL' 1;">payments</span>
+<div>
+<h3 class="font-headline-md text-body-lg font-semibold mb-xs">Weekly Payouts</h3>
+<p class="font-body-md text-caption text-on-surface-variant">Reliable direct deposits every single week.</p>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-[#121214] rounded-xl p-md glow-effect flex flex-col justify-between min-h-[140px]">
+<span class="material-symbols-outlined text-primary mb-sm" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+<div>
+<h3 class="font-headline-md text-body-lg font-semibold mb-xs">Partner Support</h3>
+<p class="font-body-md text-caption text-on-surface-variant">24/7 assistance on active deliveries.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Sticky Bottom CTA for scrolling -->
+<div class="fixed bottom-0 left-0 w-full max-w-[390px] px-5 py-md bg-[#0A0A0B]/90 backdrop-blur-xl border-t border-white/5 z-40 pb-safe">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-4 rounded-xl flex items-center justify-center active:scale-95 transition-transform shadow-[0_0_20px_rgba(220,184,255,0.15)]">
+                Get Started
+            </button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="px-5 pb-3xl pt-xl border-t border-white/5 text-center bg-[#0A0A0B]">
+<div class="flex justify-center space-x-md mb-md">
+<a class="font-body-md text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Terms</a>
+<span class="text-on-surface-variant text-caption">•</span>
+<a class="font-body-md text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy</a>
+<span class="text-on-surface-variant text-caption">•</span>
+<a class="font-body-md text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Help</a>
+</div>
+<p class="font-body-md text-caption text-on-surface-variant opacity-50">© 2024 Anything Clean. All rights reserved.</p>
+<div class="h-20"></div> <!-- Spacer for sticky CTA -->
+</footer>
+<!-- Note: BottomNavBar is suppressed based on the rule: Linear/Transactional landing pages should not have the global navigation shell. -->
+</body></html>

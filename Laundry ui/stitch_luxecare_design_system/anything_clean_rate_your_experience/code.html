@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rate Your Experience - Lumina</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface": "#131314",
+                      "on-error": "#690005",
+                      "primary": "#dcb8ff",
+                      "tertiary-container": "#646365",
+                      "inverse-primary": "#8422dc",
+                      "on-surface": "#e5e2e3",
+                      "error-container": "#93000a",
+                      "surface-container-high": "#2a2a2b",
+                      "on-secondary-container": "#b9b8ba",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "secondary-container": "#49494b",
+                      "outline-variant": "#4c4354",
+                      "electric-violet": "#8a2be2",
+                      "error": "#ffb4ab",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "secondary-fixed": "#e4e2e4",
+                      "primary-container": "#8a2be2",
+                      "on-primary": "#480081",
+                      "inverse-surface": "#e5e2e3",
+                      "surface-dim": "#131314",
+                      "error-red": "#ffb4ab",
+                      "on-tertiary-container": "#e3e0e2",
+                      "outline": "#988ca0",
+                      "on-tertiary": "#303032",
+                      "on-background": "#e5e2e3",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "on-surface-variant": "#cfc2d7",
+                      "success-green": "#81C784",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "primary-fixed": "#efdbff",
+                      "surface-bright": "#39393a",
+                      "background": "#131314",
+                      "inverse-on-surface": "#313031",
+                      "surface-tint": "#dcb8ff",
+                      "on-secondary-fixed-variant": "#474648",
+                      "surface-variant": "#353436",
+                      "surface-container": "#201f20",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "tertiary": "#c8c6c8",
+                      "on-primary-container": "#eed9ff",
+                      "on-error-container": "#ffdad6",
+                      "success-bg": "#1A3D24",
+                      "on-secondary": "#303032",
+                      "secondary": "#c8c6c8",
+                      "surface-container-low": "#1c1b1c",
+                      "surface-container-highest": "#353436",
+                      "tertiary-fixed": "#e4e2e4",
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-primary-fixed": "#2c0051",
+                      "on-tertiary-fixed": "#1b1b1d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "2xl": "48px",
+                      "md": "16px",
+                      "xs": "4px",
+                      "lg": "24px",
+                      "xl": "32px",
+                      "3xl": "64px",
+                      "sm": "8px"
+              },
+              "fontFamily": {
+                      "caption": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "mono-display": [
+                              "monospace"
+                      ],
+                      "h1": [
+                              "Geist"
+                      ],
+                      "h3": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .star-rating label:hover ~ label span { color: theme('colors.surface-variant'); }
+        .star-rating input:checked ~ label span { color: theme('colors.surface-variant'); }
+        .star-rating label:hover span, .star-rating label:hover ~ label span { color: theme('colors.electric-violet'); }
+        .star-rating input:checked + label span, .star-rating input:checked + label ~ label span { color: theme('colors.electric-violet'); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex items-center justify-center p-md sm:p-xl">
+<!-- Main Container -->
+<main class="w-full max-w-2xl bg-surface-container rounded-xl border border-outline-variant/30 flex flex-col overflow-hidden">
+<!-- Header Section -->
+<div class="p-xl border-b border-outline-variant/30 text-center">
+<h1 class="font-h1 text-h1 text-primary mb-sm">How was your experience?</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto">
+                Your feedback helps us improve and helps other customers choose better.
+            </p>
+</div>
+<!-- Service Summary Card -->
+<div class="p-xl bg-surface-container-low border-b border-outline-variant/30 flex items-center gap-md">
+<div class="w-16 h-16 rounded-lg bg-surface flex items-center justify-center border border-outline-variant/50 shrink-0">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="cleaning_services">cleaning_services</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface mb-xs">Sneaker Deep Clean</h3>
+<p class="font-caption text-caption text-on-surface-variant">Premium Sneaker Clean • CleanX Service Center</p>
+</div>
+</div>
+<!-- Rating Section -->
+<div class="p-xl flex flex-col items-center">
+<div class="flex flex-row-reverse justify-center gap-md mb-lg star-rating w-full max-w-sm">
+<!-- 5 Excellent -->
+<input class="hidden peer/5" id="star5" name="rating" type="radio" value="5"/>
+<label class="cursor-pointer group flex flex-col items-center gap-xs" for="star5">
+<span class="material-symbols-outlined text-5xl text-surface-variant transition-colors group-hover:text-electric-violet" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-caption text-caption text-on-surface-variant opacity-0 group-hover:opacity-100 peer-checked/5:opacity-100 transition-opacity">Excellent</span>
+</label>
+<!-- 4 Good -->
+<input class="hidden peer/4" id="star4" name="rating" type="radio" value="4"/>
+<label class="cursor-pointer group flex flex-col items-center gap-xs" for="star4">
+<span class="material-symbols-outlined text-5xl text-surface-variant transition-colors group-hover:text-electric-violet" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-caption text-caption text-on-surface-variant opacity-0 group-hover:opacity-100 peer-checked/4:opacity-100 transition-opacity">Good</span>
+</label>
+<!-- 3 Okay -->
+<input class="hidden peer/3" id="star3" name="rating" type="radio" value="3"/>
+<label class="cursor-pointer group flex flex-col items-center gap-xs" for="star3">
+<span class="material-symbols-outlined text-5xl text-surface-variant transition-colors group-hover:text-electric-violet" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-caption text-caption text-on-surface-variant opacity-0 group-hover:opacity-100 peer-checked/3:opacity-100 transition-opacity">Okay</span>
+</label>
+<!-- 2 Poor -->
+<input class="hidden peer/2" id="star2" name="rating" type="radio" value="2"/>
+<label class="cursor-pointer group flex flex-col items-center gap-xs" for="star2">
+<span class="material-symbols-outlined text-5xl text-surface-variant transition-colors group-hover:text-electric-violet" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-caption text-caption text-on-surface-variant opacity-0 group-hover:opacity-100 peer-checked/2:opacity-100 transition-opacity">Poor</span>
+</label>
+<!-- 1 Very Poor -->
+<input class="hidden peer/1" id="star1" name="rating" type="radio" value="1"/>
+<label class="cursor-pointer group flex flex-col items-center gap-xs" for="star1">
+<span class="material-symbols-outlined text-5xl text-surface-variant transition-colors group-hover:text-electric-violet" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-caption text-caption text-on-surface-variant opacity-0 group-hover:opacity-100 peer-checked/1:opacity-100 transition-opacity text-center whitespace-nowrap">Very Poor</span>
+</label>
+</div>
+<div class="h-6 font-label-md text-label-md text-electric-violet font-bold mb-xl" id="rating-label-display">
+<!-- Javascript will inject active label here if needed, or rely on CSS above -->
+</div>
+<!-- Action Button -->
+<button class="w-full sm:w-auto min-w-[200px] py-md px-xl bg-surface-variant text-on-surface-variant font-label-md text-label-md font-bold rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed" disabled="" id="continue-btn">
+                Continue
+            </button>
+</div>
+</main>
+<script>
+        const radioButtons = document.querySelectorAll('input[name="rating"]');
+        const continueBtn = document.getElementById('continue-btn');
+
+        radioButtons.forEach(radio => {
+            radio.addEventListener('change', () => {
+                if (document.querySelector('input[name="rating"]:checked')) {
+                    continueBtn.disabled = false;
+                    continueBtn.classList.remove('bg-surface-variant', 'text-on-surface-variant');
+                    continueBtn.classList.add('bg-electric-violet', 'text-white', 'shadow-lg', 'shadow-electric-violet/20', 'hover:bg-primary-container');
+                }
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shoe Care - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .tap-highlight-transparent {
+                -webkit-tap-highlight-color: transparent;
+            }
+            .pb-safe {
+                padding-bottom: env(safe-area-inset-bottom);
+            }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#303032",
+                        "tertiary": "#c8c6c8",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "secondary-fixed": "#e5e1e4",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-secondary-fixed-variant": "#474649",
+                        "error-container": "#93000a",
+                        "on-secondary": "#303032",
+                        "on-background": "#e5e2e3",
+                        "surface": "#131314",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-primary-container": "#eed9ff",
+                        "secondary": "#c8c6c8",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "outline-variant": "#4c4354",
+                        "secondary-container": "#474649",
+                        "tertiary-fixed": "#e4e2e4",
+                        "primary": "#dcb8ff",
+                        "surface-variant": "#353436",
+                        "inverse-surface": "#e5e2e3",
+                        "primary-container": "#8a2be2",
+                        "error": "#ffb4ab",
+                        "surface-container-lowest": "#0e0e0f",
+                        "surface-container-high": "#2a2a2b",
+                        "on-primary-fixed": "#2c0051",
+                        "outline": "#988ca0",
+                        "surface-bright": "#3a393a",
+                        "surface-dim": "#131314",
+                        "on-error": "#690005",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-secondary-container": "#b7b4b7",
+                        "on-surface": "#e5e2e3",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-tint": "#dcb8ff",
+                        "primary-fixed": "#efdbff",
+                        "tertiary-container": "#646365",
+                        "surface-container-highest": "#353436",
+                        "on-primary": "#480081",
+                        "surface-container-low": "#1c1b1c",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "surface-container": "#201f20",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "inverse-primary": "#8422dc",
+                        "on-error-container": "#ffdad6",
+                        "background": "#131314",
+                        "inverse-on-surface": "#313031"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "2xl": "48px",
+                        "3xl": "64px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "caption": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "body-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation (Desktop Only) -->
+<nav class="hidden md:flex bg-surface/80 backdrop-blur-xl fixed top-0 w-full z-50 shadow-sm border-b border-white/5 justify-between items-center px-lg h-16 max-w-[1440px] mx-auto left-0 right-0">
+<div class="flex items-center gap-lg">
+<a class="font-headline-md text-headline-md font-bold text-primary" href="#">Anything Clean</a>
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="bg-surface-container-low border border-outline/20 rounded-full py-2 pl-xl pr-md text-body-md text-on-surface focus:outline-none focus:border-primary w-64 placeholder:text-on-surface-variant transition-colors" placeholder="Search services..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-lg font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors px-3 py-2 rounded-md" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors px-3 py-2 rounded-md" href="#">Providers</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors px-3 py-2 rounded-md" href="#">How it Works</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors px-3 py-2 rounded-md" href="#">Support</a>
+<div class="flex items-center gap-sm ml-md">
+<button aria-label="Notifications" class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors p-2 rounded-full active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button aria-label="Shopping Cart" class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors p-2 rounded-full active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<button class="bg-primary-container text-on-primary-container hover:bg-primary-container/80 transition-colors px-md py-2 rounded-full font-label-md text-label-md ml-sm active:scale-95 transition-transform">
+                    Book Now
+                </button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-0 md:pt-16 pb-24 md:pb-0 max-w-[1280px] mx-auto">
+<!-- Hero Section -->
+<section class="relative w-full h-[614px] min-h-[400px] flex flex-col justify-end p-lg md:p-2xl overflow-hidden rounded-b-3xl mb-2xl">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A macro shot of a premium leather sneaker being meticulously cleaned by a professional wearing black gloves. The lighting is moody and dramatic, focusing on the texture of the leather and the cleaning brush. Dark background with subtle violet and blue rim lighting to emphasize a premium, high-tech care service. Minimalist aesthetic suitable for a luxury brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIMaVvImoO5XoLa3nWt3CqxP7Y_Gwn2aBfslfBAl3h1jYCWWCOeIM_UB4YFCkox8eujdyRTSRAAQO-4mvu0JCa861LDIEvDOij1fbV4sVUg_qyAD9raZGkc-bVxwhXy0cBNXG0eJTf8YjdeAMjOmfG6bIy4y5MwRYVsyqOYS6Q-OcE99_dnpZDSJ8kakhrYccjLu0QUuh75kiPkmnbc9yJPs4XDe73g14nvbMO6n7gknQMEyKYCOIcOA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-2xl">
+<div class="inline-flex items-center gap-2 bg-surface-container-high/80 backdrop-blur-md px-3 py-1 rounded-full text-caption font-caption text-primary mb-md border border-white/10">
+<span class="material-symbols-outlined text-[16px]" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    Verified Professionals
+                </div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-md">Shoe Care & Restoration</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-xl max-w-xl">
+                    Elevate your footwear with expert cleaning, restoration, and protection services. From everyday sneakers to luxury leather, our specialists bring your shoes back to life.
+                </p>
+<div class="flex flex-wrap gap-md">
+<button class="bg-primary text-on-primary hover:bg-primary/90 transition-colors px-xl py-3 rounded-full font-label-md text-label-md">
+                        Find a Specialist
+                    </button>
+<button class="bg-transparent border border-outline hover:bg-surface-variant/50 transition-colors px-xl py-3 rounded-full font-label-md text-label-md text-on-surface">
+                        View Pricing
+                    </button>
+</div>
+</div>
+</section>
+<!-- Services Grid -->
+<section class="px-md md:px-lg mb-3xl">
+<div class="flex justify-between items-end mb-xl">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-background">Specialized Services</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Tailored care for every material.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Deep Cleaning -->
+<div class="group relative bg-surface-container-low rounded-2xl overflow-hidden border border-white/5 hover:border-primary/30 transition-colors cursor-pointer flex flex-col">
+<div class="aspect-square relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A pair of dirty white canvas sneakers next to a pristine, bright white pair, illustrating a before-and-after deep cleaning effect. Clean, minimalist presentation on a dark gray surface with soft, diffused studio lighting highlighting the restored fabric texture. Professional, high-contrast imagery fitting a premium service platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWyvrXNH6jhPtYyiLA55vFR0k6V7q0T9Bvijl01emLEywLvsIj3pofRc6k621hFX5EUDjq6UMqyjH-3OVI6N9S-FEBVVTAhy5FNzw8bFXtz04qQ0IHemp7lRSC6KOhHy8APxrPlBr1FgfOommiGs6Drnh-a_O-fs1CnlB-xYebdC4uCqXBV3lSp2WAYWdNJmVGDf32MlFvy94ZCFGyCSs8OfaJwffMwsfu2-wbxQtR4DPzGlSigfqw2A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+</div>
+<div class="p-lg flex-grow flex flex-col justify-end absolute bottom-0 w-full bg-gradient-to-t from-surface-container-low via-surface-container-low/90 to-transparent pt-xl">
+<h3 class="font-headline-md text-headline-md text-on-background mb-xs">Deep Cleaning</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md line-clamp-2">Complete internal and external wash removing stubborn stains and odors.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="font-label-md text-label-md text-primary">From $35</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Restoration -->
+<div class="group relative bg-surface-container-low rounded-2xl overflow-hidden border border-white/5 hover:border-primary/30 transition-colors cursor-pointer flex flex-col">
+<div class="aspect-square relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up of a craftsman's hands carefully applying dye to a scuffed brown leather dress shoe using a fine brush. Rich, warm lighting on the leather, contrasting with a sleek, dark background workspace. Focus on precision and artistry, conveying luxury restoration services for high-end footwear." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpztL-ulRBSIIc_4Zmq78yT5vDO48Gr-rpyDaGsOtxxcjs6aA_Hrn4Kvv_tKGG1LQHxgGArW00jw-rEjeXjGpVLuGseFqigePFRKIqIYFJLE5DGQZcog_cVGEJiZ4HyBiHYtd5JKLgFD1JMMbtBkQkQ3c9tbDlgEHopgLgVGNQeOMiCae87t_QOPrFsCA0mWmJf8MNmj07VzkHcdsL8VB6zbeGz-geaaGliKywtIaY7xsPPLvxjbQSAQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+</div>
+<div class="p-lg flex-grow flex flex-col justify-end absolute bottom-0 w-full bg-gradient-to-t from-surface-container-low via-surface-container-low/90 to-transparent pt-xl">
+<h3 class="font-headline-md text-headline-md text-on-background mb-xs">Restoration</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md line-clamp-2">Color correction, sole unyellowing, and structural repairs for vintage pairs.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="font-label-md text-label-md text-primary">From $80</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Sneaker Protect -->
+<div class="group relative bg-surface-container-low rounded-2xl overflow-hidden border border-white/5 hover:border-primary/30 transition-colors cursor-pointer flex flex-col">
+<div class="aspect-square relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A futuristic, sleek image showing a microscopic or stylized water droplet bouncing off the pristine mesh material of a modern athletic sneaker. Dark, moody lighting with neon violet accents suggesting advanced nano-technology protection. Represents premium waterproof and stain-resistant sneaker treatments." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZAifoahlliEca-q3w_10uvDa2zvEOk8jKVLgE7GjV44p4WjIkDwfSTmqUMAp2S1OrXOB8O67s6VnB6EsJhOz9Vxpz4qBXy6GOmfCslwCIM73j3WPbS3p7tMtILhjbP911FQW5rgEDts1wi-ybrL_TF7g3Bs5XDpziBIRuVWyD0A3JM4S7GnyF9VOzH-7bf-rtmBgkyuLmeBjldOGIVGZgtHD1ahyuCsE3E3TGL9yDaEu5ktAd9Cjh6Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+</div>
+<div class="p-lg flex-grow flex flex-col justify-end absolute bottom-0 w-full bg-gradient-to-t from-surface-container-low via-surface-container-low/90 to-transparent pt-xl">
+<h3 class="font-headline-md text-headline-md text-on-background mb-xs">Sneaker Protect</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md line-clamp-2">Nano-coating application for long-lasting water and stain repellency.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="font-label-md text-label-md text-primary">From $20</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Spacer for Bottom Nav on Mobile -->
+<div class="h-24 md:hidden"></div>
+</main>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden bg-surface-container/90 backdrop-blur-lg fixed bottom-0 w-full z-50 rounded-t-xl border-t border-white/10 shadow-[0_-4px_20px_rgba(138,43,226,0.1)] flex justify-around items-center h-20 pb-safe px-md">
+<a class="flex flex-col items-center justify-center text-primary active:bg-primary-container/20 tap-highlight-transparent p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]" data-icon="search" data-weight="fill" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-label-md text-caption">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-primary-container/20 tap-highlight-transparent p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-md text-caption">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-primary-container/20 tap-highlight-transparent p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]" data-icon="chat">chat</span>
+<span class="font-label-md text-caption">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-primary-container/20 tap-highlight-transparent p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]" data-icon="person">person</span>
+<span class="font-label-md text-caption">Profile</span>
+</a>
+</nav>
+</body></html>

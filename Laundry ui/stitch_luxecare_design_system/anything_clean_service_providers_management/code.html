@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumina Control - Provider Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#988ca0",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-secondary-container": "#b9b8ba",
+                        "on-primary-container": "#eed9ff",
+                        "on-tertiary-container": "#e3e0e2",
+                        "surface-dim": "#131314",
+                        "background": "#131314",
+                        "inverse-surface": "#e5e2e3",
+                        "on-surface": "#e5e2e3",
+                        "on-primary-fixed": "#2c0051",
+                        "on-secondary-fixed-variant": "#474648",
+                        "surface-container-highest": "#353436",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-tertiary": "#303032",
+                        "surface-container-high": "#2a2a2b",
+                        "primary": "#dcb8ff",
+                        "surface-container": "#201f20",
+                        "on-surface-variant": "#cfc2d7",
+                        "secondary": "#c8c6c8",
+                        "on-error": "#690005",
+                        "inverse-primary": "#8422dc",
+                        "error-red": "#ffb4ab",
+                        "on-background": "#e5e2e3",
+                        "tertiary-container": "#646365",
+                        "primary-fixed": "#efdbff",
+                        "outline-variant": "#4c4354",
+                        "success-green": "#81C784",
+                        "on-secondary": "#303032",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "tertiary-fixed": "#e4e2e4",
+                        "secondary-fixed": "#e4e2e4",
+                        "primary-container": "#8a2be2",
+                        "surface-container-low": "#1c1b1c",
+                        "error": "#ffb4ab",
+                        "tertiary": "#c8c6c8",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#353436",
+                        "secondary-container": "#49494b",
+                        "error-container": "#93000a",
+                        "surface": "#131314",
+                        "surface-bright": "#39393a",
+                        "electric-violet": "#8a2be2",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-tint": "#dcb8ff",
+                        "on-primary": "#480081",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "inverse-on-surface": "#313031",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "success-bg": "#1A3D24"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "sm": "8px",
+                        "2xl": "48px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "3xl": "64px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Geist"],
+                        "h3": ["Geist"],
+                        "body-md": ["Geist"],
+                        "caption": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "label-md": ["Geist"],
+                        "h1": ["Geist"],
+                        "headline-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Geist', sans-serif; background-color: #131314; color: #e5e2e3; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .icon-fill { font-variation-settings: 'FILL' 1; }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #4c4354; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #646365; }
+    </style>
+</head>
+<body class="bg-background text-on-surface overflow-x-hidden min-h-screen selection:bg-primary/30 selection:text-primary">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-full py-lg px-md w-64 h-screen fixed left-0 top-0 bg-surface-container-low dark:bg-surface-container-low border-r border-outline-variant/30 z-50">
+<div class="mb-xl px-sm">
+<h1 class="font-h1 text-h1 text-electric-violet dark:text-primary flex items-center gap-sm">
+<span class="material-symbols-outlined icon-fill text-[32px]">compare_arrows</span>
+                Lumina Admin
+            </h1>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Service Marketplace</p>
+</div>
+<nav class="flex-1 space-y-1 overflow-y-auto pr-sm">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out group font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out group font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">shopping_cart</span>
+                Orders
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-primary-container/10 text-primary font-bold duration-200 ease-in-out group font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined icon-fill">group</span>
+                Providers
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out group font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">person</span>
+                Customers
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out group font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">verified_user</span>
+                Verification
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out group font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">gavel</span>
+                Disputes
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out group font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">payments</span>
+                Refunds
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out group font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">receipt_long</span>
+                Payments
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out group font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">local_shipping</span>
+                Logistics
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out group font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">leaderboard</span>
+                Analytics
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out group font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">settings</span>
+                Settings
+            </a>
+</nav>
+<div class="mt-auto pt-lg border-t border-outline-variant/30">
+<button class="w-full flex items-center justify-center gap-sm bg-electric-violet hover:bg-primary-container text-white font-label-md text-label-md font-bold py-sm px-md rounded-lg shadow-lg shadow-primary/20 transition-all duration-200">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                New Report
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="md:ml-64 min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="hidden md:flex justify-between items-center px-xl w-full fixed top-0 right-0 left-64 h-16 bg-surface/80 dark:bg-surface/80 backdrop-blur-md z-40 border-b border-outline-variant/30 focus-within:ring-1 focus-within:ring-primary">
+<div class="flex items-center gap-md">
+<h2 class="font-h3 text-h3 text-on-surface">Lumina Control</h2>
+<div class="h-6 w-px bg-outline-variant/50 mx-sm"></div>
+<div class="flex items-center text-on-surface-variant font-caption text-caption gap-xs">
+<span>Admin</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface">Providers</span>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<!-- Search -->
+<div class="relative w-64 group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px] group-focus-within:text-primary">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-full py-1.5 pl-10 pr-4 text-on-surface font-body-md text-body-md placeholder-on-surface-variant/50 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Search providers..." type="text"/>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-sm">
+<button class="p-2 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button class="p-2 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined text-[20px]">help_outline</span>
+</button>
+</div>
+<!-- Profile -->
+<button class="flex items-center gap-sm pl-sm py-1 pr-1 rounded-full border border-outline-variant/30 hover:border-outline-variant transition-colors">
+<span class="font-label-md text-label-md text-on-surface hidden lg:block">Admin Profile</span>
+<img alt="Admin User Avatar" class="w-8 h-8 rounded-full object-cover border border-outline-variant/50" data-alt="A macro shot of a sleek, minimalist geometric metallic sphere resting on a dark matte surface, studio lighting with a subtle purple accent light reflecting off the chrome, high-end corporate technology aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmDreAWO4BCrmSc2ga-7ROZwIcfhgLIetEXu7ogoQKdOMOfrqAHTwIr639NK_XmYls0B1YNmCIy3siOYT_mzydxSuoorTjfF1hnonAfKS52BU1NT38WisQvgzwB2A2gpiG3Un0e8nuWe2dVUxRC6HKxw66VjgtQ7YI5epI68qCD-h8-GuO7sNPRKkmSGPNKToPQFqjk20jPngyMDRjWM1R4XsGf0X8Z32gRSX-A4WNCzmysMsK_SBzxA"/>
+</button>
+</div>
+</header>
+<!-- Page Content -->
+<div class="flex-1 p-md md:p-xl mt-16 max-w-[1400px] w-full mx-auto overflow-x-hidden">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-md mb-lg">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Provider Directory</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Manage, review, and analyze service providers across the network.</p>
+</div>
+<div class="flex gap-sm w-full md:w-auto">
+<button class="flex-1 md:flex-none flex items-center justify-center gap-xs px-md py-2 bg-surface-container-low border border-outline-variant/50 rounded-lg text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">download</span> Export
+                    </button>
+<button class="flex-1 md:flex-none flex items-center justify-center gap-xs px-md py-2 bg-electric-violet text-white rounded-lg hover:bg-primary-container transition-colors font-label-md text-label-md shadow-lg shadow-primary/20 font-bold">
+<span class="material-symbols-outlined text-[18px]">add</span> Add Provider
+                    </button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

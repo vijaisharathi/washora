@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Booking Location &amp; Fulfillment - Lumina Care</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface-variant": "#cfc2d7",
+                        "error-red": "#ffb4ab",
+                        "success-bg": "#1A3D24",
+                        "primary-container": "#8a2be2",
+                        "on-background": "#e5e2e3",
+                        "secondary-container": "#49494b",
+                        "error-container": "#93000a",
+                        "surface-bright": "#39393a",
+                        "error": "#ffb4ab",
+                        "surface-container-high": "#2a2a2b",
+                        "surface-container-low": "#1c1b1c",
+                        "on-secondary-fixed-variant": "#474648",
+                        "tertiary-fixed": "#e4e2e4",
+                        "inverse-on-surface": "#313031",
+                        "inverse-primary": "#8422dc",
+                        "primary-fixed": "#efdbff",
+                        "background": "#131314",
+                        "surface-variant": "#353436",
+                        "surface-tint": "#dcb8ff",
+                        "on-tertiary": "#303032",
+                        "primary": "#dcb8ff",
+                        "tertiary": "#c8c6c8",
+                        "on-secondary-container": "#b9b8ba",
+                        "on-primary-container": "#eed9ff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-container": "#201f20",
+                        "outline-variant": "#4c4354",
+                        "tertiary-container": "#646365",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-primary": "#480081",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-secondary": "#303032",
+                        "on-surface": "#e5e2e3",
+                        "electric-violet": "#8a2be2",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "surface-dim": "#131314",
+                        "secondary": "#c8c6c8",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface-container-highest": "#353436",
+                        "surface": "#131314",
+                        "secondary-fixed": "#e4e2e4",
+                        "outline": "#988ca0",
+                        "on-primary-fixed": "#2c0051",
+                        "inverse-surface": "#e5e2e3",
+                        "success-green": "#81C784"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        xl: "32px",
+                        lg: "24px",
+                        "2xl": "48px",
+                        sm: "8px",
+                        "3xl": "64px",
+                        xs: "4px",
+                        md: "16px"
+                    },
+                    fontFamily: {
+                        "label-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "h1": ["Geist"],
+                        "h3": ["Geist"],
+                        caption: ["Geist"],
+                        "display-lg": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "body-md": ["Geist"]
+                    },
+                    fontSize: {
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "h1": ["28px", { lineHeight: "36px", fontWeight: "700" }],
+                        "h3": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+                        caption: ["12px", { lineHeight: "16px", fontWeight: "400" }],
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "mono-display": ["18px", { letterSpacing: "0.05em", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }]
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- Top Navigation (Hidden on transactional flow, kept shell minimal as per guidelines if rendered, but suppressed here to prioritize canvas) -->
+<!-- Suppressed navigation shell for focused linear/transactional flow (Step 2 of 4) -->
+<main class="flex-grow flex items-center justify-center p-md md:p-xl">
+<div class="max-w-[800px] w-full mx-auto space-y-xl">
+<!-- Header & Progress -->
+<div class="space-y-md text-center">
+<div class="flex items-center justify-center space-x-sm">
+<span class="w-12 h-1 bg-surface-variant rounded-full"></span>
+<span class="w-12 h-1 bg-primary rounded-full"></span>
+<span class="w-12 h-1 bg-surface-variant rounded-full"></span>
+<span class="w-12 h-1 bg-surface-variant rounded-full"></span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">Step 2 of 4 (Location)</p>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Where should we pick it up?</h1>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Main Form Area -->
+<div class="md:col-span-2 space-y-lg">
+<!-- Fulfillment Options -->
+<div class="bg-surface-container rounded-lg p-lg border border-outline-variant/20 space-y-md">
+<h3 class="font-h3 text-h3 text-on-surface">Fulfillment Options</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+<!-- Pickup & Delivery (Selected) -->
+<div class="relative bg-primary/10 border-2 border-primary rounded-lg p-md cursor-pointer hover:bg-primary/20 transition-colors">
+<div class="absolute top-md right-md">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="space-y-sm pr-lg">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="local_shipping">local_shipping</span>
+<h4 class="font-label-md text-label-md text-on-surface">Pickup &amp; Delivery</h4>
+<p class="font-caption text-caption text-on-surface-variant">We'll collect your items and return them after service.</p>
+</div>
+</div>
+<!-- Drop-off (Available) -->
+<div class="relative bg-surface-container-low border border-outline-variant/50 rounded-lg p-md cursor-pointer hover:bg-surface-container-highest transition-colors">
+<div class="space-y-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-2xl" data-icon="storefront">storefront</span>
+<h4 class="font-label-md text-label-md text-on-surface">Drop-off</h4>
+<p class="font-caption text-caption text-on-surface-variant">Drop your items at the nearest service center.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Address Section -->
+<div class="bg-surface-container rounded-lg p-lg border border-outline-variant/20 space-y-md">
+<div class="flex justify-between items-center">
+<h3 class="font-h3 text-h3 text-on-surface">Pickup Address</h3>
+<button class="font-label-md text-label-md text-primary hover:text-primary-fixed transition-colors">Change</button>
+</div>
+<div class="bg-surface-container-low p-md rounded-md border border-outline-variant/30 flex items-start space-x-md">
+<span class="material-symbols-outlined text-on-surface-variant mt-xs" data-icon="home">home</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Home</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Anna Nagar, Chennai</p>
+</div>
+</div>
+<div class="pt-md border-t border-outline-variant/30 flex items-center justify-between">
+<label class="font-body-md text-body-md text-on-surface cursor-pointer flex items-center space-x-sm">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="local_shipping">local_shipping</span>
+<span>Delivery Address</span>
+</label>
+<!-- Toggle -->
+<div class="flex items-center space-x-sm">
+<span class="font-caption text-caption text-on-surface-variant">Same as Pickup</span>
+<button aria-checked="true" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-electric-violet transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background" role="switch" type="button">
+<span aria-hidden="true" class="pointer-events-none inline-block h-5 w-5 translate-x-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Order Summary Sidebar -->
+<div class="md:col-span-1">
+<div class="bg-surface-container rounded-lg p-lg border border-outline-variant/20 space-y-md sticky top-xl">
+<h3 class="font-h3 text-h3 text-on-surface border-b border-outline-variant/30 pb-sm">Order Summary</h3>
+<div class="space-y-sm">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label-md text-label-md text-on-surface">Sneaker Deep Clean</p>
+<p class="font-caption text-caption text-on-surface-variant">Premium</p>
+</div>
+</div>
+<div class="flex items-center space-x-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="storefront">storefront</span>
+<span class="font-caption text-caption">CleanX Service Center</span>
+</div>
+</div>
+<div class="border-t border-outline-variant/30 pt-md mt-md flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface">Total</span>
+<span class="font-h3 text-h3 text-on-surface">₹449</span>
+</div>
+<button class="w-full bg-electric-violet text-white font-label-md text-label-md py-sm px-md rounded-lg shadow-lg shadow-electric-violet/20 hover:bg-primary-container transition-colors mt-lg">
+                            Continue
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

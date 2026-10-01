@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Arun - Lumina Partner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-container": "#eed9ff",
+                      "error-container": "#93000a",
+                      "on-tertiary-container": "#e3e0e2",
+                      "surface-container": "#201f20",
+                      "error-red": "#ffb4ab",
+                      "secondary": "#c8c6c8",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "surface-container-high": "#2a2a2b",
+                      "secondary-fixed": "#e4e2e4",
+                      "tertiary-fixed": "#e4e2e4",
+                      "error": "#ffb4ab",
+                      "primary-fixed": "#efdbff",
+                      "outline": "#988ca0",
+                      "surface-dim": "#131314",
+                      "success-green": "#81C784",
+                      "inverse-primary": "#8422dc",
+                      "inverse-surface": "#e5e2e3",
+                      "secondary-container": "#49494b",
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-primary": "#480081",
+                      "inverse-on-surface": "#313031",
+                      "background": "#131314",
+                      "on-background": "#e5e2e3",
+                      "surface-bright": "#39393a",
+                      "surface-container-highest": "#353436",
+                      "on-secondary-container": "#b9b8ba",
+                      "success-bg": "#1A3D24",
+                      "on-surface": "#e5e2e3",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "on-primary-fixed": "#2c0051",
+                      "surface-container-low": "#1c1b1c",
+                      "on-secondary-fixed-variant": "#474648",
+                      "on-error": "#690005",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "surface": "#131314",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "tertiary-container": "#646365",
+                      "surface-tint": "#dcb8ff",
+                      "on-tertiary": "#303032",
+                      "surface-variant": "#353436",
+                      "tertiary": "#c8c6c8",
+                      "electric-violet": "#8a2be2",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "outline-variant": "#4c4354",
+                      "on-error-container": "#ffdad6",
+                      "primary": "#dcb8ff",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "on-surface-variant": "#cfc2d7",
+                      "on-secondary": "#303032",
+                      "primary-container": "#8a2be2"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "32px",
+                      "xs": "4px",
+                      "sm": "8px",
+                      "lg": "24px",
+                      "md": "16px",
+                      "2xl": "48px",
+                      "3xl": "64px"
+              },
+              "fontFamily": {
+                      "h1": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "mono-display": [
+                              "monospace"
+                      ],
+                      "h3": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+            },
+          },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex items-end justify-center sm:items-center relative">
+<!-- Background dimming overlay -->
+<div class="fixed inset-0 bg-background/80 backdrop-blur-sm z-40"></div>
+<!-- Bottom Sheet Container (Mobile 390px targeted) -->
+<div class="relative w-full max-w-[390px] bg-surface-container rounded-t-[24px] sm:rounded-[24px] z-50 flex flex-col shadow-2xl border border-outline-variant/20 overflow-hidden transform transition-transform duration-300 translate-y-0">
+<!-- Drag Handle -->
+<div class="w-full flex justify-center py-sm">
+<div class="w-12 h-1.5 bg-outline-variant rounded-full"></div>
+</div>
+<!-- Header -->
+<div class="px-lg pb-md flex items-center gap-md border-b border-outline-variant/30">
+<div class="w-12 h-12 rounded-full overflow-hidden shrink-0 border border-outline-variant/30 relative">
+<img alt="Arun" class="w-full h-full object-cover" data-alt="A close-up portrait of Arun, a professional delivery customer, in a softly lit modern apartment setting. Dark tech lumina aesthetic with deep shadows and subtle electric violet rim lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmNv4gNeptqUVozZHySdbtHFgadnF7FFGRPsmqSJfcR45L-f55P8kWiZQT3szjstxTDZi75dYD3ODRIDc7ZmN1Z4yRhv8Hx1BlnOnFT2Kx0zjx_ja6wtPNPLDJGU5K5ocT2gbVxF3HJl-YdtCV9W5_K4qwoq6G6joYdufUuBzvHC97ORhjtq-JXbMsvrm4P3496YLMja4B3hWW1ToHLeQk7rdgfA1lb9acqO5H9iZ7J0Jp_z-cC6bNfQ"/>
+</div>
+<div>
+<h2 class="font-h3 text-h3 text-on-surface">Contact Arun</h2>
+<p class="font-caption text-caption text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+                    Masked Call Active
+                </p>
+</div>
+</div>
+<!-- Action Grid -->
+<div class="p-lg grid grid-cols-2 gap-md">
+<button class="flex flex-col items-center justify-center gap-sm p-md rounded-xl bg-surface-container-high border border-outline-variant/30 hover:bg-surface-variant transition-colors active:scale-95 group">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">call</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Call</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-sm p-md rounded-xl bg-surface-container-high border border-outline-variant/30 hover:bg-surface-variant transition-colors active:scale-95 group">
+<div class="w-12 h-12 rounded-full bg-electric-violet flex items-center justify-center text-white shadow-lg shadow-primary/20 group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Message</span>
+</button>
+</div>
+<!-- Message Shortcuts -->
+<div class="px-lg pb-lg">
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-md">Quick Messages</h3>
+<div class="flex flex-col gap-sm">
+<button class="text-left w-full px-md py-sm rounded-lg bg-surface-container-low border border-outline-variant/50 font-body-md text-body-md text-on-surface hover:border-primary hover:bg-surface-container transition-colors focus:outline-none focus:ring-1 focus:ring-primary flex items-center justify-between group">
+                    I’m on my way.
+                    <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[20px]">send</span>
+</button>
+<button class="text-left w-full px-md py-sm rounded-lg bg-surface-container-low border border-outline-variant/50 font-body-md text-body-md text-on-surface hover:border-primary hover:bg-surface-container transition-colors focus:outline-none focus:ring-1 focus:ring-primary flex items-center justify-between group">
+                    I’ve arrived.
+                    <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[20px]">send</span>
+</button>
+<button class="text-left w-full px-md py-sm rounded-lg bg-surface-container-low border border-outline-variant/50 font-body-md text-body-md text-on-surface hover:border-primary hover:bg-surface-container transition-colors focus:outline-none focus:ring-1 focus:ring-primary flex items-center justify-between group">
+                    I’m unable to locate the address.
+                    <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[20px]">send</span>
+</button>
+<button class="text-left w-full px-md py-sm rounded-lg bg-surface-container-low border border-outline-variant/50 font-body-md text-body-md text-on-surface hover:border-primary hover:bg-surface-container transition-colors focus:outline-none focus:ring-1 focus:ring-primary flex items-center justify-between group">
+                    I need help with this delivery.
+                    <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[20px]">send</span>
+</button>
+</div>
+</div>
+<!-- Privacy Footer -->
+<div class="px-lg py-md bg-surface-container-low border-t border-outline-variant/30 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">lock</span>
+<p class="font-caption text-caption text-on-surface-variant text-center">Your phone number is masked for security.</p>
+</div>
+</div>
+</body></html>

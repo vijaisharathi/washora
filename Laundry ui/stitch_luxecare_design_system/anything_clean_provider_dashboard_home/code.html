@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CleanX Provider Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary": "#480081",
+                      "primary-fixed": "#efdbff",
+                      "surface-container-low": "#1c1b1c",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "on-tertiary": "#303032",
+                      "success-bg": "#1A3D24",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "error-container": "#93000a",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "outline-variant": "#4c4354",
+                      "tertiary-container": "#646365",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "on-surface": "#e5e2e3",
+                      "on-secondary": "#303032",
+                      "success-green": "#81C784",
+                      "surface-container": "#201f20",
+                      "outline": "#988ca0",
+                      "error": "#ffb4ab",
+                      "surface-container-lowest": "#0e0e0f",
+                      "background": "#131314",
+                      "surface-variant": "#353436",
+                      "tertiary": "#c8c6c8",
+                      "inverse-primary": "#8422dc",
+                      "secondary-fixed": "#e4e2e4",
+                      "surface-container-high": "#2a2a2b",
+                      "inverse-surface": "#e5e2e3",
+                      "surface": "#131314",
+                      "primary-container": "#8a2be2",
+                      "on-error": "#690005",
+                      "surface-bright": "#39393a",
+                      "on-secondary-fixed-variant": "#474648",
+                      "error-red": "#ffb4ab",
+                      "surface-tint": "#dcb8ff",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "on-background": "#e5e2e3",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "electric-violet": "#8a2be2",
+                      "secondary-container": "#49494b",
+                      "on-surface-variant": "#cfc2d7",
+                      "on-primary-fixed": "#2c0051",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-fixed": "#e4e2e4",
+                      "primary": "#dcb8ff",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "on-secondary-container": "#b9b8ba",
+                      "surface-container-highest": "#353436",
+                      "surface-dim": "#131314",
+                      "secondary": "#c8c6c8",
+                      "on-tertiary-container": "#e3e0e2",
+                      "on-primary-container": "#eed9ff",
+                      "inverse-on-surface": "#313031"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xs": "4px",
+                      "3xl": "64px",
+                      "md": "16px",
+                      "lg": "24px",
+                      "sm": "8px",
+                      "2xl": "48px",
+                      "xl": "32px"
+              },
+              "fontFamily": {
+                      "mono-display": [
+                              "monospace"
+                      ],
+                      "h1": [
+                              "Geist"
+                      ],
+                      "h3": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-electric-violet selection:text-white">
+<!-- TopNavBar -->
+<header class="bg-background/80 backdrop-blur-md fixed top-0 right-0 w-[calc(100%-256px)] z-50 flex justify-between items-center px-xl py-md max-w-[1200px] ml-auto border-b border-outline-variant/30">
+<div class="flex items-center gap-md">
+<h1 class="font-mono-display text-mono-display text-electric-violet">Anything Clean</h1>
+</div>
+<div class="flex items-center gap-lg">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="bg-surface-container-low border border-outline-variant/50 rounded-lg pl-xl pr-md py-sm text-on-surface focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none w-64 placeholder:text-on-surface-variant font-body-md text-body-md transition-colors" placeholder="Search orders..." type="text"/>
+</div>
+<div class="flex items-center gap-sm">
+<button aria-label="notifications" class="p-sm rounded-full text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-sm right-sm w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button aria-label="help" class="p-sm rounded-full text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="ml-sm rounded-full overflow-hidden border-2 border-outline-variant/30 hover:border-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background">
+<img alt="Service Provider Profile" class="w-8 h-8 object-cover" data-alt="A macro photography shot of a sleek, abstract geometric sphere with a glossy, dark metallic finish, reflecting a faint electric violet light in a minimalist studio setting. The image is highly detailed, evoking a sense of premium technology and precision engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsAXMsYyRLNm2Lre8FqewNQjZ_CyLnAw7PNZ1BlSoGCDFjlDEv7zuY1GlOoPjan81Fj5CgmMOzwy9sA010eRpJPlIW6VLvq4YdtEdXiKc8X1G4w2tzAzGTFkBzg5hk6c9D47G6Qbe7ZNOKvZYTO24wIenfUX6xSEJC4wkQo4kzIhMWgTGWWbmtWZXLST8em0aSsrhzVokeYCVySgYJX-VcQQfe8lNW3aJZlRmvvqEDkCG6fuc3O-rKdw"/>
+</button>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="bg-surface-container-low dark:bg-surface-container-low fixed left-0 top-0 h-full w-[256px] border-r border-outline-variant/30 flex flex-col h-full py-lg px-md z-40">
+<div class="mb-xl px-sm flex flex-col gap-xs">
+<h2 class="font-mono-display text-mono-display text-electric-violet truncate" title="Anything Clean">Anything Clean</h2>
+<p class="font-caption text-caption text-on-surface-variant">Provider Dashboard</p>
+</div>
+<div class="flex-1 overflow-y-auto flex flex-col gap-xs">
+<a class="bg-primary/10 text-primary font-bold hover:bg-surface-container hover:text-on-surface transition-colors duration-200 flex items-center gap-md px-md py-sm rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-200 flex items-center gap-md px-md py-sm rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:scale-95 transition-transform" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-md text-label-md">Schedule</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-200 flex items-center gap-md px-md py-sm rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:scale-95 transition-transform" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md">Earnings</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-200 flex items-center gap-md px-md py-sm rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:scale-95 transition-transform" data-icon="cleaning_services">cleaning_services</span>
+<span class="font-label-md text-label-md">Services</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-200 flex items-center gap-md px-md py-sm rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:scale-95 transition-transform" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+</div>
+<div class="mt-auto flex flex-col gap-md">
+<button class="w-full bg-electric-violet text-white font-label-md text-label-md font-bold py-sm px-md rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-container transition-colors flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="support_agent">support_agent</span>
+                Support
+            </button>
+<div class="flex flex-col gap-xs pt-md border-t border-outline-variant/30">
+<a class="text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-200 flex items-center gap-md px-md py-sm rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-200 flex items-center gap-md px-md py-sm rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="ml-[256px] pt-[72px] min-h-screen p-xl max-w-[1200px] mx-auto">
+<!-- Welcome Header -->
+<div class="flex justify-between items-end mb-xl pb-md border-b border-outline-variant/30">
+<div>
+<h1 class="font-h1 text-h1 text-on-surface mb-xs">Good morning, Arun</h1>
+<div class="flex items-center gap-sm">
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded-full bg-success-bg/20 border border-success-green/30 text-success-green font-caption text-caption uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified" data-weight="fill">verified</span>
+                        Verified Partner
+                    </span>
+<span class="font-label-md text-label-md text-on-surface-variant">September 2, 2026</span>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="flex gap-md">
+<button aria-label="New Orders" class="p-sm bg-surface-container border border-outline-variant rounded-lg hover:border-primary text-on-surface transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+</button>
+<button aria-label="Schedule" class="p-sm bg-surface-container border border-outline-variant rounded-lg hover:border-primary text-on-surface transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+</button>
+<button aria-label="Earnings" class="p-sm bg-surface-container border border-outline-variant rounded-lg hover:border-primary text-on-surface transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+</button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- KPIs (Spans 8 cols) -->
+<div class="md:col-span-8 grid grid-cols-2 lg:grid-cols-4 gap-md">
+<div class="bg-surface-container rounded-xl p-md border border-outline-variant/20 flex flex-col justify-between">
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">Today's Orders</span>
+<span class="font-headline-lg text-headline-lg text-on-surface mt-sm">12</span>
+</div>
+<div class="bg-surface-container rounded-xl p-md border border-outline-variant/20 flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute inset-0 bg-error-container/10 border-b-2 border-error-red opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider relative z-10 flex items-center gap-xs">
+<span class="material-symbols-outlined text-error-red text-[16px]" data-icon="warning">warning</span>
+                        Pending Action
+                    </span>
+<span class="font-headline-lg text-headline-lg text-error-red mt-sm relative z-10">4</span>
+</div>
+<div class="bg-surface-container rounded-xl p-md border border-outline-variant/20 flex flex-col justify-between">
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">In Progress</span>
+<span class="font-headline-lg text-headline-lg text-electric-violet mt-sm">6</span>
+</div>
+<div class="bg-surface-container rounded-xl p-md border border-outline-variant/20 flex flex-col justify-between">
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">Completed</span>
+<span class="font-headline-lg text-headline-lg text-success-green mt-sm">8</span>
+</div>
+</div>
+<!-- Earnings (Spans 4 cols) -->
+<div class="md:col-span-4 bg-surface-container-low rounded-xl p-lg border border-outline-variant/30 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[80px] text-electric-violet" data-icon="payments">payments</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface mb-xs">Today's Earnings</h3>
+<p class="font-caption text-caption text-on-surface-variant">From completed orders</p>
+</div>
+<div class="mt-md mb-lg">
+<span class="font-display-lg text-display-lg text-primary">₹4,850</span>
+</div>
+<button class="w-full py-sm px-md rounded-lg border border-outline-variant bg-transparent text-on-surface font-label-md text-label-md hover:bg-surface-container hover:border-primary transition-colors flex items-center justify-center gap-sm">
+                    View Earnings
+                    <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Action Required (Spans 12 cols) -->
+<div class="md:col-span-12 bg-error-container/5 border border-error-red/20 rounded-xl p-md flex items-center justify-between">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-error-container/20 flex items-center justify-center text-error-red">
+<span class="material-symbols-outlined" data-icon="assignment_late">assignment_late</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold text-on-surface">4 bookings need attention</h4>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">2 new • 1 pickup pending • 1 ready for delivery</p>
+</div>
+</div>
+<button class="px-md py-sm bg-surface-container border border-outline-variant rounded-lg font-label-md text-label-md hover:border-primary transition-colors text-on-surface">
+                    Review Actions
+                </button>
+</div>
+<!-- Orders List (Spans 8 cols) -->
+<div class="md:col-span-8 bg-surface-container rounded-xl border border-outline-variant/20 flex flex-col">
+<div class="p-md border-b border-outline-variant/20 flex justify-between items-center">
+<h3 class="font-h3 text-h3 text-on-surface">Today's Orders</h3>
+<button class="font-label-md text-label-md text-electric-violet hover:text-primary transition-colors">View All</button>
+</div>
+<div class="flex flex-col">
+<!-- Order Item 1 -->
+<div class="p-md border-b border-outline-variant/20 flex items-center justify-between hover:bg-surface-container-high transition-colors group cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-2 bg-success-green h-12 rounded-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
+<div>
+<div class="flex items-center gap-sm mb-xs">
+<span class="font-mono-display text-mono-display text-on-surface text-[14px]">QH-20260901-1024</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-success-bg text-success-green font-caption text-caption uppercase tracking-wide text-[10px]">
+                                        Ready for Delivery
+                                    </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-[14px]">Standard Cleaning • 2.5 hrs</p>
+</div>
+</div>
+<div class="text-right">
+<div class="font-h3 text-h3 text-on-surface">₹502</div>
+<button class="mt-xs font-label-md text-label-md text-electric-violet opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-end gap-xs w-full">
+                                Details <span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Order Item 2 -->
+<div class="p-md flex items-center justify-between hover:bg-surface-container-high transition-colors group cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-2 bg-electric-violet h-12 rounded-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
+<div>
+<div class="flex items-center gap-sm mb-xs">
+<span class="font-mono-display text-mono-display text-on-surface text-[14px]">QH-20260902-1031</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-caption text-caption uppercase tracking-wide text-[10px]">
+                                        In Progress
+                                    </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-[14px]">Deep Clean • 4.0 hrs</p>
+</div>
+</div>
+<div class="text-right">
+<div class="font-h3 text-h3 text-on-surface">--</div>
+<button class="mt-xs font-label-md text-label-md text-electric-violet opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-end gap-xs w-full">
+                                Details <span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Performance Summary (Spans 4 cols) -->
+<div class="md:col-span-4 bg-surface-container-low rounded-xl border border-outline-variant/30 p-lg flex flex-col items-center justify-center text-center">
+<div class="mb-md relative">
+<!-- Conceptual circular progress -->
+<svg class="w-24 h-24 transform -rotate-90" viewbox="0 0 100 100">
+<circle class="stroke-surface-container-high" cx="50" cy="50" fill="none" r="45" stroke-width="8"></circle>
+<circle class="stroke-electric-violet" cx="50" cy="50" fill="none" r="45" stroke-dasharray="282.7" stroke-dashoffset="14" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-h1 text-h1 text-on-surface leading-none">4.9</span>
+<span class="material-symbols-outlined text-primary text-[14px]" data-icon="star" data-weight="fill">star</span>
+</div>
+</div>
+<h3 class="font-label-md text-label-md font-bold text-on-surface mb-xs">Exceptional Performance</h3>
+<p class="font-caption text-caption text-on-surface-variant mb-lg">Top 5% of partners in your region.</p>
+<div class="w-full bg-surface-container rounded-lg p-sm border border-outline-variant/20">
+<span class="font-caption text-caption text-on-surface-variant block mb-xs uppercase tracking-wider">Lifetime Completed</span>
+<span class="font-h3 text-h3 text-on-surface block">1,248</span>
+</div>
+</div>
+</div>
+</main>
+</body></html>

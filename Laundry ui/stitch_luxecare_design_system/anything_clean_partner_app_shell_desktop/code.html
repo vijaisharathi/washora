@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Partner Dashboard - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#131314",
+                        "on-tertiary": "#303032",
+                        "on-secondary-fixed-variant": "#474649",
+                        "surface-variant": "#353436",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-container": "#b7b4b7",
+                        "error-container": "#93000a",
+                        "surface-container-low": "#1c1b1c",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "secondary": "#c8c6c8",
+                        "on-primary-container": "#eed9ff",
+                        "surface-container-high": "#2a2a2b",
+                        "on-surface": "#e5e2e3",
+                        "on-primary": "#480081",
+                        "on-tertiary-container": "#e3e0e2",
+                        "outline": "#988ca0",
+                        "on-primary-fixed": "#2c0051",
+                        "inverse-surface": "#e5e2e3",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "outline-variant": "#4c4354",
+                        "inverse-primary": "#8422dc",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface-container-highest": "#353436",
+                        "tertiary": "#c8c6c8",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "tertiary-container": "#646365",
+                        "secondary-container": "#474649",
+                        "on-surface-variant": "#cfc2d7",
+                        "primary": "#dcb8ff",
+                        "inverse-on-surface": "#313031",
+                        "on-secondary": "#303032",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-container": "#201f20",
+                        "on-background": "#e5e2e3",
+                        "tertiary-fixed": "#e4e2e4",
+                        "surface": "#131314",
+                        "primary-fixed": "#efdbff",
+                        "secondary-fixed": "#e5e1e4",
+                        "surface-tint": "#dcb8ff",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-error": "#690005",
+                        "surface-bright": "#3a393a",
+                        "primary-container": "#8a2be2",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "error": "#ffb4ab",
+                        "background": "#131314"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "2xl": "48px",
+                        "3xl": "64px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "body-md": ["Geist"],
+                        "caption": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex font-body-md overflow-x-hidden">
+<!-- SideNavBar (Desktop Only) -->
+<aside class="bg-surface-container-low h-screen w-64 fixed left-0 top-0 border-r border-white/5 flex flex-col py-lg z-40 hidden md:flex">
+<div class="mb-lg px-md flex items-center justify-between">
+<span class="font-headline-md text-headline-md font-bold text-primary">Anything Clean</span>
+</div>
+<div class="px-md mb-lg">
+<div class="flex items-center gap-sm p-sm rounded-lg bg-surface-variant/50">
+<img alt="Provider Profile" class="w-10 h-10 rounded-full object-cover" data-alt="A professional headshot of a delivery partner in a sleek, dark-themed uniform. The lighting is moody and cinematic, reflecting a high-end service. Subtle neon purple accents in the background hint at the brand identity. The focus is sharp on the face." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIWosHxjBDTN_a7wR3xSEeOeMKDKVBkEtVpl3lmIhrbma3ayo2E3QpegdyDEgaMacJutd7hwm5FhmHu6Vv0juQhyUlLYpd6ETKiGqscj19HlVrrrA3WUs8w1wk3MFDIH13eVzoA_kJ8mJMb_7tNCRCofNU2jDPVfQDdyPlLYDpfcJ1xaTv6bqx1KuHLAfTWmDCR_Yjp16aJoxqk_B1CIzgJHeovb-Uqsq0pxvDVR_Mcy0dINyUN-O_IA"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Pro Dashboard</span>
+<span class="font-caption text-caption text-primary">Elite Partner</span>
+</div>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-xs overflow-y-auto">
+<a class="bg-primary-container text-on-primary-container rounded-lg mx-2 px-md py-sm flex items-center gap-sm transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-weight="fill">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 hover:bg-surface-variant rounded-lg mx-2 px-md py-sm flex items-center gap-sm transition-all duration-200" href="#">
+<span class="material-symbols-outlined">event_note</span>
+<span class="font-label-md text-label-md">Schedule</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 hover:bg-surface-variant rounded-lg mx-2 px-md py-sm flex items-center gap-sm transition-all duration-200" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-label-md">Earnings</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 hover:bg-surface-variant rounded-lg mx-2 px-md py-sm flex items-center gap-sm transition-all duration-200" href="#">
+<span class="material-symbols-outlined">star</span>
+<span class="font-label-md text-label-md">Reviews</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 hover:bg-surface-variant rounded-lg mx-2 px-md py-sm flex items-center gap-sm transition-all duration-200" href="#">
+<span class="material-symbols-outlined">cleaning_services</span>
+<span class="font-label-md text-label-md">Services</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 hover:bg-surface-variant rounded-lg mx-2 px-md py-sm flex items-center gap-sm transition-all duration-200 mt-auto" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+<div class="px-md mt-md flex flex-col gap-xs border-t border-white/5 pt-md">
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-variant rounded-lg px-md py-sm flex items-center gap-sm transition-all duration-200" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-md text-label-md">Help</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-variant rounded-lg px-md py-sm flex items-center gap-sm transition-all duration-200" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+<button class="mt-md w-full bg-primary-container text-on-primary-container hover:bg-primary font-label-md text-label-md py-sm rounded-lg transition-colors flex items-center justify-center gap-xs">
+<div class="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.8)]"></div>
+                Go Online
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 flex flex-col min-h-screen">
+<!-- TopAppBar (Mobile & Desktop variation) -->
+<header class="bg-surface/80 backdrop-blur-xl fixed top-0 w-full md:w-[calc(100%-16rem)] z-30 border-b border-white/5 shadow-sm h-16 flex justify-between items-center px-lg">
+<div class="flex items-center md:hidden">
+<span class="font-headline-md text-headline-md font-bold text-primary">Anything Clean</span>
+</div>
+<div class="hidden md:flex items-center gap-md">
+<h1 class="font-headline-md text-headline-md text-on-surface">Active Delivery Overview</h1>
+<span class="px-sm py-xs bg-primary-container/20 text-primary border border-primary/30 rounded-full font-caption text-caption flex items-center gap-xs">
+<div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+                    Online
+                </span>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors p-sm rounded-full active:scale-95 transition-transform">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-variant border border-white/10 overflow-hidden cursor-pointer md:hidden">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A small circular avatar of a service provider. Dark, premium aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW9rvYsxrXAnFWJvotmO4Wi3HCVJbrSfN38L4bfFsvdKg9iQCJlp5JHshT3dqfFWane7nwamH4vDdQDlUjkcbT8tHypwlWr18ADys_krUIkA_2C_bzBn54Ay0Zx89lGEo-YMUHT3UUFa5s2ZHUr_HicO_QKdND7arKIFA_jAj-Hwwt1oQxhGNH6HMPwiriWCU7nHC7mAmr0Q67rXap8MYY67enrGtXHfD1JmFlqU6Hj7KMRr903VfKgg"/>
+</div>
+</div>
+</header>
+<!-- Canvas -->
+<div class="flex-1 pt-24 pb-24 md:pb-lg px-md md:px-xl max-w-[1440px] mx-auto w-full">
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg h-full">
+<!-- Left Column: Active Order Details -->
+<div class="lg:col-span-8 flex flex-col gap-lg">
+<!-- Persistent Active Delivery Card -->
+<div class="bg-surface-container-low rounded-xl border border-white/5 overflow-hidden flex flex-col h-full relative">
+<!-- Glassmorphic map overlay placeholder -->
+<div class="absolute inset-0 z-0 opacity-20 pointer-events-none" data-alt="A highly stylized, minimalist dark-mode map interface showing a delivery route. The roads are rendered in faint, glowing violet lines against a deep charcoal background. The map style is abstract, high-tech, and luxurious, resembling a high-end logistics dashboard." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC6sEaZ1yEzfe30LAHRHsU6fW06UOhxYwwsCpJq-0_nSWpZytVD9ZQhCp4uHbcCzO24negBFX8P-eP5vXPL1CqzBTw4DIe4VDi3Et_SYj9rFq172WzEUol-z3dy-mRNnljILZAXzjq3HP5OlhtJoF6zteTGoEqoqb3ziucDvXdLxo9vqssNqEcHRlyANazXEFFasJT5F7INUalHl3a6LvU3GICyAg_HH8JAnDE7y_twMkrHeRkMcvTVrA')"></div>
+<div class="p-lg border-b border-white/5 flex justify-between items-start relative z-10 bg-gradient-to-b from-surface-container-low to-transparent">
+<div>
+<div class="flex items-center gap-sm mb-xs">
+<span class="font-label-md text-label-md text-primary">Order #QH1024</span>
+<span class="px-xs py-0.5 bg-yellow-500/10 text-yellow-500 border border-yellow-500/20 rounded font-caption text-caption uppercase tracking-wider">In Progress</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Premium Deep Clean</h2>
+</div>
+<div class="text-right">
+<span class="font-display-lg text-display-lg text-on-surface block">$145.00</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Est. Payout</span>
+</div>
+</div>
+<div class="flex-1 p-lg relative z-10 flex flex-col justify-end">
+<!-- Route Visualizer -->
+<div class="bg-surface/80 backdrop-blur-md border border-white/10 rounded-lg p-md mb-md">
+<div class="flex items-center gap-md">
+<div class="flex flex-col items-center">
+<div class="w-3 h-3 rounded-full border-2 border-primary bg-surface z-10"></div>
+<div class="w-0.5 h-12 bg-surface-variant"></div>
+<div class="w-3 h-3 rounded-full bg-primary shadow-[0_0_10px_rgba(220,184,255,0.5)] z-10"></div>
+</div>
+<div class="flex-1 flex flex-col justify-between h-full py-1">
+<div>
+<p class="font-label-md text-label-md text-on-surface">Current Location</p>
+<p class="font-caption text-caption text-on-surface-variant">Downtown Depot</p>
+</div>
+<div class="mt-auto">
+<p class="font-label-md text-label-md text-primary">Destination</p>
+<p class="font-caption text-caption text-on-surface-variant">420 High St, Apt 4B</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-on-surface block">12 min</span>
+<span class="font-caption text-caption text-on-surface-variant">3.4 miles away</span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="grid grid-cols-2 gap-sm">
+<button class="bg-transparent border border-outline-variant text-on-surface hover:bg-surface-variant font-label-md text-label-md py-md rounded-lg transition-colors flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined">chat</span>
+                                    Contact Client
+                                </button>
+<button class="bg-primary text-on-primary hover:bg-primary-fixed font-label-md text-label-md py-md rounded-lg transition-colors shadow-[0_0_20px_rgba(138,43,226,0.2)] flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined">directions</span>
+                                    Navigate
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: System Status & Next Tasks -->
+<div class="lg:col-span-4 flex flex-col gap-lg">
+<!-- Client Details -->
+<div class="bg-surface-container-low rounded-xl border border-white/5 p-lg">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-md">Client Information</h3>
+<div class="flex items-center gap-md">
+<img alt="Client Avatar" class="w-12 h-12 rounded-lg object-cover" data-alt="A portrait of a smiling client, well-lit in a modern interior setting. The lighting is soft and natural, contrasting slightly with the dark UI theme but maintaining a premium, high-quality feel. Focus is on the subject's face." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6qxONqxhMEe611AeVdLJebq3RbonIOedNkWcjLmbYnQgQcdPKq0nXJnf7iPSNdjf-U7FxsQiy2Tr7-08IbBom7uK_gJ31cDXOmT2Og_ORR77sKpALXUE0Q1shMRX1Bs8jINhUFy0QaL2PFZfPJgy-jiOVowqNcblp4cwsfcDnSiLPhpoM03H50WHI5zZ88oxu5Z6ehYXW-VS6zdE9CrJ8I3geJW9nGH2ueOmPFwmHfrcO6o3HopJmOA"/>
+<div>
+<p class="font-body-lg text-body-lg text-on-surface">Sarah Jenkins</p>
+<div class="flex items-center gap-xs text-yellow-500">
+<span class="material-symbols-outlined text-[16px]" data-weight="fill">star</span>
+<span class="font-label-md text-label-md">4.9 (12 bookings)</span>
+</div>
+</div>
+</div>
+<div class="mt-md pt-md border-t border-white/5">
+<p class="font-caption text-caption text-on-surface-variant mb-xs">Notes from client:</p>
+<p class="font-body-md text-body-md text-on-surface italic bg-surface-variant/30 p-sm rounded border border-white/5">"Please ring the doorbell upon arrival. Dog is friendly but loud."</p>
+</div>
+</div>
+<!-- Upcoming Schedule -->
+<div class="bg-surface-container-low rounded-xl border border-white/5 p-lg flex-1">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Up Next</h3>
+<button class="text-primary hover:text-primary-fixed font-caption text-caption">View All</button>
+</div>
+<div class="flex flex-col gap-sm">
+<div class="p-sm bg-surface-variant/30 rounded-lg border border-transparent hover:border-white/10 transition-colors cursor-pointer">
+<div class="flex justify-between items-start mb-xs">
+<span class="font-label-md text-label-md text-on-surface">Standard Clean</span>
+<span class="font-caption text-caption text-on-surface-variant">2:00 PM</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Order #QH1025 • 1.2 mi</p>
+</div>
+<div class="p-sm bg-surface-variant/30 rounded-lg border border-transparent hover:border-white/10 transition-colors cursor-pointer opacity-70">
+<div class="flex justify-between items-start mb-xs">
+<span class="font-label-md text-label-md text-on-surface">Eco-Friendly Clean</span>
+<span class="font-caption text-caption text-on-surface-variant">4:30 PM</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Order #QH1028 • 5.0 mi</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface-container/90 backdrop-blur-lg fixed bottom-0 w-full z-50 rounded-t-xl border-t border-white/10 shadow-[0_-4px_20px_rgba(138,43,226,0.1)] flex justify-around items-center h-20 pb-safe px-md">
+<a class="flex flex-col items-center justify-center text-on-surface-variant tap-highlight-transparent active:bg-primary-container/20 rounded-lg p-2 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md-mobile mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary tap-highlight-transparent active:bg-primary-container/20 rounded-lg p-2 transition-colors" href="#">
+<span class="material-symbols-outlined" data-weight="fill">local_shipping</span>
+<span class="font-label-md text-label-md-mobile mt-1">Active</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant tap-highlight-transparent active:bg-primary-container/20 rounded-lg p-2 transition-colors" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-label-md-mobile mt-1">Earnings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant tap-highlight-transparent active:bg-primary-container/20 rounded-lg p-2 transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md-mobile mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

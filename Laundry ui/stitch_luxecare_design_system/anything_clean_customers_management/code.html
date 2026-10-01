@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Management - Lumina Control</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#988ca0",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-secondary-container": "#b9b8ba",
+                        "on-primary-container": "#eed9ff",
+                        "on-tertiary-container": "#e3e0e2",
+                        "surface-dim": "#131314",
+                        "background": "#131314",
+                        "inverse-surface": "#e5e2e3",
+                        "on-surface": "#e5e2e3",
+                        "on-primary-fixed": "#2c0051",
+                        "on-secondary-fixed-variant": "#474648",
+                        "surface-container-highest": "#353436",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-tertiary": "#303032",
+                        "surface-container-high": "#2a2a2b",
+                        "primary": "#dcb8ff",
+                        "surface-container": "#201f20",
+                        "on-surface-variant": "#cfc2d7",
+                        "secondary": "#c8c6c8",
+                        "on-error": "#690005",
+                        "inverse-primary": "#8422dc",
+                        "error-red": "#ffb4ab",
+                        "on-background": "#e5e2e3",
+                        "tertiary-container": "#646365",
+                        "primary-fixed": "#efdbff",
+                        "outline-variant": "#4c4354",
+                        "success-green": "#81C784",
+                        "on-secondary": "#303032",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "tertiary-fixed": "#e4e2e4",
+                        "secondary-fixed": "#e4e2e4",
+                        "primary-container": "#8a2be2",
+                        "surface-container-low": "#1c1b1c",
+                        "error": "#ffb4ab",
+                        "tertiary": "#c8c6c8",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#353436",
+                        "secondary-container": "#49494b",
+                        "error-container": "#93000a",
+                        "surface": "#131314",
+                        "surface-bright": "#39393a",
+                        "electric-violet": "#8a2be2",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-tint": "#dcb8ff",
+                        "on-primary": "#480081",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "inverse-on-surface": "#313031",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "success-bg": "#1A3D24"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "sm": "8px",
+                        "2xl": "48px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "3xl": "64px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Geist"],
+                        "h3": ["Geist"],
+                        "body-md": ["Geist"],
+                        "caption": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "label-md": ["Geist"],
+                        "h1": ["Geist"],
+                        "headline-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md h-screen overflow-hidden flex">
+<!-- SideNavBar -->
+<nav class="w-64 h-screen fixed left-0 top-0 bg-surface-container-low dark:bg-surface-container-low border-r border-outline-variant/30 flex flex-col py-lg px-md z-20">
+<div class="mb-xl flex flex-col items-start gap-md px-md">
+<span class="font-h1 text-h1 text-electric-violet dark:text-primary">Lumina Control</span>
+<div class="flex items-center gap-md w-full">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A small, professional portrait of a tech administrator with dark hair, wearing a sleek black turtleneck, shot against a deep purple background with dramatic studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgZ6mUXqTZw3Zj7EEEdJeBeHaKkk9FfOF_JZ3nMlADocEkvhFM2sU6IFBP9A3MZVPqwhkQZbACZzS0EB1Fgm1n06nSaVqIp6VMeH5pBf6iCv6jK9239eEVOsYFn1Ju3lpqNUOaZTSXD5-QbYujKe4RteKNkF2dzWSH1u2dFD4bZmBVuNROyLhaO70DEgKoALvqbXK437n7o0JhE1Gcm86uk18EAn3VcCSDkgpNHKxl2gsMFSm_t3po2w"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Lumina Admin</span>
+<span class="font-caption text-caption text-on-surface-variant">Service Marketplace</span>
+</div>
+</div>
+<button class="w-full bg-electric-violet text-on-primary font-label-md text-label-md py-sm px-md rounded-lg shadow-lg shadow-primary/20 mt-sm hover:opacity-90 transition-opacity">
+                New Report
+            </button>
+</div>
+<div class="flex flex-col gap-sm flex-1 overflow-y-auto">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Providers</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-primary-container/10 text-primary font-bold transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Customers</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+<span class="font-label-md text-label-md">Verification</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+<span class="font-label-md text-label-md">Disputes</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md">Refunds</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-md text-label-md">Payments</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span class="font-label-md text-label-md">Logistics</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+</nav>
+<!-- TopNavBar & Main Content Wrapper -->
+<div class="ml-64 flex-1 flex flex-col h-screen relative">
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 left-64 h-16 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-xl w-[calc(100%-256px)] z-10">
+<span class="font-h3 text-h3 text-on-surface">Lumina Control</span>
+<div class="flex items-center gap-lg">
+<div class="relative focus-within:ring-1 focus-within:ring-primary rounded-lg">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="bg-surface-container-low border border-outline-variant/50 rounded-lg pl-lg pr-sm py-sm font-label-md text-label-md text-on-surface w-64 focus:outline-none focus:border-primary bg-transparent placeholder-on-surface-variant/50" placeholder="Search customer, booking, or email..." type="text"/>
+</div>
+<div class="flex items-center gap-md text-on-surface-variant">
+<button class="hover:text-on-surface transition-all"><span class="material-symbols-outlined" data-icon="notifications">notifications</span></button>
+<button class="hover:text-on-surface transition-all"><span class="material-symbols-outlined" data-icon="help_outline">help_outline</span></button>
+</div>
+<button class="flex items-center gap-sm hover:opacity-80 transition-opacity">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A small, professional portrait of a tech administrator with dark hair, wearing a sleek black turtleneck, shot against a deep purple background with dramatic studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyTds2gVU38mek4piVxmYLMs9A9l_Y3C4doPT7zSvAtmvTqIs8CDgANdu0Di0hI7lA8mZSbK5lMg3xhDsgfY9wIGEvd5YOeK_uhlyOexFFFnxMjXbiqNnAXidJRRrKu-3keqlZ44eIu4xrocJMuNDMLDnhHTFGNvEpe8IpkWH4NHNeDECF8lUAkaPlRWjiHSsZDhzAEoG0t_tOuAlei74igllIXYBMRmFVeZc7v86Ad-_jR6tdnIiwmg"/>
+<span class="font-label-md text-label-md text-electric-violet dark:text-primary">Admin Profile</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto pt-24 px-xl pb-xl">
+<div class="max-w-[1200px] mx-auto flex flex-col gap-xl">
+<!-- Header -->
+<div class="flex justify-between items-end">
+<div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-sm">Customers</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage and review marketplace users.</p>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-lg">
+<!-- Customer List (Left Column) -->
+<div class="col-span-12 lg:col-span-8 flex flex-col gap-md">
+<div class="bg-surface-container border border-outline-variant/30 rounded-xl overflow-hidden flex flex-col">
+<div class="px-lg py-md border-b border-outline-variant/30 flex justify-between items-center bg-surface-container-low">
+<h3 class="font-h3 text-h3 text-on-surface">Directory</h3>
+<button class="flex items-center gap-xs font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span> Filter
+                                </button>
+</div>
+<div class="flex flex-col">
+<!-- Active Row -->
+<div class="px-lg py-md border-b border-outline-variant/30 flex items-center justify-between hover:bg-surface-container-high transition-colors cursor-pointer bg-primary-container/5">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center font-h3 text-h3 text-primary">A</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Arun S.</span>
+<span class="font-caption text-caption text-on-surface-variant font-mono">a***@example.com</span>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md text-on-surface">12 Orders</span>
+<span class="font-caption text-caption text-on-surface-variant">11 Completed, 1 Issue</span>
+</div>
+<span class="px-sm py-xs rounded-full bg-success-bg text-success-green font-caption text-caption uppercase tracking-wider font-bold">Active</span>
+</div>
+</div>
+<!-- Inactive Row -->
+<div class="px-lg py-md border-b border-outline-variant/30 flex items-center justify-between hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center font-h3 text-h3 text-on-surface-variant">B</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Bella R.</span>
+<span class="font-caption text-caption text-on-surface-variant font-mono">b***@example.com</span>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md text-on-surface">5 Orders</span>
+<span class="font-caption text-caption text-on-surface-variant">5 Completed</span>
+</div>
+<span class="px-sm py-xs rounded-full bg-surface-variant text-on-surface-variant font-caption text-caption uppercase tracking-wider font-bold">Idle</span>
+</div>
+</div>
+<!-- Warning Row -->
+<div class="px-lg py-md flex items-center justify-between hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center font-h3 text-h3 text-on-surface-variant">C</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Chris M.</span>
+<span class="font-caption text-caption text-on-surface-variant font-mono">c***@example.com</span>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md text-on-surface">2 Orders</span>
+<span class="font-caption text-caption text-error">2 Disputes</span>
+</div>
+<span class="px-sm py-xs rounded-full bg-error-container/20 text-error font-caption text-caption uppercase tracking-wider font-bold">Review</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Detail View (Right Column) -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-md">
+<div class="bg-surface-container border border-outline-variant/30 rounded-xl p-lg flex flex-col gap-lg sticky top-24">
+<!-- Profile Header -->
+<div class="flex items-center gap-md">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center font-display-lg text-display-lg text-primary border-2 border-primary/20">A</div>
+<div class="flex flex-col">
+<h2 class="font-h1 text-h1 text-on-surface">Arun S.</h2>
+<span class="font-mono-display text-mono-display text-on-surface-variant text-[14px]">ID: CST-8924</span>
+</div>
+</div>
+<div class="h-[1px] w-full bg-outline-variant/30"></div>
+<!-- Metrics Grid -->
+<div class="grid grid-cols-2 gap-sm">
+<div class="bg-surface-container-low rounded-lg p-md border border-outline-variant/20 flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">Total Value</span>
+<span class="font-headline-lg text-headline-lg text-on-surface">$1.2k</span>
+</div>
+<div class="bg-error-container/10 rounded-lg p-md border border-error/20 flex flex-col">
+<span class="font-caption text-caption text-error">Issues</span>
+<span class="font-headline-lg text-headline-lg text-error">1 Open</span>
+</div>
+</div>
+<div class="flex flex-col gap-sm">
+<span class="font-label-md text-label-md text-on-surface font-bold">Account Highlights</span>
+<div class="flex flex-wrap gap-xs">
+<span class="px-sm py-xs bg-surface-container-low border border-outline-variant/30 rounded font-caption text-caption text-on-surface-variant">Joined 2022</span>
+<span class="px-sm py-xs bg-surface-container-low border border-outline-variant/30 rounded font-caption text-caption text-on-surface-variant">Verified Email</span>
+<span class="px-sm py-xs bg-surface-container-low border border-outline-variant/30 rounded font-caption text-caption text-on-surface-variant">3 Reviews Left</span>
+</div>
+</div>
+<div class="h-[1px] w-full bg-outline-variant/30"></div>
+<!-- Actions -->
+<div class="flex flex-col gap-sm">
+<button class="w-full bg-surface-container-low border border-outline-variant text-on-surface font-label-md text-label-md py-sm px-md rounded-lg hover:bg-surface-container-high transition-colors flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="history">history</span> View Orders
+                                </button>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-sm px-md rounded-lg shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity flex items-center justify-center gap-sm font-bold">
+<span class="material-symbols-outlined text-[18px]" data-icon="gavel">gavel</span> Review Issue
+                                </button>
+<button class="w-full border border-error/30 text-error font-label-md text-label-md py-sm px-md rounded-lg hover:bg-error-container/10 transition-colors flex items-center justify-center gap-sm mt-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="block">block</span> Restrict Account
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

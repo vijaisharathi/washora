@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Processing Queue - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#474649",
+                        "inverse-on-surface": "#313031",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "surface-variant": "#353436",
+                        "background": "#131314",
+                        "on-primary-fixed": "#2c0051",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#4c4354",
+                        "surface-container-highest": "#353436",
+                        "secondary-fixed": "#e5e1e4",
+                        "on-primary": "#480081",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "tertiary": "#c8c6c8",
+                        "on-secondary": "#303032",
+                        "surface-dim": "#131314",
+                        "tertiary-container": "#646365",
+                        "surface-container-high": "#2a2a2b",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "primary": "#dcb8ff",
+                        "inverse-surface": "#e5e2e3",
+                        "tertiary-fixed": "#e4e2e4",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-tertiary": "#303032",
+                        "surface-tint": "#dcb8ff",
+                        "secondary-container": "#474649",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface-bright": "#3a393a",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-surface-variant": "#cfc2d7",
+                        "surface": "#131314",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "primary-container": "#8a2be2",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-container": "#201f20",
+                        "primary-fixed": "#efdbff",
+                        "error-container": "#93000a",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-background": "#e5e2e3",
+                        "inverse-primary": "#8422dc",
+                        "on-secondary-container": "#b7b4b7",
+                        "on-surface": "#e5e2e3",
+                        "secondary": "#c8c6c8",
+                        "outline": "#988ca0",
+                        "on-primary-container": "#eed9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "3xl": "64px",
+                        "md": "16px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "caption": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Geist', sans-serif;
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        .kanban-board {
+            display: flex;
+            overflow-x: auto;
+            gap: theme('spacing.md');
+            padding: theme('spacing.lg');
+            height: calc(100vh - 64px); /* Adjust based on top nav height */
+            scroll-snap-type: x mandatory;
+        }
+
+        .kanban-column {
+            flex: 0 0 320px;
+            background-color: theme('colors.surface-container-low');
+            border-radius: theme('borderRadius.xl');
+            display: flex;
+            flex-direction: column;
+            scroll-snap-align: start;
+            border: 1px solid theme('colors.outline-variant');
+        }
+
+        .kanban-column-header {
+            padding: theme('spacing.md');
+            border-bottom: 1px solid theme('colors.outline-variant');
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .kanban-cards {
+            flex: 1;
+            overflow-y: auto;
+            padding: theme('spacing.sm');
+            display: flex;
+            flex-direction: column;
+            gap: theme('spacing.sm');
+        }
+
+        .kanban-card {
+            background-color: theme('colors.surface');
+            border-radius: theme('borderRadius.lg');
+            padding: theme('spacing.md');
+            border: 1px solid theme('colors.outline-variant');
+            cursor: grab;
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+        }
+
+        .kanban-card:hover {
+            border-color: theme('colors.primary');
+            box-shadow: 0 4px 20px rgba(220, 184, 255, 0.05);
+        }
+
+        .kanban-card:active {
+            cursor: grabbing;
+        }
+
+        /* Custom Scrollbar for Kanban Board */
+        .kanban-board::-webkit-scrollbar {
+            height: 8px;
+        }
+        .kanban-board::-webkit-scrollbar-track {
+            background: theme('colors.surface-container-lowest');
+        }
+        .kanban-board::-webkit-scrollbar-thumb {
+            background-color: theme('colors.surface-variant');
+            border-radius: 20px;
+        }
+
+        /* Hide scrollbar for cards container to keep it clean */
+        .kanban-cards::-webkit-scrollbar {
+            width: 4px;
+        }
+        .kanban-cards::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .kanban-cards::-webkit-scrollbar-thumb {
+            background-color: theme('colors.surface-variant');
+            border-radius: 10px;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 2px 8px;
+            border-radius: theme('borderRadius.full');
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .status-urgent {
+            background-color: theme('colors.error-container');
+            color: theme('colors.on-error-container');
+        }
+        
+        .status-normal {
+            background-color: theme('colors.secondary-container');
+            color: theme('colors.on-secondary-container');
+        }
+
+    </style>
+</head>
+<body class="antialiased">
+<!-- TopNav - Assuming this is the Pro Dashboard view based on 'Processing Queue' -->
+<header class="bg-surface/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-white/5 shadow-sm">
+<div class="flex justify-between items-center px-lg h-16 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-bold text-primary">Anything Clean</span>
+<span class="text-on-surface-variant font-body-md hidden md:inline">| Pro Dashboard</span>
+</div>
+<nav class="hidden md:flex gap-6">
+<!-- Highlight 'Dashboard' as active intent for operations -->
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1" href="#">Queue</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors px-2 rounded" href="#">Schedule</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors px-2 rounded" href="#">Providers</a>
+</nav>
+<div class="flex items-center gap-4">
+<button aria-label="notifications" class="text-on-surface-variant hover:text-on-surface active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A macro shot of a sleek, dark-themed smartwatch display focusing on a minimalistic user profile icon, illuminated by soft violet ambient light. The setting is highly technical and precise, reflecting a premium digital interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhMsnkimCDzTciVzgzi-NmBHGcuxILgWPPDFijhxKlKN4wvho00kgkqu2zS3oTs4qqHJY7fBK1nqooAC4_UZkwmpDBWHYNLJYKVVdL_Vid-JaYAndVqtGKNgxsZFe2rDr6RSebzgkHBOKgDsGPm5opZC4RmIdUnKGv32WncCxWcFic9Hrv47i-8Gs8ldHWws3PqZUvd0Y7ehrUrUlYtX51fw-whcMYBcJ69h8s3pEBkzIR6C7UoPnQ2w"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pt-16 max-w-[1440px] mx-auto h-screen flex flex-col">
+<!-- View Header -->
+<div class="px-lg py-md flex justify-between items-end border-b border-white/5 bg-background z-10 shrink-0">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Processing Queue</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Operational view for active orders.</p>
+</div>
+<div class="flex gap-2">
+<button class="bg-surface-variant text-on-surface hover:bg-surface-bright font-label-md px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[18px]">filter_list</span> Filter
+                </button>
+<button class="bg-primary text-on-primary hover:bg-primary-fixed font-label-md px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span> New Order
+                </button>
+</div>
+</div>
+<!-- Kanban Board -->
+<div class="kanban-board">
+<!-- Column 1: RECEIVED -->
+<div class="kanban-column">
+<div class="kanban-column-header">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-on-surface">RECEIVED</span>
+<span class="bg-surface-variant text-on-surface-variant text-[10px] px-2 py-0.5 rounded-full">3</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+<div class="kanban-cards">
+<!-- Card 1 -->
+<div class="kanban-card" draggable="true">
+<div class="flex justify-between items-start mb-2">
+<span class="font-caption text-caption text-on-surface-variant">#ORD-8921</span>
+<span class="status-badge status-urgent">Due in 2h</span>
+</div>
+<h3 class="font-body-md font-semibold text-on-surface mb-1">Sarah Jenkins</h3>
+<p class="font-caption text-on-surface-variant mb-3">3x Silk Blouses, 1x Wool Coat</p>
+<div class="flex items-center justify-between border-t border-outline-variant pt-2 mt-2">
+<span class="font-caption text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">dry_cleaning</span> Premium Dry
+                            </span>
+<div class="flex -space-x-2">
+<img alt="Item" class="w-6 h-6 rounded-full border border-surface object-cover" data-alt="A close up of a luxurious dark silk blouse texture, gently folded. The lighting highlights the subtle sheen of the premium fabric, set against a completely black background. The mood is elegant and high-end." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp5NLgEb0APeL_XIefpu-L3HvGODEcYKLsJoE8VHsrByMHSsIYZc30LdrxBr_by300jM1ia63A5p0IO3noM3pxcYPA91jHG4tQl9boi9HFs82F_vLe1pktd2ESe45irTWFdZXpjf1uUImSOkW2G4HMNEu3VK1jo-NI6oAwUGIo0jamBBejq9jFiILogYYm82aDSwJQqi_EAYzLUIGurq3RCOIG-6VfWLTpzdwNBOFYAwG_WYx2G5Ywuw"/>
+<img alt="Item" class="w-6 h-6 rounded-full border border-surface object-cover" data-alt="A detailed macro texture shot of heavy dark grey wool fabric, typical of a winter coat. The focus is sharp on the weave, with a very shallow depth of field. Soft, cool lighting emphasizes the texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjZNoDE5KfVwIafVUeyn53fuD-pEbPwsQw9li_mfvuWaAn5bveG7RPQZOQlWS7mOCYwdACr6ZxwY-d2aH4aldEOc09uTl3MjcX355yViT6F4zf9YzoQnus8xUdmoDY4uhHaavPl-lr-wol0l2gxhYS1MpVn7AKlPhOhVx7w1TK6V9h-K7uVJCVG1tS9xAQkrryJ7qUU1CFgWkeCZetSCkmmD4WvOuljRCR7noo3ERE5oEgCUGOzeavPQ"/>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="kanban-card" draggable="true">
+<div class="flex justify-between items-start mb-2">
+<span class="font-caption text-caption text-on-surface-variant">#ORD-8924</span>
+<span class="status-badge status-normal">Due Tmrw</span>
+</div>
+<h3 class="font-body-md font-semibold text-on-surface mb-1">Michael Chang</h3>
+<p class="font-caption text-on-surface-variant mb-3">5x Standard Shirts (Wash &amp; Fold)</p>
+<div class="flex items-center justify-between border-t border-outline-variant pt-2 mt-2">
+<span class="font-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">local_laundry_service</span> Wash &amp; Fold
+                            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 2: INSPECTION -->
+<div class="kanban-column">
+<div class="kanban-column-header border-b border-primary/20">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-on-surface">INSPECTION</span>
+<span class="bg-surface-variant text-on-surface-variant text-[10px] px-2 py-0.5 rounded-full">1</span>
+</div>
+</div>
+<div class="kanban-cards">
+<!-- Card 3 -->
+<div class="kanban-card border-l-2 border-l-primary" draggable="true">
+<div class="flex justify-between items-start mb-2">
+<span class="font-caption text-caption text-on-surface-variant">#ORD-8919</span>
+<span class="status-badge status-normal">Due Today</span>
+</div>
+<h3 class="font-body-md font-semibold text-on-surface mb-1">Elena Rodriguez</h3>
+<p class="font-caption text-on-surface-variant mb-3">1x Suede Jacket (Stain Check)</p>
+<div class="bg-surface-container-highest p-2 rounded-md mb-2 flex items-start gap-2">
+<span class="material-symbols-outlined text-[14px] text-error mt-0.5">warning</span>
+<span class="font-caption text-on-surface-variant text-[11px]">Note: Check right sleeve for oil stain before proceeding.</span>
+</div>
+<div class="flex items-center justify-between border-t border-outline-variant pt-2">
+<span class="font-caption text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">cleaning_services</span> Special Care
+                            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 3: CLEANING -->
+<div class="kanban-column opacity-75 hover:opacity-100 transition-opacity">
+<div class="kanban-column-header">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-on-surface">CLEANING</span>
+<span class="bg-surface-variant text-on-surface-variant text-[10px] px-2 py-0.5 rounded-full">0</span>
+</div>
+</div>
+<div class="kanban-cards justify-center items-center h-full">
+<span class="font-caption text-on-surface-variant/50 border border-dashed border-outline-variant/30 rounded-lg p-4 w-full text-center">Drop cards here</span>
+</div>
+</div>
+<!-- Column 4: DRYING -->
+<div class="kanban-column">
+<div class="kanban-column-header">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-on-surface">DRYING</span>
+<span class="bg-surface-variant text-on-surface-variant text-[10px] px-2 py-0.5 rounded-full">2</span>
+</div>
+</div>
+<div class="kanban-cards">
+<!-- Card 4 -->
+<div class="kanban-card" draggable="true">
+<div class="flex justify-between items-start mb-2">
+<span class="font-caption text-caption text-on-surface-variant">#ORD-8910</span>
+<span class="status-badge status-normal">Due Today</span>
+</div>
+<h3 class="font-body-md font-semibold text-on-surface mb-1">David Kim</h3>
+<p class="font-caption text-on-surface-variant mb-3">Bedding Set (Queen)</p>
+<div class="flex items-center gap-2 mb-3">
+<div class="w-full bg-surface-container-highest rounded-full h-1.5">
+<div class="bg-primary h-1.5 rounded-full" style="width: 75%"></div>
+</div>
+<span class="font-caption text-[10px] text-on-surface-variant">45m</span>
+</div>
+<div class="flex items-center justify-between border-t border-outline-variant pt-2">
+<span class="font-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">air</span> Tumble Dry Low
+                            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 5: FINISHING (Ironing/Pressing) -->
+<div class="kanban-column opacity-75 hover:opacity-100 transition-opacity">
+<div class="kanban-column-header">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-on-surface">FINISHING</span>
+<span class="bg-surface-variant text-on-surface-variant text-[10px] px-2 py-0.5 rounded-full">0</span>
+</div>
+</div>
+<div class="kanban-cards justify-center items-center h-full">
+<span class="font-caption text-on-surface-variant/50 border border-dashed border-outline-variant/30 rounded-lg p-4 w-full text-center">Drop cards here</span>
+</div>
+</div>
+<!-- Column 6: QUALITY CHECK -->
+<div class="kanban-column">
+<div class="kanban-column-header">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-on-surface">QUALITY CHECK</span>
+<span class="bg-surface-variant text-on-surface-variant text-[10px] px-2 py-0.5 rounded-full">1</span>
+</div>
+</div>
+<div class="kanban-cards">
+<!-- Card 5 -->
+<div class="kanban-card" draggable="true">
+<div class="flex justify-between items-start mb-2">
+<span class="font-caption text-caption text-on-surface-variant">#ORD-8899</span>
+<span class="status-badge status-urgent">Due in 1h</span>
+</div>
+<h3 class="font-body-md font-semibold text-on-surface mb-1">Corporate Accnt (WeWork)</h3>
+<p class="font-caption text-on-surface-variant mb-3">12x Staff Uniforms</p>
+<div class="flex gap-1 mb-2">
+<button class="flex-1 bg-surface-container-highest hover:bg-surface-bright text-on-surface font-caption py-1 rounded text-[11px] transition-colors border border-outline-variant/50">Fail/Rework</button>
+<button class="flex-1 bg-primary/20 hover:bg-primary/30 text-primary font-caption py-1 rounded text-[11px] transition-colors border border-primary/30">Pass QA</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 7: READY -->
+<div class="kanban-column border-primary/20 bg-surface-container-lowest">
+<div class="kanban-column-header">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-on-surface">READY FOR PICKUP/DELIVERY</span>
+<span class="bg-primary/20 text-primary text-[10px] px-2 py-0.5 rounded-full">12</span>
+</div>
+</div>
+<div class="kanban-cards">
+<!-- Summary Card for Ready Items -->
+<div class="bg-surface-container-highest border border-outline-variant/30 rounded-lg p-md text-center">
+<span class="material-symbols-outlined text-primary text-2xl mb-2">check_circle</span>
+<h4 class="font-body-md text-on-surface mb-1">12 Orders Ready</h4>
+<p class="font-caption text-on-surface-variant mb-3">Awaiting customer action or delivery dispatch.</p>
+<button class="text-primary font-label-md text-[12px] hover:underline">View Ready List</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Simple drag and drop visual logic for demonstration
+        const cards = document.querySelectorAll('.kanban-card');
+        const columns = document.querySelectorAll('.kanban-cards');
+
+        cards.forEach(card => {
+            card.addEventListener('dragstart', () => {
+                card.classList.add('opacity-50');
+                card.classList.add('scale-95');
+            });
+
+            card.addEventListener('dragend', () => {
+                card.classList.remove('opacity-50');
+                card.classList.remove('scale-95');
+            });
+        });
+
+        columns.forEach(column => {
+            column.addEventListener('dragover', e => {
+                e.preventDefault();
+                column.parentElement.classList.add('border-primary');
+            });
+
+            column.addEventListener('dragleave', () => {
+                column.parentElement.classList.remove('border-primary');
+            });
+
+            column.addEventListener('drop', e => {
+                e.preventDefault();
+                column.parentElement.classList.remove('border-primary');
+                // Logic to append card would go here in a real app
+            });
+        });
+    </script>
+</body></html>

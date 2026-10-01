@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Preview Availability - Lumina</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-primary-fixed": "#2c0051",
+                      "surface-container-high": "#2a2a2b",
+                      "on-tertiary-container": "#e3e0e2",
+                      "primary-fixed": "#efdbff",
+                      "error-container": "#93000a",
+                      "surface-container": "#201f20",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "secondary-fixed": "#e4e2e4",
+                      "on-error-container": "#ffdad6",
+                      "on-surface-variant": "#cfc2d7",
+                      "outline-variant": "#4c4354",
+                      "on-secondary-fixed-variant": "#474648",
+                      "primary": "#dcb8ff",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "on-tertiary": "#303032",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "on-primary-container": "#eed9ff",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "background": "#131314",
+                      "electric-violet": "#8a2be2",
+                      "surface-bright": "#39393a",
+                      "error": "#ffb4ab",
+                      "success-bg": "#1A3D24",
+                      "inverse-primary": "#8422dc",
+                      "on-secondary-container": "#b9b8ba",
+                      "on-primary": "#480081",
+                      "success-green": "#81C784",
+                      "surface-container-highest": "#353436",
+                      "inverse-surface": "#e5e2e3",
+                      "on-secondary": "#303032",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "error-red": "#ffb4ab",
+                      "surface-variant": "#353436",
+                      "secondary-container": "#49494b",
+                      "surface-container-low": "#1c1b1c",
+                      "secondary": "#c8c6c8",
+                      "surface": "#131314",
+                      "tertiary-container": "#646365",
+                      "surface-dim": "#131314",
+                      "inverse-on-surface": "#313031",
+                      "outline": "#988ca0",
+                      "surface-tint": "#dcb8ff",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "tertiary": "#c8c6c8",
+                      "primary-container": "#8a2be2",
+                      "on-error": "#690005",
+                      "tertiary-fixed": "#e4e2e4",
+                      "on-background": "#e5e2e3",
+                      "on-surface": "#e5e2e3"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "16px",
+                      "sm": "8px",
+                      "3xl": "64px",
+                      "xs": "4px",
+                      "xl": "32px",
+                      "2xl": "48px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "h3": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "mono-display": [
+                              "monospace"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "h1": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+      </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased h-screen overflow-hidden flex flex-col">
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-256px)] z-50 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center h-16 px-xl bg-surface/80 dark:bg-surface/80">
+<div class="flex items-center">
+<span class="font-h3 text-h3 font-bold text-on-surface">Lumina</span>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant/30">
+<img alt="Provider profile picture" class="w-full h-full object-cover" data-alt="A clean, professional headshot of a business administrator in a modern office setting. Deep midnight aesthetic with subtle electric violet lighting accents highlighting the subject's features. Corporate modern style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp3COiNTqr-10o-y6DViZI6NnrJBv8f52RKkVEFzV144WFPgswyG5OfKdoD6MUaVWD0fcpVK1QM9L4VJhnmQMu7CYHxp7zoJlgky3Q8oakdG-5-2Ghyhx5VoTHiqwywJ3YkHKJ0p9Xyi5PPKLs1wnTRUuEt30IRm8KpzEqHzXku25nG1xi2dQx-4z1Wp4TiIg-mwJ_FYfez6--llxFeAugyPL6qF659eTTR8SYtyjnvX7R03JPMQ0KkA"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-screen w-64 border-r border-outline-variant/30 bg-surface-container-low dark:bg-surface-container-low flex flex-col py-lg px-md z-40">
+<div class="mb-xl flex items-center gap-md px-sm">
+<div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="domain">domain</span>
+</div>
+<div>
+<h2 class="font-label-md text-label-md font-bold text-on-surface">Lumina Admin</h2>
+<p class="font-caption text-caption text-on-surface-variant">Service Management</p>
+</div>
+</div>
+<button class="mb-xl w-full py-md px-md bg-electric-violet text-white font-label-md text-label-md font-bold rounded-lg shadow-lg shadow-primary/20 hover:bg-electric-violet/90 transition-colors flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[18px]">add</span> Add New Service
+        </button>
+<ul class="flex flex-col gap-xs flex-1">
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors duration-200 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span> Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-primary/10 text-primary font-bold transition-colors duration-200 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span> Schedule
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors duration-200 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span> Services
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors duration-200 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span> Earnings
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors duration-200 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span> Analytics
+                </a>
+</li>
+</ul>
+<div class="mt-auto pt-md border-t border-outline-variant/30">
+<ul class="flex flex-col gap-xs">
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span> Settings
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span> Support
+                    </a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="ml-64 mt-16 p-xl flex-1 overflow-y-auto w-[calc(100%-256px)] bg-background">
+<div class="max-w-[1200px] mx-auto">
+<!-- Header -->
+<div class="flex justify-between items-end mb-lg">
+<div>
+<h1 class="font-h1 text-h1 font-bold text-on-surface mb-xs">Preview Availability</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Final check of customer view for "Sneaker Deep Clean"</p>
+</div>
+<div class="flex gap-md">
+<button class="px-lg py-sm rounded-lg border border-outline-variant text-on-surface font-label-md text-label-md font-bold hover:bg-surface-container transition-colors">Edit Schedule</button>
+<button class="px-lg py-sm rounded-lg bg-electric-violet text-white font-label-md text-label-md font-bold shadow-lg shadow-primary/20 hover:bg-electric-violet/90 transition-colors">Save Availability</button>
+</div>
+</div>
+<!-- Bento Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Left Column: Settings Summary -->
+<div class="col-span-1 lg:col-span-5 flex flex-col gap-lg">
+<!-- Service Details Card -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg">
+<h3 class="font-h3 text-h3 text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">dry_cleaning</span>
+                            Service Details
+                        </h3>
+<div class="space-y-md">
+<div class="flex justify-between items-center pb-md border-b border-outline-variant/30">
+<span class="text-on-surface-variant font-label-md text-label-md">Service Name</span>
+<span class="text-on-surface font-label-md text-label-md font-bold">Sneaker Deep Clean</span>
+</div>
+<div class="flex justify-between items-center pb-md border-b border-outline-variant/30">
+<span class="text-on-surface-variant font-label-md text-label-md">Duration</span>
+<span class="text-on-surface font-label-md text-label-md font-bold">2 Hours</span>
+</div>
+<div class="flex justify-between items-center pb-md border-b border-outline-variant/30">
+<span class="text-on-surface-variant font-label-md text-label-md">Location</span>
+<span class="text-on-surface font-label-md text-label-md font-bold flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Anna Nagar
+                                </span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-label-md text-label-md">Active Dates</span>
+<span class="text-on-surface font-label-md text-label-md font-bold">Sep 2 - Sep 9</span>
+</div>
+</div>
+</div>
+<!-- Location Context Card -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg flex flex-col">
+<h3 class="font-label-md text-label-md font-bold text-on-surface mb-md">Location Context</h3>
+<div class="w-full h-32 rounded-lg bg-surface-container-low border border-outline-variant/30 mb-md overflow-hidden relative">
+<img alt="Map preview" class="w-full h-full object-cover opacity-60" data-alt="A stylized, dark mode digital map showing a city grid. The map uses deep midnight blacks and greys with a glowing electric violet pin marker indicating a specific neighborhood. The style is technical, crisp, and aligns with a high-end corporate modern aesthetic." data-location="Anna Nagar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUxbkbZorkpUBzeD--sI5A5VT1UIx25fgQdp1lP0rHsPvThvN63xHA8aRlF0apFAdBLl1ySox-hd_LhPe7KpUmaBCiNJJusTgLJ23ZzZMtf-XX2TnrQf1GFMNp3N4k8V0pMFXvqQ4u9VqlFHMyZ0fhUwQpxHXiDO5DEZWzU-fBALvPstfSOGnRRKtXipRj-f8ljZ6fSXN-lBqXNW7xmMPab-WRkT1b-sEUwqKQlkxGfn4O791k3pCaHQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent"></div>
+</div>
+<div class="flex items-start gap-md bg-surface-container-low p-md rounded-lg border border-outline-variant/30">
+<span class="material-symbols-outlined text-success-green mt-xs">local_shipping</span>
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface">Pickup available in your area</p>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">Customers within 5km of Anna Nagar will see this message.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Mobile Preview Device -->
+<div class="col-span-1 lg:col-span-7 flex justify-center items-center bg-surface-container-low rounded-xl border border-outline-variant/20 p-xl relative overflow-hidden">
+<!-- Subtle background pattern -->
+<div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+<!-- Mobile Frame -->
+<div class="w-[375px] h-[750px] bg-background rounded-[40px] border-[8px] border-surface-bright shadow-2xl relative overflow-hidden flex flex-col z-10">
+<!-- Mobile Header -->
+<div class="px-md pt-lg pb-md flex justify-between items-center bg-surface/80 backdrop-blur-md border-b border-outline-variant/20">
+<span class="material-symbols-outlined text-on-surface">arrow_back</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Book Service</span>
+<span class="material-symbols-outlined text-on-surface opacity-0">arrow_back</span>
+</div>
+<!-- Mobile Content Scrollable -->
+<div class="flex-1 overflow-y-auto p-md space-y-lg">
+<!-- Service Hero -->
+<div>
+<h2 class="font-h3 text-h3 font-bold text-on-surface mb-xs">Sneaker Deep Clean</h2>
+<p class="font-caption text-caption text-on-surface-variant flex items-center gap-xs mb-md">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Anna Nagar
+                                </p>
+<div class="bg-success-bg/20 border border-success-green/30 rounded-lg p-sm flex items-center gap-sm">
+<span class="material-symbols-outlined text-success-green text-[18px]">verified</span>
+<span class="font-caption text-caption text-success-green font-bold">Pickup available in your area</span>
+</div>
+</div>
+<!-- Calendar Selection -->
+<div>
+<h3 class="font-label-md text-label-md font-bold text-on-surface mb-md">Select a Date</h3>
+<!-- Month Header -->
+<div class="flex justify-between items-center mb-md">
+<span class="font-label-md text-label-md font-bold text-on-surface">September 2023</span>
+<div class="flex gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">chevron_left</span>
+<span class="material-symbols-outlined text-on-surface text-[20px]">chevron_right</span>
+</div>
+</div>
+<!-- Days Grid -->
+<div class="grid grid-cols-7 gap-xs mb-sm">
+<div class="text-center font-caption text-caption text-on-surface-variant">S</div>
+<div class="text-center font-caption text-caption text-on-surface-variant">M</div>
+<div class="text-center font-caption text-caption text-on-surface-variant">T</div>
+<div class="text-center font-caption text-caption text-on-surface-variant">W</div>
+<div class="text-center font-caption text-caption text-on-surface-variant">T</div>
+<div class="text-center font-caption text-caption text-on-surface-variant">F</div>
+<div class="text-center font-caption text-caption text-on-surface-variant">S</div>
+</div>
+<div class="grid grid-cols-7 gap-xs">
+<!-- Empty days for alignment -->
+<div></div><div></div><div></div><div></div><div></div>
+<!-- Dates -->
+<div class="aspect-square flex items-center justify-center rounded-full font-label-md text-label-md text-on-surface-variant opacity-30">1</div>
+<div class="aspect-square flex items-center justify-center rounded-full font-label-md text-label-md bg-surface-container border border-outline-variant/30 text-on-surface">2</div>
+<div class="aspect-square flex items-center justify-center rounded-full font-label-md text-label-md bg-surface-container border border-outline-variant/30 text-on-surface">3</div>
+<div class="aspect-square flex items-center justify-center rounded-full font-label-md text-label-md bg-electric-violet text-white font-bold shadow-sm shadow-primary/20">4</div>
+<div class="aspect-square flex items-center justify-center rounded-full font-label-md text-label-md bg-surface-container border border-outline-variant/30 text-on-surface">5</div>
+<div class="aspect-square flex items-center justify-center rounded-full font-label-md text-label-md bg-surface-container border border-outline-variant/30 text-on-surface">6</div>
+<div class="aspect-square flex items-center justify-center rounded-full font-label-md text-label-md bg-surface-container border border-outline-variant/30 text-on-surface">7</div>
+<div class="aspect-square flex items-center justify-center rounded-full font-label-md text-label-md text-on-surface-variant opacity-30">8</div>
+<div class="aspect-square flex items-center justify-center rounded-full font-label-md text-label-md bg-surface-container border border-outline-variant/30 text-on-surface">9</div>
+<div class="aspect-square flex items-center justify-center rounded-full font-label-md text-label-md bg-error-container/10 border border-error/20 text-on-surface-variant relative group">
+                                        10
+                                        <div class="absolute w-full h-[1px] bg-error/50 rotate-45"></div>
+</div>
+<div class="aspect-square flex items-center justify-center rounded-full font-label-md text-label-md text-on-surface-variant opacity-30">11</div>
+</div>
+<p class="font-caption text-caption text-error-red mt-sm text-center">Sep 10 - Unavailable</p>
+</div>
+<!-- Time Selection -->
+<div>
+<h3 class="font-label-md text-label-md font-bold text-on-surface mb-md">Available Times (Sep 4)</h3>
+<div class="grid grid-cols-2 gap-sm">
+<button class="py-sm px-md rounded-lg border border-outline-variant/50 bg-surface-container-low text-on-surface font-label-md text-label-md hover:border-primary transition-colors">9:00 AM - 11:00 AM</button>
+<button class="py-sm px-md rounded-lg border-2 border-primary bg-primary/10 text-primary font-label-md text-label-md font-bold transition-colors">11:00 AM - 1:00 PM</button>
+<button class="py-sm px-md rounded-lg border border-outline-variant/50 bg-surface-container-low text-on-surface font-label-md text-label-md hover:border-primary transition-colors">2:00 PM - 4:00 PM</button>
+<button class="py-sm px-md rounded-lg border border-outline-variant/50 bg-surface-container-low text-on-surface font-label-md text-label-md hover:border-primary transition-colors">4:00 PM - 6:00 PM</button>
+</div>
+</div>
+<!-- Padding block to allow scrolling past the fixed button -->
+<div class="h-16"></div>
+</div>
+<!-- Mobile Footer Action -->
+<div class="absolute bottom-0 w-full p-md bg-surface/90 backdrop-blur-md border-t border-outline-variant/20">
+<button class="w-full py-md rounded-lg bg-on-surface text-background font-label-md text-label-md font-bold">Continue</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

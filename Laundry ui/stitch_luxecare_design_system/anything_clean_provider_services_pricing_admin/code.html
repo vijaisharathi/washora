@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CleanX Service Center - Provider Services &amp; Pricing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#e5e2e3",
+                      "primary-container": "#8a2be2",
+                      "on-tertiary-fixed": "#2d1600",
+                      "on-surface": "#e5e2e3",
+                      "surface-container-highest": "#353436",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "surface-container-lowest": "#0e0e0f",
+                      "tertiary": "#ffb873",
+                      "secondary": "#dcb8ff",
+                      "primary-fixed": "#efdbff",
+                      "on-tertiary-container": "#ffdaba",
+                      "tertiary-fixed": "#ffdcbf",
+                      "secondary-container": "#573976",
+                      "tertiary-fixed-dim": "#ffb873",
+                      "surface-bright": "#39393a",
+                      "surface-container-high": "#2a2a2b",
+                      "surface": "#131314",
+                      "critical": "#f87171",
+                      "surface-container": "#201f20",
+                      "on-tertiary": "#4b2800",
+                      "primary": "#dcb8ff",
+                      "error-container": "#93000a",
+                      "outline": "#988ca0",
+                      "on-secondary-fixed": "#290947",
+                      "success": "#4ade80",
+                      "info": "#60a5fa",
+                      "outline-variant": "#4c4354",
+                      "surface-variant": "#353436",
+                      "on-primary": "#480081",
+                      "background": "#131314",
+                      "on-secondary-fixed-variant": "#573976",
+                      "tertiary-container": "#935400",
+                      "warning": "#fbbf24",
+                      "on-secondary": "#3f225e",
+                      "on-error-container": "#ffdad6",
+                      "error": "#ffb4ab",
+                      "inverse-primary": "#8422dc",
+                      "secondary-fixed": "#efdbff",
+                      "on-surface-variant": "#cfc2d7",
+                      "surface-container-low": "#1c1b1c",
+                      "on-primary-container": "#eed9ff",
+                      "surface-dim": "#131314",
+                      "on-primary-fixed": "#2c0051",
+                      "inverse-on-surface": "#313031",
+                      "secondary-fixed-dim": "#dcb8ff",
+                      "inverse-surface": "#e5e2e3",
+                      "surface-tint": "#dcb8ff",
+                      "on-error": "#690005",
+                      "on-secondary-container": "#caa7ec",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "on-tertiary-fixed-variant": "#6a3b00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "sidebar-width": "260px",
+                      "table-cell-padding": "12px",
+                      "gutter": "16px",
+                      "margin-mobile": "16px",
+                      "margin-desktop": "24px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "label-sm": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "code": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-md": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "code": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.surface-container-lowest');
+            color: theme('colors.on-background');
+            font-family: 'Geist', sans-serif;
+        }
+        /* Custom scrollbar for data grids */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: theme('colors.surface'); 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.surface-container-highest'); 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.outline-variant'); 
+        }
+        
+        /* Modal Animation */
+        .modal-enter {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        .modal-enter-active {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 200ms ease-out, transform 200ms ease-out;
+        }
+        .modal-exit {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .modal-exit-active {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 150ms ease-in, transform 150ms ease-in;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex text-body-md font-body-md bg-surface-container-lowest selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar (Shared Component Blueprint) -->
+<nav class="hidden md:flex flex-col h-full py-margin-desktop bg-surface-container-lowest fixed left-0 top-0 h-full w-[260px] border-r border-surface-container-highest z-50">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center font-bold">L</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Lumina Admin</h1>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Enterprise Control</p>
+</div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto px-4 space-y-1">
+<p class="px-4 py-2 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mb-2">Platform Management</p>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+                Orders
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">group</span>
+                Customers
+            </a>
+<!-- Active Navigation -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg border-l-4 border-primary-container bg-surface-container text-on-surface font-semibold font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; color: theme('colors.primary')">storefront</span>
+                Service Providers
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">verified_user</span>
+                Verification
+            </a>
+<p class="px-4 py-2 mt-6 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mb-2">System</p>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+                Settings
+            </a>
+</div>
+<div class="p-4 mt-auto border-t border-surface-container-highest">
+<div class="flex items-center gap-3 px-2">
+<img alt="Super Admin Profile" class="w-10 h-10 rounded-full object-cover border border-surface-container-highest" data-alt="Professional headshot of a system administrator in dark corporate attire, subtle high-tech lighting background, modern clean style, cinematic portrait photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOxXS4kpJm4TFFQEP3M1rU3xiQKYliMvKoCImBeVw15_0Pm_mcE-Jjs339yW8Ze3Ih16q0TfzksTL89i4apSSO8RVfZXirYXVHxb904pQTgtRZ1oPCL2CBcsSnj1RhEyTQtiimHkQpstcR2Dz0euqEIiZm4Mf5QuUIRexxeWj9DVWM5x8PRdgdMITIU37sgLc1bUX3_jQCz8MWe0Jhcww_114XqOXgw2rtQcesNRKn0B2pgQm0GpbI3g"/>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-medium">Alex Chen</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Super Admin</p>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0 md:ml-[260px] bg-background">
+<!-- TopNavBar (Shared Component Blueprint) -->
+<header class="sticky top-0 z-40 w-full bg-surface border-b border-surface-container-highest flex justify-between items-center h-16 px-margin-desktop">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-on-surface-variant p-2 rounded-lg hover:bg-surface-container-high">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="hidden sm:flex items-center bg-surface-container-low rounded-lg border border-surface-container-highest px-3 py-1.5 focus-within:ring-1 focus-within:ring-primary-container focus-within:border-primary-container transition-all">
+<span class="material-symbols-outlined text-on-surface-variant text-sm mr-2">search</span>
+<input class="bg-transparent border-none outline-none text-body-md text-on-surface placeholder-on-surface-variant w-64 focus:ring-0 p-0" placeholder="Search providers, orders..." type="text"/>
+<div class="flex items-center gap-1 ml-2">
+<kbd class="hidden lg:inline-flex items-center justify-center px-1.5 py-0.5 rounded text-xs font-code text-on-surface-variant bg-surface-container-high border border-surface-variant">⌘</kbd>
+<kbd class="hidden lg:inline-flex items-center justify-center px-1.5 py-0.5 rounded text-xs font-code text-on-surface-variant bg-surface-container-high border border-surface-variant">K</kbd>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-critical rounded-full"></span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors">
+<span class="material-symbols-outlined">apps</span>
+</button>
+</div>
+</header>
+<!-- Page Canvas -->
+<div class="flex-1 p-margin-desktop overflow-y-auto">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+<div>
+<div class="flex items-center gap-2 text-on-surface-variant mb-1">
+<a class="hover:text-primary transition-colors text-label-sm font-label-sm" href="#">Providers</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary transition-colors text-label-sm font-label-sm" href="#">CleanX Service Center</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface text-label-sm font-label-sm">Services &amp; Pricing</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Provider Services &amp; Pricing</h2>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 bg-surface-container-low text-on-surface border border-surface-container-highest rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                        Export List
+                    </button>
+<button class="px-4 py-2 bg-primary-container text-on-primary-container rounded-lg font-label-md text-label-md font-semibold hover:bg-primary transition-colors flex items-center gap-2 shadow-sm shadow-primary-container/20">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                        Add Service
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter">
+<!-- Main Services Table (Spans 8 columns on extra large screens) -->
+<div class="xl:col-span-8 flex flex-col gap-gutter">
+<!-- Table Container Level 2 -->
+<div class="bg-surface-container-low rounded-xl border border-surface-container-highest overflow-hidden flex flex-col h-full">
+<div class="p-4 border-b border-surface-container-highest flex justify-between items-center bg-surface-container-low">
+<h3 class="font-headline-md text-headline-md text-on-surface">Active Services</h3>
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Filter by Category:</span>
+<select class="bg-surface-container border border-surface-container-highest text-on-surface text-label-sm rounded-lg px-2 py-1 outline-none focus:ring-1 focus:ring-primary-container">
+<option>All Categories</option>
+<option>Footwear</option>
+<option>Accessories</option>
+<option>Garments</option>
+</select>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low sticky top-0">
+<tr>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant font-semibold border-b border-surface-container-highest w-1/3">SERVICE &amp; CATEGORY</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant font-semibold border-b border-surface-container-highest text-right">PRICE</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant font-semibold border-b border-surface-container-highest">TURNAROUND</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant font-semibold border-b border-surface-container-highest">STATUS</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant font-semibold border-b border-surface-container-highest text-center">ACTIONS</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-highest">
+<!-- Row 1 (Selected State Example) -->
+<tr class="hover:bg-surface-container-high transition-colors bg-surface-container-high/30 cursor-pointer relative" id="row-shoe">
+<!-- Active Indicator -->
+<td class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></td>
+<td class="p-table-cell-padding">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center border border-surface-container-highest">
+<span class="material-symbols-outlined text-on-surface-variant">steps</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Shoe Cleaning</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Footwear · Deep Clean</p>
+</div>
+</div>
+</td>
+<td class="p-table-cell-padding text-right">
+<p class="font-code text-code text-on-surface">₹250.00</p>
+</td>
+<td class="p-table-cell-padding">
+<div class="flex items-center gap-1 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">schedule</span>
+<span class="font-label-md text-label-md">24h - 48h</span>
+</div>
+</td>
+<td class="p-table-cell-padding">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium bg-success/10 text-success border border-success/20">
+                                                Active
+                                            </span>
+</td>
+<td class="p-table-cell-padding text-center">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" onclick="openDisableModal('Shoe Cleaning', '₹250')">
+<span class="material-symbols-outlined text-[20px]">block</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-high transition-colors cursor-pointer" onclick="selectRow(this)">
+<td class="p-table-cell-padding">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center border border-surface-container-highest">
+<span class="material-symbols-outlined text-on-surface-variant">sports_motorsports</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Helmet Cleaning</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Accessories · Exterior &amp; Interior</p>
+</div>
+</div>
+</td>
+<td class="p-table-cell-padding text-right">
+<p class="font-code text-code text-on-surface">₹180.00</p>
+</td>
+<td class="p-table-cell-padding">
+<div class="flex items-center gap-1 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">schedule</span>
+<span class="font-label-md text-label-md">24h</span>
+</div>
+</td>
+<td class="p-table-cell-padding">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium bg-success/10 text-success border border-success/20">
+                                                Active
+                                            </span>
+</td>
+<td class="p-table-cell-padding text-center">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" onclick="openDisableModal('Helmet Cleaning', '₹180'); event.stopPropagation();">
+<span class="material-symbols-outlined text-[20px]">block</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-high transition-colors cursor-pointer" onclick="selectRow(this)">
+<td class="p-table-cell-padding">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center border border-surface-container-highest">
+<span class="material-symbols-outlined text-on-surface-variant">local_laundry_service</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Laundry (Per Kg)</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Garments · Wash &amp; Fold</p>
+</div>
+</div>
+</td>
+<td class="p-table-cell-padding text-right">
+<p class="font-code text-code text-on-surface">₹120.00</p>
+</td>
+<td class="p-table-cell-padding">
+<div class="flex items-center gap-1 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">schedule</span>
+<span class="font-label-md text-label-md">48h</span>
+</div>
+</td>
+<td class="p-table-cell-padding">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium bg-warning/10 text-warning border border-warning/20">
+                                                High Volume
+                                            </span>
+</td>
+<td class="p-table-cell-padding text-center">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" onclick="openDisableModal('Laundry (Per Kg)', '₹120'); event.stopPropagation();">
+<span class="material-symbols-outlined text-[20px]">block</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-3 border-t border-surface-container-highest bg-surface-container-low flex justify-between items-center text-label-sm text-on-surface-variant mt-auto">
+<span>Showing 3 of 12 total services</span>
+<div class="flex gap-1">
+<button class="p-1 rounded hover:bg-surface-container-high disabled:opacity-50"><span class="material-symbols-outlined text-[18px]">chevron_left</span></button>
+<button class="p-1 rounded hover:bg-surface-container-high"><span class="material-symbols-outlined text-[18px]">chevron_right</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Financial Breakdown Panel (Spans 4 columns) -->
+<div class="xl:col-span-4 flex flex-col gap-gutter">
+<div class="bg-surface-container-low rounded-xl border border-surface-container-highest overflow-hidden p-6 relative">
+<!-- Decorative subtle gradient glow -->
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex items-center gap-3 mb-6 border-b border-surface-container-highest pb-4">
+<span class="material-symbols-outlined text-primary text-[28px]">payments</span>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Financial Breakdown</h3>
+<p class="text-label-sm text-on-surface-variant" id="breakdown-subtitle">For: Shoe Cleaning</p>
+</div>
+</div>
+<div class="space-y-6">
+<!-- Gross Total -->
+<div>
+<p class="text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Customer Pays</p>
+<div class="flex items-end gap-2">
+<span class="font-display-lg text-display-lg text-on-surface" id="breakdown-total">₹250</span>
+<span class="text-body-md text-on-surface-variant mb-2">.00</span>
+</div>
+</div>
+<!-- Cost Splitting Graphic -->
+<div class="space-y-3">
+<!-- Base Price -->
+<div class="flex justify-between items-center text-label-md text-on-surface">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-surface-variant"></div>
+<span>Base Service Price</span>
+</div>
+<span class="font-code" id="breakdown-base">₹250.00</span>
+</div>
+<!-- Platform Fee (Deduction) -->
+<div class="flex justify-between items-center text-label-md text-critical">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-critical/50"></div>
+<span>Platform Fee (15%)</span>
+</div>
+<span class="font-code" id="breakdown-fee">-₹37.50</span>
+</div>
+<!-- Tax -->
+<div class="flex justify-between items-center text-label-md text-on-surface-variant">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-outline"></div>
+<span>Applicable Taxes (GST 18% on fee)</span>
+</div>
+<span class="font-code" id="breakdown-tax">-₹6.75</span>
+</div>
+<div class="h-px w-full bg-surface-container-highest my-4"></div>
+<!-- Net Earnings -->
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-success text-[20px]">account_balance_wallet</span>
+<span class="font-headline-md text-headline-md text-on-surface">Provider Earnings</span>
+</div>
+<span class="font-code text-headline-md font-semibold text-success" id="breakdown-net">₹205.75</span>
+</div>
+</div>
+<div class="mt-8 pt-4 bg-surface-container rounded-lg p-4 border border-surface-container-highest">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-info text-[20px] mt-0.5">info</span>
+<p class="text-label-sm text-on-surface-variant">Platform fee is automatically deducted before payout. Settlement occurs on a T+2 rolling basis to registered bank accounts.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Modal Overlay: Disable Service -->
+<div aria-labelledby="modal-title" aria-modal="true" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4 transition-opacity duration-200 opacity-0" id="disableModalOverlay" role="dialog">
+<!-- Modal Panel -->
+<div class="bg-surface-container-low border border-surface-container-highest rounded-xl shadow-2xl max-w-md w-full overflow-hidden transform scale-95 transition-transform duration-200" id="disableModalPanel">
+<div class="p-6">
+<div class="flex items-center justify-center w-12 h-12 rounded-full bg-error-container/20 text-error mb-4">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2" id="modal-title">Disable Service?</h3>
+<p class="text-body-md text-on-surface-variant mb-6">
+                    Are you sure you want to disable <strong class="text-on-surface" id="modal-service-name">Service Name</strong>? 
+                    This will immediately hide it from the consumer marketplace. Existing orders will not be affected.
+                </p>
+<!-- Contextual warning if high demand -->
+<div class="bg-surface-container rounded border border-surface-container-highest p-3 mb-6 flex gap-3">
+<span class="material-symbols-outlined text-warning text-[18px]">trending_up</span>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface">Revenue Impact Warning</p>
+<p class="text-label-sm text-on-surface-variant mt-1">This service generated ~₹12k in the last 30 days.</p>
+</div>
+</div>
+<div class="flex gap-3 justify-end">
+<button class="px-4 py-2 bg-surface text-on-surface border border-surface-container-highest rounded-lg font-label-md text-label-md hover:bg-surface-container-highest transition-colors" onclick="closeDisableModal()" type="button">
+                        Cancel
+                    </button>
+<button class="px-4 py-2 bg-error text-on-error rounded-lg font-label-md text-label-md font-semibold hover:bg-error/90 transition-colors shadow-sm" onclick="confirmDisable()" type="button">
+                        Disable Service
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Scripts for interactivity -->
+<script>
+        // Row selection logic
+        function selectRow(clickedRow) {
+            // Remove active styles from all rows
+            const rows = document.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                row.classList.remove('bg-surface-container-high/30');
+                const indicator = row.querySelector('.absolute.left-0');
+                if (indicator) indicator.remove();
+            });
+
+            // Add active styles to clicked row
+            clickedRow.classList.add('bg-surface-container-high/30');
+            clickedRow.style.position = 'relative';
+            
+            const indicator = document.createElement('td');
+            indicator.className = 'absolute left-0 top-0 bottom-0 w-1 bg-primary';
+            clickedRow.appendChild(indicator);
+
+            // Update Breakdown Panel Data based on row content (Simple mock logic)
+            const serviceName = clickedRow.querySelector('p.font-semibold').innerText;
+            const priceStr = clickedRow.querySelector('.font-code').innerText;
+            const priceVal = parseFloat(priceStr.replace('₹', ''));
+            
+            const fee = priceVal * 0.15;
+            const tax = fee * 0.18;
+            const net = priceVal - fee - tax;
+
+            document.getElementById('breakdown-subtitle').innerText = `For: ${serviceName}`;
+            document.getElementById('breakdown-total').innerText = `₹${priceVal}`;
+            document.getElementById('breakdown-base').innerText = `₹${priceVal.toFixed(2)}`;
+            document.getElementById('breakdown-fee').innerText = `-₹${fee.toFixed(2)}`;
+            document.getElementById('breakdown-tax').innerText = `-₹${tax.toFixed(2)}`;
+            document.getElementById('breakdown-net').innerText = `₹${net.toFixed(2)}`;
+        }
+
+        // Modal Logic
+        const overlay = document.getElementById('disableModalOverlay');
+        const panel = document.getElementById('disableModalPanel');
+        const serviceNameSpan = document.getElementById('modal-service-name');
+
+        function openDisableModal(serviceName, price) {
+            serviceNameSpan.innerText = serviceName;
+            overlay.classList.remove('hidden');
+            // Small delay to allow display:block to apply before animating opacity
+            requestAnimationFrame(() => {
+                overlay.classList.remove('opacity-0');
+                panel.classList.remove('scale-95');
+                panel.classList.add('scale-100');
+            });
+        }
+
+        function closeDisableModal() {
+            overlay.classList.add('opacity-0');
+            panel.classList.remove('scale-100');
+            panel.classList.add('scale-95');
+            setTimeout(() => {
+                overlay.classList.add('hidden');
+            }, 200); // match transition duration
+        }
+
+        function confirmDisable() {
+            // Mock action
+            const btn = document.querySelector('#disableModalPanel .bg-error');
+            const originalText = btn.innerText;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[18px]">progress_activity</span> Disabling...';
+            btn.classList.add('opacity-80', 'cursor-not-allowed');
+            
+            setTimeout(() => {
+                closeDisableModal();
+                btn.innerHTML = originalText;
+                btn.classList.remove('opacity-80', 'cursor-not-allowed');
+                // Optional: show a toast notification here
+            }, 800);
+        }
+    </script>
+</body></html>

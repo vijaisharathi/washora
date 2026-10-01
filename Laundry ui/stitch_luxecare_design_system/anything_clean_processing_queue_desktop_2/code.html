@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OpsCentral - Processing Queue</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#646365",
+                        "surface-container-highest": "#353436",
+                        "on-error": "#690005",
+                        "surface-bright": "#3a393a",
+                        "background": "#131314",
+                        "surface": "#131314",
+                        "on-primary-fixed": "#2c0051",
+                        "tertiary": "#c8c6c8",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "primary-fixed": "#efdbff",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#8a2be2",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-variant": "#353436",
+                        "secondary": "#c8c6c8",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "surface-dim": "#131314",
+                        "outline-variant": "#4c4354",
+                        "inverse-surface": "#e5e2e3",
+                        "secondary-fixed": "#e5e1e4",
+                        "on-background": "#e5e2e3",
+                        "on-secondary-container": "#b7b4b7",
+                        "on-tertiary-container": "#e3e0e2",
+                        "inverse-primary": "#8422dc",
+                        "on-primary": "#480081",
+                        "surface-container-lowest": "#0e0e0f",
+                        "surface-container-low": "#1c1b1c",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-tertiary": "#303032",
+                        "on-secondary-fixed-variant": "#474649",
+                        "on-secondary": "#303032",
+                        "on-surface-variant": "#cfc2d7",
+                        "inverse-on-surface": "#313031",
+                        "surface-container": "#201f20",
+                        "on-primary-container": "#eed9ff",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-surface": "#e5e2e3",
+                        "secondary-container": "#474649",
+                        "primary": "#dcb8ff",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "error": "#ffb4ab",
+                        "outline": "#988ca0",
+                        "surface-container-high": "#2a2a2b",
+                        "surface-tint": "#dcb8ff",
+                        "error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "3xl": "64px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "2xl": "48px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "caption": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "label-md": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "display-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for Kanban board */
+        .kanban-scroll::-webkit-scrollbar {
+            height: 8px;
+            width: 8px;
+        }
+        .kanban-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .kanban-scroll::-webkit-scrollbar-thumb {
+            background-color: #353436; /* surface-variant */
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex overflow-hidden">
+<!-- SideNavBar -->
+<nav class="bg-surface-container-low h-screen w-64 fixed left-0 top-0 border-r border-white/5 flex flex-col py-lg px-md gap-sm z-40 transition-all duration-200 ease-in-out hidden md:flex">
+<div class="px-sm mb-lg">
+<h1 class="font-headline-md text-headline-md font-black text-primary">Service Pro</h1>
+<p class="font-label-md text-label-md text-on-surface-variant">Operational Suite</p>
+</div>
+<button class="bg-primary text-on-primary font-label-md text-label-md py-md px-lg rounded-lg mb-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined" data-icon="add" data-weight="fill">add</span>
+            Add Service
+        </button>
+<div class="flex flex-col gap-sm flex-1">
+<a class="bg-primary-container text-on-primary-container font-bold rounded-lg py-sm px-md flex items-center gap-md" href="#">
+<span class="material-symbols-outlined" data-icon="assignment" data-weight="fill" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 py-sm px-md rounded-lg flex items-center gap-md transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="cleaning_services">cleaning_services</span>
+<span class="font-label-md text-label-md">Services</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 py-sm px-md rounded-lg flex items-center gap-md transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md">Earnings</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 py-sm px-md rounded-lg flex items-center gap-md transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+</div>
+<div class="flex flex-col gap-sm mt-auto pt-lg border-t border-white/5">
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 py-sm px-md rounded-lg flex items-center gap-md transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help_center">help_center</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 py-sm px-md rounded-lg flex items-center gap-md transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">Sign Out</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="ml-0 md:ml-64 flex-1 flex flex-col h-screen w-full relative">
+<!-- TopNavBar -->
+<header class="bg-surface/80 backdrop-blur-xl flex justify-between items-center w-full px-lg h-16 z-50 docked full-width top-0 sticky shadow-sm border-b border-white/5">
+<div class="flex items-center gap-lg w-1/3">
+<div class="relative w-full max-w-md hidden md:block">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-sm pl-[40px] pr-md text-on-surface font-body-md focus:ring-1 focus:ring-primary transition-shadow placeholder:text-on-surface-variant" placeholder="Search orders..." type="text"/>
+</div>
+</div>
+<div class="flex items-center justify-center w-1/3 md:hidden">
+<h2 class="font-headline-md text-headline-md font-bold text-primary">OpsCentral</h2>
+</div>
+<div class="flex items-center gap-md w-1/3 justify-end">
+<button class="text-on-surface-variant hover:bg-white/5 transition-colors p-sm rounded-full flex items-center justify-center cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:bg-white/5 transition-colors p-sm rounded-full flex items-center justify-center cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden ml-sm border border-white/10">
+<img alt="Provider profile avatar" class="w-full h-full object-cover" data-alt="A close up, professional headshot of a mature female operations manager in a clean, modern logistics facility. She has a confident, warm expression. The lighting is soft and flattering, with a subtle dark-mode aesthetic background ensuring she remains the focal point." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0BEsiSK0EE6re1nD2RmJKhAIvf7Uo1dLRdDFY7BWtj2LbudJCb6U8slmmOssiRgtP7JPQv5torzJfkmP3CFE9aebGHgtaFy7Isk7EBGsCziyyx1Lkh8KgWsVqpVNIICfh7Pmn95XEqDBMHb3Pr3swZQR24N0emI2f2GjkIJSLcUZjCCDJSB41FnZ2mK9xtIxmrO90q-MJRjcaD1Rgb-1DXqWF2EoRjtrgSWbKL0Rk9JE9oPNqnyhclw"/>
+</div>
+</div>
+</header>
+<!-- Kanban Board Area -->
+<div class="flex-1 overflow-x-auto kanban-scroll p-lg flex gap-lg bg-background">
+<!-- Column 1: Received -->
+<div class="flex flex-col flex-shrink-0 w-80">
+<div class="flex justify-between items-center mb-md px-sm">
+<h3 class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-sm">
+                        Received
+                        <span class="bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded-full font-caption text-caption">3</span>
+</h3>
+</div>
+<div class="flex flex-col gap-md overflow-y-auto kanban-scroll pr-xs pb-lg h-full">
+<!-- Card 1 (High Priority) -->
+<div class="bg-surface-container rounded-lg p-md border border-white/5 hover:bg-surface-container-high transition-colors cursor-pointer group flex flex-col gap-sm shadow-sm relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-error"></div>
+<div class="flex justify-between items-start">
+<span class="font-label-md text-label-md text-on-surface-variant">#ORD-1042</span>
+<span class="bg-error/20 text-error font-caption text-caption px-2 py-0.5 rounded-full border border-error/20">High Priority</span>
+</div>
+<div class="flex gap-md items-center mt-xs">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0 bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="A professional, high-resolution product photography shot of a premium dark brown leather motorcycle jacket laid flat on a pristine, dark grey metallic inspection table inside a high-end commercial garment cleaning facility. The lighting is cool, bright, and highly clinical, intentionally highlighting the rich texture and subtle wear of the leather material. The overall mood is industrial, orderly, and precise, perfectly matching a sophisticated dark-mode luxury logistics and service UI theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxnqvMSnLrtrHkHa1WAgKBWFyrgFN5CY3WIWAZkajFLJeXlqD99XqyIxYbZ9MRg_GAekj94ktuoph44A308695ttRoq-qm4MF70h1MfUuBNH00vLWKTiCZdsb1sPyhEsHcG8YfcRr367hTlfm8tlCyJYIhKWuFUSytR32jEGMAp4txn8LoO9a6MdWDfC8fQCAWvQDlvpI2y__4KzokJglu_KNE2nKblOttHv6F1RKxhJAO92551CDmLw"/>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Leather Jacket</span>
+<span class="font-caption text-caption text-on-surface-variant">Deep Clean &amp; Condition</span>
+</div>
+</div>
+<div class="mt-xs flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+<span class="font-caption text-caption">Arrived 2h ago</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container rounded-lg p-md border border-white/5 hover:bg-surface-container-high transition-colors cursor-pointer group flex flex-col gap-sm shadow-sm">
+<div class="flex justify-between items-start">
+<span class="font-label-md text-label-md text-on-surface-variant">#ORD-1043</span>
+</div>
+<div class="flex gap-md items-center mt-xs">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0 bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="A delicate, flowing emerald green silk evening dress hanging gracefully on a premium black velvet hanger against a dark, matte charcoal wall within a specialized dry-cleaning sorting room. The lighting is highly focused and softly diffused, specifically designed to bring out the luxurious sheen and fluid drape of the delicate silk fabric. The setting appears exceptionally clean, orderly, and technologically advanced, fitting seamlessly into a high-end, dark-mode service application aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSrGaVwReOjH5DjmoQXPDJzYhVMBFnLduTq1xntiyakkEtoHOqBwabI6gPKNeNE4fD_UFajQHX9uDgM2-pT5NkWKyxTp4zSgrDishIBee4L8maUCej91LNHVqz5emJVTjTbC-jexNGyE-ez6O-hPvX-o7Q-zA4pqE_fvYFuTrejBeQK809PI6r4q2d88OSxy-W9FsOODDTeAKlh-0enm2LZhPC0UrEHhPmk_x1LH7GOgBBhAd37a7WOQ"/>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Silk Evening Dress</span>
+<span class="font-caption text-caption text-on-surface-variant">Delicate Wash</span>
+</div>
+</div>
+<div class="mt-xs flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+<span class="font-caption text-caption">Arrived 3h ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 2: Inspection -->
+<div class="flex flex-col flex-shrink-0 w-80">
+<div class="flex justify-between items-center mb-md px-sm">
+<h3 class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-sm">
+                        Inspection
+                        <span class="bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded-full font-caption text-caption">2</span>
+</h3>
+</div>
+<div class="flex flex-col gap-md overflow-y-auto kanban-scroll pr-xs pb-lg h-full">
+<!-- Card 3 -->
+<div class="bg-surface-container rounded-lg p-md border border-white/5 hover:bg-surface-container-high transition-colors cursor-pointer group flex flex-col gap-sm shadow-sm relative">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary/50"></div>
+<div class="flex justify-between items-start">
+<span class="font-label-md text-label-md text-on-surface-variant">#ORD-1040</span>
+<span class="bg-surface-container-high text-on-surface-variant font-caption text-caption px-2 py-0.5 rounded-full">Normal</span>
+</div>
+<div class="flex gap-md items-center mt-xs">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Wool Winter Coat</span>
+<span class="font-caption text-caption text-on-surface-variant">Stain Removal &amp; Dry Clean</span>
+</div>
+</div>
+<button class="mt-sm w-full py-2 bg-transparent border border-outline-variant text-primary font-label-md text-label-md rounded-lg hover:bg-white/5 transition-colors flex justify-center items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="search_check">search_check</span>
+                            Start Inspection
+                        </button>
+</div>
+</div>
+</div>
+<!-- Column 3: Cleaning -->
+<div class="flex flex-col flex-shrink-0 w-80">
+<div class="flex justify-between items-center mb-md px-sm">
+<h3 class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-sm">
+                        Cleaning
+                        <span class="bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded-full font-caption text-caption">5</span>
+</h3>
+</div>
+<div class="flex flex-col gap-md overflow-y-auto kanban-scroll pr-xs pb-lg h-full">
+<!-- Card 4 (Progress) -->
+<div class="bg-surface-container rounded-lg p-md border border-primary/20 hover:border-primary/40 transition-colors cursor-pointer group flex flex-col gap-sm shadow-sm bg-gradient-to-b from-surface-container to-surface-container-low">
+<div class="flex justify-between items-start">
+<span class="font-label-md text-label-md text-on-surface-variant">#ORD-1035</span>
+<span class="text-primary font-caption text-caption flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="water_drop">water_drop</span>
+                                In Progress
+                            </span>
+</div>
+<div class="flex gap-md items-center mt-xs">
+<div class="flex flex-col w-full">
+<span class="font-body-md text-body-md text-on-surface font-medium">Cashmere Sweater</span>
+<span class="font-caption text-caption text-on-surface-variant">Hand Wash</span>
+<div class="mt-md flex flex-col gap-xs w-full">
+<div class="flex justify-between font-caption text-caption">
+<span class="text-on-surface-variant">Wash Cycle</span>
+<span class="text-primary">60%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[60%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 4: Quality Check -->
+<div class="flex flex-col flex-shrink-0 w-80">
+<div class="flex justify-between items-center mb-md px-sm">
+<h3 class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-sm">
+                        Quality Check
+                        <span class="bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded-full font-caption text-caption">2</span>
+</h3>
+</div>
+<div class="flex flex-col gap-md overflow-y-auto kanban-scroll pr-xs pb-lg h-full">
+<!-- Card 5 -->
+<div class="bg-surface-container rounded-lg p-md border border-white/5 hover:bg-surface-container-high transition-colors cursor-pointer group flex flex-col gap-sm shadow-sm">
+<div class="flex justify-between items-start">
+<span class="font-label-md text-label-md text-on-surface-variant">#ORD-1020</span>
+</div>
+<div class="flex gap-md items-center mt-xs">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0 bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="A pair of premium tan suede Chelsea boots resting on a dark slate platform in a specialized shoe restoration facility. Subtle, cool-toned directional lighting highlights the nap of the suede and the structured shape of the boots. The background is slightly out of focus, emphasizing precision and luxury care in a dark-mode UI context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAUWu6_3u_g4VFzscty4T8HBG7V-n7mg5ANsh4bCQ6w2Bao7fFMD88HtA7DtYDVovL5jLEe83d1ZIgtBvGSQPxnMObyAlJcY4HslAoP9YwenZ3IO8YufzdjlZxZwfz3yeWi_Bz0ItL2oPwjpcjhFdk1zMVbLETMzCUOvxw4UgkJkZWiZVpEuk1678uvcH99kd0xybEA_6AXRI4QnyK6nPWSJM2Oz47VDBMgrtKhVtE4ApAZdwwFkKbjA"/>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Suede Boots</span>
+<span class="font-caption text-caption text-on-surface-variant">Clean &amp; Waterproof</span>
+</div>
+</div>
+<button class="mt-sm w-full py-2 bg-primary text-on-primary font-label-md text-label-md rounded-lg hover:opacity-90 transition-opacity flex justify-center items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="check_circle">check_circle</span>
+                            Approve
+                        </button>
+</div>
+</div>
+</div>
+<!-- Column 5: Ready -->
+<div class="flex flex-col flex-shrink-0 w-80 pr-lg">
+<div class="flex justify-between items-center mb-md px-sm">
+<h3 class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-sm">
+                        Ready
+                        <span class="bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded-full font-caption text-caption">4</span>
+</h3>
+</div>
+<div class="flex flex-col gap-md overflow-y-auto kanban-scroll pr-xs pb-lg h-full">
+<!-- Card 6 -->
+<div class="bg-surface-container rounded-lg p-md border border-white/5 hover:bg-surface-container-high transition-colors cursor-pointer group flex flex-col gap-sm shadow-sm relative opacity-75 hover:opacity-100">
+<div class="absolute top-0 left-0 w-1 h-full bg-secondary-fixed"></div>
+<div class="flex justify-between items-start">
+<span class="font-label-md text-label-md text-on-surface-variant">#ORD-1010</span>
+</div>
+<div class="flex gap-md items-center mt-xs">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium line-through decoration-white/20">Linen Suit</span>
+<span class="font-caption text-caption text-on-surface-variant">Dry Clean &amp; Press</span>
+</div>
+</div>
+<div class="mt-xs pt-xs border-t border-white/5 flex items-center justify-between text-on-surface-variant">
+<span class="font-caption text-caption flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="local_shipping">local_shipping</span>
+                                Awaiting Courier
+                            </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

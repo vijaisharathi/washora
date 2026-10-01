@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Partner Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#e5e2e3",
+                      "error": "#ffb4ab",
+                      "surface-container-highest": "#353436",
+                      "surface-container": "#201f20",
+                      "primary-fixed": "#efdbff",
+                      "primary": "#dcb8ff",
+                      "tertiary": "#c8c6c8",
+                      "outline": "#988ca0",
+                      "tertiary-container": "#646365",
+                      "surface-container-low": "#1c1b1c",
+                      "on-secondary": "#303032",
+                      "surface-container-lowest": "#0e0e0f",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "surface": "#131314",
+                      "on-tertiary-container": "#e3e0e2",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "on-error-container": "#ffdad6",
+                      "success-bg": "#1A3D24",
+                      "on-tertiary": "#303032",
+                      "on-primary-fixed": "#2c0051",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "inverse-surface": "#e5e2e3",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "surface-variant": "#353436",
+                      "on-error": "#690005",
+                      "on-primary-container": "#eed9ff",
+                      "primary-container": "#8a2be2",
+                      "on-background": "#e5e2e3",
+                      "error-container": "#93000a",
+                      "on-secondary-fixed-variant": "#474648",
+                      "outline-variant": "#4c4354",
+                      "error-red": "#ffb4ab",
+                      "tertiary-fixed": "#e4e2e4",
+                      "surface-dim": "#131314",
+                      "secondary-fixed": "#e4e2e4",
+                      "secondary-container": "#49494b",
+                      "on-secondary-container": "#b9b8ba",
+                      "surface-bright": "#39393a",
+                      "inverse-on-surface": "#313031",
+                      "electric-violet": "#8a2be2",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "surface-tint": "#dcb8ff",
+                      "success-green": "#81C784",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "background": "#131314",
+                      "on-surface-variant": "#cfc2d7",
+                      "surface-container-high": "#2a2a2b",
+                      "inverse-primary": "#8422dc",
+                      "secondary": "#c8c6c8",
+                      "on-primary": "#480081"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "xl": "32px",
+                      "3xl": "64px",
+                      "md": "16px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "2xl": "48px"
+              },
+              "fontFamily": {
+                      "mono-display": ["monospace"],
+                      "h3": ["Geist", "sans-serif"],
+                      "label-md": ["Geist", "sans-serif"],
+                      "display-lg": ["Geist", "sans-serif"],
+                      "headline-lg": ["Geist", "sans-serif"],
+                      "caption": ["Geist", "sans-serif"],
+                      "body-md": ["Geist", "sans-serif"],
+                      "h1": ["Geist", "sans-serif"]
+              },
+              "fontSize": {
+                      "mono-display": ["18px", {"letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "h1": ["28px", {"lineHeight": "36px", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-white/5">
+<div class="flex items-center justify-between px-md h-16 w-full max-w-7xl mx-auto">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 transition-transform flex items-center justify-center p-sm rounded-full">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Delivery Portal</h1>
+<button class="text-primary hover:opacity-80 transition-opacity active:scale-95 transition-transform flex items-center justify-center p-sm rounded-full">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pt-24 px-md max-w-3xl mx-auto">
+<!-- Profile Header -->
+<section class="mb-lg">
+<h2 class="font-h1 text-h1 mb-md">Profile</h2>
+<div class="bg-surface-container rounded-xl p-lg border border-outline-variant/30 flex flex-col md:flex-row items-center gap-lg">
+<div class="w-32 h-32 rounded-full overflow-hidden border-2 border-primary relative flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A professional, high-quality headshot portrait of an Indian male delivery driver named Karthik, wearing a clean, modern high-visibility vest over a dark polo shirt. The lighting is studio-quality, softly illuminating his face with a warm, confident expression. The background is a slightly blurred, abstract dark gray corporate texture with subtle electric violet accents, reflecting a high-tech delivery service aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtVTbiRF28P_dpzGAiCod3M6I773rfob4aN_ZYN7JzDYKGA24hACDzVtddB0nlNjeXEZg2oPaWgcIVSVNosejo4cX7A3pVRqpiSGuLdt1LdVC49KYGb44GXs5pHuIm0KZtWMZqb30rzmtz0GB_odFHjk1-fMBUCwHUmztHRJOZx3XejjUc1WQaIEjxd2rwD8auv39z0zkBy6KUWcFssvFIWhfij3DzhZwRrIEUq0u9GgQcpEF2v6-vKg"/>
+<div class="absolute bottom-0 right-0 bg-surface rounded-full p-xs">
+<span class="material-symbols-outlined text-success-green" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="text-center md:text-left flex-1">
+<div class="flex items-center justify-center md:justify-start gap-sm mb-xs">
+<h3 class="font-h3 text-h3 text-on-surface">Karthik</h3>
+<span class="bg-success-bg text-success-green px-sm py-xs rounded-full font-caption text-caption tracking-wider uppercase font-bold flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span> Verified
+                        </span>
+</div>
+<p class="font-mono-display text-mono-display text-on-surface-variant mb-md">ID: DP-2048</p>
+<div class="flex flex-wrap gap-md justify-center md:justify-start">
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-outline" data-icon="two_wheeler">two_wheeler</span>
+<span class="font-body-md text-body-md">Honda Activa</span>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-outline" data-icon="location_on">location_on</span>
+<span class="font-body-md text-body-md">Anna Nagar</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Bento -->
+<section class="grid grid-cols-2 gap-md mb-xl">
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-md flex flex-col items-center justify-center text-center">
+<div class="flex items-center gap-xs text-primary mb-xs">
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-headline-lg text-headline-lg">4.9</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">Rating</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-md flex flex-col items-center justify-center text-center">
+<div class="flex items-center gap-xs text-on-surface mb-xs">
+<span class="font-headline-lg text-headline-lg">246</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">Deliveries</span>
+</div>
+</section>
+<!-- Actions -->
+<section class="space-y-sm">
+<h3 class="font-label-md text-label-md text-outline uppercase tracking-wider mb-sm pl-xs">Settings &amp; Actions</h3>
+<a class="bg-surface-container-low hover:bg-surface-container transition-colors border border-outline-variant/30 rounded-lg p-md flex items-center justify-between group" href="#">
+<div class="flex items-center gap-md">
+<div class="bg-surface-variant p-sm rounded-lg text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</div>
+<span class="font-h3 text-h3 text-on-surface">Edit Profile</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="bg-surface-container-low hover:bg-surface-container transition-colors border border-outline-variant/30 rounded-lg p-md flex items-center justify-between group" href="#">
+<div class="flex items-center gap-md">
+<div class="bg-surface-variant p-sm rounded-lg text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="moped">moped</span>
+</div>
+<span class="font-h3 text-h3 text-on-surface">Edit Vehicle</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="bg-surface-container-low hover:bg-surface-container transition-colors border border-outline-variant/30 rounded-lg p-md flex items-center justify-between group" href="#">
+<div class="flex items-center gap-md">
+<div class="bg-surface-variant p-sm rounded-lg text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="fact_check">fact_check</span>
+</div>
+<span class="font-h3 text-h3 text-on-surface">Verification Details</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="bg-surface-container-low hover:bg-surface-container transition-colors border border-outline-variant/30 rounded-lg p-md flex items-center justify-between group mt-md border-t border-outline-variant/30 pt-md" href="#">
+<div class="flex items-center gap-md">
+<div class="bg-error-container/10 p-sm rounded-lg text-error-red group-hover:bg-error-container/20 transition-colors">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+</div>
+<span class="font-h3 text-h3 text-on-surface">Help &amp; Support</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-on-surface transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+<button class="w-full mt-xl bg-transparent border border-outline-variant/50 text-error-red font-label-md text-label-md py-md rounded-lg hover:bg-error-container/10 transition-colors flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Logout
+            </button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface/90 dark:bg-surface/90 backdrop-blur-xl fixed bottom-0 w-full z-50 rounded-t-xl border-t border-white/5 shadow-[0_-4px_20px_rgba(0,0,0,0.4)] md:hidden">
+<div class="fixed bottom-0 left-0 w-full flex justify-around items-center py-sm px-xs pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded-lg transition-colors active:scale-90 transition-all duration-200 p-sm w-16" href="#">
+<span class="material-symbols-outlined mb-xs" data-icon="home">home</span>
+<span class="font-caption text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded-lg transition-colors active:scale-90 transition-all duration-200 p-sm w-16" href="#">
+<span class="material-symbols-outlined mb-xs" data-icon="local_shipping">local_shipping</span>
+<span class="font-caption text-[10px]">Deliveries</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded-lg transition-colors active:scale-90 transition-all duration-200 p-sm w-16" href="#">
+<span class="material-symbols-outlined mb-xs" data-icon="payments">payments</span>
+<span class="font-caption text-[10px]">Earnings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded-lg transition-colors active:scale-90 transition-all duration-200 p-sm w-16" href="#">
+<span class="material-symbols-outlined mb-xs" data-icon="notifications">notifications</span>
+<span class="font-caption text-[10px]">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold hover:bg-surface-variant/20 rounded-lg transition-colors active:scale-90 transition-all duration-200 p-sm w-16" href="#">
+<span class="material-symbols-outlined mb-xs" data-icon="person" data-weight="fill" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-caption text-[10px]">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

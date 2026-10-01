@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Report a Service Issue - Lumina</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface": "#131314",
+                      "on-error": "#690005",
+                      "primary": "#dcb8ff",
+                      "tertiary-container": "#646365",
+                      "inverse-primary": "#8422dc",
+                      "on-surface": "#e5e2e3",
+                      "error-container": "#93000a",
+                      "surface-container-high": "#2a2a2b",
+                      "on-secondary-container": "#b9b8ba",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "secondary-container": "#49494b",
+                      "outline-variant": "#4c4354",
+                      "electric-violet": "#8a2be2",
+                      "error": "#ffb4ab",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "secondary-fixed": "#e4e2e4",
+                      "primary-container": "#8a2be2",
+                      "on-primary": "#480081",
+                      "inverse-surface": "#e5e2e3",
+                      "surface-dim": "#131314",
+                      "error-red": "#ffb4ab",
+                      "on-tertiary-container": "#e3e0e2",
+                      "outline": "#988ca0",
+                      "on-tertiary": "#303032",
+                      "on-background": "#e5e2e3",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "on-surface-variant": "#cfc2d7",
+                      "success-green": "#81C784",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "primary-fixed": "#efdbff",
+                      "surface-bright": "#39393a",
+                      "background": "#131314",
+                      "inverse-on-surface": "#313031",
+                      "surface-tint": "#dcb8ff",
+                      "on-secondary-fixed-variant": "#474648",
+                      "surface-variant": "#353436",
+                      "surface-container": "#201f20",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "tertiary": "#c8c6c8",
+                      "on-primary-container": "#eed9ff",
+                      "on-error-container": "#ffdad6",
+                      "success-bg": "#1A3D24",
+                      "on-secondary": "#303032",
+                      "secondary": "#c8c6c8",
+                      "surface-container-low": "#1c1b1c",
+                      "surface-container-highest": "#353436",
+                      "tertiary-fixed": "#e4e2e4",
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-primary-fixed": "#2c0051",
+                      "on-tertiary-fixed": "#1b1b1d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "2xl": "48px",
+                      "md": "16px",
+                      "xs": "4px",
+                      "lg": "24px",
+                      "xl": "32px",
+                      "3xl": "64px",
+                      "sm": "8px"
+              },
+              "fontFamily": {
+                      "caption": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "mono-display": [
+                              "monospace"
+                      ],
+                      "h1": [
+                              "Geist"
+                      ],
+                      "h3": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+          .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+          }
+          
+          /* Custom Radio Button Styles mimicking Screen 44 selection */
+          .category-card input[type="radio"] {
+              display: none;
+          }
+          .category-card {
+              cursor: pointer;
+              transition: all 0.2s ease-in-out;
+          }
+          .category-card input[type="radio"]:checked + div {
+              border-color: #8a2be2; /* electric-violet */
+              background-color: rgba(138, 43, 226, 0.1);
+          }
+          .category-card input[type="radio"]:checked + div .icon-container {
+              color: #8a2be2;
+          }
+          .category-card input[type="radio"]:checked + div .check-icon {
+              opacity: 1;
+              transform: scale(1);
+          }
+      </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="bg-surface/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/30 flat no shadows flex items-center justify-between px-xl w-full max-w-[1200px] mx-auto h-16">
+<div class="flex items-center gap-xl w-full">
+<span class="font-h3 text-h3 font-bold text-electric-violet">Lumina Marketplace</span>
+<nav class="hidden md:flex gap-lg">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 active:scale-95 transition-transform" href="#">Marketplace</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 active:scale-95 transition-transform" href="#">Vendors</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 active:scale-95 transition-transform" href="#">Orders</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 active:scale-95 transition-transform" href="#">Analytics</a>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-200 active:scale-95 transition-transform p-xs">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-200 active:scale-95 transition-transform p-xs">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<img alt="Administrator profile picture" class="w-8 h-8 rounded-full border border-outline-variant/50 ml-sm" data-alt="Administrator profile picture showing a professional headshot in a corporate setting. Clean lighting and sharp focus. Dark mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiL2pdOPa7tFwy3vX0OOXP8uqYEkH7SVWhvQs5JSak7j4TaZ6gnd4wUuXYv2Bs-BGlw005AXskOie7UM3Zeu3zmRUbepGYarv7OLsNMhCRXw_JZsFIX2DpjYHscDNmF7UQAnKj18xPoxQoA-jyeL9QYH7ntbASHvV5v9EMFve-tDW3nrwfjMHjSYrPeojAGNf3QbVbdT2CDEffAOrgoC_PT9gEvOZO1TmYyb7mVEFWbeFBco2wWm7-DA"/>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 mt-16 px-md md:px-xl py-xl max-w-[1200px] mx-auto w-full">
+<!-- Header Section -->
+<div class="mb-lg">
+<div class="flex items-center gap-sm mb-xs">
+<a class="text-on-surface-variant hover:text-primary flex items-center transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_back">arrow_back</span>
+<span class="font-label-md text-label-md ml-xs">Back to Order</span>
+</a>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Something Not Right?</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Tell us what happened and we'll help.</p>
+<div class="mt-md inline-flex items-center px-sm py-xs bg-surface-container-highest border border-outline-variant/30 rounded-md">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant mr-xs" data-icon="receipt_long">receipt_long</span>
+<span class="font-mono-display text-caption text-on-surface-variant">Order: QH-20260901-1024</span>
+</div>
+</div>
+<!-- Category Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md mb-2xl">
+<!-- Category: Service Quality -->
+<label class="category-card relative">
+<input name="issue_category" type="radio" value="service_quality"/>
+<div class="bg-surface-container border border-outline-variant/50 rounded-lg p-lg flex flex-col items-center justify-center text-center h-full hover:border-outline transition-colors relative overflow-hidden">
+<div class="icon-container text-on-surface-variant mb-md transition-colors">
+<span class="material-symbols-outlined text-[32px]" data-icon="thumb_down">thumb_down</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Service Quality</span>
+<div class="check-icon absolute top-xs right-xs opacity-0 transform scale-50 transition-all text-electric-violet">
+<span class="material-symbols-outlined" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</label>
+<!-- Category: Damaged Item (Urgent Highlight) -->
+<label class="category-card relative">
+<input name="issue_category" type="radio" value="damaged_item"/>
+<div class="bg-surface-container border border-error/50 rounded-lg p-lg flex flex-col items-center justify-center text-center h-full hover:border-error transition-colors relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-error"></div>
+<div class="icon-container text-error mb-md transition-colors">
+<span class="material-symbols-outlined text-[32px]" data-icon="broken_image">broken_image</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Damaged Item</span>
+<div class="check-icon absolute top-xs right-xs opacity-0 transform scale-50 transition-all text-electric-violet">
+<span class="material-symbols-outlined" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</label>
+<!-- Category: Missing Item -->
+<label class="category-card relative">
+<input name="issue_category" type="radio" value="missing_item"/>
+<div class="bg-surface-container border border-outline-variant/50 rounded-lg p-lg flex flex-col items-center justify-center text-center h-full hover:border-outline transition-colors relative overflow-hidden">
+<div class="icon-container text-on-surface-variant mb-md transition-colors">
+<span class="material-symbols-outlined text-[32px]" data-icon="search_off">search_off</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Missing Item</span>
+<div class="check-icon absolute top-xs right-xs opacity-0 transform scale-50 transition-all text-electric-violet">
+<span class="material-symbols-outlined" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</label>
+<!-- Category: Wrong Item -->
+<label class="category-card relative">
+<input name="issue_category" type="radio" value="wrong_item"/>
+<div class="bg-surface-container border border-outline-variant/50 rounded-lg p-lg flex flex-col items-center justify-center text-center h-full hover:border-outline transition-colors relative overflow-hidden">
+<div class="icon-container text-on-surface-variant mb-md transition-colors">
+<span class="material-symbols-outlined text-[32px]" data-icon="sync_problem">sync_problem</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Wrong Item</span>
+<div class="check-icon absolute top-xs right-xs opacity-0 transform scale-50 transition-all text-electric-violet">
+<span class="material-symbols-outlined" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</label>
+<!-- Category: Pickup Issue -->
+<label class="category-card relative">
+<input name="issue_category" type="radio" value="pickup_issue"/>
+<div class="bg-surface-container border border-outline-variant/50 rounded-lg p-lg flex flex-col items-center justify-center text-center h-full hover:border-outline transition-colors relative overflow-hidden">
+<div class="icon-container text-on-surface-variant mb-md transition-colors">
+<span class="material-symbols-outlined text-[32px]" data-icon="storefront">storefront</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Pickup Issue</span>
+<div class="check-icon absolute top-xs right-xs opacity-0 transform scale-50 transition-all text-electric-violet">
+<span class="material-symbols-outlined" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</label>
+<!-- Category: Delivery Issue -->
+<label class="category-card relative">
+<input name="issue_category" type="radio" value="delivery_issue"/>
+<div class="bg-surface-container border border-outline-variant/50 rounded-lg p-lg flex flex-col items-center justify-center text-center h-full hover:border-outline transition-colors relative overflow-hidden">
+<div class="icon-container text-on-surface-variant mb-md transition-colors">
+<span class="material-symbols-outlined text-[32px]" data-icon="local_shipping">local_shipping</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Delivery Issue</span>
+<div class="check-icon absolute top-xs right-xs opacity-0 transform scale-50 transition-all text-electric-violet">
+<span class="material-symbols-outlined" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</label>
+<!-- Category: Payment / Pricing -->
+<label class="category-card relative">
+<input name="issue_category" type="radio" value="payment_pricing"/>
+<div class="bg-surface-container border border-outline-variant/50 rounded-lg p-lg flex flex-col items-center justify-center text-center h-full hover:border-outline transition-colors relative overflow-hidden">
+<div class="icon-container text-on-surface-variant mb-md transition-colors">
+<span class="material-symbols-outlined text-[32px]" data-icon="payments">payments</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Payment / Pricing</span>
+<div class="check-icon absolute top-xs right-xs opacity-0 transform scale-50 transition-all text-electric-violet">
+<span class="material-symbols-outlined" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</label>
+<!-- Category: Provider Behaviour -->
+<label class="category-card relative">
+<input name="issue_category" type="radio" value="provider_behaviour"/>
+<div class="bg-surface-container border border-outline-variant/50 rounded-lg p-lg flex flex-col items-center justify-center text-center h-full hover:border-outline transition-colors relative overflow-hidden">
+<div class="icon-container text-on-surface-variant mb-md transition-colors">
+<span class="material-symbols-outlined text-[32px]" data-icon="person_alert">person_alert</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Provider Behaviour</span>
+<div class="check-icon absolute top-xs right-xs opacity-0 transform scale-50 transition-all text-electric-violet">
+<span class="material-symbols-outlined" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</label>
+</div>
+<!-- Action Section -->
+<div class="flex justify-end pt-md border-t border-outline-variant/30">
+<button class="bg-electric-violet text-on-primary font-label-md text-label-md font-bold py-sm px-lg rounded-full shadow-lg shadow-primary/20 hover:bg-primary-container transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface">
+                Continue
+            </button>
+</div>
+</main>
+</body></html>

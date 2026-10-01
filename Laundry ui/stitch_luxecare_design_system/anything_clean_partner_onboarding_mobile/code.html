@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Delivery Partner Onboarding - Vehicle Info</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#eed9ff",
+                        "tertiary": "#c8c6c8",
+                        "error-container": "#93000a",
+                        "surface-container-low": "#1c1b1c",
+                        "on-surface": "#e5e2e3",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "secondary-fixed": "#e5e1e4",
+                        "on-primary": "#480081",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-error": "#690005",
+                        "surface-container-high": "#2a2a2b",
+                        "background": "#131314",
+                        "tertiary-container": "#646365",
+                        "surface-container-lowest": "#0e0e0f",
+                        "surface-dim": "#131314",
+                        "surface-variant": "#353436",
+                        "on-primary-fixed": "#2c0051",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "on-secondary-fixed-variant": "#474649",
+                        "inverse-on-surface": "#313031",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-secondary-container": "#b7b4b7",
+                        "surface": "#131314",
+                        "secondary": "#c8c6c8",
+                        "on-secondary": "#303032",
+                        "surface-container-highest": "#353436",
+                        "primary-container": "#8a2be2",
+                        "inverse-surface": "#e5e2e3",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-surface-variant": "#cfc2d7",
+                        "surface-container": "#201f20",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "primary": "#dcb8ff",
+                        "on-background": "#e5e2e3",
+                        "outline": "#988ca0",
+                        "outline-variant": "#4c4354",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "primary-fixed": "#efdbff",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#8422dc",
+                        "on-tertiary": "#303032",
+                        "surface-tint": "#dcb8ff",
+                        "secondary-container": "#474649",
+                        "surface-bright": "#3a393a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "xs": "4px",
+                        "3xl": "64px",
+                        "2xl": "48px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "caption": ["Geist"],
+                        "body-md": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "headline-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0B;
+            color: #e5e2e3;
+        }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131314;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #353436;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #474649;
+        }
+        .glass-panel {
+            background: rgba(18, 18, 20, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md antialiased min-h-screen flex flex-col items-center pt-24 pb-32 md:pb-24 px-4 md:px-0">
+<!-- Top Navigation (Onboarding Focus) -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl dark:bg-surface/80 border-b border-white/5 shadow-sm flex items-center justify-between px-md h-16 transition-transform">
+<button class="text-on-surface-variant hover:bg-surface-variant/50 p-2 rounded-full transition-colors active:scale-95 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_back" data-weight="regular">arrow_back</span>
+</button>
+<div class="font-headline-md text-headline-md-mobile md:text-headline-md font-bold text-primary dark:text-primary">
+            Delivery Pro
+        </div>
+<div class="w-10"></div> <!-- Placeholder for balance -->
+</header>
+<main class="w-full max-w-2xl flex flex-col gap-lg">
+<!-- Progress Stepper -->
+<section class="w-full mb-md">
+<div class="flex items-center justify-between mb-sm px-2">
+<span class="font-label-md text-label-md text-primary">Step 3 of 5</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Vehicle Information</span>
+</div>
+<div class="flex gap-2 w-full">
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+<div class="h-1 flex-1 bg-primary rounded-full shadow-[0_0_8px_rgba(220,184,255,0.5)]"></div>
+<div class="h-1 flex-1 bg-surface-variant rounded-full"></div>
+<div class="h-1 flex-1 bg-surface-variant rounded-full"></div>
+</div>
+</section>
+<div class="glass-panel rounded-xl p-lg md:p-2xl flex flex-col gap-xl">
+<header>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-xs">Vehicle Details</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Tell us what you'll be driving to complete deliveries.</p>
+</header>
+<!-- Vehicle Type Selection -->
+<fieldset class="flex flex-col gap-sm">
+<legend class="font-label-md text-label-md text-on-surface mb-sm">Select Vehicle Type</legend>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Bike -->
+<label class="cursor-pointer relative">
+<input checked="" class="peer sr-only" name="vehicle_type" type="radio" value="bike"/>
+<div class="h-full rounded-xl border border-surface-variant bg-surface p-md flex flex-col items-center justify-center gap-sm transition-all hover:bg-surface-container-high peer-checked:border-primary peer-checked:bg-primary-container/10 peer-focus-visible:ring-2 peer-focus-visible:ring-primary">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant peer-checked:text-primary transition-colors" data-icon="motorcycle" data-weight="regular">motorcycle</span>
+<span class="font-label-md text-label-md text-on-surface">Bike</span>
+</div>
+<div class="absolute top-2 right-2 opacity-0 peer-checked:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</label>
+<!-- Scooter -->
+<label class="cursor-pointer relative">
+<input class="peer sr-only" name="vehicle_type" type="radio" value="scooter"/>
+<div class="h-full rounded-xl border border-surface-variant bg-surface p-md flex flex-col items-center justify-center gap-sm transition-all hover:bg-surface-container-high peer-checked:border-primary peer-checked:bg-primary-container/10 peer-focus-visible:ring-2 peer-focus-visible:ring-primary">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant peer-checked:text-primary transition-colors" data-icon="electric_scooter" data-weight="regular">electric_scooter</span>
+<span class="font-label-md text-label-md text-on-surface">Scooter</span>
+</div>
+<div class="absolute top-2 right-2 opacity-0 peer-checked:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</label>
+<!-- Cycle -->
+<label class="cursor-pointer relative">
+<input class="peer sr-only" name="vehicle_type" type="radio" value="cycle"/>
+<div class="h-full rounded-xl border border-surface-variant bg-surface p-md flex flex-col items-center justify-center gap-sm transition-all hover:bg-surface-container-high peer-checked:border-primary peer-checked:bg-primary-container/10 peer-focus-visible:ring-2 peer-focus-visible:ring-primary">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant peer-checked:text-primary transition-colors" data-icon="pedal_bike" data-weight="regular">pedal_bike</span>
+<span class="font-label-md text-label-md text-on-surface">Cycle</span>
+</div>
+<div class="absolute top-2 right-2 opacity-0 peer-checked:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</label>
+</div>
+</fieldset>
+<!-- Vehicle Number Field -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface" for="vehicle_number">Vehicle Registration Number</label>
+<div class="relative">
+<input class="w-full bg-surface-container-high border border-transparent rounded-lg px-md py-3 text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors placeholder:text-on-surface-variant/50" id="vehicle_number" placeholder="e.g. DL 01 AB 1234" type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="pin" data-weight="regular">pin</span>
+</div>
+</div>
+<hr class="border-surface-variant border-t"/>
+<!-- Document Uploads -->
+<div class="flex flex-col gap-md">
+<h2 class="font-headline-md text-headline-md-mobile md:text-headline-md text-on-surface">Documents</h2>
+<!-- Registration Upload -->
+<div class="border border-dashed border-surface-variant rounded-xl p-md flex flex-col items-center justify-center gap-sm bg-surface-container-lowest/50 hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-full bg-surface-variant/50 flex items-center justify-center group-hover:bg-primary-container/20 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="upload_file" data-weight="regular">upload_file</span>
+</div>
+<div class="text-center">
+<p class="font-label-md text-label-md text-on-surface">Vehicle Registration (RC)</p>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Tap to upload clear photo (JPG, PNG)</p>
+</div>
+</div>
+<!-- Insurance Upload -->
+<div class="border border-dashed border-surface-variant rounded-xl p-md flex flex-col items-center justify-center gap-sm bg-surface-container-lowest/50 hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-full bg-surface-variant/50 flex items-center justify-center group-hover:bg-primary-container/20 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="shield" data-weight="regular">shield</span>
+</div>
+<div class="text-center">
+<p class="font-label-md text-label-md text-on-surface">Valid Insurance</p>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Tap to upload clear photo (JPG, PNG, PDF)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col md:flex-row gap-md mt-sm">
+<button class="flex-1 px-lg py-3 rounded-lg border border-outline text-on-surface font-label-md text-label-md hover:bg-surface-variant transition-colors text-center">
+                Save for Later
+            </button>
+<button class="flex-[2] px-lg py-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-fixed transition-colors text-center flex items-center justify-center gap-2">
+                Continue to Next Step
+                <span class="material-symbols-outlined text-sm" data-icon="arrow_forward" data-weight="regular">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Suppressed Bottom Nav (Onboarding Flow) -->
+<!-- Navigation intentionally omitted per relevance check rules for linear/transactional flows -->
+</body></html>

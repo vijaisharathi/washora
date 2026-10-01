@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reviews - Sneaker Deep Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#690005",
+                        "secondary-fixed": "#e4e2e4",
+                        "surface-bright": "#39393a",
+                        "inverse-primary": "#8422dc",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-tertiary-container": "#e3e0e2",
+                        "inverse-on-surface": "#313031",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-secondary": "#303032",
+                        "primary-container": "#8a2be2",
+                        "outline": "#988ca0",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "secondary": "#c8c6c8",
+                        "on-surface": "#e5e2e3",
+                        "on-primary-fixed": "#2c0051",
+                        "tertiary": "#c8c6c8",
+                        "on-surface-variant": "#cfc2d7",
+                        "surface-container-highest": "#353436",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-container-high": "#2a2a2b",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-tint": "#dcb8ff",
+                        "primary-fixed": "#efdbff",
+                        "background": "#131314",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-secondary-container": "#b9b8ba",
+                        "error-red": "#ffb4ab",
+                        "surface": "#131314",
+                        "on-primary-container": "#eed9ff",
+                        "electric-violet": "#8a2be2",
+                        "success-green": "#81C784",
+                        "on-background": "#e5e2e3",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-primary": "#480081",
+                        "outline-variant": "#4c4354",
+                        "success-bg": "#1A3D24",
+                        "surface-container-low": "#1c1b1c",
+                        "primary": "#dcb8ff",
+                        "tertiary-container": "#646365",
+                        "on-tertiary": "#303032",
+                        "tertiary-fixed": "#e4e2e4",
+                        "secondary-container": "#49494b",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-container": "#201f20",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#353436",
+                        "surface-dim": "#131314",
+                        "on-secondary-fixed-variant": "#474648",
+                        "on-error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "2xl": "48px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "3xl": "64px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "body-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "h1": ["Geist"],
+                        "caption": ["Geist"]
+                    },
+                    "fontSize": {
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .icon-filled { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopNavBar Shell -->
+<nav class="fixed top-0 w-full z-50 bg-surface-container-low/80 backdrop-blur-md border-b border-outline-variant/30 flat no shadows">
+<div class="flex justify-between items-center px-xl py-md max-w-[1200px] mx-auto">
+<!-- Brand -->
+<div class="font-h1 text-h1 font-bold text-electric-violet">Lumina Care</div>
+<!-- Navigation Links (Desktop) -->
+<div class="hidden md:flex items-center gap-xl font-body-md text-body-md">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Laundry</a>
+<!-- Active Navigation: Matches "Sneaker Deep Clean" context -->
+<a class="text-primary font-bold border-b-2 border-primary pb-1 opacity-80 scale-95 transition-all" href="#">Shoes</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Helmets</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Vehicles</a>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-md text-electric-violet">
+<button aria-label="Location" class="hover:text-primary transition-colors p-sm">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</button>
+<button aria-label="Search" class="hover:text-primary transition-colors p-sm">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button aria-label="Notifications" class="hover:text-primary transition-colors p-sm">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button aria-label="Shopping Cart" class="hover:text-primary transition-colors p-sm">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant ml-sm cursor-pointer">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A futuristic, high-contrast digital avatar profile picture featuring geometric shapes in deep midnight and electric violet tones, reflecting a precise, technical aesthetic suitable for a premium dark-mode dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDulhgK0kzQpXGMtw3-mbGXLxuzfGZW__7DSdsxO66TyLczwzBpSuoW_17TDWZ3AwN_st9u-6I8Bqo3at-Z9R6OBiQGNWyGfbCsPRc3ZzdINnmLZN7YEBePrNwBHcYuT_iHtujKSCfz-X6ad4muasWiZFeb8tRnurUaQFxCBIn12lThZryPE3FD2QxKKrbtkczdhf5-fqZFsnCEjnq-sA_qRo1wym5Fz7F_wMojO8endh_LvOpZ1CLocQ"/>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-[104px] pb-3xl px-xl max-w-[1200px] mx-auto">
+<!-- Contextual Back & Breadcrumb -->
+<div class="flex items-center gap-sm text-on-surface-variant font-label-md text-label-md mb-lg">
+<button class="flex items-center hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px] mr-xs">arrow_back</span>
+                Service Details
+            </button>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface">Sneaker Deep Clean</span>
+</div>
+<!-- Header -->
+<header class="mb-2xl flex flex-col md:flex-row md:items-end justify-between gap-lg">
+<div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-xs">Reviews</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">See what customers say about 'Sneaker Deep Clean' by CleanX Service Center.</p>
+</div>
+<button class="bg-electric-violet text-on-primary font-label-md text-label-md px-lg py-md rounded-lg font-bold shadow-lg shadow-electric-violet/20 hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors whitespace-nowrap">
+                Write a Review
+            </button>
+</header>
+<!-- Summary & Distribution (Bento Layout) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg mb-2xl">
+<!-- Aggregate Score -->
+<div class="lg:col-span-4 bg-surface-container-low border border-outline-variant/30 rounded-xl p-xl flex flex-col items-center justify-center text-center">
+<div class="font-display-lg text-display-lg text-primary mb-sm leading-none flex items-baseline">
+                    4.9 <span class="font-h3 text-h3 text-on-surface-variant ml-xs">/ 5</span>
+</div>
+<div class="flex items-center gap-xs text-primary mb-md">
+<span class="material-symbols-outlined icon-filled text-[24px]">star</span>
+<span class="material-symbols-outlined icon-filled text-[24px]">star</span>
+<span class="material-symbols-outlined icon-filled text-[24px]">star</span>
+<span class="material-symbols-outlined icon-filled text-[24px]">star</span>
+<span class="material-symbols-outlined text-[24px]">star_half</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">Based on 1,240 verified reviews</p>
+</div>
+<!-- Distribution Bars -->
+<div class="lg:col-span-8 bg-surface-container border border-outline-variant/20 rounded-xl p-xl flex flex-col justify-center gap-sm">
+<!-- 5 Star -->
+<div class="flex items-center gap-md">
+<span class="font-label-md text-label-md text-on-surface w-[48px]">5 Star</span>
+<div class="flex-1 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-electric-violet rounded-full" style="width: 85%;"></div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant w-[32px] text-right">1.1k</span>
+</div>
+<!-- 4 Star -->
+<div class="flex items-center gap-md">
+<span class="font-label-md text-label-md text-on-surface w-[48px]">4 Star</span>
+<div class="flex-1 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary/60 rounded-full" style="width: 10%;"></div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant w-[32px] text-right">104</span>
+</div>
+<!-- 3 Star -->
+<div class="flex items-center gap-md">
+<span class="font-label-md text-label-md text-on-surface w-[48px]">3 Star</span>
+<div class="flex-1 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-outline rounded-full" style="width: 3%;"></div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant w-[32px] text-right">24</span>
+</div>
+<!-- 2 Star -->
+<div class="flex items-center gap-md">
+<span class="font-label-md text-label-md text-on-surface w-[48px]">2 Star</span>
+<div class="flex-1 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-outline-variant rounded-full" style="width: 1%;"></div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant w-[32px] text-right">8</span>
+</div>
+<!-- 1 Star -->
+<div class="flex items-center gap-md">
+<span class="font-label-md text-label-md text-on-surface w-[48px]">1 Star</span>
+<div class="flex-1 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-error rounded-full" style="width: 1%;"></div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant w-[32px] text-right">4</span>
+</div>
+</div>
+</div>
+<!-- Filters & Sort -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-lg mb-xl">
+<div class="flex flex-wrap items-center gap-sm">
+<button class="px-md py-sm rounded-full border border-electric-violet bg-electric-violet/10 text-primary font-label-md text-label-md font-bold transition-colors">
+                    All Reviews
+                </button>
+<button class="px-md py-sm rounded-full border border-outline-variant/50 text-on-surface-variant bg-transparent font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors">
+                    5 Star
+                </button>
+<button class="px-md py-sm rounded-full border border-outline-variant/50 text-on-surface-variant bg-transparent font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors">
+                    4 Star
+                </button>
+<button class="px-md py-sm rounded-full border border-outline-variant/50 text-on-surface-variant bg-transparent font-label-md text-label-md flex items-center gap-xs hover:bg-surface-container-high hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[16px]">image</span>
+                    With Photos
+                </button>
+<button class="px-md py-sm rounded-full border border-outline-variant/50 text-on-surface-variant bg-transparent font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors">
+                    Recent
+                </button>
+</div>
+<div class="flex items-center gap-sm">
+<span class="font-label-md text-label-md text-on-surface-variant">Sort by:</span>
+<div class="relative group">
+<button class="flex items-center gap-sm bg-surface-container-low border border-outline-variant/50 rounded-lg px-md py-sm font-label-md text-label-md text-on-surface group-hover:border-primary transition-colors">
+                        Most Recent
+                        <span class="material-symbols-outlined text-[18px] text-on-surface-variant">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Reviews List -->
+<div class="flex flex-col gap-lg">
+<!-- Review 1 -->
+<article class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col md:flex-row gap-lg">
+<!-- User Meta -->
+<div class="md:w-64 shrink-0 flex flex-col gap-sm">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center font-h3 text-h3 text-primary border border-outline-variant/30">
+                            A
+                        </div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-bold">Arun Kumar</div>
+<div class="font-caption text-caption text-on-surface-variant">2 days ago</div>
+</div>
+</div>
+<div class="inline-flex items-center gap-xs bg-success-bg/20 text-success-green border border-success-green/20 rounded-full px-sm py-xs self-start">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span class="font-caption text-caption font-bold uppercase tracking-wider text-[10px]">Verified Booking</span>
+</div>
+</div>
+<!-- Review Content -->
+<div class="flex-1">
+<div class="flex items-center justify-between mb-sm">
+<div class="flex items-center gap-xs text-primary">
+<span class="material-symbols-outlined icon-filled text-[20px]">star</span>
+<span class="material-symbols-outlined icon-filled text-[20px]">star</span>
+<span class="material-symbols-outlined icon-filled text-[20px]">star</span>
+<span class="material-symbols-outlined icon-filled text-[20px]">star</span>
+<span class="material-symbols-outlined icon-filled text-[20px]">star</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant bg-surface-container-lowest px-sm py-xs rounded">Premium Sneaker Clean</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+                        Excellent cleaning. The sneakers look almost new. The attention to detail on the mesh fabric and the sole restoration was phenomenal. Highly recommend CleanX for anyone wanting to revive their favorite pairs.
+                    </p>
+</div>
+</article>
+<!-- Review 2 (With Photo) -->
+<article class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col md:flex-row gap-lg">
+<!-- User Meta -->
+<div class="md:w-64 shrink-0 flex flex-col gap-sm">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant/30">
+<img alt="Reviewer Avatar" class="w-full h-full object-cover" data-alt="A subtle, abstract geometric pattern in dark charcoal and electric violet used as a placeholder user avatar, emphasizing a modern corporate tech aesthetic without depicting a real person." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjG69TsgSHN0r5jpnhQmXqHHSVJ-u7q-yOTR5Y3HpSPWgMsPi08GZ5UinXTv9pZaUur6r9AD-uagpLFlZv0FI6XZzcxOEwpEG5D2jrvs6j9WNNsWNmVW8DD3hedKr4a4NsAbYlaW1hauTheKGt7drwkETYA9buuJ2lUJPnGEwogDlcFFk5BAj2E6zYrKq9gI96bhnNdeoNdasKz-uhhMFj5hieQwrP7mSpVA7aQZ_m3hHn_IlpuvIklw"/>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-bold">Sarah Jenkins</div>
+<div class="font-caption text-caption text-on-surface-variant">1 week ago</div>
+</div>
+</div>
+<div class="inline-flex items-center gap-xs bg-success-bg/20 text-success-green border border-success-green/20 rounded-full px-sm py-xs self-start">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span class="font-caption text-caption font-bold uppercase tracking-wider text-[10px]">Verified Booking</span>
+</div>
+</div>
+<!-- Review Content -->
+<div class="flex-1 flex flex-col">
+<div class="flex items-center justify-between mb-sm">
+<div class="flex items-center gap-xs text-primary">
+<span class="material-symbols-outlined icon-filled text-[20px]">star</span>
+<span class="material-symbols-outlined icon-filled text-[20px]">star</span>
+<span class="material-symbols-outlined icon-filled text-[20px]">star</span>
+<span class="material-symbols-outlined icon-filled text-[20px]">star</span>
+<span class="material-symbols-outlined text-[20px]">star_border</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant bg-surface-container-lowest px-sm py-xs rounded">Standard Deep Clean</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-md">
+                        Really solid job. Got out stains I thought were permanent. Only knocking off a star because it took a day longer than originally estimated, but the results speak for themselves. Check out the after photo!
+                    </p>
+<!-- Attached Photo -->
+<div class="w-full sm:w-64 h-48 rounded-lg overflow-hidden border border-outline-variant/30 cursor-pointer hover:border-primary/50 transition-colors">
+<img alt="Cleaned sneaker customer photo" class="w-full h-full object-cover" data-alt="A highly detailed close-up shot of a pristine, freshly deep-cleaned modern athletic sneaker resting on a dark, technical workbench surface. The lighting is cinematic and high-contrast, casting a soft glow that highlights the flawless texture of the shoe materials against a moody, deep midnight background. The aesthetic reflects a premium, precision-engineered cleaning service with sharp focus and subtle electric violet accent lighting reflecting off the tools nearby." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkUeiI3bEanH27X-eigURhJ1ZoRDorokI5M8aIkJVKIQvQp4a0dnAEoTtobWjqBnONLxMaJ1s4GpiI4I37S_Oyi13HuSMbJW-LjR6Di_N4Tto2PrLOkxwH6TkiHkCpkI_7tPV9oGhkp_J8QSGvC9RgGyqGSdKET9zqGdYXF3GjbqEHnIjeyoj3nz2RS_5dCZ0y7ygYGBPsQTuIDzAyIhtyTo5qh3edIyiuJc1tJ4WNEHk80S2AHewNhQ"/>
+</div>
+</div>
+</article>
+<!-- Load More Action -->
+<div class="mt-lg flex justify-center">
+<button class="bg-transparent border border-outline-variant text-on-surface-variant font-label-md text-label-md px-xl py-md rounded-lg hover:bg-surface-container hover:text-on-surface transition-colors flex items-center gap-sm">
+                    Load More Reviews
+                    <span class="material-symbols-outlined text-[18px]">refresh</span>
+</button>
+</div>
+</div>
+</main>
+</body></html>

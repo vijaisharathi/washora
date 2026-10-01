@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Go Online - Partner Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-surface": "#e5e2e3",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "background": "#131314",
+                        "on-primary": "#480081",
+                        "on-secondary-container": "#b7b4b7",
+                        "on-secondary": "#303032",
+                        "surface-container-high": "#2a2a2b",
+                        "surface-tint": "#dcb8ff",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "surface-variant": "#353436",
+                        "secondary-fixed": "#e5e1e4",
+                        "surface-container-highest": "#353436",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "secondary-container": "#474649",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "secondary": "#c8c6c8",
+                        "on-error": "#690005",
+                        "surface-container-low": "#1c1b1c",
+                        "on-primary-fixed": "#2c0051",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-surface-variant": "#cfc2d7",
+                        "inverse-on-surface": "#313031",
+                        "inverse-primary": "#8422dc",
+                        "tertiary": "#c8c6c8",
+                        "on-primary-container": "#eed9ff",
+                        "on-surface": "#e5e2e3",
+                        "tertiary-container": "#646365",
+                        "primary-container": "#8a2be2",
+                        "on-background": "#e5e2e3",
+                        "surface": "#131314",
+                        "on-tertiary": "#303032",
+                        "outline": "#988ca0",
+                        "on-secondary-fixed-variant": "#474649",
+                        "surface-dim": "#131314",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "outline-variant": "#4c4354",
+                        "primary-fixed": "#efdbff",
+                        "error-container": "#93000a",
+                        "surface-bright": "#3a393a",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#201f20",
+                        "surface-container-lowest": "#0e0e0f",
+                        "error": "#ffb4ab",
+                        "primary": "#dcb8ff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "2xl": "48px",
+                        "xl": "32px",
+                        "3xl": "64px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "lg": "24px"
+                    },
+                    fontFamily: {
+                        "display-lg": ["Geist"],
+                        "caption": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "label-md": ["Geist"]
+                    },
+                    fontSize: {
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "caption": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "display-lg-mobile": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Bottom Sheet Animation */
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-slide-up {
+            animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.2s ease-out forwards;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen relative overflow-hidden flex flex-col items-center antialiased">
+<!-- Mock Background (Dashboard Dimmed) -->
+<div class="absolute inset-0 w-full h-full bg-surface-container-lowest z-0 pointer-events-none">
+<!-- Mock Map Background -->
+<div class="w-full h-full opacity-20 grayscale" data-alt="A stylized, high-contrast dark mode map interface showing a complex city grid with glowing cyan and purple routes, designed for a modern delivery application dashboard. The map is minimalist with subtle grid lines and no text labels, conveying a sense of high-tech logistics and efficiency in a premium dark aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBM6VGCywvxCt-x_4zJbqUXbzcoZpMBdGcnD8gIv0z1Oo9afoSiJFZCSFMkKurX0sRHMY8qCsmxCSNcIPmIujpAYTuke8FLRGZVztj9MeHi_0l_HmAtt59LzmlKIWmeNH9NuNACa5i_7E8sXE6yr1N1_A0VwPykjGhz5UmGPlL8ck8meJ84n2vAkx08ejOOf4hdZChC-CDmovFngzqMIAR9w9I1KJVtSZAwmBSid6q3tuPRlLSiqnCwNA')"></div>
+<!-- Mock Top Bar (JSON) -->
+<header class="fixed top-0 w-full z-10 flex justify-between items-center px-lg h-16 bg-background/80 backdrop-blur-xl border-b border-white/5 md:hidden">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A close-up portrait of a professional delivery rider wearing a modern, subtle dark helmet and a sleek black jacket, looking confidently towards the camera. The lighting is moody and cinematic, highlighting their features against a blurred urban background at night, fitting a premium service app profile picture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_mmqxIkx_Lc9ZpybkxCxBD_4egclw9p7c3_-BOyKyyfW3Nw6ye0nsxccidw6f9jUyH_eICxFTTLbUuzc-Qng-ZsFA3uIqCHGfNyR9J2AT9iK5H7Eil9cg1m2UCXAjD8FnLCOKYmYzD0hi8YK_DHk5nGC2WZqbJstCnY4waXNqYSi5joTb9o7IufAi27Ja75CXS8rGj9DySo4LYT7DnxBGwWHF3fFH0OsZuP2kCqOk4asWtBpMBP4WNg"/>
+</div>
+<h1 class="font-headline-md text-headline-md-mobile text-primary">Partner Portal</h1>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95">sensors</span>
+</header>
+<!-- Mock Bottom Nav (JSON) -->
+<nav class="fixed bottom-0 w-full z-10 flex justify-around items-center h-20 px-md pb-safe bg-surface/90 backdrop-blur-xl border-t border-white/5 rounded-t-xl md:hidden">
+<button class="flex flex-col items-center justify-center text-primary bg-primary-container/10 rounded-xl px-sm py-xs">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors active:scale-90">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-label-md text-label-md">Deliveries</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors active:scale-90">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-label-md">Earnings</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors active:scale-90">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-label-md text-label-md">Alerts</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors active:scale-90">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</button>
+</nav>
+</div>
+<!-- Overlay -->
+<div aria-hidden="true" class="fixed inset-0 bg-background/60 backdrop-blur-[2px] z-40 animate-fade-in"></div>
+<!-- Bottom Sheet Container (Mobile Only constraint for design, but functional for preview) -->
+<div class="fixed bottom-0 left-0 right-0 z-50 w-full md:max-w-[480px] md:mx-auto animate-slide-up flex flex-col justify-end h-full pointer-events-none">
+<div class="bg-surface rounded-t-[32px] w-full p-lg pb-[max(24px,env(safe-area-inset-bottom))] shadow-2xl border-t border-white/5 pointer-events-auto flex flex-col gap-xl relative overflow-hidden">
+<!-- Subtle Top Glow -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-primary/20 blur-md"></div>
+<!-- Handle -->
+<div class="w-12 h-1.5 bg-surface-variant rounded-full mx-auto mt-2 mb-sm"></div>
+<!-- Header -->
+<div class="text-center flex flex-col gap-sm">
+<h2 class="font-headline-lg text-headline-lg-mobile text-on-surface">Ready to start delivering?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Review your current settings before going online.</p>
+</div>
+<!-- Details Cards (Bento-style layout) -->
+<div class="grid grid-cols-2 gap-sm">
+<!-- Location -->
+<div class="col-span-2 bg-surface-container-low rounded-2xl p-md border border-white/5 flex items-center gap-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined filled">location_on</span>
+</div>
+<div class="flex-1">
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">Current Zone</p>
+<p class="font-body-lg text-body-lg text-on-surface">Anna Nagar, Chennai</p>
+</div>
+<button class="text-primary hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+<!-- Vehicle -->
+<div class="bg-surface-container-low rounded-2xl p-md border border-white/5 flex flex-col gap-sm items-start">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">two_wheeler</span>
+</div>
+<div>
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">Vehicle</p>
+<p class="font-body-md text-body-md text-on-surface font-medium">Bike</p>
+</div>
+</div>
+<!-- Radius -->
+<div class="bg-surface-container-low rounded-2xl p-md border border-white/5 flex flex-col gap-sm items-start">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">radar</span>
+</div>
+<div>
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">Radius</p>
+<p class="font-body-md text-body-md text-on-surface font-medium">Within 5 km</p>
+</div>
+</div>
+</div>
+<!-- Status -->
+<div class="flex items-center justify-center gap-sm bg-primary-container/5 rounded-xl py-sm px-md border border-primary/10">
+<span class="material-symbols-outlined text-primary text-xl filled">check_circle</span>
+<span class="font-label-md text-label-md text-primary-fixed">Location access enabled</span>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-md mt-sm">
+<button class="w-full bg-primary hover:bg-primary-fixed text-on-primary font-headline-md text-headline-md-mobile py-md rounded-2xl transition-all active:scale-[0.98] flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined">power_settings_new</span>
+                    GO ONLINE
+                </button>
+<button class="w-full bg-transparent border border-outline-variant hover:border-outline text-on-surface-variant hover:text-on-surface font-label-md text-label-md py-sm rounded-xl transition-all active:scale-[0.98]">
+                    Not Now
+                </button>
+</div>
+</div>
+</div>
+</body></html>

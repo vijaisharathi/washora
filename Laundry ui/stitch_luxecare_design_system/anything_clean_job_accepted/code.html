@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Delivery Accepted - QuickHire</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-surface": "#e5e2e3",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "background": "#131314",
+                      "on-primary": "#480081",
+                      "on-secondary-container": "#b7b4b7",
+                      "on-secondary": "#303032",
+                      "surface-container-high": "#2a2a2b",
+                      "surface-tint": "#dcb8ff",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "surface-variant": "#353436",
+                      "secondary-fixed": "#e5e1e4",
+                      "surface-container-highest": "#353436",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "secondary-container": "#474649",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "on-tertiary-fixed-variant": "#474649",
+                      "secondary": "#c8c6c8",
+                      "on-error": "#690005",
+                      "surface-container-low": "#1c1b1c",
+                      "on-primary-fixed": "#2c0051",
+                      "tertiary-fixed": "#e4e2e4",
+                      "on-surface-variant": "#cfc2d7",
+                      "inverse-on-surface": "#313031",
+                      "inverse-primary": "#8422dc",
+                      "tertiary": "#c8c6c8",
+                      "on-primary-container": "#eed9ff",
+                      "on-surface": "#e5e2e3",
+                      "tertiary-container": "#646365",
+                      "primary-container": "#8a2be2",
+                      "on-background": "#e5e2e3",
+                      "surface": "#131314",
+                      "on-tertiary": "#303032",
+                      "outline": "#988ca0",
+                      "on-secondary-fixed-variant": "#474649",
+                      "surface-dim": "#131314",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "outline-variant": "#4c4354",
+                      "primary-fixed": "#efdbff",
+                      "error-container": "#93000a",
+                      "surface-bright": "#3a393a",
+                      "on-tertiary-container": "#e3e0e2",
+                      "on-error-container": "#ffdad6",
+                      "surface-container": "#201f20",
+                      "surface-container-lowest": "#0e0e0f",
+                      "error": "#ffb4ab",
+                      "primary": "#dcb8ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "2xl": "48px",
+                      "xl": "32px",
+                      "3xl": "64px",
+                      "md": "16px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "display-lg-mobile": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "44px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            font-family: 'Geist', sans-serif;
+            background-color: #131314; /* background */
+            color: #e5e2e3; /* on-background */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-white/5 flex justify-between items-center px-lg h-16">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary dark:text-primary">sensors</span>
+<span class="font-headline-md text-headline-md-mobile text-primary dark:text-primary">Partner Portal</span>
+</div>
+<div>
+<!-- Avatar Placeholder -->
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden">
+<img class="object-cover w-full h-full" data-alt="A small, circular avatar portrait of a professional driver or courier. The person is looking slightly off-camera with a neutral expression. The background is a blurred dark gradient reflecting the app's premium night-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVk-4jNcgLmyLUKt7lkhqpmV7Yy_1DsydUGrj0rFT9nyFAxnoTXJmB44TeIW_Ylp1wj-QPrLg_ddd301_2vnYsfOomSXZKCMJQ7Q45r-32jrJCKvHuniKtErlJbBr08CAE6xntrogqJMTkVbEoJJpvjD_BsSZst1BW4kROgA0ywwFoa_mei_1Zq7hVLBoX9ePVe9aMrnoSLOS5ioDfXw3YihMBafh9nwnpko-jtcRqa7ekHnZ2dowUuA"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 px-md md:px-lg max-w-3xl mx-auto space-y-lg flex flex-col items-center">
+<!-- Success Header -->
+<div class="flex flex-col items-center text-center space-y-sm py-lg">
+<div class="w-16 h-16 rounded-full bg-[#1A3B2A] flex items-center justify-center mb-sm shadow-[0_0_40px_rgba(46,160,67,0.2)]">
+<span class="material-symbols-outlined text-[#3FB950]" style="font-size: 32px;">check</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-[#3FB950]">Delivery accepted</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Order #QH1024</p>
+</div>
+<!-- Active Job Card -->
+<div class="w-full bg-surface rounded-xl p-md border border-white/5 relative overflow-hidden">
+<!-- Subtle glow effect inside card -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+<div class="flex justify-between items-center mb-md border-b border-white/5 pb-md">
+<div class="flex items-center gap-xs">
+<span class="px-sm py-xs bg-primary-container/20 text-primary rounded-md font-label-md text-label-md uppercase tracking-wider text-[10px]">ACCEPTED</span>
+</div>
+<div class="font-headline-md text-headline-md text-on-background">₹62</div>
+</div>
+<!-- Map / Route Preview -->
+<div class="w-full h-32 bg-surface-container-low rounded-lg mb-md relative overflow-hidden flex items-center justify-center border border-white/5">
+<img class="object-cover w-full h-full opacity-60" data-alt="A high-contrast, dark-mode stylized map showing a short delivery route in a dense urban grid. A vibrant purple path connects two glowing points. The map aesthetic matches a premium, high-tech interface with minimal street details and deep blacks." data-location="Bangalore" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBYcKzvVX7zDDOOL57Gmiyk5lftqC8pGo8MxRPLasnsjpJ_bRRF1HMFVDAL91ovRf27sxPU9o0rZyaZ9AJA8EvC8UCWXAJgNAlFWGfsN5cqK5G00jopbK2tk0p7__Y-nLcVjm_R5B5igPhpLcawgwmSgs5yE8Q-N-PHCEVkmDBOaqAVXmHxMBh_dobZFHUP7wNVygd6aGKuQjf5SbEw3HRwffJORC3hWKZaf0se4MIEt0uK8j6CpqKMA"/>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-surface/80 pointer-events-none"></div>
+<!-- Mock route line -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none p-lg">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 50">
+<path class="opacity-80" d="M10,25 C40,0 60,50 90,25" fill="none" stroke="#dcb8ff" stroke-dasharray="4,4" stroke-width="2"></path>
+<circle cx="10" cy="25" fill="#dcb8ff" r="4"></circle>
+<circle cx="90" cy="25" fill="#8a2be2" r="4"></circle>
+</svg>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-sm mb-lg">
+<div class="flex flex-col items-center bg-surface-container-low p-sm rounded-lg border border-white/5">
+<span class="material-symbols-outlined text-primary mb-xs" style="font-size: 20px;">storefront</span>
+<span class="font-caption text-caption text-on-surface-variant">Pickup</span>
+<span class="font-label-md text-label-md">1.4 km</span>
+</div>
+<div class="flex flex-col items-center bg-surface-container-low p-sm rounded-lg border border-white/5">
+<span class="material-symbols-outlined text-primary mb-xs" style="font-size: 20px;">route</span>
+<span class="font-caption text-caption text-on-surface-variant">Total</span>
+<span class="font-label-md text-label-md">3.8 km</span>
+</div>
+<div class="flex flex-col items-center bg-surface-container-low p-sm rounded-lg border border-white/5">
+<span class="material-symbols-outlined text-primary mb-xs" style="font-size: 20px;">schedule</span>
+<span class="font-caption text-caption text-on-surface-variant">ETA</span>
+<span class="font-label-md text-label-md text-primary">18 min</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-md rounded-lg mb-lg border-l-2 border-primary">
+<h3 class="font-label-md text-label-md text-on-background mb-xs">Head to pickup</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Navigate to the service provider to collect the package.</p>
+</div>
+<div class="flex flex-col gap-sm mt-md">
+<button class="w-full bg-primary text-on-primary py-md rounded-lg font-label-md text-label-md font-bold uppercase tracking-wide hover:opacity-90 active:scale-[0.98] transition-all flex justify-center items-center gap-sm">
+<span class="material-symbols-outlined">navigation</span>
+                    NAVIGATE TO PICKUP
+                </button>
+<button class="w-full bg-transparent border border-outline-variant text-on-surface-variant py-md rounded-lg font-label-md text-label-md hover:bg-surface-container-high active:scale-[0.98] transition-all">
+                    VIEW ORDER DETAILS
+                </button>
+</div>
+</div>
+</main>
+<!-- Persistent Active Delivery Banner -->
+<div class="fixed bottom-20 md:bottom-0 w-full z-40 px-sm pb-sm">
+<div class="max-w-3xl mx-auto bg-primary-container text-on-primary-container rounded-xl p-sm flex items-center justify-between shadow-2xl border border-primary/20 cursor-pointer hover:bg-primary-container/90 transition-colors">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center animate-pulse">
+<span class="material-symbols-outlined text-primary" style="font-size: 16px;">local_shipping</span>
+</div>
+<div>
+<div class="font-label-md text-label-md">Active delivery</div>
+<div class="font-caption text-caption opacity-80">Order #QH1024</div>
+</div>
+</div>
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+<!-- Bottom Navigation Bar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface/90 backdrop-blur-xl border-t border-white/5 shadow-2xl flex justify-around items-center h-20 px-md pb-safe">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center text-primary bg-primary-container/10 rounded-xl px-sm py-xs active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-md text-label-md text-[10px] mt-1">Home</span>
+</a>
+<!-- Deliveries (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-label-md text-label-md text-[10px] mt-1">Deliveries</span>
+</a>
+<!-- Earnings (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-label-md text-[10px] mt-1">Earnings</span>
+</a>
+<!-- Alerts (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-label-md text-label-md text-[10px] mt-1">Alerts</span>
+</a>
+<!-- Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md text-[10px] mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

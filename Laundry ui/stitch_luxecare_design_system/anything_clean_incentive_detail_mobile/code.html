@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Incentive Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e5e2e3",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#efdbff",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-variant": "#353436",
+                        "primary": "#dcb8ff",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "secondary": "#c8c6c8",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-dim": "#131314",
+                        "on-tertiary": "#303032",
+                        "surface": "#131314",
+                        "surface-container": "#201f20",
+                        "primary-container": "#8a2be2",
+                        "background": "#131314",
+                        "surface-container-highest": "#353436",
+                        "tertiary": "#c8c6c8",
+                        "surface-container-high": "#2a2a2b",
+                        "surface-tint": "#dcb8ff",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-surface-variant": "#cfc2d7",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#313031",
+                        "tertiary-container": "#646365",
+                        "on-secondary-container": "#b7b4b7",
+                        "secondary-container": "#474649",
+                        "outline-variant": "#4c4354",
+                        "inverse-primary": "#8422dc",
+                        "on-primary-container": "#eed9ff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-primary": "#480081",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#2c0051",
+                        "on-surface": "#e5e2e3",
+                        "tertiary-fixed": "#e4e2e4",
+                        "surface-container-low": "#1c1b1c",
+                        "outline": "#988ca0",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-secondary-fixed-variant": "#474649",
+                        "secondary-fixed": "#e5e1e4",
+                        "surface-bright": "#3a393a",
+                        "on-secondary": "#303032"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "3xl": "64px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "caption": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        .glass-panel {
+            background: rgba(18, 18, 20, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .progress-ring__circle {
+            transition: stroke-dashoffset 0.8s ease-in-out;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+        /* Mobile preview container constraints for demonstration */
+        .mobile-container {
+            max-width: 390px;
+            margin: 0 auto;
+            min-height: 100vh;
+            position: relative;
+            background-color: #0A0A0B; /* Layer 0 */
+            box-shadow: 0 0 40px rgba(0,0,0,0.5);
+            overflow: hidden;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-black text-on-background min-h-screen">
+<div class="mobile-container flex flex-col">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full max-w-[390px] z-50 glass-panel shadow-sm">
+<div class="flex items-center justify-between px-md h-16 w-full max-w-full">
+<button class="text-on-surface-variant hover:opacity-80 transition-all duration-200 active:scale-95 flex items-center justify-center p-sm rounded-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<div class="font-headline-md text-headline-md text-on-background flex-1 text-center pr-[40px]">
+                    Incentive Detail
+                </div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto pt-16 pb-3xl px-[20px] bg-background">
+<!-- Hero Section -->
+<section class="mt-lg flex flex-col items-center">
+<div class="bg-primary-container/20 text-primary px-sm py-xs rounded-full font-label-md text-label-md uppercase tracking-wider mb-sm flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    IN PROGRESS
+                </div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-center mb-xs">Weekend Delivery Challenge</h1>
+<p class="font-body-lg text-body-lg text-secondary mb-xl">Reward: <span class="text-on-background font-bold">₹500</span></p>
+<!-- Circular Progress -->
+<div class="relative w-[200px] h-[200px] flex items-center justify-center mb-2xl">
+<svg class="w-full h-full absolute inset-0" viewbox="0 0 100 100">
+<circle class="text-surface-container-high stroke-current" cx="50" cy="50" fill="transparent" r="44" stroke-width="6"></circle>
+<circle class="text-primary stroke-current progress-ring__circle" cx="50" cy="50" fill="transparent" r="44" stroke-dasharray="276.46" stroke-dashoffset="110.58" stroke-linecap="round" stroke-width="6"></circle>
+</svg>
+<div class="flex flex-col items-center z-10">
+<span class="font-display-lg-mobile text-display-lg-mobile">12<span class="text-secondary font-headline-lg text-headline-lg">/20</span></span>
+<span class="font-label-md text-label-md text-secondary mt-xs">Deliveries</span>
+</div>
+</div>
+</section>
+<!-- Details Section -->
+<section class="space-y-md">
+<!-- How to qualify -->
+<div class="bg-surface rounded-xl p-lg border border-white/5">
+<h2 class="font-headline-md text-headline-md mb-sm flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">target</span>
+                        How to qualify
+                    </h2>
+<ul class="space-y-sm font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-[2px]">check_circle</span>
+                            Complete 20 eligible deliveries.
+                        </li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-[2px]">schedule</span>
+                            Ends today at 11:59 PM.
+                        </li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-[2px]">map</span>
+                            Valid in designated zones only.
+                        </li>
+</ul>
+</div>
+<!-- Milestones -->
+<div class="bg-surface rounded-xl p-lg border border-white/5">
+<h2 class="font-headline-md text-headline-md mb-md">Milestones</h2>
+<div class="relative pl-sm">
+<div class="absolute left-[15px] top-2 bottom-2 w-[2px] bg-surface-container-highest"></div>
+<div class="flex items-center gap-md mb-lg relative">
+<div class="w-[14px] h-[14px] rounded-full bg-primary ring-4 ring-surface relative z-10"></div>
+<div class="flex-1 bg-surface-container-low p-sm rounded-lg">
+<p class="font-body-md text-body-md text-on-background">5 Deliveries</p>
+<p class="font-caption text-caption text-secondary">Completed</p>
+</div>
+</div>
+<div class="flex items-center gap-md mb-lg relative">
+<div class="w-[14px] h-[14px] rounded-full bg-primary ring-4 ring-surface relative z-10"></div>
+<div class="flex-1 bg-surface-container-low p-sm rounded-lg">
+<p class="font-body-md text-body-md text-on-background">10 Deliveries</p>
+<p class="font-caption text-caption text-secondary">Completed</p>
+</div>
+</div>
+<div class="flex items-center gap-md mb-lg relative">
+<div class="w-[14px] h-[14px] rounded-full bg-surface-container-highest ring-4 ring-surface relative z-10">
+<div class="w-full h-full rounded-full bg-primary animate-ping opacity-75"></div>
+</div>
+<div class="flex-1 bg-primary/10 border border-primary/20 p-sm rounded-lg">
+<p class="font-body-md text-body-md text-primary">15 Deliveries</p>
+<p class="font-caption text-caption text-primary">In Progress</p>
+</div>
+</div>
+<div class="flex items-center gap-md relative">
+<div class="w-[14px] h-[14px] rounded-full bg-surface-container-highest ring-4 ring-surface relative z-10"></div>
+<div class="flex-1 bg-surface-container-low p-sm rounded-lg">
+<p class="font-body-md text-body-md text-secondary">20 Deliveries</p>
+<p class="font-caption text-caption text-surface-variant">Goal (₹500 Reward)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Terms Expandable -->
+<div class="bg-surface rounded-xl border border-white/5 overflow-hidden">
+<button class="w-full p-md flex items-center justify-between font-label-md text-label-md text-on-background hover:bg-surface-container-low transition-colors">
+                        Terms & Conditions
+                        <span class="material-symbols-outlined text-secondary">expand_more</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Fixed Bottom CTA -->
+<div class="fixed bottom-0 w-full max-w-[390px] bg-background/90 backdrop-blur-xl border-t border-white/5 p-md pb-safe">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-[14px] rounded-lg transition-transform duration-300 active:scale-95 shadow-[0_0_20px_rgba(220,184,255,0.15)]">
+                VIEW DELIVERIES
+            </button>
+</div>
+</div>
+</body></html>

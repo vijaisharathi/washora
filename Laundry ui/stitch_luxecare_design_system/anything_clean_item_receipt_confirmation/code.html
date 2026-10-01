@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Item Receipt - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/gh/fontsource/geist-sans@5.0.1/files/geist-sans-latin-400-normal.woff2') format('woff2');
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/gh/fontsource/geist-sans@5.0.1/files/geist-sans-latin-500-normal.woff2') format('woff2');
+            font-weight: 500;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/gh/fontsource/geist-sans@5.0.1/files/geist-sans-latin-600-normal.woff2') format('woff2');
+            font-weight: 600;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/gh/fontsource/geist-sans@5.0.1/files/geist-sans-latin-700-normal.woff2') format('woff2');
+            font-weight: 700;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            background-color: #131314;
+            color: #e5e2e3;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "inverse-surface": "#e5e2e3",
+                            "inverse-on-surface": "#313031",
+                            "secondary-fixed": "#e4e2e4",
+                            "on-background": "#e5e2e3",
+                            "surface-container-highest": "#353436",
+                            "surface-dim": "#131314",
+                            "on-error": "#690005",
+                            "secondary-fixed-dim": "#c8c6c8",
+                            "success-bg": "#1A3D24",
+                            "error-red": "#ffb4ab",
+                            "on-secondary-container": "#b9b8ba",
+                            "tertiary": "#c8c6c8",
+                            "electric-violet": "#8a2be2",
+                            "on-primary-container": "#eed9ff",
+                            "primary-fixed": "#efdbff",
+                            "on-tertiary-fixed-variant": "#474648",
+                            "on-secondary": "#303032",
+                            "surface-bright": "#39393a",
+                            "on-tertiary-container": "#e3e0e2",
+                            "on-tertiary-fixed": "#1b1b1d",
+                            "surface-container": "#201f20",
+                            "error-container": "#93000a",
+                            "outline-variant": "#4c4354",
+                            "on-surface-variant": "#cfc2d7",
+                            "primary-fixed-dim": "#dcb8ff",
+                            "on-secondary-fixed-variant": "#474648",
+                            "background": "#131314",
+                            "tertiary-fixed": "#e4e2e4",
+                            "on-primary-fixed": "#2c0051",
+                            "on-tertiary": "#303032",
+                            "outline": "#988ca0",
+                            "inverse-primary": "#8422dc",
+                            "surface-variant": "#353436",
+                            "surface-container-lowest": "#0e0e0f",
+                            "surface": "#131314",
+                            "on-secondary-fixed": "#1b1b1d",
+                            "on-primary-fixed-variant": "#6700b5",
+                            "error": "#ffb4ab",
+                            "on-primary": "#480081",
+                            "tertiary-fixed-dim": "#c8c6c8",
+                            "tertiary-container": "#646365",
+                            "success-green": "#81C784",
+                            "surface-container-high": "#2a2a2b",
+                            "on-surface": "#e5e2e3",
+                            "on-error-container": "#ffdad6",
+                            "primary-container": "#8a2be2",
+                            "surface-container-low": "#1c1b1c",
+                            "secondary": "#c8c6c8",
+                            "secondary-container": "#49494b",
+                            "primary": "#dcb8ff",
+                            "surface-tint": "#dcb8ff"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "2xl": "48px",
+                            "3xl": "64px",
+                            "xl": "32px",
+                            "lg": "24px",
+                            "sm": "8px",
+                            "xs": "4px",
+                            "md": "16px"
+                    },
+                    "fontFamily": {
+                            "headline-lg": ["Geist"],
+                            "mono-display": ["monospace"],
+                            "h3": ["Geist"],
+                            "h1": ["Geist"],
+                            "caption": ["Geist"],
+                            "label-md": ["Geist"],
+                            "body-md": ["Geist"],
+                            "display-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                            "mono-display": ["18px", {"letterSpacing": "0.05em", "fontWeight": "700"}],
+                            "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                            "h1": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                            "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                            "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface h-screen flex overflow-hidden">
+<!-- Top AppBar (JSON Shell) -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-md fixed top-0 right-0 w-full z-50 border-b border-outline-variant/30 flex justify-between items-center h-16 px-xl">
+<div class="flex items-center gap-md">
+<!-- Back Action for linear flow -->
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<h1 class="text-h3 font-h3 font-black text-on-surface">Item Receipt</h1>
+<span class="text-caption font-caption text-on-surface-variant uppercase tracking-wider">Booking QH-20260902-1041</span>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">help</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 mt-16 overflow-y-auto p-xl">
+<div class="max-w-4xl mx-auto space-y-lg">
+<!-- Item Details Card -->
+<div class="bg-surface-container border border-outline-variant/30 rounded-xl p-lg flex flex-col md:flex-row gap-lg items-start">
+<div class="w-32 h-32 rounded-lg bg-surface-container-low border border-outline-variant/50 flex items-center justify-center overflow-hidden shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="A pair of high-end premium sneakers, clean and modern, resting on a sleek dark surface in a high-tech workshop setting. Dramatic directional lighting highlighting the textures of the shoe. Deep shadow contrast, corporate modern aesthetic, electric violet rim light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxLEtLrPYUeVk97N5yxnP9rXgFWQTKJgsbqRKTMdodIdRQ8uJpkvtDVAABPSCwRapTVPni-WaaL2oyLDj2-Mzqmh_2n60oxgaersgzikM6IlY2-b41_rwwJsfzjNicZ40SQGW0tbuQ0Ax_swSgqszY7RGsYRCYylj3p53yXIZDyO1_2e-Z-5Ss-JxJ8JXJ4WhtrtNE4Lcotkx2ehg8v5qlZEJqIaAxVNyr3I4S-lUFjZVRRe1JasPx3g"/>
+</div>
+<div class="flex-1 space-y-md w-full">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-h1 font-h1 text-primary">Premium Sneakers</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">1 Pair • Specialized Cleaning Required</p>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/50 rounded px-3 py-1">
+<span class="text-caption font-caption text-on-surface-variant block mb-1">Receipt Time</span>
+<span class="text-label-md font-label-md text-on-surface">Sep 2, 12:20 PM</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 pt-4 border-t border-outline-variant/30">
+<div>
+<span class="text-caption font-caption text-on-surface-variant block mb-1">Expected Quantity</span>
+<span class="text-body-md font-body-md text-on-surface font-semibold">1 Pair</span>
+</div>
+<div>
+<span class="text-caption font-caption text-on-surface-variant block mb-1">Received Quantity</span>
+<div class="flex items-center gap-2">
+<span class="text-body-md font-body-md text-success-green font-semibold">1 Pair</span>
+<span class="material-symbols-outlined text-success-green text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Condition Gate -->
+<div class="bg-surface-container border border-outline-variant/30 rounded-xl p-lg">
+<h3 class="text-h3 font-h3 text-on-surface mb-md">Condition Assessment</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6">Select the initial condition of the item upon receipt.</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="condition" type="radio"/>
+<div class="h-full bg-surface-container-low border-2 border-outline-variant/50 rounded-lg p-4 flex flex-col items-center justify-center gap-3 transition-all peer-checked:border-primary peer-checked:bg-primary/10 hover:bg-surface-container-highest">
+<span class="material-symbols-outlined text-3xl peer-checked:text-primary text-on-surface-variant transition-colors" style="font-variation-settings: 'FILL' 1;">thumb_up</span>
+<span class="text-label-md font-label-md text-on-surface peer-checked:text-primary font-bold">Good</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="condition" type="radio"/>
+<div class="h-full bg-surface-container-low border-2 border-outline-variant/50 rounded-lg p-4 flex flex-col items-center justify-center gap-3 transition-all peer-checked:border-primary peer-checked:bg-primary/10 hover:bg-surface-container-highest">
+<span class="material-symbols-outlined text-3xl peer-checked:text-primary text-on-surface-variant transition-colors" style="font-variation-settings: 'FILL' 0;">visibility</span>
+<span class="text-label-md font-label-md text-on-surface peer-checked:text-primary font-bold">Minor Wear</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="condition" type="radio"/>
+<div class="h-full bg-surface-container-low border-2 border-outline-variant/50 rounded-lg p-4 flex flex-col items-center justify-center gap-3 transition-all peer-checked:border-error peer-checked:bg-error-container/20 hover:bg-surface-container-highest">
+<span class="material-symbols-outlined text-3xl peer-checked:text-error text-on-surface-variant transition-colors" style="font-variation-settings: 'FILL' 0;">warning</span>
+<span class="text-label-md font-label-md text-on-surface peer-checked:text-error font-bold">Damaged</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="condition" type="radio"/>
+<div class="h-full bg-surface-container-low border-2 border-outline-variant/50 rounded-lg p-4 flex flex-col items-center justify-center gap-3 transition-all peer-checked:border-primary peer-checked:bg-primary/10 hover:bg-surface-container-highest">
+<span class="material-symbols-outlined text-3xl peer-checked:text-primary text-on-surface-variant transition-colors" style="font-variation-settings: 'FILL' 0;">more_horiz</span>
+<span class="text-label-md font-label-md text-on-surface peer-checked:text-primary font-bold">Other</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Validation & Documentation Bento -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Match Checklist -->
+<div class="bg-surface-container border border-outline-variant/30 rounded-xl p-lg flex flex-col">
+<h3 class="text-h3 font-h3 text-on-surface mb-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">fact_check</span>
+                        Verification
+                    </h3>
+<div class="space-y-4 flex-1">
+<label class="flex items-center gap-4 cursor-pointer group p-3 rounded-lg hover:bg-surface-container-low transition-colors border border-transparent hover:border-outline-variant/20">
+<div class="relative flex items-center justify-center w-6 h-6">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="w-6 h-6 border-2 border-outline-variant rounded bg-surface-container-low peer-checked:bg-primary peer-checked:border-primary transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-sm opacity-0 peer-checked:opacity-100 transition-opacity font-bold" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+<span class="text-body-md font-body-md text-on-surface group-hover:text-primary transition-colors">Order matches</span>
+</label>
+<label class="flex items-center gap-4 cursor-pointer group p-3 rounded-lg hover:bg-surface-container-low transition-colors border border-transparent hover:border-outline-variant/20">
+<div class="relative flex items-center justify-center w-6 h-6">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="w-6 h-6 border-2 border-outline-variant rounded bg-surface-container-low peer-checked:bg-primary peer-checked:border-primary transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-sm opacity-0 peer-checked:opacity-100 transition-opacity font-bold" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+<span class="text-body-md font-body-md text-on-surface group-hover:text-primary transition-colors">Quantity matches</span>
+</label>
+<label class="flex items-center gap-4 cursor-pointer group p-3 rounded-lg hover:bg-surface-container-low transition-colors border border-transparent hover:border-outline-variant/20">
+<div class="relative flex items-center justify-center w-6 h-6">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="w-6 h-6 border-2 border-outline-variant rounded bg-surface-container-low peer-checked:bg-primary peer-checked:border-primary transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-sm opacity-0 peer-checked:opacity-100 transition-opacity font-bold" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+<span class="text-body-md font-body-md text-on-surface group-hover:text-primary transition-colors">Package intact</span>
+</label>
+</div>
+</div>
+<!-- Photos & Notes -->
+<div class="bg-surface-container border border-outline-variant/30 rounded-xl p-lg flex flex-col gap-6">
+<div>
+<h3 class="text-label-md font-label-md font-bold text-on-surface mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-lg">photo_camera</span>
+                            Receipt Photos
+                        </h3>
+<button class="w-full h-24 border-2 border-dashed border-outline-variant/50 rounded-lg bg-surface-container-low hover:bg-surface-container hover:border-primary transition-all flex flex-col items-center justify-center text-on-surface-variant hover:text-primary group">
+<span class="material-symbols-outlined mb-1 group-hover:scale-110 transition-transform">add_circle</span>
+<span class="text-caption font-caption">Add Photos</span>
+</button>
+</div>
+<div class="flex-1 flex flex-col">
+<label class="text-label-md font-label-md font-bold text-on-surface mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-lg">notes</span>
+                            Internal Notes
+                        </label>
+<textarea class="w-full flex-1 bg-surface-container-low border border-outline-variant/50 rounded-lg p-3 text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary resize-none placeholder:text-on-surface-variant/50" placeholder="Add any specific observations..."></textarea>
+</div>
+</div>
+</div>
+<!-- Action Area -->
+<div class="pt-lg flex justify-end gap-4 pb-2xl">
+<button class="px-6 py-3 rounded-lg border border-outline-variant text-on-surface font-label-md font-bold hover:bg-surface-container transition-colors">
+                    Cancel
+                </button>
+<button class="px-8 py-3 rounded-lg bg-electric-violet text-white font-label-md font-bold shadow-lg shadow-primary/20 hover:bg-inverse-primary transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    Confirm Item Receipt
+                </button>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Add Payment Method - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary": "#303032",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "inverse-surface": "#e5e2e3",
+                      "on-error": "#690005",
+                      "success-bg": "#1A3D24",
+                      "error": "#ffb4ab",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "surface-dim": "#131314",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "success-green": "#81C784",
+                      "on-secondary-fixed-variant": "#474648",
+                      "inverse-on-surface": "#313031",
+                      "inverse-primary": "#8422dc",
+                      "on-primary-container": "#eed9ff",
+                      "on-primary": "#480081",
+                      "surface-variant": "#353436",
+                      "outline": "#988ca0",
+                      "primary": "#dcb8ff",
+                      "on-surface": "#e5e2e3",
+                      "on-secondary-container": "#b9b8ba",
+                      "surface-tint": "#dcb8ff",
+                      "tertiary-container": "#646365",
+                      "primary-container": "#8a2be2",
+                      "on-primary-fixed": "#2c0051",
+                      "primary-fixed": "#efdbff",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "surface-container-low": "#1c1b1c",
+                      "secondary-container": "#49494b",
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-surface-variant": "#cfc2d7",
+                      "surface-bright": "#39393a",
+                      "surface": "#131314",
+                      "outline-variant": "#4c4354",
+                      "secondary-fixed": "#e4e2e4",
+                      "error-container": "#93000a",
+                      "surface-container-highest": "#353436",
+                      "surface-container": "#201f20",
+                      "surface-container-high": "#2a2a2b",
+                      "error-red": "#ffb4ab",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-fixed": "#e4e2e4",
+                      "on-tertiary-container": "#e3e0e2",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "electric-violet": "#8a2be2",
+                      "tertiary": "#c8c6c8",
+                      "on-tertiary": "#303032",
+                      "background": "#131314",
+                      "on-background": "#e5e2e3",
+                      "secondary": "#c8c6c8",
+                      "on-primary-fixed-variant": "#6700b5"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xs": "4px",
+                      "sm": "8px",
+                      "xl": "32px",
+                      "2xl": "48px",
+                      "lg": "24px",
+                      "md": "16px",
+                      "3xl": "64px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "h3": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "mono-display": [
+                              "monospace"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "h1": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body {
+            background-color: #131314;
+            color: #e5e2e3;
+        }
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        
+        .glass-card {
+            background: linear-gradient(145deg, rgba(32, 31, 32, 0.7) 0%, rgba(28, 27, 28, 0.4) 100%);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(76, 67, 84, 0.3);
+        }
+
+        .input-glow:focus-within {
+            box-shadow: 0 0 0 1px #dcb8ff, 0 0 12px rgba(138, 43, 226, 0.2);
+            border-color: #dcb8ff;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-md bg-background text-on-background relative overflow-x-hidden">
+<!-- Decorative Background Elements -->
+<div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+<div class="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-electric-violet/5 blur-[120px]"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-primary/5 blur-[100px]"></div>
+</div>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center p-md md:p-xl relative z-10 w-full max-w-[1200px] mx-auto">
+<div class="w-full max-w-[480px] flex flex-col gap-lg">
+<!-- Header -->
+<div class="flex items-center gap-sm">
+<button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container transition-colors border border-transparent hover:border-outline-variant/30 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div>
+<h1 class="font-h1 text-h1 text-on-surface">Add Payment Method</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Anything Clean Checkout</p>
+</div>
+</div>
+<!-- Form Card -->
+<form class="glass-card rounded-xl p-lg flex flex-col gap-lg">
+<!-- Card Display Mockup -->
+<div class="w-full h-48 rounded-lg bg-gradient-to-br from-surface-container-high to-surface-container relative overflow-hidden border border-outline-variant/20 p-md flex flex-col justify-between shadow-lg">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-[40px] translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-24 h-24 bg-electric-violet/10 rounded-full blur-[30px] -translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+<div class="flex justify-between items-start relative z-10">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="contactless">contactless</span>
+<div class="flex gap-2">
+<div class="w-8 h-8 rounded-full bg-red-500/80 mix-blend-screen relative left-2"></div>
+<div class="w-8 h-8 rounded-full bg-yellow-500/80 mix-blend-screen"></div>
+</div>
+</div>
+<div class="relative z-10 mt-auto">
+<div class="font-mono-display text-mono-display text-on-surface tracking-[0.15em] mb-sm opacity-80" id="card-display">
+                            •••• •••• •••• ••••
+                        </div>
+<div class="flex justify-between items-end">
+<div>
+<div class="font-caption text-caption text-on-surface-variant uppercase tracking-wider mb-xs">Cardholder</div>
+<div class="font-label-md text-label-md text-on-surface truncate w-32 opacity-90" id="name-display">JOHN DOE</div>
+</div>
+<div>
+<div class="font-caption text-caption text-on-surface-variant uppercase tracking-wider mb-xs">Expires</div>
+<div class="font-label-md text-label-md text-on-surface opacity-90" id="expiry-display">MM/YY</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Inputs -->
+<div class="flex flex-col gap-md">
+<!-- Card Number -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="cardNumber">Card Number</label>
+<div class="relative flex items-center group input-glow rounded-lg border border-outline-variant/50 bg-surface-container-low transition-all">
+<span class="material-symbols-outlined absolute left-md text-on-surface-variant" data-icon="credit_card">credit_card</span>
+<input class="w-full bg-transparent border-none py-sm pl-[48px] pr-md text-on-surface font-body-md placeholder:text-on-surface-variant/50 focus:ring-0 focus:outline-none" id="cardNumber" maxlength="19" placeholder="4242 4242 4242 4242" type="text"/>
+</div>
+</div>
+<!-- Expiry & CVV -->
+<div class="flex gap-md">
+<div class="flex flex-col gap-xs flex-1">
+<label class="font-label-md text-label-md text-on-surface-variant" for="expiry">Expiry (MM/YY)</label>
+<div class="relative flex items-center group input-glow rounded-lg border border-outline-variant/50 bg-surface-container-low transition-all">
+<span class="material-symbols-outlined absolute left-md text-on-surface-variant" data-icon="calendar_month">calendar_month</span>
+<input class="w-full bg-transparent border-none py-sm pl-[48px] pr-md text-on-surface font-body-md placeholder:text-on-surface-variant/50 focus:ring-0 focus:outline-none" id="expiry" maxlength="5" placeholder="MM/YY" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-xs flex-1">
+<label class="font-label-md text-label-md text-on-surface-variant" for="cvv">CVV</label>
+<div class="relative flex items-center group input-glow rounded-lg border border-outline-variant/50 bg-surface-container-low transition-all">
+<span class="material-symbols-outlined absolute left-md text-on-surface-variant" data-icon="lock">lock</span>
+<input class="w-full bg-transparent border-none py-sm pl-[48px] pr-md text-on-surface font-body-md placeholder:text-on-surface-variant/50 focus:ring-0 focus:outline-none" id="cvv" maxlength="4" placeholder="123" type="text"/>
+<span class="material-symbols-outlined absolute right-md text-on-surface-variant/50 text-sm cursor-help" data-icon="info" title="3 or 4 digits on the back of your card">info</span>
+</div>
+</div>
+</div>
+<!-- Name on Card -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="cardName">Cardholder Name</label>
+<div class="relative flex items-center group input-glow rounded-lg border border-outline-variant/50 bg-surface-container-low transition-all">
+<span class="material-symbols-outlined absolute left-md text-on-surface-variant" data-icon="person">person</span>
+<input class="w-full bg-transparent border-none py-sm pl-[48px] pr-md text-on-surface font-body-md placeholder:text-on-surface-variant/50 focus:ring-0 focus:outline-none" id="cardName" placeholder="Name as it appears on card" type="text"/>
+</div>
+</div>
+<!-- Save Card Checkbox -->
+<div class="flex items-center gap-sm mt-sm">
+<input class="w-5 h-5 rounded border-outline-variant/50 bg-surface-container-low text-electric-violet focus:ring-electric-violet focus:ring-offset-background cursor-pointer" id="saveCard" type="checkbox"/>
+<label class="font-body-md text-body-md text-on-surface cursor-pointer select-none" for="saveCard">Save this card for future payments</label>
+</div>
+</div>
+</form>
+<!-- Security Message & CTA -->
+<div class="flex flex-col gap-md">
+<div class="flex items-start gap-sm p-sm rounded-lg bg-surface-container-low/50 border border-outline-variant/20">
+<span class="material-symbols-outlined text-success-green mt-xs" data-icon="verified_user">verified_user</span>
+<p class="font-caption text-caption text-on-surface-variant">Your payment information is securely handled by the payment provider. Anything Clean does not store your full card details.</p>
+</div>
+<button class="w-full py-md px-xl bg-electric-violet hover:bg-primary-container text-white font-label-md font-bold text-label-md rounded-lg shadow-lg shadow-primary/20 transition-all duration-200 active:scale-[0.98] flex items-center justify-center gap-sm group" type="button">
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="lock_open">lock_open</span>
+                    Pay ₹502
+                </button>
+</div>
+</div>
+</main>
+<script>
+        // Simple input formatting script for visual feedback
+        const ccInput = document.getElementById('cardNumber');
+        const ccDisplay = document.getElementById('card-display');
+        
+        ccInput.addEventListener('input', function (e) {
+            let val = e.target.value.replace(/\D/g, '');
+            let formatted = '';
+            for (let i = 0; i < val.length; i++) {
+                if (i > 0 && i % 4 === 0) formatted += ' ';
+                formatted += val[i];
+            }
+            e.target.value = formatted;
+            ccDisplay.textContent = formatted || '•••• •••• •••• ••••';
+            if(!formatted) ccDisplay.classList.add('opacity-80');
+            else ccDisplay.classList.remove('opacity-80');
+        });
+
+        const expInput = document.getElementById('expiry');
+        const expDisplay = document.getElementById('expiry-display');
+        
+        expInput.addEventListener('input', function (e) {
+            let val = e.target.value.replace(/\D/g, '');
+            if (val.length > 2) {
+                val = val.substring(0, 2) + '/' + val.substring(2);
+            }
+            e.target.value = val;
+            expDisplay.textContent = val || 'MM/YY';
+        });
+
+        const nameInput = document.getElementById('cardName');
+        const nameDisplay = document.getElementById('name-display');
+        
+        nameInput.addEventListener('input', function (e) {
+            nameDisplay.textContent = e.target.value.toUpperCase() || 'JOHN DOE';
+        });
+        
+        const cvvInput = document.getElementById('cvv');
+        cvvInput.addEventListener('input', function (e) {
+            e.target.value = e.target.value.replace(/\D/g, '');
+        });
+    </script>
+</body></html>

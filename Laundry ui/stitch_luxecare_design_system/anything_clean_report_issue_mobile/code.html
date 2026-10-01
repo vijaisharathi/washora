@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Report Issue - Premium Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline": "#988ca0",
+                        "secondary-container": "#474649",
+                        "tertiary": "#c8c6c8",
+                        "error": "#ffb4ab",
+                        "on-secondary-container": "#b7b4b7",
+                        "on-surface": "#e5e2e3",
+                        "inverse-surface": "#e5e2e3",
+                        "inverse-primary": "#8422dc",
+                        "surface-tint": "#dcb8ff",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "inverse-on-surface": "#313031",
+                        "primary": "#dcb8ff",
+                        "on-background": "#e5e2e3",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "primary-fixed": "#efdbff",
+                        "tertiary-fixed": "#e4e2e4",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-secondary-fixed-variant": "#474649",
+                        "background": "#131314",
+                        "surface-container-highest": "#353436",
+                        "on-tertiary-container": "#e3e0e2",
+                        "secondary-fixed": "#e5e1e4",
+                        "secondary": "#c8c6c8",
+                        "surface": "#131314",
+                        "outline-variant": "#4c4354",
+                        "surface-bright": "#3a393a",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-error-container": "#ffdad6",
+                        "surface-dim": "#131314",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-primary": "#480081",
+                        "surface-container": "#201f20",
+                        "surface-container-high": "#2a2a2b",
+                        "surface-container-low": "#1c1b1c",
+                        "error-container": "#93000a",
+                        "on-secondary": "#303032",
+                        "primary-container": "#8a2be2",
+                        "on-primary-fixed": "#2c0051",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "tertiary-container": "#646365",
+                        "on-error": "#690005",
+                        "on-primary-container": "#eed9ff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-tertiary": "#303032",
+                        "surface-variant": "#353436"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "lg": "24px",
+                        "md": "16px",
+                        "2xl": "48px",
+                        "xs": "4px",
+                        "3xl": "64px",
+                        "xl": "32px",
+                        "sm": "8px"
+                    },
+                    fontFamily: {
+                        "label-md": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "caption": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "display-lg-mobile": ["Geist"]
+                    },
+                    fontSize: {
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "caption": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "display-lg-mobile": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #353436; border-radius: 4px; }
+        
+        .glass-panel {
+            background: rgba(18, 18, 20, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .issue-category-radio:checked + div {
+            background-color: rgba(220, 184, 255, 0.1);
+            border-color: #dcb8ff;
+            color: #dcb8ff;
+        }
+        
+        .issue-category-radio:checked + div .material-symbols-outlined {
+            color: #dcb8ff;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen selection:bg-primary selection:text-on-primary antialiased">
+<!-- Top Navigation (Task-focused, suppressing global nav shell) -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/5 flex justify-between items-center px-md py-sm h-16 md:px-lg">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 flex items-center justify-center p-sm rounded-full hover:bg-white/5" onclick="window.history.back()">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<div class="font-headline-md text-headline-md-mobile md:text-headline-md text-primary font-bold">
+            Report Issue
+        </div>
+<div class="w-10"></div> <!-- Balancer for centering -->
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-[80px] pb-[100px] px-md md:px-lg max-w-3xl mx-auto w-full">
+<header class="mb-xl text-center md:text-left pt-lg">
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-background mb-sm">We're here to help.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Please provide details about the issue you experienced. Our trust and safety team will review your report and respond within 24 hours.</p>
+</header>
+<form class="space-y-xl">
+<!-- Category Selection -->
+<section>
+<h2 class="font-headline-md text-headline-md-mobile md:text-headline-md text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">category</span>
+                    What went wrong?
+                </h2>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-md">
+<!-- Damage -->
+<label class="cursor-pointer group relative">
+<input class="issue-category-radio sr-only" name="issue_category" type="radio" value="damage"/>
+<div class="glass-panel p-md rounded-xl border border-white/5 flex flex-col items-center justify-center gap-sm h-28 transition-all hover:bg-white/5 group-active:scale-95">
+<span class="material-symbols-outlined text-[32px] text-on-surface-variant transition-colors" style="font-variation-settings: 'FILL' 0;">broken_image</span>
+<span class="font-label-md text-label-md text-on-surface text-center transition-colors">Property Damage</span>
+</div>
+</label>
+<!-- Missing Item -->
+<label class="cursor-pointer group relative">
+<input class="issue-category-radio sr-only" name="issue_category" type="radio" value="missing"/>
+<div class="glass-panel p-md rounded-xl border border-white/5 flex flex-col items-center justify-center gap-sm h-28 transition-all hover:bg-white/5 group-active:scale-95">
+<span class="material-symbols-outlined text-[32px] text-on-surface-variant transition-colors" style="font-variation-settings: 'FILL' 0;">search_off</span>
+<span class="font-label-md text-label-md text-on-surface text-center transition-colors">Missing Item</span>
+</div>
+</label>
+<!-- Poor Cleaning -->
+<label class="cursor-pointer group relative">
+<input class="issue-category-radio sr-only" name="issue_category" type="radio" value="quality"/>
+<div class="glass-panel p-md rounded-xl border border-white/5 flex flex-col items-center justify-center gap-sm h-28 transition-all hover:bg-white/5 group-active:scale-95">
+<span class="material-symbols-outlined text-[32px] text-on-surface-variant transition-colors" style="font-variation-settings: 'FILL' 0;">cleaning_services</span>
+<span class="font-label-md text-label-md text-on-surface text-center transition-colors">Poor Quality</span>
+</div>
+</label>
+<!-- Late Delivery -->
+<label class="cursor-pointer group relative">
+<input class="issue-category-radio sr-only" name="issue_category" type="radio" value="late"/>
+<div class="glass-panel p-md rounded-xl border border-white/5 flex flex-col items-center justify-center gap-sm h-28 transition-all hover:bg-white/5 group-active:scale-95">
+<span class="material-symbols-outlined text-[32px] text-on-surface-variant transition-colors" style="font-variation-settings: 'FILL' 0;">schedule</span>
+<span class="font-label-md text-label-md text-on-surface text-center transition-colors">Late Arrival</span>
+</div>
+</label>
+<!-- Other -->
+<label class="cursor-pointer group relative">
+<input class="issue-category-radio sr-only" name="issue_category" type="radio" value="other"/>
+<div class="glass-panel p-md rounded-xl border border-white/5 flex flex-col items-center justify-center gap-sm h-28 transition-all hover:bg-white/5 group-active:scale-95">
+<span class="material-symbols-outlined text-[32px] text-on-surface-variant transition-colors" style="font-variation-settings: 'FILL' 0;">more_horiz</span>
+<span class="font-label-md text-label-md text-on-surface text-center transition-colors">Other Issue</span>
+</div>
+</label>
+</div>
+</section>
+<!-- Evidence Upload -->
+<section>
+<div class="flex justify-between items-end mb-md">
+<h2 class="font-headline-md text-headline-md-mobile md:text-headline-md text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">add_a_photo</span>
+                        Provide Evidence
+                    </h2>
+<span class="font-caption text-caption text-on-surface-variant">Optional, up to 4 photos</span>
+</div>
+<div class="glass-panel p-xl rounded-xl border border-white/5 flex flex-col items-center justify-center text-center border-dashed border-2 hover:border-primary/50 hover:bg-white/5 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-[48px] text-on-surface-variant mb-sm">cloud_upload</span>
+<p class="font-body-md text-body-md text-on-surface mb-xs">Tap to upload photos</p>
+<p class="font-caption text-caption text-on-surface-variant">JPG, PNG or HEIC formats</p>
+<input accept="image/*" class="hidden" multiple="" type="file"/>
+</div>
+</section>
+<!-- Description -->
+<section>
+<h2 class="font-headline-md text-headline-md-mobile md:text-headline-md text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">description</span>
+                    Description
+                </h2>
+<div class="relative">
+<textarea class="w-full bg-surface-container-high border-none rounded-xl p-md font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:ring-1 focus:ring-primary resize-none glass-panel" placeholder="Please describe the issue in detail. Include specific times, items involved, or any interactions with the service provider..." rows="5"></textarea>
+</div>
+</section>
+<!-- Reassurance Banner -->
+<div class="bg-primary-container/10 border border-primary/20 rounded-xl p-md flex items-start gap-md">
+<span class="material-symbols-outlined text-primary mt-xs" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<div>
+<h3 class="font-label-md text-label-md text-primary font-bold mb-xs">Marketplace Protection Guarantee</h3>
+<p class="font-caption text-caption text-on-surface-variant">Your booking is covered by our comprehensive guarantee. We mediate all disputes and ensure fair resolutions, up to full refunds or complete service re-delivery.</p>
+</div>
+</div>
+<!-- Submit Action -->
+<div class="pt-md pb-2xl md:pb-xl flex gap-md">
+<button class="flex-1 py-md px-lg rounded-xl font-label-md text-label-md text-on-surface bg-transparent border border-outline-variant hover:bg-white/5 transition-colors text-center" onclick="window.history.back()" type="button">
+                    Cancel
+                </button>
+<button class="flex-[2] py-md px-lg rounded-xl font-label-md text-label-md text-on-primary bg-primary hover:bg-primary-fixed-dim transition-colors text-center shadow-[0_0_20px_rgba(220,184,255,0.15)] flex items-center justify-center gap-sm" type="submit">
+                    Submit Report
+                    <span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+</form>
+</main>
+<script>
+        // Simple micro-interaction for the upload area
+        const uploadArea = document.querySelector('.border-dashed');
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('border-primary', 'bg-white/5');
+        });
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('border-primary', 'bg-white/5');
+        });
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('border-primary', 'bg-white/5');
+            // Handle files here in a real app
+            uploadArea.innerHTML = `
+                <span class="material-symbols-outlined text-[48px] text-primary mb-sm">check_circle</span>
+                <p class="font-body-md text-body-md text-on-surface mb-xs">Files ready to upload</p>
+                <p class="font-caption text-caption text-primary">Tap to change</p>
+            `;
+        });
+        uploadArea.addEventListener('click', () => {
+             uploadArea.querySelector('input').click();
+        });
+    </script>
+</body></html>

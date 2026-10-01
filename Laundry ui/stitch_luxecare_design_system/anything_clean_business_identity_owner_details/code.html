@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Business Identity - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.1/files/geist-sans-latin-400-normal.woff2') format('woff2');
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.1/files/geist-sans-latin-500-normal.woff2') format('woff2');
+            font-weight: 500;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.1/files/geist-sans-latin-600-normal.woff2') format('woff2');
+            font-weight: 600;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.1/files/geist-sans-latin-700-normal.woff2') format('woff2');
+            font-weight: 700;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#0e0e0f",
+                        "secondary-container": "#49494b",
+                        "background": "#131314",
+                        "outline": "#988ca0",
+                        "secondary-fixed": "#e4e2e4",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-tint": "#dcb8ff",
+                        "on-primary-fixed": "#2c0051",
+                        "primary-fixed": "#efdbff",
+                        "on-secondary-fixed-variant": "#474648",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "surface": "#131314",
+                        "success-bg": "#1A3D24",
+                        "inverse-on-surface": "#313031",
+                        "outline-variant": "#4c4354",
+                        "error-red": "#ffb4ab",
+                        "inverse-primary": "#8422dc",
+                        "inverse-surface": "#e5e2e3",
+                        "on-background": "#e5e2e3",
+                        "surface-container-highest": "#353436",
+                        "tertiary-container": "#646365",
+                        "error-container": "#93000a",
+                        "on-primary": "#480081",
+                        "electric-violet": "#8a2be2",
+                        "surface-container": "#201f20",
+                        "error": "#ffb4ab",
+                        "on-surface": "#e5e2e3",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "secondary": "#c8c6c8",
+                        "on-primary-container": "#eed9ff",
+                        "success-green": "#81C784",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-variant": "#353436",
+                        "primary": "#dcb8ff",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary": "#303032",
+                        "surface-container-high": "#2a2a2b",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "tertiary": "#c8c6c8",
+                        "surface-dim": "#131314",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-error": "#690005",
+                        "on-secondary": "#303032",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface-bright": "#39393a",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-secondary-container": "#b9b8ba",
+                        "primary-container": "#8a2be2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "3xl": "64px",
+                        "xl": "32px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Geist"],
+                        "caption": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "h1": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "label-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar (Mobile Only) -->
+<nav class="md:hidden bg-background/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/30 flex justify-between items-center px-xl h-16 w-full">
+<div class="font-h1 text-h1 text-electric-violet">Anything Clean</div>
+<div class="flex gap-md">
+<span class="material-symbols-outlined text-electric-violet cursor-pointer active:opacity-80 hover:text-primary transition-colors" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-electric-violet cursor-pointer active:opacity-80 hover:text-primary transition-colors" data-icon="help_outline">help_outline</span>
+<img alt="User profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant/30 cursor-pointer active:opacity-80" data-alt="A small, stylized circular profile picture of an Asian male in a sleek, dimly lit cyber-corporate environment. The image is hyper-focused with sharp features, wearing a dark minimal turtleneck. Lighting highlights cool purples and deep blacks, embodying a professional tech-savvy persona in a Lumina dark mode setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmp1vkWhZbaCh9RRkl46TM6dtAK8-SAFRfGAx6gzlHFbi-m3abP7zeY91jxXfcSWULGOY27Mh7-ljjnz8pu1srWyYQBMDjlnMQXCBxwECLQPQbp9ykCy8xA37vYeFqoBuKsiHcc1YISYl2L8fJLH26Ab1Ekgjra7cKF1akly6f_gfPC7fE2LnXG3eCeWLLbClSQrpryQsQIqsjUJ3uexHqwSGRJY7DmPXhckPezfM4ttSCtY9Oe_zvfQ"/>
+</div>
+</nav>
+<!-- SideNavBar (Desktop Only) -->
+<aside class="hidden md:flex bg-surface-container-low fixed left-0 top-0 h-full w-64 border-r border-outline-variant/30 flex-col py-lg px-md gap-sm z-40">
+<div class="mb-lg px-sm">
+<div class="flex items-center gap-md mb-sm">
+<img alt="Business logo" class="w-10 h-10 rounded-lg object-cover" data-alt="A minimalist tech company logo featuring abstract geometric shapes in deep violet and crisp white against a true black background. The design is precise and engineered, looking like a high-end vector graphic suitable for a modern SaaS platform's sidebar header." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY8kKDehtM1mEGajTnnpF_E6kTdsfog4kElo6Z9iNlSoZN-DrG4VTbT_jzzIuejJCvbqOTspNmHPO8lxZHokQYlKyOxeBTzQ9X50Ox4PO9di444hBFh2GYm_yINpm9JOAyMlORjdYxrkPBYFqzuSiK3x1sjeUYM3hwZfuKR5kRszQ-NBpKVSqkri69BNxV-JsnbVKSLxtux7ZJsISKKueJGdG3_xg2qCifTZ0t3oeCDjFfFqLRjp-QAQ"/>
+<div class="font-h3 text-h3 text-on-surface truncate">Anything Clean</div>
+</div>
+<div class="font-caption text-caption text-on-surface-variant">Verification Progress: 45%</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full w-[45%]"></div>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-xs overflow-y-auto">
+<a class="flex items-center gap-md px-md py-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all transition-transform duration-200 active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Overview
+            </a>
+<a class="flex items-center gap-md px-md py-sm font-label-md text-label-md bg-primary/10 text-primary font-bold rounded-lg transition-transform duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="fingerprint" data-weight="fill" style="font-variation-settings: 'FILL' 1;">fingerprint</span>
+                Identity
+            </a>
+<a class="flex items-center gap-md px-md py-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all transition-transform duration-200 active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+                Address
+            </a>
+<a class="flex items-center gap-md px-md py-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all transition-transform duration-200 active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="business">business</span>
+                Registration
+            </a>
+<a class="flex items-center gap-md px-md py-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all transition-transform duration-200 active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+                KYC Check
+            </a>
+<a class="flex items-center gap-md px-md py-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all transition-transform duration-200 active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+                Documents
+            </a>
+<a class="flex items-center gap-md px-md py-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all transition-transform duration-200 active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+                Bank Setup
+            </a>
+<a class="flex items-center gap-md px-md py-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all transition-transform duration-200 active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+                Final Review
+            </a>
+</nav>
+<div class="mt-auto pt-sm border-t border-outline-variant/30 flex flex-col gap-xs">
+<a class="flex items-center gap-md px-md py-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-md px-md py-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+                Support
+            </a>
+<button class="mt-sm w-full bg-electric-violet text-on-primary font-bold py-sm px-md rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-container transition-colors font-label-md text-label-md active:scale-95">
+                Complete Verification
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 pt-20 md:pt-0 p-xl max-w-[1200px] mx-auto w-full">
+<header class="mb-xl">
+<div class="flex items-center gap-sm text-on-surface-variant font-caption text-caption mb-sm">
+<span>Verification</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-bold">Identity</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-sm">Business Identity</h1>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-electric-violet">info</span>
+                Name should match your submitted identity document.
+            </p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<!-- Left Column: Forms -->
+<div class="lg:col-span-2 flex flex-col gap-lg">
+<!-- Business Details Card -->
+<section class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-electric-violet/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+<h2 class="font-h3 text-h3 text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">storefront</span>
+                        Business Information
+                    </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Legal Business Name</label>
+<input class="bg-surface-container-low border border-outline-variant/50 text-on-surface rounded-lg px-md py-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body-md text-body-md" type="text" value="CleanX Services"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Trading Name (Optional)</label>
+<input class="bg-surface-container-low border border-outline-variant/50 text-on-surface rounded-lg px-md py-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body-md text-body-md placeholder:text-outline" placeholder="e.g. CleanX" type="text"/>
+</div>
+</div>
+</section>
+<!-- Owner Details Card -->
+<section class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-electric-violet/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+<h2 class="font-h3 text-h3 text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">person</span>
+                        Primary Contact Details
+                    </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md mb-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Full Legal Name</label>
+<input class="bg-surface-container-low border border-outline-variant/50 text-on-surface rounded-lg px-md py-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body-md text-body-md" type="text" value="Arun Kumar"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Role / Title</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border border-outline-variant/50 text-on-surface rounded-lg px-md py-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body-md text-body-md appearance-none">
+<option selected="" value="owner">Owner</option>
+<option value="rep">Authorized Representative</option>
+<option value="partner">Partner</option>
+</select>
+<span class="material-symbols-outlined absolute right-sm top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Email Address</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-sm text-on-surface-variant text-[20px]">mail</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant rounded-lg pl-xl pr-md py-sm cursor-not-allowed font-body-md text-body-md opacity-70" disabled="" type="email" value="arun.k@cleanx.test"/>
+<div class="absolute right-sm bg-success-bg text-success-green font-caption text-caption px-2 py-0.5 rounded-full border border-success-green/30 flex items-center gap-1 uppercase tracking-wider font-bold">
+<span class="material-symbols-outlined text-[12px]">check</span> Verified
+                                </div>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Phone Number</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-sm text-on-surface-variant text-[20px]">call</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant rounded-lg pl-xl pr-md py-sm cursor-not-allowed font-body-md text-body-md opacity-70" disabled="" type="tel" value="+1 (555) 019-2834"/>
+<div class="absolute right-sm bg-success-bg text-success-green font-caption text-caption px-2 py-0.5 rounded-full border border-success-green/30 flex items-center gap-1 uppercase tracking-wider font-bold">
+<span class="material-symbols-outlined text-[12px]">check</span> Verified
+                                </div>
+</div>
+</div>
+</div>
+</section>
+<div class="flex justify-end gap-md mt-sm">
+<button class="px-lg py-sm border border-outline-variant text-on-surface rounded-lg font-label-md text-label-md hover:bg-surface-container transition-colors">
+                        Save Draft
+                    </button>
+<button class="px-lg py-sm bg-electric-violet text-on-primary font-bold rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-container transition-colors font-label-md text-label-md">
+                        Save & Continue
+                    </button>
+</div>
+</div>
+<!-- Right Column: Context/Status -->
+<div class="flex flex-col gap-lg">
+<!-- Status Widget -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-md flex flex-col gap-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">policy</span>
+<h3 class="font-label-md text-label-md text-on-surface font-bold">Verification Context</h3>
+</div>
+<p class="font-caption text-caption text-on-surface-variant leading-relaxed">
+                        Accurate identity information is required under international KYC/AML regulations. Ensure the details provided here exactly match the legal documents you will upload in the next steps.
+                    </p>
+<div class="mt-sm p-sm bg-surface-container-low border border-outline-variant/30 rounded-lg flex items-start gap-sm">
+<span class="material-symbols-outlined text-success-green text-[18px] mt-0.5">shield_locked</span>
+<span class="font-caption text-caption text-on-surface-variant">Data is encrypted at rest and in transit.</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reports &amp; Export Center - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#eed9ff",
+                        "surface": "#131314",
+                        "tertiary-fixed": "#e4e2e4",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#cfc2d7",
+                        "inverse-primary": "#8422dc",
+                        "inverse-on-surface": "#313031",
+                        "primary-container": "#8a2be2",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-background": "#e5e2e3",
+                        "secondary-container": "#49494b",
+                        "on-secondary-container": "#b9b8ba",
+                        "tertiary-container": "#646365",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-surface": "#e5e2e3",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "outline-variant": "#4c4354",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#2c0051",
+                        "inverse-surface": "#e5e2e3",
+                        "background": "#131314",
+                        "on-secondary": "#303032",
+                        "success-green": "#81C784",
+                        "error-red": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#2a2a2b",
+                        "secondary-fixed": "#e4e2e4",
+                        "tertiary": "#c8c6c8",
+                        "surface-container-highest": "#353436",
+                        "on-error": "#690005",
+                        "on-secondary-fixed-variant": "#474648",
+                        "surface-container": "#201f20",
+                        "surface-container-lowest": "#0e0e0f",
+                        "surface-container-low": "#1c1b1c",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-tertiary-container": "#e3e0e2",
+                        "surface-dim": "#131314",
+                        "success-bg": "#1A3D24",
+                        "secondary": "#c8c6c8",
+                        "surface-variant": "#353436",
+                        "electric-violet": "#8a2be2",
+                        "surface-tint": "#dcb8ff",
+                        "on-primary": "#480081",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-tertiary": "#303032",
+                        "surface-bright": "#39393a",
+                        "outline": "#988ca0",
+                        "primary-fixed": "#efdbff",
+                        "primary": "#dcb8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "3xl": "64px",
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "xl": "32px",
+                        "xs": "4px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "caption": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "h3": ["Geist"],
+                        "h1": ["Geist"],
+                        "mono-display": ["monospace"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; background-color: #131314; color: #e5e2e3; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .fill-icon { font-variation-settings: 'FILL' 1; }
+        /* Scrollbar styling for modern look */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #353436; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #49494b; }
+    </style>
+</head>
+<body class="bg-background text-on-surface h-screen overflow-hidden flex flex-col font-body-md text-body-md">
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 left-0 z-50 flex items-center justify-between px-lg h-16 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30">
+<div class="flex items-center gap-md">
+<!-- Mobile Menu Button (hidden on md) -->
+<button class="md:hidden p-sm text-on-surface hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-surface">Anything Clean</div>
+</div>
+<!-- Search Bar (on_left as per JSON, but putting it in center/left relative to trailing actions) -->
+<div class="hidden md:flex flex-1 max-w-md mx-lg items-center relative">
+<span class="material-symbols-outlined absolute left-sm text-on-surface-variant pointer-events-none">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg pl-xl py-sm pr-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-on-surface transition-all font-body-md text-body-md h-10" placeholder="Search..." type="text"/>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-sm text-on-surface hover:bg-surface-container-high transition-colors rounded-full cursor-pointer active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-sm text-on-surface hover:bg-surface-container-high transition-colors rounded-full cursor-pointer active:scale-95">
+<span class="material-symbols-outlined">settings_suggest</span>
+</button>
+<button class="p-sm text-on-surface hover:bg-surface-container-high transition-colors rounded-full cursor-pointer active:scale-95 flex items-center gap-sm">
+<img class="w-8 h-8 rounded-full object-cover border border-outline-variant/30" data-alt="A small circular avatar of a professional administrator in a high-tech corporate setting, subtle dramatic lighting, deep shadows, crisp details, conveying authority and focus within a dark UI environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoDR1r01eoqMfl4f8TIexB-RtSgFb6xIdYgg-oh053yDFPs3aNqMOD0da9cVWD7z9LhTaw77Y7FX7EpD47FQ-qwq7H5cybNyTsByM5_dTpNaYtx_FBBiDuLkt7STncak8s__Twa4oABMejZNoksjYtfBB_O8ztoW2N-QWqGdi1Ny5PSMZiXylt6TAlg1VHTKbmz6itRHaS9Ho1aG0PmJilQVb0D8TOAeEWps_WpE87MCAtTO5yjLcSRQ"/>
+</button>
+</div>
+</header>
+<div class="flex flex-1 pt-16 h-full overflow-hidden">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col p-md gap-sm bg-surface-container dark:bg-surface-container border-r border-outline-variant/20 w-64 flex-shrink-0 h-full overflow-y-auto">
+<div class="mb-lg px-sm">
+<div class="flex items-center gap-sm mb-xs">
+<img class="w-10 h-10 rounded-lg object-cover" data-alt="A small square logo avatar for Anything Clean management portal, featuring a sleek, minimalist geometric design in electric violet and crisp white against a midnight dark background, emphasizing a clean corporate identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL5W-vJp47OFWo7dBukJU8NU4nQXMa8ZlzXLTCLZiT_PV3trT5ZWqkvWEW_zSafvwEFoYyURmBBavm5_HRGUkDCShCnqeih9IIbI4-8jfUeRFlwZihMKGQ6RcT1RfZJIqkHAz-WbTqsKMcxedMyipfKHPhptVvAENVSYyQ7yIOnC-UMzEc-5l6ZMUb6NNQBDK6MRIbqZWJhUCObV88DMbxsdcaw5x41HWtc_D9T3rDhwQLO7xIjh78qQ"/>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface">Anything Clean</div>
+<div class="font-caption text-caption text-on-surface-variant">Management Portal</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-xs flex-1">
+<!-- Navigation Items based on JSON -->
+<a class="flex items-center gap-sm px-sm py-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg">shopping_cart</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg">group</span>
+<span class="font-label-md text-label-md">Customers</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg">hail</span>
+<span class="font-label-md text-label-md">Service Providers</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg">local_shipping</span>
+<span class="font-label-md text-label-md">Delivery Partners</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg">cleaning_services</span>
+<span class="font-label-md text-label-md">Services</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg">payments</span>
+<span class="font-label-md text-label-md">Payments</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg">gavel</span>
+<span class="font-label-md text-label-md">Disputes</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg">star</span>
+<span class="font-label-md text-label-md">Reviews</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg">campaign</span>
+<span class="font-label-md text-label-md">Promotions</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg">notifications</span>
+<span class="font-label-md text-label-md">Notifications</span>
+</a>
+<!-- Active State applied to Analytics (closest fit to Reports) -->
+<a class="flex items-center gap-sm px-sm py-xs bg-primary-container text-on-primary-container font-bold rounded-lg transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg fill-icon">analytics</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg">support_agent</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col h-full overflow-y-auto bg-background">
+<div class="max-w-[1200px] w-full mx-auto p-xl flex flex-col gap-lg">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md mb-md pb-md border-b border-outline-variant/30">
+<div>
+<div class="flex items-center gap-sm mb-xs text-on-surface-variant">
+<span class="font-caption text-caption">Analytics</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Reports &amp; Export Center</span>
+</div>
+<h1 class="font-h1 text-h1 text-on-surface">Reports</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-sm">Generate, export and manage marketplace reports.</p>
+</div>
+<button class="bg-electric-violet text-white font-label-md text-label-md font-bold px-lg py-sm rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-container transition-all active:scale-95 flex items-center gap-sm w-max" onclick="document.getElementById('createReportModal').classList.remove('hidden')">
+<span class="material-symbols-outlined text-sm">add</span>
+                        Create Report
+                    </button>
+</div>
+<!-- Main Workspace Layout -->
+<div class="flex flex-col lg:flex-row gap-lg">
+<!-- Left Panel: Categories -->
+<aside class="lg:w-64 flex-shrink-0 flex flex-col gap-sm">
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md">
+<h3 class="font-label-md text-label-md font-bold text-on-surface mb-md">Categories</h3>
+<ul class="flex flex-col gap-xs">
+<li>
+<a class="flex items-center justify-between px-sm py-xs rounded-lg bg-surface-container-highest text-on-surface border border-outline-variant/30" href="#">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-sm text-primary">folder_open</span>
+<span class="font-label-md text-label-md">All Reports</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant bg-surface-container-low px-xs rounded">24</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between px-sm py-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" href="#">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-sm">receipt_long</span>
+<span class="font-label-md text-label-md">Orders &amp; Sales</span>
+</div>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between px-sm py-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" href="#">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-sm">account_balance_wallet</span>
+<span class="font-label-md text-label-md">Revenue &amp; Tax</span>
+</div>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between px-sm py-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" href="#">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-sm">groups</span>
+<span class="font-label-md text-label-md">Customers</span>
+</div>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between px-sm py-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" href="#">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-sm">work</span>
+<span class="font-label-md text-label-md">Providers</span>
+</div>
+</a>
+</li>
+</ul>
+</div>
+</aside>
+<!-- Main Center: Saved Reports & History -->
+<div class="flex-1 flex flex-col gap-lg">
+<!-- Saved Reports Card -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl overflow-hidden flex flex-col">
+<div class="p-md border-b border-outline-variant/30 flex justify-between items-center bg-surface-container-low">
+<h3 class="font-h3 text-h3 text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">bookmark</span>
+                                    Saved Reports
+                                </h3>
+<div class="flex gap-sm">
+<button class="text-on-surface-variant hover:text-on-surface transition-colors p-xs">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/30">
+<th class="p-md font-label-md text-label-md font-bold text-on-surface-variant">Report Name</th>
+<th class="p-md font-label-md text-label-md font-bold text-on-surface-variant">Category</th>
+<th class="p-md font-label-md text-label-md font-bold text-on-surface-variant">Last Generated</th>
+<th class="p-md font-label-md text-label-md font-bold text-on-surface-variant">Format</th>
+<th class="p-md font-label-md text-label-md font-bold text-on-surface-variant text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20">
+<tr class="hover:bg-surface-container-highest transition-colors group">
+<td class="p-md">
+<div class="font-label-md text-label-md font-bold text-on-surface">Monthly Revenue Summary</div>
+<div class="font-caption text-caption text-on-surface-variant">Auto-generated monthly</div>
+</td>
+<td class="p-md">
+<span class="inline-flex items-center px-xs py-xs rounded bg-surface-variant text-on-surface-variant font-caption text-caption">Revenue &amp; Tax</span>
+</td>
+<td class="p-md font-body-md text-body-md text-on-surface">Oct 1, 2023 00:00</td>
+<td class="p-md">
+<div class="flex gap-xs">
+<span class="bg-error-container/20 text-error border border-error-container/50 px-xs rounded font-caption text-caption font-bold">PDF</span>
+<span class="bg-success-bg/30 text-success-green border border-success-bg/50 px-xs rounded font-caption text-caption font-bold">CSV</span>
+</div>
+</td>
+<td class="p-md text-right">
+<button class="text-primary hover:text-primary-fixed transition-colors p-sm rounded hover:bg-primary-container/20">
+<span class="material-symbols-outlined text-sm">play_arrow</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors p-sm rounded hover:bg-surface-variant">
+<span class="material-symbols-outlined text-sm">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-highest transition-colors group">
+<td class="p-md">
+<div class="font-label-md text-label-md font-bold text-on-surface">Q3 Provider Performance</div>
+<div class="font-caption text-caption text-on-surface-variant">Custom date range filters</div>
+</td>
+<td class="p-md">
+<span class="inline-flex items-center px-xs py-xs rounded bg-surface-variant text-on-surface-variant font-caption text-caption">Providers</span>
+</td>
+<td class="p-md font-body-md text-body-md text-on-surface">Sep 28, 2023 14:30</td>
+<td class="p-md">
+<div class="flex gap-xs">
+<span class="bg-success-bg/30 text-success-green border border-success-bg/50 px-xs rounded font-caption text-caption font-bold">CSV</span>
+</div>
+</td>
+<td class="p-md text-right">
+<button class="text-primary hover:text-primary-fixed transition-colors p-sm rounded hover:bg-primary-container/20">
+<span class="material-symbols-outlined text-sm">play_arrow</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors p-sm rounded hover:bg-surface-variant">
+<span class="material-symbols-outlined text-sm">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Report History Bottom Section -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl overflow-hidden flex flex-col">
+<div class="p-md border-b border-outline-variant/30 bg-surface-container-low">
+<h3 class="font-h3 text-h3 text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant">history</span>
+                                    Recent Activity &amp; Downloads
+                                </h3>
+</div>
+<div class="p-md flex flex-col gap-sm">
+<!-- Status Items -->
+<div class="flex items-center justify-between p-sm rounded-lg hover:bg-surface-container-highest transition-colors border border-transparent hover:border-outline-variant/30">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-success-bg flex items-center justify-center text-success-green">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface">Monthly Revenue Summary (Sep 2023)</div>
+<div class="font-caption text-caption text-on-surface-variant">Generated Today, 09:41 AM</div>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<span class="bg-success-bg text-success-green px-sm py-xs rounded-full font-caption text-caption font-bold uppercase tracking-wider text-[10px]">Ready</span>
+<button class="flex items-center gap-xs text-primary hover:text-primary-fixed font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-sm">download</span> Download
+                                        </button>
+</div>
+</div>
+<div class="flex items-center justify-between p-sm rounded-lg bg-surface-container-low border border-outline-variant/30">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-primary animate-pulse">
+<span class="material-symbols-outlined text-sm">sync</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface">Annual Customer Churn Analysis</div>
+<div class="font-caption text-caption text-on-surface-variant">Requested by Admin User • 2 mins ago</div>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<span class="bg-surface-variant text-primary px-sm py-xs rounded-full font-caption text-caption font-bold uppercase tracking-wider text-[10px]">Generating</span>
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-bold cursor-not-allowed opacity-50" disabled="">
+<span class="material-symbols-outlined text-sm">download</span> Download
+                                        </button>
+</div>
+</div>
+<div class="flex items-center justify-between p-sm rounded-lg hover:bg-surface-container-highest transition-colors border border-transparent hover:border-outline-variant/30">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-error-container/20 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-sm">error</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface">Dispute Resolution SLA Report</div>
+<div class="font-caption text-caption text-on-surface-variant">Attempted Yesterday, 16:20</div>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<span class="bg-error-container/10 text-error border border-error-container/30 px-sm py-xs rounded-full font-caption text-caption font-bold uppercase tracking-wider text-[10px]">Failed</span>
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-sm">refresh</span> Retry
+                                        </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Create Report Modal (Hidden by default) -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center hidden bg-black/60 backdrop-blur-sm p-md" id="createReportModal">
+<div class="bg-surface-container w-full max-w-3xl rounded-xl border border-outline-variant/40 shadow-2xl flex flex-col max-h-[921px]">
+<!-- Modal Header -->
+<div class="p-lg border-b border-outline-variant/30 flex justify-between items-center">
+<div>
+<h2 class="font-h1 text-h1 text-on-surface">Create New Report</h2>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">Configure data source, filters, and output format.</p>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-sm rounded-full hover:bg-surface-variant transition-colors" onclick="document.getElementById('createReportModal').classList.add('hidden')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Body (Builder Steps) -->
+<div class="p-lg overflow-y-auto flex-1 flex flex-col gap-xl bg-background/50">
+<!-- Step 1: Type -->
+<div class="flex flex-col gap-sm">
+<div class="flex items-center gap-sm">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary font-label-md text-label-md font-bold text-xs">1</div>
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Report Type &amp; Data Source</h4>
+</div>
+<div class="ml-8 grid grid-cols-1 sm:grid-cols-2 gap-md">
+<label class="flex items-start gap-md p-md rounded-lg border border-primary bg-primary/5 cursor-pointer hover:bg-primary/10 transition-colors">
+<input checked="" class="mt-1 text-primary focus:ring-primary bg-surface border-outline-variant" name="report_type" type="radio"/>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface">Orders &amp; Transactions</div>
+<div class="font-caption text-caption text-on-surface-variant">Detailed view of all bookings, cancellations, and completed services.</div>
+</div>
+</label>
+<label class="flex items-start gap-md p-md rounded-lg border border-outline-variant/50 cursor-pointer hover:border-outline-variant transition-colors">
+<input class="mt-1 text-primary focus:ring-primary bg-surface border-outline-variant" name="report_type" type="radio"/>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface">Revenue &amp; Financials</div>
+<div class="font-caption text-caption text-on-surface-variant">Aggregate payouts, platform fees, and tax collections.</div>
+</div>
+</label>
+</div>
+</div>
+<!-- Step 2: Date Range -->
+<div class="flex flex-col gap-sm">
+<div class="flex items-center gap-sm">
+<div class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center text-on-surface font-label-md text-label-md font-bold text-xs">2</div>
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Date Range</h4>
+</div>
+<div class="ml-8 flex gap-md">
+<div class="flex-1">
+<label class="block font-caption text-caption text-on-surface-variant mb-xs">Start Date</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg px-md py-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-on-surface font-body-md text-body-md" type="date"/>
+</div>
+<div class="flex-1">
+<label class="block font-caption text-caption text-on-surface-variant mb-xs">End Date</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg px-md py-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-on-surface font-body-md text-body-md" type="date"/>
+</div>
+</div>
+</div>
+<!-- Step 3: Format & Delivery -->
+<div class="flex flex-col gap-sm">
+<div class="flex items-center gap-sm">
+<div class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center text-on-surface font-label-md text-label-md font-bold text-xs">3</div>
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Output Format</h4>
+</div>
+<div class="ml-8 flex gap-md">
+<label class="flex items-center gap-sm cursor-pointer">
+<input checked="" class="text-primary focus:ring-primary bg-surface border-outline-variant rounded" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">CSV (Data Analysis)</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer">
+<input class="text-primary focus:ring-primary bg-surface border-outline-variant rounded" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">PDF (Presentation)</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="p-lg border-t border-outline-variant/30 bg-surface-container-low rounded-b-xl flex justify-between items-center">
+<button class="text-on-surface font-label-md text-label-md px-md py-sm rounded border border-outline-variant hover:bg-surface-variant transition-colors">
+                    Save as Template
+                </button>
+<div class="flex gap-md">
+<button class="text-on-surface-variant font-label-md text-label-md px-md py-sm hover:text-on-surface transition-colors" onclick="document.getElementById('createReportModal').classList.add('hidden')">
+                        Cancel
+                    </button>
+<button class="bg-electric-violet text-white font-label-md text-label-md font-bold px-xl py-sm rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-container transition-all active:scale-95 flex items-center gap-sm">
+<span class="material-symbols-outlined text-sm">bolt</span>
+                        Generate Report
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

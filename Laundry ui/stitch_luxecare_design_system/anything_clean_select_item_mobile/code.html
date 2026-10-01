@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Select Item - Care Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#988ca0",
+                        "secondary-container": "#474649",
+                        "tertiary": "#c8c6c8",
+                        "error": "#ffb4ab",
+                        "on-secondary-container": "#b7b4b7",
+                        "on-surface": "#e5e2e3",
+                        "inverse-surface": "#e5e2e3",
+                        "inverse-primary": "#8422dc",
+                        "surface-tint": "#dcb8ff",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "inverse-on-surface": "#313031",
+                        "primary": "#dcb8ff",
+                        "on-background": "#e5e2e3",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "primary-fixed": "#efdbff",
+                        "tertiary-fixed": "#e4e2e4",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-secondary-fixed-variant": "#474649",
+                        "background": "#131314",
+                        "surface-container-highest": "#353436",
+                        "on-tertiary-container": "#e3e0e2",
+                        "secondary-fixed": "#e5e1e4",
+                        "secondary": "#c8c6c8",
+                        "surface": "#131314",
+                        "outline-variant": "#4c4354",
+                        "surface-bright": "#3a393a",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-error-container": "#ffdad6",
+                        "surface-dim": "#131314",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-primary": "#480081",
+                        "surface-container": "#201f20",
+                        "surface-container-high": "#2a2a2b",
+                        "surface-container-low": "#1c1b1c",
+                        "error-container": "#93000a",
+                        "on-secondary": "#303032",
+                        "primary-container": "#8a2be2",
+                        "on-primary-fixed": "#2c0051",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "tertiary-container": "#646365",
+                        "on-error": "#690005",
+                        "on-primary-container": "#eed9ff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-tertiary": "#303032",
+                        "surface-variant": "#353436"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "md": "16px",
+                        "2xl": "48px",
+                        "xs": "4px",
+                        "3xl": "64px",
+                        "xl": "32px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "caption": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "display-lg-mobile": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        .glass-panel {
+            background: rgba(18, 18, 20, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .hover-lift {
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -8px rgba(220, 184, 255, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col pt-24 pb-32 md:pb-24 antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/5 flex justify-between items-center px-md py-sm">
+<button class="text-primary dark:text-primary hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md-mobile text-primary dark:text-primary font-bold">New Booking</h1>
+<button class="text-primary dark:text-primary hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">close</span>
+</button>
+</header>
+<main class="flex-grow container mx-auto px-lg max-w-5xl">
+<!-- Booking Stepper -->
+<div class="mb-xl relative pt-sm">
+<div class="absolute top-1/2 left-0 w-full h-[2px] bg-surface-container -z-10 -translate-y-1/2 rounded-full"></div>
+<div class="absolute top-1/2 left-0 w-1/4 h-[2px] bg-primary -z-10 -translate-y-1/2 rounded-full shadow-[0_0_8px_rgba(220,184,255,0.5)]"></div>
+<div class="flex justify-between items-center">
+<div class="flex flex-col items-center gap-xs">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-md text-label-md shadow-[0_0_12px_rgba(220,184,255,0.3)]">1</div>
+<span class="font-caption text-caption text-primary">Item</span>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center font-label-md text-label-md border border-white/5">2</div>
+<span class="font-caption text-caption text-on-surface-variant">Service</span>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center font-label-md text-label-md border border-white/5">3</div>
+<span class="font-caption text-caption text-on-surface-variant">Details</span>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center font-label-md text-label-md border border-white/5">4</div>
+<span class="font-caption text-caption text-on-surface-variant">Review</span>
+</div>
+</div>
+</div>
+<section class="mb-2xl text-center md:text-left">
+<h2 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg mb-sm">What are you sending for care?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Select the primary category to view specialized services.</p>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-md md:gap-lg">
+<!-- Category: Shoes (Large Card) -->
+<div class="md:col-span-8 glass-panel rounded-xl p-lg hover-lift cursor-pointer group relative overflow-hidden h-[320px] md:h-[400px]">
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent z-10"></div>
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-60" data-alt="A macro shot of premium leather sneakers and dress shoes arranged neatly on a polished dark surface. The lighting is dramatic and moody, with sharp specular highlights emphasizing the texture of the materials. The overall color palette is dark, sophisticated, with subtle warm tones from the leather, fitting a high-end luxury care service aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBQHjFyekY81zRupt7huDHMGA7HTWgEBpgHPHCCMThx8dPUklt9oD_xwWjIvL6RD-CyB2UN0bns5mmThz6hvD8WhSh4MmCbm3aI2f7zxhfz1Ukpr9onoS9F2tPUTRUaFKl8fO-xlOdEBzY8dm-DMc-x71nStrrVbzIvWV5tPssWibNLYEm6LxGwh8X1ME6DI7TwX3SJEzry6WEU4P61ifB55ulyQjUzG7sf-o5jhGuj0mCXhIU3bKOLNA')"></div>
+<div class="relative z-20 h-full flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 rounded-lg bg-surface/50 backdrop-blur-md flex items-center justify-center border border-white/10 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-3xl text-on-surface group-hover:text-primary transition-colors" style="font-variation-settings: 'FILL' 0;">steps</span>
+</div>
+<div class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/10 transition-all">
+<span class="material-symbols-outlined text-sm text-on-surface-variant group-hover:text-primary">arrow_forward</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-lg text-headline-lg mb-xs">Shoes</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Sneakers, Sports, Leather, Boots</p>
+<div class="flex flex-wrap gap-xs">
+<span class="px-3 py-1 rounded-full bg-surface-container-high/80 backdrop-blur-sm font-caption text-caption text-on-surface border border-white/5">Deep Clean</span>
+<span class="px-3 py-1 rounded-full bg-surface-container-high/80 backdrop-blur-sm font-caption text-caption text-on-surface border border-white/5">Restoration</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Category: Clothes (Tall Card) -->
+<div class="md:col-span-4 glass-panel rounded-xl p-lg hover-lift cursor-pointer group relative overflow-hidden h-[320px] md:h-[400px]">
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent z-10"></div>
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-60" data-alt="A neatly folded stack of premium garments, including a crisp white shirt, dark selvedge denim jeans, and a textured tailored suit jacket, resting on a dark slate table. Soft, directional studio lighting creates gentle shadows and highlights the fine weaves of the fabrics. The mood is minimalist, orderly, and luxurious, matching a premium dry cleaning aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDgED_v5TGUwzHbjR0LNGlLSN1lLrbleDrWibQdaOHLDhpzPvqYmCWzDvy5FTjUts0gw4aaLPh75vfb0QjejwHfqjm1FHG-V4_6knx311c2jpX4NLDlO1LYw91Mrz1MNZ5djBm9N0RSPoLpQz7CL-rmF9q-feXG1lgLwA57ewzDwZfNfkQTPwzlf5JAm_j40QE-aBieJXhb7ZFoTNAeDRunBPQIsyKUU1GzyYD7WXklxuINWjyboqa2GQ')"></div>
+<div class="relative z-20 h-full flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 rounded-lg bg-surface/50 backdrop-blur-md flex items-center justify-center border border-white/10 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-3xl text-on-surface group-hover:text-primary transition-colors" style="font-variation-settings: 'FILL' 0;">styler</span>
+</div>
+<div class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/10 transition-all">
+<span class="material-symbols-outlined text-sm text-on-surface-variant group-hover:text-primary">arrow_forward</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md mb-xs">Clothes</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Shirt, T-shirt, Jeans, Suit</p>
+<div class="flex flex-wrap gap-xs">
+<span class="px-3 py-1 rounded-full bg-surface-container-high/80 backdrop-blur-sm font-caption text-caption text-on-surface border border-white/5">Dry Clean</span>
+<span class="px-3 py-1 rounded-full bg-surface-container-high/80 backdrop-blur-sm font-caption text-caption text-on-surface border border-white/5">Press</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Category: Vehicles (Wide Card) -->
+<div class="md:col-span-12 glass-panel rounded-xl p-lg hover-lift cursor-pointer group relative overflow-hidden h-[240px]">
+<div class="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent z-10"></div>
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-60" data-alt="A close-up abstract detail of a high-end sports car exterior in a dark, atmospheric garage setting. The sleek, polished paint reflects sharp, cool neon lights, emphasizing the smooth aerodynamic curves. The image feels fast, precise, and spotless, embodying a top-tier detailing service in a luxury dark-mode environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCH1j5p2kOOQh-GaGx0P6G-kBbkJZgwHfWOJe-bxhQGW-z5k9nbwMu0gdwe65Pgc5BZHSBuBBcamyHf-NJ0OQDr7rlsCCtMM9z5sMPflqMhqHHRRESwp-fTv1mbqTWQw5NfJDU8R45hgJLsOwzRpUPSP-OaFg-FOvhjU570htg7ayK8Uxv8gbKKxNhUrrAg-xzpHJrvUCBxDHUID-WPRmQxVZqaPT6g3rYDJSyQwOQ9scPwmjEaoRRVSw')"></div>
+<div class="relative z-20 h-full flex flex-col justify-center w-full md:w-1/2">
+<div class="mb-auto">
+<div class="w-12 h-12 rounded-lg bg-surface/50 backdrop-blur-md flex items-center justify-center border border-white/10 group-hover:bg-primary/20 transition-colors mb-sm">
+<span class="material-symbols-outlined text-3xl text-on-surface group-hover:text-primary transition-colors" style="font-variation-settings: 'FILL' 0;">directions_car</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-lg text-headline-lg mb-xs">Vehicles</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Exterior Wash, Interior Detailing, Ceramic Coating</p>
+<div class="flex items-center gap-sm text-primary font-label-md text-label-md group-hover:translate-x-2 transition-transform">
+<span>Explore Services</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

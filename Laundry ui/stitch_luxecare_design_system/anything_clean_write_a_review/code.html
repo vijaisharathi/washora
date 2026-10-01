@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Write a Review - Lumina Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#131314",
+                    "on-error": "#690005",
+                    "primary": "#dcb8ff",
+                    "tertiary-container": "#646365",
+                    "inverse-primary": "#8422dc",
+                    "on-surface": "#e5e2e3",
+                    "error-container": "#93000a",
+                    "surface-container-high": "#2a2a2b",
+                    "on-secondary-container": "#b9b8ba",
+                    "on-primary-fixed-variant": "#6700b5",
+                    "secondary-fixed-dim": "#c8c6c8",
+                    "secondary-container": "#49494b",
+                    "outline-variant": "#4c4354",
+                    "electric-violet": "#8a2be2",
+                    "error": "#ffb4ab",
+                    "primary-fixed-dim": "#dcb8ff",
+                    "secondary-fixed": "#e4e2e4",
+                    "primary-container": "#8a2be2",
+                    "on-primary": "#480081",
+                    "inverse-surface": "#e5e2e3",
+                    "surface-dim": "#131314",
+                    "error-red": "#ffb4ab",
+                    "on-tertiary-container": "#e3e0e2",
+                    "outline": "#988ca0",
+                    "on-tertiary": "#303032",
+                    "on-background": "#e5e2e3",
+                    "on-secondary-fixed": "#1b1b1d",
+                    "on-surface-variant": "#cfc2d7",
+                    "success-green": "#81C784",
+                    "tertiary-fixed-dim": "#c8c6c8",
+                    "primary-fixed": "#efdbff",
+                    "surface-bright": "#39393a",
+                    "background": "#131314",
+                    "inverse-on-surface": "#313031",
+                    "surface-tint": "#dcb8ff",
+                    "on-secondary-fixed-variant": "#474648",
+                    "surface-variant": "#353436",
+                    "surface-container": "#201f20",
+                    "on-tertiary-fixed-variant": "#474648",
+                    "tertiary": "#c8c6c8",
+                    "on-primary-container": "#eed9ff",
+                    "on-error-container": "#ffdad6",
+                    "success-bg": "#1A3D24",
+                    "on-secondary": "#303032",
+                    "secondary": "#c8c6c8",
+                    "surface-container-low": "#1c1b1c",
+                    "surface-container-highest": "#353436",
+                    "tertiary-fixed": "#e4e2e4",
+                    "surface-container-lowest": "#0e0e0f",
+                    "on-primary-fixed": "#2c0051",
+                    "on-tertiary-fixed": "#1b1b1d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "2xl": "48px",
+                    "md": "16px",
+                    "xs": "4px",
+                    "lg": "24px",
+                    "xl": "32px",
+                    "3xl": "64px",
+                    "sm": "8px"
+            },
+            "fontFamily": {
+                    "caption": [
+                            "Geist"
+                    ],
+                    "body-md": [
+                            "Geist"
+                    ],
+                    "mono-display": [
+                            "monospace"
+                    ],
+                    "h1": [
+                            "Geist"
+                    ],
+                    "h3": [
+                            "Geist"
+                    ],
+                    "headline-lg": [
+                            "Geist"
+                    ],
+                    "display-lg": [
+                            "Geist"
+                    ],
+                    "label-md": [
+                            "Geist"
+                    ]
+            },
+            "fontSize": {
+                    "caption": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "mono-display": [
+                            "18px",
+                            {
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "h1": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "h3": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.01em",
+                                    "fontWeight": "500"
+                            }
+                    ]
+            }
+          },
+        }
+      }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex items-center justify-center p-md sm:p-xl">
+<!-- Transactional Screen - No Nav Shells rendered -->
+<main class="w-full max-w-2xl mx-auto bg-surface-container rounded-xl border border-outline-variant/20 p-xl shadow-2xl relative overflow-hidden">
+<!-- Subtle gradient orb for visual interest -->
+<div class="absolute -top-32 -right-32 w-64 h-64 bg-electric-violet/10 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Header Section -->
+<header class="mb-lg relative z-10">
+<!-- Back Action (Transactional exit) -->
+<button class="mb-lg text-on-surface-variant hover:text-primary transition-colors flex items-center gap-xs font-label-md text-label-md">
+<span class="material-symbols-outlined" data-icon="arrow_back" style="font-size: 20px;">arrow_back</span>
+                Back
+            </button>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-sm">Write a Review</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Tell us what you liked or what we could improve.</p>
+</header>
+<!-- Main Form Content -->
+<div class="space-y-xl relative z-10">
+<!-- Text Area Section -->
+<div class="flex flex-col gap-sm relative">
+<label class="sr-only" for="review-text">Your Review</label>
+<!-- Match input field style: background surface-container-low, border outline-variant/50, focus primary -->
+<textarea class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg p-md font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all resize-none" id="review-text" maxlength="500" oninput="document.getElementById('char-count').innerText = this.value.length + '/500'" placeholder="Share your experience..." rows="6"></textarea>
+<div class="flex justify-end">
+<span class="font-caption text-caption text-on-surface-variant" id="char-count">0/500</span>
+</div>
+</div>
+<!-- Suggestion Chips -->
+<div>
+<p class="font-label-md text-label-md text-on-surface mb-md">Quick Suggestions</p>
+<div class="flex flex-wrap gap-sm">
+<!-- Chip -->
+<button class="chip px-md py-sm rounded-full border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:border-primary hover:text-primary transition-colors duration-200">
+                        Great quality
+                    </button>
+<!-- Chip -->
+<button class="chip px-md py-sm rounded-full border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:border-primary hover:text-primary transition-colors duration-200">
+                        Fast service
+                    </button>
+<!-- Chip -->
+<button class="chip px-md py-sm rounded-full border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:border-primary hover:text-primary transition-colors duration-200">
+                        Friendly provider
+                    </button>
+<!-- Chip -->
+<button class="chip px-md py-sm rounded-full border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:border-primary hover:text-primary transition-colors duration-200">
+                        Good value
+                    </button>
+<!-- Chip -->
+<button class="chip px-md py-sm rounded-full border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:border-primary hover:text-primary transition-colors duration-200">
+                        Careful handling
+                    </button>
+<!-- Chip -->
+<button class="chip px-md py-sm rounded-full border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:border-primary hover:text-primary transition-colors duration-200">
+                        Easy pickup
+                    </button>
+<!-- Chip -->
+<button class="chip px-md py-sm rounded-full border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:border-primary hover:text-primary transition-colors duration-200">
+                        Clean finish
+                    </button>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col-reverse sm:flex-row items-center justify-end gap-md pt-md border-t border-outline-variant/30 mt-xl">
+<!-- Secondary CTA -->
+<button class="w-full sm:w-auto px-lg py-sm rounded-lg border border-outline-variant bg-transparent text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors duration-200">
+                    Skip Review
+                </button>
+<!-- Primary CTA -->
+<button class="w-full sm:w-auto px-lg py-sm rounded-lg bg-electric-violet text-white font-label-md text-label-md font-bold shadow-lg shadow-primary/20 hover:bg-inverse-primary transition-colors duration-200">
+                    Continue
+                </button>
+</div>
+</div>
+</main>
+<script>
+        // Simple micro-interaction for suggestion chips
+        document.querySelectorAll('.chip').forEach(chip => {
+            chip.addEventListener('click', function() {
+                const textarea = document.getElementById('review-text');
+                const text = this.innerText;
+                const currentVal = textarea.value;
+                
+                // Toggle state logic for visual feedback
+                if (this.classList.contains('bg-primary/10')) {
+                    this.classList.remove('bg-primary/10', 'border-primary', 'text-primary');
+                    this.classList.add('border-outline-variant', 'text-on-surface-variant');
+                    // Very rudimentary text removal for demo
+                    textarea.value = currentVal.replace(text + '. ', '').replace(text, '');
+                } else {
+                    this.classList.remove('border-outline-variant', 'text-on-surface-variant');
+                    this.classList.add('bg-primary/10', 'border-primary', 'text-primary');
+                    
+                    if(currentVal.length > 0 && !currentVal.endsWith(' ')) {
+                         textarea.value = currentVal + ' ' + text + '. ';
+                    } else {
+                        textarea.value = currentVal + text + '. ';
+                    }
+                }
+                
+                // Update counter
+                document.getElementById('char-count').innerText = textarea.value.length + '/500';
+            });
+        });
+    </script>
+</body></html>

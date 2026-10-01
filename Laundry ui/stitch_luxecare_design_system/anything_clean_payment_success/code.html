@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment Successful - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#303032",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "inverse-surface": "#e5e2e3",
+                        "on-error": "#690005",
+                        "success-bg": "#1A3D24",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface-dim": "#131314",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "success-green": "#81C784",
+                        "on-secondary-fixed-variant": "#474648",
+                        "inverse-on-surface": "#313031",
+                        "inverse-primary": "#8422dc",
+                        "on-primary-container": "#eed9ff",
+                        "on-primary": "#480081",
+                        "surface-variant": "#353436",
+                        "outline": "#988ca0",
+                        "primary": "#dcb8ff",
+                        "on-surface": "#e5e2e3",
+                        "on-secondary-container": "#b9b8ba",
+                        "surface-tint": "#dcb8ff",
+                        "tertiary-container": "#646365",
+                        "primary-container": "#8a2be2",
+                        "on-primary-fixed": "#2c0051",
+                        "primary-fixed": "#efdbff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-container-low": "#1c1b1c",
+                        "secondary-container": "#49494b",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-surface-variant": "#cfc2d7",
+                        "surface-bright": "#39393a",
+                        "surface": "#131314",
+                        "outline-variant": "#4c4354",
+                        "secondary-fixed": "#e4e2e4",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#353436",
+                        "surface-container": "#201f20",
+                        "surface-container-high": "#2a2a2b",
+                        "error-red": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "electric-violet": "#8a2be2",
+                        "tertiary": "#c8c6c8",
+                        "on-tertiary": "#303032",
+                        "background": "#131314",
+                        "on-background": "#e5e2e3",
+                        "secondary": "#c8c6c8",
+                        "on-primary-fixed-variant": "#6700b5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "sm": "8px",
+                        "xl": "32px",
+                        "2xl": "48px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "3xl": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Geist"],
+                        "h3": ["Geist"],
+                        "label-md": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "headline-lg": ["Geist"],
+                        "h1": ["Geist"],
+                        "body-md": ["Geist"],
+                        "caption": ["Geist"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            80% { transform: scale(1.5); opacity: 0; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        .success-pulse::before {
+            content: '';
+            position: absolute;
+            inset: -20px;
+            border-radius: 50%;
+            background-color: theme('colors.success-bg');
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col justify-center items-center p-md sm:p-xl">
+<!-- TopNavBar Suppressed: Transactional Screen -->
+<!-- SideNavBar Suppressed: Transactional Screen -->
+<main class="w-full max-w-2xl bg-surface-container rounded-xl border border-outline-variant/20 shadow-2xl overflow-hidden relative">
+<!-- Success Header -->
+<div class="pt-3xl pb-xl px-xl flex flex-col items-center text-center relative overflow-hidden bg-gradient-to-b from-success-bg/20 to-transparent">
+<div class="relative mb-lg">
+<div class="w-20 h-20 bg-success-bg rounded-full flex items-center justify-center success-pulse relative z-10 border border-success-green/30">
+<span class="material-symbols-outlined text-4xl text-success-green" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<h1 class="font-h1 text-h1 text-on-surface mb-sm">Payment Successful</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Your booking with Anything Clean is confirmed.</p>
+</div>
+<!-- Details Grid -->
+<div class="px-xl py-lg space-y-md">
+<div class="bg-surface-container-low rounded-lg border border-outline-variant/30 p-md flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface-variant">Amount Paid</span>
+<span class="font-mono-display text-mono-display text-electric-violet">₹502</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- IDs -->
+<div class="bg-surface-container-low rounded-lg border border-outline-variant/30 p-md space-y-md">
+<div>
+<div class="font-caption text-caption text-on-surface-variant mb-xs">Booking ID</div>
+<div class="font-mono-display text-sm text-on-surface">QH-20260901-1024</div>
+</div>
+<div class="w-full h-px bg-outline-variant/30"></div>
+<div>
+<div class="font-caption text-caption text-on-surface-variant mb-xs">Transaction ID</div>
+<div class="font-mono-display text-sm text-on-surface">TXN-20260901-1024</div>
+</div>
+</div>
+<!-- Logistics -->
+<div class="bg-surface-container-low rounded-lg border border-outline-variant/30 p-md space-y-md">
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-electric-violet mt-1" style="font-size: 20px;">calendar_month</span>
+<div>
+<div class="font-caption text-caption text-on-surface-variant mb-xs">Schedule</div>
+<div class="font-label-md text-label-md text-on-surface">Sep 1, 10:00 - 12:00 PM</div>
+</div>
+</div>
+<div class="w-full h-px bg-outline-variant/30"></div>
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-electric-violet mt-1" style="font-size: 20px;">location_on</span>
+<div>
+<div class="font-caption text-caption text-on-surface-variant mb-xs">Location</div>
+<div class="font-label-md text-label-md text-on-surface">Anna Nagar</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="p-xl bg-surface-container-highest border-t border-outline-variant/30 flex flex-col sm:flex-row gap-md justify-end">
+<button class="px-xl py-sm rounded-lg font-label-md text-label-md text-on-surface border border-outline-variant hover:bg-surface-container transition-colors duration-200 w-full sm:w-auto text-center">
+                View Order Details
+            </button>
+<button class="px-xl py-sm rounded-lg font-label-md text-label-md text-white bg-electric-violet shadow-lg shadow-electric-violet/20 hover:bg-electric-violet/90 transition-all duration-200 active:scale-95 w-full sm:w-auto text-center flex items-center justify-center gap-sm">
+<span>Track Order</span>
+<span class="material-symbols-outlined" style="font-size: 18px;">local_shipping</span>
+</button>
+</div>
+</main>
+</body></html>

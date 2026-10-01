@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Online Dashboard - Partner Portal</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config injected from system prompt -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#e5e2e3",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "background": "#131314",
+                        "on-primary": "#480081",
+                        "on-secondary-container": "#b7b4b7",
+                        "on-secondary": "#303032",
+                        "surface-container-high": "#2a2a2b",
+                        "surface-tint": "#dcb8ff",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "surface-variant": "#353436",
+                        "secondary-fixed": "#e5e1e4",
+                        "surface-container-highest": "#353436",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "secondary-container": "#474649",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "secondary": "#c8c6c8",
+                        "on-error": "#690005",
+                        "surface-container-low": "#1c1b1c",
+                        "on-primary-fixed": "#2c0051",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-surface-variant": "#cfc2d7",
+                        "inverse-on-surface": "#313031",
+                        "inverse-primary": "#8422dc",
+                        "tertiary": "#c8c6c8",
+                        "on-primary-container": "#eed9ff",
+                        "on-surface": "#e5e2e3",
+                        "tertiary-container": "#646365",
+                        "primary-container": "#8a2be2",
+                        "on-background": "#e5e2e3",
+                        "surface": "#131314",
+                        "on-tertiary": "#303032",
+                        "outline": "#988ca0",
+                        "on-secondary-fixed-variant": "#474649",
+                        "surface-dim": "#131314",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "outline-variant": "#4c4354",
+                        "primary-fixed": "#efdbff",
+                        "error-container": "#93000a",
+                        "surface-bright": "#3a393a",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#201f20",
+                        "surface-container-lowest": "#0e0e0f",
+                        "error": "#ffb4ab",
+                        "primary": "#dcb8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "2xl": "48px",
+                        "xl": "32px",
+                        "3xl": "64px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Geist"],
+                        "caption": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "label-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+        body { font-family: 'Geist', sans-serif; background-color: #0A0A0B; color: #e5e2e3; }
+        .glass-card { background: rgba(18, 18, 20, 0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .pulse-animation { animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(220, 184, 255, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(220, 184, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(220, 184, 255, 0); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 pt-20">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-white/5 flex justify-between items-center px-lg h-16 transition-opacity hover:opacity-80 active:scale-95 transition-transform hidden md:flex">
+<div class="flex items-center gap-md">
+<img alt="Partner Profile Picture" class="w-10 h-10 rounded-full object-cover border border-white/10" data-alt="A professional headshot of a delivery partner, smiling, against a sleek dark futuristic background with subtle neon violet lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_D9ih56ehZ6LtNtcJLWD3i0hHpszbv-I9TYhIWUsAXeBV5xOQ75wR4VbWl5qD-wo2bCGz-PExrNda0Klnbf1lRy7YBHI17dmYs8isco0JSvoZ7Lf7rxix3vXVrG8SxsCSiZzNqnibUtT-uPqyIrXeURCw61TjpilLOhzXJgWuyoavdfJWlCH9m9bG2Du_mLxUOJ_Y0S8uVd11FUd-30oowfMZBEcqlWis8BwfzOKW5ERtLc0O6HutDw"/>
+<span class="font-headline-md text-headline-md text-primary">Partner Portal</span>
+</div>
+<div class="flex items-center gap-sm bg-surface-container-high px-md py-sm rounded-full">
+<div class="w-2 h-2 rounded-full bg-primary pulse-animation"></div>
+<span class="font-label-md text-label-md text-primary tracking-widest uppercase">Online</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer" data-icon="sensors" style="font-variation-settings: 'FILL' 1;">sensors</span>
+</header>
+<!-- Mobile Header -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-white/5 flex justify-between items-center px-md h-16 md:hidden">
+<span class="font-headline-md text-headline-md-mobile text-primary">Partner Portal</span>
+<div class="flex items-center gap-sm bg-surface-container-high px-md py-xs rounded-full border border-primary/20">
+<div class="w-2 h-2 rounded-full bg-primary pulse-animation"></div>
+<span class="font-label-md text-label-md text-primary tracking-widest uppercase">Online</span>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-md md:px-lg space-y-lg pt-md">
+<!-- Primary Status Card -->
+<section class="glass-card rounded-xl p-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-md relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/5 z-0"></div>
+<div class="relative z-10 space-y-sm">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary">YOU'RE ONLINE</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">You can now receive nearby delivery requests.</p>
+</div>
+<button class="relative z-10 px-lg py-sm rounded-full border border-outline text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md uppercase tracking-wider backdrop-blur-md">
+                Go Offline
+            </button>
+</section>
+<!-- Active Delivery / Searching State -->
+<section class="glass-card rounded-xl p-lg flex items-center gap-md border border-primary/20 bg-primary-container/5">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center pulse-animation shrink-0 text-primary">
+<span class="material-symbols-outlined" data-icon="radar">radar</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md-mobile md:text-headline-md text-on-surface">Waiting for a nearby request...</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Keep the app open and stay in the active zone.</p>
+</div>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Live Earnings Summary -->
+<div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-md">
+<!-- Earnings -->
+<div class="glass-card rounded-xl p-md space-y-sm hover:-translate-y-1 transition-transform">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-md text-label-md uppercase tracking-wider">Today's Earnings</span>
+<span class="material-symbols-outlined text-primary/70" data-icon="payments">payments</span>
+</div>
+<div class="font-display-lg-mobile text-display-lg-mobile text-on-surface">₹1,240</div>
+<div class="font-caption text-caption text-primary flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_up">trending_up</span> +12% from yesterday
+                    </div>
+</div>
+<!-- Deliveries -->
+<div class="glass-card rounded-xl p-md space-y-sm hover:-translate-y-1 transition-transform">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-md text-label-md uppercase tracking-wider">Deliveries</span>
+<span class="material-symbols-outlined text-primary/70" data-icon="local_shipping">local_shipping</span>
+</div>
+<div class="font-display-lg-mobile text-display-lg-mobile text-on-surface">18</div>
+<div class="font-caption text-caption text-on-surface-variant">Completed today</div>
+</div>
+<!-- Distance -->
+<div class="glass-card rounded-xl p-md space-y-sm hover:-translate-y-1 transition-transform">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-md text-label-md uppercase tracking-wider">Distance</span>
+<span class="material-symbols-outlined text-primary/70" data-icon="route">route</span>
+</div>
+<div class="font-display-lg-mobile text-display-lg-mobile text-on-surface">42.6<span class="font-body-md text-body-md text-on-surface-variant ml-1">km</span></div>
+<div class="font-caption text-caption text-on-surface-variant">Active driving</div>
+</div>
+</div>
+<!-- Performance Stats -->
+<div class="md:col-span-4 glass-card rounded-xl p-md space-y-md">
+<h3 class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant border-b border-white/5 pb-sm">Performance</h3>
+<div class="space-y-sm">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface">Acceptance</span>
+<span class="font-headline-md text-headline-md-mobile text-primary">92%</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5">
+<div class="bg-primary h-1.5 rounded-full" style="width: 92%"></div>
+</div>
+</div>
+<div class="space-y-sm">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface">Completion</span>
+<span class="font-headline-md text-headline-md-mobile text-primary">98%</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5">
+<div class="bg-primary h-1.5 rounded-full" style="width: 98%"></div>
+</div>
+</div>
+<div class="space-y-sm">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface">Rating</span>
+<div class="flex items-center gap-xs">
+<span class="font-headline-md text-headline-md-mobile text-[#FFCC00]">4.9</span>
+<span class="material-symbols-outlined text-[#FFCC00] text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Service Area Map -->
+<div class="md:col-span-12 glass-card rounded-xl p-md h-64 md:h-80 relative overflow-hidden flex flex-col">
+<div class="flex justify-between items-center mb-sm relative z-10 bg-surface/50 backdrop-blur-md p-sm rounded-lg w-max">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Service Area</span>
+</div>
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-60" data-alt="A sleek, dark mode style digital map showing a city grid. The map has subtle glowing violet hues indicating active zones, with a sleek minimalist aesthetic. Deep blacks and dark greys dominate the background, conveying high-end technology." data-location="Mumbai" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBVsLPmh8IIVgYf2x4Y5xMUGxIFeoHwKSyVGAjydjCuVIfn4IyzzT6wP3wDKiv3BwrlsMYdY1ej1Fu4OWQGnK8xQqN4ClIPYIAdnk5qt-58wLn7g_C2WYImXdKLrxstxKTCUIFu8Z2JkXbWud41Xp0w-eSmW1sFAO1RpI5LhUQwigiSPKXym7x6plCl5wMhX8RIVxhelUONK26fbsS28nMYdJqulrB3BNInuPejgEP7mtDgzgSKP2kRQ"/>
+<!-- Overlay to integrate map better -->
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none"></div>
+</div>
+<!-- Simulated Map UI elements -->
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center">
+<div class="w-32 h-32 rounded-full border border-primary/30 bg-primary/10 pulse-animation flex items-center justify-center">
+<div class="w-4 h-4 rounded-full bg-primary shadow-[0_0_15px_rgba(220,184,255,0.8)]"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface/90 backdrop-blur-xl border-t border-white/5 shadow-2xl flex justify-around items-center h-20 px-md pb-safe md:hidden transition-transform active:scale-90">
+<a class="flex flex-col items-center justify-center text-primary bg-primary-container/10 rounded-xl px-sm py-xs hover:text-primary/80 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-md text-label-md mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span class="font-label-md text-label-md mt-1">Deliveries</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md mt-1">Earnings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors relative" href="#">
+<span class="absolute top-0 right-1 w-2 h-2 bg-error rounded-full"></span>
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-label-md text-label-md mt-1">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-label-md mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

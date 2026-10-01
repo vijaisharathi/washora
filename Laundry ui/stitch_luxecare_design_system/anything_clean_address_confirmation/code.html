@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Confirm Your Address - Lumina Care</title>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#cfc2d7",
+                        "error-red": "#ffb4ab",
+                        "success-bg": "#1A3D24",
+                        "primary-container": "#8a2be2",
+                        "on-background": "#e5e2e3",
+                        "secondary-container": "#49494b",
+                        "error-container": "#93000a",
+                        "surface-bright": "#39393a",
+                        "error": "#ffb4ab",
+                        "surface-container-high": "#2a2a2b",
+                        "surface-container-low": "#1c1b1c",
+                        "on-secondary-fixed-variant": "#474648",
+                        "tertiary-fixed": "#e4e2e4",
+                        "inverse-on-surface": "#313031",
+                        "inverse-primary": "#8422dc",
+                        "primary-fixed": "#efdbff",
+                        "background": "#131314",
+                        "surface-variant": "#353436",
+                        "surface-tint": "#dcb8ff",
+                        "on-tertiary": "#303032",
+                        "primary": "#dcb8ff",
+                        "tertiary": "#c8c6c8",
+                        "on-secondary-container": "#b9b8ba",
+                        "on-primary-container": "#eed9ff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-container": "#201f20",
+                        "outline-variant": "#4c4354",
+                        "tertiary-container": "#646365",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-primary": "#480081",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-secondary": "#303032",
+                        "on-surface": "#e5e2e3",
+                        "electric-violet": "#8a2be2",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "surface-dim": "#131314",
+                        "secondary": "#c8c6c8",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface-container-highest": "#353436",
+                        "surface": "#131314",
+                        "secondary-fixed": "#e4e2e4",
+                        "outline": "#988ca0",
+                        "on-primary-fixed": "#2c0051",
+                        "inverse-surface": "#e5e2e3",
+                        "success-green": "#81C784"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "sm": "8px",
+                        "3xl": "64px",
+                        "xs": "4px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Geist", "sans-serif"],
+                        "headline-lg": ["Geist", "sans-serif"],
+                        "h1": ["Geist", "sans-serif"],
+                        "h3": ["Geist", "sans-serif"],
+                        "caption": ["Geist", "sans-serif"],
+                        "display-lg": ["Geist", "sans-serif"],
+                        "mono-display": ["monospace"],
+                        "body-md": ["Geist", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-surface-container-highest/20 to-background">
+<!-- Minimal Transactional Header (Nav Shell Suppressed per guidelines) -->
+<header class="w-full px-xl py-md border-b border-outline-variant/30 bg-surface/50 backdrop-blur-md flex items-center justify-between sticky top-0 z-50">
+<div class="flex items-center space-x-md text-primary cursor-pointer hover:brightness-125 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+<span class="font-label-md text-label-md">Back to Details</span>
+</div>
+<div class="font-mono-display text-mono-display text-primary tracking-widest">LUMINA</div>
+<div class="w-8"></div> <!-- Spacer for balance -->
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-[1200px] mx-auto px-xl py-2xl grid grid-cols-1 lg:grid-cols-12 gap-xl items-start">
+<!-- Left Column: Form Details & Actions -->
+<div class="lg:col-span-7 flex flex-col h-full">
+<h1 class="font-headline-lg text-headline-lg mb-xl tracking-tight text-on-surface">Confirm Your Address</h1>
+<!-- Trust Indicator -->
+<div class="bg-success-bg border border-success-green/30 rounded-lg p-md mb-xl flex items-center space-x-md">
+<span class="material-symbols-outlined text-success-green" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-md text-label-md text-success-green tracking-wide uppercase">Service available at this address.</span>
+</div>
+<!-- Address Cards Cluster -->
+<div class="space-y-md flex-grow">
+<!-- Pickup Card -->
+<div class="bg-surface-container border border-outline-variant/50 rounded-xl p-lg relative group overflow-hidden">
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center space-x-sm text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="font-label-md text-label-md tracking-wider">PICKUP</span>
+</div>
+<button class="flex items-center space-x-xs text-on-surface-variant hover:text-primary transition-colors py-xs px-sm border border-transparent hover:border-outline-variant/50 rounded bg-surface-container-low hover:bg-surface-container-highest">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span class="font-caption text-caption uppercase tracking-wider">Edit</span>
+</button>
+</div>
+<div class="pl-xl">
+<h3 class="font-h3 text-h3 text-on-surface mb-xs">Arun Kumar</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-sm">
+                            12, Example Street, Anna Nagar,<br/>
+                            Chennai - 600040
+                        </p>
+</div>
+</div>
+<!-- Delivery Card -->
+<div class="bg-surface-container border border-outline-variant/30 rounded-xl p-lg relative group overflow-hidden opacity-80 hover:opacity-100 transition-opacity">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center space-x-sm text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+<span class="font-label-md text-label-md tracking-wider text-on-surface-variant">DELIVERY</span>
+</div>
+<button class="flex items-center space-x-xs text-on-surface-variant hover:text-primary transition-colors py-xs px-sm border border-transparent hover:border-outline-variant/50 rounded bg-surface-container-low hover:bg-surface-container-highest">
+<span class="material-symbols-outlined text-[16px]">swap_horiz</span>
+<span class="font-caption text-caption uppercase tracking-wider">Change</span>
+</button>
+</div>
+<div class="pl-xl">
+<p class="font-body-md text-body-md text-on-surface-variant italic">
+                            Same as pickup address
+                        </p>
+</div>
+</div>
+</div>
+<!-- Note -->
+<div class="flex items-start space-x-sm mt-xl mb-2xl bg-surface-container-low p-md rounded-lg border border-outline-variant/20">
+<span class="material-symbols-outlined text-outline mt-[2px] text-[20px]">info</span>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Please ensure someone is available during the selected pickup window.
+                </p>
+</div>
+<!-- Actions Container -->
+<div class="flex flex-col sm:flex-row items-center gap-md pt-xl border-t border-outline-variant/30 mt-auto">
+<button class="w-full sm:w-auto bg-electric-violet text-[#ffffff] font-label-md text-label-md py-md px-2xl rounded-lg shadow-lg shadow-electric-violet/20 hover:bg-primary-container hover:shadow-electric-violet/40 transition-all duration-300 order-1 sm:order-2">
+                    Confirm Address
+                </button>
+<button class="w-full sm:w-auto border border-outline-variant text-on-surface font-label-md text-label-md py-md px-2xl rounded-lg hover:bg-surface-container-highest transition-colors duration-200 order-2 sm:order-1">
+                    Change Address
+                </button>
+</div>
+</div>
+<!-- Right Column: Visual Map Context -->
+<div class="hidden lg:block lg:col-span-5 h-[600px] sticky top-2xl rounded-xl overflow-hidden border border-outline-variant/20 bg-surface-container-lowest relative group">
+<!-- Map Placeholder Image -->
+<img class="w-full h-full object-cover opacity-50 mix-blend-luminosity grayscale group-hover:grayscale-0 group-hover:opacity-70 transition-all duration-700 ease-in-out" data-alt="A detailed overhead map view of a modern urban street layout in Chennai at night, designed in a sleek, dark-mode corporate tech aesthetic. The map features deep midnight black backgrounds with subtle, electric violet glowing lines indicating major roads and routes. A prominent, high-tech glowing map pin marks a specific location, casting a soft purple light on the surrounding geometric building footprints. The overall mood is precise, engineered, and highly technical, lacking any bright or natural daytime colors." data-location="Chennai" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyBBtXurq8J3xG4e6mheLdV6zU-WhT6ooGbhRw4OsydsB5WGbXctNOxB0p3SeqDQl6aIRsXOvgoBCxwktvl-zpdxIStviem1Tt0uuqWN-cQq35Vd5P1Br308UsnRPGXKMK2w8cngm6MAGTuU3oiuHxC_qO_JeUt4P_YgEOf9L6wVlGE1Byd90Vgr-k-dGuuyS3-8bIKbEQO_7iC8JaJFyYmkBRe1hWC25Mk4U135IT5uEcKa96sROEDg"/>
+<!-- Map Overlay UI -->
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none"></div>
+<!-- Floating Data Pill -->
+<div class="absolute top-lg right-lg bg-surface-container/90 backdrop-blur-sm border border-outline-variant/50 rounded-full px-md py-xs flex items-center space-x-sm shadow-lg">
+<div class="w-2 h-2 rounded-full bg-success-green animate-pulse"></div>
+<span class="font-mono-display text-[12px] text-success-green tracking-widest uppercase">Location Verified</span>
+</div>
+<!-- Stylized Target Reticle -->
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center pointer-events-none">
+<div class="w-16 h-16 border-2 border-electric-violet/30 rounded-full flex items-center justify-center relative">
+<div class="absolute inset-0 bg-electric-violet/10 rounded-full animate-ping"></div>
+<span class="material-symbols-outlined text-electric-violet text-3xl drop-shadow-[0_0_8px_rgba(138,43,226,0.8)]" style="font-variation-settings: 'FILL' 1;">my_location</span>
+</div>
+</div>
+</div>
+</main>
+</body></html>

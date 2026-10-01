@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Service Processing Checklist</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#474649",
+                        "inverse-on-surface": "#313031",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "surface-variant": "#353436",
+                        "background": "#131314",
+                        "on-primary-fixed": "#2c0051",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#4c4354",
+                        "surface-container-highest": "#353436",
+                        "secondary-fixed": "#e5e1e4",
+                        "on-primary": "#480081",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "tertiary": "#c8c6c8",
+                        "on-secondary": "#303032",
+                        "surface-dim": "#131314",
+                        "tertiary-container": "#646365",
+                        "surface-container-high": "#2a2a2b",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "primary": "#dcb8ff",
+                        "inverse-surface": "#e5e2e3",
+                        "tertiary-fixed": "#e4e2e4",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-tertiary": "#303032",
+                        "surface-tint": "#dcb8ff",
+                        "secondary-container": "#474649",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface-bright": "#3a393a",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-surface-variant": "#cfc2d7",
+                        "surface": "#131314",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "primary-container": "#8a2be2",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-container": "#201f20",
+                        "primary-fixed": "#efdbff",
+                        "error-container": "#93000a",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-background": "#e5e2e3",
+                        "inverse-primary": "#8422dc",
+                        "on-secondary-container": "#b7b4b7",
+                        "on-surface": "#e5e2e3",
+                        "secondary": "#c8c6c8",
+                        "outline": "#988ca0",
+                        "on-primary-container": "#eed9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "3xl": "64px",
+                        "md": "16px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "caption": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen">
+<!-- Top Navigation for transactional/task-focused screen (No full nav shell) -->
+<header class="bg-surface/80 backdrop-blur-xl border-b border-white/5 sticky top-0 z-50">
+<div class="max-w-[1280px] mx-auto px-lg h-16 flex items-center justify-between">
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-on-surface p-sm rounded-full hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div>
+<h1 class="font-headline-md text-headline-md text-primary">Order #1042-X</h1>
+<p class="font-caption text-caption text-on-surface-variant">Premium Shoe Restoration</p>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<button class="text-on-surface-variant hover:text-on-surface p-sm rounded-full hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto px-lg py-2xl">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Left Column: Item Photos & Timer -->
+<div class="md:col-span-4 flex flex-col gap-lg">
+<!-- Service Timer Card -->
+<div class="bg-surface-container rounded-xl p-lg border border-white/5 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-container/10 to-transparent opacity-50"></div>
+<div class="relative z-10 flex flex-col gap-md">
+<div class="flex justify-between items-center">
+<h2 class="font-headline-md text-headline-md text-on-surface">Service Status</h2>
+<span class="bg-primary-container/20 text-primary px-sm py-xs rounded-full font-label-md text-label-md flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="sync" style="font-variation-settings: 'FILL' 1;">sync</span> In Progress
+                            </span>
+</div>
+<div class="flex flex-col gap-xs mt-sm">
+<div class="flex justify-between font-body-md text-body-md">
+<span class="text-on-surface-variant">Started At</span>
+<span class="text-on-surface">10:30 AM</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md">
+<span class="text-on-surface-variant">Expected Completion</span>
+<span class="text-on-surface">2:00 PM</span>
+</div>
+</div>
+<div class="mt-md">
+<div class="flex justify-between font-caption text-caption text-on-surface-variant mb-xs">
+<span>Progress</span>
+<span>65%</span>
+</div>
+<div class="h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-1000 ease-out w-[65%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Item Photos Card -->
+<div class="bg-surface-container rounded-xl p-lg border border-white/5">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-md">Item Photos</h2>
+<div class="grid grid-cols-2 gap-sm">
+<img class="w-full h-32 object-cover rounded-lg border border-white/10" data-alt="A detailed close-up shot of a pair of high-end sneakers before cleaning, showing scuffs and dirt on the white sole and leather upper. The lighting is bright and clinical, emphasizing the texture and need for restoration. The mood is utilitarian, captured in a modern, dark-themed service facility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8CAzivPh0gVWEy3No_oEehruw4j-ToBLSWVRbh_trZH9OPI4Ow_34xnHbn8mUEIJiCtg4lVtpGPUhR6G9l9myE72ZjXvJnXyjnppAFCBMfGqSg2-GFPo5dapzngsviwpY2WvXTB5f-43ZnpBvpLHBgxw43rQTe7KpDgRbSbEQhtsXy-TLukzzQLFxSvNaveia9Pun6H3WdDna4xsBczM5RyU6TseTtrs1_4f2lx5S3rQL1OXRpQdCjg"/>
+<img class="w-full h-32 object-cover rounded-lg border border-white/10" data-alt="A detailed close-up shot of the same pair of high-end sneakers after partial cleaning, showing a stark contrast between a bright white cleaned section and a dirty uncleaned section. The lighting is crisp, highlighting the premium quality of the material and the effectiveness of the cleaning service. The setting is a sleek, professional workspace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaf619E1IdloQUf2gjFyJv5Jwzn_A8fwra8ekqV2fgd1xfoNi3SCoG70RWbDQ3U1LKFI7RdfVcEGGpkrde7y9h4ps1XcfuDKT9qeHPfBrmAo8QWeJKWZ-EXdKnn1ldhvGKuuE0qRSkiMo6oF2_JYuUxAJpyK851OU_UbS03c3Y-HOCU3CYh9dwPwUoQI9-qtIxH2CNLPuPu9xZd39KFaHQFXJia4Ck82bNaLp765KF0F5Lx1Xzdap3Xw"/>
+<img class="w-full h-32 object-cover rounded-lg border border-white/10 col-span-2" data-alt="A top-down view of cleaning supplies neatly arranged next to the sneakers on a dark, textured workbench. The tools include premium brushes, microfiber cloths, and minimalistically designed bottles. The scene conveys high-end precision and professional care within a sophisticated dark-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbLEevxSHz0t-KJXcCo_By9stLBPoX-5HcO2WqtbAUuk50DlkuTWAf6cCyELZzVlAQ8wdtL91sJDvjR2Pb2UlAWzYeajLy-J-sP8DD9y-PYq8cmfp8ynawniCua0NNS7fj0KE5elRYWyqtcMiKYvO3jf5oTR5YF1fT5VzsBHsytsORecZq7DnhA2e8_DicyWvuGtxAdO7SRDi73g2AXSA1PIpJRdOFVudzWuEwXWbqiSYrbA6IdISkpg"/>
+</div>
+</div>
+</div>
+<!-- Right Column: Processing Checklist -->
+<div class="md:col-span-8 flex flex-col gap-lg">
+<div class="bg-surface-container rounded-xl p-lg border border-white/5">
+<div class="flex justify-between items-end mb-lg border-b border-white/5 pb-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Processing Checklist</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Deep Clean &amp; Restore - Nike Air Max 1</p>
+</div>
+<button class="bg-surface-variant hover:bg-surface-container-highest text-on-surface px-md py-sm rounded-lg font-label-md text-label-md transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="add_task">add_task</span> Add Step
+                        </button>
+</div>
+<div class="flex flex-col gap-sm">
+<!-- Completed Step -->
+<div class="flex items-start gap-md p-md bg-surface-container-highest rounded-lg border border-primary/20">
+<div class="mt-xs">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-md text-body-lg text-on-surface line-through opacity-70">Exterior Cleaned</h3>
+<p class="font-caption text-caption text-on-surface-variant">Deep scrub of upper mesh and leather panels using premium foam cleaner.</p>
+</div>
+<div class="font-caption text-caption text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span> 10:45 AM
+                            </div>
+</div>
+<!-- Completed Step -->
+<div class="flex items-start gap-md p-md bg-surface-container-highest rounded-lg border border-primary/20">
+<div class="mt-xs">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-md text-body-lg text-on-surface line-through opacity-70">Sole Cleaned &amp; De-yellowed</h3>
+<p class="font-caption text-caption text-on-surface-variant">Removed debris and applied whitening treatment to midsole.</p>
+</div>
+<div class="font-caption text-caption text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span> 11:30 AM
+                            </div>
+</div>
+<!-- Active Step -->
+<div class="flex items-start gap-md p-md bg-primary-container/10 rounded-lg border border-primary relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent w-1/2 -skew-x-12 -translate-x-full group-hover:translate-x-[200%] transition-transform duration-1000"></div>
+<div class="mt-xs relative z-10">
+<span class="material-symbols-outlined text-primary animate-pulse" data-icon="radio_button_checked">radio_button_checked</span>
+</div>
+<div class="flex-1 relative z-10">
+<h3 class="font-headline-md text-body-lg text-primary">Interior Cleaned &amp; Sanitized</h3>
+<p class="font-caption text-caption text-on-surface-variant">Steam cleaning and antibacterial treatment of insole and lining.</p>
+<div class="mt-sm flex gap-sm">
+<button class="bg-primary hover:bg-primary/90 text-on-primary px-sm py-xs rounded font-label-md text-caption transition-colors">Mark Complete</button>
+</div>
+</div>
+</div>
+<!-- Pending Step -->
+<div class="flex items-start gap-md p-md bg-surface border border-white/5 rounded-lg opacity-60">
+<div class="mt-xs">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-md text-body-lg text-on-surface">Deodorized</h3>
+<p class="font-caption text-caption text-on-surface-variant">Application of signature scent and odor neutralizer.</p>
+</div>
+</div>
+<!-- Pending Step -->
+<div class="flex items-start gap-md p-md bg-surface border border-white/5 rounded-lg opacity-60">
+<div class="mt-xs">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-md text-body-lg text-on-surface">Dried &amp; Final Inspection</h3>
+<p class="font-caption text-caption text-on-surface-variant">Climate-controlled drying and final QA check before packaging.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Working Hours - Lumina Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-primary-fixed": "#2c0051",
+                      "surface-container-high": "#2a2a2b",
+                      "on-tertiary-container": "#e3e0e2",
+                      "primary-fixed": "#efdbff",
+                      "error-container": "#93000a",
+                      "surface-container": "#201f20",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "secondary-fixed": "#e4e2e4",
+                      "on-error-container": "#ffdad6",
+                      "on-surface-variant": "#cfc2d7",
+                      "outline-variant": "#4c4354",
+                      "on-secondary-fixed-variant": "#474648",
+                      "primary": "#dcb8ff",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "on-tertiary": "#303032",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "on-primary-container": "#eed9ff",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "background": "#131314",
+                      "electric-violet": "#8a2be2",
+                      "surface-bright": "#39393a",
+                      "error": "#ffb4ab",
+                      "success-bg": "#1A3D24",
+                      "inverse-primary": "#8422dc",
+                      "on-secondary-container": "#b9b8ba",
+                      "on-primary": "#480081",
+                      "success-green": "#81C784",
+                      "surface-container-highest": "#353436",
+                      "inverse-surface": "#e5e2e3",
+                      "on-secondary": "#303032",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "error-red": "#ffb4ab",
+                      "surface-variant": "#353436",
+                      "secondary-container": "#49494b",
+                      "surface-container-low": "#1c1b1c",
+                      "secondary": "#c8c6c8",
+                      "surface": "#131314",
+                      "tertiary-container": "#646365",
+                      "surface-dim": "#131314",
+                      "inverse-on-surface": "#313031",
+                      "outline": "#988ca0",
+                      "surface-tint": "#dcb8ff",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "tertiary": "#c8c6c8",
+                      "primary-container": "#8a2be2",
+                      "on-error": "#690005",
+                      "tertiary-fixed": "#e4e2e4",
+                      "on-background": "#e5e2e3",
+                      "on-surface": "#e5e2e3"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "16px",
+                      "sm": "8px",
+                      "3xl": "64px",
+                      "xs": "4px",
+                      "xl": "32px",
+                      "2xl": "48px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "h3": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "mono-display": [
+                              "monospace"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "h1": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<nav class="bg-surface-container-low dark:bg-surface-container-low text-primary dark:text-primary font-label-md text-label-md font-bold text-primary fixed left-0 top-0 h-screen w-64 border-r border-outline-variant/30 flex flex-col py-lg px-md h-full hidden md:flex z-50">
+<div class="mb-xl flex items-center gap-sm px-sm">
+<span class="material-symbols-outlined text-primary" style="font-size: 32px;">hexagon</span>
+<div class="flex flex-col">
+<span class="font-h1 text-h1 font-bold text-primary leading-tight">Lumina Admin</span>
+<span class="font-caption text-caption text-on-surface-variant">Service Management</span>
+</div>
+</div>
+<button class="w-full bg-electric-violet hover:bg-primary-container text-white font-label-md text-label-md font-bold py-md px-lg rounded-lg shadow-lg shadow-electric-violet/20 transition-all duration-200 mb-xl flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined" style="font-size: 20px;">add</span>
+            Add New Service
+        </button>
+<div class="flex-1 flex flex-col gap-sm overflow-y-auto">
+<a class="flex items-center gap-md py-sm px-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-md py-sm px-md bg-primary/10 text-primary font-bold rounded-lg transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">calendar_month</span>
+                Schedule
+            </a>
+<a class="flex items-center gap-md py-sm px-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">category</span>
+                Services
+            </a>
+<a class="flex items-center gap-md py-sm px-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">payments</span>
+                Earnings
+            </a>
+<a class="flex items-center gap-md py-sm px-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">monitoring</span>
+                Analytics
+            </a>
+</div>
+<div class="mt-auto flex flex-col gap-sm pt-md border-t border-outline-variant/30">
+<a class="flex items-center gap-md py-sm px-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-md py-sm px-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">help</span>
+                Support
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col ml-0 md:ml-64 relative min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-surface/80 text-primary dark:text-primary font-body-md text-body-md font-h3 text-h3 font-bold text-on-surface fixed top-0 right-0 w-full md:w-[calc(100%-256px)] z-40 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center h-16 px-xl">
+<div class="flex items-center gap-md md:hidden">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors text-on-surface">menu</span>
+<span class="font-h3 text-h3 font-bold text-on-surface">Lumina</span>
+</div>
+<div class="hidden md:flex items-center gap-md w-full max-w-md">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant" style="font-size: 20px;">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-sm pl-[40px] pr-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<button class="text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container p-sm rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container p-sm rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container p-sm rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container border border-outline-variant/50 overflow-hidden cursor-pointer flex-shrink-0">
+<img alt="Provider profile picture" class="w-full h-full object-cover" data-alt="A highly detailed professional portrait of a tech worker in a softly lit, modern office environment. Deep blacks, crisp whites, and a subtle electric violet accent lighting reflect a premium, functional workspace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACsEu-nsGgPcwZSBAwGUYTq3ID77AykBEgjkCWdSrbz6LTZm0wW-dvxc0agc9h-aj-PaaTT8TuE6qVIs7tTEilSxtTQ6bNmbTKaGrJUFzOLDP3pBODo6A_5pqbc9YR34VWQSEMpE2DvPqWAouTey6yfH4TVJN0nTRx67PhNwnbDIUkrB9KbVZ6PE5V_x_E5PPWZ2YrTnWUvVqmBss2MIHMj5FRWuDOEbG9mO9dKwhBiGkiGgERCQCtHg"/>
+</div>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 overflow-y-auto pt-[88px] px-md md:px-xl pb-2xl max-w-[1200px] mx-auto w-full">
+<div class="mb-xl">
+<div class="flex items-center gap-sm text-on-surface-variant font-label-md text-label-md mb-md">
+<span>Schedule</span>
+<span class="material-symbols-outlined" style="font-size: 16px;">chevron_right</span>
+<span class="text-on-surface">Working Hours</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-lg border-b border-outline-variant/30 pb-lg">
+<div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface mb-xs">Working Hours</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Configure your weekly availability schedule for service bookings.</p>
+</div>
+<button class="bg-electric-violet hover:bg-primary-container text-white font-label-md text-label-md font-bold py-sm px-lg rounded-lg shadow-lg shadow-electric-violet/20 transition-all duration-200 flex-shrink-0">
+                        Save Hours
+                    </button>
+</div>
+</div>
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-md md:p-lg">
+<div class="flex justify-end mb-lg">
+<button class="text-primary hover:text-primary-fixed-dim font-label-md text-label-md flex items-center gap-xs transition-colors">
+<span class="material-symbols-outlined" style="font-size: 18px;">content_copy</span>
+                        Apply Monday hours to all open days
+                    </button>
+</div>
+<div class="space-y-4">
+<!-- Monday -->
+<div class="flex flex-col md:flex-row md:items-center justify-between p-md bg-surface-container-low rounded-lg border border-outline-variant/30 hover:border-outline-variant/60 transition-colors">
+<div class="flex items-center justify-between md:w-[200px] mb-sm md:mb-0">
+<span class="font-h3 text-h3">Monday</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-success-green"></div>
+<span class="ml-3 font-label-md text-label-md text-on-surface-variant min-w-[60px]">Open</span>
+</label>
+</div>
+<div class="flex items-center gap-md flex-1 md:ml-lg">
+<div class="relative flex-1 max-w-[200px]">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant" style="font-size: 18px;">schedule</span>
+<input class="w-full bg-surface border border-outline-variant/50 rounded-lg py-sm pl-[36px] pr-sm text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" type="time" value="09:00"/>
+</div>
+<span class="text-on-surface-variant font-bold">-</span>
+<div class="relative flex-1 max-w-[200px]">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant" style="font-size: 18px;">schedule</span>
+<input class="w-full bg-surface border border-outline-variant/50 rounded-lg py-sm pl-[36px] pr-sm text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" type="time" value="19:00"/>
+</div>
+</div>
+</div>
+<!-- Sunday -->
+<div class="flex flex-col md:flex-row md:items-center justify-between p-md bg-surface-container-low rounded-lg border border-outline-variant/30 opacity-70">
+<div class="flex items-center justify-between md:w-[200px] mb-sm md:mb-0">
+<span class="font-h3 text-h3 text-on-surface-variant">Sunday</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-success-green"></div>
+<span class="ml-3 font-label-md text-label-md text-on-surface-variant min-w-[60px]">Closed</span>
+</label>
+</div>
+<div class="flex items-center gap-md flex-1 md:ml-lg opacity-50 pointer-events-none">
+<div class="relative flex-1 max-w-[200px]">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant" style="font-size: 18px;">schedule</span>
+<input class="w-full bg-surface border border-outline-variant/50 rounded-lg py-sm pl-[36px] pr-sm text-body-md text-on-surface-variant bg-surface-container-lowest" disabled="" type="time"/>
+</div>
+<span class="text-on-surface-variant font-bold">-</span>
+<div class="relative flex-1 max-w-[200px]">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant" style="font-size: 18px;">schedule</span>
+<input class="w-full bg-surface border border-outline-variant/50 rounded-lg py-sm pl-[36px] pr-sm text-body-md text-on-surface-variant bg-surface-container-lowest" disabled="" type="time"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

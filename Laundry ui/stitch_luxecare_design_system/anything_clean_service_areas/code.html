@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumina - Service Areas</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#0e0e0f",
+                    "on-primary-fixed": "#2c0051",
+                    "surface-container-high": "#2a2a2b",
+                    "on-tertiary-container": "#e3e0e2",
+                    "primary-fixed": "#efdbff",
+                    "error-container": "#93000a",
+                    "surface-container": "#201f20",
+                    "primary-fixed-dim": "#dcb8ff",
+                    "secondary-fixed": "#e4e2e4",
+                    "on-error-container": "#ffdad6",
+                    "on-surface-variant": "#cfc2d7",
+                    "outline-variant": "#4c4354",
+                    "on-secondary-fixed-variant": "#474648",
+                    "primary": "#dcb8ff",
+                    "on-tertiary-fixed-variant": "#474648",
+                    "on-tertiary": "#303032",
+                    "tertiary-fixed-dim": "#c8c6c8",
+                    "on-primary-container": "#eed9ff",
+                    "on-primary-fixed-variant": "#6700b5",
+                    "background": "#131314",
+                    "electric-violet": "#8a2be2",
+                    "surface-bright": "#39393a",
+                    "error": "#ffb4ab",
+                    "success-bg": "#1A3D24",
+                    "inverse-primary": "#8422dc",
+                    "on-secondary-container": "#b9b8ba",
+                    "on-primary": "#480081",
+                    "success-green": "#81C784",
+                    "surface-container-highest": "#353436",
+                    "inverse-surface": "#e5e2e3",
+                    "on-secondary": "#303032",
+                    "on-tertiary-fixed": "#1b1b1d",
+                    "secondary-fixed-dim": "#c8c6c8",
+                    "error-red": "#ffb4ab",
+                    "surface-variant": "#353436",
+                    "secondary-container": "#49494b",
+                    "surface-container-low": "#1c1b1c",
+                    "secondary": "#c8c6c8",
+                    "surface": "#131314",
+                    "tertiary-container": "#646365",
+                    "surface-dim": "#131314",
+                    "inverse-on-surface": "#313031",
+                    "outline": "#988ca0",
+                    "surface-tint": "#dcb8ff",
+                    "on-secondary-fixed": "#1b1b1d",
+                    "tertiary": "#c8c6c8",
+                    "primary-container": "#8a2be2",
+                    "on-error": "#690005",
+                    "tertiary-fixed": "#e4e2e4",
+                    "on-background": "#e5e2e3",
+                    "on-surface": "#e5e2e3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "sm": "8px",
+                    "3xl": "64px",
+                    "xs": "4px",
+                    "xl": "32px",
+                    "2xl": "48px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "label-md": ["Geist"],
+                    "h3": ["Geist"],
+                    "body-md": ["Geist"],
+                    "mono-display": ["monospace"],
+                    "display-lg": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "h1": ["Geist"],
+                    "caption": ["Geist"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "mono-display": ["18px", {"letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "h1": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Custom Scrollbar for dark theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131314; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #353436; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4c4354; 
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased overflow-x-hidden selection:bg-primary selection:text-on-primary">
+<!-- JSON Component: SideNavBar -->
+<nav class="bg-surface-container-low dark:bg-surface-container-low fixed left-0 top-0 h-screen w-64 border-r border-outline-variant/30 flex flex-col py-lg px-md z-40">
+<!-- Header -->
+<div class="flex items-center gap-md mb-xl px-sm">
+<img class="w-10 h-10 rounded-lg object-cover bg-surface-container-high" data-alt="A minimalist, geometric provider organization logo featuring sharp angles and a monochromatic dark purple and electric violet color scheme, representing a modern SaaS corporate identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP6KiMOIbivY0VE0iO7Fi4zZrQbKjR1SpH66ZtDI6oDvfeSsT07CU_khXpUGVDYX-_zJqsxALxeruK5C8YS2JHNSPRr7qh354hriX6JJDrBpRaGd8UeaihkMAH37scCTY0E7VcQ7FLk9Q6LfBqMe3EgQdtODRmGTHBjmgAY_V6HpxZgBFjZP1uWC2dhKb4DFX89ZAr0yR7LI0iC55fBSfy5_MmhbGW_DMOPs_MTnC0SDfU--Su8dMkDA"/>
+<div>
+<h1 class="font-h3 text-h3 font-bold text-primary">Lumina Admin</h1>
+<p class="font-caption text-caption text-on-surface-variant">Service Management</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex flex-col gap-sm flex-grow">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors duration-200 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors duration-200 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+                Schedule
+            </a>
+<!-- Active State: Services -->
+<a class="flex items-center gap-md px-md py-sm bg-primary/10 text-primary font-bold rounded-lg font-label-md text-label-md transition-all scale-[0.98]" href="#">
+<span class="material-symbols-outlined icon-fill">category</span>
+                Services
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors duration-200 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">payments</span>
+                Earnings
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors duration-200 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+                Analytics
+            </a>
+</div>
+<!-- CTA -->
+<div class="mb-lg px-sm">
+<button class="w-full bg-electric-violet text-on-primary-container font-label-md text-label-md font-bold py-sm px-md rounded-lg shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                Add New Service
+            </button>
+</div>
+<!-- Footer Links -->
+<div class="flex flex-col gap-sm border-t border-outline-variant/30 pt-md px-sm">
+<a class="flex items-center gap-md py-sm text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-md py-sm text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]">help</span>
+                Support
+            </a>
+</div>
+</nav>
+<!-- JSON Component: TopNavBar -->
+<header class="bg-surface/80 dark:bg-surface/80 fixed top-0 right-0 w-[calc(100%-256px)] z-50 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center h-16 px-xl">
+<!-- Left: Search (from JSON config search_bar: on_left) -->
+<div class="flex-1 max-w-md relative group">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors text-[20px]">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg pl-xl pr-md py-xs text-on-surface font-body-md text-body-md placeholder:text-on-surface-variant/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Search commands, areas, or services..." type="text"/>
+</div>
+<!-- Right: Actions & Profile -->
+<div class="flex items-center gap-lg">
+<div class="flex items-center gap-sm">
+<button class="p-xs text-on-surface-variant hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-electric-violet rounded-full"></span>
+</button>
+<button class="p-xs text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+<button class="p-xs text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+<div class="w-px h-6 bg-outline-variant/30"></div>
+<div class="flex items-center gap-sm cursor-pointer hover:opacity-80 transition-opacity">
+<img class="w-8 h-8 rounded-full border border-outline-variant/50 object-cover" data-alt="A professional headshot of a corporate administrator in a dimly lit, modern office setting with subtle electric violet ambient lighting reflecting off their glasses." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy2Z_D6HUhHjMCoOn8SYT5QP6UzZjPpzItgENPXyTNtC_Z8c2Ej0DgFb86MMJs3C3IHEoVl-74YBiG_ZfxfRLQtxFDVKh2WSqdZ27WTtPWaqz03Tl5PNu8smwYSaQXhcU2mZh9YtBsV1ufS8nSMzTEcgDf0cT7PrM1jIJg4erj_6Y8XM2zaDzptJzNSIQkK05PBKQHkcuVAYcRHnP0B1OJi2zfcqrI79jl4bkcjW3aYHHWC5XxKITW9Q"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 mt-16 p-xl max-w-[1200px] mx-auto min-h-[calc(100vh-64px)] flex flex-col gap-lg">
+<!-- Page Header & Global Actions -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md border-b border-outline-variant/30 pb-md">
+<div>
+<nav class="flex text-on-surface-variant font-label-md text-label-md mb-sm items-center">
+<a class="hover:text-primary transition-colors" href="#">Services</a>
+<span class="material-symbols-outlined text-[16px] mx-xs">chevron_right</span>
+<span class="text-on-surface">Service Areas</span>
+</nav>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface">Service Areas</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs max-w-2xl">Manage your geographic coverage zones. Areas defined here determine where your pickup and delivery services are actively available to customers.</p>
+</div>
+<button class="bg-electric-violet text-on-primary-container font-label-md text-label-md font-bold py-sm px-md rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-container hover:shadow-primary/40 transition-all flex items-center justify-center gap-sm shrink-0">
+<span class="material-symbols-outlined text-[18px]">add_location_alt</span>
+                Add Service Area
+            </button>
+</div>
+<!-- Filter & Search Toolbar -->
+<div class="flex flex-col md:flex-row gap-md items-center justify-between bg-surface-container rounded-xl p-sm border border-outline-variant/20">
+<div class="relative w-full md:w-96 group">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors text-[20px]">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg pl-xl pr-md py-sm text-on-surface font-body-md text-body-md placeholder:text-on-surface-variant/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Filter active areas..." type="text"/>
+</div>
+<div class="flex items-center gap-sm w-full md:w-auto">
+<button class="flex-1 md:flex-none flex items-center justify-center gap-xs px-md py-sm border border-outline-variant rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                    Filters
+                </button>
+<button class="flex-1 md:flex-none flex items-center justify-center gap-xs px-md py-sm border border-outline-variant rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">sort</span>
+                    Sort
+                </button>
+</div>
+</div>
+<!-- Bento Grid: Service Areas -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Area Card 1: Anna Nagar -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl overflow-hidden flex flex-col group hover:border-outline-variant/50 transition-colors">
+<div class="h-24 bg-surface-container-low relative border-b border-outline-variant/30">
+<div class="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-luminosity grayscale group-hover:grayscale-0 group-hover:opacity-60 transition-all duration-500" data-location="Anna Nagar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC_Auns9e8ux1uD-N202crqaVbJqS2XigqVtgMIS5nAaI19e8PfnelQWq0a-CShn54JXfRAk4VgBOs9Mut0DG9ubKRd5hzGpV6_voT2lbR-vdgJRXr4meEet5hThzUESJaAq7-la0LkeqlW03wRI4B0iUtSpOid8g6fMj55H2fXzZc6SYgTzMvgGODHiOMR-jsP21HKpJHT-Y1posTj_pajDxXbpH8167OTWI34F8rYfIYXyNE9atpJ4A')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent"></div>
+<div class="absolute top-sm right-sm flex gap-xs">
+<button class="p-xs bg-surface-container-highest/80 backdrop-blur rounded text-on-surface-variant hover:text-primary transition-colors border border-outline-variant/30" title="Edit Area">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+<button class="p-xs bg-surface-container-highest/80 backdrop-blur rounded text-on-surface-variant hover:text-error-red transition-colors border border-outline-variant/30" title="Remove Area">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+</div>
+<div class="p-md flex flex-col gap-sm flex-grow">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">location_on</span>
+<h3 class="font-h3 text-h3 font-bold text-on-surface">Anna Nagar</h3>
+</div>
+<span class="bg-success-bg/20 border border-success-green/30 text-success-green px-sm py-xs rounded-full font-caption text-caption font-bold uppercase tracking-widest flex items-center gap-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-success-green animate-pulse"></span>
+                            Active
+                        </span>
+</div>
+<div class="grid grid-cols-2 gap-sm mt-sm pt-sm border-t border-outline-variant/20">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">Coverage Type</span>
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">local_shipping</span>
+                                Pickup &amp; Delivery
+                            </span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">Radius</span>
+<span class="font-label-md text-label-md text-on-surface mt-xs">
+                                5.2 km
+                            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Area Card 2: Kilpauk -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl overflow-hidden flex flex-col group hover:border-outline-variant/50 transition-colors">
+<div class="h-24 bg-surface-container-low relative border-b border-outline-variant/30">
+<div class="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-luminosity grayscale group-hover:grayscale-0 group-hover:opacity-60 transition-all duration-500" data-location="Kilpauk" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJC__qBQd0rwwaq8mBwhBHXe_PWbSChvFxDh3IjnR6ScIWvCy0Ii_vpBsW-9XIzEg2jaasqu-Lz4zf3V0Kf4sfjduAooNMOicpGzj3zFyFCpRyynEEqUDw1UTK2ZiTtJc-PGntKsea9WIkqWuz7IZaDRL16a6pF7p9UX61opiUTjc5tF5Pcia4gVzr4WhXfXb6GINlqBpnMM-OwLe81AYVl0kPTJ7aljtfIkrS0dXfAZ_2rP37usVlEA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent"></div>
+<div class="absolute top-sm right-sm flex gap-xs">
+<button class="p-xs bg-surface-container-highest/80 backdrop-blur rounded text-on-surface-variant hover:text-primary transition-colors border border-outline-variant/30" title="Edit Area">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+<button class="p-xs bg-surface-container-highest/80 backdrop-blur rounded text-on-surface-variant hover:text-error-red transition-colors border border-outline-variant/30" title="Remove Area">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+</div>
+<div class="p-md flex flex-col gap-sm flex-grow">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">location_on</span>
+<h3 class="font-h3 text-h3 font-bold text-on-surface">Kilpauk</h3>
+</div>
+<span class="bg-success-bg/20 border border-success-green/30 text-success-green px-sm py-xs rounded-full font-caption text-caption font-bold uppercase tracking-widest flex items-center gap-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-success-green animate-pulse"></span>
+                            Active
+                        </span>
+</div>
+<div class="grid grid-cols-2 gap-sm mt-sm pt-sm border-t border-outline-variant/20">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">Coverage Type</span>
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">local_shipping</span>
+                                Pickup &amp; Delivery
+                            </span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">Radius</span>
+<span class="font-label-md text-label-md text-on-surface mt-xs">
+                                3.8 km
+                            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Area Card 3: Shenoy Nagar -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl overflow-hidden flex flex-col group hover:border-outline-variant/50 transition-colors">
+<div class="h-24 bg-surface-container-low relative border-b border-outline-variant/30">
+<div class="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-luminosity grayscale group-hover:grayscale-0 group-hover:opacity-60 transition-all duration-500" data-location="Shenoy Nagar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuClVN6mmClJO6aVpaKF4w8eSm_caPwOY0SyIx7wK2XJZstRe6zKsfy4xGs843TvuyZm0Kz9zeHzI13awmSdYtcd_c1T2aoGi1RxmX3p-0bGjQs80dkcFwhOSi90uR-fC-arna_tL59Qe5Kq0Gs1AcanKoMRydOa398YcqhfC8pNioCLD4tbk1vB6XiI_J3KpiKpBP4OlaoNgdKe53BDVMjBDZSLzB7si4VYxcKgQKv1ZtzrZJnfDCPFhg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent"></div>
+<div class="absolute top-sm right-sm flex gap-xs">
+<button class="p-xs bg-surface-container-highest/80 backdrop-blur rounded text-on-surface-variant hover:text-primary transition-colors border border-outline-variant/30" title="Edit Area">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+<button class="p-xs bg-surface-container-highest/80 backdrop-blur rounded text-on-surface-variant hover:text-error-red transition-colors border border-outline-variant/30" title="Remove Area">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+</div>
+<div class="p-md flex flex-col gap-sm flex-grow">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">location_on</span>
+<h3 class="font-h3 text-h3 font-bold text-on-surface">Shenoy Nagar</h3>
+</div>
+<span class="bg-success-bg/20 border border-success-green/30 text-success-green px-sm py-xs rounded-full font-caption text-caption font-bold uppercase tracking-widest flex items-center gap-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-success-green animate-pulse"></span>
+                            Active
+                        </span>
+</div>
+<div class="grid grid-cols-2 gap-sm mt-sm pt-sm border-t border-outline-variant/20">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">Coverage Type</span>
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">local_shipping</span>
+                                Pickup &amp; Delivery
+                            </span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">Radius</span>
+<span class="font-label-md text-label-md text-on-surface mt-xs">
+                                4.0 km
+                            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Area Card 4: Chetpet (Showing Warning State Scenario) -->
+<div class="bg-surface-container border border-error-red/40 rounded-xl overflow-hidden flex flex-col relative shadow-[0_0_15px_rgba(255,180,171,0.1)]">
+<!-- Overlay for pending deletion -->
+<div class="absolute inset-0 bg-surface-container-lowest/80 backdrop-blur-[2px] z-10 flex flex-col items-center justify-center p-md text-center">
+<span class="material-symbols-outlined text-error-red text-[32px] mb-sm">warning</span>
+<h4 class="font-h3 text-h3 text-on-surface font-bold mb-xs">Remove Area?</h4>
+<p class="font-caption text-caption text-on-surface-variant mb-md max-w-[280px]">Warning: Removing Chetpet will affect 12 future bookings. These customers must be reassigned or notified.</p>
+<div class="flex gap-sm">
+<button class="px-md py-sm bg-surface-container-high text-on-surface font-label-md text-label-md rounded-lg border border-outline-variant hover:bg-surface-bright transition-colors">Cancel</button>
+<button class="px-md py-sm bg-error-container text-on-error-container font-label-md text-label-md font-bold rounded-lg hover:opacity-90 transition-opacity">Confirm Removal</button>
+</div>
+</div>
+<div class="h-24 bg-surface-container-low relative border-b border-outline-variant/30">
+<div class="absolute inset-0 bg-cover bg-center opacity-20 grayscale" data-location="Chetpet" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAX6nUN0CBxEjRbVqXT6ZTGkU57Mpr2F8oeglq3PUAcY_AFIloewKaAk5NYTI72jTQufUwoAoxUsB2ktYZk5fcTCbka4sLsDotMqxpJ_ha22pXJo2JlKOuDbhBkB7KJkp9cOBFbWMpLmC1VMozFVoTRv1lN9dh2LnKESwbz1EGjNQTJwLQnmus1P-UkaPPqSj-uiMinfn2ekd3TqcP7puAtCB5-_6YLhj_f5POeNt4Lt-QARPXYS54TJQ')"></div>
+</div>
+<div class="p-md flex flex-col gap-sm flex-grow opacity-50">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">location_on</span>
+<h3 class="font-h3 text-h3 font-bold text-on-surface">Chetpet</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Action Bar -->
+<div class="mt-auto pt-lg border-t border-outline-variant/30 flex justify-end">
+<button class="bg-electric-violet text-on-primary-container font-label-md text-label-md font-bold py-sm px-xl rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-container hover:shadow-primary/40 transition-all">
+                Save Service Areas
+            </button>
+</div>
+</main>
+</body></html>

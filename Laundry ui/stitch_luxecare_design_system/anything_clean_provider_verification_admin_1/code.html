@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Provider Verification &amp; Onboarding - CleanX Service Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#e5e2e3",
+                      "primary-container": "#8a2be2",
+                      "on-tertiary-fixed": "#2d1600",
+                      "on-surface": "#e5e2e3",
+                      "surface-container-highest": "#353436",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "surface-container-lowest": "#0e0e0f",
+                      "tertiary": "#ffb873",
+                      "secondary": "#dcb8ff",
+                      "primary-fixed": "#efdbff",
+                      "on-tertiary-container": "#ffdaba",
+                      "tertiary-fixed": "#ffdcbf",
+                      "secondary-container": "#573976",
+                      "tertiary-fixed-dim": "#ffb873",
+                      "surface-bright": "#39393a",
+                      "surface-container-high": "#2a2a2b",
+                      "surface": "#131314",
+                      "critical": "#f87171",
+                      "surface-container": "#201f20",
+                      "on-tertiary": "#4b2800",
+                      "primary": "#dcb8ff",
+                      "error-container": "#93000a",
+                      "outline": "#988ca0",
+                      "on-secondary-fixed": "#290947",
+                      "success": "#4ade80",
+                      "info": "#60a5fa",
+                      "outline-variant": "#4c4354",
+                      "surface-variant": "#353436",
+                      "on-primary": "#480081",
+                      "background": "#131314",
+                      "on-secondary-fixed-variant": "#573976",
+                      "tertiary-container": "#935400",
+                      "warning": "#fbbf24",
+                      "on-secondary": "#3f225e",
+                      "on-error-container": "#ffdad6",
+                      "error": "#ffb4ab",
+                      "inverse-primary": "#8422dc",
+                      "secondary-fixed": "#efdbff",
+                      "on-surface-variant": "#cfc2d7",
+                      "surface-container-low": "#1c1b1c",
+                      "on-primary-container": "#eed9ff",
+                      "surface-dim": "#131314",
+                      "on-primary-fixed": "#2c0051",
+                      "inverse-on-surface": "#313031",
+                      "secondary-fixed-dim": "#dcb8ff",
+                      "inverse-surface": "#e5e2e3",
+                      "surface-tint": "#dcb8ff",
+                      "on-error": "#690005",
+                      "on-secondary-container": "#caa7ec",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "on-tertiary-fixed-variant": "#6a3b00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "sidebar-width": "260px",
+                      "table-cell-padding": "12px",
+                      "gutter": "16px",
+                      "margin-mobile": "16px",
+                      "margin-desktop": "24px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Geist"],
+                      "headline-md": ["Geist"],
+                      "label-sm": ["Geist"],
+                      "label-md": ["Geist"],
+                      "code": ["Geist"],
+                      "body-md": ["Geist"],
+                      "display-lg": ["Geist"],
+                      "body-lg": ["Geist"]
+              },
+              "fontSize": {
+                      "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "code": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex antialiased">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-full py-margin-desktop bg-surface-container-lowest fixed left-0 top-0 h-full w-[260px] border-r border-surface-container-highest z-50">
+<div class="px-gutter mb-8">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Lumina Admin</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Enterprise Control</p>
+</div>
+<div class="flex-1 overflow-y-auto px-4 space-y-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+                Orders
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                Customers
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+                Service Providers
+            </a>
+<a class="flex items-center gap-3 border-l-4 border-primary-container bg-surface-container text-on-surface font-semibold px-3 py-2 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+                Verification
+            </a>
+</div>
+<div class="mt-auto px-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Settings
+            </a>
+<div class="mt-4 flex items-center gap-3 px-3 py-2 border-t border-surface-container-highest pt-4">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A small circular avatar image showing a professional headshot of a business administrator in a modern office setting, soft lighting, dark mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSFnKvfeIVN9OhR7PMST0UevZsWnT_GAPVppHVaRMrwAkj73cHx2LymvUspdYpOQzyoW5amAbMnjdjhpQ9kuwENtVgaoV98MboXh78EUr-XWSi2Z6BICiwrtbprTEOO7Mm6g5ztmGb7zJwIy0bEafjwLK2dSLRh6lFgQG_6i6ifZdqYoPJodmtj5ZXctn07Ee2_cxjcGsLluNDhB0U9WNx6zX1xlGv7xakkq0XsZx6rraGTCZUTwFXSQ"/>
+<span class="font-label-md text-label-md text-on-surface">Super Admin Profile</span>
+</div>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col md:ml-[260px] min-w-0 bg-background">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-40 w-full flex justify-between items-center h-16 px-margin-desktop bg-surface border-b border-surface-container-highest">
+<div class="flex items-center gap-4">
+<span class="md:hidden material-symbols-outlined text-on-surface cursor-pointer" data-icon="menu">menu</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">CleanX Service Center</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center bg-surface-container-low rounded-DEFAULT px-3 py-1.5 border border-surface-container-highest focus-within:ring-1 focus-within:ring-primary-container">
+<span class="material-symbols-outlined text-on-surface-variant mr-2 text-sm" data-icon="search">search</span>
+<input class="bg-transparent border-none text-on-surface font-body-md text-body-md focus:outline-none focus:ring-0 placeholder-on-surface-variant w-64" placeholder="Search applications..." type="text"/>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-2">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-2">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-2">
+<span class="material-symbols-outlined" data-icon="apps">apps</span>
+</button>
+<img class="w-8 h-8 rounded-full object-cover ml-2 border border-surface-container-highest" data-alt="A small circular avatar image showing a professional headshot of an administrator in a dark mode environment, sharp and clear." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyOHJ_eQZU-rDveRaVpjAgRvT-DcS4-Jh3bkHNtpQrW5sW6wjGcLRjpLHxLbYaWFz67rXp2q0DxgpyjF8bkjfECAEJfLL_MsGG8qIku7BK_RgbTB_o8l7TzaVpD4nMi4qNWIRxzRsbgpNDS7LDAD8KW_oNNm1Y5ghH0MsQnRacBRtY9jATd11iEuazm9Vm9VMV4tNKXr2-ffJKJi597DqXHKvKK8wvCLjJR8wKiJ3kRZy3Oc1SpVJoLA"/>
+</div>
+</header>
+<!-- Page Content -->
+<main class="flex-1 p-margin-desktop overflow-y-auto">
+<div class="mb-8">
+<div class="flex justify-between items-end mb-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Provider Verification Review</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Application ID: #CX-8842-VRF</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-1 rounded bg-info/10 text-info font-label-sm text-label-sm border border-info/20">PENDING REVIEW</span>
+<span class="px-2 py-1 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm border border-surface-container-highest">Submitted: 2h ago</span>
+</div>
+</div>
+<!-- Progress Stepper -->
+<div class="w-full bg-surface-container-low border border-surface-container-highest rounded-lg p-6 mb-8">
+<div class="flex items-center justify-between relative">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-0.5 bg-surface-container-highest z-0"></div>
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-4/5 h-0.5 bg-primary z-0"></div>
+<!-- Steps -->
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-md text-label-md shadow-[0_0_8px_rgba(220,184,255,0.4)]">
+<span class="material-symbols-outlined text-sm" data-icon="check">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary">Business Info</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-md text-label-md shadow-[0_0_8px_rgba(220,184,255,0.4)]">
+<span class="material-symbols-outlined text-sm" data-icon="check">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary">Identity</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-md text-label-md shadow-[0_0_8px_rgba(220,184,255,0.4)]">
+<span class="material-symbols-outlined text-sm" data-icon="check">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary">Docs</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-md text-label-md shadow-[0_0_8px_rgba(220,184,255,0.4)]">
+<span class="material-symbols-outlined text-sm" data-icon="check">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary">Bank</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high border-2 border-primary text-primary flex items-center justify-center font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary">Final Review</span>
+</div>
+</div>
+</div>
+<!-- Main Workspace Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter h-[600px]">
+<!-- Left Column: Verification Cards -->
+<div class="xl:col-span-4 flex flex-col gap-4 overflow-y-auto pr-2">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Submitted Documents</h3>
+<!-- Doc Card 1 -->
+<div class="bg-surface-container-low border border-surface-container-highest rounded-lg p-4 cursor-pointer hover:bg-surface-container-high transition-colors group">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Business Registration</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-xs">PDF • 2.4 MB</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-success/10 text-success font-label-sm text-label-sm border border-success/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="verified">verified</span>
+                                    VERIFIED
+                                </span>
+</div>
+</div>
+<!-- Doc Card 2 -->
+<div class="bg-surface-container-low border border-primary rounded-lg p-4 cursor-pointer relative shadow-[0_0_15px_rgba(138,43,226,0.1)]">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-l-lg"></div>
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Tax ID / EIN</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-xs">PDF • 1.1 MB</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-success/10 text-success font-label-sm text-label-sm border border-success/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="verified">verified</span>
+                                    VERIFIED
+                                </span>
+</div>
+</div>
+<!-- Doc Card 3 -->
+<div class="bg-surface-container-low border border-surface-container-highest rounded-lg p-4 cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="badge">badge</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Owner Identity</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-xs">JPEG • 4.5 MB</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-success/10 text-success font-label-sm text-label-sm border border-success/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="verified">verified</span>
+                                    VERIFIED
+                                </span>
+</div>
+</div>
+<!-- Doc Card 4 -->
+<div class="bg-surface-container-low border border-surface-container-highest rounded-lg p-4 cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Bank Verification</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-xs">PDF • 0.8 MB</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-success/10 text-success font-label-sm text-label-sm border border-success/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="verified">verified</span>
+                                    VERIFIED
+                                </span>
+</div>
+</div>
+</div>
+<!-- Right Column: Document Preview -->
+<div class="xl:col-span-8 bg-surface-container border border-surface-container-highest rounded-lg flex flex-col overflow-hidden">
+<!-- Preview Header -->
+<div class="bg-surface-container-low border-b border-surface-container-highest p-4 flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="receipt_long">receipt_long</span>
+                                Tax ID / EIN Document
+                            </h3>
+<div class="flex gap-2">
+<button class="p-2 rounded bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors" title="Zoom In">
+<span class="material-symbols-outlined text-sm" data-icon="zoom_in">zoom_in</span>
+</button>
+<button class="p-2 rounded bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors" title="Zoom Out">
+<span class="material-symbols-outlined text-sm" data-icon="zoom_out">zoom_out</span>
+</button>
+<button class="p-2 rounded bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors" title="Download">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+</button>
+</div>
+</div>
+<!-- Preview Canvas -->
+<div class="flex-1 bg-surface-container-lowest p-8 overflow-auto flex justify-center items-start relative">
+<!-- Faux Document Image -->
+<div class="bg-white w-[600px] h-[800px] shadow-lg rounded-sm relative overflow-hidden flex flex-col p-8">
+<!-- OCR Overlay / Data extraction hints -->
+<div class="absolute top-16 left-12 right-12 border-2 border-success/30 bg-success/5 rounded p-2 z-10 pointer-events-none flex justify-end">
+<span class="bg-success text-black font-label-sm text-[10px] px-1 rounded uppercase tracking-wider">OCR Verified</span>
+</div>
+<img class="absolute inset-0 w-full h-full object-cover opacity-90" data-alt="A stylized mockup of an official government tax document, mostly white with stark black typography, some official looking seals, blurred text for privacy, in a minimalist high-contrast style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_pDJkiiVzQfTLE85jMGwuM4eaq6kcYYVKfXrl7pCpP07PWyraqH1ap5E1jwRcXR7EkT5WufMgbmdjhhXdh3d2VHuL15puicGojrZ4h00CFtEbZ6EhSabxS5itLTZC-034vibVdFvFo58hM3UbsGf7IVYEcO0TuGs_QhzYL-VhuOmNdEoFw94LfXvLKgpHVZIYneRoZduwzZUiX9hllSXMsXAg6deBMRY0-2-zzQ24AxHEZB1X1DkOXQ"/>
+</div>
+</div>
+<!-- Extracted Data Panel -->
+<div class="bg-surface-container-low border-t border-surface-container-highest p-4 grid grid-cols-3 gap-4">
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Extracted EIN</span>
+<span class="font-code text-code text-on-surface bg-surface-container-highest px-2 py-1 rounded">XX-XXXX892</span>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Business Name</span>
+<span class="font-label-md text-label-md text-on-surface">CleanX Operations LLC</span>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Match Confidence</span>
+<div class="flex items-center gap-2">
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-[98%] h-full bg-success"></div>
+</div>
+<span class="font-label-sm text-label-sm text-success">98%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Action Bar -->
+<div class="mt-8 pt-6 border-t border-surface-container-highest flex justify-between items-center">
+<button class="px-6 py-2.5 rounded-DEFAULT border border-critical text-critical hover:bg-critical/10 transition-colors font-label-md text-label-md flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="block">block</span>
+                        Reject Application
+                    </button>
+<div class="flex gap-4">
+<button class="px-6 py-2.5 rounded-DEFAULT border border-surface-container-highest bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="edit_note">edit_note</span>
+                            Request Changes
+                        </button>
+<button class="px-8 py-2.5 rounded-DEFAULT bg-primary text-on-primary hover:bg-primary/90 transition-colors font-label-md text-label-md font-bold flex items-center gap-2 shadow-[0_0_15px_rgba(220,184,255,0.2)]">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+                            Approve Provider
+                        </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

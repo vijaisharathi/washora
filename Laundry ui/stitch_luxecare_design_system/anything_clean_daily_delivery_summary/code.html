@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily Delivery Summary</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#eed9ff",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#e3e0e2",
+                        "surface-container": "#201f20",
+                        "error-red": "#ffb4ab",
+                        "secondary": "#c8c6c8",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-container-high": "#2a2a2b",
+                        "secondary-fixed": "#e4e2e4",
+                        "tertiary-fixed": "#e4e2e4",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#efdbff",
+                        "outline": "#988ca0",
+                        "surface-dim": "#131314",
+                        "success-green": "#81C784",
+                        "inverse-primary": "#8422dc",
+                        "inverse-surface": "#e5e2e3",
+                        "secondary-container": "#49494b",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-primary": "#480081",
+                        "inverse-on-surface": "#313031",
+                        "background": "#131314",
+                        "on-background": "#e5e2e3",
+                        "surface-bright": "#39393a",
+                        "surface-container-highest": "#353436",
+                        "on-secondary-container": "#b9b8ba",
+                        "success-bg": "#1A3D24",
+                        "on-surface": "#e5e2e3",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-primary-fixed": "#2c0051",
+                        "surface-container-low": "#1c1b1c",
+                        "on-secondary-fixed-variant": "#474648",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface": "#131314",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "tertiary-container": "#646365",
+                        "surface-tint": "#dcb8ff",
+                        "on-tertiary": "#303032",
+                        "surface-variant": "#353436",
+                        "tertiary": "#c8c6c8",
+                        "electric-violet": "#8a2be2",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "outline-variant": "#4c4354",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#dcb8ff",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-secondary": "#303032",
+                        "primary-container": "#8a2be2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "2xl": "48px",
+                        "3xl": "64px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Geist"],
+                        "caption": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "h3": ["Geist"],
+                        "display-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        /* Hide scrollbar for clean app-like feel */
+        ::-webkit-scrollbar { display: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased flex justify-center min-h-screen">
+<!-- Mobile Container Frame -->
+<main class="w-full max-w-[390px] relative bg-surface-dim min-h-screen overflow-x-hidden flex flex-col shadow-2xl">
+<!-- TopAppBar (Shared Component) -->
+<header class="fixed top-0 w-full max-w-[390px] z-50 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-lg h-16 bg-surface-dim/80 dark:bg-surface-dim/80">
+<button class="active:scale-95 transition-transform flex items-center justify-center p-xs rounded-full hover:bg-surface-container-high transition-colors text-primary dark:text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="font-h3 text-h3 font-bold text-electric-violet">Lumina Partner</div>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/50 cursor-pointer hover:border-primary transition-colors">
+<img alt="Partner Profile Picture" class="w-full h-full object-cover" data-alt="A small, professional profile picture of a courier partner wearing a subtle branded jacket, shot against a dark tech-style grey background with soft cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOVCR9G5qay1SiMvTD4S3_FQzMnxc-PWbI6KLG-BoUVgBrUMkDIrnhbsBxp7F5NJF4yvjE2S9siWho2ZDHd2B-U-ez17jYvC5Qb19u50p-8yEFXkTK82vwC2tUTBBhR7MHBdg6nlmXstH2QNClH3Ar2vp9gcQpFkxEttG1xhol-Uky0Bn11tTz6SGu6fbyK31E9-i1-Q28u-L-zDfU04NZ4Ly-O40nkZNcQX-4E0zsj1AetTuAmT9wGw"/>
+</div>
+</header>
+<!-- Main Scrollable Canvas -->
+<div class="flex-1 px-md pt-24 pb-32 flex flex-col gap-lg overflow-y-auto">
+<!-- Page Header -->
+<section class="flex flex-col gap-xs">
+<h1 class="font-h1 text-h1 text-on-surface tracking-tight">Today</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Your delivery activity for today.</p>
+</section>
+<!-- Alert Card -->
+<section class="bg-error-container/10 border border-error-red/30 rounded-xl p-md flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-error-red/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-error-red text-sm" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<span class="font-label-md text-label-md text-error-red font-bold">1 Delivery Issue</span>
+</div>
+<button class="font-label-md text-label-md text-error-red border border-error-red/50 rounded-lg px-md py-sm hover:bg-error-red/10 transition-colors active:scale-95">
+                    View Issues
+                </button>
+</section>
+<!-- Bento Summary Grid -->
+<section class="grid grid-cols-2 gap-md">
+<!-- Earnings Block -->
+<div class="col-span-2 bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex justify-between items-end relative overflow-hidden group hover:border-primary/50 transition-colors">
+<!-- Subtle background glow -->
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-success-green/10 rounded-full blur-2xl group-hover:bg-success-green/20 transition-all"></div>
+<div class="relative z-10">
+<div class="font-caption text-caption text-on-surface-variant mb-xs flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">account_balance_wallet</span>
+                            Today's Earnings
+                        </div>
+<div class="font-display-lg text-display-lg text-success-green">₹560</div>
+</div>
+<div class="relative z-10 font-label-md text-label-md text-success-green bg-success-bg px-sm py-xs rounded-full flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+                        +12%
+                    </div>
+</div>
+<!-- Counts Grid (Assigned, Completed, Active, Issues) -->
+<div class="col-span-2 grid grid-cols-4 gap-xs">
+<div class="bg-surface-container-low border border-outline-variant/20 rounded-lg p-sm flex flex-col items-center justify-center text-center">
+<span class="font-headline-lg text-headline-lg text-on-surface">8</span>
+<span class="font-caption text-caption text-on-surface-variant">Assigned</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/20 rounded-lg p-sm flex flex-col items-center justify-center text-center">
+<span class="font-headline-lg text-headline-lg text-success-green">6</span>
+<span class="font-caption text-caption text-on-surface-variant">Completed</span>
+</div>
+<div class="bg-primary/10 border border-primary/30 rounded-lg p-sm flex flex-col items-center justify-center text-center">
+<span class="font-headline-lg text-headline-lg text-primary">1</span>
+<span class="font-caption text-caption text-primary">Active</span>
+</div>
+<div class="bg-error-container/5 border border-error-red/20 rounded-lg p-sm flex flex-col items-center justify-center text-center">
+<span class="font-headline-lg text-headline-lg text-error-red">1</span>
+<span class="font-caption text-caption text-error-red">Issues</span>
+</div>
+</div>
+<!-- Distance Block -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md flex flex-col justify-center">
+<div class="font-caption text-caption text-on-surface-variant mb-xs flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">route</span>
+                        Distance
+                    </div>
+<div class="font-mono-display text-mono-display text-on-surface">18.4 km</div>
+<div class="w-full h-1 bg-surface-container-high rounded-full mt-md overflow-hidden">
+<div class="h-full bg-secondary w-3/4 rounded-full"></div>
+</div>
+</div>
+<!-- Performance Block -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md flex flex-col justify-center">
+<div class="font-caption text-caption text-on-surface-variant mb-xs flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">speed</span>
+                        Completion
+                    </div>
+<div class="flex items-baseline gap-xs">
+<span class="font-h3 text-h3 text-on-surface">75%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-high rounded-full mt-md overflow-hidden">
+<div class="h-full bg-primary w-3/4 rounded-full"></div>
+</div>
+</div>
+</section>
+<!-- Vertical Timeline -->
+<section class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col gap-lg relative">
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-sm tracking-wider uppercase">Activity Timeline</h3>
+<div class="flex flex-col gap-0 relative z-10">
+<!-- Event: Morning Start -->
+<div class="flex gap-md group">
+<div class="flex flex-col items-center w-8">
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/50 flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">wb_sunny</span>
+</div>
+<div class="w-px h-12 bg-outline-variant/30 my-xs"></div>
+</div>
+<div class="pt-1 pb-md w-full border-b border-outline-variant/10 group-last:border-none">
+<div class="flex justify-between items-start">
+<div class="font-label-md text-label-md text-on-surface">Shift Started</div>
+<div class="font-caption text-caption text-on-surface-variant">8:30 AM</div>
+</div>
+</div>
+</div>
+<!-- Event: First Delivery -->
+<div class="flex gap-md group">
+<div class="flex flex-col items-center w-8">
+<div class="w-8 h-8 rounded-full bg-success-green/20 border border-success-green/50 flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-success-green text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="w-px h-12 bg-outline-variant/30 my-xs"></div>
+</div>
+<div class="pt-1 pb-md w-full border-b border-outline-variant/10 group-last:border-none">
+<div class="flex justify-between items-start">
+<div class="font-label-md text-label-md text-on-surface">First Delivery Completed</div>
+<div class="font-caption text-caption text-on-surface-variant">12:40 PM</div>
+</div>
+</div>
+</div>
+<!-- Event: Current Delivery (Active) -->
+<div class="flex gap-md group">
+<div class="flex flex-col items-center w-8">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-[0_0_15px_rgba(138,43,226,0.4)] z-10">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+</div>
+<!-- No line below last item -->
+</div>
+<div class="pt-1 pb-xs w-full group-last:border-none">
+<div class="flex justify-between items-start">
+<div class="font-label-md text-label-md text-primary font-bold">Current Delivery</div>
+<div class="font-caption text-caption text-primary">4:15 PM</div>
+</div>
+<div class="mt-xs text-caption font-caption text-on-surface-variant">In transit to destination</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Primary CTA -->
+<div class="mt-sm mb-lg">
+<button class="w-full flex items-center justify-center gap-sm font-label-md text-label-md font-bold text-on-surface border border-outline-variant rounded-xl py-md hover:bg-surface-container-high transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined text-sm">power_settings_new</span>
+                    Go Offline
+                </button>
+</div>
+</div>
+<!-- BottomNavBar (Shared Component) -->
+<nav class="fixed bottom-0 w-full max-w-[390px] z-50 border-t border-outline-variant/30 flex justify-around items-center h-20 px-md pb-safe bg-surface-container-low dark:bg-surface-container-low">
+<!-- Active Tab: Tasks -->
+<button class="flex flex-col items-center justify-center bg-primary-container/10 text-primary rounded-xl px-xs py-xs active:scale-90 transition-transform duration-200 min-w-[64px]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">delivery_dining</span>
+<span class="font-label-md text-label-md mt-1">Tasks</span>
+</button>
+<!-- Inactive Tabs -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface active:scale-90 transition-transform duration-200 min-w-[64px]">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-label-md mt-1">Earnings</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface active:scale-90 transition-transform duration-200 min-w-[64px]">
+<span class="material-symbols-outlined">shield</span>
+<span class="font-label-md text-label-md mt-1">Safety</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface active:scale-90 transition-transform duration-200 min-w-[64px]">
+<span class="material-symbols-outlined">description</span>
+<span class="font-label-md text-label-md mt-1">Docs</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface active:scale-90 transition-transform duration-200 min-w-[64px]">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md mt-1">Settings</span>
+</button>
+</nav>
+</main>
+</body></html>

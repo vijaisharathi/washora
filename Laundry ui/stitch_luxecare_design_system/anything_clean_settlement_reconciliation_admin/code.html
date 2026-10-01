@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settlement &amp; Financial Reconciliation - Anything Clean Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#935400",
+                        "surface-container-high": "#2a2a2b",
+                        "on-secondary-fixed": "#290947",
+                        "surface-container-lowest": "#0e0e0f",
+                        "secondary-fixed": "#efdbff",
+                        "on-error": "#690005",
+                        "secondary-container": "#573976",
+                        "surface-tint": "#dcb8ff",
+                        "background": "#131314",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-tertiary": "#4b2800",
+                        "on-secondary-container": "#caa7ec",
+                        "inverse-primary": "#8422dc",
+                        "surface-bright": "#39393a",
+                        "tertiary-fixed": "#ffdcbf",
+                        "on-secondary": "#3f225e",
+                        "surface-container": "#201f20",
+                        "critical": "#f87171",
+                        "inverse-surface": "#e5e2e3",
+                        "secondary": "#dcb8ff",
+                        "on-primary": "#480081",
+                        "on-primary-fixed": "#2c0051",
+                        "primary-container": "#8a2be2",
+                        "on-tertiary-container": "#ffdaba",
+                        "on-surface-variant": "#cfc2d7",
+                        "error-container": "#93000a",
+                        "tertiary": "#ffb873",
+                        "on-primary-container": "#eed9ff",
+                        "on-tertiary-fixed-variant": "#6a3b00",
+                        "on-surface": "#e5e2e3",
+                        "error": "#ffb4ab",
+                        "surface-container-highest": "#353436",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#131314",
+                        "outline-variant": "#4c4354",
+                        "tertiary-fixed-dim": "#ffb873",
+                        "surface-dim": "#131314",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "warning": "#fbbf24",
+                        "primary": "#dcb8ff",
+                        "on-secondary-fixed-variant": "#573976",
+                        "secondary-fixed-dim": "#dcb8ff",
+                        "on-tertiary-fixed": "#2d1600",
+                        "success": "#4ade80",
+                        "surface-variant": "#353436",
+                        "surface-container-low": "#1c1b1c",
+                        "info": "#60a5fa",
+                        "outline": "#988ca0",
+                        "inverse-on-surface": "#313031",
+                        "on-background": "#e5e2e3",
+                        "primary-fixed": "#efdbff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "16px",
+                        "margin-desktop": "24px",
+                        "sidebar-width": "260px",
+                        "table-cell-padding": "12px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "code": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "label-sm": ["Geist"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "code": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; background-color: #0e0e0f; color: #e5e2e3; }
+        .table-row-hover:hover { background-color: #2a2a2b; }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface antialiased overflow-x-hidden min-h-screen">
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-260px)] h-16 bg-surface-container dark:bg-surface-container border-b border-outline-variant dark:border-outline-variant flex justify-between items-center px-margin-desktop ml-sidebar-width z-40">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-surface">Lumina Control Center</span>
+</div>
+<div class="flex items-center gap-4 text-primary dark:text-primary">
+<div class="relative hidden md:flex items-center bg-surface-container-low rounded-lg border border-outline-variant px-3 py-1.5 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<span class="material-symbols-outlined text-on-surface-variant mr-2" data-icon="search" style="font-variation-settings: 'FILL' 0;">search</span>
+<input class="bg-transparent border-none text-body-md font-body-md text-on-surface placeholder-on-surface-variant focus:outline-none focus:ring-0 w-64" placeholder="Global Search (Cmd+K)" type="text"/>
+</div>
+<button class="p-2 hover:bg-surface-container-highest dark:hover:bg-surface-container-highest rounded-lg transition-colors opacity-80 hover:opacity-100 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="notifications" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+<button class="p-2 hover:bg-surface-container-highest dark:hover:bg-surface-container-highest rounded-lg transition-colors opacity-80 hover:opacity-100 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="help" style="font-variation-settings: 'FILL' 0;">help</span>
+</button>
+<button class="p-2 hover:bg-surface-container-highest dark:hover:bg-surface-container-highest rounded-lg transition-colors opacity-80 hover:opacity-100 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="settings" style="font-variation-settings: 'FILL' 0;">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant ml-2">
+<img alt="Admin User Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a corporate administrator in a modern dark-themed high-tech control room environment, sharp focus, cool studio lighting, subtle violet rim light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIKJfHNAmEkC_XrspUnpPS-3RV89vsfEpHUhQlvXgqWFGLWME0vt3ybZ4n-HNn8eyD7dULVL8RGtNXiBaWA1wbV0aNdKPt7yffjDP9mLsU8rqbnQoSJrLo_NqFqMAFnUtBzT3hmts61GMWubsZcK5sHdHsrN9ISLiGsDvnk5y1Xcftz_fEM7PghZ7FFizH6li0e2LNUEELdwvBsitlrpUi2MBoNpeiauFW6E07mTaqQIOwaU8ydoEovQ"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-lowest dark:bg-surface-container-lowest border-r border-outline-variant dark:border-outline-variant flex flex-col py-6 z-50">
+<div class="px-6 mb-8 flex flex-col gap-1">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined font-bold" data-icon="bolt">bolt</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-surface leading-tight">Lumina Admin</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Super Admin Console</p>
+</div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto px-3 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined text-[20px] group-active:scale-[0.98] transition-all duration-150" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<div class="mt-4 mb-1 px-3">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">FINANCE</span>
+</div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg border-l-4 border-primary text-on-surface dark:text-on-surface font-semibold bg-surface-container-high dark:bg-surface-container-high font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined text-[20px] group-active:scale-[0.98] transition-all duration-150 text-primary" data-icon="account_balance">account_balance</span>
+                Settlement &amp; Recon
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined text-[20px] group-active:scale-[0.98] transition-all duration-150" data-icon="shopping_cart">shopping_cart</span>
+                Orders
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined text-[20px] group-active:scale-[0.98] transition-all duration-150" data-icon="group">group</span>
+                Customers
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined text-[20px] group-active:scale-[0.98] transition-all duration-150" data-icon="store">store</span>
+                Providers
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined text-[20px] group-active:scale-[0.98] transition-all duration-150" data-icon="local_shipping">local_shipping</span>
+                Delivery Partners
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined text-[20px] group-active:scale-[0.98] transition-all duration-150" data-icon="settings_input_component">settings_input_component</span>
+                Operations
+            </a>
+</div>
+<div class="px-3 mt-auto pt-4 border-t border-outline-variant flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="terminal">terminal</span>
+                System Logs
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="support_agent">support_agent</span>
+                Support
+            </a>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="ml-[260px] mt-16 p-margin-desktop min-h-[calc(100vh-64px)] bg-background">
+<!-- Page Header -->
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-1">Settlement &amp; Reconciliation</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Review financial settlement status and identify mismatches.</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="bg-surface-container-low border border-outline-variant rounded-lg px-4 py-2 flex items-center gap-2 cursor-pointer hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-md text-label-md text-on-surface">This Month</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]" data-icon="arrow_drop_down">arrow_drop_down</span>
+</div>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-4 py-2 rounded-lg hover:bg-primary-fixed-dim transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+                    Export Report
+                </button>
+</div>
+</div>
+<!-- Summary Grid -->
+<div class="grid grid-cols-1 md:grid-cols-5 gap-gutter mb-8">
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-5 flex flex-col justify-between">
+<div class="flex items-center gap-2 text-on-surface-variant mb-3">
+<span class="material-symbols-outlined text-[18px]" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Expected Revenue</span>
+</div>
+<div class="font-display-lg text-display-lg text-on-surface">₹4,82,600</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-5 flex flex-col justify-between">
+<div class="flex items-center gap-2 text-on-surface-variant mb-3">
+<span class="material-symbols-outlined text-[18px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Recorded Revenue</span>
+</div>
+<div class="font-display-lg text-display-lg text-on-surface">₹4,82,600</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-5 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute inset-0 bg-success/5 border border-success/20 rounded-xl"></div>
+<div class="relative z-10 flex items-center gap-2 text-success mb-3">
+<span class="material-symbols-outlined text-[18px]" data-icon="check_circle">check_circle</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Reconciled</span>
+</div>
+<div class="relative z-10 font-display-lg text-display-lg text-on-surface">₹4,70,200</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-5 flex flex-col justify-between">
+<div class="flex items-center gap-2 text-warning mb-3">
+<span class="material-symbols-outlined text-[18px]" data-icon="pending">pending</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Pending</span>
+</div>
+<div class="font-display-lg text-display-lg text-on-surface">₹12,400</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-5 flex flex-col justify-between relative overflow-hidden cursor-pointer hover:border-critical transition-colors group">
+<div class="absolute inset-0 bg-critical/5 border border-critical/20 rounded-xl group-hover:bg-critical/10 transition-colors"></div>
+<div class="relative z-10 flex flex-col justify-between h-full">
+<div class="flex items-center gap-2 text-critical mb-3">
+<span class="material-symbols-outlined text-[18px]" data-icon="warning">warning</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Mismatches</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-critical">2</span>
+<span class="font-label-sm text-label-sm text-critical/80 bg-critical/20 px-2 py-0.5 rounded-full">High Priority</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Workspace: Table and Details Panel -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter h-[calc(100vh-340px)]">
+<!-- Reconciliation Table -->
+<div class="lg:col-span-2 bg-surface-container-low border border-outline-variant rounded-xl flex flex-col overflow-hidden">
+<div class="p-4 border-b border-outline-variant flex justify-between items-center bg-surface-container-high/50">
+<h3 class="font-headline-md text-headline-md text-on-surface">Settlement Batches</h3>
+<div class="flex items-center gap-2">
+<div class="relative flex items-center bg-surface-container rounded-lg border border-outline-variant px-3 py-1.5 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<span class="material-symbols-outlined text-on-surface-variant mr-2 text-[18px]" data-icon="search" style="font-variation-settings: 'FILL' 0;">search</span>
+<input class="bg-transparent border-none text-body-md font-body-md text-on-surface placeholder-on-surface-variant focus:outline-none focus:ring-0 w-48 py-0.5" placeholder="Search Reference..." type="text"/>
+</div>
+<button class="p-2 border border-outline-variant rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+</div>
+<div class="flex-1 overflow-auto">
+<table class="w-full text-left border-collapse">
+<thead class="sticky top-0 bg-surface-container-high z-10 border-b border-outline-variant shadow-sm">
+<tr>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Reference</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant uppercase tracking-wider text-right">Expected</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant uppercase tracking-wider text-right">Recorded</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant uppercase tracking-wider text-right">Difference</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant uppercase tracking-wider text-center">Status</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant uppercase tracking-wider text-right">Last Checked</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface divide-y divide-outline-variant">
+<tr class="table-row-hover cursor-pointer border-l-4 border-transparent hover:border-surface-variant transition-colors group">
+<td class="p-table-cell-padding font-code text-primary">SET-2048</td>
+<td class="p-table-cell-padding text-right">₹1,24,500</td>
+<td class="p-table-cell-padding text-right">₹1,24,500</td>
+<td class="p-table-cell-padding text-right text-on-surface-variant">-</td>
+<td class="p-table-cell-padding text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-success/10 text-success font-label-sm text-label-sm border border-success/20">
+<span class="w-1.5 h-1.5 rounded-full bg-success"></span>
+                                        RECONCILED
+                                    </span>
+</td>
+<td class="p-table-cell-padding text-right text-on-surface-variant text-label-sm">2h ago</td>
+</tr>
+<tr class="table-row-hover cursor-pointer border-l-4 border-primary bg-surface-container-high/30 transition-colors group">
+<td class="p-table-cell-padding font-code text-primary font-bold">SET-2049</td>
+<td class="p-table-cell-padding text-right">₹18,600</td>
+<td class="p-table-cell-padding text-right text-critical">₹17,800</td>
+<td class="p-table-cell-padding text-right text-critical font-semibold">-₹800</td>
+<td class="p-table-cell-padding text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-critical/10 text-critical font-label-sm text-label-sm border border-critical/20 shadow-[0_0_8px_rgba(248,113,113,0.15)]">
+<span class="w-1.5 h-1.5 rounded-full bg-critical animate-pulse"></span>
+                                        MISMATCH
+                                    </span>
+</td>
+<td class="p-table-cell-padding text-right text-on-surface-variant text-label-sm">15m ago</td>
+</tr>
+<tr class="table-row-hover cursor-pointer border-l-4 border-transparent hover:border-surface-variant transition-colors group">
+<td class="p-table-cell-padding font-code text-primary">SET-2050</td>
+<td class="p-table-cell-padding text-right">₹86,200</td>
+<td class="p-table-cell-padding text-right text-warning">--</td>
+<td class="p-table-cell-padding text-right text-warning">--</td>
+<td class="p-table-cell-padding text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-warning/10 text-warning font-label-sm text-label-sm border border-warning/20">
+<span class="w-1.5 h-1.5 rounded-full bg-warning"></span>
+                                        PENDING
+                                    </span>
+</td>
+<td class="p-table-cell-padding text-right text-on-surface-variant text-label-sm">Just now</td>
+</tr>
+<tr class="table-row-hover cursor-pointer border-l-4 border-transparent hover:border-surface-variant transition-colors group">
+<td class="p-table-cell-padding font-code text-primary">SET-2051</td>
+<td class="p-table-cell-padding text-right">₹4,200</td>
+<td class="p-table-cell-padding text-right text-critical">₹3,950</td>
+<td class="p-table-cell-padding text-right text-critical font-semibold">-₹250</td>
+<td class="p-table-cell-padding text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-critical/10 text-critical font-label-sm text-label-sm border border-critical/20">
+<span class="w-1.5 h-1.5 rounded-full bg-critical"></span>
+                                        MISMATCH
+                                    </span>
+</td>
+<td class="p-table-cell-padding text-right text-on-surface-variant text-label-sm">1d ago</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Mismatch Detail Panel -->
+<div class="lg:col-span-1 bg-surface-container-low border border-outline-variant rounded-xl flex flex-col relative overflow-hidden shadow-xl shadow-black/50 ring-1 ring-primary/20">
+<!-- Subtle glow effect at top -->
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+<div class="p-5 border-b border-outline-variant bg-surface-container-high/30">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="font-label-sm text-label-sm text-critical uppercase tracking-wider mb-1 block">Mismatch Detected</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-code">SET-2049</h3>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-4 bg-surface-container rounded-lg p-4 border border-outline-variant/50">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Expected</p>
+<p class="font-body-lg text-body-lg text-on-surface">₹18,600</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Recorded</p>
+<p class="font-body-lg text-body-lg text-critical">₹17,800</p>
+</div>
+<div class="col-span-2 pt-2 mt-2 border-t border-outline-variant/50 flex justify-between items-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Variance</p>
+<p class="font-headline-md text-headline-md text-critical">-₹800</p>
+</div>
+</div>
+<div class="mt-4 p-3 bg-surface border border-outline-variant rounded flex items-start gap-3">
+<span class="material-symbols-outlined text-warning text-[20px]" data-icon="info">info</span>
+<p class="font-body-md text-body-md text-on-surface-variant italic">Cause not yet identified. System suspects missing transaction fee deduction on gateway side.</p>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-5">
+<h4 class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-4 border-b border-outline-variant pb-2">Linked Transactions</h4>
+<div class="space-y-3">
+<div class="bg-surface-container p-3 rounded border border-outline-variant/50 hover:border-primary/50 transition-colors cursor-pointer">
+<div class="flex justify-between items-center mb-2">
+<span class="font-code text-label-sm text-primary">TXN-99821</span>
+<span class="font-body-md text-body-md text-on-surface">₹9,400</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm">
+<span>Order #ORD-451</span>
+<span class="flex items-center gap-1 text-success"><span class="material-symbols-outlined text-[14px]" data-icon="check">check</span> Matched</span>
+</div>
+</div>
+<div class="bg-surface-container p-3 rounded border border-critical/30 bg-critical/5">
+<div class="flex justify-between items-center mb-2">
+<span class="font-code text-label-sm text-primary">TXN-99822</span>
+<span class="font-body-md text-body-md text-critical font-bold">₹8,400 <span class="text-on-surface-variant font-normal line-through text-[12px] ml-1">₹9,200</span></span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm">
+<span>Order #ORD-452</span>
+<span class="flex items-center gap-1 text-critical"><span class="material-symbols-outlined text-[14px]" data-icon="error">error</span> -₹800 Diff</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-5 border-t border-outline-variant bg-surface-container-high/30 mt-auto">
+<h4 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-3">Resolution Actions</h4>
+<div class="flex flex-col gap-2">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-2.5 rounded-lg hover:bg-primary-fixed-dim transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="add_circle">add_circle</span>
+                            Add Adjustment
+                        </button>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface border border-outline-variant text-on-surface font-label-md text-label-md py-2 rounded-lg hover:bg-surface-container-highest transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="bug_report">bug_report</span>
+                                Create Issue
+                            </button>
+<button class="flex-1 bg-surface border border-outline-variant text-on-surface font-label-md text-label-md py-2 rounded-lg hover:bg-surface-container-highest transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="done_all">done_all</span>
+                                Mark Reviewed
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

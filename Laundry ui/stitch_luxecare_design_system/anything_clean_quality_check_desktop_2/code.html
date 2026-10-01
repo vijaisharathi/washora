@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quality Check - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.1/files/geist-sans-latin-400-normal.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.1/files/geist-sans-latin-500-normal.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.1/files/geist-sans-latin-600-normal.woff2') format('woff2');
+            font-weight: 600;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.1/files/geist-sans-latin-700-normal.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+        
+        body {
+            font-family: 'Geist', sans-serif;
+            background-color: #0A0A0B; /* Layer 0 */
+            color: #e5e2e3;
+        }
+
+        /* Material Symbols Setup */
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#474649",
+                    "inverse-on-surface": "#313031",
+                    "on-error-container": "#ffdad6",
+                    "on-error": "#690005",
+                    "surface-variant": "#353436",
+                    "background": "#131314",
+                    "on-primary-fixed": "#2c0051",
+                    "error": "#ffb4ab",
+                    "outline-variant": "#4c4354",
+                    "surface-container-highest": "#353436",
+                    "secondary-fixed": "#e5e1e4",
+                    "on-primary": "#480081",
+                    "on-tertiary-fixed-variant": "#474649",
+                    "tertiary": "#c8c6c8",
+                    "on-secondary": "#303032",
+                    "surface-dim": "#131314",
+                    "tertiary-container": "#646365",
+                    "surface-container-high": "#2a2a2b",
+                    "tertiary-fixed-dim": "#c8c6c8",
+                    "primary": "#dcb8ff",
+                    "inverse-surface": "#e5e2e3",
+                    "tertiary-fixed": "#e4e2e4",
+                    "secondary-fixed-dim": "#c8c6c8",
+                    "on-tertiary-container": "#e3e0e2",
+                    "on-tertiary": "#303032",
+                    "surface-tint": "#dcb8ff",
+                    "secondary-container": "#474649",
+                    "on-secondary-fixed": "#1b1b1d",
+                    "surface-bright": "#3a393a",
+                    "surface-container-lowest": "#0e0e0f",
+                    "on-tertiary-fixed": "#1b1b1d",
+                    "on-surface-variant": "#cfc2d7",
+                    "surface": "#131314",
+                    "primary-fixed-dim": "#dcb8ff",
+                    "primary-container": "#8a2be2",
+                    "surface-container-low": "#1c1b1c",
+                    "surface-container": "#201f20",
+                    "primary-fixed": "#efdbff",
+                    "error-container": "#93000a",
+                    "on-primary-fixed-variant": "#6700b5",
+                    "on-background": "#e5e2e3",
+                    "inverse-primary": "#8422dc",
+                    "on-secondary-container": "#b7b4b7",
+                    "on-surface": "#e5e2e3",
+                    "secondary": "#c8c6c8",
+                    "outline": "#988ca0",
+                    "on-primary-container": "#eed9ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "2xl": "48px",
+                    "xs": "4px",
+                    "xl": "32px",
+                    "3xl": "64px",
+                    "md": "16px",
+                    "sm": "8px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Geist"],
+                    "body-lg": ["Geist"],
+                    "headline-md": ["Geist"],
+                    "display-lg": ["Geist"],
+                    "label-md": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "caption": ["Geist"],
+                    "body-md": ["Geist"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col">
+<!-- Top Navigation (Contextual: Task-focused, so simplified or hidden. Keeping it minimal for a "modal-like" full screen flow) -->
+<header class="bg-surface/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-white/5 shadow-sm">
+<div class="flex justify-between items-center px-lg h-16 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-sm cursor-pointer active:scale-95 transition-transform" onclick="window.history.back()">
+<span class="material-symbols-outlined text-on-surface-variant">arrow_back</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Back to Dashboard</span>
+</div>
+<div class="font-headline-md text-headline-md font-bold text-primary">
+                Anything Clean
+            </div>
+<div class="w-24"></div> <!-- Spacer for centering -->
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow pt-[104px] pb-2xl px-md md:px-lg max-w-[1280px] mx-auto w-full flex flex-col gap-lg">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:justify-between md:items-end gap-md">
+<div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface mb-xs">Quality Check</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Order #AC-8492 • Deep Clean Service</p>
+</div>
+<div class="inline-flex items-center gap-xs px-md py-sm bg-surface-container-high rounded-full border border-white/5">
+<span class="material-symbols-outlined text-primary" data-weight="fill" style="font-variation-settings: 'FILL' 1;">timer</span>
+<span class="font-label-md text-label-md text-primary">Pending Review</span>
+</div>
+</div>
+<!-- Before/After Comparison & Checklist Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg mt-md">
+<!-- Photo Comparison (Left Column) -->
+<div class="lg:col-span-8 flex flex-col gap-md">
+<div class="bg-surface rounded-xl p-md border border-white/5 relative overflow-hidden group">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-md">Visual Verification</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md h-[400px]">
+<!-- Before Photo -->
+<div class="relative rounded-lg overflow-hidden border border-white/10 group/img">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105" data-alt="A highly detailed, high-resolution photo showing a visibly dirty, cluttered modern living room before a deep cleaning service. The lighting is slightly dim and moody, emphasizing dust and disorganization. The aesthetic is realistic and high-end, capturing the 'before' state in a premium domestic care context. Deep dark tones with muted highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnN7gEJXXf-ncesrsGBgW3B_iXlzLcqE9HBwx_k1P8NnXGoEVrqmlQ18GbHNsI5UD7d5LaLl1SlPnTDC0jLe6rAJibdUAI7uT6PoISDFGNV313NrhFs9AVD7Yqqm13pgpeYsAhVdshqWEx0IoKYl7VJipM0CGKMCezh_ZWR7XfVqCObPkChZLuJjHu-HItogul1s-ZVQMqEmlUyBuGbM1IVljAjJKO7oU9vMgzxoufaxAiVxcmKHKsWw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-md left-md">
+<span class="font-label-md text-label-md bg-surface/80 backdrop-blur-md text-on-surface px-sm py-xs rounded">Before</span>
+</div>
+</div>
+<!-- Current Photo -->
+<div class="relative rounded-lg overflow-hidden border border-primary/30 group/img">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105" data-alt="A highly detailed, high-resolution photo showing the exact same modern living room after a professional deep cleaning service. The space is immaculate, highly organized, and gleaming. Bright, crisp white lighting enhances the clean, minimalist aesthetic. The image conveys a sense of luxury, precision, and high-trust lifestyle management. Deep dark backgrounds contrast with bright clean surfaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqBnHnOtFS-ZBXVou2FDVu5p8jdxcFwyvNytTKozradCZYdyKX_opQ_HbGo9n0ObbbSjwt3rOtqsckch0bGkMSwVrESIFZNxygQTmgD27vNZsar_PD25v5x_Ysr1a57LLkU0COGyEICT5gQkQOrv8cX0dmR2usqEBkmY8JRESWzB_efE4st7d-4RnGQeRKmm66S5LdbRmvHaZWL60KxIRnpLTKgIrW93uB3TE3uig5fUQRJOAfETWMcw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent"></div>
+<div class="absolute bottom-md left-md">
+<span class="font-label-md text-label-md bg-primary text-on-primary px-sm py-xs rounded flex items-center gap-xs">
+                                    Current
+                                    <span class="material-symbols-outlined text-[16px]">check_circle</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quality Checklist & Actions (Right Column) -->
+<div class="lg:col-span-4 flex flex-col gap-md">
+<!-- Checklist Card -->
+<div class="bg-surface rounded-xl p-lg border border-white/5 flex flex-col h-full">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xl">Control Checklist</h3>
+<div class="flex flex-col gap-md flex-grow">
+<!-- Checklist Item 1 -->
+<label class="flex items-start gap-md cursor-pointer group">
+<div class="relative flex items-center justify-center mt-1">
+<input checked="" class="peer appearance-none w-5 h-5 border border-outline rounded-sm bg-transparent checked:bg-primary checked:border-primary transition-colors cursor-pointer" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-on-primary opacity-0 peer-checked:opacity-100 pointer-events-none text-[16px] font-bold">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Service completed</span>
+<span class="font-caption text-caption text-on-surface-variant">All contracted areas addressed</span>
+</div>
+</label>
+<!-- Checklist Item 2 -->
+<label class="flex items-start gap-md cursor-pointer group">
+<div class="relative flex items-center justify-center mt-1">
+<input checked="" class="peer appearance-none w-5 h-5 border border-outline rounded-sm bg-transparent checked:bg-primary checked:border-primary transition-colors cursor-pointer" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-on-primary opacity-0 peer-checked:opacity-100 pointer-events-none text-[16px] font-bold">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">No residue</span>
+<span class="font-caption text-caption text-on-surface-variant">Surfaces are streak-free</span>
+</div>
+</label>
+<!-- Checklist Item 3 -->
+<label class="flex items-start gap-md cursor-pointer group">
+<div class="relative flex items-center justify-center mt-1">
+<input class="peer appearance-none w-5 h-5 border border-outline rounded-sm bg-transparent checked:bg-primary checked:border-primary transition-colors cursor-pointer" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-on-primary opacity-0 peer-checked:opacity-100 pointer-events-none text-[16px] font-bold">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Dried completely</span>
+<span class="font-caption text-caption text-on-surface-variant">No standing water or dampness</span>
+</div>
+</label>
+<!-- Checklist Item 4 -->
+<label class="flex items-start gap-md cursor-pointer group">
+<div class="relative flex items-center justify-center mt-1">
+<input class="peer appearance-none w-5 h-5 border border-outline rounded-sm bg-transparent checked:bg-primary checked:border-primary transition-colors cursor-pointer" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-on-primary opacity-0 peer-checked:opacity-100 pointer-events-none text-[16px] font-bold">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Packed appropriately</span>
+<span class="font-caption text-caption text-on-surface-variant">Supplies neatly stored away</span>
+</div>
+</label>
+<!-- Checklist Item 5 -->
+<label class="flex items-start gap-md cursor-pointer group">
+<div class="relative flex items-center justify-center mt-1">
+<input class="peer appearance-none w-5 h-5 border border-outline rounded-sm bg-transparent checked:bg-primary checked:border-primary transition-colors cursor-pointer" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-on-primary opacity-0 peer-checked:opacity-100 pointer-events-none text-[16px] font-bold">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Accessories returned</span>
+<span class="font-caption text-caption text-on-surface-variant">Items placed back in original positions</span>
+</div>
+</label>
+</div>
+<!-- Action Buttons -->
+<div class="mt-xl flex flex-col gap-sm border-t border-white/5 pt-md">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-md rounded-lg flex items-center justify-center gap-sm hover:opacity-90 transition-opacity active:scale-[0.98]">
+<span class="material-symbols-outlined" data-weight="fill">verified</span>
+                            Pass Quality Check
+                        </button>
+<div class="relative group w-full">
+<button class="w-full bg-transparent border border-error text-error font-label-md text-label-md py-md rounded-lg flex items-center justify-center gap-sm hover:bg-error/10 transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined">assignment_return</span>
+                                Needs Rework
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

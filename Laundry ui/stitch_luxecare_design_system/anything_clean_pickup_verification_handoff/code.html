@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Verify Pickup - Lumina</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom Checkbox Styling for Lumina */
+        .lumina-checkbox:checked + div {
+            background-color: theme('colors.primary');
+            border-color: theme('colors.primary');
+        }
+        .lumina-checkbox:checked + div svg {
+            display: block;
+        }
+        
+        /* Hide scrollbar for clean app feel */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#e5e2e3",
+                        "error": "#ffb4ab",
+                        "surface-container-highest": "#353436",
+                        "surface-container": "#201f20",
+                        "primary-fixed": "#efdbff",
+                        "primary": "#dcb8ff",
+                        "tertiary": "#c8c6c8",
+                        "outline": "#988ca0",
+                        "tertiary-container": "#646365",
+                        "surface-container-low": "#1c1b1c",
+                        "on-secondary": "#303032",
+                        "surface-container-lowest": "#0e0e0f",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface": "#131314",
+                        "on-tertiary-container": "#e3e0e2",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-error-container": "#ffdad6",
+                        "success-bg": "#1A3D24",
+                        "on-tertiary": "#303032",
+                        "on-primary-fixed": "#2c0051",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "inverse-surface": "#e5e2e3",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-variant": "#353436",
+                        "on-error": "#690005",
+                        "on-primary-container": "#eed9ff",
+                        "primary-container": "#8a2be2",
+                        "on-background": "#e5e2e3",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#474648",
+                        "outline-variant": "#4c4354",
+                        "error-red": "#ffb4ab",
+                        "tertiary-fixed": "#e4e2e4",
+                        "surface-dim": "#131314",
+                        "secondary-fixed": "#e4e2e4",
+                        "secondary-container": "#49494b",
+                        "on-secondary-container": "#b9b8ba",
+                        "surface-bright": "#39393a",
+                        "inverse-on-surface": "#313031",
+                        "electric-violet": "#8a2be2",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "surface-tint": "#dcb8ff",
+                        "success-green": "#81C784",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "background": "#131314",
+                        "on-surface-variant": "#cfc2d7",
+                        "surface-container-high": "#2a2a2b",
+                        "inverse-primary": "#8422dc",
+                        "secondary": "#c8c6c8",
+                        "on-primary": "#480081"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "xl": "32px",
+                        "3xl": "64px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "2xl": "48px"
+                    },
+                    "fontFamily": {
+                        "mono-display": ["monospace"],
+                        "h3": ["Geist"],
+                        "label-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "caption": ["Geist"],
+                        "body-md": ["Geist"],
+                        "h1": ["Geist"]
+                    },
+                    "fontSize": {
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col relative overflow-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- 
+      Note: Global navigation (TopAppBar/BottomNavBar) is intentionally suppressed here. 
+      This is a linear, task-focused transactional screen (Pickup Verification).
+      The user should focus solely on the verification process without global navigation distractions.
+    -->
+<!-- Main Container -->
+<main class="flex-1 w-full max-w-md mx-auto flex flex-col h-screen relative bg-surface-dim shadow-2xl">
+<!-- Local Header -->
+<header class="flex items-center justify-between px-md py-md border-b border-outline-variant/20 bg-surface/80 backdrop-blur-xl z-10 sticky top-0">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors active:scale-95 text-on-surface-variant">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-h3 text-h3 text-on-surface">Verify Pickup</h1>
+<div class="w-10 h-10"></div> <!-- Spacer for centering -->
+</header>
+<!-- Scrollable Content Area -->
+<div class="flex-1 overflow-y-auto px-md py-lg pb-32 flex flex-col gap-lg">
+<!-- Order Summary Card -->
+<section class="bg-surface-container border border-outline-variant/30 rounded-xl p-md flex flex-col gap-md relative overflow-hidden">
+<!-- Decorative background element -->
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary-container/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant mb-xs">Order ID</span>
+<span class="font-mono-display text-mono-display text-primary">QH-20260902</span>
+</div>
+<span class="bg-surface-container-high px-sm py-xs rounded-md border border-outline-variant/20 flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">schedule</span>
+<span class="font-caption text-caption text-on-surface-variant">10:41 AM</span>
+</span>
+</div>
+<div class="h-px w-full bg-outline-variant/20"></div>
+<div class="flex items-center gap-md">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0 border border-outline-variant/30 relative">
+<img class="w-full h-full object-cover" data-alt="A close-up, high-end product shot of a pair of premium sneakers waiting to be cleaned. The setting is a clean, modern workspace with subtle neon violet edge lighting reflecting off dark grey surfaces. The mood is precise and professional, matching a high-tech service environment. The aesthetic relies on deep blacks, crisp whites, and a touch of vibrant electric purple." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB53P9CryGlv6OOcuyUTRY5UjZTN8VQv_xi0KhfOjyOTGSTrb8X4yQiUv2vyBn9ckJHlm8Z6SOx24HjdlAHySsktCjatcCA6_hfSRVIi7ZRwzcVmEmIn0KXx4RPgno2qb6suXpeTqzm5oOGjddkc5tqsBuunTFT0Hb-yx7d0DT8ueF9VWlcWPJdYk6ndDCngzbEWNEkFnQE6MstRvBEvE1iLwqrCkU81k02ClDB1t5dPRH2zowKSJjiEA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Sneaker Deep Clean</span>
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-xs mt-1">
+<span class="material-symbols-outlined text-[14px]">storefront</span>
+                            CleanX Service Center
+                        </span>
+</div>
+</div>
+</section>
+<!-- Verification Fields -->
+<section class="flex flex-col gap-md">
+<h2 class="font-label-md text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Verification Requirements</h2>
+<!-- Booking ID Input & Scan -->
+<div class="bg-surface-container rounded-xl p-md border border-outline-variant/30 flex flex-col gap-sm">
+<label class="font-caption text-caption text-on-surface-variant" for="booking-id">Enter Booking ID</label>
+<div class="flex gap-sm">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">tag</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-2 pl-10 pr-3 font-mono-display text-[14px] text-on-surface placeholder:text-outline focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all" id="booking-id" placeholder="e.g. BKG-9921" type="text"/>
+</div>
+<button class="shrink-0 flex items-center justify-center gap-xs px-md bg-surface-container-high hover:bg-surface-variant border border-outline-variant/50 rounded-lg transition-colors active:scale-95 text-primary">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+<span class="font-label-md text-label-md hidden sm:inline">Scan</span>
+</button>
+</div>
+</div>
+<!-- Item Verification Checkbox -->
+<label class="bg-surface-container rounded-xl p-md border border-outline-variant/30 flex items-start gap-md cursor-pointer hover:bg-surface-container-high transition-colors group">
+<div class="relative flex items-center justify-center mt-1">
+<input class="lumina-checkbox absolute opacity-0 w-0 h-0" id="item-verified" type="checkbox"/>
+<div class="w-5 h-5 rounded border-2 border-outline-variant flex items-center justify-center transition-colors group-hover:border-primary/50">
+<svg class="w-3.5 h-3.5 text-background hidden" fill="none" stroke="currentColor" stroke-width="3" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Confirm Item Identity</span>
+<span class="font-caption text-caption text-on-surface-variant">Verify the physical item matches the 'Sneaker Deep Clean' order details.</span>
+</div>
+</label>
+<!-- Condition Check -->
+<div class="bg-surface-container rounded-xl p-md border border-outline-variant/30 flex flex-col gap-md">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Initial Condition Check</span>
+<span class="font-caption text-caption text-on-surface-variant">Assess item condition before taking possession.</span>
+</div>
+<div class="flex bg-surface-container-low p-xs rounded-lg border border-outline-variant/20 relative">
+<!-- Background slider (controlled by JS in a real app, static visual here) -->
+<div class="absolute top-1 bottom-1 left-1 w-[calc(50%-4px)] bg-surface-variant rounded-md transition-transform duration-300 pointer-events-none" id="condition-slider"></div>
+<button class="flex-1 flex items-center justify-center gap-xs py-2 relative z-10 font-label-md text-label-md text-on-surface transition-colors" id="btn-good" onclick="setCondition('good')" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+                            Good Condition
+                        </button>
+<button class="flex-1 flex items-center justify-center gap-xs py-2 relative z-10 font-label-md text-label-md text-on-surface-variant transition-colors" id="btn-issue" onclick="setCondition('issue')" type="button">
+<span class="material-symbols-outlined text-[18px]">report_problem</span>
+                            Report Issue
+                        </button>
+</div>
+</div>
+</section>
+</div>
+<!-- Sticky Bottom Action Area -->
+<div class="absolute bottom-0 left-0 w-full p-md bg-gradient-to-t from-surface via-surface/90 to-transparent pt-lg z-20">
+<button class="w-full py-3 bg-primary-container text-on-primary-container font-h3 text-h3 flex items-center justify-center gap-sm rounded-lg shadow-[0_0_20px_rgba(138,43,226,0.15)] hover:shadow-[0_0_25px_rgba(138,43,226,0.25)] hover:bg-electric-violet hover:text-white transition-all active:scale-[0.98]" id="confirm-btn">
+<span class="material-symbols-outlined">how_to_reg</span>
+                Confirm Pickup
+            </button>
+</div>
+</main>
+<!-- Success Overlay (Hidden by Default) -->
+<div class="fixed inset-0 z-50 bg-background/80 backdrop-blur-md flex items-center justify-center p-md opacity-0 pointer-events-none transition-opacity duration-300" id="success-overlay">
+<div class="bg-surface-container border border-outline-variant/30 p-xl rounded-2xl max-w-sm w-full flex flex-col items-center text-center transform scale-95 transition-transform duration-300 shadow-2xl" id="success-card">
+<div class="w-20 h-20 bg-success-bg rounded-full flex items-center justify-center mb-lg relative">
+<div class="absolute inset-0 rounded-full border-2 border-success-green animate-ping opacity-20"></div>
+<span class="material-symbols-outlined icon-fill text-success-green text-[40px]">check_circle</span>
+</div>
+<h2 class="font-h1 text-h1 text-on-surface mb-sm">Pickup Verified</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">Order QH-20260902 has been successfully transferred to your custody.</p>
+<div class="bg-surface-container-low w-full p-md rounded-lg mb-lg border border-outline-variant/20">
+<div class="flex justify-between items-center mb-xs">
+<span class="font-caption text-caption text-on-surface-variant">Next Step</span>
+</div>
+<div class="font-label-md text-label-md text-primary flex items-center gap-xs justify-center">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+                    Proceed to Delivery Route
+                </div>
+</div>
+<button class="w-full py-2 bg-surface-container-high border border-outline-variant/50 text-on-surface font-label-md text-label-md rounded-lg hover:bg-surface-variant transition-colors active:scale-95" onclick="closeSuccess()">
+                Dismiss
+            </button>
+</div>
+</div>
+<script>
+        // Simple Interaction Logic
+        function setCondition(state) {
+            const slider = document.getElementById('condition-slider');
+            const btnGood = document.getElementById('btn-good');
+            const btnIssue = document.getElementById('btn-issue');
+
+            if (state === 'good') {
+                slider.style.transform = 'translateX(0)';
+                btnGood.classList.replace('text-on-surface-variant', 'text-on-surface');
+                btnIssue.classList.replace('text-on-surface', 'text-on-surface-variant');
+            } else {
+                slider.style.transform = 'translateX(calc(100% + 4px))';
+                btnIssue.classList.replace('text-on-surface-variant', 'text-error');
+                btnGood.classList.replace('text-on-surface', 'text-on-surface-variant');
+                // Optional: Change slider color to indicate warning
+                slider.classList.replace('bg-surface-variant', 'bg-error-container/20');
+            }
+        }
+
+        // Handle Confirm Action
+        const confirmBtn = document.getElementById('confirm-btn');
+        const overlay = document.getElementById('success-overlay');
+        const card = document.getElementById('success-card');
+
+        confirmBtn.addEventListener('click', () => {
+            // In a real app, validate fields here first
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
+            card.classList.remove('scale-95');
+            card.classList.add('scale-100');
+        });
+
+        function closeSuccess() {
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+            card.classList.remove('scale-100');
+            card.classList.add('scale-95');
+            // Reset form or navigate away in real app
+        }
+    </script>
+</body></html>

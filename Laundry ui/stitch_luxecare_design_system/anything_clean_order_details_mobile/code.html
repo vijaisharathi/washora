@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#988ca0",
+                        "secondary-container": "#474649",
+                        "tertiary": "#c8c6c8",
+                        "error": "#ffb4ab",
+                        "on-secondary-container": "#b7b4b7",
+                        "on-surface": "#e5e2e3",
+                        "inverse-surface": "#e5e2e3",
+                        "inverse-primary": "#8422dc",
+                        "surface-tint": "#dcb8ff",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "inverse-on-surface": "#313031",
+                        "primary": "#dcb8ff",
+                        "on-background": "#e5e2e3",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "primary-fixed": "#efdbff",
+                        "tertiary-fixed": "#e4e2e4",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-secondary-fixed-variant": "#474649",
+                        "background": "#131314",
+                        "surface-container-highest": "#353436",
+                        "on-tertiary-container": "#e3e0e2",
+                        "secondary-fixed": "#e5e1e4",
+                        "secondary": "#c8c6c8",
+                        "surface": "#131314",
+                        "outline-variant": "#4c4354",
+                        "surface-bright": "#3a393a",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-error-container": "#ffdad6",
+                        "surface-dim": "#131314",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-primary": "#480081",
+                        "surface-container": "#201f20",
+                        "surface-container-high": "#2a2a2b",
+                        "surface-container-low": "#1c1b1c",
+                        "error-container": "#93000a",
+                        "on-secondary": "#303032",
+                        "primary-container": "#8a2be2",
+                        "on-primary-fixed": "#2c0051",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "tertiary-container": "#646365",
+                        "on-error": "#690005",
+                        "on-primary-container": "#eed9ff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-tertiary": "#303032",
+                        "surface-variant": "#353436"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "md": "16px",
+                        "2xl": "48px",
+                        "xs": "4px",
+                        "3xl": "64px",
+                        "xl": "32px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "caption": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "display-lg-mobile": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #0A0A0B; color: #e5e2e3; }
+        .glass-panel {
+            background: rgba(18, 18, 20, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(220, 184, 255, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-3xl md:pb-0">
+<!-- Nav shell suppressed for detail view -->
+<!-- Header Back -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/5 flex items-center px-md py-sm h-16 md:px-xl">
+<button class="flex items-center justify-center p-sm rounded-full hover:bg-surface-variant transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="ml-md font-headline-md text-headline-md-mobile md:text-headline-md text-on-surface">Order Details</div>
+</header>
+<main class="pt-24 px-md md:px-xl max-w-4xl mx-auto space-y-xl">
+<!-- Order Header & Status -->
+<div class="glass-panel rounded-xl p-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-md">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-xs">Order ID</p>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary text-glow">#ORD-8942-NY</h1>
+<p class="font-caption text-caption text-on-surface-variant mt-sm">Placed on Oct 24, 2023 at 09:41 AM</p>
+</div>
+<div class="flex items-center gap-sm bg-primary/10 px-md py-sm rounded-full border border-primary/20">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="font-label-md text-label-md text-primary">In Progress</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Left Column: Item & Service Breakdown -->
+<div class="md:col-span-2 space-y-lg">
+<!-- Item Image & Info -->
+<div class="glass-panel rounded-xl overflow-hidden flex flex-col sm:flex-row">
+<div class="sm:w-1/3 h-48 sm:h-auto">
+<div class="w-full h-full bg-cover bg-center" data-alt="Close up product photography of a pair of worn premium leather men's dress shoes, dark brown color. The shoes are resting on a clean, dark grey stone surface in a high-end luxury shoe repair workshop. Lighting is dramatic and focused, highlighting the scuffs and worn texture of the leather against the dark background. The scene exudes a moody, artisanal, premium aesthetic consistent with a dark-themed luxury app." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCWkLnw_B7zbruUD1BJZ9X2fiOfglygFx-nZFjmcqzOIBQHslcVdCoL8DGNj5Xt34UQ5dUEyqtEE2su1EMnfudOlc1KxrTxMxwt0B5Y5OZf2t0uEftNXslfA2xHnnVdPqv47kkU7SED0254TcSbPbBPojxBqC2Mz7Z5wg4gxj-6E3PjsQLdYT8qffJiCsypDa7GhdcSiGuU9cpvF8hhmzcG3Kvv21sseWhSGlyrcGsxsrBveVnHris-gw')"></div>
+</div>
+<div class="p-lg flex flex-col justify-between sm:w-2/3">
+<div>
+<h2 class="font-headline-md text-headline-md-mobile md:text-headline-md text-on-surface mb-xs">Oxford Leather Restoraton</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Full sole replacement and deep leather conditioning treatment.</p>
+</div>
+<div class="mt-md flex flex-wrap gap-sm">
+<span class="px-sm py-xs bg-surface-variant rounded font-caption text-caption text-on-surface-variant">Sole Repair</span>
+<span class="px-sm py-xs bg-surface-variant rounded font-caption text-caption text-on-surface-variant">Polishing</span>
+</div>
+</div>
+</div>
+<!-- Service Breakdown -->
+<div class="glass-panel rounded-xl p-lg">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-md border-b border-white/5 pb-sm">Service Breakdown</h3>
+<div class="space-y-sm">
+<div class="flex justify-between items-center py-xs">
+<span class="font-body-md text-body-md text-on-surface">Premium Sole Replacement</span>
+<span class="font-body-md text-body-md text-on-surface">$125.00</span>
+</div>
+<div class="flex justify-between items-center py-xs">
+<span class="font-body-md text-body-md text-on-surface">Deep Leather Conditioning</span>
+<span class="font-body-md text-body-md text-on-surface">$45.00</span>
+</div>
+<div class="flex justify-between items-center py-xs">
+<span class="font-body-md text-body-md text-on-surface">Courier Pickup &amp; Return</span>
+<span class="font-body-md text-body-md text-on-surface">$15.00</span>
+</div>
+<div class="flex justify-between items-center py-xs pt-md border-t border-white/5 mt-sm">
+<span class="font-body-md text-body-md text-on-surface-variant">Subtotal</span>
+<span class="font-body-md text-body-md text-on-surface-variant">$185.00</span>
+</div>
+<div class="flex justify-between items-center py-xs">
+<span class="font-body-md text-body-md text-on-surface-variant">Taxes &amp; Fees</span>
+<span class="font-body-md text-body-md text-on-surface-variant">$16.42</span>
+</div>
+<div class="flex justify-between items-center py-md mt-sm bg-surface-variant/30 -mx-lg px-lg">
+<span class="font-headline-md text-headline-md-mobile md:text-headline-md text-on-surface">Total</span>
+<span class="font-headline-md text-headline-md-mobile md:text-headline-md text-primary">$201.42</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Provider, Logistics, Actions -->
+<div class="space-y-lg">
+<!-- Provider Info -->
+<div class="glass-panel rounded-xl p-lg">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-md">Service Provider</h3>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-variant overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A minimalist, modern logo mark for an artisanal cobbler business named 'The Cobbler's Bench'. The design features a stylized, abstract shoe silhouette created with clean, thin white lines against a deep, dark grey background. The aesthetic is extremely high-end, sleek, and sophisticated, fitting perfectly within a premium, dark-mode digital marketplace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9JxfXth_00Ul7UyMxaqQuxF8QcBvGHud2tUdBRRktetOK3eVMGTt6SuRnwQeLbTMm_Q6hYNVhHZB1-f-8AOX7kQwwedPs3fpUAGjITm9MXYed1_0npTaiGOeDmlVXkv15hPAc5X14d47nuLkBt7gh-1KDR8Z9U3mSp8T4dgPdmTAIRIhxLqxC4sZ1AHb_hZwb8Wya1PkmDoY5j_yr36C2Lgn0Kq7e9bzB6KvbduNOy2YWar12sQbAUg"/>
+</div>
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface">The Cobbler's Bench</h4>
+<div class="flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined text-[16px] text-[#FFCC00]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-caption text-caption text-on-surface-variant">4.9 (124 reviews)</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-md py-sm px-md rounded-lg border border-outline-variant text-primary font-label-md text-label-md hover:bg-surface-variant transition-colors flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="chat">chat</span> Message Provider
+                    </button>
+</div>
+<!-- Logistics (Addresses) -->
+<div class="glass-panel rounded-xl p-lg relative overflow-hidden">
+<div class="absolute left-6 top-[60px] bottom-[60px] w-0.5 bg-outline-variant/30 z-0"></div>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-md relative z-10">Logistics</h3>
+<div class="flex items-start gap-md mb-lg relative z-10">
+<div class="w-8 h-8 rounded-full bg-surface-variant border border-outline-variant flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="home">home</span>
+</div>
+<div>
+<p class="font-caption text-caption text-on-surface-variant mb-xs">Pickup Address</p>
+<p class="font-body-md text-body-md text-on-surface">175 5th Ave, Apt 12B<br/>New York, NY 10010</p>
+</div>
+</div>
+<div class="flex items-start gap-md relative z-10">
+<div class="w-8 h-8 rounded-full bg-primary/20 border border-primary/50 flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="storefront">storefront</span>
+</div>
+<div>
+<p class="font-caption text-caption text-on-surface-variant mb-xs">Provider Workshop</p>
+<p class="font-body-md text-body-md text-on-surface">The Cobbler's Bench<br/>84 W 3rd St, NY 10012</p>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="glass-panel rounded-xl p-lg space-y-md">
+<button class="w-full py-md px-lg rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary/90 transition-colors flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="download">download</span> Download Invoice
+                    </button>
+<button class="w-full py-md px-lg rounded-lg border border-transparent text-on-surface-variant font-label-md text-label-md hover:text-error hover:bg-error/10 transition-colors flex items-center justify-center gap-sm">
+                        Report Issue
+                    </button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

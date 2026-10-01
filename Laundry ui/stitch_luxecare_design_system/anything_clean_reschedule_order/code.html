@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reschedule Order - Lumina Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "electric-violet": "#8a2be2",
+                        "inverse-primary": "#8422dc",
+                        "success-green": "#81C784",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-container-high": "#2a2a2b",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "surface-bright": "#39393a",
+                        "primary-container": "#8a2be2",
+                        "inverse-surface": "#e5e2e3",
+                        "secondary-container": "#49494b",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "error-container": "#93000a",
+                        "inverse-on-surface": "#313031",
+                        "error": "#ffb4ab",
+                        "tertiary-container": "#646365",
+                        "on-tertiary": "#303032",
+                        "success-bg": "#1A3D24",
+                        "error-red": "#ffb4ab",
+                        "background": "#131314",
+                        "primary-fixed": "#efdbff",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-secondary-container": "#b9b8ba",
+                        "on-secondary": "#303032",
+                        "outline-variant": "#4c4354",
+                        "surface": "#131314",
+                        "surface-container-low": "#1c1b1c",
+                        "secondary": "#c8c6c8",
+                        "secondary-fixed": "#e4e2e4",
+                        "on-primary": "#480081",
+                        "outline": "#988ca0",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "tertiary": "#c8c6c8",
+                        "on-background": "#e5e2e3",
+                        "on-secondary-fixed-variant": "#474648",
+                        "tertiary-fixed": "#e4e2e4",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-error": "#690005",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-error-container": "#ffdad6",
+                        "surface-tint": "#dcb8ff",
+                        "surface-container": "#201f20",
+                        "on-primary-container": "#eed9ff",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-container-highest": "#353436",
+                        "surface-dim": "#131314",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-surface": "#e5e2e3",
+                        "primary": "#dcb8ff",
+                        "on-tertiary-container": "#e3e0e2",
+                        "surface-variant": "#353436",
+                        "on-primary-fixed": "#2c0051"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "xl": "32px",
+                        "xs": "4px",
+                        "3xl": "64px",
+                        "sm": "8px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist", "sans-serif"],
+                        "body-md": ["Geist", "sans-serif"],
+                        "label-md": ["Geist", "sans-serif"],
+                        "display-lg": ["Geist", "sans-serif"],
+                        "h1": ["Geist", "sans-serif"],
+                        "caption": ["Geist", "sans-serif"],
+                        "h3": ["Geist", "sans-serif"],
+                        "mono-display": ["monospace"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }]
+                    }
+                },
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            font-family: 'Geist', sans-serif;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col items-center justify-center p-md md:p-xl">
+<!-- Nav shell is suppressed due to transactional nature of the page -->
+<!-- Main Content Container -->
+<main class="w-full max-w-[600px] mx-auto bg-surface-container rounded-xl border border-outline-variant/20 shadow-2xl overflow-hidden flex flex-col">
+<!-- Header -->
+<header class="p-lg md:p-xl border-b border-outline-variant/30 flex justify-between items-start bg-surface-container-low/50">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Reschedule Pickup</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Choose a new pickup date and time.</p>
+</div>
+<button aria-label="Close" class="p-sm rounded-full hover:bg-surface-container-highest transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">close</span>
+</button>
+</header>
+<!-- Form Body -->
+<div class="p-lg md:p-xl flex-1 overflow-y-auto space-y-xl">
+<!-- Date Selector Section -->
+<section>
+<h2 class="font-h3 text-h3 text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-electric-violet" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+                    Select Date
+                </h2>
+<div class="flex gap-md overflow-x-auto hide-scrollbar pb-sm snap-x">
+<!-- Date 1: Selected -->
+<button class="snap-start shrink-0 flex flex-col items-center justify-center w-[80px] h-[96px] rounded-lg border-2 border-electric-violet bg-electric-violet/10 relative transition-transform hover:scale-105">
+<div class="absolute top-1 right-1">
+<span class="material-symbols-outlined text-[16px] text-electric-violet" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<span class="font-label-md text-label-md text-electric-violet uppercase tracking-wider mb-1">Sep</span>
+<span class="font-headline-lg text-headline-lg text-electric-violet leading-none">2</span>
+</button>
+<!-- Date 2 -->
+<button class="snap-start shrink-0 flex flex-col items-center justify-center w-[80px] h-[96px] rounded-lg border border-outline-variant/50 bg-surface-container-lowest hover:border-outline-variant hover:bg-surface-container-highest transition-all">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-1">Sep</span>
+<span class="font-headline-lg text-headline-lg text-on-surface leading-none">3</span>
+</button>
+<!-- Date 3 -->
+<button class="snap-start shrink-0 flex flex-col items-center justify-center w-[80px] h-[96px] rounded-lg border border-outline-variant/50 bg-surface-container-lowest hover:border-outline-variant hover:bg-surface-container-highest transition-all">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-1">Sep</span>
+<span class="font-headline-lg text-headline-lg text-on-surface leading-none">4</span>
+</button>
+<!-- Date 4 -->
+<button class="snap-start shrink-0 flex flex-col items-center justify-center w-[80px] h-[96px] rounded-lg border border-outline-variant/50 bg-surface-container-lowest hover:border-outline-variant hover:bg-surface-container-highest transition-all">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-1">Sep</span>
+<span class="font-headline-lg text-headline-lg text-on-surface leading-none">5</span>
+</button>
+<!-- Date 5 -->
+<button class="snap-start shrink-0 flex flex-col items-center justify-center w-[80px] h-[96px] rounded-lg border border-outline-variant/50 bg-surface-container-lowest hover:border-outline-variant hover:bg-surface-container-highest transition-all">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-1">Sep</span>
+<span class="font-headline-lg text-headline-lg text-on-surface leading-none">6</span>
+</button>
+</div>
+</section>
+<!-- Time Slot Section -->
+<section>
+<h2 class="font-h3 text-h3 text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-electric-violet" style="font-variation-settings: 'FILL' 1;">schedule</span>
+                    Select Time Window
+                </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Slot 1 -->
+<button class="flex items-center justify-between p-md rounded-lg border border-outline-variant/50 bg-surface-container-lowest hover:border-outline-variant hover:bg-surface-container-highest transition-all text-left">
+<div>
+<span class="block font-label-md text-label-md text-on-surface">10:00 AM – 12:00 PM</span>
+<span class="block font-caption text-caption text-success-green mt-xs">Available</span>
+</div>
+</button>
+<!-- Slot 2: Selected -->
+<button class="flex items-center justify-between p-md rounded-lg border-2 border-electric-violet bg-electric-violet/10 text-left">
+<div>
+<span class="block font-label-md text-label-md text-electric-violet font-bold">12:00 PM – 2:00 PM</span>
+<span class="block font-caption text-caption text-electric-violet mt-xs">Selected</span>
+</div>
+<span class="material-symbols-outlined text-electric-violet" style="font-variation-settings: 'FILL' 1;">radio_button_checked</span>
+</button>
+<!-- Slot 3 -->
+<button class="flex items-center justify-between p-md rounded-lg border border-outline-variant/50 bg-surface-container-lowest hover:border-outline-variant hover:bg-surface-container-highest transition-all text-left">
+<div>
+<span class="block font-label-md text-label-md text-on-surface">2:00 PM – 4:00 PM</span>
+<span class="block font-caption text-caption text-success-green mt-xs">Available</span>
+</div>
+</button>
+<!-- Slot 4: Disabled/Fully Booked -->
+<button class="flex items-center justify-between p-md rounded-lg border border-outline-variant/20 bg-surface-container-low opacity-50 cursor-not-allowed text-left" disabled="">
+<div>
+<span class="block font-label-md text-label-md text-on-surface-variant line-through">4:00 PM – 6:00 PM</span>
+<span class="block font-caption text-caption text-error mt-xs">Fully Booked</span>
+</div>
+</button>
+</div>
+</section>
+<!-- Impact Notice & Summary -->
+<section class="space-y-md">
+<!-- Impact Notice -->
+<div class="flex items-start gap-md p-md bg-secondary-container/20 border border-secondary-container rounded-lg">
+<span class="material-symbols-outlined text-secondary pt-1" style="font-variation-settings: 'FILL' 0;">info</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Impact on Timeline</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Your estimated return date may change based on this new pickup schedule.</p>
+</div>
+</div>
+<!-- Summary Box -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-md">
+<div class="flex flex-col md:flex-row items-center justify-between gap-md">
+<!-- Current -->
+<div class="flex-1 text-center md:text-left w-full">
+<span class="block font-caption text-caption text-on-surface-variant uppercase tracking-wider mb-xs">Current</span>
+<div class="flex items-center justify-center md:justify-start gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">event_busy</span>
+<span class="font-body-md text-body-md text-on-surface line-through decoration-error">Sep 1, 10:00 AM</span>
+</div>
+</div>
+<!-- Arrow -->
+<div class="text-outline-variant hidden md:block">
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+<div class="text-outline-variant block md:hidden rotate-90">
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+<!-- New -->
+<div class="flex-1 text-center md:text-right w-full">
+<span class="block font-caption text-caption text-electric-violet uppercase tracking-wider mb-xs">New</span>
+<div class="flex items-center justify-center md:justify-end gap-sm">
+<span class="material-symbols-outlined text-electric-violet text-[18px]">event_available</span>
+<span class="font-body-md text-body-md text-on-surface font-bold">Sep 2, 12:00 PM</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer / CTA -->
+<footer class="p-lg md:p-xl border-t border-outline-variant/30 bg-surface-container-low/50">
+<button class="w-full py-md px-xl bg-electric-violet text-white font-label-md text-label-md font-bold rounded-lg shadow-lg shadow-electric-violet/20 hover:bg-inverse-primary transition-colors flex items-center justify-center gap-sm">
+                Confirm New Pickup Time
+                <span class="material-symbols-outlined">check</span>
+</button>
+<button class="w-full mt-sm py-md px-xl bg-transparent border border-outline-variant text-on-surface font-label-md text-label-md font-bold rounded-lg hover:bg-surface-container-highest transition-colors">
+                Cancel
+            </button>
+</footer>
+</main>
+</body></html>

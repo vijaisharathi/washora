@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Review Submitted - Lumina</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#131314",
+                        "on-error": "#690005",
+                        "primary": "#dcb8ff",
+                        "tertiary-container": "#646365",
+                        "inverse-primary": "#8422dc",
+                        "on-surface": "#e5e2e3",
+                        "error-container": "#93000a",
+                        "surface-container-high": "#2a2a2b",
+                        "on-secondary-container": "#b9b8ba",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "secondary-container": "#49494b",
+                        "outline-variant": "#4c4354",
+                        "electric-violet": "#8a2be2",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "secondary-fixed": "#e4e2e4",
+                        "primary-container": "#8a2be2",
+                        "on-primary": "#480081",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-dim": "#131314",
+                        "error-red": "#ffb4ab",
+                        "on-tertiary-container": "#e3e0e2",
+                        "outline": "#988ca0",
+                        "on-tertiary": "#303032",
+                        "on-background": "#e5e2e3",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-surface-variant": "#cfc2d7",
+                        "success-green": "#81C784",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "primary-fixed": "#efdbff",
+                        "surface-bright": "#39393a",
+                        "background": "#131314",
+                        "inverse-on-surface": "#313031",
+                        "surface-tint": "#dcb8ff",
+                        "on-secondary-fixed-variant": "#474648",
+                        "surface-variant": "#353436",
+                        "surface-container": "#201f20",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "tertiary": "#c8c6c8",
+                        "on-primary-container": "#eed9ff",
+                        "on-error-container": "#ffdad6",
+                        "success-bg": "#1A3D24",
+                        "on-secondary": "#303032",
+                        "secondary": "#c8c6c8",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-container-highest": "#353436",
+                        "tertiary-fixed": "#e4e2e4",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-primary-fixed": "#2c0051",
+                        "on-tertiary-fixed": "#1b1b1d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "2xl": "48px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "3xl": "64px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "caption": ["Geist", "sans-serif"],
+                        "body-md": ["Geist", "sans-serif"],
+                        "mono-display": ["monospace"],
+                        "h1": ["Geist", "sans-serif"],
+                        "h3": ["Geist", "sans-serif"],
+                        "headline-lg": ["Geist", "sans-serif"],
+                        "display-lg": ["Geist", "sans-serif"],
+                        "label-md": ["Geist", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom Animations for Success State */
+        @keyframes scale-in-bounce {
+            0% { transform: scale(0.5); opacity: 0; }
+            60% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes fade-in-up {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        .animate-scale-in {
+            animation: scale-in-bounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+        .animate-fade-in-up-1 {
+            opacity: 0;
+            animation: fade-in-up 0.5s ease-out 0.2s forwards;
+        }
+        .animate-fade-in-up-2 {
+            opacity: 0;
+            animation: fade-in-up 0.5s ease-out 0.4s forwards;
+        }
+        .animate-fade-in-up-3 {
+            opacity: 0;
+            animation: fade-in-up 0.5s ease-out 0.6s forwards;
+        }
+        
+        /* Atmospheric background gradient to enhance the empty canvas */
+        .success-bg-glow {
+            background: radial-gradient(circle at center, rgba(129, 199, 132, 0.05) 0%, transparent 60%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen w-full flex flex-col items-center justify-center p-xl relative overflow-hidden success-bg-glow">
+<!-- Note: Navigation shells are explicitly suppressed on transactional/success screens per instructions -->
+<main class="w-full max-w-3xl mx-auto flex flex-col items-center text-center z-10">
+<!-- Success Indicator -->
+<div class="w-3xl h-3xl rounded-full bg-success-bg/20 flex items-center justify-center mb-xl animate-scale-in border border-success-bg shadow-[0_0_60px_rgba(26,61,36,0.6)]">
+<span class="material-symbols-outlined text-[64px] text-success-green" style="font-variation-settings: 'FILL' 1;">
+                check_circle
+            </span>
+</div>
+<!-- Header Content -->
+<div class="flex flex-col gap-sm mb-2xl animate-fade-in-up-1">
+<h1 class="font-display-lg text-display-lg text-on-surface">Thanks for Your Feedback!</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg mx-auto">
+                Your review has been submitted successfully.
+            </p>
+</div>
+<!-- Review Preview Card -->
+<div class="w-full max-w-lg bg-surface-container border border-outline-variant/30 rounded-xl p-lg flex flex-col gap-md text-left shadow-lg mb-2xl animate-fade-in-up-2 relative overflow-hidden group">
+<!-- Subtle glow effect on the card -->
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="flex items-start gap-md relative z-10">
+<!-- Placeholder for item being reviewed -->
+<div class="w-2xl h-2xl rounded-lg bg-cover bg-center shrink-0 border border-outline-variant/50" data-alt="A sleek, minimalist dark-mode 3D rendering of a high-end technical service or product, subtly illuminated by neon purple accents against a deep charcoal void, representing premium quality." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB7zLxb9qTcg6T0d6PBAbKc-gFXSx1ZMu1U_-SItc-EUC2IwlqzapTm4Txnbssf0dmcPrtHhCWLPXi6OK69T5RUY2j_nGpv_mTungnkRpr0MoV3QEq4dUQKOuAtH_ReQYFgqecTZl-vHhBBE2WbkgX4mMXE2-MbaYh-4-eiwEBQHBmu7EAwc-XG5CmpZQyFZAjvCU-zDbKv7pPMCqWwMldU_7dSiAGVpY_zszBMK2Z_v5-Nsbde51c5sg')"></div>
+<div class="flex flex-col gap-xs flex-grow justify-center">
+<!-- Rating Stars -->
+<div class="flex items-center gap-[2px] text-primary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<!-- Review Text -->
+<p class="font-body-md text-body-md text-on-surface leading-snug">"Excellent quality"</p>
+</div>
+</div>
+</div>
+<!-- Reassuring Message -->
+<p class="font-label-md text-label-md text-primary/80 mb-xl animate-fade-in-up-3">
+            Your insights help us maintain high standards and guide other professionals.
+        </p>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-md w-full animate-fade-in-up-3">
+<button class="w-full sm:w-auto px-xl py-md rounded-lg border border-outline-variant/50 text-on-surface-variant hover:bg-surface-container hover:text-on-surface hover:border-outline-variant transition-all duration-200 font-label-md text-label-md">
+                Continue Shopping
+            </button>
+<button class="w-full sm:w-auto px-xl py-md rounded-lg border border-outline-variant/50 text-on-surface-variant hover:bg-surface-container hover:text-on-surface hover:border-outline-variant transition-all duration-200 font-label-md text-label-md">
+                View My Review
+            </button>
+<button class="w-full sm:w-auto px-xl py-md rounded-lg bg-electric-violet text-white shadow-lg shadow-electric-violet/20 hover:shadow-electric-violet/40 hover:-translate-y-[1px] transition-all duration-200 font-label-md text-label-md">
+                Book Again
+            </button>
+</div>
+</main>
+</body></html>

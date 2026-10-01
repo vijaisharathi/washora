@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anything Clean Customer Reviews Overview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#1c1b1c",
+                      "on-secondary-container": "#b9b8ba",
+                      "on-tertiary-container": "#e3e0e2",
+                      "on-primary-fixed": "#2c0051",
+                      "secondary": "#c8c6c8",
+                      "success-bg": "#1A3D24",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "outline": "#988ca0",
+                      "on-surface-variant": "#cfc2d7",
+                      "success-green": "#81C784",
+                      "primary": "#dcb8ff",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "surface-container-highest": "#353436",
+                      "surface": "#131314",
+                      "surface-bright": "#39393a",
+                      "on-secondary": "#303032",
+                      "error": "#ffb4ab",
+                      "inverse-on-surface": "#313031",
+                      "primary-container": "#8a2be2",
+                      "error-red": "#ffb4ab",
+                      "tertiary-fixed": "#e4e2e4",
+                      "on-background": "#e5e2e3",
+                      "surface-variant": "#353436",
+                      "inverse-surface": "#e5e2e3",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "surface-container-high": "#2a2a2b",
+                      "on-error": "#690005",
+                      "on-surface": "#e5e2e3",
+                      "surface-dim": "#131314",
+                      "error-container": "#93000a",
+                      "on-tertiary": "#303032",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "outline-variant": "#4c4354",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "on-primary": "#480081",
+                      "electric-violet": "#8a2be2",
+                      "on-secondary-fixed-variant": "#474648",
+                      "secondary-fixed": "#e4e2e4",
+                      "background": "#131314",
+                      "on-error-container": "#ffdad6",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "surface-tint": "#dcb8ff",
+                      "secondary-container": "#49494b",
+                      "inverse-primary": "#8422dc",
+                      "tertiary": "#c8c6c8",
+                      "primary-fixed": "#efdbff",
+                      "on-primary-container": "#eed9ff",
+                      "tertiary-container": "#646365",
+                      "surface-container": "#201f20",
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-tertiary-fixed-variant": "#474648"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "16px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "lg": "24px",
+                      "2xl": "48px",
+                      "3xl": "64px",
+                      "xl": "32px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "mono-display": [
+                              "monospace"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "h1": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "h3": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-256px)] h-16 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-xl z-50">
+<div class="flex items-center gap-md">
+<h1 class="font-h3 text-h3 font-bold text-on-surface">Provider Dashboard</h1>
+</div>
+<div class="flex items-center gap-md">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-opacity cursor-pointer">
+<span class="material-symbols-outlined" data-icon="search" data-weight="regular">search</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-opacity cursor-pointer">
+<span class="material-symbols-outlined" data-icon="chat_bubble" data-weight="regular">chat_bubble</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-opacity cursor-pointer overflow-hidden border border-outline-variant/50">
+<img class="w-full h-full object-cover" data-alt="A small circular avatar placeholder image showing a generic user silhouette in a minimalist flat style against a dark background, fitting for a modern dashboard UI profile picture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX2trzvJF2vh_i8i7TwPXrl4g0Hlx-pQKQHWS75nAKMYIJEaZQC86zA3tx74-zTk2mHBT4yEZbvi_6DjoAO-waDFV-DBL_7Nchuc83YsX2vWpTwJUNHkk3I1zVaEz7_k1j0SXMf2m1QQhqApiqYFxx2GLCqG766j3pNdDAjy8HN7qtaHwvpDdeiMyUEU8MLPhHI7_ZJlk5B_YoBAI7odlqvSGGkPzCLzXiVfOksK046yA-S_y3M4-lRg"/>
+</button>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="w-64 h-full fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant/30 flex flex-col py-lg px-md z-40">
+<div class="mb-xl px-sm">
+<h2 class="font-h1 text-h1 font-bold text-electric-violet">Anything Clean</h2>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">Provider Portal</p>
+</div>
+<div class="flex flex-col gap-sm flex-grow">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-primary/10 text-primary font-bold active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="font-label-md text-label-md">Reviews</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-label-md text-label-md">Notifications</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+<div class="mt-auto pt-lg border-t border-outline-variant/30 flex flex-col gap-sm">
+<button class="w-full bg-electric-violet text-on-primary font-label-md text-label-md font-bold py-sm px-md rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-container transition-colors mb-md">
+                Upgrade Plan
+            </button>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-label-md text-label-md">Help Center</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">Sign Out</span>
+</a>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="ml-64 mt-16 p-xl max-w-[1200px] mx-auto min-h-screen">
+<!-- Header Section -->
+<div class="mb-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Reviews</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">See what customers say about your services.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-lg mb-xl">
+<!-- Rating Summary Card -->
+<div class="col-span-12 md:col-span-4 bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col justify-center items-center">
+<h3 class="font-h3 text-h3 text-on-surface mb-sm w-full text-left">Overall Rating</h3>
+<div class="flex items-baseline gap-xs mt-md">
+<span class="font-display-lg text-display-lg text-primary">4.8</span>
+<span class="material-symbols-outlined text-primary text-[32px]" data-icon="star" data-weight="fill">star</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mt-sm">Based on 86 Reviews</p>
+<div class="flex gap-xs mt-md text-primary">
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star_half" data-weight="fill">star_half</span>
+</div>
+</div>
+<!-- Rating Distribution Chart -->
+<div class="col-span-12 md:col-span-8 bg-surface-container border border-outline-variant/20 rounded-xl p-lg">
+<h3 class="font-label-md text-label-md font-bold text-on-surface mb-md">Rating Distribution</h3>
+<div class="flex flex-col gap-sm">
+<!-- 5 Star -->
+<div class="flex items-center gap-md">
+<span class="font-caption text-caption text-on-surface-variant w-12 text-right">5 star</span>
+<div class="flex-grow h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 83%;"></div>
+</div>
+<span class="font-caption text-caption text-on-surface w-8">72</span>
+</div>
+<!-- 4 Star -->
+<div class="flex items-center gap-md">
+<span class="font-caption text-caption text-on-surface-variant w-12 text-right">4 star</span>
+<div class="flex-grow h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary/80" style="width: 12%;"></div>
+</div>
+<span class="font-caption text-caption text-on-surface w-8">10</span>
+</div>
+<!-- 3 Star -->
+<div class="flex items-center gap-md">
+<span class="font-caption text-caption text-on-surface-variant w-12 text-right">3 star</span>
+<div class="flex-grow h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary/60" style="width: 3%;"></div>
+</div>
+<span class="font-caption text-caption text-on-surface w-8">3</span>
+</div>
+<!-- 2 Star -->
+<div class="flex items-center gap-md">
+<span class="font-caption text-caption text-on-surface-variant w-12 text-right">2 star</span>
+<div class="flex-grow h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary/40" style="width: 1%;"></div>
+</div>
+<span class="font-caption text-caption text-on-surface w-8">1</span>
+</div>
+<!-- 1 Star -->
+<div class="flex items-center gap-md">
+<span class="font-caption text-caption text-on-surface-variant w-12 text-right">1 star</span>
+<div class="flex-grow h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary/20" style="width: 0%;"></div>
+</div>
+<span class="font-caption text-caption text-on-surface w-8">0</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Filters Section -->
+<div class="flex flex-wrap gap-sm mb-lg items-center border-b border-outline-variant/30 pb-md">
+<span class="font-label-md text-label-md text-on-surface-variant mr-sm">Filter by:</span>
+<button class="px-md py-xs rounded-full bg-primary/10 border border-primary text-primary font-label-md text-label-md transition-colors hover:bg-primary/20">
+                All
+            </button>
+<button class="px-md py-xs rounded-full bg-transparent border border-outline-variant/50 text-on-surface-variant font-label-md text-label-md transition-colors hover:bg-surface-container hover:text-on-surface">
+                5 Stars
+            </button>
+<button class="px-md py-xs rounded-full bg-transparent border border-outline-variant/50 text-on-surface-variant font-label-md text-label-md transition-colors hover:bg-surface-container hover:text-on-surface">
+                4 Stars
+            </button>
+<div class="w-[1px] h-6 bg-outline-variant/50 mx-sm"></div>
+<button class="px-md py-xs rounded-full bg-transparent border border-outline-variant/50 text-on-surface-variant font-label-md text-label-md transition-colors hover:bg-surface-container hover:text-on-surface">
+                Needs Response
+            </button>
+<button class="px-md py-xs rounded-full bg-transparent border border-outline-variant/50 text-on-surface-variant font-label-md text-label-md transition-colors hover:bg-surface-container hover:text-on-surface">
+                Responded
+            </button>
+</div>
+<!-- Review List -->
+<div class="flex flex-col gap-md">
+<!-- Review Item 1 -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md flex flex-col md:flex-row gap-lg">
+<div class="flex flex-col md:w-1/4 shrink-0">
+<div class="flex items-center gap-sm mb-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-on-surface border border-outline-variant/30">
+                            A
+                        </div>
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface">Arun</p>
+<p class="font-caption text-caption text-on-surface-variant">Sept 2, 2026</p>
+</div>
+</div>
+<div class="flex text-primary mb-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+</div>
+</div>
+<div class="flex flex-col flex-grow">
+<p class="font-body-md text-body-md text-on-surface mb-md">"Great cleaning quality and quick service. The sneakers look brand new again."</p>
+<div class="mt-auto flex justify-between items-center">
+<span class="font-caption text-caption bg-surface-container-highest text-on-surface-variant px-sm py-xs rounded border border-outline-variant/30">Service: Sneaker Deep Clean</span>
+<button class="text-primary font-label-md text-label-md hover:text-primary-container transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="reply">reply</span>
+                            Reply
+                        </button>
+</div>
+</div>
+</div>
+<!-- Review Item 2 -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md flex flex-col md:flex-row gap-lg">
+<div class="flex flex-col md:w-1/4 shrink-0">
+<div class="flex items-center gap-sm mb-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-on-surface border border-outline-variant/30">
+                            P
+                        </div>
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface">Priya</p>
+<p class="font-caption text-caption text-on-surface-variant">Aug 28, 2026</p>
+</div>
+</div>
+<div class="flex text-primary mb-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px] text-surface-container-highest" data-icon="star" data-weight="fill">star</span>
+</div>
+</div>
+<div class="flex flex-col flex-grow">
+<p class="font-body-md text-body-md text-on-surface mb-md">"Good service and clean packaging. The laundry was folded very neatly, though it took a day longer than expected."</p>
+<div class="mt-auto flex justify-between items-center">
+<span class="font-caption text-caption bg-surface-container-highest text-on-surface-variant px-sm py-xs rounded border border-outline-variant/30">Service: Laundry Wash &amp; Fold</span>
+<button class="text-primary font-label-md text-label-md hover:text-primary-container transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="reply">reply</span>
+                            Reply
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

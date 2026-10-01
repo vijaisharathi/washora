@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OpsCentral Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-container": "#646365",
+                      "surface-container-highest": "#353436",
+                      "on-error": "#690005",
+                      "surface-bright": "#3a393a",
+                      "background": "#131314",
+                      "surface": "#131314",
+                      "on-primary-fixed": "#2c0051",
+                      "tertiary": "#c8c6c8",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "primary-fixed": "#efdbff",
+                      "tertiary-fixed": "#e4e2e4",
+                      "on-tertiary-fixed-variant": "#474649",
+                      "on-error-container": "#ffdad6",
+                      "primary-container": "#8a2be2",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "surface-variant": "#353436",
+                      "secondary": "#c8c6c8",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "surface-dim": "#131314",
+                      "outline-variant": "#4c4354",
+                      "inverse-surface": "#e5e2e3",
+                      "secondary-fixed": "#e5e1e4",
+                      "on-background": "#e5e2e3",
+                      "on-secondary-container": "#b7b4b7",
+                      "on-tertiary-container": "#e3e0e2",
+                      "inverse-primary": "#8422dc",
+                      "on-primary": "#480081",
+                      "surface-container-lowest": "#0e0e0f",
+                      "surface-container-low": "#1c1b1c",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "on-tertiary": "#303032",
+                      "on-secondary-fixed-variant": "#474649",
+                      "on-secondary": "#303032",
+                      "on-surface-variant": "#cfc2d7",
+                      "inverse-on-surface": "#313031",
+                      "surface-container": "#201f20",
+                      "on-primary-container": "#eed9ff",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "on-surface": "#e5e2e3",
+                      "secondary-container": "#474649",
+                      "primary": "#dcb8ff",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "error": "#ffb4ab",
+                      "outline": "#988ca0",
+                      "surface-container-high": "#2a2a2b",
+                      "surface-tint": "#dcb8ff",
+                      "error-container": "#93000a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "3xl": "64px",
+                      "xs": "4px",
+                      "sm": "8px",
+                      "lg": "24px",
+                      "md": "16px",
+                      "2xl": "48px",
+                      "xl": "32px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "display-lg-mobile": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "44px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; background-color: #0A0A0B; color: #e5e2e3; }
+        .glass-panel { background: rgba(18, 18, 20, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .glass-card { background: #121214; border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased overflow-hidden flex h-screen">
+<!-- SideNavBar -->
+<aside class="bg-surface-container-low border-r border-white/5 h-screen w-64 fixed left-0 top-0 flex flex-col py-lg px-md gap-sm z-40 hidden md:flex font-label-md text-label-md transition-all duration-200 ease-in-out">
+<div class="px-md pb-md">
+<h1 class="font-headline-md text-headline-md font-black text-primary">Service Pro</h1>
+<p class="text-on-surface-variant font-caption text-caption mt-xs">Operational Suite</p>
+</div>
+<nav class="flex-1 flex flex-col gap-xs mt-md overflow-y-auto">
+<!-- Active Tab -->
+<a class="bg-primary-container text-on-primary-container font-bold rounded-lg flex items-center gap-md px-md py-sm transition-all duration-200 ease-in-out cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                Dashboard
+            </a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 flex items-center gap-md px-md py-sm rounded-lg transition-all duration-200 ease-in-out cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">assignment</span>
+                Orders
+            </a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 flex items-center gap-md px-md py-sm rounded-lg transition-all duration-200 ease-in-out cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">pending_actions</span>
+                Processing Queue
+            </a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 flex items-center gap-md px-md py-sm rounded-lg transition-all duration-200 ease-in-out cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">cleaning_services</span>
+                Services
+            </a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 flex items-center gap-md px-md py-sm rounded-lg transition-all duration-200 ease-in-out cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">payments</span>
+                Earnings
+            </a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 flex items-center gap-md px-md py-sm rounded-lg transition-all duration-200 ease-in-out cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+                Analytics
+            </a>
+</nav>
+<div class="mt-auto flex flex-col gap-xs border-t border-white/5 pt-md">
+<button class="bg-primary text-on-primary w-full py-sm rounded-lg font-bold flex items-center justify-center gap-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">add</span>
+                Add Service
+            </button>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 flex items-center gap-md px-md py-sm rounded-lg transition-all duration-200 ease-in-out cursor-pointer active:opacity-80 mt-sm" href="#">
+<span class="material-symbols-outlined">help_center</span>
+                Support
+            </a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 flex items-center gap-md px-md py-sm rounded-lg transition-all duration-200 ease-in-out cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">logout</span>
+                Sign Out
+            </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col ml-0 md:ml-64 h-screen">
+<!-- TopNavBar -->
+<header class="bg-surface/80 backdrop-blur-xl bg-surface-container-low border-b border-white/5 shadow-sm docked full-width top-0 sticky flex justify-between items-center w-full px-lg h-16 z-50">
+<div class="flex items-center gap-lg w-1/3">
+<div class="font-headline-md text-headline-md font-bold text-primary block md:hidden">OpsCentral</div>
+<div class="relative w-full max-w-md hidden md:block group">
+<span class="material-symbols-outlined absolute left-sm top-1/2 transform -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full bg-surface-container-high border border-white/5 rounded-lg py-sm pl-xl pr-md text-body-md font-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-on-surface-variant/50" placeholder="Search orders, customers, services..." type="text"/>
+</div>
+</div>
+<div class="font-headline-md text-headline-md font-bold text-primary hidden md:block">OpsCentral</div>
+<div class="flex items-center justify-end gap-sm w-1/3 text-on-surface-variant">
+<button class="p-sm rounded-full hover:bg-white/5 transition-colors cursor-pointer active:opacity-80 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="p-sm rounded-full hover:bg-white/5 transition-colors cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="ml-sm pl-sm border-l border-white/10 flex items-center gap-sm cursor-pointer hover:opacity-80 transition-opacity">
+<img alt="Provider profile avatar" class="w-8 h-8 rounded-full object-cover border border-white/10" data-alt="A highly detailed close-up portrait of a professional service provider in a sleek, modern, dark-themed studio setting. High-key dramatic lighting highlights sharp facial features against a pitch-black background with subtle electric violet ambient reflections. The mood is confident, premium, and trustworthy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn7At3ZFrMsxd0IkUnEcVUN0eR6HBnIBCxpzt3iFqsjK5tPf9lzMavv8tcyoMDj6D_VaK9YVkFiPYw_DJ4nzZ8f-x0HSf2-r1RWw8p7aVqzQpwaNcJ5euqW2-Y965-ZkWqOFuPaFi2Do87RxWsXpM6xgJeHkUrNn8V_IMto2olNSzKBUE2Rj0LRea1Sn532fNHe73P4pz0QuH9NHcNOfUsZRHzHKWYjyCCdkioKmMxhtqW-cvuJCHoJQ"/>
+</div>
+</div>
+</header>
+<!-- Dashboard Canvas -->
+<main class="flex-1 overflow-y-auto p-md md:p-lg bg-background">
+<div class="max-w-[1440px] mx-auto flex flex-col gap-lg">
+<!-- KPI Row -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
+<div class="glass-card rounded-xl p-md flex flex-col gap-sm">
+<div class="flex justify-between items-center text-on-surface-variant">
+<span class="font-label-md text-label-md">Today's Orders</span>
+<span class="material-symbols-outlined text-primary-container">shopping_bag</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-on-surface">24</div>
+<div class="font-caption text-caption text-primary flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +12% vs yesterday
+                        </div>
+</div>
+<div class="glass-card rounded-xl p-md flex flex-col gap-sm">
+<div class="flex justify-between items-center text-on-surface-variant">
+<span class="font-label-md text-label-md">Processing</span>
+<span class="material-symbols-outlined text-tertiary">autorenew</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-on-surface">12</div>
+<div class="font-caption text-caption text-on-surface-variant">Avg processing time: 45m</div>
+</div>
+<div class="glass-card rounded-xl p-md flex flex-col gap-sm">
+<div class="flex justify-between items-center text-on-surface-variant">
+<span class="font-label-md text-label-md">Ready for Delivery</span>
+<span class="material-symbols-outlined text-tertiary">inventory_2</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-on-surface">8</div>
+<div class="font-caption text-caption text-on-surface-variant">3 awaiting pickup</div>
+</div>
+<div class="glass-card rounded-xl p-md flex flex-col gap-sm border-primary/20 bg-primary-container/5 relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl"></div>
+<div class="flex justify-between items-center text-on-surface-variant relative z-10">
+<span class="font-label-md text-label-md">Today's Revenue</span>
+<span class="material-symbols-outlined text-primary">payments</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-on-surface relative z-10">$1,240</div>
+<div class="font-caption text-caption text-primary flex items-center gap-xs relative z-10">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +8% vs yesterday
+                        </div>
+</div>
+</section>
+<div class="flex flex-col lg:flex-row gap-lg">
+<!-- Main Section (Left 70%) -->
+<section class="flex-1 lg:w-[70%] glass-card rounded-xl overflow-hidden flex flex-col h-[600px]">
+<div class="p-md border-b border-white/5 flex justify-between items-center bg-surface/50">
+<h2 class="font-headline-md text-headline-md text-on-surface">Active Orders</h2>
+<button class="text-primary font-label-md text-label-md hover:underline">View All</button>
+</div>
+<div class="overflow-x-auto flex-1">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-high/50 font-label-md text-label-md text-on-surface-variant sticky top-0 z-10 border-b border-white/5">
+<tr>
+<th class="p-md font-medium">Order ID</th>
+<th class="p-md font-medium">Customer</th>
+<th class="p-md font-medium">Item</th>
+<th class="p-md font-medium">Service</th>
+<th class="p-md font-medium">Status</th>
+<th class="p-md font-medium text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md divide-y divide-white/5">
+<tr class="hover:bg-white/5 transition-colors group">
+<td class="p-md font-medium text-on-surface-variant">#ORD-9012</td>
+<td class="p-md flex items-center gap-sm">
+<img alt="Customer" class="w-8 h-8 rounded-full object-cover" data-alt="A highly detailed 50-100 word prompt for a customer avatar portrait. A young professional male with neat hair, wearing a sleek black turtleneck. Shot in a studio with moody, low-key lighting and a soft rim light highlighting his profile against a dark background. High contrast, sharp focus, hyper-realistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDYWHJoDT8AeDbADcKhUMWDpCG991r1gfbB-xGkgCYI3JwaWfvGovfHTp6oGHQpVkB8Xf6jddUtJCebtj-aegHMYB_DNKG7KsIiFLSxsVOtvYmOgvpglfw0jbgHf1O8kXRa8enBB1PJjBZMTKQQ12R0jwIaw82yYEuERI3JnEVSN-3mnW5Dis5e-jPeUzW2t1FJLavln85wuO2B4Q03zpT-HtwBIVOeLGPeQ6DxA1Xkqhfr1DSAMW7Mw"/>
+<span class="text-on-surface">Marcus T.</span>
+</td>
+<td class="p-md text-on-surface">Nike Air Jordan 1</td>
+<td class="p-md text-on-surface-variant">Deep Clean</td>
+<td class="p-md">
+<span class="inline-flex items-center gap-xs px-sm py-xs rounded-full bg-primary-container/20 text-primary font-caption text-caption border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                                                In Progress
+                                            </span>
+</td>
+<td class="p-md text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors group">
+<td class="p-md font-medium text-on-surface-variant">#ORD-9011</td>
+<td class="p-md flex items-center gap-sm">
+<img alt="Customer" class="w-8 h-8 rounded-full object-cover" data-alt="A highly detailed 50-100 word prompt for a customer avatar portrait. A stylish female with sharp features and a modern bob cut, wearing a minimalist dark grey blazer. Cinematic, moody studio lighting with a faint electric violet ambient glow on one side. Ultra-realistic, 8k resolution, premium corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsxEPdntaYsEwv-VV0jFSf06hKVEXJQUjXfsnwkqRFyg6ZqlmnOGyIVlPbv4nBzFLyyMU48-jF5oZ41K8HQd4Gwwgjn-vIVWj55ldckga_RxYup4JulH7SbTomyRQ0I6r91fYA5Eh4HuTjVW8L6_JAmPzqcceL3V-GDBKcJ_ipWWAYYcm9m6hzb1qKBnqtrIEjvRApeyhIgtjQp1WwZtPxc7hR7FGh1mE2M6eIqcQ_89fv_eSwCjkpJw"/>
+<span class="text-on-surface">Sarah J.</span>
+</td>
+<td class="p-md text-on-surface">Gucci Loafers</td>
+<td class="p-md text-on-surface-variant">Leather Polishing</td>
+<td class="p-md">
+<span class="inline-flex items-center gap-xs px-sm py-xs rounded-full bg-tertiary/10 text-tertiary font-caption text-caption border border-tertiary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                                                Awaiting Inspection
+                                            </span>
+</td>
+<td class="p-md text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors group bg-primary-container/5">
+<td class="p-md font-medium text-primary">#ORD-9010</td>
+<td class="p-md flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center font-label-md text-label-md text-on-surface">DL</div>
+<span class="text-on-surface">David L.</span>
+</td>
+<td class="p-md text-on-surface">Yeezy Boost 350</td>
+<td class="p-md text-on-surface-variant">Sneaker Restoration</td>
+<td class="p-md">
+<span class="inline-flex items-center gap-xs px-sm py-xs rounded-full bg-primary-container text-on-primary-container font-caption text-caption border border-primary/30">
+<span class="material-symbols-outlined text-[12px]">done_all</span>
+                                                Ready for Delivery
+                                            </span>
+</td>
+<td class="p-md text-right flex justify-end gap-sm">
+<button class="bg-primary text-on-primary px-sm py-xs rounded text-caption font-medium hover:opacity-90">Dispatch</button>
+</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors group">
+<td class="p-md font-medium text-on-surface-variant">#ORD-9009</td>
+<td class="p-md flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center font-label-md text-label-md text-on-surface">EM</div>
+<span class="text-on-surface">Elena M.</span>
+</td>
+<td class="p-md text-on-surface">Prada Handbag</td>
+<td class="p-md text-on-surface-variant">Deep Clean &amp; Condition</td>
+<td class="p-md">
+<span class="inline-flex items-center gap-xs px-sm py-xs rounded-full bg-surface-container-highest text-on-surface-variant font-caption text-caption border border-white/10">
+<span class="material-symbols-outlined text-[12px]">schedule</span>
+                                                Queued
+                                            </span>
+</td>
+<td class="p-md text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Sidebar Section (Right 30%) -->
+<section class="lg:w-[30%] flex flex-col gap-lg">
+<!-- Chart Card -->
+<div class="glass-card rounded-xl p-md">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg">Popular Services</h3>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">bar_chart</span>
+</div>
+<div class="flex flex-col gap-sm">
+<div class="flex flex-col gap-xs">
+<div class="flex justify-between font-caption text-caption">
+<span class="text-on-surface">Sneaker Restoration</span>
+<span class="text-primary font-medium">65%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 65%"></div>
+</div>
+</div>
+<div class="flex flex-col gap-xs mt-sm">
+<div class="flex justify-between font-caption text-caption">
+<span class="text-on-surface">Leather Polishing</span>
+<span class="text-tertiary font-medium">25%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 25%"></div>
+</div>
+</div>
+<div class="flex flex-col gap-xs mt-sm">
+<div class="flex justify-between font-caption text-caption">
+<span class="text-on-surface">Deep Clean</span>
+<span class="text-outline font-medium">10%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+<div class="bg-outline h-full rounded-full" style="width: 10%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Reviews Feed -->
+<div class="glass-card rounded-xl p-md flex-1 overflow-hidden flex flex-col">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg">Recent Reviews</h3>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">forum</span>
+</div>
+<div class="flex-1 overflow-y-auto pr-sm space-y-md">
+<div class="bg-surface-container-low p-sm rounded-lg border border-white/5">
+<div class="flex justify-between items-start mb-xs">
+<div class="flex items-center gap-xs">
+<div class="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center font-caption text-[10px] font-bold">JW</div>
+<span class="font-label-md text-label-md text-on-surface text-sm">James W.</span>
+</div>
+<div class="flex text-[#FFCC00] text-[12px]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-2">"Incredible restoration on my Jordans. They look brand new. Will definitely use OpsCentral again."</p>
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg border border-white/5">
+<div class="flex justify-between items-start mb-xs">
+<div class="flex items-center gap-xs">
+<div class="w-6 h-6 rounded-full bg-tertiary/20 text-tertiary flex items-center justify-center font-caption text-[10px] font-bold">AL</div>
+<span class="font-label-md text-label-md text-on-surface text-sm">Anna L.</span>
+</div>
+<div class="flex text-[#FFCC00] text-[12px]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]">star</span>
+</div>
+</div>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-2">"Fast turnaround on the leather polish. Slightly pricier than expected but quality is top notch."</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</div>
+</body></html>

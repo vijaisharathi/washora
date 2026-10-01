@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Delivery Pro - Navigate to Customer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#474649",
+                        "primary-container": "#8a2be2",
+                        "inverse-on-surface": "#313031",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-primary-container": "#eed9ff",
+                        "background": "#131314",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "tertiary-container": "#646365",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-background": "#e5e2e3",
+                        "on-primary-fixed": "#2c0051",
+                        "surface-variant": "#353436",
+                        "on-surface": "#e5e2e3",
+                        "secondary-container": "#474649",
+                        "surface-dim": "#131314",
+                        "on-secondary-container": "#b7b4b7",
+                        "error-container": "#93000a",
+                        "secondary": "#c8c6c8",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-container-lowest": "#0e0e0f",
+                        "secondary-fixed": "#e5e1e4",
+                        "on-tertiary-container": "#e3e0e2",
+                        "surface-bright": "#3a393a",
+                        "tertiary": "#c8c6c8",
+                        "on-primary": "#480081",
+                        "on-tertiary": "#303032",
+                        "outline-variant": "#4c4354",
+                        "surface-container-highest": "#353436",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#efdbff",
+                        "on-secondary-fixed-variant": "#474649",
+                        "on-secondary": "#303032",
+                        "inverse-primary": "#8422dc",
+                        "surface-container-high": "#2a2a2b",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "outline": "#988ca0",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-tint": "#dcb8ff",
+                        "primary": "#dcb8ff",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-container": "#201f20",
+                        "surface": "#131314"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "xs": "4px",
+                        "3xl": "64px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "2xl": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Geist", "sans-serif"],
+                        "headline-lg": ["Geist", "sans-serif"],
+                        "body-md": ["Geist", "sans-serif"],
+                        "label-md": ["Geist", "sans-serif"],
+                        "body-lg": ["Geist", "sans-serif"],
+                        "display-lg-mobile": ["Geist", "sans-serif"],
+                        "caption": ["Geist", "sans-serif"],
+                        "display-lg": ["Geist", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+        
+        .glass-panel {
+            background: rgba(42, 42, 43, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+        }
+        
+        .success-flash {
+            animation: flashSuccess 3s ease-out forwards;
+        }
+
+        @keyframes flashSuccess {
+            0% { transform: translateY(-100%); opacity: 0; }
+            10% { transform: translateY(0); opacity: 1; }
+            90% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100%); opacity: 0; display: none; }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md overflow-x-hidden pt-16 pb-32">
+<!-- Success Transition Banner -->
+<div class="fixed top-16 left-0 right-0 z-50 px-md py-sm success-flash">
+<div class="bg-tertiary-container/30 border border-tertiary/20 backdrop-blur-md rounded-xl p-md flex items-center gap-md shadow-lg">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Pickup completed</p>
+<p class="font-body-md text-body-md text-primary">Now deliver to customer.</p>
+</div>
+</div>
+</div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/5 shadow-sm">
+<div class="flex items-center justify-between px-md h-16 w-full max-w-7xl mx-auto">
+<button aria-label="Go back" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-variant/50 active:scale-95 transition-transform text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex flex-col items-center">
+<h1 class="font-headline-md text-headline-md-mobile font-bold text-primary">Deliver to Customer</h1>
+<span class="font-caption text-caption text-on-surface-variant">Order #QH1024 • ITEM COLLECTED</span>
+</div>
+<button aria-label="Help" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-variant/50 active:scale-95 transition-transform text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+</div>
+</header>
+<main class="flex-1 w-full max-w-lg mx-auto flex flex-col relative z-0">
+<!-- Large Map Area -->
+<div class="relative w-full h-[353px] md:h-[442px] bg-surface-container-low shrink-0 overflow-hidden shadow-[inset_0_-20px_40px_rgba(19,19,20,1)]">
+<img alt="Route Map" class="w-full h-full object-cover opacity-80 mix-blend-screen" data-alt="A dark-themed digital map interface showing a delivery route in a dense urban environment. The map uses a sophisticated color palette of deep blacks and charcoal grays, with subtle street lines in lighter gray. A bright violet (primary brand color) line indicates the optimal route from point A to point B. Glowing nodes mark the start and end destinations. The overall aesthetic is high-end, precise, and tech-forward, matching a luxury delivery application interface." data-location="Metropolis" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7UGm_GoYk4NmzO_s5rv9qt40AiGJ_GlXF1ycewknyZL6NGp5qccs7vkCKqx0dyq8YtpJdyD7FTh3_OX1mr7WVRLnLHQpeGKETPLhSQnP2qsuEErUYwGn0DgA940XrWNCuiGSx9_WVsbCycL3V5PTKE1stouR2szHsQdgkIz4X_jpYhsxNlKy_TovkUTCLHekgxXQGkq30U6OFo0Z0f2CDrZhsIxYOvSRXF9ojkxkiK81JsXPFPIlR9w"/>
+<!-- Map Overlay Gradient for smooth blend -->
+<div class="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background"></div>
+<!-- Floating Trip Summary on Map -->
+<div class="absolute bottom-md left-md right-md">
+<div class="glass-panel rounded-xl p-md flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-display-lg-mobile text-display-lg-mobile text-on-surface">11<span class="text-headline-md font-body-md text-on-surface-variant ml-1">min</span></span>
+<span class="font-label-md text-label-md text-on-surface-variant">2.4 km • ETA 7:05 PM</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="navigation" data-weight="fill" style="font-variation-settings: 'FILL' 1;">navigation</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Scrollable Content Area -->
+<div class="flex-1 flex flex-col gap-md p-md -mt-md relative z-10">
+<!-- Customer Info & Quick Actions -->
+<section class="bg-surface-container rounded-xl p-md border border-white/5 shadow-sm">
+<div class="flex items-center justify-between mb-md pb-md border-b border-surface-variant">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-surface-variant overflow-hidden">
+<img alt="Customer Avatar" class="w-full h-full object-cover" data-alt="A high-quality, professional headshot of a customer. The portrait is sharply focused, well-lit with soft, flattering light against a dark, minimalist background. The individual appears approachable yet refined, fitting a premium service platform. The image is cropped in a tight circle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh5pV-AhUA6Y3vtFknnLCxLsDeUfYm5zwsfv1x7EZqRMGobQ65el8d-syC1VtqV6Wi07pLuxO1u_UUhyhpEOsCKhCWpRiVB4ljvVy0yZRs-SXpOQofXEcwYNbjq-xpXj_y5r0TeZY8AzWNiA-5Xo6rDu9ur5dlG9thDLMDaVQEQ6IZqNv3fxyuMipXFVmsO5IxCHKinLjip4ylKnHooi0dIuTYaXHCtxgkoxxPP-q479HhyFp8nf-y_g"/>
+</div>
+<div>
+<h2 class="font-label-md text-label-md text-on-surface">Sarah Jenkins</h2>
+<p class="font-caption text-caption text-on-surface-variant">Customer • Expecting delivery</p>
+</div>
+</div>
+</div>
+<div class="flex gap-sm">
+<button class="flex-1 flex items-center justify-center gap-sm py-sm rounded-lg bg-surface-variant hover:bg-surface-container-high transition-colors border border-outline-variant/30 text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px]" data-icon="call">call</span>
+                        Call
+                    </button>
+<button class="flex-1 flex items-center justify-center gap-sm py-sm rounded-lg bg-surface-variant hover:bg-surface-container-high transition-colors border border-outline-variant/30 text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat">chat</span>
+                        Message
+                    </button>
+</div>
+</section>
+<!-- Package Info -->
+<section class="bg-surface-container rounded-xl p-md border border-white/5 shadow-sm">
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-md flex items-center gap-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px]" data-icon="inventory_2">inventory_2</span>
+                    Package Information
+                </h3>
+<div class="flex items-center gap-md">
+<div class="w-16 h-16 rounded-lg bg-surface-variant overflow-hidden border border-white/5 shrink-0">
+<img alt="White Sneaker Package" class="w-full h-full object-cover" data-alt="A premium product photography shot of a pristine white sneaker. The sneaker is isolated against a very dark, almost pure black background with dramatic, high-contrast studio lighting highlighting the textures and clean lines of the shoe. The aesthetic is modern, luxurious, and minimalistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8xLxY6lepcyYLHudkBvzecHMyQMkBlxOOAdq3503E32VvgmjaSFmmg5G56N5j4jeVoaWB2u1W_a6JKlSYOZvkUDz1jAlPlch1OzvQJJ3eZddnq1Jc40O6Wo2Es7tNM-XvszlSBBvMjyWtZujKA6u0PSfobjqByvNTuAkVHIyP4pnVw-qDYCx069BRmirvnk_AKH7N0Q7Vf7Z6rJtHiW_uBALWpanCpMozEx5Rb83d-pbqlXg2feHNVQ"/>
+</div>
+<div class="flex-1">
+<h4 class="font-body-md text-body-md text-on-surface">White Sneaker Cleaning</h4>
+<p class="font-caption text-caption text-on-surface-variant">1 of 1 • Standard Service</p>
+</div>
+<span class="font-label-md text-label-md text-primary bg-primary/10 px-3 py-1 rounded-full">Fragile</span>
+</div>
+</section>
+<!-- Destination Details -->
+<section class="bg-surface-container rounded-xl p-md border border-white/5 shadow-sm mb-xl">
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-md flex items-center gap-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+                    Drop-off Location
+                </h3>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="pin_drop" data-weight="fill" style="font-variation-settings: 'FILL' 1;">pin_drop</span>
+<div>
+<p class="font-body-md text-body-md text-on-surface">1042 Riverfront Drive, Apt 4B</p>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Leave at the front desk with concierge. Do not ring apartment bell.</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Fixed Bottom Actions -->
+<div class="fixed bottom-0 w-full z-50 pb-safe">
+<!-- Persistent Delivery Banner Layer (Under Actions) -->
+<div class="bg-surface/90 backdrop-blur-2xl border-t border-white/10 p-md flex flex-col gap-sm shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
+<button class="w-full bg-primary text-on-primary font-headline-md text-headline-md-mobile font-bold py-md rounded-xl active:scale-[0.98] transition-transform flex items-center justify-center gap-md shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" data-icon="assistant_navigation">assistant_navigation</span>
+                NAVIGATE TO CUSTOMER
+            </button>
+<button class="w-full bg-transparent border border-outline-variant text-on-surface font-label-md text-label-md py-sm rounded-xl hover:bg-surface-variant/50 transition-colors">
+                VIEW DELIVERY DETAILS
+            </button>
+</div>
+</div>
+</body></html>

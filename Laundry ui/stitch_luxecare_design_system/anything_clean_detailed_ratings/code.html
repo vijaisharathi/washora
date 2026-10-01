@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detailed Ratings - Tell Us More</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#131314",
+                        "on-error": "#690005",
+                        "primary": "#dcb8ff",
+                        "tertiary-container": "#646365",
+                        "inverse-primary": "#8422dc",
+                        "on-surface": "#e5e2e3",
+                        "error-container": "#93000a",
+                        "surface-container-high": "#2a2a2b",
+                        "on-secondary-container": "#b9b8ba",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "secondary-container": "#49494b",
+                        "outline-variant": "#4c4354",
+                        "electric-violet": "#8a2be2",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "secondary-fixed": "#e4e2e4",
+                        "primary-container": "#8a2be2",
+                        "on-primary": "#480081",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-dim": "#131314",
+                        "error-red": "#ffb4ab",
+                        "on-tertiary-container": "#e3e0e2",
+                        "outline": "#988ca0",
+                        "on-tertiary": "#303032",
+                        "on-background": "#e5e2e3",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-surface-variant": "#cfc2d7",
+                        "success-green": "#81C784",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "primary-fixed": "#efdbff",
+                        "surface-bright": "#39393a",
+                        "background": "#131314",
+                        "inverse-on-surface": "#313031",
+                        "surface-tint": "#dcb8ff",
+                        "on-secondary-fixed-variant": "#474648",
+                        "surface-variant": "#353436",
+                        "surface-container": "#201f20",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "tertiary": "#c8c6c8",
+                        "on-primary-container": "#eed9ff",
+                        "on-error-container": "#ffdad6",
+                        "success-bg": "#1A3D24",
+                        "on-secondary": "#303032",
+                        "secondary": "#c8c6c8",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-container-highest": "#353436",
+                        "tertiary-fixed": "#e4e2e4",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-primary-fixed": "#2c0051",
+                        "on-tertiary-fixed": "#1b1b1d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "2xl": "48px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "3xl": "64px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "caption": ["Geist", "sans-serif"],
+                        "body-md": ["Geist", "sans-serif"],
+                        "mono-display": ["monospace"],
+                        "h1": ["Geist", "sans-serif"],
+                        "h3": ["Geist", "sans-serif"],
+                        "headline-lg": ["Geist", "sans-serif"],
+                        "display-lg": ["Geist", "sans-serif"],
+                        "label-md": ["Geist", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+        
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .star-rating .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0;
+            color: theme('colors.on-surface-variant');
+            cursor: pointer;
+            transition: color 0.2s, font-variation-settings 0.2s;
+        }
+
+        .star-rating .material-symbols-outlined.active,
+        .star-rating .material-symbols-outlined:hover,
+        .star-rating .material-symbols-outlined:hover ~ .material-symbols-outlined {
+             /* Hover logic handled partially by JS for right-to-left fill simulation, or simple CSS if reversed. We'll use JS for robust interaction. */
+        }
+        
+        .star-rating[data-value="5"] .star:nth-child(-n+5) { font-variation-settings: 'FILL' 1; color: theme('colors.electric-violet'); }
+        .star-rating[data-value="4"] .star:nth-child(-n+4) { font-variation-settings: 'FILL' 1; color: theme('colors.electric-violet'); }
+        .star-rating[data-value="3"] .star:nth-child(-n+3) { font-variation-settings: 'FILL' 1; color: theme('colors.electric-violet'); }
+        .star-rating[data-value="2"] .star:nth-child(-n+2) { font-variation-settings: 'FILL' 1; color: theme('colors.electric-violet'); }
+        .star-rating[data-value="1"] .star:nth-child(-n+1) { font-variation-settings: 'FILL' 1; color: theme('colors.electric-violet'); }
+
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-primary/30 selection:text-primary">
+<!-- Top Navigation Placeholder (Hidden for transactional flow) -->
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center p-md md:p-xl w-full max-w-[1200px] mx-auto">
+<!-- Header Section -->
+<header class="text-center mb-xl w-full max-w-2xl">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-sm">Tell Us More</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">What did you think about each part of the service?</p>
+</header>
+<!-- Ratings Container -->
+<div class="w-full max-w-3xl bg-surface-container-low border border-outline-variant/30 rounded-xl p-lg md:p-2xl shadow-lg shadow-surface-container-highest/20">
+<form class="flex flex-col gap-lg">
+<!-- Overall Experience -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-md bg-surface-container border border-outline-variant/20 rounded-lg transition-colors hover:border-outline-variant/50">
+<div class="mb-sm sm:mb-0">
+<h3 class="font-h3 text-h3 text-on-surface">Overall Experience</h3>
+<p class="font-caption text-caption text-on-surface-variant">Your general satisfaction</p>
+</div>
+<div class="flex items-center gap-md">
+<div class="star-rating flex gap-xs text-[28px]" data-value="5">
+<span class="material-symbols-outlined star">star</span>
+<span class="material-symbols-outlined star">star</span>
+<span class="material-symbols-outlined star">star</span>
+<span class="material-symbols-outlined star">star</span>
+<span class="material-symbols-outlined star">star</span>
+</div>
+<span class="font-mono-display text-mono-display text-primary w-12 text-right">5/5</span>
+</div>
+</div>
+<!-- Service Quality -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-md bg-surface-container border border-outline-variant/20 rounded-lg transition-colors hover:border-outline-variant/50">
+<div class="mb-sm sm:mb-0">
+<h3 class="font-label-md text-label-md font-bold text-on-surface">Service Quality</h3>
+<p class="font-caption text-caption text-on-surface-variant">Quality of work delivered</p>
+</div>
+<div class="flex items-center gap-md">
+<div class="star-rating flex gap-xs text-[24px]" data-value="4">
+<span class="material-symbols-outlined star">star</span>
+<span class="material-symbols-outlined star">star</span>
+<span class="material-symbols-outlined star">star</span>
+<span class="material-symbols-outlined star">star</span>
+<span class="material-symbols-outlined star">star</span>
+</div>
+<span class="font-body-md text-body-md font-bold text-on-surface-variant w-12 text-right">4/5</span>
+</div>
+</div>
+<!-- Provider Experience -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-md bg-surface-container border border-outline-variant/20 rounded-lg transition-colors hover:border-outline-variant/50">
+<div class="mb-sm sm:mb-0">
+<h3 class="font-label-md text-label-md font-bold text-on-surface">Provider Experience</h3>
+<p class="font-caption text-caption text-on-surface-variant">Communication and professionalism</p>
+</div>
+<div class="flex items-center gap-md">
+<div class="star-rating flex gap-xs text-[24px]" data-value="5">
+<span class="material-symbols-outlined star">star</span>
+<span class="material-symbols-outlined star">star</span>
+<span class="material-symbols-outlined star">star</span>
+<span class="material-symbols-outlined star">star</span>
+<span class="material-symbols-outlined star">star</span>
+</div>
+<span class="font-body-md text-body-md font-bold text-on-surface-variant w-12 text-right">5/5</span>
+</div>
+</div>
+<!-- Pickup Experience -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-md bg-surface-container border border-outline-variant/20 rounded-lg transition-colors hover:border-outline-variant/50">
+<div class="mb-sm sm:mb-0">
+<h3 class="font-label-md text-label-md font-bold text-on-surface">Pickup Experience</h3>
+<p class="font-caption text-caption text-on-surface-variant">Timeliness and handling</p>
+</div>
+<div class="flex items-center gap-md">
+<div class="star-rating flex gap-xs text-[24px]" data-value="4">
+<span class="material-symbols-outlined star">star</span>
+<span class="material-symbols-outlined star">star</span>
+<span class="material-symbols-outlined star">star</span>
+<span class="material-symbols-outlined star">star</span>
+<span class="material-symbols-outlined star">star</span>
+</div>
+<span class="font-body-md text-body-md font-bold text-on-surface-variant w-12 text-right">4/5</span>
+</div>
+</div>
+<!-- Delivery Experience -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-md bg-surface-container border border-outline-variant/20 rounded-lg transition-colors hover:border-outline-variant/50">
+<div class="mb-sm sm:mb-0">
+<h3 class="font-label-md text-label-md font-bold text-on-surface">Delivery Experience</h3>
+<p class="font-caption text-caption text-on-surface-variant">Condition and handover</p>
+</div>
+<div class="flex items-center gap-md">
+<div class="star-rating flex gap-xs text-[24px]" data-value="5">
+<span class="material-symbols-outlined star">star</span>
+<span class="material-symbols-outlined star">star</span>
+<span class="material-symbols-outlined star">star</span>
+<span class="material-symbols-outlined star">star</span>
+<span class="material-symbols-outlined star">star</span>
+</div>
+<span class="font-body-md text-body-md font-bold text-on-surface-variant w-12 text-right">5/5</span>
+</div>
+</div>
+<!-- Action Area -->
+<div class="mt-lg pt-lg border-t border-outline-variant/30 flex justify-end">
+<button class="bg-electric-violet hover:bg-inverse-primary text-white font-label-md text-label-md px-xl py-md rounded-lg shadow-lg shadow-primary/20 transition-all active:scale-95 flex items-center gap-sm" type="button">
+                        Continue
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</main>
+<!-- SideNavBar (Hidden - Transactional Screen) -->
+<!-- BottomNavBar (Hidden - Transactional Screen) -->
+<script>
+        // Simple interactivity for demonstration (in a real app, this would update state)
+        document.querySelectorAll('.star-rating').forEach(ratingContainer => {
+            const stars = ratingContainer.querySelectorAll('.star');
+            const displayValue = ratingContainer.nextElementSibling;
+            
+            stars.forEach((star, index) => {
+                star.addEventListener('click', () => {
+                    const newValue = index + 1;
+                    ratingContainer.setAttribute('data-value', newValue);
+                    if(displayValue) {
+                        displayValue.textContent = `${newValue}/5`;
+                        // Update color if overall experience
+                        if(ratingContainer.closest('div').querySelector('h3').textContent === 'Overall Experience') {
+                           displayValue.className = 'font-mono-display text-mono-display text-primary w-12 text-right';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Issue Management - Lumina Control Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#8422dc",
+                        "surface-container": "#201f20",
+                        "inverse-surface": "#e5e2e3",
+                        "on-tertiary": "#4b2800",
+                        "on-error": "#690005",
+                        "tertiary": "#ffb873",
+                        "surface-container-low": "#1c1b1c",
+                        "on-secondary-container": "#caa7ec",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "success": "#4ade80",
+                        "surface-bright": "#3a393a",
+                        "surface-container-lowest": "#0e0e0f",
+                        "outline": "#988ca0",
+                        "on-primary-container": "#eed9ff",
+                        "on-secondary-fixed-variant": "#573976",
+                        "on-primary": "#480081",
+                        "background": "#131314",
+                        "error-container": "#93000a",
+                        "secondary-container": "#573976",
+                        "primary-fixed": "#efdbff",
+                        "secondary-fixed": "#efdbff",
+                        "critical": "#f87171",
+                        "on-surface": "#e5e2e3",
+                        "warning": "#fbbf24",
+                        "info": "#60a5fa",
+                        "outline-variant": "#4c4354",
+                        "tertiary-fixed": "#ffdcbf",
+                        "on-tertiary-fixed-variant": "#6a3b00",
+                        "surface-container-high": "#2a2a2b",
+                        "inverse-on-surface": "#313031",
+                        "error": "#ffb4ab",
+                        "surface-container-highest": "#353436",
+                        "on-secondary": "#3f225e",
+                        "on-tertiary-container": "#ffdaba",
+                        "tertiary-container": "#935400",
+                        "on-secondary-fixed": "#290947",
+                        "tertiary-fixed-dim": "#ffb873",
+                        "surface": "#131314",
+                        "secondary-fixed-dim": "#dcb8ff",
+                        "surface-dim": "#131314",
+                        "on-primary-fixed": "#2c0051",
+                        "secondary": "#dcb8ff",
+                        "on-background": "#e5e2e3",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#dcb8ff",
+                        "primary-container": "#8a2be2",
+                        "on-tertiary-fixed": "#2d1600",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "surface-tint": "#dcb8ff",
+                        "surface-variant": "#353436"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "sidebar-width": "260px",
+                        "gutter": "16px",
+                        "margin-desktop": "24px",
+                        "margin-mobile": "16px",
+                        "table-cell-padding": "12px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Geist"],
+                        "body-md": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "code": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "label-sm": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "code": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface antialiased min-h-screen">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-lowest border-r border-outline-variant flex flex-col py-6 z-50">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center text-on-primary font-bold">L</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface">Lumina Admin</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Super Admin Console</p>
+</div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto">
+<ul class="space-y-1">
+<!-- Dashboard -->
+<li>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+</li>
+<!-- Orders (ACTIVE) -->
+<li>
+<a class="flex items-center gap-3 px-6 py-3 border-l-4 border-primary text-on-surface font-semibold bg-surface-container-high transition-all duration-150 scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+</li>
+<!-- Customers -->
+<li>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Customers</span>
+</a>
+</li>
+<!-- Providers -->
+<li>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="store">store</span>
+<span class="font-label-md text-label-md">Providers</span>
+</a>
+</li>
+<!-- Delivery Partners -->
+<li>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="local_shipping">local_shipping</span>
+<span class="font-label-md text-label-md">Delivery Partners</span>
+</a>
+</li>
+<!-- Operations -->
+<li>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings_input_component">settings_input_component</span>
+<span class="font-label-md text-label-md">Operations</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="mt-auto px-6 pt-4 border-t border-outline-variant/50">
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-3 py-2 text-on-surface-variant hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="terminal">terminal</span>
+<span class="font-label-md text-label-md">System Logs</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 py-2 text-on-surface-variant hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="support_agent">support_agent</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-260px)] h-16 flex justify-between items-center px-margin-desktop bg-surface-container border-b border-outline-variant z-40">
+<div class="flex-1 flex items-center">
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg pl-10 pr-4 py-1.5 text-body-md font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-on-surface placeholder-on-surface-variant/50" placeholder="Search orders, issues, or IDs (Cmd+K)" type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary-container ml-2 overflow-hidden border border-outline-variant cursor-pointer hover:opacity-80 transition-opacity">
+<img alt="Admin User Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a technical administrator in a studio setting, dramatic lighting, high contrast, fitting a dark mode UI context, neutral dark gray background, highly detailed and realistic, conveying authority and focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq6tOrfRt6hAq6ycIuBa6X0ABFs2qOr77IaTgbvFT5IUVBYIfHzT8YsOsQVxwZb0COPG8MdYJk_kejSayR4D7ojKHZrQxGBlI1x-62Geftx-N9kHduT7cCysZm9G1FPSXvEOvPFS7RcKK6b-QCRDl5bRMDQbzVWQpDTgL3jF0eCjvMwFeh1djWbyFOe6RcHLGfr4Vp6sg9rhIQ8U2GCTfZSUdhgclRpuvgPJa6IdPSfttfuUCUtrFDZQ"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-sidebar-width pt-16 p-margin-desktop min-h-screen">
+<!-- Header Section -->
+<div class="flex justify-between items-end mb-8">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="#">Orders</a>
+<span class="text-on-surface-variant material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface font-label-md text-label-md">#QH1024</span>
+</div>
+<h2 class="font-display-lg text-display-lg font-bold flex items-center gap-4">
+                    Order Issue
+                    <span class="font-label-md text-label-md px-2.5 py-1 rounded bg-warning/10 text-warning border border-warning/20">OPEN</span>
+<span class="font-label-md text-label-md px-2.5 py-1 rounded bg-critical/10 text-critical border border-critical/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">priority_high</span> HIGH
+                    </span>
+</h2>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Order Reference</p>
+<p class="font-code text-code text-on-surface mt-1">#QH1024</p>
+</div>
+</div>
+<!-- Layout Grid -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Left Column: Investigation Details (Span 8) -->
+<div class="col-span-12 xl:col-span-8 flex flex-col gap-gutter">
+<!-- Issue Summary Card -->
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-6">
+<h3 class="font-headline-md text-headline-md mb-2">Issue Summary</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant bg-surface-container p-4 rounded-lg border border-outline-variant/50">
+                        "Package damage reported during delivery. Customer noticed crushed corner upon handoff."
+                    </p>
+</div>
+<!-- Evidence Section -->
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-6">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline-md text-headline-md">Evidence</h3>
+<button class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">download</span> Download All
+                        </button>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<!-- Pickup Photo -->
+<div class="border border-outline-variant rounded-lg overflow-hidden bg-surface-container">
+<div class="p-3 border-b border-outline-variant flex justify-between items-center">
+<span class="font-label-md text-label-md">Original Pickup Photo</span>
+<span class="font-code text-code text-on-surface-variant">18:45 PM</span>
+</div>
+<div class="h-48 relative">
+<img class="w-full h-full object-cover" data-alt="A high-resolution, clear photograph of a pristine, securely taped cardboard shipping box resting on a modern warehouse sorting table. The lighting is crisp and cool, highlighting the intact corners and clean surface of the package. The background is a slightly blurred, dark-themed industrial environment, fitting seamlessly into a high-end, dark-mode administrative dashboard interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK5mCooChadb5FkKhd5iDKf0inSll-A203sqZifiHIUUkuN1OnZFQRp1fwoulyGzdBDKrT46IOCrbY-CqEbRK8s5PrYw-NoCvapNkbgmb9pQqxVa77GAO2ENMmCmpbWSyV3iVRhqqNbQ_sX-EXyKxKT3bRpH6yi24-RJ3Vw2aKP_O0fdQG1Y8jUuj-pvwj-lF5Er4lEP9Zr76E4ltHEMN8vBWhlzSBics5Qip7eMA7zGOOlSUdRnZsfw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2 opacity-0 hover:opacity-100 transition-opacity cursor-zoom-in">
+<span class="material-symbols-outlined text-white">fullscreen</span>
+</div>
+</div>
+</div>
+<!-- Damage Photo -->
+<div class="border border-critical/30 rounded-lg overflow-hidden bg-surface-container relative">
+<div class="absolute top-2 right-2 bg-critical text-on-error px-2 py-0.5 rounded text-xs font-bold z-10 flex items-center gap-1 shadow-lg">
+<span class="material-symbols-outlined text-[14px]">warning</span> Discrepancy
+                            </div>
+<div class="p-3 border-b border-critical/30 flex justify-between items-center bg-critical/5">
+<span class="font-label-md text-label-md text-critical">Current Damage Photo</span>
+<span class="font-code text-code text-on-surface-variant">19:10 PM</span>
+</div>
+<div class="h-48 relative">
+<img class="w-full h-full object-cover" data-alt="A close-up, sharply focused photograph showing a cardboard shipping box with a visibly crushed corner and torn packing tape. The lighting is harsh, emphasizing the texture of the damaged cardboard. The background is a blurred, dark gray surface. The image style is technical and documentary, designed to serve as clear evidence within a professional, dark-mode digital operations console." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfK6yTTNS3esjE0L2ixyjUKuD2SApN9DRG7MQePJKvB_6X1R-4PMbQkLyOyaTVCsYryDaH2W8tLHpoavc8KDh2PxwT4N4Bx0xeMw-FxoNCL3LUUpYmPV36M0GraIH9mfVF7l4FmXExpz15Vr2sj8vNKWO6zrByndQZjQX5bjzKusFQbLwpZsiQAiE0NKXdLCLIxULZOVtrpJBt8BcXax-PK8sM3d-AZjmAkLWkkOoprR-ih-zNj6Bhcg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2 opacity-0 hover:opacity-100 transition-opacity cursor-zoom-in">
+<span class="material-symbols-outlined text-white">fullscreen</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Partner Notes -->
+<div class="mt-4 border-t border-outline-variant pt-4">
+<h4 class="font-label-md text-label-md text-on-surface-variant mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">note_alt</span> Partner Notes
+                        </h4>
+<div class="bg-surface-container p-4 rounded-lg border border-outline-variant/50">
+<p class="font-body-md text-body-md text-on-surface italic text-on-surface-variant">
+                                "Box was slightly dented when I picked it up from the secondary hub, but seemed secure. Customer pointed out further compression upon arrival."
+                            </p>
+</div>
+</div>
+</div>
+<!-- Admin Action Panel -->
+<div class="bg-surface-container-high border border-outline-variant rounded-xl p-4 flex gap-3 items-center mt-2">
+<span class="material-symbols-outlined text-on-surface-variant mr-2">bolt</span>
+<button class="flex-1 py-2 px-4 rounded-lg border border-outline-variant hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">person</span> Contact Customer
+                    </button>
+<button class="flex-1 py-2 px-4 rounded-lg border border-outline-variant hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span> Contact Partner
+                    </button>
+<button class="flex-1 py-2 px-4 rounded-lg bg-primary hover:bg-primary/90 text-on-primary font-label-md text-label-md font-bold transition-colors flex justify-center items-center gap-2 shadow-[0_0_15px_rgba(220,184,255,0.2)]" onclick="document.getElementById('resolutionModal').classList.remove('hidden')">
+<span class="material-symbols-outlined text-[18px]">gavel</span> Resolve Issue
+                    </button>
+</div>
+</div>
+<!-- Right Column: Context & Metadata (Span 4) -->
+<div class="col-span-12 xl:col-span-4 flex flex-col gap-gutter">
+<!-- Order Context -->
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-6">
+<h3 class="font-headline-md text-headline-md mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">info</span> Order Context
+                    </h3>
+<div class="space-y-4">
+<div class="flex justify-between items-start border-b border-outline-variant/50 pb-3">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-1">Customer</p>
+<p class="font-label-md text-label-md text-on-surface">Elena Rodriguez</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] cursor-pointer hover:text-primary transition-colors">open_in_new</span>
+</div>
+<div class="flex justify-between items-start border-b border-outline-variant/50 pb-3">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-1">Provider</p>
+<p class="font-label-md text-label-md text-on-surface flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-success"></span> Apex Logistics
+                                </p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] cursor-pointer hover:text-primary transition-colors">open_in_new</span>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-1">Order Value</p>
+<p class="font-headline-md text-headline-md text-on-surface font-bold">$1,245.00</p>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-1">Insurance</p>
+<span class="bg-primary-container/20 text-primary border border-primary/30 px-2 py-0.5 rounded text-xs font-bold">COVERED</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Issue Timeline -->
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-6 flex-1">
+<h3 class="font-headline-md text-headline-md mb-6">Issue Timeline</h3>
+<div class="relative pl-6 space-y-6 before:absolute before:inset-y-2 before:left-[11px] before:w-[2px] before:bg-outline-variant">
+<!-- Timeline Item 1 -->
+<div class="relative">
+<div class="absolute -left-6 w-3 h-3 rounded-full bg-surface-container-low border-2 border-primary z-10 top-1.5"></div>
+<p class="font-label-sm text-label-sm text-primary mb-0.5">Assigned to Admin</p>
+<p class="font-body-md text-body-md text-on-surface">Reviewing evidence and notes.</p>
+<p class="font-code text-code text-on-surface-variant mt-1">Today, 7:12 PM</p>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative">
+<div class="absolute -left-6 w-3 h-3 rounded-full bg-outline-variant z-10 top-1.5"></div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-0.5">Issue Reported</p>
+<p class="font-body-md text-body-md text-on-surface">Customer reported damage via app.</p>
+<p class="font-code text-code text-on-surface-variant mt-1">Today, 7:10 PM</p>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative opacity-60">
+<div class="absolute -left-6 w-3 h-3 rounded-full bg-outline-variant z-10 top-1.5"></div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-0.5">Delivery Attempted</p>
+<p class="font-code text-code text-on-surface-variant mt-1">Today, 7:05 PM</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Resolution Modal Overlay (Hidden by default) -->
+<div class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4" id="resolutionModal">
+<div class="bg-surface-container-low border border-outline-variant rounded-xl shadow-2xl w-full max-w-[520px] overflow-hidden flex flex-col">
+<!-- Modal Header -->
+<div class="px-6 py-4 border-b border-outline-variant flex justify-between items-center bg-surface-container">
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Resolve Issue #QH1024</h2>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors p-1 rounded hover:bg-surface-container-highest" onclick="document.getElementById('resolutionModal').classList.add('hidden')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-6 flex flex-col gap-5">
+<!-- Resolution Type Dropdown -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Resolution Type</label>
+<div class="relative">
+<select class="w-full bg-surface-container appearance-none border border-outline-variant rounded-lg px-4 py-2.5 text-body-md font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none text-on-surface cursor-pointer">
+<option>Partner Fault - Partial Refund</option>
+<option>Partner Fault - Full Refund</option>
+<option>Provider Fault - Replacement</option>
+<option>No Fault - Courtesy Credit</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Internal Note -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Internal Resolution Note</label>
+<textarea class="w-full bg-surface-container border border-outline-variant rounded-lg px-4 py-3 text-body-md font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none text-on-surface resize-none placeholder-on-surface-variant/50" placeholder="Detail the reasoning for this resolution..." rows="3"></textarea>
+</div>
+<!-- Financial Adjustment Toggle -->
+<div class="bg-surface-container border border-outline-variant rounded-lg p-4 flex items-center justify-between mt-2">
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Financial Adjustment</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Initiate refund process automatically upon resolution.</p>
+</div>
+<!-- CSS Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-6 py-4 border-t border-outline-variant bg-surface-container-lowest flex justify-end gap-3">
+<button class="px-5 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" onclick="document.getElementById('resolutionModal').classList.add('hidden')">
+                    Cancel
+                </button>
+<button class="px-5 py-2 rounded-lg font-label-md text-label-md bg-primary text-on-primary font-bold hover:bg-primary/90 transition-colors shadow-[0_0_10px_rgba(220,184,255,0.2)]">
+                    Confirm Resolution
+                </button>
+</div>
+</div>
+</div>
+<!-- Script to handle icon rendering logic from instructions (though handled by class in head, explicit initialization helps if needed dynamically) -->
+<script>
+        // Optional: Close modal on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                document.getElementById('resolutionModal').classList.add('hidden');
+            }
+        });
+    </script>
+</body></html>

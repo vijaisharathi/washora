@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumina Marketplace - Add Photos & Review Tags</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#131314",
+                        "on-error": "#690005",
+                        "primary": "#dcb8ff",
+                        "tertiary-container": "#646365",
+                        "inverse-primary": "#8422dc",
+                        "on-surface": "#e5e2e3",
+                        "error-container": "#93000a",
+                        "surface-container-high": "#2a2a2b",
+                        "on-secondary-container": "#b9b8ba",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "secondary-container": "#49494b",
+                        "outline-variant": "#4c4354",
+                        "electric-violet": "#8a2be2",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "secondary-fixed": "#e4e2e4",
+                        "primary-container": "#8a2be2",
+                        "on-primary": "#480081",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-dim": "#131314",
+                        "error-red": "#ffb4ab",
+                        "on-tertiary-container": "#e3e0e2",
+                        "outline": "#988ca0",
+                        "on-tertiary": "#303032",
+                        "on-background": "#e5e2e3",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-surface-variant": "#cfc2d7",
+                        "success-green": "#81C784",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "primary-fixed": "#efdbff",
+                        "surface-bright": "#39393a",
+                        "background": "#131314",
+                        "inverse-on-surface": "#313031",
+                        "surface-tint": "#dcb8ff",
+                        "on-secondary-fixed-variant": "#474648",
+                        "surface-variant": "#353436",
+                        "surface-container": "#201f20",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "tertiary": "#c8c6c8",
+                        "on-primary-container": "#eed9ff",
+                        "on-error-container": "#ffdad6",
+                        "success-bg": "#1A3D24",
+                        "on-secondary": "#303032",
+                        "secondary": "#c8c6c8",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-container-highest": "#353436",
+                        "tertiary-fixed": "#e4e2e4",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-primary-fixed": "#2c0051",
+                        "on-tertiary-fixed": "#1b1b1d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "2xl": "48px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "3xl": "64px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "caption": ["Geist"],
+                        "body-md": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "h1": ["Geist"],
+                        "h3": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "label-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col items-center justify-center p-xl">
+<!-- Main Container -->
+<main class="w-full max-w-[600px] bg-surface-container-low rounded-xl border border-outline-variant/30 p-xl flex flex-col gap-lg shadow-2xl relative overflow-hidden">
+<!-- Subtle decorative glow -->
+<div class="absolute -top-32 -right-32 w-64 h-64 bg-electric-violet/10 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Header -->
+<header class="flex flex-col gap-sm">
+<button aria-label="Go back" class="w-fit p-xs rounded-full hover:bg-surface-variant transition-colors flex items-center justify-center text-on-surface-variant mb-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-h1 text-h1 text-primary">Add More Details</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Photos can help others understand your experience.</p>
+</header>
+<hr class="border-t border-outline-variant/30 my-sm"/>
+<!-- Photo Upload Section -->
+<section class="flex flex-col gap-md">
+<div class="flex items-center justify-between">
+<h3 class="font-h3 text-h3 text-on-surface">Photos</h3>
+<span class="font-caption text-caption text-on-surface-variant">Optional</span>
+</div>
+<div class="grid grid-cols-3 gap-md">
+<!-- Upload Button -->
+<button class="aspect-square bg-surface-container rounded-lg border-2 border-dashed border-outline-variant/50 hover:border-primary/50 hover:bg-surface-variant transition-all flex flex-col items-center justify-center gap-xs group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" style="font-variation-settings: 'FILL' 0;">add_a_photo</span>
+<span class="font-label-md text-label-md text-on-surface-variant group-hover:text-primary transition-colors">Add Photos</span>
+</button>
+<!-- Thumbnail Placeholder 1 -->
+<div class="aspect-square bg-surface-container-high rounded-lg overflow-hidden border border-outline-variant/30 relative group">
+<img class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" data-alt="A high-quality, professional photograph of a sleek, modern corporate office workspace. The scene features a clean desk with a high-end laptop, a minimalist notebook, and a small architectural desk plant. The lighting is bright and cool, emphasizing a highly productive and engineered aesthetic typical of high-performance tech environments. Deep shadows contrast with bright highlights, adhering to a sophisticated dark-mode aesthetic with electric violet ambient undertones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8gIO-m_o4nSnHChpHiIJlg2bqxFiL-vrXM5sEwJFYzQz5JQ7GDvqAmaybGq196o_iSJmAbQtL_kn32vIaLxO-t_y1Mjt7cJDyVAkTJy0FpV_6LG4rZBiBuvJcNk1LFClucxx8xZh_eFRlVk9vOs9SjoqCR5O_MHypY9DQIQWUiJ8wtRnPV5cngaJat30Kc32PWjYILahhy-Pytu6-BzGImwx76Dj34DMSm_SieWq17zhPVpGvQ8SWsw"/>
+<button class="absolute top-xs right-xs bg-surface/80 rounded-full p-xs hover:bg-error-container/80 transition-colors">
+<span class="material-symbols-outlined text-on-surface text-[16px]" style="font-variation-settings: 'FILL' 1;">close</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Review Tags Section -->
+<section class="flex flex-col gap-md mt-sm">
+<h3 class="font-h3 text-h3 text-on-surface">Review Tags</h3>
+<div class="flex flex-wrap gap-sm">
+<!-- Selected Tag -->
+<button class="px-md py-sm rounded-full font-label-md text-label-md border border-electric-violet bg-electric-violet/10 text-primary transition-all hover:bg-electric-violet/20 flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check</span>
+                    Excellent quality
+                </button>
+<!-- Unselected Tags -->
+<button class="px-md py-sm rounded-full font-label-md text-label-md border border-outline-variant/50 text-on-surface-variant hover:border-primary/50 hover:text-on-surface transition-all">
+                    Professional
+                </button>
+<button class="px-md py-sm rounded-full font-label-md text-label-md border border-outline-variant/50 text-on-surface-variant hover:border-primary/50 hover:text-on-surface transition-all">
+                    Fast turnaround
+                </button>
+<button class="px-md py-sm rounded-full font-label-md text-label-md border border-outline-variant/50 text-on-surface-variant hover:border-primary/50 hover:text-on-surface transition-all">
+                    Great communication
+                </button>
+</div>
+</section>
+<!-- Footer Actions -->
+<footer class="flex flex-col gap-md mt-lg">
+<div class="flex items-center gap-sm text-on-surface-variant bg-surface-container p-sm rounded-lg border border-outline-variant/20">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">info</span>
+<span class="font-caption text-caption">Your review may be visible to other customers.</span>
+</div>
+<button class="w-full bg-electric-violet text-white font-label-md text-label-md py-md rounded-lg shadow-lg shadow-primary/20 hover:bg-inverse-primary transition-colors active:scale-[0.98]">
+                Continue
+            </button>
+</footer>
+</main>
+</body></html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ratings &amp; Feedback</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e5e2e3",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#efdbff",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-variant": "#353436",
+                        "primary": "#dcb8ff",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "secondary": "#c8c6c8",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-dim": "#131314",
+                        "on-tertiary": "#303032",
+                        "surface": "#131314",
+                        "surface-container": "#201f20",
+                        "primary-container": "#8a2be2",
+                        "background": "#131314",
+                        "surface-container-highest": "#353436",
+                        "tertiary": "#c8c6c8",
+                        "surface-container-high": "#2a2a2b",
+                        "surface-tint": "#dcb8ff",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-surface-variant": "#cfc2d7",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#313031",
+                        "tertiary-container": "#646365",
+                        "on-secondary-container": "#b7b4b7",
+                        "secondary-container": "#474649",
+                        "outline-variant": "#4c4354",
+                        "inverse-primary": "#8422dc",
+                        "on-primary-container": "#eed9ff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-primary": "#480081",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#2c0051",
+                        "on-surface": "#e5e2e3",
+                        "tertiary-fixed": "#e4e2e4",
+                        "surface-container-low": "#1c1b1c",
+                        "outline": "#988ca0",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-secondary-fixed-variant": "#474649",
+                        "secondary-fixed": "#e5e1e4",
+                        "surface-bright": "#3a393a",
+                        "on-secondary": "#303032"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "3xl": "64px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "caption": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased pb-[100px] max-w-[390px] mx-auto relative min-h-screen border-x border-white/5">
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-surface/80 backdrop-blur-xl border-b border-white/5 px-[20px] py-md flex items-center h-[64px]">
+<button class="mr-sm text-on-surface p-sm -ml-sm rounded-full hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-on-surface">Ratings</h1>
+</header>
+<!-- Overall Rating Section -->
+<section class="px-[20px] py-lg flex gap-lg items-center">
+<!-- Big Number -->
+<div class="flex flex-col items-center justify-center min-w-[100px]">
+<span class="font-display-lg-mobile text-display-lg-mobile text-primary">4.9</span>
+<div class="flex text-primary mt-xs">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant mt-sm">342 ratings</span>
+</div>
+<!-- Distribution Bars -->
+<div class="flex-1 flex flex-col gap-sm">
+<div class="flex items-center gap-sm">
+<span class="font-caption text-caption text-on-surface-variant w-[12px] text-right">5</span>
+<div class="flex-1 h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 85%"></div>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<span class="font-caption text-caption text-on-surface-variant w-[12px] text-right">4</span>
+<div class="flex-1 h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 10%"></div>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<span class="font-caption text-caption text-on-surface-variant w-[12px] text-right">3</span>
+<div class="flex-1 h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 3%"></div>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<span class="font-caption text-caption text-on-surface-variant w-[12px] text-right">2</span>
+<div class="flex-1 h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 1%"></div>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<span class="font-caption text-caption text-on-surface-variant w-[12px] text-right">1</span>
+<div class="flex-1 h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 1%"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Positive Highlights -->
+<section class="px-[20px] pb-lg">
+<h2 class="font-label-md text-label-md text-on-surface mb-sm">Positive Highlights</h2>
+<div class="flex flex-wrap gap-sm">
+<div class="px-md py-sm bg-surface-container rounded-full border border-white/5 flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-caption text-caption text-on-surface">Quick Delivery (142)</span>
+</div>
+<div class="px-md py-sm bg-surface-container rounded-full border border-white/5 flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-caption text-caption text-on-surface">Professional (98)</span>
+</div>
+<div class="px-md py-sm bg-surface-container rounded-full border border-white/5 flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-caption text-caption text-on-surface">Great Communication (75)</span>
+</div>
+</div>
+</section>
+<!-- Tabs -->
+<div class="px-[20px] border-b border-white/5 flex gap-lg overflow-x-auto no-scrollbar relative">
+<button class="py-sm border-b-2 border-primary text-primary font-label-md text-label-md whitespace-nowrap">All</button>
+<button class="py-sm border-b-2 border-transparent text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:text-on-surface transition-colors">5 Star</button>
+<button class="py-sm border-b-2 border-transparent text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:text-on-surface transition-colors">4 Star</button>
+<button class="py-sm border-b-2 border-transparent text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:text-on-surface transition-colors">3 Star &amp; Below</button>
+</div>
+<!-- Reviews Feed -->
+<section class="px-[20px] py-lg flex flex-col gap-md">
+<!-- Review 1 -->
+<div class="bg-surface rounded-xl p-md border border-white/5">
+<div class="flex justify-between items-start mb-sm">
+<div class="flex gap-sm items-center">
+<img class="w-10 h-10 rounded-full object-cover border border-white/10" data-alt="A small circular avatar portrait of a young professional customer smiling subtly against a minimal dark background, lit with soft studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG3IhHIrLhUzuYtw27yQEgEszb8IUa9tPANEid_QaVs0YKjYFp6fGXM6BxEI-3g6wrWrpqimN9gn8C1oXGjq-g1-MCNQtsUMVvkvFOfPy9Z6RewFU_VBa0A0rLbzUYwamcdq83UkWQdMzM2YGzNbhyyACaDOxhUYl3__YwtGuSqs_p7d_dZOpYg4tNug9xb0wpX6LYpErqCthGujfPjbgI8kvXcOAzcGfYw_XzTPyAVv_cSpDjlyg3Mw"/>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Sarah Jenkins</p>
+<p class="font-caption text-caption text-on-surface-variant">Order #99281A</p>
+</div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">2 days ago</span>
+</div>
+<div class="flex text-primary mb-sm">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Quick and professional delivery. The service exceeded my expectations and the attention to detail was immaculate. Will definitely be booking again next week.</p>
+</div>
+<!-- Review 2 -->
+<div class="bg-surface rounded-xl p-md border border-white/5">
+<div class="flex justify-between items-start mb-sm">
+<div class="flex gap-sm items-center">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center border border-white/10 text-on-surface font-label-md">
+                        M
+                    </div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Marcus T.</p>
+<p class="font-caption text-caption text-on-surface-variant">Order #77432B</p>
+</div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">1 week ago</span>
+</div>
+<div class="flex text-primary mb-sm">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px] text-surface-variant" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Very solid experience overall. Slightly delayed by traffic but communicated well throughout the process. The final result was fantastic.</p>
+</div>
+</section>
+<!-- Bottom Navigation Bar -->
+<nav class="bg-surface/90 dark:bg-surface/90 backdrop-blur-2xl fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe px-lg rounded-t-xl border-t border-white/5 shadow-[0_-4px_24px_rgba(138,43,226,0.1)] max-w-[390px] mx-auto right-0">
+<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-secondary-container hover:text-primary-fixed-dim transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-secondary-container hover:text-primary-fixed-dim transition-colors" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-md text-label-md mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-secondary-container hover:text-primary-fixed-dim transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-label-md text-label-md mt-1">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-secondary-container hover:text-primary-fixed-dim transition-colors" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-label-md text-label-md mt-1">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary scale-110 transition-all hover:text-primary-fixed-dim" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-md text-label-md mt-1 font-bold">Profile</span>
+</a>
+</nav>
+</body></html>

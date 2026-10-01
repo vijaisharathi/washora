@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Get Started - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#1c1b1c",
+                      "on-primary-container": "#eed9ff",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "error": "#ffb4ab",
+                      "electric-violet": "#8a2be2",
+                      "tertiary-fixed": "#e4e2e4",
+                      "on-primary": "#480081",
+                      "on-surface-variant": "#cfc2d7",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "on-primary-fixed": "#2c0051",
+                      "surface-tint": "#dcb8ff",
+                      "success-bg": "#1A3D24",
+                      "on-secondary-container": "#b9b8ba",
+                      "error-container": "#93000a",
+                      "tertiary-container": "#646365",
+                      "on-tertiary": "#303032",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "surface-variant": "#353436",
+                      "surface-dim": "#131314",
+                      "tertiary": "#c8c6c8",
+                      "surface-container-high": "#2a2a2b",
+                      "surface": "#131314",
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-secondary": "#303032",
+                      "inverse-primary": "#8422dc",
+                      "on-tertiary-container": "#e3e0e2",
+                      "primary-container": "#8a2be2",
+                      "surface-container-highest": "#353436",
+                      "secondary-container": "#49494b",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "on-error-container": "#ffdad6",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "secondary-fixed": "#e4e2e4",
+                      "on-error": "#690005",
+                      "outline-variant": "#4c4354",
+                      "secondary": "#c8c6c8",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "primary-fixed": "#efdbff",
+                      "surface-container": "#201f20",
+                      "inverse-surface": "#e5e2e3",
+                      "on-background": "#e5e2e3",
+                      "outline": "#988ca0",
+                      "background": "#131314",
+                      "error-red": "#ffb4ab",
+                      "on-surface": "#e5e2e3",
+                      "primary": "#dcb8ff",
+                      "inverse-on-surface": "#313031",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "on-secondary-fixed-variant": "#474648",
+                      "success-green": "#81C784",
+                      "surface-bright": "#39393a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "32px",
+                      "sm": "8px",
+                      "2xl": "48px",
+                      "md": "16px",
+                      "xs": "4px",
+                      "lg": "24px",
+                      "3xl": "64px"
+              },
+              "fontFamily": {
+                      "h1": ["Geist", "sans-serif"],
+                      "label-md": ["Geist", "sans-serif"],
+                      "display-lg": ["Geist", "sans-serif"],
+                      "body-md": ["Geist", "sans-serif"],
+                      "headline-lg": ["Geist", "sans-serif"],
+                      "caption": ["Geist", "sans-serif"],
+                      "h3": ["Geist", "sans-serif"],
+                      "mono-display": ["monospace"]
+              },
+              "fontSize": {
+                      "h1": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                      "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "mono-display": ["18px", {"letterSpacing": "0.05em", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col antialiased">
+<!-- TopNavBar (Hidden on Mobile) -->
+<nav class="hidden md:block bg-surface/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-white/5 shadow-sm">
+<div class="flex justify-between items-center px-lg h-16 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-xl">
+<span class="font-headline-md font-bold text-primary text-h3 font-h3">Anything Clean</span>
+<!-- Search Bar -->
+<div class="relative w-64 hidden lg:block">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-full py-2 pl-10 pr-4 text-body-md font-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex gap-md">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors px-3 py-2 rounded-md active:scale-95 transition-transform" href="#">Services</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors px-3 py-2 rounded-md active:scale-95 transition-transform" href="#">Providers</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors px-3 py-2 rounded-md active:scale-95 transition-transform" href="#">How it Works</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors px-3 py-2 rounded-md active:scale-95 transition-transform" href="#">Support</a>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 p-2 rounded-full active:scale-95 transition-all"><span class="material-symbols-outlined">notifications</span></button>
+<button class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 p-2 rounded-full active:scale-95 transition-all"><span class="material-symbols-outlined">shopping_cart</span></button>
+<button class="bg-electric-violet text-white font-label-md text-label-md px-lg py-2 rounded-full shadow-lg shadow-primary/20 hover:bg-electric-violet/90 transition-colors">Book Now</button>
+<img alt="User profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A small circular profile picture of a professional user in a corporate modern setting, soft cool lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf8QkGCwGDAoimbbZwxrxz2tKeVUqoJj-yjCzDPfpqUfcmSID0CWWN_gJFFkYgqhqpRGwEVmKa0XmDsf3_AT2Q3TUr7xp129zixYRMWGvIQ3-oIq_s5HBEtjx44fv6PPFvsz9rZtEh31UkjAooGSisAW0a22F2sxkktiUgelNpotTj93Kr6o-0nMzJZSesqwkpzYBGd4noEepqHFLDZtuyu9hDmqzpibwm_0w60tNFtCkR0vgHAVsGiA"/>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 pb-3xl px-xl md:px-3xl flex flex-col items-center justify-center relative overflow-hidden">
+<!-- Background Accents -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-electric-violet/10 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+<div class="max-w-[1200px] w-full text-center space-y-xl z-10">
+<h1 class="font-display-lg text-display-lg text-on-surface">Ready to make service simpler?</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Join the premium network of professionals and clients. Experience unparalleled efficiency and quality with Anything Clean.</p>
+<div class="flex flex-col sm:flex-row gap-md justify-center mt-lg">
+<button class="bg-electric-violet text-white font-label-md text-label-md px-2xl py-md rounded-lg shadow-lg shadow-primary/20 hover:bg-electric-violet/90 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+                    Book a Service
+                </button>
+</div>
+</div>
+<!-- Bento Grid CTAs -->
+<div class="max-w-[1200px] w-full mt-3xl grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Business CTA -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-xl flex flex-col justify-between hover:border-primary/50 transition-colors group">
+<div class="space-y-md">
+<div class="w-12 h-12 bg-surface-container-low rounded-lg flex items-center justify-center border border-outline-variant/30 text-primary group-hover:text-electric-violet transition-colors">
+<span class="material-symbols-outlined text-[24px]">corporate_fare</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface">For Businesses</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Streamline your facility management with top-tier commercial cleaning partners.</p>
+</div>
+<button class="mt-xl w-full border border-outline-variant text-on-surface font-label-md text-label-md py-2 rounded-lg hover:bg-surface-container-high transition-colors">Partner with Us</button>
+</div>
+<!-- Provider CTA -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-xl flex flex-col justify-between hover:border-primary/50 transition-colors group">
+<div class="space-y-md">
+<div class="w-12 h-12 bg-surface-container-low rounded-lg flex items-center justify-center border border-outline-variant/30 text-primary group-hover:text-electric-violet transition-colors">
+<span class="material-symbols-outlined text-[24px]">cleaning_services</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface">For Providers</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Grow your independent cleaning business with our premium client network.</p>
+</div>
+<button class="mt-xl w-full border border-outline-variant text-on-surface font-label-md text-label-md py-2 rounded-lg hover:bg-surface-container-high transition-colors">Apply to Earn</button>
+</div>
+<!-- Delivery/Specialized CTA -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-xl flex flex-col justify-between hover:border-primary/50 transition-colors group">
+<div class="space-y-md">
+<div class="w-12 h-12 bg-surface-container-low rounded-lg flex items-center justify-center border border-outline-variant/30 text-primary group-hover:text-electric-violet transition-colors">
+<span class="material-symbols-outlined text-[24px]">local_shipping</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface">For Partners</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Join our logistics network for specialized equipment and supply delivery.</p>
+</div>
+<button class="mt-xl w-full border border-outline-variant text-on-surface font-label-md text-label-md py-2 rounded-lg hover:bg-surface-container-high transition-colors">Join Network</button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface-container/90 backdrop-blur-lg fixed bottom-0 w-full z-50 rounded-t-xl border-t border-white/10 shadow-[0_-4px_20px_rgba(138,43,226,0.1)]">
+<div class="flex justify-around items-center h-20 pb-safe px-md">
+<button class="flex flex-col items-center justify-center text-primary active:bg-primary-container/20 tap-highlight-transparent p-2 rounded-lg">
+<span class="material-symbols-outlined mb-1">search</span>
+<span class="font-label-md text-label-md">Explore</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant active:bg-primary-container/20 tap-highlight-transparent p-2 rounded-lg">
+<span class="material-symbols-outlined mb-1">calendar_today</span>
+<span class="font-label-md text-label-md">Bookings</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant active:bg-primary-container/20 tap-highlight-transparent p-2 rounded-lg">
+<span class="material-symbols-outlined mb-1">chat</span>
+<span class="font-label-md text-label-md">Inbox</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant active:bg-primary-container/20 tap-highlight-transparent p-2 rounded-lg">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</button>
+</div>
+</nav>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-2xl border-t border-white/5 mb-20 md:mb-0">
+<div class="flex flex-col md:flex-row justify-between items-center px-lg max-w-[1280px] mx-auto gap-md">
+<span class="font-headline-md text-h3 font-h3 text-on-surface">Anything Clean</span>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="font-caption text-caption text-on-surface-variant hover:text-on-surface underline underline-offset-4 transition-opacity" href="#">Privacy Policy</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-on-surface underline underline-offset-4 transition-opacity" href="#">Terms of Service</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-on-surface underline underline-offset-4 transition-opacity" href="#">Partner with Us</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-on-surface underline underline-offset-4 transition-opacity" href="#">Careers</a>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">© 2024 Anything Clean. All rights reserved.</span>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payout Schedule &amp; Preferences</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#573976",
+                    "on-tertiary-fixed-variant": "#6a3b00",
+                    "on-error-container": "#ffdad6",
+                    "inverse-surface": "#e5e2e3",
+                    "surface-variant": "#353436",
+                    "surface-tint": "#dcb8ff",
+                    "on-tertiary-container": "#ffdaba",
+                    "on-primary": "#480081",
+                    "primary": "#dcb8ff",
+                    "error": "#ffb4ab",
+                    "on-primary-fixed": "#2c0051",
+                    "surface-container-high": "#2a2a2b",
+                    "surface-container": "#201f20",
+                    "on-background": "#e5e2e3",
+                    "tertiary": "#ffb873",
+                    "critical": "#f87171",
+                    "tertiary-fixed-dim": "#ffb873",
+                    "on-secondary-fixed": "#290947",
+                    "surface": "#131314",
+                    "tertiary-fixed": "#ffdcbf",
+                    "inverse-primary": "#8422dc",
+                    "primary-fixed-dim": "#dcb8ff",
+                    "secondary-container": "#573976",
+                    "surface-bright": "#39393a",
+                    "secondary": "#dcb8ff",
+                    "on-secondary-container": "#caa7ec",
+                    "tertiary-container": "#935400",
+                    "surface-container-lowest": "#0e0e0f",
+                    "secondary-fixed": "#efdbff",
+                    "warning": "#fbbf24",
+                    "error-container": "#93000a",
+                    "on-primary-container": "#eed9ff",
+                    "surface-container-low": "#1c1b1c",
+                    "primary-container": "#8a2be2",
+                    "on-surface-variant": "#cfc2d7",
+                    "inverse-on-surface": "#313031",
+                    "primary-fixed": "#efdbff",
+                    "surface-container-highest": "#353436",
+                    "background": "#131314",
+                    "success": "#4ade80",
+                    "on-tertiary": "#4b2800",
+                    "on-error": "#690005",
+                    "on-surface": "#e5e2e3",
+                    "outline": "#988ca0",
+                    "on-tertiary-fixed": "#2d1600",
+                    "surface-dim": "#131314",
+                    "outline-variant": "#4c4354",
+                    "info": "#60a5fa",
+                    "on-secondary": "#3f225e",
+                    "on-primary-fixed-variant": "#6700b5",
+                    "secondary-fixed-dim": "#dcb8ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "sidebar-width": "260px",
+                    "gutter": "16px",
+                    "table-cell-padding": "12px",
+                    "margin-desktop": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": [
+                            "Geist"
+                    ],
+                    "body-lg": [
+                            "Geist"
+                    ],
+                    "headline-lg": [
+                            "Geist"
+                    ],
+                    "label-md": [
+                            "Geist"
+                    ],
+                    "code": [
+                            "Geist"
+                    ],
+                    "display-lg": [
+                            "Geist"
+                    ],
+                    "label-sm": [
+                            "Geist"
+                    ],
+                    "body-md": [
+                            "Geist"
+                    ]
+            },
+            "fontSize": {
+                    "headline-md": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-md": [
+                            "13px",
+                            {
+                                    "lineHeight": "18px",
+                                    "letterSpacing": "0.01em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "code": [
+                            "13px",
+                            {
+                                    "lineHeight": "18px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "48px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    }
+            }
+    },
+        }
+      }
+    </script>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body-md min-h-screen overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="bg-surface dark:bg-surface text-primary dark:text-primary Labels: font-label-md text-label-md. Body: font-body-md text-body-md. fixed top-0 right-0 w-[calc(100%-260px)] z-40 border-b border-surface-variant flat no shadows hover:text-primary transition-colors focus-within:ring-2 focus-within:ring-primary flex justify-between items-center px-margin-desktop h-16 hidden md:flex">
+<div class="flex items-center space-x-4">
+<span class="font-headline-sm text-headline-sm font-black text-on-surface">Financial Workspace</span>
+</div>
+<div class="flex items-center space-x-6">
+<div class="relative bg-surface-container-low rounded-full px-4 py-2 flex items-center border border-surface-variant focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant mr-2">search</span>
+<input class="bg-transparent border-none text-on-surface font-body-md focus:ring-0 placeholder-on-surface-variant/50 w-64" placeholder="Global Search..." type="text"/>
+</div>
+<div class="flex items-center space-x-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">apps</span>
+</button>
+<img alt="Provider Admin Avatar" class="w-8 h-8 rounded-full border border-surface-variant object-cover" data-alt="A small circular profile picture of an administrative user, professional headshot style, set against a dark premium backdrop with subtle violet rim lighting to match the UI aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMUGe0QqAPI7D7YFalpHeaTPSDApm8zmGyLBFbe2vm1ppRTnMUUJVjfsyNOtnthZSHF6tceNuPHptSJvCKT6ka_gTwv-n2zCreEj79DoLReUnblp7JAWpeoolpQMwO9dhAtyG3vouMRddR9pE5PO9x8Mi3AOUtVxPvONon6bBMxZKKanwwvhLZ45RhRnoYN0uOFzYDdWt5Rmj4mAqWqueIsbJsNLJbmsZrpUYz2dj41L5J_W2xxLbo2A"/>
+</div>
+</div>
+</header>
+<!-- Side Navigation -->
+<aside class="bg-surface-container-lowest dark:bg-surface-container-lowest text-primary dark:text-primary Headlines: font-headline-md text-headline-md. Labels: font-label-md text-label-md. Body: font-body-md text-body-md. fixed left-0 top-0 h-full w-[260px] border-r border-surface-variant flat no shadows transition-all duration-200 ease-in-out flex flex-col h-full py-6 hidden md:flex z-50">
+<div class="px-6 mb-8 flex items-center">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary mr-3">Lumina Admin</span>
+</div>
+<div class="px-6 mb-8">
+<div class="flex items-center space-x-3 mb-1">
+<img alt="Super Admin Profile" class="w-10 h-10 rounded-full border border-surface-variant object-cover" data-alt="A small circular profile picture of an administrative user, professional headshot style, set against a dark premium backdrop with subtle violet rim lighting to match the UI aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANsBlMjUhfYUTP0JfDWoqkGh1NZXB0mHn8hGNeExD50-i_1y0AP-ZyuPG0BfEFNcoJgOK1dBgnxbXULWxGyi_8pPtW2_6jHX9Q62Q4dIfZf3z9YrTorQ5b31R0znCe1hsDJPmmz1TU_4G_eR4L5A_MIj-2yIVkHa0bynbipD-6GXB_1qlj9Ytqd5E2skj7VlHXzI4wAXJTWgNvFlMDaQzFuVrr0RsRY5dvAh7pzd8ci9PtXhK-kl8tgA"/>
+<div>
+<div class="font-label-md text-on-surface">Super Admin Profile</div>
+<div class="font-label-sm text-on-surface-variant">Operational Hub</div>
+</div>
+</div>
+</div>
+<button class="mx-6 mb-8 bg-primary text-on-primary font-label-md py-2 px-4 rounded hover:bg-primary-fixed-dim transition-colors flex items-center justify-center space-x-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Add New Provider</span>
+</button>
+<nav class="flex-1 overflow-y-auto">
+<ul class="space-y-1">
+<li>
+<a class="text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center px-6 py-3 space-x-3" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="font-label-md">Dashboard</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center px-6 py-3 space-x-3" href="#">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+<span class="font-label-md">Transactions</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center px-6 py-3 space-x-3" href="#">
+<span class="material-symbols-outlined text-[20px]">storefront</span>
+<span class="font-label-md">Marketplaces</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center px-6 py-3 space-x-3" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="font-label-md">Vendors</span>
+</a>
+</li>
+<li>
+<a class="border-l-4 border-primary text-on-surface font-bold bg-surface-container-low hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center px-6 py-3 space-x-3 -ml-[2px]" href="#">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+<span class="font-label-md">Settlements</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center px-6 py-3 space-x-3" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="font-label-md">Settings</span>
+</a>
+</li>
+</ul>
+</nav>
+<div class="mt-auto pt-4 border-t border-surface-variant">
+<ul class="space-y-1">
+<li>
+<a class="text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center px-6 py-3 space-x-3" href="#">
+<span class="material-symbols-outlined text-[20px]">help</span>
+<span class="font-label-md">Help Center</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center px-6 py-3 space-x-3" href="#">
+<span class="material-symbols-outlined text-[20px]">terminal</span>
+<span class="font-label-md">System Logs</span>
+</a>
+</li>
+</ul>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="md:ml-[260px] md:mt-16 p-margin-mobile md:p-margin-desktop min-h-screen bg-background">
+<div class="max-w-4xl mx-auto">
+<!-- Header Section -->
+<div class="mb-8 border-b border-surface-variant pb-6">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-2">Payout Schedule</h1>
+<p class="font-body-md text-on-surface-variant">Choose how and when eligible earnings are paid out.</p>
+</div>
+<!-- Settings Card -->
+<div class="bg-surface-container-low rounded-xl border border-surface-variant p-8">
+<!-- Frequency Section -->
+<div class="mb-10">
+<h3 class="font-label-md text-on-surface mb-4 uppercase text-on-surface-variant tracking-wider">Frequency</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<label class="cursor-pointer relative">
+<input class="peer sr-only" name="payout_frequency" type="radio" value="daily"/>
+<div class="p-4 rounded-lg border border-surface-variant bg-surface-container peer-checked:border-primary peer-checked:bg-surface-container-high transition-all hover:bg-surface-container-high">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-on-surface">Daily</span>
+<span class="material-symbols-outlined text-on-surface-variant peer-checked:text-primary text-[20px] opacity-0 peer-checked:opacity-100 transition-opacity">check_circle</span>
+</div>
+</div>
+</label>
+<label class="cursor-pointer relative">
+<input checked="" class="peer sr-only" name="payout_frequency" type="radio" value="weekly"/>
+<div class="p-4 rounded-lg border border-primary bg-surface-container-high transition-all relative overflow-hidden group">
+<div class="absolute inset-0 border border-primary rounded-lg shadow-[0_0_8px_rgba(220,184,255,0.2)]"></div>
+<div class="flex items-center justify-between mb-1 relative z-10">
+<span class="font-label-md text-on-surface font-semibold">Weekly</span>
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="font-body-md text-on-surface-variant relative z-10 text-sm">Every Monday</div>
+</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="peer sr-only" name="payout_frequency" type="radio" value="monthly"/>
+<div class="p-4 rounded-lg border border-surface-variant bg-surface-container peer-checked:border-primary peer-checked:bg-surface-container-high transition-all hover:bg-surface-container-high">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-on-surface">Monthly</span>
+<span class="material-symbols-outlined text-on-surface-variant peer-checked:text-primary text-[20px] opacity-0 peer-checked:opacity-100 transition-opacity">check_circle</span>
+</div>
+</div>
+</label>
+</div>
+</div>
+<hr class="border-surface-variant my-8"/>
+<!-- Preferences Section -->
+<div class="space-y-8">
+<!-- Automatic Payout Toggle -->
+<div class="flex items-start justify-between">
+<div>
+<div class="font-label-md text-on-surface mb-1">Automatic Payout</div>
+<div class="font-body-md text-on-surface-variant text-sm">Eligible balance is paid automatically according to your schedule.</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer mt-1">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Minimum Payout Threshold -->
+<div>
+<label class="block font-label-md text-on-surface mb-2">Minimum Payout</label>
+<div class="relative w-full md:w-1/2">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+<span class="text-on-surface-variant font-body-md">₹</span>
+</div>
+<input class="bg-surface-container border border-surface-variant text-on-surface font-body-md rounded-lg focus:ring-primary focus:border-primary block w-full pl-8 p-2.5 transition-colors" type="number" value="500"/>
+</div>
+<p class="mt-2 font-body-md text-on-surface-variant text-sm flex items-center">
+<span class="material-symbols-outlined text-[16px] mr-1 opacity-70">info</span>
+                            Balances below this amount roll over.
+                        </p>
+</div>
+</div>
+</div>
+<!-- Action Section -->
+<div class="mt-8 flex justify-end">
+<button class="bg-primary text-on-primary font-label-md py-3 px-6 rounded-lg hover:bg-primary-fixed-dim transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-offset-background focus:ring-primary shadow-[0_0_15px_rgba(220,184,255,0.1)] hover:shadow-[0_0_20px_rgba(220,184,255,0.2)]" type="button">
+                    Save Payout Preferences
+                </button>
+</div>
+</div>
+</main>
+</body></html>

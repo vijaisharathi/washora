@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Delivery Record Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary": "#303032",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "surface-variant": "#353436",
+                      "on-error-container": "#ffdad6",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "error-container": "#93000a",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "surface-bright": "#3a393a",
+                      "background": "#131314",
+                      "on-tertiary-fixed-variant": "#474649",
+                      "secondary-container": "#474649",
+                      "primary-container": "#8a2be2",
+                      "on-error": "#690005",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "on-primary-container": "#eed9ff",
+                      "outline": "#988ca0",
+                      "surface-tint": "#dcb8ff",
+                      "on-primary-fixed": "#2c0051",
+                      "on-tertiary": "#303032",
+                      "secondary": "#c8c6c8",
+                      "surface-container-low": "#1c1b1c",
+                      "on-secondary-fixed-variant": "#474649",
+                      "primary": "#dcb8ff",
+                      "on-tertiary-container": "#e3e0e2",
+                      "surface-container-highest": "#353436",
+                      "tertiary-fixed": "#e4e2e4",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "error": "#ffb4ab",
+                      "surface-dim": "#131314",
+                      "on-background": "#e5e2e3",
+                      "on-surface": "#e5e2e3",
+                      "on-secondary-container": "#b7b4b7",
+                      "tertiary": "#c8c6c8",
+                      "outline-variant": "#4c4354",
+                      "primary-fixed": "#efdbff",
+                      "surface-container-lowest": "#0e0e0f",
+                      "surface": "#131314",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "surface-container-high": "#2a2a2b",
+                      "on-primary": "#480081",
+                      "inverse-on-surface": "#313031",
+                      "tertiary-container": "#646365",
+                      "secondary-fixed": "#e5e1e4",
+                      "inverse-surface": "#e5e2e3",
+                      "inverse-primary": "#8422dc",
+                      "surface-container": "#201f20",
+                      "on-surface-variant": "#cfc2d7"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "xl": "32px",
+                      "2xl": "48px",
+                      "xs": "4px",
+                      "md": "16px",
+                      "sm": "8px",
+                      "3xl": "64px"
+              },
+              "fontFamily": {
+                      "body-md": ["Geist"],
+                      "display-lg-mobile": ["Geist"],
+                      "label-md": ["Geist"],
+                      "display-lg": ["Geist"],
+                      "headline-md": ["Geist"],
+                      "body-lg": ["Geist"],
+                      "headline-lg": ["Geist"],
+                      "caption": ["Geist"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom scrollbar for timeline */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #353436; border-radius: 4px; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen w-full max-w-[390px] mx-auto relative overflow-x-hidden">
+<!-- Header (Custom Task-Focused Navigation) -->
+<header class="fixed top-0 w-full max-w-[390px] h-[64px] flex items-center justify-between px-[20px] bg-background/80 backdrop-blur-xl z-50 border-b border-white/5">
+<button aria-label="Go back" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-low hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-on-background">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-on-background tracking-tight">Order #QH1024</h1>
+<button aria-label="Help" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">help</span>
+</button>
+</header>
+<main class="pt-[64px] pb-xl flex flex-col">
+<!-- Map Preview Area -->
+<div class="relative w-full h-[220px] bg-surface-container-lowest">
+<div class="absolute inset-0 bg-cover bg-center opacity-80 mix-blend-lighten" data-alt="A high-contrast, dark mode digital map interface showing a 3.8km delivery route. The map features deep charcoal and black tones with a glowing violet path indicating the route. Topography and road networks are stylized with minimalistic, futuristic glassmorphism aesthetics. The lighting is cinematic, highlighting the route against the dark background." data-location="Mumbai" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCTx99ZVwmonro1WEmw6eIqbQEAz-eljB8nUoGs5koDyImziVZJXJZoPUBtj_gFFjTEgDIIFD-114qlaM2ZqK3w5_spqUfeV3DBnehfw2jZNnqZgIbodZIrOHBrBoLN73aWuQK_PzCb_bdVyDiyA-VVKYu3TLHjRwSdt9VvoGpJQ-hPxsvr45BjooKuP0Vs3h4lpPrd5ZMFScIICC2_oWgLXfMamr-WCl4j2dJIx71vSWM7bGQHbvnJUg')">
+</div>
+<!-- Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+<!-- Floating Route Badge -->
+<div class="absolute top-[20px] right-[20px] bg-surface-container-high/90 backdrop-blur-md px-sm py-xs rounded-lg border border-white/10 flex items-center gap-2 shadow-lg">
+<span class="material-symbols-outlined text-primary text-[18px]">route</span>
+<span class="font-label-md text-label-md text-on-surface">3.8 km</span>
+</div>
+</div>
+<!-- Content Canvas (Overlapping Map) -->
+<div class="px-[20px] -mt-[40px] relative z-10 flex flex-col gap-lg">
+<!-- Primary Status Card -->
+<div class="bg-surface-container p-md rounded-[20px] border border-outline-variant/30 shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-sm">
+<div class="flex items-start justify-between mb-sm">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-xs">White Sneaker</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Premium Shoe Care Service</p>
+</div>
+<div class="bg-primary/10 border border-primary/30 px-3 py-1 rounded-full flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(220,184,255,0.8)]"></div>
+<span class="font-label-md text-label-md text-primary tracking-wide uppercase">Delivered</span>
+</div>
+</div>
+</div>
+<!-- Audit Timeline -->
+<div class="flex flex-col gap-md">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest pl-xs">Audit Timeline</h3>
+<div class="bg-surface-container-low rounded-xl p-md border border-white/5 relative">
+<!-- Vertical Line -->
+<div class="absolute left-[35px] top-[40px] bottom-[40px] w-[2px] bg-outline-variant/30"></div>
+<!-- Node 1: Accepted -->
+<div class="flex items-start gap-md mb-lg relative z-10">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center border border-white/10 mt-1">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">storefront</span>
+</div>
+<div class="flex-1">
+<h4 class="font-body-md text-body-md text-on-surface">Order Accepted</h4>
+<p class="font-caption text-caption text-on-surface-variant">Central Hub, Sector 4</p>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">6:30 PM</span>
+</div>
+<!-- Node 2: Transit -->
+<div class="flex items-start gap-md mb-lg relative z-10">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center border border-white/10 mt-1">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">local_shipping</span>
+</div>
+<div class="flex-1">
+<h4 class="font-body-md text-body-md text-on-surface">In Transit</h4>
+<p class="font-caption text-caption text-on-surface-variant">En route to customer</p>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">6:45 PM</span>
+</div>
+<!-- Node 3: Delivered -->
+<div class="flex items-start gap-md relative z-10">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center border border-primary/40 mt-1 shadow-[0_0_12px_rgba(220,184,255,0.2)]">
+<span class="material-symbols-outlined text-[16px] text-primary icon-fill">check_circle</span>
+</div>
+<div class="flex-1">
+<h4 class="font-body-md text-body-md text-primary font-medium">Delivered</h4>
+<p class="font-caption text-caption text-on-surface-variant">Handed directly to customer</p>
+</div>
+<span class="font-label-md text-label-md text-primary">7:06 PM</span>
+</div>
+</div>
+</div>
+<!-- Verification Checklist Grid -->
+<div class="flex flex-col gap-md">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest pl-xs">Verification Summary</h3>
+<div class="grid grid-cols-2 gap-sm">
+<div class="bg-surface-container-low p-sm rounded-lg flex flex-col gap-2 border border-white/5">
+<span class="material-symbols-outlined text-primary text-[20px] icon-fill">verified</span>
+<span class="font-caption text-caption text-on-surface">Item Match Confirmed</span>
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg flex flex-col gap-2 border border-white/5">
+<span class="material-symbols-outlined text-primary text-[20px] icon-fill">verified</span>
+<span class="font-caption text-caption text-on-surface">Package Intact</span>
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg flex flex-col gap-2 border border-white/5">
+<span class="material-symbols-outlined text-primary text-[20px] icon-fill">verified</span>
+<span class="font-caption text-caption text-on-surface">Location Verified</span>
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg flex flex-col gap-2 border border-white/5">
+<span class="material-symbols-outlined text-primary text-[20px] icon-fill">verified</span>
+<span class="font-caption text-caption text-on-surface">Customer Signature</span>
+</div>
+</div>
+</div>
+<!-- Financials / Earnings -->
+<div class="bg-gradient-to-br from-surface-container to-surface-container-high rounded-xl p-md border border-white/10 mt-sm">
+<div class="flex items-end justify-between mb-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant mb-1">Total Earnings</span>
+<span class="font-display-lg-mobile text-display-lg-mobile text-on-surface">₹62</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary text-[24px]">account_balance_wallet</span>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-[14px] rounded-lg hover:bg-primary-fixed transition-colors active:scale-[0.98] flex items-center justify-center gap-2">
+                    View Earnings Breakdown
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+<!-- Issue History Footer -->
+<div class="flex items-center justify-center gap-2 py-md mt-xs border-t border-white/5">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">info</span>
+<span class="font-caption text-caption text-on-surface-variant">Issue history: No issues reported for this delivery.</span>
+</div>
+</div>
+</main>
+</body></html>

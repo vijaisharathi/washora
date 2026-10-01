@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Business Preferences - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.cdnfonts.com/css/geist" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "surface-container-low": "#1c1b1c",
+                            "on-secondary-container": "#b9b8ba",
+                            "on-tertiary-container": "#e3e0e2",
+                            "on-primary-fixed": "#2c0051",
+                            "secondary": "#c8c6c8",
+                            "success-bg": "#1A3D24",
+                            "tertiary-fixed-dim": "#c8c6c8",
+                            "outline": "#988ca0",
+                            "on-surface-variant": "#cfc2d7",
+                            "success-green": "#81C784",
+                            "primary": "#dcb8ff",
+                            "secondary-fixed-dim": "#c8c6c8",
+                            "surface-container-highest": "#353436",
+                            "surface": "#131314",
+                            "surface-bright": "#39393a",
+                            "on-secondary": "#303032",
+                            "error": "#ffb4ab",
+                            "inverse-on-surface": "#313031",
+                            "primary-container": "#8a2be2",
+                            "error-red": "#ffb4ab",
+                            "tertiary-fixed": "#e4e2e4",
+                            "on-background": "#e5e2e3",
+                            "surface-variant": "#353436",
+                            "inverse-surface": "#e5e2e3",
+                            "on-primary-fixed-variant": "#6700b5",
+                            "surface-container-high": "#2a2a2b",
+                            "on-error": "#690005",
+                            "on-surface": "#e5e2e3",
+                            "surface-dim": "#131314",
+                            "error-container": "#93000a",
+                            "on-tertiary": "#303032",
+                            "primary-fixed-dim": "#dcb8ff",
+                            "outline-variant": "#4c4354",
+                            "on-secondary-fixed": "#1b1b1d",
+                            "on-primary": "#480081",
+                            "electric-violet": "#8a2be2",
+                            "on-secondary-fixed-variant": "#474648",
+                            "secondary-fixed": "#e4e2e4",
+                            "background": "#131314",
+                            "on-error-container": "#ffdad6",
+                            "on-tertiary-fixed": "#1b1b1d",
+                            "surface-tint": "#dcb8ff",
+                            "secondary-container": "#49494b",
+                            "inverse-primary": "#8422dc",
+                            "tertiary": "#c8c6c8",
+                            "primary-fixed": "#efdbff",
+                            "on-primary-container": "#eed9ff",
+                            "tertiary-container": "#646365",
+                            "surface-container": "#201f20",
+                            "surface-container-lowest": "#0e0e0f",
+                            "on-tertiary-fixed-variant": "#474648"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "md": "16px",
+                            "sm": "8px",
+                            "xs": "4px",
+                            "lg": "24px",
+                            "2xl": "48px",
+                            "3xl": "64px",
+                            "xl": "32px"
+                    },
+                    "fontFamily": {
+                            "display-lg": ["Geist", "sans-serif"],
+                            "body-md": ["Geist", "sans-serif"],
+                            "mono-display": ["monospace"],
+                            "caption": ["Geist", "sans-serif"],
+                            "h1": ["Geist", "sans-serif"],
+                            "label-md": ["Geist", "sans-serif"],
+                            "headline-lg": ["Geist", "sans-serif"],
+                            "h3": ["Geist", "sans-serif"]
+                    },
+                    "fontSize": {
+                            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                            "mono-display": ["18px", {"letterSpacing": "0.05em", "fontWeight": "700"}],
+                            "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                            "h1": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                            "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                            "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        /* Custom toggle styling */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: theme('colors.primary');
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: theme('colors.electric-violet');
+        }
+        .toggle-checkbox:checked + .toggle-label:after {
+            transform: translateX(100%);
+            border-color: white;
+        }
+        .toggle-label {
+            width: 44px;
+            height: 24px;
+            background-color: theme('colors.surface-container-highest');
+            border-radius: 9999px;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .toggle-label:after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="flex bg-background h-screen overflow-hidden">
+<!-- SideNavBar -->
+<nav class="w-64 h-full fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant/30 flex flex-col py-lg px-md z-50">
+<div class="mb-xl">
+<h1 class="font-h1 text-h1 font-bold text-electric-violet">Anything Clean</h1>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">Provider Portal</p>
+</div>
+<div class="flex-1 space-y-sm">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150 font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150 font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150 font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="star">star</span>
+<span>Reviews</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150 font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span>Notifications</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-primary/10 text-primary font-bold active:scale-95 duration-150 font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</div>
+<div class="mt-auto space-y-sm pt-md border-t border-outline-variant/30">
+<button class="w-full bg-electric-violet text-white font-label-md text-label-md font-bold py-sm rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-container transition-colors mb-md">
+                Upgrade Plan
+            </button>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150 font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Help Center</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors active:scale-95 duration-150 font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Sign Out</span>
+</a>
+</div>
+</nav>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-256px)] h-16 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-xl z-40">
+<h2 class="font-h3 text-h3 font-bold text-on-surface">Provider Dashboard</h2>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-opacity cursor-pointer">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-opacity cursor-pointer">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 mt-16 w-full h-[calc(100vh-64px)] overflow-y-auto p-xl bg-background">
+<div class="max-w-[1200px] mx-auto">
+<!-- Page Header -->
+<div class="mb-xl">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-xs">Business Preferences</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage how your business operates on Queryholic.</p>
+</div>
+<!-- Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Main Settings Column -->
+<div class="lg:col-span-8 space-y-lg">
+<!-- Operational Settings Bento -->
+<section class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg">
+<h3 class="font-h3 text-h3 text-on-surface mb-md">Operational Settings</h3>
+<div class="space-y-md divide-y divide-outline-variant/30">
+<!-- Auto-Accept Bookings -->
+<div class="flex items-center justify-between pt-md first:pt-0">
+<div>
+<div class="font-label-md text-label-md text-on-surface mb-xs">Auto-Accept Bookings</div>
+<div class="font-caption text-caption text-on-surface-variant">Automatically confirm new requests without manual approval.</div>
+</div>
+<div class="relative inline-block w-11 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer opacity-0 z-10" id="auto_accept" name="auto_accept" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-container-highest cursor-pointer" for="auto_accept"></label>
+</div>
+</div>
+<!-- Allow Customer Messages -->
+<div class="flex items-center justify-between pt-md">
+<div>
+<div class="font-label-md text-label-md text-on-surface mb-xs">Allow Customer Messages</div>
+<div class="font-caption text-caption text-on-surface-variant">Let clients send direct messages regarding bookings.</div>
+</div>
+<div class="relative inline-block w-11 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer opacity-0 z-10" id="allow_messages" name="allow_messages" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-container-highest cursor-pointer" for="allow_messages"></label>
+</div>
+</div>
+<!-- Order Notifications -->
+<div class="flex items-center justify-between pt-md">
+<div>
+<div class="font-label-md text-label-md text-on-surface mb-xs">Order Notifications</div>
+<div class="font-caption text-caption text-on-surface-variant">Receive alerts for new, updated, or canceled orders.</div>
+</div>
+<div class="relative inline-block w-11 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer opacity-0 z-10" id="order_notifs" name="order_notifs" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-container-highest cursor-pointer" for="order_notifs"></label>
+</div>
+</div>
+</div>
+</section>
+<!-- Booking Flow Controls -->
+<section class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg">
+<h3 class="font-h3 text-h3 text-on-surface mb-md">Booking Flow</h3>
+<div class="space-y-md divide-y divide-outline-variant/30">
+<!-- Accept New Bookings -->
+<div class="flex items-center justify-between pt-md first:pt-0">
+<div>
+<div class="font-label-md text-label-md text-on-surface mb-xs">Accept New Bookings</div>
+<div class="font-caption text-caption text-on-surface-variant">Your profile is visible and clients can request services.</div>
+</div>
+<div class="relative inline-block w-11 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer opacity-0 z-10" id="accept_bookings" name="accept_bookings" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-container-highest cursor-pointer" for="accept_bookings"></label>
+</div>
+</div>
+<!-- Pause New Bookings -->
+<div class="flex items-center justify-between pt-md">
+<div>
+<div class="font-label-md text-label-md text-on-surface mb-xs">Pause New Bookings</div>
+<div class="font-caption text-caption text-on-surface-variant">Temporarily hide your profile from search results.</div>
+</div>
+<div class="relative inline-block w-11 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer opacity-0 z-10" id="pause_bookings" name="pause_bookings" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-container-highest cursor-pointer" for="pause_bookings"></label>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Navigation Links Column -->
+<div class="lg:col-span-4 space-y-lg">
+<section class="bg-surface-container-low rounded-xl border border-outline-variant/30 p-md flex flex-col gap-sm">
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-xs px-sm uppercase tracking-wider">Quick Links</h3>
+<a class="flex items-center justify-between p-sm rounded-lg hover:bg-surface-container transition-colors group" href="#">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="event_available">event_available</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Manage Availability</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-sm rounded-lg hover:bg-surface-container transition-colors group" href="#">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="design_services">design_services</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Manage Services</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-sm rounded-lg hover:bg-surface-container transition-colors group" href="#">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="local_shipping">local_shipping</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Manage Pickup &amp; Delivery</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+</section>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Simple logic to ensure Accept/Pause are mutually exclusive conceptually (optional enhancement)
+        const acceptToggle = document.getElementById('accept_bookings');
+        const pauseToggle = document.getElementById('pause_bookings');
+
+        acceptToggle.addEventListener('change', (e) => {
+            if(e.target.checked) pauseToggle.checked = false;
+        });
+
+        pauseToggle.addEventListener('change', (e) => {
+            if(e.target.checked) acceptToggle.checked = false;
+        });
+    </script>
+</body></html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Partner Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#2c0051",
+                        "secondary": "#c8c6c8",
+                        "on-secondary-container": "#b7b4b7",
+                        "primary-container": "#8a2be2",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "tertiary-container": "#646365",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "inverse-primary": "#8422dc",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "inverse-on-surface": "#313031",
+                        "surface-container": "#201f20",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#1c1b1c",
+                        "tertiary": "#c8c6c8",
+                        "on-primary-container": "#eed9ff",
+                        "secondary-container": "#474649",
+                        "on-tertiary-container": "#e3e0e2",
+                        "inverse-surface": "#e5e2e3",
+                        "on-tertiary": "#303032",
+                        "surface-tint": "#dcb8ff",
+                        "on-secondary-fixed-variant": "#474649",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-surface": "#e5e2e3",
+                        "outline": "#988ca0",
+                        "surface-dim": "#131314",
+                        "surface-container-high": "#2a2a2b",
+                        "background": "#131314",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-secondary": "#303032",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#4c4354",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "secondary-fixed": "#e5e1e4",
+                        "surface-container-highest": "#353436",
+                        "on-primary": "#480081",
+                        "on-background": "#e5e2e3",
+                        "primary-fixed": "#efdbff",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface-container-lowest": "#0e0e0f",
+                        "surface": "#131314",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-surface-variant": "#cfc2d7",
+                        "surface-variant": "#353436",
+                        "surface-bright": "#3a393a",
+                        "primary": "#dcb8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "2xl": "48px",
+                        "lg": "24px",
+                        "3xl": "64px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist", "sans-serif"],
+                        "display-lg": ["Geist", "sans-serif"],
+                        "label-md": ["Geist", "sans-serif"],
+                        "caption": ["Geist", "sans-serif"],
+                        "body-md": ["Geist", "sans-serif"],
+                        "display-lg-mobile": ["Geist", "sans-serif"],
+                        "body-lg": ["Geist", "sans-serif"],
+                        "headline-md": ["Geist", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; background-color: #0A0A0B; color: #e5e2e3; }
+        .glass-panel { background: rgba(18, 18, 20, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .glow-border:hover { border-color: rgba(138, 43, 226, 0.5); box-shadow: inset 0 0 10px rgba(138, 43, 226, 0.1); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen flex flex-col pb-24 md:pb-0 pt-16 md:pt-24 max-w-[1280px] mx-auto w-full">
+<!-- Top Navigation (Web) & TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/5 shadow-sm">
+<div class="flex justify-between items-center px-md h-16 w-full max-w-[1280px] mx-auto">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-2xl">account_circle</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Partner Portal</h1>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 transition-transform"><span class="material-symbols-outlined">notifications</span></button>
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 transition-transform"><span class="material-symbols-outlined">settings</span></button>
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 transition-transform"><span class="material-symbols-outlined">support_agent</span></button>
+</div>
+</div>
+</header>
+<main class="flex-1 w-full px-5 md:px-lg mt-md grid grid-cols-1 lg:grid-cols-12 gap-lg pb-xl">
+<!-- Left Column: Hero & Completion -->
+<div class="lg:col-span-4 flex flex-col gap-lg">
+<!-- Profile Hero Card -->
+<div class="glass-panel rounded-xl p-lg flex flex-col items-center text-center relative overflow-hidden group glow-border transition-all duration-300">
+<div class="absolute top-0 right-0 p-sm">
+<span class="bg-primary/20 text-primary font-caption text-caption px-2 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> ACTIVE
+                    </span>
+</div>
+<div class="w-24 h-24 rounded-full overflow-hidden border-2 border-primary/30 mb-md">
+<img class="w-full h-full object-cover" data-alt="A professional, high-quality headshot portrait of Arun Kumar, a delivery partner. He is wearing a dark, premium uniform jacket. The lighting is soft and flattering, with a subtle violet rim light on a dark charcoal background. The style is modern, trustworthy, and matches the sleek, premium dark-mode aesthetic of a high-end service platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNSsROjZ6OdrAaMPqYGjy4bPoVYlU_HVbEjWq0ImrL16XJk6e_YCD5CNwrLg8cyxLXydSqQjlrM5qS9SoignjNCBsiXls0_cwi7nBdyH6Fdl62hmcModquBIk9nMfyRNou01SZIBwV1C7hobW5jqgiegqhhut6p0cWvXlpqnxDPerAmB5jmRzU8IKoaSdreNFAbcYlm6xYmFWjRMSxb3vBjoEKL5a2rRTBrvp2Upu-MO9R1khS5KD2UA"/>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-xs">Arun Kumar</h2>
+<p class="font-body-md text-body-md text-secondary mb-md">Delivery Partner</p>
+<div class="flex items-center gap-md w-full justify-center mt-sm pt-md border-t border-white/5">
+<div class="flex flex-col items-center">
+<div class="flex items-center text-[#FFCC00] font-label-md text-label-md">
+                            4.9 <span class="material-symbols-outlined text-[16px] ml-1" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-caption text-caption text-secondary">Rating</span>
+</div>
+<div class="w-px h-8 bg-white/10"></div>
+<div class="flex flex-col items-center">
+<span class="font-label-md text-label-md text-on-surface">342</span>
+<span class="font-caption text-caption text-secondary">Deliveries</span>
+</div>
+</div>
+</div>
+<!-- Profile Completion -->
+<div class="glass-panel rounded-xl p-lg flex flex-col gap-sm glow-border transition-all duration-300">
+<div class="flex justify-between items-center mb-xs">
+<h3 class="font-label-md text-label-md text-on-surface">Profile Completeness</h3>
+<span class="font-label-md text-label-md text-primary">95%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 mb-md">
+<div class="bg-primary h-2 rounded-full" style="width: 95%"></div>
+</div>
+<button class="w-full bg-primary text-white font-label-md text-label-md py-3 rounded-lg hover:bg-inverse-primary transition-colors active:scale-[0.98]">
+                    Complete Profile
+                </button>
+</div>
+</div>
+<!-- Right Column: Info & Actions -->
+<div class="lg:col-span-8 flex flex-col gap-lg">
+<h3 class="font-headline-md text-headline-md text-on-surface border-b border-white/5 pb-sm">Information</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Personal Info -->
+<div class="glass-panel rounded-xl p-md flex flex-col gap-sm relative glow-border transition-all duration-300">
+<div class="flex justify-between items-start mb-sm">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-secondary">person</span>
+<span class="font-label-md text-label-md">Personal</span>
+</div>
+<button class="text-primary font-label-md text-label-md hover:text-inverse-primary">Edit</button>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-body-md text-body-md text-on-surface">Arun Kumar</span>
+<span class="font-caption text-caption text-secondary">+91 98765 43210</span>
+<span class="font-caption text-caption text-secondary">arun.k@example.com</span>
+<span class="font-caption text-caption text-secondary flex items-center gap-1 mt-1"><span class="material-symbols-outlined text-[14px]">location_on</span> Chennai, TN</span>
+</div>
+</div>
+<!-- Vehicle -->
+<div class="glass-panel rounded-xl p-md flex flex-col gap-sm relative glow-border transition-all duration-300">
+<div class="flex justify-between items-start mb-sm">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-secondary">two_wheeler</span>
+<span class="font-label-md text-label-md">Vehicle</span>
+</div>
+<button class="text-primary font-label-md text-label-md hover:text-inverse-primary">View</button>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-body-md text-body-md text-on-surface">Bike</span>
+<span class="font-caption text-caption text-secondary bg-surface-container-highest px-2 py-1 rounded w-fit mt-1">TN XX XX 1234</span>
+<div class="mt-2 flex items-center gap-1 text-[#4ade80]">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-caption text-caption">Verified</span>
+</div>
+</div>
+</div>
+<!-- Documents -->
+<div class="glass-panel rounded-xl p-md flex flex-col gap-sm relative glow-border transition-all duration-300">
+<div class="flex justify-between items-start mb-sm">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-secondary">description</span>
+<span class="font-label-md text-label-md">Documents</span>
+</div>
+<button class="text-primary font-label-md text-label-md hover:text-inverse-primary">View</button>
+</div>
+<div class="flex flex-col gap-1 mt-auto">
+<span class="font-body-md text-body-md text-on-surface">4 / 4 Uploaded</span>
+<div class="mt-2 flex items-center gap-1 text-[#4ade80]">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-caption text-caption">All Verified</span>
+</div>
+</div>
+</div>
+<!-- Bank Account -->
+<div class="glass-panel rounded-xl p-md flex flex-col gap-sm relative glow-border transition-all duration-300">
+<div class="flex justify-between items-start mb-sm">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-secondary">account_balance</span>
+<span class="font-label-md text-label-md">Bank Account</span>
+</div>
+<button class="text-primary font-label-md text-label-md hover:text-inverse-primary">Manage</button>
+</div>
+<div class="flex flex-col gap-1 mt-auto">
+<span class="font-body-md text-body-md text-on-surface flex items-center gap-2">
+<span class="tracking-widest text-secondary">••••</span> 4521
+                        </span>
+<div class="mt-2 flex items-center gap-1 text-[#4ade80]">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-caption text-caption">Active</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-md">
+<!-- Action List (Hidden on desktop, shown on mobile as a quick menu, but keeping it visible as requested in bento style) -->
+<h3 class="font-headline-md text-headline-md text-on-surface border-b border-white/5 pb-sm mb-md">Quick Actions</h3>
+<div class="glass-panel rounded-xl overflow-hidden">
+<button class="w-full flex items-center justify-between p-md border-b border-white/5 hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-md text-on-surface">
+<span class="material-symbols-outlined text-secondary">edit</span>
+<span class="font-body-md text-body-md">Edit Profile</span>
+</div>
+<span class="material-symbols-outlined text-secondary">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-md border-b border-white/5 hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-md text-on-surface">
+<span class="material-symbols-outlined text-secondary">two_wheeler</span>
+<span class="font-body-md text-body-md">Vehicle</span>
+</div>
+<span class="material-symbols-outlined text-secondary">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-md border-b border-white/5 hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-md text-on-surface">
+<span class="material-symbols-outlined text-secondary">description</span>
+<span class="font-body-md text-body-md">Documents</span>
+</div>
+<span class="material-symbols-outlined text-secondary">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-md border-b border-white/5 hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-md text-on-surface">
+<span class="material-symbols-outlined text-secondary">payments</span>
+<span class="font-body-md text-body-md">Payout Account</span>
+</div>
+<span class="material-symbols-outlined text-secondary">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-md border-b border-white/5 hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-md text-on-surface">
+<span class="material-symbols-outlined text-secondary">support_agent</span>
+<span class="font-body-md text-body-md">Support</span>
+</div>
+<span class="material-symbols-outlined text-secondary">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-md hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-md text-on-surface">
+<span class="material-symbols-outlined text-secondary">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</div>
+<span class="material-symbols-outlined text-secondary">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container/90 dark:bg-surface-container/90 backdrop-blur-xl border-t border-white/5 shadow-[0_-4px_20px_rgba(138,43,226,0.1)] flex justify-around items-center h-20 px-sm pb-safe w-full">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-label-md text-label-md">Deliveries</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-label-md">Earnings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-label-md text-label-md">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary bg-primary-container/20 rounded-xl px-3 py-1 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+</body></html>

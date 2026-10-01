@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Review Details - REV-2048</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#ffdaba",
+                      "surface-dim": "#131314",
+                      "surface-bright": "#3a393a",
+                      "surface-container-low": "#1c1b1c",
+                      "secondary-container": "#573976",
+                      "primary": "#dcb8ff",
+                      "secondary": "#dcb8ff",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "on-background": "#e5e2e3",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "on-tertiary-fixed-variant": "#6a3b00",
+                      "on-surface-variant": "#cfc2d7",
+                      "surface": "#131314",
+                      "on-secondary-fixed": "#290947",
+                      "secondary-fixed": "#efdbff",
+                      "primary-container": "#8a2be2",
+                      "tertiary-fixed-dim": "#ffb873",
+                      "inverse-primary": "#8422dc",
+                      "surface-container-highest": "#353436",
+                      "on-secondary-fixed-variant": "#573976",
+                      "surface-container": "#201f20",
+                      "on-secondary-container": "#caa7ec",
+                      "tertiary": "#ffb873",
+                      "primary-fixed": "#efdbff",
+                      "error": "#ffb4ab",
+                      "secondary-fixed-dim": "#dcb8ff",
+                      "info": "#60a5fa",
+                      "on-tertiary-fixed": "#2d1600",
+                      "on-error-container": "#ffdad6",
+                      "on-primary-container": "#eed9ff",
+                      "on-surface": "#e5e2e3",
+                      "on-secondary": "#3f225e",
+                      "tertiary-fixed": "#ffdcbf",
+                      "outline": "#988ca0",
+                      "success": "#4ade80",
+                      "surface-container-lowest": "#0e0e0f",
+                      "surface-tint": "#dcb8ff",
+                      "on-primary": "#480081",
+                      "on-error": "#690005",
+                      "surface-variant": "#353436",
+                      "inverse-on-surface": "#313031",
+                      "on-primary-fixed": "#2c0051",
+                      "outline-variant": "#4c4354",
+                      "warning": "#fbbf24",
+                      "background": "#131314",
+                      "on-tertiary": "#4b2800",
+                      "surface-container-high": "#2a2a2b",
+                      "inverse-surface": "#e5e2e3",
+                      "error-container": "#93000a",
+                      "critical": "#f87171",
+                      "tertiary-container": "#935400"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "sidebar-width": "260px",
+                      "table-cell-padding": "12px",
+                      "gutter": "16px",
+                      "margin-desktop": "24px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "label-sm": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "code": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-md": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "code": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            font-family: 'Geist', sans-serif;
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+      </style>
+</head>
+<body class="bg-background text-on-background flex h-screen overflow-hidden antialiased">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-lowest dark:bg-surface-container-lowest border-r border-outline-variant flex flex-col h-full py-margin-desktop z-20">
+<div class="px-gutter mb-8">
+<h1 class="font-display-lg text-display-lg font-bold text-primary tracking-tight">ANYTHING CLEAN</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Super Admin Console</p>
+</div>
+<div class="flex-1 overflow-y-auto px-gutter space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+<span class="font-body-md text-body-md">Disputes</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg border-l-4 border-primary bg-secondary-container/30 text-on-surface font-semibold transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="reviews">reviews</span>
+<span class="font-body-md text-body-md">Reviews</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="store">store</span>
+<span class="font-body-md text-body-md">Vendors</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-body-md text-body-md">Audit Logs</span>
+</a>
+</div>
+<div class="px-gutter mt-auto pt-4 border-t border-outline-variant space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-body-md text-body-md">Logout</span>
+</a>
+</div>
+</nav>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-260px)] h-16 bg-surface dark:bg-surface border-b border-outline-variant flex justify-between items-center px-margin-desktop z-10">
+<div class="flex items-center gap-4">
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Dispute Resolution Hub</h2>
+<div class="relative focus-within:ring-2 focus-within:ring-primary rounded-full transition-all">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="bg-surface-container-low border border-outline-variant rounded-full pl-10 pr-4 py-1.5 text-body-md focus:outline-none focus:border-primary w-64 text-on-surface placeholder:text-on-surface-variant" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="dns">dns</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<img class="w-8 h-8 rounded-full border border-outline-variant object-cover ml-2" data-alt="A small circular avatar showing a professional minimalist geometric profile picture in deep purple and dark grey tones. The lighting is soft and corporate, matching a dark mode admin dashboard UI. High resolution, crisp edges, modern corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX2XqRNwXrlmvfP1uk0o0yghKRnQrDukNu0VBEINwuDDD9rmONZAzhkdqciAvv1hv64htrCJXxZZZ901ZcTTWMnCIPWW29Lj_NTHOiLTJss7gsdM1ytZ7EiIZw3NaN9YFfJsa8XzdWVyhmpcD-Cmfk3u4LrXUO93xK17EizwUCqT8jP8i3o8XvklmXyrm_EVZyUs0O-HmoS6u19_sq3aYxTnvjjSxRy9mlUjrxYlp15ziajTYaXnH7IQ"/>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-[260px] mt-16 p-margin-desktop flex-1 overflow-y-auto bg-surface-dim min-h-[calc(100vh-64px)] w-full flex flex-col gap-6">
+<!-- Header Section -->
+<div class="flex justify-between items-end">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span> Back to Reviews
+                    </a>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface flex items-center gap-4">
+                    Review Details: REV-2048
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-error/10 text-error border border-error/20">
+<span class="material-symbols-outlined text-[14px] mr-1">flag</span> FLAGGED
+                    </span>
+</h1>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant rounded-lg font-label-md text-label-md text-on-surface transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">gavel</span> Escalate
+                </button>
+<button class="px-4 py-2 bg-primary hover:bg-primary/90 text-on-primary rounded-lg font-label-md text-label-md transition-colors flex items-center gap-2 shadow-[0_0_15px_rgba(220,184,255,0.2)]">
+<span class="material-symbols-outlined text-[18px]">check_circle</span> Resolve Review
+                </button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Left Column: Review Content & Context (8 cols) -->
+<div class="col-span-8 flex flex-col gap-gutter">
+<!-- Flag Information Alert -->
+<div class="bg-error-container/20 border border-error-container rounded-xl p-5 flex items-start gap-4">
+<div class="p-2 bg-error-container/30 rounded-lg text-error">
+<span class="material-symbols-outlined" data-weight="fill">warning</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-error mb-1">Flagged by Provider</h3>
+<p class="font-body-md text-body-md text-on-error-container/80">Reason: <strong>Potentially inappropriate content.</strong></p>
+<p class="font-body-md text-body-md text-on-error-container/70 mt-2">Provider CleanX reported this review as violating platform policies regarding service outcome claims without evidence.</p>
+</div>
+</div>
+<!-- Review Content Card -->
+<div class="bg-surface-container-low border border-surface-variant rounded-xl p-6 flex flex-col gap-4 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+<div class="flex justify-between items-center border-b border-surface-variant pb-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Review Content</h3>
+<div class="flex items-center gap-1 text-warning">
+<span class="material-symbols-outlined" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-outline">star</span>
+<span class="material-symbols-outlined text-outline">star</span>
+<span class="material-symbols-outlined text-outline">star</span>
+<span class="ml-2 font-label-md text-label-md text-on-surface">2.0</span>
+</div>
+</div>
+<div class="font-body-lg text-body-lg text-on-surface-variant italic py-2">
+                        "The cleaning was not done properly and the shoes came back damaged."
+                    </div>
+</div>
+<!-- Context Grid -->
+<div class="grid grid-cols-2 gap-gutter">
+<!-- Customer Details -->
+<div class="bg-surface-container-low border border-surface-variant rounded-xl p-5">
+<div class="flex items-center gap-3 mb-4 border-b border-surface-variant pb-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Customer</p>
+<p class="font-headline-md text-headline-md text-on-surface text-[16px]">Arun Kumar</p>
+</div>
+</div>
+<div class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+<div class="flex justify-between"><span>User ID:</span> <span class="text-on-surface">USR-8832</span></div>
+<div class="flex justify-between"><span>Join Date:</span> <span class="text-on-surface">Mar 12, 2023</span></div>
+<div class="flex justify-between"><span>Total Orders:</span> <span class="text-on-surface">14</span></div>
+</div>
+</div>
+<!-- Order Details -->
+<div class="bg-surface-container-low border border-surface-variant rounded-xl p-5">
+<div class="flex items-center gap-3 mb-4 border-b border-surface-variant pb-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant border border-outline-variant">
+<span class="material-symbols-outlined">receipt_long</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Order Reference</p>
+<a class="font-headline-md text-headline-md text-primary hover:underline text-[16px]" href="#">#QH1024</a>
+</div>
+</div>
+<div class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+<div class="flex justify-between"><span>Service:</span> <span class="text-on-surface">Shoe Cleaning</span></div>
+<div class="flex justify-between"><span>Provider:</span> <a class="text-primary hover:underline" href="#">CleanX</a></div>
+<div class="flex justify-between"><span>Date:</span> <span class="text-on-surface">Oct 24, 2023</span></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Moderation Actions & Timeline (4 cols) -->
+<div class="col-span-4 flex flex-col gap-gutter">
+<!-- Moderation Action Panel -->
+<div class="bg-surface-container-low border border-primary/30 rounded-xl p-5 shadow-[0_0_20px_rgba(220,184,255,0.05)] flex flex-col h-full">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 flex items-center gap-2 border-b border-surface-variant pb-3">
+<span class="material-symbols-outlined text-primary">admin_panel_settings</span> Moderation Decision
+                    </h3>
+<div class="space-y-4 flex-1">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Action</label>
+<div class="grid grid-cols-1 gap-2">
+<label class="flex items-center gap-3 p-3 rounded-lg border border-surface-variant bg-surface-container hover:bg-surface-container-high cursor-pointer transition-colors group">
+<input class="text-primary focus:ring-primary bg-surface-container-highest border-outline-variant h-4 w-4" name="mod_action" type="radio"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Keep Published</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg border border-surface-variant bg-surface-container hover:bg-surface-container-high cursor-pointer transition-colors group">
+<input class="text-primary focus:ring-primary bg-surface-container-highest border-outline-variant h-4 w-4" name="mod_action" type="radio"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Hide Review (Internal)</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg border border-error/30 bg-error/5 hover:bg-error/10 cursor-pointer transition-colors group">
+<input class="text-error focus:ring-error bg-surface-container-highest border-error/50 h-4 w-4" name="mod_action" type="radio"/>
+<span class="font-body-md text-body-md text-error">Remove Review (Public)</span>
+</label>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Moderation Reason (Internal)</label>
+<textarea class="w-full bg-surface-container border border-outline-variant rounded-lg p-3 text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-on-surface-variant/50" placeholder="Log internal reason for this decision..." rows="3"></textarea>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Communication to Customer (Optional)</label>
+<textarea class="w-full bg-surface-container border border-outline-variant rounded-lg p-3 text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-on-surface-variant/50" placeholder="Message sent to Arun Kumar..." rows="2"></textarea>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

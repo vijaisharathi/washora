@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Business &amp; Bulk Services | Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#1c1b1c",
+                        "on-primary-container": "#eed9ff",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "error": "#ffb4ab",
+                        "electric-violet": "#8a2be2",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-primary": "#480081",
+                        "on-surface-variant": "#cfc2d7",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-primary-fixed": "#2c0051",
+                        "surface-tint": "#dcb8ff",
+                        "success-bg": "#1A3D24",
+                        "on-secondary-container": "#b9b8ba",
+                        "error-container": "#93000a",
+                        "tertiary-container": "#646365",
+                        "on-tertiary": "#303032",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "surface-variant": "#353436",
+                        "surface-dim": "#131314",
+                        "tertiary": "#c8c6c8",
+                        "surface-container-high": "#2a2a2b",
+                        "surface": "#131314",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-secondary": "#303032",
+                        "inverse-primary": "#8422dc",
+                        "on-tertiary-container": "#e3e0e2",
+                        "primary-container": "#8a2be2",
+                        "surface-container-highest": "#353436",
+                        "secondary-container": "#49494b",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "secondary-fixed": "#e4e2e4",
+                        "on-error": "#690005",
+                        "outline-variant": "#4c4354",
+                        "secondary": "#c8c6c8",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "primary-fixed": "#efdbff",
+                        "surface-container": "#201f20",
+                        "inverse-surface": "#e5e2e3",
+                        "on-background": "#e5e2e3",
+                        "outline": "#988ca0",
+                        "background": "#131314",
+                        "error-red": "#ffb4ab",
+                        "on-surface": "#e5e2e3",
+                        "primary": "#dcb8ff",
+                        "inverse-on-surface": "#313031",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-secondary-fixed-variant": "#474648",
+                        "success-green": "#81C784",
+                        "surface-bright": "#39393a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "sm": "8px",
+                        "2xl": "48px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "3xl": "64px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Geist"],
+                        "label-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "caption": ["Geist"],
+                        "h3": ["Geist"],
+                        "mono-display": ["monospace"]
+                    },
+                    "fontSize": {
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #131314; color: #e5e2e3; }
+        .glass-panel { background: rgba(32, 31, 32, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(76, 67, 84, 0.2); }
+        .glow-accent { box-shadow: 0 0 40px -10px rgba(138, 43, 226, 0.15); }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-md text-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-surface/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-white/5 shadow-sm">
+<div class="flex justify-between items-center px-lg h-16 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-xl">
+<a class="text-headline-md font-headline-md font-bold text-primary" href="#">Anything Clean</a>
+<nav class="hidden md:flex gap-md items-center">
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors font-label-md text-label-md px-sm py-xs rounded-DEFAULT" href="#">Services</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md px-sm py-xs" href="#">Providers</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors font-label-md text-label-md px-sm py-xs rounded-DEFAULT" href="#">How it Works</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors font-label-md text-label-md px-sm py-xs rounded-DEFAULT" href="#">Support</a>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<div class="hidden md:flex gap-sm">
+<button class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors p-sm rounded-full" data-icon="notifications">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors p-sm rounded-full" data-icon="shopping_cart">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+<button class="bg-electric-violet text-white font-label-md text-label-md px-lg py-sm rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-container/90 transition-colors active:scale-95">Book Now</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/30 hidden md:block">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A professional headshot of a corporate user in a modern office environment, moody lighting with electric violet accents, highly detailed, photorealistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH3R9obeRye2bCYxRlYc8WIvEQiPvePjXd-Vi4rCSaNkiu50N03BKiR9brhgnrjVV6LpgiBu30L4fLgBwH2JwrVn-fde4DW6ntcID7pnPdyDLEQptVDgN6HJ7WSKrSJ3KVpQ7u0k7VZuCRm84B1MB41fG4zR61yZJ8bkncm9K6hMQzaF7igFSvPXl7XmEKt-kN6cksuzOYxoqhi8pOaAYVPDZTlYk88eCjmkqMDQHrfc4MJHzKbkfgLg"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-3xl mt-xl max-w-[1200px] mx-auto w-full px-lg md:px-xl pb-3xl">
+<!-- Hero Section -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-2xl items-center mb-3xl">
+<div class="space-y-lg relative z-10">
+<span class="inline-block px-sm py-xs bg-surface-container-high border border-outline-variant/30 rounded-full font-caption text-caption text-primary uppercase tracking-wider">Enterprise Solutions</span>
+<h1 class="font-display-lg text-display-lg text-on-surface">Scale your operations with <span class="text-primary">precision cleaning.</span></h1>
+<p class="text-on-surface-variant text-body-md max-w-lg">Reliable, high-volume cleaning services designed for commercial spaces. From boutique hotels to sprawling corporate campuses, we deliver spotless results with engineered consistency.</p>
+<div class="flex gap-md pt-sm">
+<a class="bg-electric-violet text-white font-label-md text-label-md px-xl py-md rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-container/90 transition-colors text-center inline-block" href="#quote-form">Request a Quote</a>
+</div>
+</div>
+<div class="relative h-[400px] lg:h-[500px] rounded-xl overflow-hidden glass-panel glow-accent flex items-center justify-center">
+<div class="absolute inset-0 bg-cover bg-center opacity-60" data-alt="A sweeping wide-angle shot of a pristine, modern corporate lobby with gleaming floors and minimalist architecture, bathed in soft, cool blue and electric violet accent lighting. The scene conveys absolute cleanliness, high-end commercial scale, and technical precision. Dark mode aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCt46O2JQdGGWP28tDRFJImq3V0ttKTyCGCJ_LDVEMgmw4kEotE4U_1YRf283Sf34pgY9fIQLT_24poiYjaiv1TM_5p_3Nu-FWOHVkdDSTYfxtaYO5ld9FADqWMXk0l-4AEQ4tLH-9PnKbM7-f0AYr3xQcZ5GYO1XY6YL6fkz--Fxg7S6aNBi0qKCggdxx4Ms5XQVelRVfOxZ7i4m5rAZ3rZs-j5dtRSEGnSblTNlr8_tRDddMzKmHvxQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+</div>
+</section>
+<div class="border-t border-outline-variant/30 w-full mb-3xl"></div>
+<!-- Bento Grid Use Cases -->
+<section class="mb-3xl">
+<div class="mb-xl">
+<h2 class="font-h1 text-h1 text-on-surface mb-sm">Tailored for your industry</h2>
+<p class="text-on-surface-variant">Specialized protocols for complex environments.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Card 1 -->
+<div class="bg-surface-container-low border border-outline-variant/50 rounded-xl p-lg flex flex-col h-full hover:border-primary/50 transition-colors group relative overflow-hidden">
+<div class="absolute top-0 right-0 p-md opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[64px]" style="font-variation-settings: 'FILL' 1;">domain</span>
+</div>
+<div class="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center mb-md border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary">domain</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-sm">Corporate Offices</h3>
+<p class="text-on-surface-variant text-body-md flex-grow mb-md">Maintain a pristine working environment to boost productivity and ensure health standards across all square footage.</p>
+<ul class="space-y-sm">
+<li class="flex items-center gap-sm text-caption text-on-surface-variant"><span class="material-symbols-outlined text-primary text-[16px]">check_circle</span> Daily workspace sanitization</li>
+<li class="flex items-center gap-sm text-caption text-on-surface-variant"><span class="material-symbols-outlined text-primary text-[16px]">check_circle</span> Deep carpet extraction</li>
+</ul>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-low border border-outline-variant/50 rounded-xl p-lg flex flex-col h-full hover:border-primary/50 transition-colors group relative overflow-hidden">
+<div class="absolute top-0 right-0 p-md opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[64px]" style="font-variation-settings: 'FILL' 1;">hotel</span>
+</div>
+<div class="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center mb-md border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary">hotel</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-sm">Hospitality &amp; Hotels</h3>
+<p class="text-on-surface-variant text-body-md flex-grow mb-md">Deliver five-star guest experiences with impeccable room turnovers and immaculate common areas.</p>
+<ul class="space-y-sm">
+<li class="flex items-center gap-sm text-caption text-on-surface-variant"><span class="material-symbols-outlined text-primary text-[16px]">check_circle</span> High-volume turnover</li>
+<li class="flex items-center gap-sm text-caption text-on-surface-variant"><span class="material-symbols-outlined text-primary text-[16px]">check_circle</span> Linen management systems</li>
+</ul>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-low border border-outline-variant/50 rounded-xl p-lg flex flex-col h-full hover:border-primary/50 transition-colors group relative overflow-hidden">
+<div class="absolute top-0 right-0 p-md opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[64px]" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+</div>
+<div class="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center mb-md border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary">restaurant</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-sm">Restaurants &amp; Retail</h3>
+<p class="text-on-surface-variant text-body-md flex-grow mb-md">Rigorous deep cleaning for front-of-house and back-of-house to meet strict health codes and impress customers.</p>
+<ul class="space-y-sm">
+<li class="flex items-center gap-sm text-caption text-on-surface-variant"><span class="material-symbols-outlined text-primary text-[16px]">check_circle</span> Kitchen degreasing</li>
+<li class="flex items-center gap-sm text-caption text-on-surface-variant"><span class="material-symbols-outlined text-primary text-[16px]">check_circle</span> Floor restoration</li>
+</ul>
+</div>
+</div>
+</section>
+<div class="border-t border-outline-variant/30 w-full mb-3xl"></div>
+<!-- Request a Quote Form Section -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-xl" id="quote-form">
+<div class="lg:col-span-4 flex flex-col justify-between">
+<div>
+<h2 class="font-h1 text-h1 text-on-surface mb-md">Initiate Service</h2>
+<p class="text-on-surface-variant mb-xl">Provide details about your facility requirements. Our enterprise team typically responds within 2 hours with a preliminary assessment.</p>
+</div>
+<div class="hidden lg:block bg-surface-container p-lg rounded-xl border border-outline-variant/20">
+<div class="flex items-center gap-md mb-md">
+<span class="material-symbols-outlined text-primary text-3xl">support_agent</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Dedicated Account Manager</div>
+<div class="font-caption text-caption text-on-surface-variant">24/7 Priority Support</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-8 bg-surface-container rounded-xl border border-outline-variant/30 p-lg md:p-xl shadow-lg relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-electric-violet to-surface-tint"></div>
+<form class="space-y-lg relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface">Company Name</label>
+<input class="w-full bg-surface-container-low border-outline-variant/50 rounded-md text-on-surface focus:ring-1 focus:ring-primary focus:border-primary transition-all placeholder:text-on-surface-variant/50" placeholder="Acme Corp" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface">Work Email</label>
+<input class="w-full bg-surface-container-low border-outline-variant/50 rounded-md text-on-surface focus:ring-1 focus:ring-primary focus:border-primary transition-all placeholder:text-on-surface-variant/50" placeholder="contact@company.com" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface">Facility Type</label>
+<select class="w-full bg-surface-container-low border-outline-variant/50 rounded-md text-on-surface focus:ring-1 focus:ring-primary focus:border-primary transition-all appearance-none">
+<option value="">Select industry...</option>
+<option value="office">Corporate Office</option>
+<option value="hotel">Hotel / Resort</option>
+<option value="restaurant">Restaurant / Food Service</option>
+<option value="retail">Retail Space</option>
+<option value="other">Other Commercial</option>
+</select>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface">Approximate Square Footage</label>
+<select class="w-full bg-surface-container-low border-outline-variant/50 rounded-md text-on-surface focus:ring-1 focus:ring-primary focus:border-primary transition-all appearance-none">
+<option value="">Select volume...</option>
+<option value="small">Under 10,000 sq ft</option>
+<option value="medium">10,000 - 50,000 sq ft</option>
+<option value="large">50,000 - 100,000 sq ft</option>
+<option value="enterprise">100,000+ sq ft</option>
+</select>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface mb-sm block">Required Service Frequency</label>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-sm">
+<label class="cursor-pointer">
+<input class="peer sr-only" name="frequency" type="radio"/>
+<div class="p-sm text-center border border-outline-variant/50 rounded-md peer-checked:bg-primary-container/20 peer-checked:border-primary peer-checked:text-primary transition-colors text-on-surface-variant font-label-md text-label-md">Daily</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="frequency" type="radio"/>
+<div class="p-sm text-center border border-outline-variant/50 rounded-md peer-checked:bg-primary-container/20 peer-checked:border-primary peer-checked:text-primary transition-colors text-on-surface-variant font-label-md text-label-md">Weekly</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="frequency" type="radio"/>
+<div class="p-sm text-center border border-outline-variant/50 rounded-md peer-checked:bg-primary-container/20 peer-checked:border-primary peer-checked:text-primary transition-colors text-on-surface-variant font-label-md text-label-md">Bi-Weekly</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="frequency" type="radio"/>
+<div class="p-sm text-center border border-outline-variant/50 rounded-md peer-checked:bg-primary-container/20 peer-checked:border-primary peer-checked:text-primary transition-colors text-on-surface-variant font-label-md text-label-md">Monthly</div>
+</label>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface">Additional Requirements</label>
+<textarea class="w-full bg-surface-container-low border-outline-variant/50 rounded-md text-on-surface focus:ring-1 focus:ring-primary focus:border-primary transition-all placeholder:text-on-surface-variant/50 resize-none" placeholder="Briefly describe any specific needs, high-traffic areas, or specialized cleaning protocols required..." rows="3"></textarea>
+</div>
+<div class="pt-sm flex justify-end">
+<button class="bg-electric-violet text-white font-label-md text-label-md px-xl py-md rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-container/90 transition-colors w-full md:w-auto" type="button">Submit Specifications</button>
+</div>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-2xl border-t border-white/5 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-lg max-w-[1280px] mx-auto gap-lg md:gap-0">
+<div class="font-headline-md text-on-surface font-bold">Anything Clean</div>
+<div class="flex flex-wrap justify-center gap-md md:gap-lg font-caption text-caption">
+<a class="text-on-surface-variant hover:text-on-surface transition-opacity hover:underline underline-offset-4" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-opacity hover:underline underline-offset-4" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-opacity hover:underline underline-offset-4" href="#">Partner with Us</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-opacity hover:underline underline-offset-4" href="#">Careers</a>
+</div>
+<div class="font-caption text-caption text-on-surface-variant text-center md:text-right">
+                © 2024 Anything Clean. All rights reserved.
+            </div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface-container/90 backdrop-blur-lg fixed bottom-0 w-full z-50 rounded-t-xl border-t border-white/10 shadow-[0_-4px_20px_rgba(138,43,226,0.1)] flex justify-around items-center h-20 pb-safe px-md">
+<a class="flex flex-col items-center justify-center text-primary active:bg-primary-container/20 tap-highlight-transparent p-sm rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-label-md text-label-md-mobile">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-primary-container/20 tap-highlight-transparent p-sm rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1">calendar_today</span>
+<span class="font-label-md text-label-md-mobile">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-primary-container/20 tap-highlight-transparent p-sm rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1">chat</span>
+<span class="font-label-md text-label-md-mobile">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-primary-container/20 tap-highlight-transparent p-sm rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-md text-label-md-mobile">Profile</span>
+</a>
+</nav>
+</body></html>

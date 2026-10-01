@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Refuses Delivery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-tertiary-container": "#e3e0e2",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-container-low": "#1c1b1c",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "secondary-container": "#474649",
+                        "surface-container-high": "#2a2a2b",
+                        "outline-variant": "#4c4354",
+                        "surface-tint": "#dcb8ff",
+                        "surface-variant": "#353436",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "tertiary-fixed": "#e4e2e4",
+                        "primary": "#dcb8ff",
+                        "inverse-on-surface": "#313031",
+                        "secondary": "#c8c6c8",
+                        "outline": "#988ca0",
+                        "on-secondary-fixed-variant": "#474649",
+                        "primary-container": "#8a2be2",
+                        "on-background": "#e5e2e3",
+                        "on-primary": "#480081",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-primary-fixed": "#2c0051",
+                        "surface-container": "#201f20",
+                        "on-tertiary": "#303032",
+                        "inverse-surface": "#e5e2e3",
+                        "tertiary-container": "#646365",
+                        "primary-fixed": "#efdbff",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-surface-variant": "#cfc2d7",
+                        "secondary-fixed": "#e5e1e4",
+                        "on-primary-container": "#eed9ff",
+                        "inverse-primary": "#8422dc",
+                        "surface-container-highest": "#353436",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "on-secondary": "#303032",
+                        "on-secondary-container": "#b7b4b7",
+                        "surface-dim": "#131314",
+                        "error": "#ffb4ab",
+                        "on-surface": "#e5e2e3",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface": "#131314",
+                        "on-error-container": "#ffdad6",
+                        "background": "#131314",
+                        "surface-bright": "#3a393a",
+                        "tertiary": "#c8c6c8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "2xl": "48px",
+                        "3xl": "64px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "caption": ["Geist"],
+                        "body-md": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "headline-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col antialiased w-full max-w-[390px] mx-auto relative overflow-x-hidden">
+<!-- Header -->
+<header class="flex items-center justify-between px-md h-16 w-full max-w-full bg-surface/80 backdrop-blur-xl border-b border-white/5 shadow-sm sticky top-0 z-50">
+<button class="text-on-surface-variant hover:opacity-80 transition-all duration-200 active:scale-95 p-2 -ml-2 rounded-full">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex flex-col items-center">
+<h1 class="font-headline-md text-[18px] leading-[24px] font-bold text-primary">Delivery declined</h1>
+<span class="font-caption text-caption text-on-surface-variant">Order #QH1024</span>
+</div>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col px-[20px] py-lg gap-lg overflow-y-auto pb-[100px]">
+<!-- Context Message -->
+<div class="bg-surface-container-low p-md rounded-xl border border-white/5 flex gap-md items-start">
+<span class="material-symbols-outlined text-error mt-1">warning</span>
+<p class="font-body-md text-body-md text-on-surface">Customer does not want to accept this order.</p>
+</div>
+<!-- Reason Selector -->
+<section class="flex flex-col gap-sm">
+<h2 class="font-label-md text-label-md text-on-surface-variant mb-xs uppercase tracking-wider">Select Reason</h2>
+<div class="flex flex-col gap-xs">
+<label class="flex items-center gap-md p-md bg-surface-container rounded-lg border border-transparent hover:border-primary/30 transition-colors cursor-pointer group">
+<input class="w-5 h-5 text-primary bg-surface-container-high border-outline focus:ring-primary focus:ring-offset-surface" name="reason" type="radio"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Wrong item</span>
+</label>
+<label class="flex items-center gap-md p-md bg-surface-container rounded-lg border border-transparent hover:border-primary/30 transition-colors cursor-pointer group">
+<input class="w-5 h-5 text-primary bg-surface-container-high border-outline focus:ring-primary focus:ring-offset-surface" name="reason" type="radio"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Package damaged</span>
+</label>
+<label class="flex items-center gap-md p-md bg-surface-container rounded-lg border border-transparent hover:border-primary/30 transition-colors cursor-pointer group">
+<input class="w-5 h-5 text-primary bg-surface-container-high border-outline focus:ring-primary focus:ring-offset-surface" name="reason" type="radio"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Order cancelled</span>
+</label>
+<label class="flex items-center gap-md p-md bg-surface-container rounded-lg border border-transparent hover:border-primary/30 transition-colors cursor-pointer group">
+<input class="w-5 h-5 text-primary bg-surface-container-high border-outline focus:ring-primary focus:ring-offset-surface" name="reason" type="radio"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Customer changed mind</span>
+</label>
+<label class="flex items-center gap-md p-md bg-surface-container rounded-lg border border-transparent hover:border-primary/30 transition-colors cursor-pointer group">
+<input class="w-5 h-5 text-primary bg-surface-container-high border-outline focus:ring-primary focus:ring-offset-surface" name="reason" type="radio"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Other</span>
+</label>
+</div>
+</section>
+<!-- Possession Toggle -->
+<section class="bg-surface-container p-md rounded-xl border border-white/5 flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface w-2/3">Is the package still in your possession?</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</section>
+<!-- Evidence -->
+<section class="flex flex-col gap-sm">
+<h2 class="font-label-md text-label-md text-on-surface-variant mb-xs uppercase tracking-wider">Evidence (Optional)</h2>
+<button class="w-full h-[120px] bg-surface-container-high border border-dashed border-outline-variant rounded-xl flex flex-col items-center justify-center gap-xs text-on-surface-variant hover:bg-surface-container-highest hover:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-[32px]">photo_camera</span>
+<span class="font-label-md text-label-md">Add Photo</span>
+</button>
+<textarea class="w-full bg-surface-container-low border border-white/5 rounded-xl p-md font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none" placeholder="Add Notes..." rows="3"></textarea>
+</section>
+</main>
+<!-- Bottom Action Area -->
+<div class="fixed bottom-0 w-full max-w-[390px] p-[20px] bg-surface/90 backdrop-blur-2xl border-t border-white/5 shadow-lg z-50">
+<button class="w-full bg-error text-on-error font-label-md text-label-md py-md rounded-full flex items-center justify-center gap-sm active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">report</span>
+            REPORT DELIVERY ISSUE
+        </button>
+</div>
+</body></html>

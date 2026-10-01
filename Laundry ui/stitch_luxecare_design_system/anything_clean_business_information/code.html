@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Business Information - Lumina</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#201f20",
+                        "error-container": "#93000a",
+                        "secondary": "#c8c6c8",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary": "#303032",
+                        "surface-container-high": "#2a2a2b",
+                        "on-tertiary-container": "#e3e0e2",
+                        "tertiary-container": "#646365",
+                        "on-primary-fixed": "#2c0051",
+                        "tertiary-fixed": "#e4e2e4",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#313031",
+                        "on-error": "#690005",
+                        "error-red": "#ffb4ab",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-primary": "#480081",
+                        "secondary-container": "#49494b",
+                        "background": "#131314",
+                        "on-surface-variant": "#cfc2d7",
+                        "primary-container": "#8a2be2",
+                        "surface-container-highest": "#353436",
+                        "secondary-fixed": "#e4e2e4",
+                        "inverse-primary": "#8422dc",
+                        "tertiary": "#c8c6c8",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-secondary-container": "#b9b8ba",
+                        "surface-dim": "#131314",
+                        "on-secondary": "#303032",
+                        "on-secondary-fixed-variant": "#474648",
+                        "inverse-surface": "#e5e2e3",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "surface-bright": "#39393a",
+                        "electric-violet": "#8a2be2",
+                        "outline-variant": "#4c4354",
+                        "surface-variant": "#353436",
+                        "on-background": "#e5e2e3",
+                        "success-green": "#81C784",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-surface": "#e5e2e3",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-tint": "#dcb8ff",
+                        "success-bg": "#1A3D24",
+                        "surface": "#131314",
+                        "on-primary-container": "#eed9ff",
+                        "outline": "#988ca0",
+                        "primary": "#dcb8ff",
+                        "primary-fixed": "#efdbff",
+                        "tertiary-fixed-dim": "#c8c6c8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "2xl": "48px",
+                        "3xl": "64px"
+                    },
+                    "fontFamily": {
+                        "mono-display": ["monospace"],
+                        "label-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "h3": ["Geist"],
+                        "h1": ["Geist"],
+                        "caption": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #131314; /* background color */
+            color: #e5e2e3; /* on-background color */
+        }
+        
+        .custom-radio:checked + div {
+            border-color: #8a2be2;
+            background-color: rgba(138, 43, 226, 0.1);
+        }
+        .custom-radio:checked + div .radio-indicator {
+            background-color: #8a2be2;
+            transform: scale(1);
+        }
+        
+        /* Subtle texture for the background */
+        .bg-texture {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232a2a2b' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased min-h-screen flex bg-texture relative overflow-x-hidden">
+<!-- Mobile Top Header (Visible only on small screens) -->
+<header class="md:hidden fixed top-0 w-full z-50 flex justify-between items-center px-md py-md bg-surface-container-low/90 backdrop-blur-md border-b border-outline-variant/30">
+<span class="font-h3 text-h3 text-electric-violet tracking-tighter">Lumina</span>
+<button class="text-on-surface-variant p-sm">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- SideNavBar (Desktop Fixed Rail) -->
+<nav class="hidden md:flex flex-col h-full py-xl px-md bg-surface-container-low border-r border-outline-variant/30 fixed left-0 top-0 w-64 z-40 transition-all duration-300 ease-in-out">
+<div class="mb-2xl px-sm">
+<h1 class="font-h1 text-h1 text-electric-violet tracking-tighter mb-sm">Lumina</h1>
+<h3 class="font-h3 text-h3 text-on-surface">Onboarding</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">Complete your profile</p>
+</div>
+<div class="flex-1 overflow-y-auto">
+<ul class="flex flex-col gap-sm">
+<li>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant font-medium hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 rounded-lg cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined text-[24px]">person_add</span>
+<span class="font-label-md text-label-md">Account</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm bg-electric-violet/10 text-primary font-bold rounded-lg transition-colors duration-200 cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">business</span>
+<span class="font-label-md text-label-md">Business</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant font-medium hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 rounded-lg cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined text-[24px]">settings_suggest</span>
+<span class="font-label-md text-label-md">Services</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant font-medium hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 rounded-lg cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined text-[24px]">description</span>
+<span class="font-label-md text-label-md">Documents</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant font-medium hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 rounded-lg cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined text-[24px]">fact_check</span>
+<span class="font-label-md text-label-md">Review</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant font-medium hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 rounded-lg cursor-pointer active:scale-95 pointer-events-none opacity-50" href="#">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+<span class="font-label-md text-label-md">Submitted</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="mt-auto pt-xl border-t border-outline-variant/30 px-sm">
+<button class="flex items-center gap-sm text-on-surface-variant hover:text-primary transition-colors duration-200 w-full">
+<span class="material-symbols-outlined text-[20px]">help</span>
+<span class="font-label-md text-label-md">Support</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 w-full min-h-screen pt-[72px] md:pt-0">
+<div class="w-full max-w-[1000px] mx-auto px-md md:px-xl py-lg md:py-2xl">
+<!-- Context Header -->
+<div class="mb-xl">
+<div class="flex items-center gap-sm mb-md text-on-surface-variant">
+<span class="font-mono-display text-mono-display text-electric-violet">04</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">— Business Information</span>
+</div>
+<h2 class="font-display-lg text-display-lg text-on-surface tracking-tight mb-sm">Tell Us About Your Business</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Provide accurate details to ensure smooth verification and setup of your professional service center workspace.</p>
+</div>
+<!-- Main Form Card -->
+<form action="#" class="bg-surface-container border border-outline-variant/20 rounded-xl p-md md:p-xl shadow-2xl shadow-background/50 relative overflow-hidden">
+<!-- Decorative subtle glow -->
+<div class="absolute -top-[100px] -right-[100px] w-[300px] h-[300px] bg-electric-violet/5 blur-[100px] rounded-full pointer-events-none"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg relative z-10">
+<!-- Business Name -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface" for="businessName">Business Name</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-sm pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">storefront</span>
+</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-sm pl-xl pr-sm text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-on-surface-variant/50" id="businessName" name="businessName" placeholder="e.g., Acme Corp" type="text" value="CleanX Service Center"/>
+</div>
+</div>
+<!-- Business Type -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface" for="businessType">Business Type</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-sm pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">category</span>
+</span>
+<select class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-sm pl-xl pr-sm text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all appearance-none cursor-pointer" id="businessType" name="businessType">
+<option selected="" value="professional">Professional Service Center</option>
+<option value="retail">Retail Store</option>
+<option value="agency">Consulting Agency</option>
+</select>
+<span class="absolute inset-y-0 right-0 flex items-center pr-sm pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">arrow_drop_down</span>
+</span>
+</div>
+</div>
+<div class="col-span-1 md:col-span-2 border-t border-outline-variant/20 my-sm"></div>
+<!-- Contact Person -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface" for="contactPerson">Contact Person</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg px-md py-sm text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="contactPerson" name="contactPerson" type="text" value="Arun Kumar"/>
+</div>
+<!-- Role -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface" for="role">Role</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg px-md py-sm text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="role" name="role" type="text" value="Owner"/>
+</div>
+<!-- Business Phone -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface" for="phone">Business Phone</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-sm pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">phone</span>
+</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-sm pl-xl pr-sm text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="phone" name="phone" placeholder="+91 98765 43210" type="tel"/>
+</div>
+</div>
+<!-- Business Email -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface" for="email">Business Email</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-sm pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-sm pl-xl pr-sm text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="email" name="email" placeholder="contact@cleanx.com" type="email"/>
+</div>
+</div>
+<div class="col-span-1 md:col-span-2 border-t border-outline-variant/20 my-sm"></div>
+<!-- Address Full Width -->
+<div class="flex flex-col gap-xs col-span-1 md:col-span-2">
+<label class="font-label-md text-label-md text-on-surface" for="address">Registered Address</label>
+<div class="relative">
+<span class="absolute top-sm left-sm flex items-start pointer-events-none text-on-surface-variant pt-[2px]">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+</span>
+<textarea class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg py-sm pl-xl pr-sm text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none" id="address" name="address" rows="2">24, Example Road, Anna Nagar, Chennai — 600040</textarea>
+</div>
+</div>
+<!-- Landmark -->
+<div class="flex flex-col gap-xs col-span-1 md:col-span-1">
+<label class="font-label-md text-label-md text-on-surface" for="landmark">Landmark</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg px-md py-sm text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="landmark" name="landmark" placeholder="Near Metro Station" type="text"/>
+</div>
+<div class="hidden md:block col-span-1"></div>
+<!-- Operating Model (Bento style radio group) -->
+<div class="flex flex-col gap-sm col-span-1 md:col-span-2 mt-md">
+<label class="font-label-md text-label-md text-on-surface">Operating Model</label>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<label class="relative cursor-pointer group">
+<input checked="" class="custom-radio sr-only" name="operatingModel" type="radio" value="physical"/>
+<div class="h-full border border-outline-variant/50 rounded-lg p-md bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col gap-sm relative overflow-hidden">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">domain</span>
+<div class="w-4 h-4 rounded-full border border-outline flex items-center justify-center">
+<div class="radio-indicator w-2 h-2 rounded-full bg-transparent transform scale-0 transition-transform duration-200"></div>
+</div>
+</div>
+<div>
+<span class="block font-label-md text-label-md text-on-surface mb-1">Physical Location</span>
+<span class="block font-caption text-caption text-on-surface-variant">Customers visit your registered facility.</span>
+</div>
+</div>
+</label>
+<label class="relative cursor-pointer group">
+<input class="custom-radio sr-only" name="operatingModel" type="radio" value="mobile"/>
+<div class="h-full border border-outline-variant/50 rounded-lg p-md bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col gap-sm relative overflow-hidden">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">local_shipping</span>
+<div class="w-4 h-4 rounded-full border border-outline flex items-center justify-center">
+<div class="radio-indicator w-2 h-2 rounded-full bg-transparent transform scale-0 transition-transform duration-200"></div>
+</div>
+</div>
+<div>
+<span class="block font-label-md text-label-md text-on-surface mb-1">Mobile Service</span>
+<span class="block font-caption text-caption text-on-surface-variant">You travel to customer locations.</span>
+</div>
+</div>
+</label>
+<label class="relative cursor-pointer group">
+<input class="custom-radio sr-only" name="operatingModel" type="radio" value="both"/>
+<div class="h-full border border-outline-variant/50 rounded-lg p-md bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col gap-sm relative overflow-hidden">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">hub</span>
+<div class="w-4 h-4 rounded-full border border-outline flex items-center justify-center">
+<div class="radio-indicator w-2 h-2 rounded-full bg-transparent transform scale-0 transition-transform duration-200"></div>
+</div>
+</div>
+<div>
+<span class="block font-label-md text-label-md text-on-surface mb-1">Both</span>
+<span class="block font-caption text-caption text-on-surface-variant">Hybrid operation model.</span>
+</div>
+</div>
+</label>
+</div>
+</div>
+<!-- Business Description -->
+<div class="flex flex-col gap-xs col-span-1 md:col-span-2 mt-sm">
+<label class="font-label-md text-label-md text-on-surface" for="description">Business Description <span class="text-on-surface-variant font-normal">(Optional)</span></label>
+<textarea class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg px-md py-sm text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none" id="description" name="description" placeholder="Briefly describe the primary services offered..." rows="4"></textarea>
+</div>
+</div>
+<!-- Form Footer Actions -->
+<div class="mt-xl pt-lg border-t border-outline-variant/30 flex flex-col-reverse md:flex-row justify-between items-center gap-md relative z-10">
+<button class="w-full md:w-auto px-lg py-sm rounded border border-outline-variant text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md flex justify-center items-center gap-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                        Back
+                    </button>
+<button class="w-full md:w-auto px-xl py-sm rounded bg-electric-violet text-on-primary font-bold shadow-lg shadow-electric-violet/20 hover:bg-inverse-primary hover:shadow-electric-violet/40 transition-all duration-300 transform active:scale-95 font-label-md text-label-md flex justify-center items-center gap-sm" type="submit">
+                        Save &amp; Continue
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</main>
+<script>
+        // Simple script to handle input focus states for icons if needed, 
+        // though CSS handles most of the modern focus-within states nicely.
+        document.querySelectorAll('input, textarea, select').forEach(element => {
+            element.addEventListener('focus', function() {
+                const icon = this.previousElementSibling?.querySelector('.material-symbols-outlined');
+                if (icon) {
+                    icon.classList.add('text-primary');
+                    icon.classList.remove('text-on-surface-variant');
+                }
+            });
+            element.addEventListener('blur', function() {
+                const icon = this.previousElementSibling?.querySelector('.material-symbols-outlined');
+                if (icon) {
+                    icon.classList.remove('text-primary');
+                    icon.classList.add('text-on-surface-variant');
+                }
+            });
+        });
+    </script>
+</body></html>

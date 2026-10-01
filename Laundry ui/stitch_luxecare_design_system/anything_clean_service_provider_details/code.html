@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Service Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "electric-violet": "#8a2be2",
+                      "inverse-primary": "#8422dc",
+                      "success-green": "#81C784",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "surface-container-high": "#2a2a2b",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "surface-bright": "#39393a",
+                      "primary-container": "#8a2be2",
+                      "inverse-surface": "#e5e2e3",
+                      "secondary-container": "#49494b",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "error-container": "#93000a",
+                      "inverse-on-surface": "#313031",
+                      "error": "#ffb4ab",
+                      "tertiary-container": "#646365",
+                      "on-tertiary": "#303032",
+                      "success-bg": "#1A3D24",
+                      "error-red": "#ffb4ab",
+                      "background": "#131314",
+                      "primary-fixed": "#efdbff",
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-secondary-container": "#b9b8ba",
+                      "on-secondary": "#303032",
+                      "outline-variant": "#4c4354",
+                      "surface": "#131314",
+                      "surface-container-low": "#1c1b1c",
+                      "secondary": "#c8c6c8",
+                      "secondary-fixed": "#e4e2e4",
+                      "on-primary": "#480081",
+                      "outline": "#988ca0",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "tertiary": "#c8c6c8",
+                      "on-background": "#e5e2e3",
+                      "on-secondary-fixed-variant": "#474648",
+                      "tertiary-fixed": "#e4e2e4",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "on-error": "#690005",
+                      "on-surface-variant": "#cfc2d7",
+                      "on-error-container": "#ffdad6",
+                      "surface-tint": "#dcb8ff",
+                      "surface-container": "#201f20",
+                      "on-primary-container": "#eed9ff",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "surface-container-highest": "#353436",
+                      "surface-dim": "#131314",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "on-surface": "#e5e2e3",
+                      "primary": "#dcb8ff",
+                      "on-tertiary-container": "#e3e0e2",
+                      "surface-variant": "#353436",
+                      "on-primary-fixed": "#2c0051"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "2xl": "48px",
+                      "xl": "32px",
+                      "xs": "4px",
+                      "3xl": "64px",
+                      "sm": "8px",
+                      "md": "16px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "h1": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "h3": [
+                              "Geist"
+                      ],
+                      "mono-display": [
+                              "monospace"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/gh/fontsource/fontsource@main/fonts/variable/geist/files/geist-latin-wght-normal.woff2') format('woff2-variations');
+            font-weight: 100 900;
+            font-style: normal;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            background-color: #131314; /* background */
+            color: #e5e2e3; /* on-background */
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased flex flex-col min-h-screen">
+<!-- Top Navigation (Shell suppressed due to Task-Focused intent, replacing with a simple back header) -->
+<header class="sticky top-0 z-50 bg-surface-container-low/80 backdrop-blur-md border-b border-outline-variant/30 px-xl py-md w-full flex items-center justify-between">
+<div class="flex items-center gap-md cursor-pointer hover:text-primary transition-colors duration-200 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="arrow_back" data-weight="regular">arrow_back</span>
+<span class="font-label-md text-label-md">Back</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-electric-violet">Service Details</h1>
+<div class="w-[60px]"></div> <!-- Spacer for balance -->
+</header>
+<main class="flex-grow w-full max-w-[1200px] mx-auto px-xl py-xl flex flex-col gap-xl">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-sm text-on-surface-variant font-label-md text-label-md">
+<span class="hover:text-primary cursor-pointer transition-colors duration-200">Services</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+<span class="hover:text-primary cursor-pointer transition-colors duration-200">Cleaning</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-on-surface">Sneaker Deep Clean (Premium)</span>
+</nav>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-xl">
+<!-- Left Column: Details -->
+<div class="md:col-span-8 flex flex-col gap-lg">
+<!-- Section 1: Service Info Card -->
+<section class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col gap-md">
+<div>
+<h2 class="font-h1 text-h1 text-on-surface mb-xs">Sneaker Deep Clean (Premium)</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Professional sneaker cleaning with deep stain treatment, drying and finishing.</p>
+</div>
+<div class="border-t border-outline-variant/30 pt-md mt-sm">
+<h3 class="font-label-md text-label-md text-on-surface font-bold mb-md uppercase tracking-wider">Inclusions</h3>
+<ul class="flex flex-col gap-sm">
+<li class="flex items-center gap-md">
+<span class="material-symbols-outlined text-success-green" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md">Exterior Cleaning</span>
+</li>
+<li class="flex items-center gap-md">
+<span class="material-symbols-outlined text-success-green" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md">Sole Cleaning</span>
+</li>
+<li class="flex items-center gap-md">
+<span class="material-symbols-outlined text-success-green" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md">Stain Treatment</span>
+</li>
+<li class="flex items-center gap-md">
+<span class="material-symbols-outlined text-success-green" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md">Odor Treatment</span>
+</li>
+<li class="flex items-center gap-md">
+<span class="material-symbols-outlined text-success-green" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md">Drying</span>
+</li>
+<li class="flex items-center gap-md">
+<span class="material-symbols-outlined text-success-green" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md">Finishing</span>
+</li>
+</ul>
+</div>
+<div class="border-t border-outline-variant/30 pt-md mt-sm">
+<h3 class="font-label-md text-label-md text-on-surface font-bold mb-md uppercase tracking-wider">Available Add-ons</h3>
+<div class="flex flex-wrap gap-sm">
+<div class="px-md py-sm bg-surface-container-high rounded-full border border-outline-variant/50 flex items-center gap-sm">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="shield">shield</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Water &amp; Stain Protection</span>
+</div>
+<div class="px-md py-sm bg-surface-container-high rounded-full border border-outline-variant/50 flex items-center gap-sm">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="air">air</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Odor Treatment</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Provider Card -->
+<section class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-md">
+<div class="flex items-center gap-lg">
+<div class="w-16 h-16 rounded-lg overflow-hidden border border-outline-variant/30 flex-shrink-0">
+<img alt="Provider Logo" class="w-full h-full object-cover" data-alt="A modern, minimalist logo for a premium cleaning service named CleanX, featuring sharp geometric lines in white against a deep, dark gray background with subtle violet accents, reflecting a corporate modern tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBMAgs-XnSM_hqK-JThQc2H1qKZnoGwd08zASoe80_2tYF2sWf4y0gJ83IfxjKjQzU_qe61FwYW5MY7odCgK8otQI9HW2PvX1ppgQQt_rsM8Pq0NnNx-r93ZUU5bo3Cq4HRsnm7uNktS3DhZAzotUHxL1X_DGDSYPpTPc7r0Sy8z2gs-xPODHfx8HoSo5Hi6zSJ-lpyzcTuBcoFl7DSllHS2QupaqB9rQDb-hFTHjlgz2TMw_iIgfTBw"/>
+</div>
+<div class="flex flex-col gap-xs">
+<div class="flex items-center gap-sm">
+<h3 class="font-h3 text-h3 text-on-surface">CleanX Service Center</h3>
+<span class="inline-flex items-center gap-xs px-2 py-1 bg-primary/10 rounded border border-primary/20">
+<span class="material-symbols-outlined text-[14px] text-primary" data-icon="verified">verified</span>
+<span class="font-caption text-caption text-primary font-bold">Verified Provider</span>
+</span>
+</div>
+<div class="flex items-center gap-sm font-label-md text-label-md text-on-surface-variant">
+<div class="flex items-center text-[#FFB400]">
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="ml-1 text-on-surface">4.9</span>
+</div>
+<span>•</span>
+<span>1,240 reviews</span>
+</div>
+</div>
+</div>
+<button class="px-md py-sm rounded-lg border border-outline-variant text-on-surface font-label-md text-label-md font-bold hover:bg-surface-container-high transition-colors flex items-center gap-sm whitespace-nowrap w-full md:w-auto justify-center">
+                        View Provider
+                        <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</section>
+</div>
+<!-- Right Column: Specs & Actions -->
+<div class="md:col-span-4 flex flex-col gap-lg">
+<!-- Section 3: Logistics Specs Card -->
+<section class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col gap-md sticky top-[100px]">
+<div class="pb-md border-b border-outline-variant/30">
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider block mb-xs">Service Price</span>
+<div class="font-headline-lg text-headline-lg text-electric-violet">₹449</div>
+</div>
+<div class="flex flex-col gap-md py-sm">
+<div class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="local_shipping">local_shipping</span>
+                                Fulfillment
+                            </span>
+<span class="font-label-md text-label-md text-on-surface font-bold">Pickup &amp; Delivery</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="schedule">schedule</span>
+                                Turnaround
+                            </span>
+<span class="font-label-md text-label-md text-on-surface font-bold">24–48 hrs</span>
+</div>
+</div>
+<div class="pt-md mt-sm border-t border-outline-variant/30">
+<!-- Footer Action -->
+<button class="w-full py-md px-lg bg-electric-violet text-white font-label-md text-label-md font-bold rounded-lg shadow-lg shadow-primary/20 hover:bg-inverse-primary transition-colors flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined" data-icon="my_location">my_location</span>
+                            Track Order
+                        </button>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body></html>

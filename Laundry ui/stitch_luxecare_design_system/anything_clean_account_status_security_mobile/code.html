@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Account & Security</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed": "#2c0051",
+                      "secondary": "#c8c6c8",
+                      "on-secondary-container": "#b7b4b7",
+                      "primary-container": "#8a2be2",
+                      "error-container": "#93000a",
+                      "on-error": "#690005",
+                      "tertiary-container": "#646365",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "inverse-primary": "#8422dc",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "inverse-on-surface": "#313031",
+                      "surface-container": "#201f20",
+                      "on-error-container": "#ffdad6",
+                      "surface-container-low": "#1c1b1c",
+                      "tertiary": "#c8c6c8",
+                      "on-primary-container": "#eed9ff",
+                      "secondary-container": "#474649",
+                      "on-tertiary-container": "#e3e0e2",
+                      "inverse-surface": "#e5e2e3",
+                      "on-tertiary": "#303032",
+                      "surface-tint": "#dcb8ff",
+                      "on-secondary-fixed-variant": "#474649",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "on-surface": "#e5e2e3",
+                      "outline": "#988ca0",
+                      "surface-dim": "#131314",
+                      "surface-container-high": "#2a2a2b",
+                      "background": "#131314",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "on-secondary": "#303032",
+                      "error": "#ffb4ab",
+                      "outline-variant": "#4c4354",
+                      "on-tertiary-fixed-variant": "#474649",
+                      "secondary-fixed": "#e5e1e4",
+                      "surface-container-highest": "#353436",
+                      "on-primary": "#480081",
+                      "on-background": "#e5e2e3",
+                      "primary-fixed": "#efdbff",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "surface-container-lowest": "#0e0e0f",
+                      "surface": "#131314",
+                      "tertiary-fixed": "#e4e2e4",
+                      "on-surface-variant": "#cfc2d7",
+                      "surface-variant": "#353436",
+                      "surface-bright": "#3a393a",
+                      "primary": "#dcb8ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "32px",
+                      "md": "16px",
+                      "sm": "8px",
+                      "2xl": "48px",
+                      "lg": "24px",
+                      "3xl": "64px",
+                      "xs": "4px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Geist"],
+                      "display-lg": ["Geist"],
+                      "label-md": ["Geist"],
+                      "caption": ["Geist"],
+                      "body-md": ["Geist"],
+                      "display-lg-mobile": ["Geist"],
+                      "body-lg": ["Geist"],
+                      "headline-md": ["Geist"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-3xl pt-2xl">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/5 shadow-sm h-16 flex justify-between items-center px-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary font-bold text-headline-md font-headline-md cursor-pointer hover:opacity-80 transition-opacity active:scale-95">arrow_back</span>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Account & Security</h1>
+<div class="flex items-center gap-sm text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 cursor-pointer">
+<span class="material-symbols-outlined">support_agent</span>
+</div>
+</header>
+<main class="max-w-3xl mx-auto px-md md:px-lg space-y-lg mt-md">
+<!-- Conceptual Restricted State Banner -->
+<div class="bg-error-container/20 border border-error-container p-md rounded-xl flex items-start gap-md">
+<span class="material-symbols-outlined text-error shrink-0">error</span>
+<div class="flex-1">
+<h3 class="font-label-md text-label-md text-on-error-container mb-xs">Action Required: Documents Expiring</h3>
+<p class="font-body-md text-body-md text-on-error-container/80 text-sm">Your background check documentation will expire in 3 days. Please update it to maintain active status.</p>
+</div>
+<button class="bg-error text-on-error font-label-md text-label-md px-4 py-2 rounded-lg hover:opacity-90 transition-opacity shrink-0">Resolve Issue</button>
+</div>
+<!-- Account Status Card -->
+<section class="bg-surface-container rounded-xl p-lg border border-white/5 relative overflow-hidden">
+<!-- Subtle glow effect -->
+<div class="absolute -top-xl -right-xl w-32 h-32 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-lg">
+<h2 class="font-headline-md text-headline-md">Account Status</h2>
+<div class="flex items-center gap-xs bg-primary-container/20 text-primary px-3 py-1 rounded-full border border-primary/20">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span class="font-label-md text-label-md tracking-wider">ACTIVE</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Verification Item -->
+<div class="flex items-center gap-md p-md bg-surface-container-high rounded-lg border border-white/5">
+<div class="bg-primary/20 p-2 rounded-full text-primary shrink-0">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md">Profile Identity</p>
+<p class="font-caption text-caption text-secondary">Verified Dec 2023</p>
+</div>
+<span class="material-symbols-outlined text-primary">verified</span>
+</div>
+<!-- Verification Item -->
+<div class="flex items-center gap-md p-md bg-surface-container-high rounded-lg border border-white/5">
+<div class="bg-primary/20 p-2 rounded-full text-primary shrink-0">
+<span class="material-symbols-outlined">directions_car</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md">Vehicle Registration</p>
+<p class="font-caption text-caption text-secondary">Expires Aug 2024</p>
+</div>
+<span class="material-symbols-outlined text-primary">verified</span>
+</div>
+<!-- Verification Item -->
+<div class="flex items-center gap-md p-md bg-surface-container-high rounded-lg border border-white/5">
+<div class="bg-primary/20 p-2 rounded-full text-primary shrink-0">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md">Background Check</p>
+<p class="font-caption text-caption text-error">Expires in 3 days</p>
+</div>
+<span class="material-symbols-outlined text-error">warning</span>
+</div>
+<!-- Verification Item -->
+<div class="flex items-center gap-md p-md bg-surface-container-high rounded-lg border border-white/5">
+<div class="bg-primary/20 p-2 rounded-full text-primary shrink-0">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md">Payout Methods</p>
+<p class="font-caption text-caption text-secondary">Bank ending in 4921</p>
+</div>
+<span class="material-symbols-outlined text-primary">verified</span>
+</div>
+</div>
+</section>
+<!-- Security Section -->
+<section class="space-y-md">
+<h2 class="font-headline-md text-headline-md px-sm">Security Settings</h2>
+<div class="bg-surface-container rounded-xl border border-white/5 divide-y divide-white/5">
+<!-- Password -->
+<div class="p-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-md cursor-pointer hover:bg-surface-container-high transition-colors">
+<div>
+<p class="font-label-md text-label-md text-on-surface">Password</p>
+<p class="font-caption text-caption text-secondary">Last changed 3 months ago</p>
+</div>
+<button class="px-4 py-2 bg-transparent border border-outline rounded-lg text-primary font-label-md text-label-md hover:bg-white/5 transition-colors">Change Password</button>
+</div>
+<!-- 2FA -->
+<div class="p-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-md">
+<div>
+<div class="flex items-center gap-2">
+<p class="font-label-md text-label-md text-on-surface">Two-Factor Authentication</p>
+<span class="bg-primary-container/20 text-primary text-[10px] px-2 py-0.5 rounded-full border border-primary/20 uppercase tracking-wider font-bold">Enabled</span>
+</div>
+<p class="font-caption text-caption text-secondary mt-1">Protect your account with an extra layer of security via SMS.</p>
+</div>
+<!-- Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Active Sessions -->
+<section class="space-y-md">
+<h2 class="font-headline-md text-headline-md px-sm">Active Sessions</h2>
+<div class="bg-surface-container rounded-xl border border-white/5 divide-y divide-white/5">
+<!-- Current Session -->
+<div class="p-md flex items-center gap-md">
+<div class="bg-surface-container-high p-3 rounded-xl shrink-0">
+<span class="material-symbols-outlined text-primary text-xl">phone_iphone</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md flex items-center gap-2">
+                            iPhone 14 Pro 
+                            <span class="text-xs bg-primary/20 text-primary px-2 py-0.5 rounded-full border border-primary/10">Current Device</span>
+</p>
+<p class="font-caption text-caption text-secondary mt-1">San Francisco, CA • Active now</p>
+</div>
+</div>
+<!-- Other Session -->
+<div class="p-md flex items-center gap-md">
+<div class="bg-surface-container-high p-3 rounded-xl shrink-0">
+<span class="material-symbols-outlined text-secondary text-xl">laptop_mac</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md">MacBook Pro 16"</p>
+<p class="font-caption text-caption text-secondary mt-1">San Jose, CA • Last active 2 hours ago</p>
+</div>
+<button aria-label="Log out session" class="p-2 text-on-surface-variant hover:text-error transition-colors rounded-lg hover:bg-error/10">
+<span class="material-symbols-outlined text-sm">logout</span>
+</button>
+</div>
+</div>
+<div class="flex justify-center mt-md">
+<button class="font-label-md text-label-md text-error hover:opacity-80 transition-opacity">Log out of all devices</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container/90 dark:bg-surface-container/90 backdrop-blur-xl border-t border-white/5 shadow-[0_-4px_20px_rgba(138,43,226,0.1)] h-20 px-sm pb-safe flex justify-around items-center md:hidden">
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 active:scale-90 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md text-[10px]">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 active:scale-90 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-label-md text-label-md text-[10px]">Deliveries</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 active:scale-90 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-label-md text-[10px]">Earnings</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 active:scale-90 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-label-md text-label-md text-[10px]">Alerts</span>
+</div>
+<!-- Active Tab -->
+<div class="flex flex-col items-center justify-center text-primary bg-primary-container/20 rounded-xl px-3 py-1 hover:text-primary/80 active:scale-90 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-md text-label-md text-[10px] font-bold">Profile</span>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Grow your business with Anything Clean</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#474649",
+                        "inverse-on-surface": "#313031",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "surface-variant": "#353436",
+                        "background": "#131314",
+                        "on-primary-fixed": "#2c0051",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#4c4354",
+                        "surface-container-highest": "#353436",
+                        "secondary-fixed": "#e5e1e4",
+                        "on-primary": "#480081",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "tertiary": "#c8c6c8",
+                        "on-secondary": "#303032",
+                        "surface-dim": "#131314",
+                        "tertiary-container": "#646365",
+                        "surface-container-high": "#2a2a2b",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "primary": "#dcb8ff",
+                        "inverse-surface": "#e5e2e3",
+                        "tertiary-fixed": "#e4e2e4",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-tertiary": "#303032",
+                        "surface-tint": "#dcb8ff",
+                        "secondary-container": "#474649",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface-bright": "#3a393a",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-surface-variant": "#cfc2d7",
+                        "surface": "#131314",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "primary-container": "#8a2be2",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-container": "#201f20",
+                        "primary-fixed": "#efdbff",
+                        "error-container": "#93000a",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-background": "#e5e2e3",
+                        "inverse-primary": "#8422dc",
+                        "on-secondary-container": "#b7b4b7",
+                        "on-surface": "#e5e2e3",
+                        "secondary": "#c8c6c8",
+                        "outline": "#988ca0",
+                        "on-primary-container": "#eed9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "3xl": "64px",
+                        "md": "16px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Geist", "sans-serif"],
+                        "body-lg": ["Geist", "sans-serif"],
+                        "headline-md": ["Geist", "sans-serif"],
+                        "display-lg": ["Geist", "sans-serif"],
+                        "label-md": ["Geist", "sans-serif"],
+                        "headline-lg": ["Geist", "sans-serif"],
+                        "caption": ["Geist", "sans-serif"],
+                        "body-md": ["Geist", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Transactional Screen: Navigation shells suppressed -->
+<!-- Split Layout Container -->
+<main class="w-full min-h-screen flex flex-col lg:flex-row">
+<!-- Left Column: Branding / Visual (Hidden on mobile) -->
+<section class="hidden lg:flex lg:w-5/12 xl:w-1/2 relative bg-surface-container-lowest flex-col justify-between p-2xl">
+<!-- Background Image with Gradient Overlay -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A cinematic, highly detailed photograph of a premium, flawlessly clean domestic space. The lighting is low-key with dramatic, sweeping shadows and soft, diffused white highlights that emphasize sharp, modern architectural lines. The color palette relies heavily on deep charcoal, pitch black, and pristine whites, punctuated by subtle, ambient violet glowing accents. The mood is luxurious, highly efficient, and technologically advanced, reflecting a premium lifestyle management service." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuABxy9ACF2PggW-miJxBVnHSLaM0zDrBK6BbuyoxhzjH0_KLggAWg6URLMda8QQc3jm14XBoA3w_BxS144EeADBkwy-KmF_90T39okc4xOQQfl07E4bfW92osroo4exYsrLMvzESS_4tStwnkLYuceapwr77h66N85sxHkEXm46fqZ5-Jo2lpCsHo1ax0L82ovitacaq_O_SE2zGj1ovAFywQy4RDcQnN1R9_xBt_HxmC_6AbZDxM7xsQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/20 mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent opacity-80"></div>
+</div>
+<!-- Brand Logo Anchor -->
+<div class="relative z-10 flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[32px]">cleaning_services</span>
+<span class="font-headline-md text-headline-md text-on-background font-bold tracking-tight">Anything Clean</span>
+</div>
+<!-- Value Prop / Atmosphere -->
+<div class="relative z-10 max-w-md">
+<div class="inline-flex items-center gap-sm px-md py-sm rounded-full bg-surface-variant/50 backdrop-blur-md border border-white/5 mb-lg">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span class="font-label-md text-label-md text-on-surface-variant">For Elite Service Providers</span>
+</div>
+<blockquote class="font-headline-lg text-headline-lg text-on-background mb-md">
+                    "Elevating the standard of care, one meticulous service at a time."
+                </blockquote>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    Join an exclusive network of top-tier professionals.
+                </p>
+</div>
+</section>
+<!-- Right Column: Registration Form -->
+<section class="w-full lg:w-7/12 xl:w-1/2 flex items-center justify-center p-lg md:p-2xl bg-background relative z-10">
+<div class="w-full max-w-[480px] bg-surface rounded-[24px] p-lg md:p-xl border border-white/5 shadow-2xl shadow-primary-container/5 relative overflow-hidden">
+<!-- Mobile Logo (Visible only on small screens) -->
+<div class="flex lg:hidden items-center gap-sm mb-xl justify-center">
+<span class="material-symbols-outlined text-primary text-[28px]">cleaning_services</span>
+<span class="font-headline-md text-headline-md text-on-background font-bold tracking-tight">Anything Clean</span>
+</div>
+<!-- Header -->
+<div class="mb-xl text-center lg:text-left">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-sm">
+                        Grow your business with Anything Clean
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Reach more customers and manage your cleaning business from one place.
+                    </p>
+</div>
+<!-- Form -->
+<form class="space-y-lg flex flex-col">
+<!-- Business Category -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant ml-sm" for="category">Business Category</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md rounded-xl px-lg py-[14px] border border-transparent focus:border-primary focus:ring-1 focus:ring-primary outline-none appearance-none transition-colors cursor-pointer group hover:bg-surface-container" id="category">
+<option disabled="" selected="" value="">Select your primary service</option>
+<option value="laundry">Laundry &amp; Dry Cleaning</option>
+<option value="shoe_care">Shoe &amp; Leather Care</option>
+<option value="car_care">Premium Car Detailing</option>
+<option value="home_cleaning">Domestic Cleaning</option>
+<option value="upholstery">Upholstery &amp; Carpet</option>
+</select>
+<span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none group-focus-within:text-primary transition-colors">expand_more</span>
+</div>
+</div>
+<!-- Row: Business Name & Owner Name -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant ml-sm" for="businessName">Business Name</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors text-[20px]">storefront</span>
+<input class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md rounded-xl pl-[44px] pr-md py-[14px] border border-transparent focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors hover:bg-surface-container placeholder:text-on-surface-variant/50" id="businessName" placeholder="e.g. Apex Detailing" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant ml-sm" for="ownerName">Owner Name</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors text-[20px]">person</span>
+<input class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md rounded-xl pl-[44px] pr-md py-[14px] border border-transparent focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors hover:bg-surface-container placeholder:text-on-surface-variant/50" id="ownerName" placeholder="Full Name" type="text"/>
+</div>
+</div>
+</div>
+<!-- Contact Details -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant ml-sm" for="email">Email Address</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors text-[20px]">mail</span>
+<input class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md rounded-xl pl-[44px] pr-md py-[14px] border border-transparent focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors hover:bg-surface-container placeholder:text-on-surface-variant/50" id="email" placeholder="hello@apexdetailing.com" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant ml-sm" for="phone">Phone Number</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors text-[20px]">phone</span>
+<input class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md rounded-xl pl-[44px] pr-md py-[14px] border border-transparent focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors hover:bg-surface-container placeholder:text-on-surface-variant/50" id="phone" placeholder="(555) 000-0000" type="tel"/>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant ml-sm" for="password">Password</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors text-[20px]">lock</span>
+<input class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md rounded-xl pl-[44px] pr-md py-[14px] border border-transparent focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors hover:bg-surface-container placeholder:text-on-surface-variant/50" id="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-md top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-on-surface transition-colors focus:outline-none" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility_off</span>
+</button>
+</div>
+</div>
+<!-- Terms Checkbox -->
+<div class="flex items-start gap-sm mt-sm">
+<div class="relative flex items-center mt-1">
+<input class="peer h-5 w-5 appearance-none rounded-[4px] border border-outline-variant bg-surface-container-low checked:border-primary checked:bg-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background transition-all cursor-pointer" id="terms" type="checkbox"/>
+<span class="material-symbols-outlined absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-on-primary text-[16px] opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity">check</span>
+</div>
+<label class="font-caption text-caption text-on-surface-variant cursor-pointer" for="terms">
+                            By creating an account, you agree to our <a class="text-primary hover:underline underline-offset-2" href="#">Terms of Service</a> and <a class="text-primary hover:underline underline-offset-2" href="#">Privacy Policy</a>.
+                        </label>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-md pt-sm">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-[16px] rounded-xl hover:bg-primary-fixed transition-colors active:scale-[0.98] shadow-lg shadow-primary/20 flex items-center justify-center gap-sm" type="submit">
+                            Create Business Account
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<p class="text-center font-body-md text-body-md text-on-surface-variant">
+                            Already have an account? 
+                            <a class="text-primary hover:text-primary-fixed font-label-md text-label-md ml-xs hover:underline underline-offset-4 transition-colors" href="#">Sign in</a>
+</p>
+</div>
+</form>
+</div>
+</section>
+</main>
+</body></html>

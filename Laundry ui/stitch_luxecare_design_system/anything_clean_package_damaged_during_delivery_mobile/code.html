@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Package Damage Detected</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-tertiary-container": "#e3e0e2",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-container-low": "#1c1b1c",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "secondary-container": "#474649",
+                        "surface-container-high": "#2a2a2b",
+                        "outline-variant": "#4c4354",
+                        "surface-tint": "#dcb8ff",
+                        "surface-variant": "#353436",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "tertiary-fixed": "#e4e2e4",
+                        "primary": "#dcb8ff",
+                        "inverse-on-surface": "#313031",
+                        "secondary": "#c8c6c8",
+                        "outline": "#988ca0",
+                        "on-secondary-fixed-variant": "#474649",
+                        "primary-container": "#8a2be2",
+                        "on-background": "#e5e2e3",
+                        "on-primary": "#480081",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-primary-fixed": "#2c0051",
+                        "surface-container": "#201f20",
+                        "on-tertiary": "#303032",
+                        "inverse-surface": "#e5e2e3",
+                        "tertiary-container": "#646365",
+                        "primary-fixed": "#efdbff",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-surface-variant": "#cfc2d7",
+                        "secondary-fixed": "#e5e1e4",
+                        "on-primary-container": "#eed9ff",
+                        "inverse-primary": "#8422dc",
+                        "surface-container-highest": "#353436",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "on-secondary": "#303032",
+                        "on-secondary-container": "#b7b4b7",
+                        "surface-dim": "#131314",
+                        "error": "#ffb4ab",
+                        "on-surface": "#e5e2e3",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface": "#131314",
+                        "on-error-container": "#ffdad6",
+                        "background": "#131314",
+                        "surface-bright": "#3a393a",
+                        "tertiary": "#c8c6c8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "2xl": "48px",
+                        "3xl": "64px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "caption": ["Geist"],
+                        "body-md": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "headline-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:hidden">
+<!-- Header -->
+<header class="bg-surface/80 backdrop-blur-xl border-b border-white/5 sticky top-0 z-50 px-md h-16 flex items-center justify-between">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex flex-col items-center">
+<h1 class="font-headline-md text-headline-md font-bold">Package damage detected</h1>
+<span class="font-caption text-caption text-on-surface-variant">Order #QH1024</span>
+</div>
+<div class="w-6 h-6"></div> <!-- Spacer for centering -->
+</header>
+<main class="flex-1 p-md flex flex-col gap-lg pb-[100px]">
+<!-- Warning Card -->
+<div class="bg-[#3A2D13] border border-[#F2A900]/30 rounded-xl p-md flex gap-md items-start">
+<span class="material-symbols-outlined text-[#F2A900]">warning</span>
+<p class="font-body-md text-body-md text-[#F2A900]">
+                Document the package condition before continuing. Take clear photos and add details.
+            </p>
+</div>
+<!-- Photo Comparison -->
+<section class="flex gap-md">
+<!-- Pickup Condition -->
+<div class="flex-1 flex flex-col gap-sm">
+<span class="font-label-md text-label-md text-on-surface-variant">Pickup condition</span>
+<div class="aspect-square rounded-xl overflow-hidden bg-surface-container relative">
+<img class="w-full h-full object-cover" data-alt="A close-up, high-quality photograph of a brand new, pristine sneaker box. The box is untouched, with sharp corners and a matte black finish with subtle gloss branding. The lighting is studio-quality, dramatic and focused, highlighting the flawless condition of the package against a dark, minimalist background. The aesthetic is premium e-commerce." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBERkzZ_ZNzFrI1E_4iyyNdosGJokHp6YCwYbdDpNG6cCkjmpm9egIiAQ-K-yRLmP5OBP9jqmgbo3cyaSU-DWaL6ucqQaEjf-WM4E6wSZB1LW6u4iX2Yp7bQdJG80aUqziriO-xjfg1d5WWmfdmHh2t5Rk3SFTUHsZUFIIUfk9kGXF8yFmb6EAgW08BVj4CsQPgcbp9sOtjPbnaDmu3U9Y9NnygZMtxAxdmCu8V_DySBZYu0hVwSkp9dA"/>
+</div>
+</div>
+<!-- Current Condition -->
+<div class="flex-1 flex flex-col gap-sm">
+<span class="font-label-md text-label-md text-on-surface-variant">Current condition</span>
+<button class="aspect-square rounded-xl bg-surface-container-high border border-dashed border-outline-variant flex flex-col items-center justify-center gap-sm hover:bg-surface-container-highest transition-colors text-primary">
+<span class="material-symbols-outlined text-[32px]">add_a_photo</span>
+<span class="font-label-md text-label-md">Upload</span>
+</button>
+</div>
+</section>
+<!-- Damage Type -->
+<section class="flex flex-col gap-sm">
+<h2 class="font-label-md text-label-md text-on-surface-variant mb-xs">Damage Type</h2>
+<div class="flex flex-wrap gap-sm">
+<button class="px-md py-sm rounded-full bg-surface-container border border-outline-variant font-label-md text-label-md text-on-surface hover:bg-surface-container-high transition-colors">Torn packaging</button>
+<button class="px-md py-sm rounded-full bg-primary-container/20 border border-primary font-label-md text-label-md text-primary transition-colors">Crushed package</button>
+<button class="px-md py-sm rounded-full bg-surface-container border border-outline-variant font-label-md text-label-md text-on-surface hover:bg-surface-container-high transition-colors">Wet package</button>
+<button class="px-md py-sm rounded-full bg-surface-container border border-outline-variant font-label-md text-label-md text-on-surface hover:bg-surface-container-high transition-colors">Open package</button>
+<button class="px-md py-sm rounded-full bg-surface-container border border-outline-variant font-label-md text-label-md text-on-surface hover:bg-surface-container-high transition-colors">Other</button>
+</div>
+</section>
+<!-- Description -->
+<section class="flex flex-col gap-sm">
+<label class="font-label-md text-label-md text-on-surface-variant" for="damage-description">Description</label>
+<textarea class="w-full bg-surface-container rounded-xl border border-outline-variant p-md font-body-md text-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none placeholder-on-surface-variant/50" id="damage-description" placeholder="Describe what happened..." rows="4"></textarea>
+</section>
+</main>
+<!-- Fixed Bottom Action -->
+<div class="fixed bottom-0 left-0 right-0 p-md bg-surface/90 backdrop-blur-xl border-t border-white/5 pb-safe z-50">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-[16px] rounded-xl font-bold hover:opacity-90 transition-opacity active:scale-[0.98]">
+            REPORT DAMAGE
+        </button>
+</div>
+</body></html>

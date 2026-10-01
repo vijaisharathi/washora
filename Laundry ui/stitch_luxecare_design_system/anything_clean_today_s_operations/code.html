@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Today's Operations - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#480081",
+                        "primary-fixed": "#efdbff",
+                        "surface-container-low": "#1c1b1c",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-tertiary": "#303032",
+                        "success-bg": "#1A3D24",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "error-container": "#93000a",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "outline-variant": "#4c4354",
+                        "tertiary-container": "#646365",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-surface": "#e5e2e3",
+                        "on-secondary": "#303032",
+                        "success-green": "#81C784",
+                        "surface-container": "#201f20",
+                        "outline": "#988ca0",
+                        "error": "#ffb4ab",
+                        "surface-container-lowest": "#0e0e0f",
+                        "background": "#131314",
+                        "surface-variant": "#353436",
+                        "tertiary": "#c8c6c8",
+                        "inverse-primary": "#8422dc",
+                        "secondary-fixed": "#e4e2e4",
+                        "surface-container-high": "#2a2a2b",
+                        "inverse-surface": "#e5e2e3",
+                        "surface": "#131314",
+                        "primary-container": "#8a2be2",
+                        "on-error": "#690005",
+                        "surface-bright": "#39393a",
+                        "on-secondary-fixed-variant": "#474648",
+                        "error-red": "#ffb4ab",
+                        "surface-tint": "#dcb8ff",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-background": "#e5e2e3",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "electric-violet": "#8a2be2",
+                        "secondary-container": "#49494b",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-primary-fixed": "#2c0051",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed": "#e4e2e4",
+                        "primary": "#dcb8ff",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-secondary-container": "#b9b8ba",
+                        "surface-container-highest": "#353436",
+                        "surface-dim": "#131314",
+                        "secondary": "#c8c6c8",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-primary-container": "#eed9ff",
+                        "inverse-on-surface": "#313031"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "3xl": "64px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "2xl": "48px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "mono-display": ["monospace"],
+                        "h1": ["Geist"],
+                        "h3": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "caption": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- SideNavBar -->
+<nav class="bg-surface-container-low dark:bg-surface-container-low fixed left-0 top-0 h-full w-[256px] border-r border-outline-variant/30 flex flex-col h-full py-lg px-md hidden md:flex">
+<div class="mb-xl px-sm">
+<h1 class="font-mono-display text-mono-display text-electric-violet">Anything Clean</h1>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">Provider Dashboard</p>
+</div>
+<div class="flex-1 flex flex-col gap-sm">
+<a class="flex items-center gap-md px-md py-sm rounded-lg hover:bg-surface-container hover:text-on-surface transition-colors duration-200 active:scale-95 transition-transform text-on-surface-variant" href="#">
+<span class="material-symbols-outlined font-label-md text-label-md" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-primary/10 text-primary font-bold hover:bg-surface-container hover:text-on-surface transition-colors duration-200 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined font-label-md text-label-md" data-icon="calendar_today" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="font-label-md text-label-md">Schedule</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg hover:bg-surface-container hover:text-on-surface transition-colors duration-200 active:scale-95 transition-transform text-on-surface-variant" href="#">
+<span class="material-symbols-outlined font-label-md text-label-md" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md">Earnings</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg hover:bg-surface-container hover:text-on-surface transition-colors duration-200 active:scale-95 transition-transform text-on-surface-variant" href="#">
+<span class="material-symbols-outlined font-label-md text-label-md" data-icon="cleaning_services">cleaning_services</span>
+<span class="font-label-md text-label-md">Services</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg hover:bg-surface-container hover:text-on-surface transition-colors duration-200 active:scale-95 transition-transform text-on-surface-variant" href="#">
+<span class="material-symbols-outlined font-label-md text-label-md" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+</div>
+<div class="mt-auto pt-xl border-t border-outline-variant/30 flex flex-col gap-sm">
+<button class="bg-electric-violet text-on-primary font-label-md text-label-md font-bold py-sm px-md rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-container transition-colors w-full flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[18px]">support_agent</span> Support
+            </button>
+<a class="flex items-center gap-md px-md py-sm rounded-lg hover:bg-surface-container hover:text-on-surface transition-colors duration-200 active:scale-95 transition-transform text-on-surface-variant mt-sm" href="#">
+<span class="material-symbols-outlined font-label-md text-label-md" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg hover:bg-surface-container hover:text-on-surface transition-colors duration-200 active:scale-95 transition-transform text-error" href="#">
+<span class="material-symbols-outlined font-label-md text-label-md" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</div>
+</nav>
+<!-- TopNavBar -->
+<header class="bg-background/80 backdrop-blur-md fixed top-0 right-0 w-full md:w-[calc(100%-256px)] z-50 flex justify-between items-center px-xl py-md max-w-[1200px] ml-auto">
+<div class="flex-1 max-w-md">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg pl-3xl pr-md py-xs font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Search operations..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md ml-auto">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-sm rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-sm rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden ml-sm border border-outline-variant/30">
+<img alt="Service Provider Profile" class="w-full h-full object-cover" data-alt="A macro shot of a sleek, dark metallic surface reflecting subtle violet neon lights, giving a high-tech, futuristic vibe. The surface is textured with microscopic ridges, creating a sense of precision and engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmbHds-TGHK-62v3ppGg1kYJ5Z6FyB5icG7sxeQF0e_hFKiZewj99YbrhXrq9AoDMuRSTr5v8xGs5y3xwcrWmjQutS1gcHbCx0Ff0iXhU5yOJN-8SHIxCYKSm7iD_0x79mN0mZ9CbIpVWwIskvuC-jCEgTz6tMhedajj-4jbhQ67h2u3f0y724x7sJuLQcBSayCjzZXoa2QjZPYNG_nYem9jdAhenQ9L_Jo6HIzcWEyC-Qzr3xWo3YuA"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-[88px] md:pl-[256px] min-h-screen">
+<div class="max-w-[1200px] mx-auto p-xl">
+<div class="mb-xl">
+<h2 class="font-h1 text-h1 text-on-surface mb-xs">Today's Operations</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage and track your scheduled tasks for the day.</p>
+</div>
+<!-- Summary Row -->
+<div class="grid grid-cols-2 md:grid-cols-5 gap-md mb-xl">
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md flex flex-col justify-between">
+<span class="font-caption text-caption text-on-surface-variant mb-sm uppercase tracking-widest">New</span>
+<span class="font-headline-lg text-headline-lg text-primary">2</span>
+</div>
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md flex flex-col justify-between">
+<span class="font-caption text-caption text-on-surface-variant mb-sm uppercase tracking-widest">Pickup</span>
+<span class="font-headline-lg text-headline-lg text-electric-violet">3</span>
+</div>
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md flex flex-col justify-between">
+<span class="font-caption text-caption text-on-surface-variant mb-sm uppercase tracking-widest">In Service</span>
+<span class="font-headline-lg text-headline-lg text-secondary-fixed">6</span>
+</div>
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md flex flex-col justify-between">
+<span class="font-caption text-caption text-on-surface-variant mb-sm uppercase tracking-widest">Ready</span>
+<span class="font-headline-lg text-headline-lg text-success-green">2</span>
+</div>
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-md flex flex-col justify-between">
+<span class="font-caption text-caption text-on-surface-variant mb-sm uppercase tracking-widest">Delivery</span>
+<span class="font-headline-lg text-headline-lg text-on-surface">4</span>
+</div>
+</div>
+<!-- Filters -->
+<div class="flex gap-sm mb-lg overflow-x-auto pb-sm hide-scrollbar">
+<button class="bg-primary/10 text-primary border border-primary/30 font-label-md text-label-md px-md py-xs rounded-full whitespace-nowrap">All</button>
+<button class="bg-surface-container-low text-on-surface-variant border border-outline-variant/50 hover:bg-surface-container hover:text-on-surface font-label-md text-label-md px-md py-xs rounded-full transition-colors whitespace-nowrap">Pickup</button>
+<button class="bg-surface-container-low text-on-surface-variant border border-outline-variant/50 hover:bg-surface-container hover:text-on-surface font-label-md text-label-md px-md py-xs rounded-full transition-colors whitespace-nowrap">Service</button>
+<button class="bg-surface-container-low text-on-surface-variant border border-outline-variant/50 hover:bg-surface-container hover:text-on-surface font-label-md text-label-md px-md py-xs rounded-full transition-colors whitespace-nowrap">Delivery</button>
+</div>
+<!-- Timeline -->
+<div class="bg-surface-container border border-outline-variant/20 rounded-xl p-lg">
+<div class="relative border-l border-outline-variant/30 ml-md pb-md">
+<!-- Item 1 -->
+<div class="mb-lg relative pl-xl">
+<div class="absolute w-3 h-3 bg-electric-violet rounded-full -left-[6.5px] top-1.5 shadow-[0_0_8px_rgba(138,43,226,0.5)]"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div>
+<div class="flex items-center gap-sm mb-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">9:00 AM</span>
+<span class="bg-surface-variant text-on-surface px-2 py-0.5 rounded text-[10px] uppercase font-bold tracking-wider">Pickup</span>
+</div>
+<h4 class="font-h3 text-h3 text-on-surface mb-xs">QH-20260902-1037</h4>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">local_laundry_service</span> Laundry
+                                </p>
+</div>
+<button class="border border-outline-variant text-on-surface font-label-md text-label-md px-md py-xs rounded-lg hover:bg-surface-container-high transition-colors w-fit">View Details</button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="mb-lg relative pl-xl">
+<div class="absolute w-3 h-3 bg-electric-violet rounded-full -left-[6.5px] top-1.5 shadow-[0_0_8px_rgba(138,43,226,0.5)]"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div>
+<div class="flex items-center gap-sm mb-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">10:00 AM</span>
+<span class="bg-surface-variant text-on-surface px-2 py-0.5 rounded text-[10px] uppercase font-bold tracking-wider">Pickup</span>
+</div>
+<h4 class="font-h3 text-h3 text-on-surface mb-xs">QH-20260902-1041</h4>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">dry_cleaning</span> Sneaker
+                                </p>
+</div>
+<button class="border border-outline-variant text-on-surface font-label-md text-label-md px-md py-xs rounded-lg hover:bg-surface-container-high transition-colors w-fit">View Details</button>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="mb-lg relative pl-xl">
+<div class="absolute w-3 h-3 bg-secondary-fixed rounded-full -left-[6.5px] top-1.5 shadow-[0_0_8px_rgba(200,198,200,0.3)]"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div>
+<div class="flex items-center gap-sm mb-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">11:30 AM</span>
+<span class="bg-surface-variant text-on-surface px-2 py-0.5 rounded text-[10px] uppercase font-bold tracking-wider">Service</span>
+</div>
+<h4 class="font-h3 text-h3 text-on-surface mb-xs">QH-20260902-1031</h4>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">sports_motorsports</span> Helmet
+                                </p>
+</div>
+<button class="border border-outline-variant text-on-surface font-label-md text-label-md px-md py-xs rounded-lg hover:bg-surface-container-high transition-colors w-fit">View Details</button>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="relative pl-xl">
+<div class="absolute w-3 h-3 bg-surface-variant border-2 border-outline-variant rounded-full -left-[7px] top-1.5"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-md opacity-60">
+<div>
+<div class="flex items-center gap-sm mb-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">4:00 PM</span>
+<span class="bg-surface-container-lowest border border-outline-variant/50 text-on-surface-variant px-2 py-0.5 rounded text-[10px] uppercase font-bold tracking-wider">Delivery</span>
+</div>
+<h4 class="font-h3 text-h3 text-on-surface mb-xs">QH-20260901-1024</h4>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span> Sneaker
+                                </p>
+</div>
+<button class="border border-outline-variant text-on-surface font-label-md text-label-md px-md py-xs rounded-lg hover:bg-surface-container-high transition-colors w-fit">View Details</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

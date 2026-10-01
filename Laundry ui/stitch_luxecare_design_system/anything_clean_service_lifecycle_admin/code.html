@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Service Status &amp; Lifecycle Actions - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#1c1b1c",
+                      "inverse-surface": "#e5e2e3",
+                      "on-tertiary-fixed-variant": "#6a3b00",
+                      "surface-container-high": "#2a2a2b",
+                      "on-error": "#690005",
+                      "surface-container": "#201f20",
+                      "background": "#131314",
+                      "on-secondary-container": "#caa7ec",
+                      "surface-bright": "#39393a",
+                      "tertiary-fixed": "#ffdcbf",
+                      "tertiary-container": "#935400",
+                      "surface": "#131314",
+                      "primary": "#dcb8ff",
+                      "secondary-fixed": "#efdbff",
+                      "on-primary-container": "#eed9ff",
+                      "error-container": "#93000a",
+                      "outline": "#988ca0",
+                      "surface-container-highest": "#353436",
+                      "outline-variant": "#4c4354",
+                      "surface-dim": "#131314",
+                      "on-tertiary-fixed": "#2d1600",
+                      "info": "#60a5fa",
+                      "surface-container-lowest": "#0e0e0f",
+                      "inverse-primary": "#8422dc",
+                      "on-primary-fixed": "#2c0051",
+                      "success": "#4ade80",
+                      "on-surface": "#e5e2e3",
+                      "surface-tint": "#dcb8ff",
+                      "on-tertiary-container": "#ffdaba",
+                      "tertiary-fixed-dim": "#ffb873",
+                      "on-secondary-fixed": "#290947",
+                      "on-surface-variant": "#cfc2d7",
+                      "critical": "#f87171",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "error": "#ffb4ab",
+                      "on-tertiary": "#4b2800",
+                      "inverse-on-surface": "#313031",
+                      "primary-container": "#8a2be2",
+                      "surface-variant": "#353436",
+                      "secondary-container": "#573976",
+                      "secondary-fixed-dim": "#dcb8ff",
+                      "on-secondary-fixed-variant": "#573976",
+                      "on-secondary": "#3f225e",
+                      "tertiary": "#ffb873",
+                      "primary-fixed": "#efdbff",
+                      "on-primary": "#480081",
+                      "warning": "#fbbf24",
+                      "on-background": "#e5e2e3",
+                      "secondary": "#dcb8ff",
+                      "on-error-container": "#ffdad6",
+                      "primary-fixed-dim": "#dcb8ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "margin-desktop": "24px",
+                      "table-cell-padding": "12px",
+                      "margin-mobile": "16px",
+                      "sidebar-width": "260px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "label-sm": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "code": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "code": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+          .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+          }
+      </style>
+</head>
+<body class="bg-background text-on-surface font-body-md h-screen overflow-hidden flex selection:bg-primary selection:text-on-primary">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-screen w-sidebar-width border-r border-outline-variant bg-background flex flex-col py-margin-desktop z-40 hidden md:flex">
+<!-- Brand Logo -->
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">cleaning_services</span>
+</div>
+<div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight leading-none">Anything Clean</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Super Admin</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex-1 overflow-y-auto px-2 space-y-1">
+<div class="px-4 py-2 mt-4 mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Core Operations</span>
+</div>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Customers</span>
+</a>
+<div class="px-4 py-2 mt-6 mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Marketplace</span>
+</div>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="build">build</span>
+<span class="font-label-md text-label-md">Service Providers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span class="font-label-md text-label-md">Delivery Partners</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface border-l-4 border-primary bg-surface-container-high transition-colors rounded-r-lg -ml-2 pl-6 shadow-[inset_2px_0_0_0_var(--tw-shadow-color)] shadow-primary/20 relative overflow-hidden group" href="#">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined" data-icon="category" data-weight="fill" style="font-variation-settings: 'FILL' 1;">category</span>
+<span class="font-label-md text-label-md font-semibold text-primary">Services</span>
+</a>
+</div>
+<!-- Footer Links -->
+<div class="mt-auto px-2 space-y-1 border-t border-outline-variant/50 pt-4">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+</div>
+</nav>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-full md:w-[calc(100%-260px)] h-16 border-b border-outline-variant bg-surface flex justify-between items-center px-margin-desktop z-30">
+<div class="flex items-center gap-4 w-1/3">
+<button class="md:hidden text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="relative w-full max-w-md hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded text-body-md text-on-surface pl-10 pr-4 py-1.5 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none placeholder:text-on-surface-variant/50 transition-all" placeholder="Search cmd+K" type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded transition-colors active:opacity-80">
+<span class="material-symbols-outlined" data-icon="cloud_done">cloud_done</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded transition-colors active:opacity-80 relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="w-px h-6 bg-outline-variant mx-2"></div>
+<button class="flex items-center gap-2 hover:bg-surface-container-low p-1.5 rounded transition-colors pl-3">
+<span class="font-label-sm text-label-sm text-on-surface hidden lg:block">Admin Profile</span>
+<div class="w-8 h-8 rounded bg-surface-container-highest border border-outline-variant flex items-center justify-center overflow-hidden">
+<img class="object-cover w-full h-full opacity-80 mix-blend-luminosity" data-alt="A macro shot of a sleek, dark metallic server rack panel with glowing violet LED indicators. The lighting is low-key with sharp, focused highlights on the brushed metal texture. The mood is high-tech, secure, and operational, fitting a modern enterprise data center aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBdi4uB1GvfIbM77A9eAPmLWTEme8NzJuwJrwC3THn03O0nY-0513HPwpEoZ41zIm6T8jF20CbjYfTz05kiZ6o8t20P-6gVe5CFIXedfPspikZHFvCTR9i2WA4hBQ3v9_piTCsPjqJ-KD08IlROrfFDtrSiL-IyVsE7OS3_s8SjZ3e3VLtz4-k3qZO-OT4msBcpR40tLjm5X4Uzo9uO-5seJUyAdTZabZoAbPrwcU23gfe3xSZBlf7NA"/>
+</div>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 mt-16 md:ml-sidebar-width overflow-y-auto bg-background p-margin-desktop md:p-8">
+<div class="max-w-5xl mx-auto space-y-6">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+<div>
+<div class="flex items-center gap-2 text-on-surface-variant mb-2">
+<a class="font-label-sm text-label-sm hover:text-primary transition-colors" href="#">Services</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="font-label-sm text-label-sm hover:text-primary transition-colors" href="#">Shoe Cleaning</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="font-label-sm text-label-sm text-on-surface">Status</span>
+</div>
+<div class="flex items-center gap-4">
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">Service Status</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-success/10 border border-success/20 text-success font-label-sm text-label-sm flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-success animate-pulse"></span>
+                            ACTIVE
+                        </span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Left Column: Health Summary -->
+<div class="lg:col-span-1 space-y-6">
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-5 shadow-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 pb-3 border-b border-outline-variant/50 flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">monitor_heart</span>
+                            Service Health
+                        </h3>
+<div class="space-y-4">
+<div class="flex items-center justify-between group cursor-default">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center border border-outline-variant group-hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-success text-[18px]">check_circle</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Providers</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Available</span>
+</div>
+<div class="flex items-center justify-between group cursor-default">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center border border-outline-variant group-hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-info text-[18px]">sync</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Orders</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Processing</span>
+</div>
+<div class="flex items-center justify-between group cursor-default">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center border border-outline-variant group-hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-success text-[18px]">check_circle</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Configuration</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Complete</span>
+</div>
+<div class="flex items-center justify-between group cursor-default">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center border border-outline-variant group-hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-success text-[18px]">check_circle</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Pricing</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Active</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Lifecycle Management -->
+<div class="lg:col-span-2 space-y-6">
+<div class="bg-surface-container-low border border-warning/30 rounded-xl overflow-hidden shadow-sm relative">
+<!-- Subtle warning glow top edge -->
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-warning/40 via-warning/10 to-transparent"></div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-warning">warning</span>
+                                Lifecycle Management
+                            </h3>
+<!-- Warning Alert Box -->
+<div class="bg-warning/10 border border-warning/20 rounded-lg p-4 mb-6 mt-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-warning mt-0.5">info</span>
+<p class="font-body-md text-body-md text-on-surface">
+                                    This service is currently active. Deactivating it may prevent new customers from placing orders.
+                                </p>
+</div>
+<!-- Operational Impact Stats -->
+<div class="mb-6">
+<h4 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-3">Operational Impact</h4>
+<div class="grid grid-cols-3 gap-4">
+<div class="bg-surface-container border border-outline-variant/50 rounded-lg p-3 text-center">
+<div class="font-headline-lg text-headline-lg text-on-surface font-semibold">42</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1">Active Providers</div>
+</div>
+<div class="bg-surface-container border border-outline-variant/50 rounded-lg p-3 text-center">
+<div class="font-headline-lg text-headline-lg text-info font-semibold">18</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1">Active Orders</div>
+</div>
+<div class="bg-surface-container border border-outline-variant/50 rounded-lg p-3 text-center">
+<div class="font-headline-lg text-headline-lg text-warning font-semibold">6</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1">Pending Orders</div>
+</div>
+</div>
+</div>
+<!-- Active Order Protection -->
+<div class="bg-surface-container border border-outline-variant rounded-lg p-5 mb-6">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-info text-sm">shield</span>
+<h4 class="font-label-md text-label-md text-on-surface font-semibold">Active Order Protection</h4>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                                    18 active orders are currently associated with this service. Select a handling strategy before deactivation.
+                                </p>
+<div class="space-y-2">
+<label class="flex items-center gap-3 p-3 rounded border border-outline-variant bg-surface hover:bg-surface-container-highest transition-colors cursor-pointer">
+<input checked="" class="form-radio text-primary bg-background border-outline-variant focus:ring-primary focus:ring-offset-background" name="order_handling" type="radio"/>
+<span class="font-body-md text-body-md text-on-surface">Keep Existing Orders Active</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded border border-outline-variant bg-surface hover:bg-surface-container-highest transition-colors cursor-pointer">
+<input class="form-radio text-primary bg-background border-outline-variant focus:ring-primary focus:ring-offset-background" name="order_handling" type="radio"/>
+<span class="font-body-md text-body-md text-on-surface">Stop New Orders</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded border border-outline-variant bg-surface hover:bg-surface-container-highest transition-colors cursor-pointer">
+<input class="form-radio text-primary bg-background border-outline-variant focus:ring-primary focus:ring-offset-background" name="order_handling" type="radio"/>
+<span class="font-body-md text-body-md text-on-surface">Review Active Orders</span>
+</label>
+</div>
+</div>
+<!-- Actions Panel -->
+<div class="flex items-center justify-end gap-4 pt-4 border-t border-outline-variant/50">
+<button class="px-4 py-2 rounded font-label-md text-label-md border border-outline-variant text-on-surface hover:bg-surface-container-highest transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">power_settings_new</span>
+                                    Deactivate Service
+                                </button>
+<button class="px-4 py-2 rounded font-label-md text-label-md bg-error/10 border border-error/50 text-error hover:bg-error/20 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+                                    Archive Service
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Deactivation Confirmation Modal (Open state as requested) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-background/80 backdrop-blur-sm transition-opacity"></div>
+<!-- Modal Dialog -->
+<div class="relative w-full max-w-md bg-surface-container-low border border-outline-variant rounded-xl shadow-2xl overflow-hidden transform transition-all flex flex-col max-h-[921px]">
+<!-- Destructive top accent -->
+<div class="h-1 w-full bg-error"></div>
+<div class="p-6 overflow-y-auto">
+<div class="flex items-start gap-4 mb-4">
+<div class="w-10 h-10 rounded-full bg-error/10 flex items-center justify-center shrink-0 border border-error/20 mt-1">
+<span class="material-symbols-outlined text-error">warning</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">Archive Shoe Cleaning?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+                            Archived services will no longer be available for new marketplace activity. This action is permanent.
+                        </p>
+</div>
+</div>
+<div class="mt-6">
+<label class="block font-label-sm text-label-sm text-on-surface mb-2">
+                        Internal reason for archival <span class="text-error">*</span>
+</label>
+<textarea class="w-full bg-background border border-outline-variant rounded-lg p-3 text-body-md text-on-surface focus:border-error focus:ring-1 focus:ring-error focus:outline-none transition-all placeholder:text-on-surface-variant/40 resize-none h-24" placeholder="Please provide a reason for the operations log..."></textarea>
+</div>
+</div>
+<div class="bg-surface-container p-4 border-t border-outline-variant flex items-center justify-end gap-3 rounded-b-xl">
+<button class="px-4 py-2 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors">
+                    CANCEL
+                </button>
+<button class="px-4 py-2 rounded font-label-md text-label-md bg-error text-on-error hover:bg-error/90 transition-colors shadow-sm shadow-error/20 font-semibold tracking-wide">
+                    ARCHIVE SERVICE
+                </button>
+</div>
+</div>
+</div>
+</body></html>

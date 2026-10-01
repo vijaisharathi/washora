@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Home - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#dcb8ff",
+                        "on-secondary-container": "#b9b8ba",
+                        "inverse-surface": "#e5e2e3",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-container-high": "#2a2a2b",
+                        "tertiary-fixed": "#e4e2e4",
+                        "surface-variant": "#353436",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-primary-container": "#eed9ff",
+                        "success-green": "#81C784",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-primary": "#480081",
+                        "on-surface": "#e5e2e3",
+                        "outline": "#988ca0",
+                        "tertiary": "#c8c6c8",
+                        "success-bg": "#1A3D24",
+                        "error": "#ffb4ab",
+                        "error-container": "#93000a",
+                        "secondary-container": "#49494b",
+                        "tertiary-container": "#646365",
+                        "surface-container-highest": "#353436",
+                        "primary": "#dcb8ff",
+                        "surface-bright": "#39393a",
+                        "surface": "#131314",
+                        "on-background": "#e5e2e3",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0e0e0f",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#1c1b1c",
+                        "on-secondary": "#303032",
+                        "on-primary-fixed": "#2c0051",
+                        "inverse-on-surface": "#313031",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-tertiary-container": "#e3e0e2",
+                        "electric-violet": "#8a2be2",
+                        "surface-container": "#201f20",
+                        "inverse-primary": "#8422dc",
+                        "secondary-fixed": "#e4e2e4",
+                        "primary-container": "#8a2be2",
+                        "primary-fixed": "#efdbff",
+                        "on-secondary-fixed-variant": "#474648",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "outline-variant": "#4c4354",
+                        "secondary": "#c8c6c8",
+                        "background": "#131314",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-tertiary": "#303032",
+                        "error-red": "#ffb4ab",
+                        "surface-dim": "#131314"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "3xl": "64px",
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Geist"],
+                        "h1": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "caption": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "mono-display": ["monospace"]
+                    },
+                    "fontSize": {
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #131314;
+            color: #e5e2e3;
+        }
+    </style>
+</head>
+<body class="font-body-md bg-background text-on-background min-h-screen pb-[80px] lg:pb-0">
+<!-- TopNavBar -->
+<header class="bg-surface/80 backdrop-blur-md dark:bg-surface/80 border-b border-outline-variant/30 fixed top-0 w-full z-50">
+<div class="fixed top-0 w-full flex justify-between items-center px-xl py-md max-w-[1200px] mx-auto">
+<div class="flex items-center gap-md">
+<h1 class="font-h1 text-h1 text-primary dark:text-primary tracking-tight">Lumina Care</h1>
+</div>
+<div class="hidden md:flex items-center gap-lg">
+<nav class="flex gap-lg">
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Laundry</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Shoes</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Helmets</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Vehicles</a>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<div class="hidden md:flex items-center text-on-surface-variant font-label-md text-label-md gap-xs">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span>Delivering to Anna Nagar, Chennai</span>
+</div>
+<button class="text-on-surface hover:text-primary transition-colors duration-200">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="text-on-surface hover:text-primary transition-colors duration-200">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- SideNavBar (Hidden on Mobile) -->
+<aside class="hidden lg:flex flex-col h-screen p-md bg-surface-container-low dark:bg-surface-container-low border-r border-outline-variant/30 fixed left-0 top-0 h-full w-[256px] z-40 pt-[100px]">
+<div class="flex flex-col gap-sm">
+<a class="flex items-center gap-md p-md bg-primary/10 text-primary font-bold rounded-lg transition-all scale-[0.98]" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">category</span>
+<span class="font-label-md text-label-md">Services</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">local_offer</span>
+<span class="font-label-md text-label-md">Offers</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="lg:ml-[256px] pt-[80px] max-w-[1200px] mx-auto px-md md:px-xl w-full">
+<!-- Hero Section -->
+<section class="mt-lg relative rounded-xl overflow-hidden border border-outline-variant/30 bg-surface-container-low">
+<div class="absolute inset-0 z-0">
+<div class="bg-cover bg-center w-full h-full opacity-40" data-alt="A cinematic, high-end photograph showing a pristine, modern cleaning facility. The scene is illuminated by cool, technical lighting, highlighting clean geometric lines and advanced machinery in deep charcoal and subtle electric violet tones. The mood is precise, professional, and utilitarian, fitting a corporate SaaS aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDSiNvnhjQgNyU6X4BvM3yznAd-pZzNx36KvKIyg6NKjK0oxWBhQ3y4qzm1Hc-HPJm-PUJHuUup1vSATf-TID8_HUMAf7dxTxPV3yYNxE9lnnUMspNQtL9QQVjYndRoih92OyRR1HoEhFYdHZJMZMCucbvB9QQIjouAMeUJ4GNfTlKG8BIoq8EEaIwBGyv5Ccn7Sqp1EqXBnv-deBV3QCgWeGhbEKM3NXlZUT8Jpyk4gsqDc5z4TbdHag')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent"></div>
+</div>
+<div class="relative z-10 p-xl md:p-3xl max-w-2xl">
+<h2 class="font-display-lg text-display-lg text-on-background mb-md">Care for Everything You Own.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-xl">From clothes and shoes to cars and bikes — book trusted care services near you.</p>
+<button class="bg-electric-violet hover:bg-primary-container text-white font-label-md text-label-md py-sm px-lg rounded-full shadow-lg shadow-primary/20 transition-all duration-200 font-bold">
+                    Explore Services
+                </button>
+</div>
+</section>
+<!-- Search Bar -->
+<section class="mt-xl relative">
+<div class="relative max-w-3xl mx-auto">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-full py-md pl-[48px] pr-md text-on-background placeholder:text-on-surface-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none font-body-md transition-all" placeholder="What do you want to clean or service?" type="text"/>
+</div>
+</section>
+<!-- Service Quick Access (Bento Grid) -->
+<section class="mt-2xl">
+<h3 class="font-h3 text-h3 text-on-background mb-lg">Service Categories</h3>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-md">
+<a class="group relative bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col items-center justify-center gap-sm hover:border-primary/50 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined text-[32px] text-primary group-hover:scale-110 transition-transform">local_laundry_service</span>
+<span class="font-label-md text-label-md text-on-surface">Laundry</span>
+</a>
+<a class="group relative bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col items-center justify-center gap-sm hover:border-primary/50 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined text-[32px] text-primary group-hover:scale-110 transition-transform">steps</span>
+<span class="font-label-md text-label-md text-on-surface">Shoes</span>
+</a>
+<a class="group relative bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col items-center justify-center gap-sm hover:border-primary/50 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined text-[32px] text-primary group-hover:scale-110 transition-transform">sports_motorsports</span>
+<span class="font-label-md text-label-md text-on-surface">Helmets</span>
+</a>
+<a class="group relative bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col items-center justify-center gap-sm hover:border-primary/50 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined text-[32px] text-primary group-hover:scale-110 transition-transform">directions_car</span>
+<span class="font-label-md text-label-md text-on-surface">Car Care</span>
+</a>
+<a class="group relative bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col items-center justify-center gap-sm hover:border-primary/50 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined text-[32px] text-primary group-hover:scale-110 transition-transform">two_wheeler</span>
+<span class="font-label-md text-label-md text-on-surface">Bike Care</span>
+</a>
+<a class="group relative bg-surface-container border border-outline-variant/20 rounded-xl p-lg flex flex-col items-center justify-center gap-sm hover:border-primary/50 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined text-[32px] text-primary group-hover:scale-110 transition-transform">apps</span>
+<span class="font-label-md text-label-md text-on-surface">Other</span>
+</a>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="lg:hidden fixed bottom-0 left-0 w-full flex justify-around items-center py-sm bg-surface-container dark:bg-surface-container z-50 shadow-[0_-4px_10px_rgba(138,43,226,0.1)]">
+<a class="flex flex-col items-center justify-center text-primary font-bold active:bg-surface-container-highest p-sm rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-caption text-caption mt-xs">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-highest p-sm rounded-lg" href="#">
+<span class="material-symbols-outlined">category</span>
+<span class="font-caption text-caption mt-xs">Services</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-highest p-sm rounded-lg" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-caption text-caption mt-xs">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-highest p-sm rounded-lg" href="#">
+<span class="material-symbols-outlined">local_offer</span>
+<span class="font-caption text-caption mt-xs">Offers</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-highest p-sm rounded-lg" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-caption text-caption mt-xs">Profile</span>
+</a>
+</nav>
+</body></html>

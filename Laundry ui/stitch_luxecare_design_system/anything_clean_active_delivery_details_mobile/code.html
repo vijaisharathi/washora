@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Active Delivery Details - Delivery Pro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#474649",
+                        "primary-container": "#8a2be2",
+                        "inverse-on-surface": "#313031",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-primary-container": "#eed9ff",
+                        "background": "#131314",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "tertiary-container": "#646365",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-background": "#e5e2e3",
+                        "on-primary-fixed": "#2c0051",
+                        "surface-variant": "#353436",
+                        "on-surface": "#e5e2e3",
+                        "secondary-container": "#474649",
+                        "surface-dim": "#131314",
+                        "on-secondary-container": "#b7b4b7",
+                        "error-container": "#93000a",
+                        "secondary": "#c8c6c8",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-container-lowest": "#0e0e0f",
+                        "secondary-fixed": "#e5e1e4",
+                        "on-tertiary-container": "#e3e0e2",
+                        "surface-bright": "#3a393a",
+                        "tertiary": "#c8c6c8",
+                        "on-primary": "#480081",
+                        "on-tertiary": "#303032",
+                        "outline-variant": "#4c4354",
+                        "surface-container-highest": "#353436",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#efdbff",
+                        "on-secondary-fixed-variant": "#474649",
+                        "on-secondary": "#303032",
+                        "inverse-primary": "#8422dc",
+                        "surface-container-high": "#2a2a2b",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "outline": "#988ca0",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-tint": "#dcb8ff",
+                        "primary": "#dcb8ff",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-container": "#201f20",
+                        "surface": "#131314"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "xs": "4px",
+                        "3xl": "64px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "2xl": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "label-md": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "caption": ["Geist"],
+                        "display-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased pb-32">
+<!-- Top Navigation (Mobile App Context, back navigation) -->
+<header class="fixed top-0 w-full z-50 border-b border-white/5 bg-surface/80 backdrop-blur-md shadow-sm">
+<div class="flex items-center justify-between px-md h-16 w-full">
+<button aria-label="Go Back" class="text-primary hover:bg-surface-variant/50 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md-mobile text-on-surface text-center flex-1 pr-10">Delivery Details</h1>
+</div>
+</header>
+<main class="mt-24 px-md max-w-lg mx-auto pb-8 space-y-lg">
+<!-- Header Info -->
+<div class="text-center">
+<p class="font-label-md text-label-md text-on-surface-variant mb-xs">Order #QH1024</p>
+<div class="inline-flex items-center px-3 py-1 bg-primary/20 text-primary font-label-md text-label-md rounded-full border border-primary/30 shadow-[0_0_10px_rgba(220,184,255,0.1)]">
+<span class="material-symbols-outlined text-[16px] mr-1" data-icon="local_shipping">local_shipping</span>
+                IN TRANSIT
+            </div>
+</div>
+<!-- Destination Map & Address Card -->
+<section class="bg-surface-container-low rounded-xl p-md border border-white/5 shadow-sm relative overflow-hidden">
+<div class="absolute inset-0 z-0 bg-surface-container-highest/20" data-alt="A highly detailed top-down view of a modern city map at night in dark mode style. The map features subtle glowing violet routes and dark gray building footprints. The overall aesthetic is clean, minimalist, and tech-forward." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAydrNco8Y5ml-7inkH94DV-LadEM7WO7MeO51FCE6CRFmwuffnxqGxKlY8kjR8TAlpkcBvAUI_nepJ-zTNPZ8T0n7_LT5640Rpq9F6_KZSuZ_Bg5iaLoOg-K9xkHwrv02uv2GsB3P_0eBfQGyRWDwEvWLllSsqGo18h3G-Pph7jeNAkJ0nXY_aSYvwnFanFKl-fuYfp7wqpu95g8nni6IZxVXj1-9hjB2Us020HnivnDOvDNMVUxXpnQ')"></div>
+<div class="relative z-10 flex flex-col h-48 justify-end pointer-events-none">
+<!-- Content overlaid on map -->
+<div class="bg-surface/90 backdrop-blur-md rounded-lg p-md pointer-events-auto border border-white/10">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h3 class="font-headline-md text-headline-md-mobile text-on-surface mb-xs">Destination</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">123 Tech Park Blvd, Building B<br/>San Francisco, CA 94107</p>
+</div>
+<div class="text-right">
+<p class="font-label-md text-label-md text-primary mb-xs">15 mins</p>
+<p class="font-caption text-caption text-on-surface-variant">3.2 mi</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Customer & Instructions -->
+<section class="bg-surface-container-low rounded-xl p-md border border-white/5 shadow-sm space-y-md">
+<div class="flex items-center justify-between border-b border-white/5 pb-md">
+<div class="flex items-center space-x-md">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</div>
+<div>
+<p class="font-body-lg text-body-lg text-on-surface">Arun S.</p>
+<p class="font-caption text-caption text-on-surface-variant">Customer • Privacy Masked</p>
+</div>
+</div>
+<div class="flex space-x-sm">
+<button aria-label="Call Customer" class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-primary hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+</button>
+<button aria-label="Message Customer" class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-primary hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+</button>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface-variant mb-xs flex items-center">
+<span class="material-symbols-outlined text-[16px] mr-1" data-icon="info">info</span>
+                    Delivery Instructions
+                 </h4>
+<p class="font-body-md text-body-md text-on-surface bg-surface-container p-sm rounded-lg border border-white/5">
+                     "Please hand package directly to customer. Do not leave at reception."
+                 </p>
+</div>
+</section>
+<!-- Order Details & Verification -->
+<section class="bg-surface-container-low rounded-xl p-md border border-white/5 shadow-sm space-y-md">
+<div class="flex items-center justify-between">
+<h3 class="font-body-lg text-body-lg text-on-surface">Order Items</h3>
+<span class="font-caption text-caption text-on-surface-variant bg-surface-variant px-2 py-1 rounded">1 Item</span>
+</div>
+<div class="flex items-center space-x-md bg-surface-container p-sm rounded-lg border border-white/5">
+<img class="w-16 h-16 rounded-md object-cover bg-surface-variant" data-alt="A clean, studio-lit photo of a premium white sneaker against a dark minimalist background. The lighting highlights the texture and quality of the shoe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRxtDVAl4-oVpYdGY6rC1ZBHNSXPKpHL_RdB4UOJ5gp9SQG4ab8wTm6aLeeKQVcxEmPWUe6RpvDiAU7-LRfjvCGr6Fc0VR98LS1HTXhqBHcB2RCptUb76cUZdsq-WAaL-swA8nPs9C84CTqNSWXiF_-efDt52H48onYRKwuf4thTE95aXgEm1NvVX1LdA_xENFV9IsaqM0MjZCPHbaIbLXfEa8iS5mklA8o_2Jpe1JdIdlSkIsvLPUsQ"/>
+<div>
+<p class="font-body-md text-body-md text-on-surface">White Sneaker</p>
+<p class="font-caption text-caption text-on-surface-variant">Qty: 1</p>
+</div>
+</div>
+<!-- Timeline -->
+<div class="mt-md pt-md border-t border-white/5 relative">
+<div class="absolute left-[15px] top-[70px] bottom-[20px] w-0.5 bg-outline-variant/30"></div>
+<div class="space-y-4 relative z-10">
+<div class="flex items-start space-x-md">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center border border-primary text-primary shrink-0">
+<span class="material-symbols-outlined text-[16px]" data-icon="check">check</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface">Pickup Verified</p>
+<p class="font-caption text-caption text-on-surface-variant">10:45 AM</p>
+</div>
+</div>
+<div class="flex items-start space-x-md">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center border border-primary text-primary shrink-0">
+<span class="material-symbols-outlined text-[16px]" data-icon="check">check</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface">Package Verified</p>
+<p class="font-caption text-caption text-on-surface-variant">10:48 AM</p>
+</div>
+</div>
+<div class="flex items-start space-x-md">
+<div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center border border-outline-variant text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[16px]" data-icon="pending">pending</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface-variant">Delivery Pending</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Earnings -->
+<section class="bg-surface-container-low rounded-xl p-md border border-white/5 shadow-sm flex items-center justify-between">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Est. Earnings</p>
+<p class="font-headline-md text-headline-md-mobile text-primary">₹62</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="payments">payments</span>
+</section>
+</main>
+<!-- Fixed Bottom Actions -->
+<div class="fixed bottom-0 w-full bg-surface/90 backdrop-blur-2xl border-t border-white/10 p-md pb-safe z-50">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md font-bold py-4 rounded-xl flex items-center justify-center space-x-2 active:scale-95 transition-transform shadow-[0_4px_14px_rgba(220,184,255,0.2)]">
+<span class="material-symbols-outlined" data-icon="navigation">navigation</span>
+<span>NAVIGATE</span>
+</button>
+</div>
+</body></html>

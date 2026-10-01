@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Item Intake &amp; Condition Check</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#dcb8ff",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "primary-fixed": "#efdbff",
+                        "on-primary-container": "#eed9ff",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-dim": "#131314",
+                        "on-tertiary": "#303032",
+                        "on-background": "#e5e2e3",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-secondary-container": "#b9b8ba",
+                        "success-bg": "#1A3D24",
+                        "surface-container-highest": "#353436",
+                        "secondary-container": "#49494b",
+                        "surface": "#131314",
+                        "on-secondary": "#303032",
+                        "on-primary-fixed": "#2c0051",
+                        "surface-container-lowest": "#0e0e0f",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-container": "#201f20",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "error-red": "#ffb4ab",
+                        "secondary": "#c8c6c8",
+                        "surface-variant": "#353436",
+                        "success-green": "#81C784",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#474648",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-tertiary-container": "#e3e0e2",
+                        "tertiary": "#c8c6c8",
+                        "inverse-primary": "#8422dc",
+                        "outline": "#988ca0",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-container-high": "#2a2a2b",
+                        "primary": "#dcb8ff",
+                        "background": "#131314",
+                        "outline-variant": "#4c4354",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#313031",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-primary": "#480081",
+                        "surface-container-low": "#1c1b1c",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "surface-bright": "#39393a",
+                        "tertiary-container": "#646365",
+                        "on-surface": "#e5e2e3",
+                        "secondary-fixed": "#e4e2e4",
+                        "electric-violet": "#8a2be2",
+                        "primary-container": "#8a2be2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "3xl": "64px",
+                        "2xl": "48px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "label-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "h3": ["Geist"],
+                        "h1": ["Geist"],
+                        "caption": ["Geist"],
+                        "mono-display": ["monospace"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; background-color: #131314; color: #e5e2e3; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-3xl">
+<!-- Top Navigation (Contextual departure -> suppressed, keeping a simple header) -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-white/5 flex items-center h-16 px-lg shadow-sm">
+<button class="mr-md text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center p-sm rounded-full hover:bg-surface-container-highest">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex-1">
+<h1 class="font-h3 text-h3 text-on-surface">Item Intake</h1>
+<p class="font-caption text-caption text-on-surface-variant font-mono-display">QH-20260902-1041</p>
+</div>
+</header>
+<main class="pt-2xl max-w-3xl mx-auto px-md md:px-xl">
+<div class="mt-lg space-y-lg">
+<!-- Quantity Section -->
+<section class="bg-surface-container rounded-xl p-lg border border-outline-variant/20">
+<h2 class="font-h3 text-h3 mb-md text-primary">Quantity Verification</h2>
+<div class="grid grid-cols-2 gap-md">
+<div>
+<label class="font-label-md text-label-md text-on-surface-variant block mb-sm">Expected</label>
+<div class="bg-surface-container-low border border-outline-variant/50 rounded-lg p-md font-mono-display text-mono-display text-on-surface">
+                            1 Pair
+                        </div>
+</div>
+<div>
+<label class="font-label-md text-label-md text-on-surface-variant block mb-sm">Received</label>
+<select class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg p-md font-body-md text-body-md text-on-surface focus:ring-1 focus:ring-primary focus:border-primary outline-none">
+<option value="1">1 Pair</option>
+<option value="0">0 (Missing)</option>
+<option value="2">2 Pairs (Over)</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Condition Chips -->
+<section class="bg-surface-container rounded-xl p-lg border border-outline-variant/20">
+<h2 class="font-h3 text-h3 mb-md text-primary">Overall Condition</h2>
+<div class="flex flex-wrap gap-sm">
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="condition" type="radio"/>
+<span class="px-md py-sm rounded-full border border-outline-variant/50 bg-surface-container-low font-label-md text-label-md text-on-surface-variant peer-checked:bg-primary-container peer-checked:text-white peer-checked:border-primary transition-colors">
+                            Good
+                        </span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="condition" type="radio"/>
+<span class="px-md py-sm rounded-full border border-outline-variant/50 bg-surface-container-low font-label-md text-label-md text-on-surface-variant peer-checked:bg-primary-container peer-checked:text-white peer-checked:border-primary transition-colors">
+                            Minor Wear
+                        </span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="condition" type="radio"/>
+<span class="px-md py-sm rounded-full border border-outline-variant/50 bg-surface-container-low font-label-md text-label-md text-on-surface-variant peer-checked:bg-error peer-checked:text-on-error peer-checked:border-error transition-colors">
+                            Damaged
+                        </span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="condition" type="radio"/>
+<span class="px-md py-sm rounded-full border border-outline-variant/50 bg-surface-container-low font-label-md text-label-md text-on-surface-variant peer-checked:bg-secondary-container peer-checked:text-on-surface peer-checked:border-outline-variant transition-colors">
+                            Other
+                        </span>
+</label>
+</div>
+</section>
+<!-- Condition Checklist -->
+<section class="bg-surface-container rounded-xl p-lg border border-outline-variant/20">
+<h2 class="font-h3 text-h3 mb-md text-primary">Specific Issues</h2>
+<div class="space-y-sm">
+<label class="flex items-center space-x-md cursor-pointer p-sm rounded-lg hover:bg-surface-container-highest transition-colors">
+<input class="form-checkbox bg-surface-container-low border-outline-variant/50 text-electric-violet rounded focus:ring-primary focus:ring-offset-surface" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">Visible stains</span>
+</label>
+<label class="flex items-center space-x-md cursor-pointer p-sm rounded-lg hover:bg-surface-container-highest transition-colors">
+<input class="form-checkbox bg-surface-container-low border-outline-variant/50 text-electric-violet rounded focus:ring-primary focus:ring-offset-surface" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">Scratches</span>
+</label>
+<label class="flex items-center space-x-md cursor-pointer p-sm rounded-lg hover:bg-surface-container-highest transition-colors">
+<input class="form-checkbox bg-surface-container-low border-outline-variant/50 text-electric-violet rounded focus:ring-primary focus:ring-offset-surface" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">Tears / Rips</span>
+</label>
+<label class="flex items-center space-x-md cursor-pointer p-sm rounded-lg hover:bg-surface-container-highest transition-colors">
+<input class="form-checkbox bg-surface-container-low border-outline-variant/50 text-electric-violet rounded focus:ring-primary focus:ring-offset-surface" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">Odor</span>
+</label>
+</div>
+</section>
+<!-- Photos & Notes -->
+<section class="bg-surface-container rounded-xl p-lg border border-outline-variant/20">
+<h2 class="font-h3 text-h3 mb-md text-primary">Documentation</h2>
+<div class="mb-lg">
+<label class="font-label-md text-label-md text-on-surface-variant block mb-sm">Add Intake Photos</label>
+<div class="grid grid-cols-3 gap-md">
+<button class="aspect-square bg-surface-container-low border-2 border-dashed border-outline-variant/50 rounded-lg flex flex-col items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-colors">
+<span class="material-symbols-outlined mb-xs">add_a_photo</span>
+<span class="font-caption text-caption">Add Photo</span>
+</button>
+<!-- Placeholder for uploaded image -->
+<div class="aspect-square rounded-lg bg-surface-container-highest border border-outline-variant/20 relative overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="A high-quality, closely cropped macro photograph of a textured dark fabric surface with a small, barely noticeable scuff mark. The lighting is clinical and bright, creating a moody, engineered aesthetic consistent with a dark mode application interface. Colors are muted greys and blacks with subtle deep violet undertones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuChW295f48iApWa-bsxK7Lv7w0_D1SE2B1nhiLyfEd0udNQxt6j1pBRrp_QOZhzqRLq9p_U4m2Fm8deXyOY8LLh8LP0DDJ2C4ndiM-1eoV3xuQ8G1D7qIK36jWM7yKuyDqFCNAcIKotHbmeGZNg1aPNFXmmHlZPCW1mkX4yg0F8EHaX157y5doIb38YX758j_srXZwgTMA6PLz2ljMayo0clJm4pAFKCV8p4DmFb8nDCX0YYEQ0D8xvyw')"></div>
+<button class="absolute top-xs right-xs bg-surface/80 p-xs rounded-full text-error hover:bg-error hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+</div>
+<div>
+<label class="font-label-md text-label-md text-on-surface-variant block mb-sm">Intake Notes</label>
+<textarea class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg p-md font-body-md text-body-md text-on-surface focus:ring-1 focus:ring-primary focus:border-primary outline-none min-h-[100px] resize-y" placeholder="Add any additional details here..."></textarea>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Action Area -->
+<div class="fixed bottom-0 w-full bg-surface/90 backdrop-blur-xl border-t border-white/5 p-md z-40">
+<div class="max-w-3xl mx-auto flex justify-end">
+<button class="bg-electric-violet text-white font-label-md text-label-md font-bold py-md px-xl rounded-lg shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity flex items-center w-full md:w-auto justify-center">
+                Confirm Intake
+                <span class="material-symbols-outlined ml-sm">check_circle</span>
+</button>
+</div>
+</div>
+</body></html>

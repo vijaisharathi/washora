@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Select Services - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed-variant": "#474649",
+                      "inverse-on-surface": "#313031",
+                      "on-error-container": "#ffdad6",
+                      "on-error": "#690005",
+                      "surface-variant": "#353436",
+                      "background": "#131314",
+                      "on-primary-fixed": "#2c0051",
+                      "error": "#ffb4ab",
+                      "outline-variant": "#4c4354",
+                      "surface-container-highest": "#353436",
+                      "secondary-fixed": "#e5e1e4",
+                      "on-primary": "#480081",
+                      "on-tertiary-fixed-variant": "#474649",
+                      "tertiary": "#c8c6c8",
+                      "on-secondary": "#303032",
+                      "surface-dim": "#131314",
+                      "tertiary-container": "#646365",
+                      "surface-container-high": "#2a2a2b",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "primary": "#dcb8ff",
+                      "inverse-surface": "#e5e2e3",
+                      "tertiary-fixed": "#e4e2e4",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "on-tertiary-container": "#e3e0e2",
+                      "on-tertiary": "#303032",
+                      "surface-tint": "#dcb8ff",
+                      "secondary-container": "#474649",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "surface-bright": "#3a393a",
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "on-surface-variant": "#cfc2d7",
+                      "surface": "#131314",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "primary-container": "#8a2be2",
+                      "surface-container-low": "#1c1b1c",
+                      "surface-container": "#201f20",
+                      "primary-fixed": "#efdbff",
+                      "error-container": "#93000a",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "on-background": "#e5e2e3",
+                      "inverse-primary": "#8422dc",
+                      "on-secondary-container": "#b7b4b7",
+                      "on-surface": "#e5e2e3",
+                      "secondary": "#c8c6c8",
+                      "outline": "#988ca0",
+                      "on-primary-container": "#eed9ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "2xl": "48px",
+                      "xs": "4px",
+                      "xl": "32px",
+                      "3xl": "64px",
+                      "md": "16px",
+                      "sm": "8px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "44px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+        body { font-family: 'Geist', sans-serif; }
+        
+        /* Custom hide native checkbox */
+        .service-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+        }
+        
+        /* Glowing active step */
+        .step-active {
+            box-shadow: 0 0 12px rgba(220, 184, 255, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col pb-3xl relative">
+<!-- Top Stepper Header -->
+<header class="w-full max-w-[1280px] mx-auto px-lg pt-xl pb-md">
+<!-- Stepper Visual -->
+<div class="flex items-center gap-2 mb-xl max-w-sm">
+<div class="h-1 flex-1 bg-primary rounded-full step-active"></div>
+<div class="h-1 flex-1 bg-surface-variant rounded-full"></div>
+<div class="h-1 flex-1 bg-surface-variant rounded-full"></div>
+<div class="h-1 flex-1 bg-surface-variant rounded-full"></div>
+</div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-sm">What do you need clean?</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">Select all the services you are interested in. We'll customize your dashboard to match.</p>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 w-full max-w-[1280px] mx-auto px-lg pb-3xl space-y-2xl">
+<!-- Category: Clothing Care -->
+<section>
+<div class="flex items-center gap-md mb-lg">
+<span class="material-symbols-outlined text-primary text-[28px]" data-icon="checkroom">checkroom</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Clothing Care</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-md">
+<label class="group cursor-pointer relative block">
+<input checked="" class="service-checkbox peer absolute opacity-0 w-0 h-0" type="checkbox"/>
+<div class="flex items-center justify-between p-lg rounded-xl bg-surface border border-white/5 peer-checked:bg-primary-container/10 peer-checked:border-primary/50 transition-all duration-200 hover:bg-surface-variant/40">
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg text-on-surface mb-xs">Wash &amp; Fold</span>
+<span class="font-caption text-caption text-on-surface-variant">Everyday laundry by the pound</span>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center group-hover:border-primary/50 peer-checked:border-primary peer-checked:bg-primary transition-colors">
+<span class="material-symbols-outlined text-on-primary text-[16px] opacity-0 peer-checked:opacity-100" data-icon="check" style="font-variation-settings: 'wght' 600;">check</span>
+</div>
+</div>
+</label>
+<label class="group cursor-pointer relative block">
+<input class="service-checkbox peer absolute opacity-0 w-0 h-0" type="checkbox"/>
+<div class="flex items-center justify-between p-lg rounded-xl bg-surface border border-white/5 peer-checked:bg-primary-container/10 peer-checked:border-primary/50 transition-all duration-200 hover:bg-surface-variant/40">
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg text-on-surface mb-xs">Dry Cleaning</span>
+<span class="font-caption text-caption text-on-surface-variant">Delicate fabrics and suits</span>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center group-hover:border-primary/50 peer-checked:border-primary peer-checked:bg-primary transition-colors">
+<span class="material-symbols-outlined text-on-primary text-[16px] opacity-0" data-icon="check" style="font-variation-settings: 'wght' 600;">check</span>
+</div>
+</div>
+</label>
+<label class="group cursor-pointer relative block">
+<input class="service-checkbox peer absolute opacity-0 w-0 h-0" type="checkbox"/>
+<div class="flex items-center justify-between p-lg rounded-xl bg-surface border border-white/5 peer-checked:bg-primary-container/10 peer-checked:border-primary/50 transition-all duration-200 hover:bg-surface-variant/40">
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg text-on-surface mb-xs">Ironing &amp; Pressing</span>
+<span class="font-caption text-caption text-on-surface-variant">Crisp finishes for shirts &amp; linens</span>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center group-hover:border-primary/50 peer-checked:border-primary peer-checked:bg-primary transition-colors">
+<span class="material-symbols-outlined text-on-primary text-[16px] opacity-0" data-icon="check" style="font-variation-settings: 'wght' 600;">check</span>
+</div>
+</div>
+</label>
+</div>
+</section>
+<!-- Category: Shoe Care -->
+<section>
+<div class="flex items-center gap-md mb-lg">
+<span class="material-symbols-outlined text-primary text-[28px]" data-icon="steps">steps</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Shoe Care</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-md">
+<label class="group cursor-pointer relative block">
+<input checked="" class="service-checkbox peer absolute opacity-0 w-0 h-0" type="checkbox"/>
+<div class="flex items-center justify-between p-lg rounded-xl bg-surface border border-white/5 peer-checked:bg-primary-container/10 peer-checked:border-primary/50 transition-all duration-200 hover:bg-surface-variant/40">
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg text-on-surface mb-xs">Sneaker Cleaning</span>
+<span class="font-caption text-caption text-on-surface-variant">Deep clean and midsole whitening</span>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center group-hover:border-primary/50 peer-checked:border-primary peer-checked:bg-primary transition-colors">
+<span class="material-symbols-outlined text-on-primary text-[16px] opacity-0 peer-checked:opacity-100" data-icon="check" style="font-variation-settings: 'wght' 600;">check</span>
+</div>
+</div>
+</label>
+<label class="group cursor-pointer relative block">
+<input class="service-checkbox peer absolute opacity-0 w-0 h-0" type="checkbox"/>
+<div class="flex items-center justify-between p-lg rounded-xl bg-surface border border-white/5 peer-checked:bg-primary-container/10 peer-checked:border-primary/50 transition-all duration-200 hover:bg-surface-variant/40">
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg text-on-surface mb-xs">Leather Polish</span>
+<span class="font-caption text-caption text-on-surface-variant">Conditioning and mirror shine</span>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center group-hover:border-primary/50 peer-checked:border-primary peer-checked:bg-primary transition-colors">
+<span class="material-symbols-outlined text-on-primary text-[16px] opacity-0" data-icon="check" style="font-variation-settings: 'wght' 600;">check</span>
+</div>
+</div>
+</label>
+<label class="group cursor-pointer relative block">
+<input class="service-checkbox peer absolute opacity-0 w-0 h-0" type="checkbox"/>
+<div class="flex items-center justify-between p-lg rounded-xl bg-surface border border-white/5 peer-checked:bg-primary-container/10 peer-checked:border-primary/50 transition-all duration-200 hover:bg-surface-variant/40">
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg text-on-surface mb-xs">Cobbler Services</span>
+<span class="font-caption text-caption text-on-surface-variant">Heel replacement and resoling</span>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center group-hover:border-primary/50 peer-checked:border-primary peer-checked:bg-primary transition-colors">
+<span class="material-symbols-outlined text-on-primary text-[16px] opacity-0" data-icon="check" style="font-variation-settings: 'wght' 600;">check</span>
+</div>
+</div>
+</label>
+</div>
+</section>
+<!-- Category: Car Care -->
+<section>
+<div class="flex items-center gap-md mb-lg">
+<span class="material-symbols-outlined text-primary text-[28px]" data-icon="directions_car">directions_car</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Car Care</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-md">
+<label class="group cursor-pointer relative block">
+<input class="service-checkbox peer absolute opacity-0 w-0 h-0" type="checkbox"/>
+<div class="flex items-center justify-between p-lg rounded-xl bg-surface border border-white/5 peer-checked:bg-primary-container/10 peer-checked:border-primary/50 transition-all duration-200 hover:bg-surface-variant/40">
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg text-on-surface mb-xs">Basic Wash</span>
+<span class="font-caption text-caption text-on-surface-variant">Exterior wash and tire dressing</span>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center group-hover:border-primary/50 peer-checked:border-primary peer-checked:bg-primary transition-colors">
+<span class="material-symbols-outlined text-on-primary text-[16px] opacity-0" data-icon="check" style="font-variation-settings: 'wght' 600;">check</span>
+</div>
+</div>
+</label>
+<label class="group cursor-pointer relative block">
+<input class="service-checkbox peer absolute opacity-0 w-0 h-0" type="checkbox"/>
+<div class="flex items-center justify-between p-lg rounded-xl bg-surface border border-white/5 peer-checked:bg-primary-container/10 peer-checked:border-primary/50 transition-all duration-200 hover:bg-surface-variant/40">
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg text-on-surface mb-xs">Full Detailing</span>
+<span class="font-caption text-caption text-on-surface-variant">Comprehensive interior &amp; exterior</span>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center group-hover:border-primary/50 peer-checked:border-primary peer-checked:bg-primary transition-colors">
+<span class="material-symbols-outlined text-on-primary text-[16px] opacity-0" data-icon="check" style="font-variation-settings: 'wght' 600;">check</span>
+</div>
+</div>
+</label>
+</div>
+</section>
+</main>
+<!-- Sticky Bottom CTA -->
+<div class="fixed bottom-0 left-0 right-0 bg-surface-container-lowest/80 backdrop-blur-xl border-t border-white/5 p-lg z-50">
+<div class="max-w-[1280px] mx-auto flex justify-end">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-2xl py-md rounded-lg hover:bg-primary-fixed transition-colors active:scale-95 w-full sm:w-auto shadow-lg shadow-primary/20">
+                Continue
+            </button>
+</div>
+</div>
+<script>
+        // Micro-interaction: sync checkbox checked state with visual indicator purely for demo logic if needed, 
+        // though Tailwind peer handles the CSS state perfectly without JS.
+        // Adding a slight haptic-feel bump on click
+        document.querySelectorAll('label').forEach(label => {
+            label.addEventListener('click', (e) => {
+                const innerDiv = label.querySelector('div.rounded-xl');
+                innerDiv.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    innerDiv.style.transform = 'scale(1)';
+                }, 100);
+            });
+        });
+    </script>
+</body></html>

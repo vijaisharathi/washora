@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumina Admin - System Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-dim": "#131314",
+                      "on-error": "#690005",
+                      "surface-container-highest": "#353436",
+                      "on-background": "#e5e2e3",
+                      "tertiary-container": "#646365",
+                      "on-tertiary-fixed": "#1b1b1d",
+                      "on-secondary-container": "#b9b8ba",
+                      "on-secondary": "#303032",
+                      "surface-container-low": "#1c1b1c",
+                      "surface": "#131314",
+                      "on-secondary-fixed-variant": "#474648",
+                      "outline": "#988ca0",
+                      "tertiary-fixed": "#e4e2e4",
+                      "on-error-container": "#ffdad6",
+                      "surface-bright": "#39393a",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "on-primary-container": "#eed9ff",
+                      "primary": "#dcb8ff",
+                      "inverse-on-surface": "#313031",
+                      "primary-fixed": "#efdbff",
+                      "inverse-primary": "#8422dc",
+                      "secondary": "#c8c6c8",
+                      "surface-container": "#201f20",
+                      "error-container": "#93000a",
+                      "on-tertiary-container": "#e3e0e2",
+                      "outline-variant": "#4c4354",
+                      "surface-variant": "#353436",
+                      "secondary-container": "#49494b",
+                      "primary-container": "#8a2be2",
+                      "surface-container-lowest": "#0e0e0f",
+                      "on-primary": "#480081",
+                      "background": "#131314",
+                      "success-bg": "#1A3D24",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "on-tertiary-fixed-variant": "#474648",
+                      "success-green": "#81C784",
+                      "surface-container-high": "#2a2a2b",
+                      "secondary-fixed": "#e4e2e4",
+                      "inverse-surface": "#e5e2e3",
+                      "electric-violet": "#8a2be2",
+                      "tertiary-fixed-dim": "#c8c6c8",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "tertiary": "#c8c6c8",
+                      "error-red": "#ffb4ab",
+                      "error": "#ffb4ab",
+                      "on-surface": "#e5e2e3",
+                      "surface-tint": "#dcb8ff",
+                      "on-primary-fixed": "#2c0051",
+                      "on-tertiary": "#303032",
+                      "on-surface-variant": "#cfc2d7"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "2xl": "48px",
+                      "md": "16px",
+                      "xs": "4px",
+                      "3xl": "64px",
+                      "sm": "8px",
+                      "lg": "24px",
+                      "xl": "32px"
+              },
+              "fontFamily": {
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "h1": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "h3": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "mono-display": [
+                              "monospace"
+                      ],
+                      "caption": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "mono-display": [
+                              "18px",
+                              {
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .glass-card {
+                @apply bg-surface-container/60 backdrop-blur-md border border-outline-variant/30 rounded-xl;
+            }
+            .form-input {
+                @apply bg-surface-container-low border border-outline-variant/50 rounded-lg px-md py-sm text-body-md font-body-md text-on-surface focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors w-full;
+            }
+            .toggle-checkbox:checked {
+                @apply right-0 border-primary bg-primary;
+            }
+            .toggle-checkbox:checked + .toggle-label {
+                @apply bg-primary;
+            }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen overflow-x-hidden font-body-md text-body-md antialiased selection:bg-primary/30 selection:text-primary-fixed">
+<!-- SideNavBar -->
+<nav class="bg-surface-container-low dark:bg-surface-container-low fixed left-0 top-0 h-screen w-64 border-r border-outline-variant/30 flex flex-col h-full p-lg z-40">
+<div class="mb-xl flex items-center gap-md px-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container border border-outline-variant/50 flex items-center justify-center overflow-hidden shrink-0">
+<img alt="Admin Profile Avatar" class="w-full h-full object-cover" data-alt="A macro shot of a sleek, minimalist glowing neon purple orb floating in absolute darkness, representing a high-tech AI brain. The orb emits a soft electric violet aura. Hyper-realistic, 8k resolution, cinematic lighting, emphasizing corporate modern precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBilnU3q21d-LdSxiq8bFxb3Urse7uoAJ8HNWHp2-OA8UViibNvYN0uhAEOXhwoccDue9E4BFhrbiNNqQTfc7IuNe8jhP2EWLQCe6xHr7xdW75SO-vJSevjql7oTr1be_iSjJOGu1YkbHL5CQe0ikC2SKIwNGMLQPp8B0W4x1-uu8QD6QJvReEHkhVl34RAYFhwP6SX_uPdUKTSGo78FdSEGn8AEUJa65pGVt4gOSF_E2cFNralPVFosQ"/>
+</div>
+<div>
+<h1 class="font-h1 text-h1 font-bold text-electric-violet truncate">Lumina Admin</h1>
+<p class="font-caption text-caption text-on-surface-variant truncate">Marketplace Controller</p>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto space-y-sm pr-xs custom-scrollbar">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container hover:transition-colors transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container hover:transition-colors transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container hover:transition-colors transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Customers</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container hover:transition-colors transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="cleaning_services">cleaning_services</span>
+<span class="font-label-md text-label-md">Service Providers</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container hover:transition-colors transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="local_shipping">local_shipping</span>
+<span class="font-label-md text-label-md">Delivery Partners</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container hover:transition-colors transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="category">category</span>
+<span class="font-label-md text-label-md">Services</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container hover:transition-colors transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md">Payments</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container hover:transition-colors transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="gavel">gavel</span>
+<span class="font-label-md text-label-md">Disputes</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container hover:transition-colors transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="star">star</span>
+<span class="font-label-md text-label-md">Reviews</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container hover:transition-colors transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="campaign">campaign</span>
+<span class="font-label-md text-label-md">Promotions</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container hover:transition-colors transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="notifications">notifications</span>
+<span class="font-label-md text-label-md">Notifications</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container hover:transition-colors transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container hover:transition-colors transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="help">help</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-primary/10 text-primary font-bold transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined text-lg text-primary" data-icon="settings" data-weight="fill" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+</nav>
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-md fixed top-0 right-0 w-[calc(100%-256px)] z-30 border-b border-outline-variant/30 flex justify-between items-center h-16 px-xl">
+<div class="flex items-center gap-xl">
+<h2 class="font-h3 text-h3 font-bold text-on-surface tracking-tight">Lumina Marketplace</h2>
+<div class="relative focus-within:ring-1 focus-within:ring-primary rounded-lg transition-colors hidden lg:block w-64">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg pl-xl pr-md py-sm text-body-md font-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none" placeholder="Search commands..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors bg-surface-container-low border border-outline-variant/30 hover:border-primary/50 relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors bg-surface-container-low border border-outline-variant/30 hover:border-primary/50">
+<span class="material-symbols-outlined" data-icon="sensors">sensors</span>
+</button>
+<div class="w-8 h-8 rounded-full border border-outline-variant overflow-hidden ml-sm cursor-pointer">
+<img alt="Admin User" class="w-full h-full object-cover" data-alt="A professional headshot of a futuristic system administrator, lit by subtle neon purple and blue lights in a server room environment, signifying deep technical expertise. The image has a low-key lighting setup." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwUpx9mHhI-4MvXDuZfzH5aua8e8bxEvbfPKLX-kyl8kGtvRa44o7tHYrMe-kRlyCKG6RP07a_0qeUDxzpHR2iAf778fdPeCOPBmOfAUE3KSG-dn2QEmsJPUrL15S6X5lH-aMmaJKhYsWy-z3rkjoA6eXX4wG6pncJK5FMLh65Q7wzOmx1Sz--WWt8kL1_yDIGmhsPpJi_wpNTMgpGEs6nvkQlA2KJvbTmNEZ5C9Erd2E1mEivNHOWzg"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 pt-16 min-h-screen">
+<div class="max-w-[1200px] mx-auto p-xl">
+<!-- Header -->
+<div class="flex justify-between items-end mb-xl border-b border-outline-variant/30 pb-md">
+<div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-xs">System Settings</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Global configuration for marketplace mechanics, rendering, and core workflows.</p>
+</div>
+<div class="flex gap-md">
+<button class="px-lg py-sm rounded-lg font-label-md text-label-md font-bold text-on-surface-variant border border-outline-variant hover:bg-surface-container transition-colors flex items-center gap-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="undo">undo</span> Discard
+                    </button>
+<button class="px-lg py-sm rounded-lg font-label-md text-label-md font-bold bg-electric-violet text-white shadow-lg shadow-primary/20 hover:bg-primary-container transition-colors flex items-center gap-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="save">save</span> Save Changes
+                    </button>
+</div>
+</div>
+<!-- Settings Layout -->
+<div class="grid grid-cols-12 gap-xl">
+<!-- Vertical Nav (Left Col) -->
+<div class="col-span-12 md:col-span-3 lg:col-span-2">
+<nav class="flex flex-col gap-sm sticky top-24">
+<button class="text-left px-md py-sm rounded-lg font-label-md text-label-md bg-primary/10 text-primary font-bold border-l-2 border-primary">General</button>
+<button class="text-left px-md py-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors border-l-2 border-transparent">Marketplace</button>
+<button class="text-left px-md py-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors border-l-2 border-transparent">Orders</button>
+<button class="text-left px-md py-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors border-l-2 border-transparent">Services</button>
+<button class="text-left px-md py-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors border-l-2 border-transparent">Delivery</button>
+<button class="text-left px-md py-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors border-l-2 border-transparent">Payments</button>
+<button class="text-left px-md py-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors border-l-2 border-transparent">Localization</button>
+</nav>
+</div>
+<!-- Forms Container (Right Col) -->
+<div class="col-span-12 md:col-span-9 lg:col-span-10 space-y-xl">
+<!-- Core System Card -->
+<section class="glass-card p-lg">
+<div class="flex items-center gap-md border-b border-outline-variant/30 pb-md mb-md">
+<span class="material-symbols-outlined text-primary text-[24px]" data-icon="memory">memory</span>
+<h3 class="font-h3 text-h3 text-on-surface">Core System</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="flex flex-col gap-sm">
+<label class="font-label-md text-label-md text-on-surface-variant flex justify-between">Platform Status 
+                                    <span class="px-sm py-xs bg-success-bg text-success-green font-bold text-[10px] uppercase tracking-wider rounded-full">Live</span>
+</label>
+<div class="flex items-center justify-between p-md bg-surface-container-low border border-outline-variant/50 rounded-lg">
+<div>
+<div class="font-label-md text-label-md text-on-surface font-bold">Maintenance Mode</div>
+<div class="font-caption text-caption text-on-surface-variant">Temporarily disable customer access.</div>
+</div>
+<!-- Toggle -->
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-surface border-2 border-outline-variant appearance-none cursor-pointer z-10 top-0 left-0 transition-transform duration-200 ease-in-out translate-x-0" id="maintenance_toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-container-highest cursor-pointer" for="maintenance_toggle"></label>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Operations Card -->
+<section class="glass-card p-lg">
+<div class="flex items-center gap-md border-b border-outline-variant/30 pb-md mb-md">
+<span class="material-symbols-outlined text-primary text-[24px]" data-icon="account_tree">account_tree</span>
+<h3 class="font-h3 text-h3 text-on-surface">Operations &amp; Assignments</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="flex flex-col gap-sm">
+<label class="font-label-md text-label-md text-on-surface-variant">Order Assignment Logic</label>
+<select class="form-input appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23988ca0%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[length:12px_12px] bg-[right_16px_center]">
+<option value="auto">Automated (Algorithmic)</option>
+<option value="manual">Manual Intervention Required</option>
+<option value="hybrid">Hybrid Threshold</option>
+</select>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">Determines how new requests are routed to providers.</p>
+</div>
+</div>
+</section>
+<!-- Localization Card -->
+<section class="glass-card p-lg">
+<div class="flex items-center gap-md border-b border-outline-variant/30 pb-md mb-md">
+<span class="material-symbols-outlined text-primary text-[24px]" data-icon="public">public</span>
+<h3 class="font-h3 text-h3 text-on-surface">Localization Defaults</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="flex flex-col gap-sm">
+<label class="font-label-md text-label-md text-on-surface-variant">Base Currency</label>
+<select class="form-input appearance-none">
+<option selected="" value="inr">INR - Indian Rupee (₹)</option>
+<option value="usd">USD - US Dollar ($)</option>
+<option value="eur">EUR - Euro (€)</option>
+</select>
+</div>
+<div class="flex flex-col gap-sm">
+<label class="font-label-md text-label-md text-on-surface-variant">System Timezone</label>
+<select class="form-input appearance-none">
+<option selected="" value="asia_kolkata">Asia/Kolkata (IST)</option>
+<option value="utc">UTC</option>
+<option value="america_ny">America/New_York (EST)</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Danger Zone -->
+<section class="border border-error/30 bg-error-container/10 rounded-xl p-lg relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-error"></div>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-error text-[28px] mt-xs" data-icon="warning">warning</span>
+<div>
+<h3 class="font-h3 text-h3 text-error mb-xs">High-Impact Configuration</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Changes to the following settings will immediately affect active transactions and may cause temporary service interruptions during propagation.</p>
+<div class="flex items-center justify-between p-md bg-surface-container-low border border-error/20 rounded-lg">
+<div>
+<div class="font-label-md text-label-md text-on-surface font-bold">Payment Processing Gateway</div>
+<div class="font-caption text-caption text-on-surface-variant">Globally enable or disable external payment routing.</div>
+</div>
+<!-- Toggle (Checked state simulated) -->
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full appearance-none cursor-pointer z-10 top-0 transition-transform duration-200 ease-in-out translate-x-6 right-0 border-primary bg-primary" id="payment_toggle" name="toggle2" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full cursor-pointer bg-primary/30" for="payment_toggle"></label>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Simple toggle animation logic for demonstration
+        document.getElementById('maintenance_toggle').addEventListener('change', function(e) {
+            const label = this.nextElementSibling;
+            if(this.checked) {
+                this.classList.add('translate-x-6', 'right-0', 'border-primary', 'bg-primary');
+                this.classList.remove('translate-x-0', 'left-0', 'bg-surface', 'border-outline-variant');
+                label.classList.add('bg-primary/30');
+                label.classList.remove('bg-surface-container-highest');
+            } else {
+                this.classList.remove('translate-x-6', 'right-0', 'border-primary', 'bg-primary');
+                this.classList.add('translate-x-0', 'left-0', 'bg-surface', 'border-outline-variant');
+                label.classList.remove('bg-primary/30');
+                label.classList.add('bg-surface-container-highest');
+            }
+        });
+        
+        document.getElementById('payment_toggle').addEventListener('change', function(e) {
+            const label = this.nextElementSibling;
+            if(this.checked) {
+                this.classList.add('translate-x-6', 'right-0', 'border-primary', 'bg-primary');
+                this.classList.remove('translate-x-0', 'left-0', 'bg-surface', 'border-outline-variant');
+                label.classList.add('bg-primary/30');
+                label.classList.remove('bg-surface-container-highest');
+            } else {
+                this.classList.remove('translate-x-6', 'right-0', 'border-primary', 'bg-primary');
+                this.classList.add('translate-x-0', 'left-0', 'bg-surface', 'border-outline-variant');
+                label.classList.remove('bg-primary/30');
+                label.classList.add('bg-surface-container-highest');
+            }
+        });
+    </script>
+</body></html>

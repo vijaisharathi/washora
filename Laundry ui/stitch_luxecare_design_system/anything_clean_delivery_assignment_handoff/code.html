@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Delivery Handoff - Lumina Logistics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-400-normal.woff2') format('woff2');
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-500-normal.woff2') format('woff2');
+            font-weight: 500;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-600-normal.woff2') format('woff2');
+            font-weight: 600;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-700-normal.woff2') format('woff2');
+            font-weight: 700;
+        }
+        
+        /* Utility for Material Symbols */
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#e5e2e3",
+                    "inverse-on-surface": "#313031",
+                    "secondary-fixed": "#e4e2e4",
+                    "on-background": "#e5e2e3",
+                    "surface-container-highest": "#353436",
+                    "surface-dim": "#131314",
+                    "on-error": "#690005",
+                    "secondary-fixed-dim": "#c8c6c8",
+                    "success-bg": "#1A3D24",
+                    "error-red": "#ffb4ab",
+                    "on-secondary-container": "#b9b8ba",
+                    "tertiary": "#c8c6c8",
+                    "electric-violet": "#8a2be2",
+                    "on-primary-container": "#eed9ff",
+                    "primary-fixed": "#efdbff",
+                    "on-tertiary-fixed-variant": "#474648",
+                    "on-secondary": "#303032",
+                    "surface-bright": "#39393a",
+                    "on-tertiary-container": "#e3e0e2",
+                    "on-tertiary-fixed": "#1b1b1d",
+                    "surface-container": "#201f20",
+                    "error-container": "#93000a",
+                    "outline-variant": "#4c4354",
+                    "on-surface-variant": "#cfc2d7",
+                    "primary-fixed-dim": "#dcb8ff",
+                    "on-secondary-fixed-variant": "#474648",
+                    "background": "#131314",
+                    "tertiary-fixed": "#e4e2e4",
+                    "on-primary-fixed": "#2c0051",
+                    "on-tertiary": "#303032",
+                    "outline": "#988ca0",
+                    "inverse-primary": "#8422dc",
+                    "surface-variant": "#353436",
+                    "surface-container-lowest": "#0e0e0f",
+                    "surface": "#131314",
+                    "on-secondary-fixed": "#1b1b1d",
+                    "on-primary-fixed-variant": "#6700b5",
+                    "error": "#ffb4ab",
+                    "on-primary": "#480081",
+                    "tertiary-fixed-dim": "#c8c6c8",
+                    "tertiary-container": "#646365",
+                    "success-green": "#81C784",
+                    "surface-container-high": "#2a2a2b",
+                    "on-surface": "#e5e2e3",
+                    "on-error-container": "#ffdad6",
+                    "primary-container": "#8a2be2",
+                    "surface-container-low": "#1c1b1c",
+                    "secondary": "#c8c6c8",
+                    "secondary-container": "#49494b",
+                    "primary": "#dcb8ff",
+                    "surface-tint": "#dcb8ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "2xl": "48px",
+                    "3xl": "64px",
+                    "xl": "32px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Geist"],
+                    "mono-display": ["monospace"],
+                    "h3": ["Geist"],
+                    "h1": ["Geist"],
+                    "caption": ["Geist"],
+                    "label-md": ["Geist"],
+                    "body-md": ["Geist"],
+                    "display-lg": ["Geist"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "mono-display": ["18px", {"letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "h1": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden antialiased">
+<!-- Top Navigation (Shell suppressed due to transactional nature of sub-page, but header kept for context) -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center h-16 px-xl">
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center p-sm rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div>
+<h1 class="text-h1 font-h1 text-on-surface leading-tight">Delivery Handoff</h1>
+<p class="text-caption font-caption text-on-surface-variant font-mono-display tracking-widest text-xs uppercase opacity-80">Booking <span class="text-primary font-bold">QH-20260902-1041</span></p>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-sm text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-electric-violet rounded-full"></span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/50 overflow-hidden flex items-center justify-center">
+<img alt="Administrator profile" class="w-full h-full object-cover" data-alt="A macro shot of a sleek, dark metallic user profile avatar placeholder, glowing slightly with a deep violet inner light, set against a pristine deep black background. Precise, engineered aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCytS5R0FKmQCZuOrIWz9kb-AOKF2oP7F-cOculZc3DFgLK-ups_FV6ZTjqv54aECb64JgJoXL3mT-ipU5uJONpzzLnUHFg0hFdCRMvqNuP4nlyE3ogUG4ggPUBU16q84AXMfZmu74Q9oKbzZsr_zugbjzlxFMOm09DdCOFZs-Ho8BeXgQtnNCztCzANH5gTEdlLODiZio1_Q1ntlSMLkEQ3tzZ-N2Z_l3B6DJPHDAC6PLloT7QfDXiQ"/>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="pt-2xl pb-2xl px-xl max-w-7xl mx-auto min-h-screen flex flex-col gap-lg mt-16">
+<!-- Top Section: Context & Assignment -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Context Card -->
+<div class="lg:col-span-8 bg-surface-container rounded-xl border border-outline-variant/30 p-lg relative overflow-hidden flex flex-col justify-between">
+<!-- Subtle ambient gradient -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-xl">schedule</span>
+<h2 class="text-h3 font-h3 text-on-surface">Delivery Window</h2>
+</div>
+<div class="flex items-baseline gap-sm">
+<p class="text-headline-lg font-headline-lg text-on-surface">September 3</p>
+<p class="text-h3 font-h3 text-on-surface-variant">4:00 PM – 6:00 PM</p>
+</div>
+<div class="mt-md pt-md border-t border-outline-variant/30 grid grid-cols-1 md:grid-cols-2 gap-md">
+<div>
+<p class="text-caption font-caption text-on-surface-variant uppercase tracking-wider mb-xs">Destination Zone</p>
+<p class="text-body-md font-body-md text-on-surface font-semibold flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm text-electric-violet">location_on</span>
+                                Anna Nagar
+                            </p>
+</div>
+<div>
+<p class="text-caption font-caption text-on-surface-variant uppercase tracking-wider mb-xs">Package Size</p>
+<p class="text-body-md font-body-md text-on-surface">Standard Box (3kg)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Assignment Module -->
+<div class="lg:col-span-4 bg-surface-container-low rounded-xl border border-outline-variant/50 p-lg flex flex-col justify-center gap-md text-center">
+<div class="w-16 h-16 mx-auto rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center mb-sm">
+<span class="material-symbols-outlined text-primary text-3xl">directions_run</span>
+</div>
+<div>
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-error-container/10 border border-error-red/30 text-error-red text-[10px] uppercase font-bold tracking-[0.1em] mb-xs">
+                        Awaiting Assignment
+                    </span>
+<h3 class="text-h3 font-h3 text-on-surface mt-sm">No Partner Assigned</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-xs">Select an available delivery partner to proceed with handoff.</p>
+</div>
+<button class="mt-md w-full bg-primary-container text-on-primary-container hover:bg-electric-violet hover:text-white transition-all duration-200 font-label-md text-label-md py-3 rounded-lg flex items-center justify-center gap-sm shadow-lg shadow-primary/10">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">person_add</span>
+                    Assign Delivery Partner
+                </button>
+</div>
+</div>
+<!-- Handoff Checklist -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/30 p-lg flex flex-col gap-lg">
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-sm">
+<h2 class="text-h3 font-h3 text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">fact_check</span>
+                    Handoff Checklist
+                </h2>
+<span class="text-caption font-caption text-on-surface-variant bg-surface-container-high px-2 py-1 rounded">Mandatory Pre-Flight Checks</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Checklist Item 1 -->
+<label class="flex items-start gap-md p-md rounded-lg bg-surface-container-low border border-outline-variant/20 hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="relative flex items-start">
+<input class="peer appearance-none w-5 h-5 border-2 border-outline-variant rounded bg-transparent checked:bg-primary checked:border-primary focus:ring-1 focus:ring-primary focus:ring-offset-1 focus:ring-offset-surface-container-low transition-all mt-0.5" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-on-primary text-sm top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<p class="text-label-md font-label-md text-on-surface group-hover:text-primary transition-colors">Correct Order</p>
+<p class="text-caption font-caption text-on-surface-variant mt-xs">Verify booking ID matches package label.</p>
+</div>
+</label>
+<!-- Checklist Item 2 -->
+<label class="flex items-start gap-md p-md rounded-lg bg-surface-container-low border border-outline-variant/20 hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="relative flex items-start">
+<input class="peer appearance-none w-5 h-5 border-2 border-outline-variant rounded bg-transparent checked:bg-primary checked:border-primary focus:ring-1 focus:ring-primary focus:ring-offset-1 focus:ring-offset-surface-container-low transition-all mt-0.5" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-on-primary text-sm top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<p class="text-label-md font-label-md text-on-surface group-hover:text-primary transition-colors">Correct Item Count</p>
+<p class="text-caption font-caption text-on-surface-variant mt-xs">Ensure all requested pieces are present.</p>
+</div>
+</label>
+<!-- Checklist Item 3 -->
+<label class="flex items-start gap-md p-md rounded-lg bg-surface-container-low border border-outline-variant/20 hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="relative flex items-start">
+<input class="peer appearance-none w-5 h-5 border-2 border-outline-variant rounded bg-transparent checked:bg-primary checked:border-primary focus:ring-1 focus:ring-primary focus:ring-offset-1 focus:ring-offset-surface-container-low transition-all mt-0.5" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-on-primary text-sm top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<p class="text-label-md font-label-md text-on-surface group-hover:text-primary transition-colors">Package Ready</p>
+<p class="text-caption font-caption text-on-surface-variant mt-xs">Sealed securely and labeled clearly.</p>
+</div>
+</label>
+<!-- Checklist Item 4 -->
+<label class="flex items-start gap-md p-md rounded-lg bg-surface-container-low border border-outline-variant/20 hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="relative flex items-start">
+<input class="peer appearance-none w-5 h-5 border-2 border-outline-variant rounded bg-transparent checked:bg-primary checked:border-primary focus:ring-1 focus:ring-primary focus:ring-offset-1 focus:ring-offset-surface-container-low transition-all mt-0.5" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-on-primary text-sm top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<p class="text-label-md font-label-md text-on-surface group-hover:text-primary transition-colors">Delivery Address Confirmed</p>
+<p class="text-caption font-caption text-on-surface-variant mt-xs">Address visible and matches system routing.</p>
+</div>
+</label>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="mt-auto flex justify-end gap-md pt-lg border-t border-outline-variant/30">
+<button class="px-xl py-3 rounded-lg border border-outline-variant text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md">
+                Cancel
+            </button>
+<button class="px-xl py-3 rounded-lg bg-surface-container-high text-on-surface-variant cursor-not-allowed border border-outline-variant/50 transition-all font-label-md text-label-md flex items-center gap-sm" id="btn-handover">
+<span class="material-symbols-outlined text-sm">local_shipping</span>
+                Hand Over Package
+            </button>
+</div>
+</main>
+<!-- Confirmation Dialog (Hidden by default) -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center bg-background/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200" id="dialog-confirm">
+<div class="bg-surface-container-low border border-outline-variant/50 rounded-xl shadow-2xl p-lg max-w-md w-full mx-md scale-95 transition-transform duration-200" id="dialog-panel">
+<div class="flex items-center gap-md mb-md">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">assignment_turned_in</span>
+</div>
+<h3 class="text-h3 font-h3 text-on-surface">Confirm delivery handoff?</h3>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mb-lg">
+                You are about to finalize the handoff for booking <strong class="text-on-surface">QH-20260902-1041</strong>. This action transfers responsibility to the assigned delivery partner and updates the system status.
+            </p>
+<div class="flex justify-end gap-md">
+<button class="px-md py-2 rounded-lg border border-outline-variant text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md" id="btn-dialog-cancel">
+                    Cancel
+                </button>
+<button class="px-md py-2 rounded-lg bg-electric-violet text-white hover:bg-primary-container hover:text-on-primary-container transition-all font-label-md text-label-md shadow-lg shadow-electric-violet/20 font-bold">
+                    Confirm Handoff
+                </button>
+</div>
+</div>
+</div>
+<script>
+        // Simple logic to simulate enabling the handoff button and showing dialog
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const handOverBtn = document.getElementById('btn-handover');
+            const dialog = document.getElementById('dialog-confirm');
+            const dialogPanel = document.getElementById('dialog-panel');
+            const btnCancelDialog = document.getElementById('btn-dialog-cancel');
+
+            // Check if all checkboxes are checked to enable button
+            const updateButtonState = () => {
+                const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+                if (allChecked) {
+                    handOverBtn.classList.remove('bg-surface-container-high', 'text-on-surface-variant', 'cursor-not-allowed');
+                    handOverBtn.classList.add('bg-electric-violet', 'text-white', 'hover:bg-primary-container', 'hover:text-on-primary-container', 'shadow-lg', 'shadow-electric-violet/20', 'cursor-pointer', 'font-bold');
+                    // Normally we wouldn't want to enable until partner is assigned, but simplifying for UI demo based on checklist alone here.
+                } else {
+                    handOverBtn.classList.add('bg-surface-container-high', 'text-on-surface-variant', 'cursor-not-allowed');
+                    handOverBtn.classList.remove('bg-electric-violet', 'text-white', 'hover:bg-primary-container', 'hover:text-on-primary-container', 'shadow-lg', 'shadow-electric-violet/20', 'cursor-pointer', 'font-bold');
+                }
+            };
+
+            checkboxes.forEach(cb => cb.addEventListener('change', updateButtonState));
+
+            // Dialog interactions
+            handOverBtn.addEventListener('click', (e) => {
+                if(!handOverBtn.classList.contains('cursor-not-allowed')) {
+                    dialog.classList.remove('opacity-0', 'pointer-events-none');
+                    dialogPanel.classList.remove('scale-95');
+                    dialogPanel.classList.add('scale-100');
+                }
+            });
+
+            btnCancelDialog.addEventListener('click', () => {
+                dialog.classList.add('opacity-0', 'pointer-events-none');
+                dialogPanel.classList.remove('scale-100');
+                dialogPanel.classList.add('scale-95');
+            });
+        });
+    </script>
+</body></html>

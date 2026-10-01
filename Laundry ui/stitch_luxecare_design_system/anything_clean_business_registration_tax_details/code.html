@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Registration & Tax Details - Anything Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#0e0e0f",
+                        "secondary-container": "#49494b",
+                        "background": "#131314",
+                        "outline": "#988ca0",
+                        "secondary-fixed": "#e4e2e4",
+                        "tertiary-fixed": "#e4e2e4",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-tint": "#dcb8ff",
+                        "on-primary-fixed": "#2c0051",
+                        "primary-fixed": "#efdbff",
+                        "on-secondary-fixed-variant": "#474648",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "surface": "#131314",
+                        "success-bg": "#1A3D24",
+                        "inverse-on-surface": "#313031",
+                        "outline-variant": "#4c4354",
+                        "error-red": "#ffb4ab",
+                        "inverse-primary": "#8422dc",
+                        "inverse-surface": "#e5e2e3",
+                        "on-background": "#e5e2e3",
+                        "surface-container-highest": "#353436",
+                        "tertiary-container": "#646365",
+                        "error-container": "#93000a",
+                        "on-primary": "#480081",
+                        "electric-violet": "#8a2be2",
+                        "surface-container": "#201f20",
+                        "error": "#ffb4ab",
+                        "on-surface": "#e5e2e3",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "secondary": "#c8c6c8",
+                        "on-primary-container": "#eed9ff",
+                        "success-green": "#81C784",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-variant": "#353436",
+                        "primary": "#dcb8ff",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary": "#303032",
+                        "surface-container-high": "#2a2a2b",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "tertiary": "#c8c6c8",
+                        "surface-dim": "#131314",
+                        "on-tertiary-container": "#e3e0e2",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-error": "#690005",
+                        "on-secondary": "#303032",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface-bright": "#39393a",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-secondary-container": "#b9b8ba",
+                        "primary-container": "#8a2be2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "3xl": "64px",
+                        "xl": "32px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Geist"],
+                        "caption": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "mono-display": ["monospace"],
+                        "h1": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "label-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #131314; /* background */
+            color: #e5e2e3; /* on-surface */
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md bg-background text-on-surface flex min-h-screen">
+<!-- SideNavBar Component -->
+<aside class="hidden md:flex flex-col py-lg px-md gap-sm bg-surface-container-low border-r border-outline-variant/30 fixed left-0 top-0 h-full w-64 z-40">
+<!-- Header -->
+<div class="flex items-center gap-md mb-lg px-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden border border-outline-variant/50">
+<img alt="Business logo" class="w-full h-full object-cover" data-alt="A minimalist tech logo for a B2B SaaS platform in electric violet and white, featuring clean geometric shapes on a dark charcoal background. High contrast, modern corporate identity aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKsc-olALkQNdCPsbsK4sv7YsoaXM_QOnCpmC06TrpbhmYpXK2-W9Eo3JmHfpQf88Pwcr9nChBq-LBfA8Z2Keqm2AAkqU6kupZj-aw_8PJ37LwymOVe1c77TG2mZ7FjZLVI4F6sXDGrGRuqgPCveu6_8inVaHKHqYB18o_VKRV--muf2DdkA1APy2QD6lp8EJDDBkT5v8b8ACfAH8QV9ES_2tT2O00WeP_cokZRyJVAkcLAwwTCBKCzA"/>
+</div>
+<div>
+<h2 class="font-h3 text-h3 text-on-surface m-0 leading-tight">Anything Clean</h2>
+<p class="font-caption text-caption text-on-surface-variant m-0 mt-xs">Verification Progress: 45%</p>
+</div>
+</div>
+<!-- Progress Bar (Visual flair based on progress subtext) -->
+<div class="w-full bg-surface-container h-1.5 rounded-full mb-md overflow-hidden">
+<div class="bg-electric-violet h-full w-[45%]"></div>
+</div>
+<!-- Navigation Tabs -->
+<nav class="flex-1 flex flex-col gap-xs overflow-y-auto">
+<!-- 0. Overview -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-95 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+                Overview
+            </a>
+<!-- 1. Identity -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-95 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">fingerprint</span>
+                Identity
+            </a>
+<!-- 2. Address -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-95 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">location_on</span>
+                Address
+            </a>
+<!-- 3. Registration (ACTIVE) -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-primary/10 text-primary font-bold transition-all duration-200 active:scale-95 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">business</span>
+                Registration
+            </a>
+<!-- 4. KYC Check -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-95 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">verified_user</span>
+                KYC Check
+            </a>
+<!-- 5. Documents -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-95 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">description</span>
+                Documents
+            </a>
+<!-- 6. Bank Setup -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-95 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_balance</span>
+                Bank Setup
+            </a>
+<!-- 7. Final Review -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-95 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">check_circle</span>
+                Final Review
+            </a>
+</nav>
+<!-- CTA & Footer -->
+<div class="mt-auto flex flex-col gap-md pt-md border-t border-outline-variant/30">
+<button class="w-full bg-electric-violet text-white font-label-md text-label-md font-bold py-sm px-md rounded-lg shadow-lg shadow-primary/20 hover:bg-electric-violet/90 transition-colors active:scale-95">
+                Complete Verification
+            </button>
+<div class="flex flex-col gap-xs">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-95 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+                    Settings
+                </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 active:scale-95 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">contact_support</span>
+                    Support
+                </a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 p-xl max-w-[1200px] w-full mx-auto relative overflow-y-auto">
+<!-- Mobile Top Nav (visible only on mobile) -->
+<header class="md:hidden flex justify-between items-center px-md py-sm bg-background/80 backdrop-blur-md fixed top-0 left-0 w-full z-50 border-b border-outline-variant/30">
+<h1 class="font-h1 text-h1 text-electric-violet m-0">Anything Clean</h1>
+<div class="flex gap-md text-electric-violet">
+<span class="material-symbols-outlined cursor-pointer active:opacity-80">notifications</span>
+<span class="material-symbols-outlined cursor-pointer active:opacity-80">help_outline</span>
+<div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden border border-outline-variant/30">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A minimalist tech logo for a B2B SaaS platform in electric violet and white, featuring clean geometric shapes on a dark charcoal background. High contrast, modern corporate identity aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBihALnZ0L-Kuhem_iE24Sc0xTvc-jrx2Vzwdazem5KGyeKRC3oumw3gIaFbP98aCJ-O5JMsQYar8Il0ARbrUsEs4R6mCgW8XzSrXk9Ibjgr0tnUV1KHXBU2tvfEltQxYYvBY89DQ--0IZEDIkWwM4V34DXZ5yJ6zHIvpWhnDE_1W8FLo5xjf5Zasj28nmzYwC3oCINY8Vmk0xlCySDJFVTc781z-cmXCmftJTa_kbNai16BH8M0wPVpg"/>
+</div>
+</div>
+</header>
+<!-- Page Header -->
+<div class="mb-xl pt-16 md:pt-0">
+<h1 class="font-headline-lg text-headline-lg text-on-surface m-0 mb-xs">Business Registration & Tax Details</h1>
+<p class="font-body-md text-body-md text-on-surface-variant m-0">Provide your official business entity information and tax registration details.</p>
+</div>
+<!-- Form Layout (Bento-style Grid) -->
+<form class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Left Column: Business Entity -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg flex flex-col gap-md">
+<h3 class="font-h3 text-h3 text-on-surface m-0 flex items-center gap-sm">
+<span class="material-symbols-outlined text-electric-violet">domain</span>
+                    Business Entity
+                </h3>
+<hr class="border-outline-variant/30 my-sm"/>
+<!-- Legal Name -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Legal Business Name</label>
+<input class="bg-surface-container-low border border-outline-variant/50 rounded-lg px-md py-sm text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-body-md" readonly="" type="text" value="CleanX Services"/>
+<p class="font-caption text-caption text-on-surface-variant/70 mt-1">As registered on official documents.</p>
+</div>
+<!-- Registration Type -->
+<div class="flex flex-col gap-xs mt-sm">
+<label class="font-label-md text-label-md text-on-surface-variant">Registration Type</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg px-md py-sm text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-body-md appearance-none">
+<option value="sole_proprietorship">Sole Proprietorship</option>
+<option value="partnership">Partnership</option>
+<option value="pvt_ltd">Pvt Ltd</option>
+</select>
+<span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Registration Number -->
+<div class="flex flex-col gap-xs mt-sm">
+<label class="font-label-md text-label-md text-on-surface-variant">Registration Number (CIN/LLPIN/Registration No.)</label>
+<input class="bg-surface-container-low border border-outline-variant/50 rounded-lg px-md py-sm text-on-surface font-mono-display text-mono-display focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" type="text" value="REG-XXXXXX"/>
+</div>
+</div>
+<!-- Right Column: Tax Details -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg flex flex-col gap-md">
+<h3 class="font-h3 text-h3 text-on-surface m-0 flex items-center gap-sm">
+<span class="material-symbols-outlined text-electric-violet">receipt_long</span>
+                    Tax Registration
+                </h3>
+<hr class="border-outline-variant/30 my-sm"/>
+<!-- GST Registered Toggle -->
+<div class="flex items-center justify-between bg-surface-container-low p-md rounded-lg border border-outline-variant/30">
+<div>
+<p class="font-label-md text-label-md text-on-surface m-0">GST Registered?</p>
+<p class="font-caption text-caption text-on-surface-variant m-0">Is your business registered for Goods and Services Tax?</p>
+</div>
+<!-- Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-electric-violet"></div>
+<span class="ml-3 font-label-md text-label-md text-on-surface peer-checked:text-primary">Yes</span>
+</label>
+</div>
+<!-- GSTIN Input -->
+<div class="flex flex-col gap-xs mt-sm">
+<label class="font-label-md text-label-md text-on-surface-variant">GSTIN (Goods and Services Tax Identification Number)</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-md text-on-surface-variant">qr_code</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg pl-xl pr-md py-sm text-on-surface font-mono-display text-mono-display focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all uppercase" type="text" value="22XXXXXXXXXXXXXX"/>
+<span class="material-symbols-outlined absolute right-md text-success-green" title="Verified">check_circle</span>
+</div>
+</div>
+<!-- Upload GST Certificate -->
+<div class="mt-sm flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">GST Certificate</label>
+<div class="border-2 border-dashed border-outline-variant/50 rounded-xl p-lg flex flex-col items-center justify-center text-center bg-surface-container-low/50 hover:bg-surface-container-low hover:border-primary/50 transition-all cursor-pointer group">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mb-sm group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">cloud_upload</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface m-0 mb-xs">Click to upload or drag and drop</p>
+<p class="font-caption text-caption text-on-surface-variant m-0">PDF, JPG, or PNG (Max 5MB)</p>
+</div>
+<!-- Uploaded File Preview (Mock) -->
+<div class="mt-sm flex items-center justify-between bg-surface-container p-sm rounded-lg border border-outline-variant/30">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-electric-violet">picture_as_pdf</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface m-0">CleanX_GST_Cert.pdf</p>
+<p class="font-caption text-caption text-on-surface-variant m-0">1.2 MB</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-error-red transition-colors p-sm" type="button">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Form Actions (Full width spanning both columns) -->
+<div class="md:col-span-2 flex justify-between items-center pt-lg mt-md border-t border-outline-variant/30">
+<button class="flex items-center gap-sm px-lg py-sm rounded-lg border border-outline-variant text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md font-bold" type="button">
+<span class="material-symbols-outlined">arrow_back</span>
+                    Back to Address
+                </button>
+<button class="flex items-center gap-sm px-lg py-sm rounded-lg bg-electric-violet text-white shadow-lg shadow-primary/20 hover:bg-electric-violet/90 transition-colors active:scale-95 font-label-md text-label-md font-bold" type="button">
+                    Save & Continue
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</form>
+</main>
+</body></html>

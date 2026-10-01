@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KYC &amp; Provider Verification - Lumina</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#988ca0",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-secondary-container": "#b9b8ba",
+                        "on-primary-container": "#eed9ff",
+                        "on-tertiary-container": "#e3e0e2",
+                        "surface-dim": "#131314",
+                        "background": "#131314",
+                        "inverse-surface": "#e5e2e3",
+                        "on-surface": "#e5e2e3",
+                        "on-primary-fixed": "#2c0051",
+                        "on-secondary-fixed-variant": "#474648",
+                        "surface-container-highest": "#353436",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-tertiary": "#303032",
+                        "surface-container-high": "#2a2a2b",
+                        "primary": "#dcb8ff",
+                        "surface-container": "#201f20",
+                        "on-surface-variant": "#cfc2d7",
+                        "secondary": "#c8c6c8",
+                        "on-error": "#690005",
+                        "inverse-primary": "#8422dc",
+                        "error-red": "#ffb4ab",
+                        "on-background": "#e5e2e3",
+                        "tertiary-container": "#646365",
+                        "primary-fixed": "#efdbff",
+                        "outline-variant": "#4c4354",
+                        "success-green": "#81C784",
+                        "on-secondary": "#303032",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "tertiary-fixed": "#e4e2e4",
+                        "secondary-fixed": "#e4e2e4",
+                        "primary-container": "#8a2be2",
+                        "surface-container-low": "#1c1b1c",
+                        "error": "#ffb4ab",
+                        "tertiary": "#c8c6c8",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#353436",
+                        "secondary-container": "#49494b",
+                        "error-container": "#93000a",
+                        "surface": "#131314",
+                        "surface-bright": "#39393a",
+                        "electric-violet": "#8a2be2",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-tint": "#dcb8ff",
+                        "on-primary": "#480081",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "inverse-on-surface": "#313031",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "success-bg": "#1A3D24"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "sm": "8px",
+                        "2xl": "48px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "3xl": "64px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Geist", "sans-serif"],
+                        "h3": ["Geist", "sans-serif"],
+                        "body-md": ["Geist", "sans-serif"],
+                        "caption": ["Geist", "sans-serif"],
+                        "mono-display": ["monospace"],
+                        "label-md": ["Geist", "sans-serif"],
+                        "h1": ["Geist", "sans-serif"],
+                        "headline-lg": ["Geist", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex selection:bg-electric-violet/30 selection:text-primary">
+<!-- SideNavBar -->
+<nav class="w-64 h-screen fixed left-0 top-0 bg-surface-container-low dark:bg-surface-container-low border-r border-outline-variant/30 flex flex-col py-lg px-md z-20 transition-all duration-200 ease-in-out hidden md:flex">
+<div class="mb-xl flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-electric-violet flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">dataset</span>
+</div>
+<div>
+<h1 class="font-h1 text-h1 text-electric-violet dark:text-primary">Lumina Admin</h1>
+<p class="font-caption text-caption text-on-surface-variant">Service Marketplace</p>
+</div>
+</div>
+<button class="w-full mb-lg py-3 px-4 rounded-lg bg-electric-violet text-white font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-inverse-primary transition-colors shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">add</span>
+            New Report
+        </button>
+<ul class="flex-1 space-y-1 overflow-y-auto pr-2 scrollbar-hide">
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors font-body-md text-body-md duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors font-body-md text-body-md duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+                    Orders
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors font-body-md text-body-md duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                    Providers
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors font-body-md text-body-md duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+                    Customers
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary-container/10 text-primary font-bold transition-colors font-body-md text-body-md duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+                    Verification
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors font-body-md text-body-md duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+                    Disputes
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors font-body-md text-body-md duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="refunds">file_copy_off</span>
+                    Refunds
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors font-body-md text-body-md duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+                    Payments
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors font-body-md text-body-md duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+                    Logistics
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors font-body-md text-body-md duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+                    Analytics
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors font-body-md text-body-md duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    Settings
+                </a>
+</li>
+</ul>
+<div class="mt-auto pt-lg border-t border-outline-variant/30 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden border border-outline-variant/50 shrink-0">
+<img alt="Lumina Admin Profile" class="w-full h-full object-cover" data-alt="A macro photography shot of an abstract dark glowing digital eye texture in corporate modern style, utilizing deep midnight palette and electric violet, precise technical mood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7Nt0Yh5s1LuqCCoZIZooG3j5zO7U9obDTmAH3SC4iDEzY1X4BnuVguA1JrH8NqSG6dTg2TCskCudJlNLGN74iuABzdvEEmttRFPqgBEqV72d9PS3P5VXApNhDhQJ3QQgE78AI_avdM5LOtcxdeqeuwOfW8xppYjav5HYWuNx2F4y9y5rZryGg12SzzloogP4tP4RXD1JxceclcVmt66JABSaz6PXixfb8qFKEmi7VfY8VMF7-OYmYOA"/>
+</div>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface truncate">Admin User</p>
+<p class="font-caption text-caption text-on-surface-variant truncate">admin@lumina.dev</p>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:pl-64 min-w-0">
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 left-0 md:left-64 h-16 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-xl w-full z-10">
+<div class="flex items-center gap-md">
+<h2 class="font-h3 text-h3 text-on-surface hidden md:block">Lumina Control</h2>
+<div class="md:hidden flex items-center gap-2">
+<span class="material-symbols-outlined text-electric-violet" style="font-variation-settings: 'FILL' 1;">dataset</span>
+<h2 class="font-h3 text-h3 text-on-surface">Lumina</h2>
+</div>
+</div>
+<div class="flex-1 max-w-md mx-lg hidden md:block">
+<div class="relative group focus-within:ring-1 focus-within:ring-primary rounded-lg">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2 border border-outline-variant/50 rounded-lg leading-5 bg-surface-container-low text-on-surface placeholder-on-surface-variant focus:outline-none focus:border-primary transition-colors font-body-md text-body-md" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-on-surface transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-all">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<button class="ml-2 font-label-md text-label-md text-on-surface hover:text-primary transition-colors hidden sm:block">Admin Profile</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/50 sm:hidden">
+<img alt="Admin User Avatar" class="w-full h-full object-cover" data-alt="A macro photography shot of an abstract dark glowing digital eye texture in corporate modern style, utilizing deep midnight palette and electric violet, precise technical mood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCozo7T57Y2teVqZKyv1kk8RDbCk-THWnKhuZRWlw8MjDG5KbNO5i-Of8QODMRUqbXIsbfq4ENFNwun_d7Qe8VX3i8J9aDiENmjMaj4nlHnHOwieNCnR8Y3Ufq2uldhQTasdMbRkHbsLu5-wlZ5zWUGWUIx1A524-w_M8GusFiXMB8p289UNvQgh-XHFdfl1qw7ZGQI8JP1vNQpP_pOtN3AouRcVkezSSuFULM1SsQ1V4VZ1XMGVNqGhA"/>
+</div>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 overflow-y-auto pt-24 pb-xl px-4 md:px-xl">
+<div class="max-w-[1200px] mx-auto w-full">
+<!-- Breadcrumbs & Header -->
+<div class="mb-lg">
+<nav aria-label="Breadcrumb" class="flex text-caption font-caption text-on-surface-variant mb-4">
+<ol class="inline-flex items-center space-x-1 md:space-x-2">
+<li class="inline-flex items-center">
+<a class="hover:text-primary transition-colors" href="#">Verification</a>
+</li>
+<li>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="ml-1 hover:text-primary transition-colors md:ml-2" href="#">KYC Review</a>
+</div>
+</li>
+<li>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="ml-1 text-on-surface md:ml-2">REQ-9942</span>
+</div>
+</li>
+</ol>
+</nav>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Document Review</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Provider Onboarding KYC screening.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 rounded-lg border border-outline-variant text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors">
+                                Request Info
+                            </button>
+<button class="px-4 py-2 rounded-lg border border-error-red/50 text-error-red font-label-md text-label-md hover:bg-error-container/20 transition-colors">
+                                Reject
+                            </button>
+<button class="px-4 py-2 rounded-lg bg-electric-violet text-white font-label-md text-label-md hover:bg-inverse-primary transition-colors shadow-lg shadow-primary/20">
+                                Approve Provider
+                            </button>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-md items-start">
+<!-- Left Column: Entity Details & Document List -->
+<div class="lg:col-span-4 flex flex-col gap-md">
+<!-- Entity Profile Card -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-md flex flex-col gap-4">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest border border-outline-variant/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[28px]">business</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">CleanX</h3>
+<p class="font-caption text-caption text-on-surface-variant">ID: PRV-8821-X</p>
+</div>
+</div>
+<span class="px-2 py-1 rounded-full bg-surface-container-highest text-on-surface font-caption text-caption uppercase tracking-wider text-[10px] border border-outline-variant/30">
+                                    Pending
+                                </span>
+</div>
+<div class="grid grid-cols-2 gap-4 pt-4 border-t border-outline-variant/30">
+<div>
+<p class="font-caption text-caption text-on-surface-variant">Primary Contact</p>
+<p class="font-label-md text-label-md text-on-surface">Arun Kumar</p>
+</div>
+<div>
+<p class="font-caption text-caption text-on-surface-variant">Entity Type</p>
+<p class="font-label-md text-label-md text-on-surface">LLC</p>
+</div>
+<div class="col-span-2">
+<p class="font-caption text-caption text-on-surface-variant">Registered Email</p>
+<p class="font-label-md text-label-md text-on-surface">a.kumar@cleanx-services.test</p>
+</div>
+<div class="col-span-2">
+<p class="font-caption text-caption text-on-surface-variant">Risk Score</p>
+<div class="flex items-center gap-2 mt-1">
+<div class="flex-1 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-success-green w-1/4"></div>
+</div>
+<span class="font-mono-display text-caption text-success-green">LOW (24)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Documents List -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 overflow-hidden flex flex-col">
+<div class="p-md border-b border-outline-variant/30">
+<h3 class="font-h3 text-h3 text-on-surface">Required Documents</h3>
+</div>
+<div class="flex flex-col">
+<!-- Doc Item: Selected -->
+<button class="w-full text-left p-md border-l-2 border-primary bg-primary-container/5 hover:bg-primary-container/10 transition-colors flex items-center justify-between group">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded bg-surface-container-highest text-primary">
+<span class="material-symbols-outlined text-[20px]">description</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary">Business Registration</p>
+<p class="font-caption text-caption text-on-surface-variant">Uploaded 2h ago • PDF</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-caption text-[10px] uppercase tracking-wider border border-outline-variant/30">Under Review</span>
+</button>
+<!-- Doc Item -->
+<button class="w-full text-left p-md border-l-2 border-transparent hover:bg-surface-container-highest transition-colors flex items-center justify-between border-t border-outline-variant/10">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded bg-surface-container-highest text-on-surface-variant group-hover:text-on-surface">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Identity Document (Passport)</p>
+<p class="font-caption text-caption text-on-surface-variant">Uploaded 2h ago • JPG</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-success-bg text-success-green font-caption text-[10px] uppercase tracking-wider border border-success-green/20">Verified</span>
+</button>
+<!-- Doc Item -->
+<button class="w-full text-left p-md border-l-2 border-transparent hover:bg-surface-container-highest transition-colors flex items-center justify-between border-t border-outline-variant/10">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded bg-surface-container-highest text-on-surface-variant group-hover:text-on-surface">
+<span class="material-symbols-outlined text-[20px]">home_pin</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Proof of Address</p>
+<p class="font-caption text-caption text-on-surface-variant">Uploaded 2h ago • PNG</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-success-bg text-success-green font-caption text-[10px] uppercase tracking-wider border border-success-green/20">Verified</span>
+</button>
+<!-- Doc Item -->
+<button class="w-full text-left p-md border-l-2 border-transparent hover:bg-surface-container-highest transition-colors flex items-center justify-between border-t border-outline-variant/10">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded bg-surface-container-highest text-on-surface-variant group-hover:text-on-surface">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Bank Verification</p>
+<p class="font-caption text-caption text-on-surface-variant">Uploaded 1h ago • PDF</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-caption text-[10px] uppercase tracking-wider border border-outline-variant/30">Under Review</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Column: Document Viewer (The Core Focus) -->
+<div class="lg:col-span-8 bg-surface-container rounded-xl border border-outline-variant/20 flex flex-col h-[800px] overflow-hidden">
+<!-- Viewer Toolbar -->
+<div class="p-3 border-b border-outline-variant/30 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-4">
+<h3 class="font-label-md text-label-md text-on-surface">Business Registration.pdf</h3>
+<div class="hidden sm:flex items-center gap-2 text-caption text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Page 1 of 2</span>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-highest p-1 rounded-lg border border-outline-variant/30">
+<button class="p-1.5 rounded hover:bg-surface-variant text-on-surface-variant hover:text-on-surface transition-colors" title="Zoom Out">
+<span class="material-symbols-outlined text-[20px]">zoom_out</span>
+</button>
+<span class="font-mono-display text-caption text-on-surface-variant px-2 w-12 text-center">100%</span>
+<button class="p-1.5 rounded hover:bg-surface-variant text-on-surface-variant hover:text-on-surface transition-colors" title="Zoom In">
+<span class="material-symbols-outlined text-[20px]">zoom_in</span>
+</button>
+<div class="w-px h-4 bg-outline-variant/50 mx-1"></div>
+<button class="p-1.5 rounded hover:bg-surface-variant text-on-surface-variant hover:text-on-surface transition-colors" title="Rotate Left">
+<span class="material-symbols-outlined text-[20px]">rotate_left</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-variant text-on-surface-variant hover:text-on-surface transition-colors" title="Rotate Right">
+<span class="material-symbols-outlined text-[20px]">rotate_right</span>
+</button>
+</div>
+</div>
+<!-- Main Viewing Area -->
+<div class="flex-1 bg-surface-container-lowest relative overflow-hidden flex items-center justify-center p-md">
+<!-- Background Grid Pattern for empty space -->
+<div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, var(--tw-colors-outline-variant) 1px, transparent 0); background-size: 24px 24px;"></div>
+<!-- The Document (Mockup) -->
+<div class="relative w-full max-w-2xl bg-white rounded shadow-2xl overflow-hidden" style="aspect-ratio: 1 / 1.414;">
+<!-- Document Header -->
+<div class="p-8 border-b border-gray-200">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-2xl font-serif text-gray-900 font-bold">CERTIFICATE OF INCORPORATION</h2>
+<p class="text-gray-500 text-sm mt-1">State Department of Corporations</p>
+</div>
+<div class="w-16 h-16 border-2 border-gray-300 rounded-full flex items-center justify-center text-gray-300 transform -rotate-12">
+                                            SEAL
+                                        </div>
+</div>
+</div>
+<!-- Document Body -->
+<div class="p-8 space-y-6 text-gray-800 text-sm leading-relaxed font-serif">
+<p>This is to certify that the articles of incorporation of</p>
+<div class="text-center py-4">
+<h3 class="text-xl font-bold uppercase tracking-wider text-black">CleanX Services LLC</h3>
+</div>
+<p>were duly filed in accordance with the provisions of the Corporation Law on this day.</p>
+<div class="grid grid-cols-2 gap-4 mt-8">
+<div>
+<p class="text-gray-500 text-xs uppercase mb-1">Entity Number</p>
+<p class="font-mono text-black font-semibold">9942-8821-X</p>
+</div>
+<div>
+<p class="text-gray-500 text-xs uppercase mb-1">Date of Filing</p>
+<p class="font-mono text-black font-semibold">October 14, 2023</p>
+</div>
+<div class="col-span-2">
+<p class="text-gray-500 text-xs uppercase mb-1">Registered Agent</p>
+<p class="font-semibold text-black">Arun Kumar</p>
+</div>
+<div class="col-span-2">
+<p class="text-gray-500 text-xs uppercase mb-1">Registered Address</p>
+<p class="text-black">442 Corporate Blvd, Suite 200, Tech District, City 90210</p>
+</div>
+<!-- Masked Data Example -->
+<div class="col-span-2 mt-4">
+<p class="text-gray-500 text-xs uppercase mb-1">Tax Identification (EIN)</p>
+<div class="flex items-center gap-2">
+<div class="font-mono text-black font-bold tracking-widest bg-gray-200 px-2 py-1 rounded">XX-XXX4421</div>
+<span class="text-[10px] text-gray-400 bg-gray-100 px-1 py-0.5 rounded uppercase font-sans">Masked for Security</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Overlay Tooltips / AI Extracted Data Highlights -->
+<div class="absolute top-[32%] left-[10%] w-[80%] h-12 border-2 border-primary/50 bg-primary/10 rounded pointer-events-none"></div>
+<div class="absolute top-[32%] -right-2 transform translate-x-full bg-surface-container border border-primary p-2 rounded shadow-lg text-primary text-xs font-mono-display flex flex-col gap-1 w-32 z-10 pointer-events-none">
+<span class="uppercase text-[9px] text-on-surface-variant tracking-wider">AI Extracted Match</span>
+<span>CleanX Services LLC</span>
+</div>
+</div>
+</div>
+<!-- Verification Controls Panel -->
+<div class="bg-surface-container-low border-t border-outline-variant/30 p-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[20px]">smart_toy</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Auto-Verification Engine</p>
+<p class="font-caption text-caption text-success-green flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                        Data matches entity profile (98% confidence)
+                                    </p>
+</div>
+</div>
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<button class="flex-1 sm:flex-none px-4 py-2 rounded-lg border border-outline-variant text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors">
+                                    Flag Document
+                                </button>
+<button class="flex-1 sm:flex-none px-4 py-2 rounded-lg bg-surface-container-highest border border-success-green/30 text-success-green font-label-md text-label-md hover:bg-success-bg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+                                    Mark Verified
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

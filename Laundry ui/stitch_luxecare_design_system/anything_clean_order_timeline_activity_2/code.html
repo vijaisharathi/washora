@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Timeline &amp; Activity - Lumina</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "electric-violet": "#8a2be2",
+                        "inverse-primary": "#8422dc",
+                        "success-green": "#81C784",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-container-high": "#2a2a2b",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "surface-bright": "#39393a",
+                        "primary-container": "#8a2be2",
+                        "inverse-surface": "#e5e2e3",
+                        "secondary-container": "#49494b",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "error-container": "#93000a",
+                        "inverse-on-surface": "#313031",
+                        "error": "#ffb4ab",
+                        "tertiary-container": "#646365",
+                        "on-tertiary": "#303032",
+                        "success-bg": "#1A3D24",
+                        "error-red": "#ffb4ab",
+                        "background": "#131314",
+                        "primary-fixed": "#efdbff",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-secondary-container": "#b9b8ba",
+                        "on-secondary": "#303032",
+                        "outline-variant": "#4c4354",
+                        "surface": "#131314",
+                        "surface-container-low": "#1c1b1c",
+                        "secondary": "#c8c6c8",
+                        "secondary-fixed": "#e4e2e4",
+                        "on-primary": "#480081",
+                        "outline": "#988ca0",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "tertiary": "#c8c6c8",
+                        "on-background": "#e5e2e3",
+                        "on-secondary-fixed-variant": "#474648",
+                        "tertiary-fixed": "#e4e2e4",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-error": "#690005",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-error-container": "#ffdad6",
+                        "surface-tint": "#dcb8ff",
+                        "surface-container": "#201f20",
+                        "on-primary-container": "#eed9ff",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-container-highest": "#353436",
+                        "surface-dim": "#131314",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-surface": "#e5e2e3",
+                        "primary": "#dcb8ff",
+                        "on-tertiary-container": "#e3e0e2",
+                        "surface-variant": "#353436",
+                        "on-primary-fixed": "#2c0051"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "xl": "32px",
+                        "xs": "4px",
+                        "3xl": "64px",
+                        "sm": "8px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "label-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "h1": ["Geist"],
+                        "caption": ["Geist"],
+                        "h3": ["Geist"],
+                        "mono-display": ["monospace"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .material-symbols-outlined.fill-icon { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen py-3xl px-xl">
+<!-- Main Container - Suppressing Shell for Task-Focused View -->
+<main class="max-w-[800px] mx-auto flex flex-col gap-xl">
+<!-- Contextual Header -->
+<header class="flex flex-col gap-md">
+<button class="flex items-center gap-sm text-on-surface-variant hover:text-primary w-fit transition-colors duration-200">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+<span class="font-label-md text-label-md">Back to Active Orders</span>
+</button>
+<div class="flex items-center justify-between">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Order Activity</h1>
+<div class="flex items-center gap-sm bg-surface-container-highest border border-outline-variant/30 rounded-lg px-md py-sm">
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">ID</span>
+<span class="font-mono-display text-mono-display text-on-surface">QH-20260901-1024</span>
+</div>
+</div>
+</header>
+<!-- Timeline Canvas -->
+<section class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-xl shadow-lg shadow-black/20">
+<!-- Timeline Container -->
+<div class="flex flex-col relative">
+<!-- Entry 1: Current/Active State -->
+<div class="flex gap-md group">
+<!-- Timestamp -->
+<div class="w-[120px] shrink-0 text-right font-label-md text-label-md text-on-surface pt-[4px]">
+                        Sep 1, 10:05 AM
+                    </div>
+<!-- Node & Line -->
+<div class="flex flex-col items-center relative shrink-0 w-[32px]">
+<div class="w-8 h-8 rounded-full bg-electric-violet flex items-center justify-center z-10 shadow-lg shadow-electric-violet/40 ring-4 ring-background">
+<span class="material-symbols-outlined fill-icon text-white text-[18px]">local_shipping</span>
+</div>
+<!-- Connecting Line -->
+<div class="w-px h-full bg-outline-variant/30 absolute top-8 bottom-[-24px] group-last:hidden"></div>
+</div>
+<!-- Content -->
+<div class="flex-1 pb-xl pl-sm">
+<div class="bg-electric-violet/5 border border-electric-violet/20 rounded-lg p-md">
+<h3 class="font-h3 text-h3 text-electric-violet">Pickup Scheduled</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Pickup window: 10:00 AM – 12:00 PM</p>
+<div class="mt-md inline-flex items-center gap-sm bg-success-bg/20 border border-success-green/20 rounded-full px-3 py-1">
+<span class="w-2 h-2 rounded-full bg-success-green animate-pulse"></span>
+<span class="font-caption text-caption text-success-green uppercase tracking-widest font-bold">Action Required</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Entry 2: Completed State -->
+<div class="flex gap-md group">
+<!-- Timestamp -->
+<div class="w-[120px] shrink-0 text-right font-label-md text-label-md text-on-surface-variant pt-[4px]">
+                        Sep 1, 10:02 AM
+                    </div>
+<!-- Node & Line -->
+<div class="flex flex-col items-center relative shrink-0 w-[32px]">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border border-outline-variant/50 flex items-center justify-center z-10 ring-4 ring-background transition-colors group-hover:border-on-surface-variant">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">check_circle</span>
+</div>
+<!-- Connecting Line -->
+<div class="w-px h-full bg-outline-variant/30 absolute top-8 bottom-[-24px] group-last:hidden"></div>
+</div>
+<!-- Content -->
+<div class="flex-1 pb-xl pl-sm pt-[2px]">
+<h3 class="font-h3 text-h3 text-on-surface">Order Confirmed</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Payment received via UPI</p>
+</div>
+</div>
+<!-- Entry 3: Completed State -->
+<div class="flex gap-md group">
+<!-- Timestamp -->
+<div class="w-[120px] shrink-0 text-right font-label-md text-label-md text-on-surface-variant pt-[4px]">
+                        Sep 1, 10:00 AM
+                    </div>
+<!-- Node & Line -->
+<div class="flex flex-col items-center relative shrink-0 w-[32px]">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border border-outline-variant/50 flex items-center justify-center z-10 ring-4 ring-background transition-colors group-hover:border-on-surface-variant">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">payments</span>
+</div>
+<!-- Connecting Line -->
+<div class="w-px h-full bg-outline-variant/30 absolute top-8 bottom-[-24px] group-last:hidden"></div>
+</div>
+<!-- Content -->
+<div class="flex-1 pb-2 pl-sm pt-[2px]">
+<h3 class="font-h3 text-h3 text-on-surface">Payment Processing</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Initiated</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+</body></html>

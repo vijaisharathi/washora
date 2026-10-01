@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Partner Ratings &amp; Feedback</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.cdnfonts.com/css/geist-sans" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#eed9ff",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#e3e0e2",
+                        "surface-container": "#201f20",
+                        "error-red": "#ffb4ab",
+                        "secondary": "#c8c6c8",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "surface-container-high": "#2a2a2b",
+                        "secondary-fixed": "#e4e2e4",
+                        "tertiary-fixed": "#e4e2e4",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#efdbff",
+                        "outline": "#988ca0",
+                        "surface-dim": "#131314",
+                        "success-green": "#81C784",
+                        "inverse-primary": "#8422dc",
+                        "inverse-surface": "#e5e2e3",
+                        "secondary-container": "#49494b",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-primary": "#480081",
+                        "inverse-on-surface": "#313031",
+                        "background": "#131314",
+                        "on-background": "#e5e2e3",
+                        "surface-bright": "#39393a",
+                        "surface-container-highest": "#353436",
+                        "on-secondary-container": "#b9b8ba",
+                        "success-bg": "#1A3D24",
+                        "on-surface": "#e5e2e3",
+                        "on-tertiary-fixed-variant": "#474648",
+                        "on-primary-fixed": "#2c0051",
+                        "surface-container-low": "#1c1b1c",
+                        "on-secondary-fixed-variant": "#474648",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "surface": "#131314",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "tertiary-container": "#646365",
+                        "surface-tint": "#dcb8ff",
+                        "on-tertiary": "#303032",
+                        "surface-variant": "#353436",
+                        "tertiary": "#c8c6c8",
+                        "electric-violet": "#8a2be2",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "outline-variant": "#4c4354",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#dcb8ff",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-secondary": "#303032",
+                        "primary-container": "#8a2be2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "2xl": "48px",
+                        "3xl": "64px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Geist", "sans-serif"],
+                        "caption": ["Geist", "sans-serif"],
+                        "body-md": ["Geist", "sans-serif"],
+                        "headline-lg": ["Geist", "sans-serif"],
+                        "label-md": ["Geist", "sans-serif"],
+                        "mono-display": ["monospace"],
+                        "h3": ["Geist", "sans-serif"],
+                        "display-lg": ["Geist", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "h1": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "mono-display": ["18px", { "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            width: 390px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden flex flex-col relative pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-dim/80 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-lg h-16 w-full max-w-[390px]">
+<div class="flex items-center gap-sm cursor-pointer hover:bg-surface-container-high transition-colors active:scale-95 transition-transform p-2 rounded-full">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</div>
+<h1 class="font-h3 text-h3 font-bold text-electric-violet">Your Ratings</h1>
+<div class="flex items-center gap-sm cursor-pointer hover:bg-surface-container-high transition-colors active:scale-95 transition-transform p-1 rounded-full">
+<img alt="Partner Profile Picture" class="w-8 h-8 rounded-full object-cover border border-outline-variant/50" data-alt="A small circular profile picture of an Asian male in a dark setting, subtly illuminated by purple light, looking professional and friendly. High quality corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxuWAg1IZShDrYbkjVz5v8HWNXj3pFDoY5g0pO6oOIdML8t1agjFIp_7WCz8Z4epJOUHH3NkZt9dvKinblR3iED6R6mcDD0RnKKO44WqmOt20sb5U9KL8RntTMP7nwlUnMR1UGuv0WmAsF4UzEDJtNAFjeF4t_bAwH6dgJjLLJS7kvoFumRDNHheS6x2piHh35V83ZXDHArZBE-4T8uWCzWr8BXzTXu_nrxORTezLHlMKM1J1ud8PxRw"/>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pt-24 px-md flex-1 flex flex-col gap-lg">
+<!-- Header Text -->
+<section class="text-center space-y-sm">
+<h2 class="font-h1 text-h1 text-on-surface">Overall Performance</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">See how customers rate your delivery experience.</p>
+</section>
+<!-- Big Rating Card -->
+<section class="bg-surface-container rounded-xl border border-outline-variant/20 p-lg shadow-[0_0_15px_rgba(138,43,226,0.1)] flex flex-col items-center justify-center gap-md">
+<div class="flex items-end gap-2">
+<span class="font-display-lg text-display-lg text-primary">4.9</span>
+<span class="font-h3 text-h3 text-on-surface-variant mb-2">/ 5</span>
+</div>
+<div class="flex gap-1 text-electric-violet">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-surface-container-high" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">Based on 246 Deliveries</p>
+</section>
+<!-- Distribution Chart -->
+<section class="bg-surface-container-low rounded-xl border border-outline-variant/20 p-md space-y-md">
+<h3 class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-sm">Rating Breakdown</h3>
+<div class="space-y-sm">
+<!-- 5 Star -->
+<div class="flex items-center gap-sm">
+<span class="font-caption text-caption w-3">5</span>
+<span class="material-symbols-outlined text-[14px] text-electric-violet" style="font-variation-settings: 'FILL' 1;">star</span>
+<div class="flex-1 h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-electric-violet rounded-full w-[85%] shadow-[0_0_8px_rgba(138,43,226,0.5)]"></div>
+</div>
+</div>
+<!-- 4 Star -->
+<div class="flex items-center gap-sm">
+<span class="font-caption text-caption w-3">4</span>
+<span class="material-symbols-outlined text-[14px] text-electric-violet" style="font-variation-settings: 'FILL' 1;">star</span>
+<div class="flex-1 h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full w-[10%]"></div>
+</div>
+</div>
+<!-- 3 Star -->
+<div class="flex items-center gap-sm">
+<span class="font-caption text-caption w-3">3</span>
+<span class="material-symbols-outlined text-[14px] text-electric-violet" style="font-variation-settings: 'FILL' 1;">star</span>
+<div class="flex-1 h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-outline rounded-full w-[3%]"></div>
+</div>
+</div>
+<!-- 2 Star -->
+<div class="flex items-center gap-sm">
+<span class="font-caption text-caption w-3">2</span>
+<span class="material-symbols-outlined text-[14px] text-electric-violet" style="font-variation-settings: 'FILL' 1;">star</span>
+<div class="flex-1 h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-outline rounded-full w-[1%]"></div>
+</div>
+</div>
+<!-- 1 Star -->
+<div class="flex items-center gap-sm">
+<span class="font-caption text-caption w-3">1</span>
+<span class="material-symbols-outlined text-[14px] text-electric-violet" style="font-variation-settings: 'FILL' 1;">star</span>
+<div class="flex-1 h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-error rounded-full w-[1%]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Feedback -->
+<section class="space-y-md">
+<h3 class="font-h3 text-h3 text-on-surface">Recent Feedback</h3>
+<div class="flex flex-col gap-sm">
+<!-- Feedback 1 -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-md flex flex-col gap-sm hover:bg-surface-container-high transition-colors">
+<div class="flex justify-between items-start">
+<div class="flex gap-1 text-electric-violet">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">2h ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic">"Friendly and punctual."</p>
+<div class="flex items-center gap-xs mt-1">
+<div class="w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-on-surface-variant">person</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Customer • Anonymized</span>
+</div>
+</div>
+<!-- Feedback 2 -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/20 p-md flex flex-col gap-sm hover:bg-surface-container-high transition-colors">
+<div class="flex justify-between items-start">
+<div class="flex gap-1 text-electric-violet">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Yesterday</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic">"Smooth delivery."</p>
+<div class="flex items-center gap-xs mt-1">
+<div class="w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-on-surface-variant">person</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Customer • Anonymized</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-container-low border-t border-outline-variant/30 flex justify-around items-center h-20 px-md pb-safe max-w-[390px] mx-auto left-0 right-0">
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface active:scale-90 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined">delivery_dining</span>
+<span class="font-label-md text-label-md mt-1">Tasks</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface active:scale-90 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-label-md mt-1">Earnings</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface active:scale-90 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined">shield</span>
+<span class="font-label-md text-label-md mt-1">Safety</span>
+</div>
+<div class="flex flex-col items-center justify-center flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface active:scale-90 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined">description</span>
+<span class="font-label-md text-label-md mt-1">Docs</span>
+</div>
+<!-- Assuming Ratings lives under Settings or Profile context loosely, but since none perfectly match, highlighting none or picking closest. Let's keep none strictly active based on rules, or pick Settings as nearest generic fallback if needed, but rules say 'DO NOT highlight generic tabs'. So leaving inactive. Wait, the prompt says 'Your Ratings' - could map to Profile/Settings. I'll highlight none to be safe against hallucination. -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface active:scale-90 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md mt-1">Settings</span>
+</div>
+</nav>
+</body></html>

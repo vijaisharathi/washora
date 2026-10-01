@@ -1,0 +1,18 @@
+{
+  "application": "washora-customer",
+  "version": "0.1.0",
+  "gitCommit": "18ad38f6f52097c1533801779da50a23494c382d",
+  "buildTimestamp": "2026-09-21T14:32:26.914Z",
+  "nodeVersion": "20-alpine",
+  "packageManager": "npm@11.6.2",
+  "lockfileSha256": "404a45c0d90f2b03dca26445844adae7f4ec16991a109ca7f5c2b0217a779b6f",
+  "databaseMigration": "20260910000000_init_washora_db0",
+  "dockerBaseImage": "node:20-alpine",
+  "reproducibleBuild": true,
+  "attestation": {
+    "provenanceVerified": true,
+    "secretScanned": true,
+    "sbomGenerated": true,
+    "ciRunVerified": true
+  }
+}
